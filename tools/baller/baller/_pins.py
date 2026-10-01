@@ -1,0 +1,48 @@
+"""baller._pins — sha256 pins for the vendored engine set (fail-closed)."""
+
+PINS = {
+    "geo/mc.py":
+        "20508a7a3c058d3929df4a74bb86477db6d8c66a3edd705919937d9aeee3f10d",
+    "kklt/march_lib.py":
+        "31d991e7e2ddc31e0d5e954d2573323a05208532a7f2a02b20152d469754df89",
+    "kklt/pipe_lib.py":
+        "ca17f0ff718b542b48483199aa15ee4532f72ace1cf05696a1b0e16b206bc706",
+    "kklt/pipe_transport.py":
+        "c071e76c71b77120dddc770d5b110f72310e25997b7e02f5eb6ff3ebfb76186e",
+    "kklt/pipe_vac.py":
+        "29e9968de8abcdc39639e475c2a71f39087845ce842f26dfc39e4d2ee68f3a76",
+    "certlane/__init__.py":
+        "fed7c0a345d2ff01f230b73cb40dca99ac616421fcc04427b467d117d8749758",
+    "certlane/primitives.py":
+        "bd53e62aa19ad35bc61a84a2f7986411a73b68c37f9838e5b1826bae90113865",
+    "certlane/attack_primitives.py":
+        "bf683afb1cb3807436653cf8e682e0aba9af2c728ae0333c0ff7040efe9c3627",
+    "certlane/test_primitives.py":
+        "40dc6fa183ac4f38262ceff45a9c0716b8b9fbcd4b126c4aed3600a882d231cd",
+    "ling_onesided/QUARTET_COLLAPSE.json":
+        "7ff6be4be9e3f519dd8f6e9efc82d63a79aa5d2f3ba47526dced8ee684da2fd8",
+    "ling_onesided/taylor_p.py":
+        "cc2efd8f784fb09a1d74ddde334da5ad1492664a1b8139cdb9826813227e8b0f",
+    "ling_onesided/gate_price.py":
+        "26254634d915cdb446572c4431608314ee0703bdcea60371a34f4c61bd08d61c",
+    "ling_onesided/tail_engine.py":
+        "03cc31577ea7102c521b327eb9d9de25fe7a45546fe9b36ae4285a558ce6e668",
+    "ling_onesided/balanced_unc.py":
+        "824f210f03e82750eec75b42184dac2ec0396fb9a6e82f30dd0d38b5cee4da6d",
+    "ling_onesided/double_unc.py":
+        "ebd3461ce54a2f5e365b791b8304ca381150ded93cefbe9e2896d6d9dc0cee8c",
+    "ling_onesided/l5_center.py":
+        "fb7f5f79dbdb496c46776db1ec47e0d879b4da1a851ae2959c8a4bc506e2a540",
+    "ling_onesided/collapse_unc.py":
+        "ec6ffe20868f7cfdbea6d91a188070f9724094006f0e8a2c368abbe3f506d700",
+    "ling_onesided/sd_engine.py":
+        "d714a3581040ff63780d9fc677063acc37220a5df36128459408fca45f1a0fc7",
+    "ling_onesided/sd_onesided.py":
+        "83aee985104e4039a14a326a20e697473c94f71fa75c7aba65d459395d61e2ea",
+    "lgf_monodromy/valmono.py":
+        "1a820493e9a23369a0380f53df5df851ea1a1b0c007dfccf2578ff4ec92b6b1e",
+    "lgf_monodromy/BC_cache.pkl":
+        "138ce13f818e1b32f06c02b1d821a679a5a2ea29b4d59d66b3dc1d07acd1fdac",
+    "lgf_monodromy/PROVENANCE_BC_cache.txt":
+        "3694fd2920aa3c1a179b76e22a97ebd106448a2579bdbdb8e65e275aca24de01",
+}

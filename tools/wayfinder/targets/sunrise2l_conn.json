@@ -1,0 +1,24 @@
+{
+  "name": "sunrise2l",
+  "_comment": "Equal-mass 2-loop sunrise.  Top sector is ELLIPTIC — the pure dlog ansatz only covers the polylog (tadpole) sub-block; the elliptic master is FLAGGED by Rotation.from_canonical_form and its row will not rationalize (this is the value-fittability boundary, not a tool failure).  Kept here as the elliptic-flag regression target.",
+  "family": {
+    "name": "sunrise2l",
+    "loops": ["k1", "k2"],
+    "legs": ["p1", "p2"],
+    "conservation": {"p2": "-p1"},
+    "replacement": {"p1^2": "psq"},
+    "propagators": ["k1^2 - 1", "k2^2 - 1", "(k1 + k2 - p1)^2 - 1"]
+  },
+  "kinvars": ["psq"],
+  "alphabet": ["psq", "psq - 1", "psq - 9"],
+  "masters": [
+    {"tag": "tad",   "indices": [1, 1, 0]},
+    {"tag": "sun",   "indices": [1, 1, 1]},
+    {"tag": "sun_d", "indices": [2, 1, 1]}
+  ],
+  "points": [
+    {"psq": "1/3"}, {"psq": "1/5"}, {"psq": "1/7"},
+    {"psq": "1/11"}, {"psq": "1/13"}
+  ],
+  "amf_options": {}
+}

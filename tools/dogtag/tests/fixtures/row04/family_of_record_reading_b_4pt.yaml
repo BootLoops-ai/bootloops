@@ -1,0 +1,24 @@
+# Family of record, row 4 (reading b): the L=3 four-point ladder of Davydychev
+# arXiv:1007.0237 Fig. 1b, eq. calD/XY: X = k1^2 k3^2/(s t), Y = k2^2 k4^2/(s t),
+# finite 'when all 4 legs are off-shell' (abstract).  The slice Y -> 0, X = -x != 0
+# keeps legs 1 and 3 off shell and puts leg 2 (and/or 4) on shell; here p2^2 = p4^2 = 0.
+# Same ten lines as the drawn graph; the leg labels are what differ.
+integralfamilies:
+  - name: "ud_ladder3_fourpoint_offshell"
+    loop_momenta: [k1, k2, k3]
+    propagators:
+      - [ "k1 + k2 + k3 - p4", 0 ]
+      - [ "k2 + k3 + p1 + p2 + p3", 0 ]
+      - [ "k3 + p1 + p2 + p3", 0 ]
+      - [ "-k1 - k2 - k3 - p3", 0 ]
+      - [ "-k2 - k3 - p3", 0 ]
+      - [ "-k3 - p3", 0 ]
+      - [ "-k1 - k2 - k3 - p2 - p3", 0 ]
+      - [ "k1", 0 ]
+      - [ "k2", 0 ]
+      - [ "k3", 0 ]
+    top_level_sectors: [1023]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4]
+    momentum_conservation: {p4: "-p1 - p2 - p3"}
+    leg_virtualities: {p1: "offshell", p2: "0", p3: "offshell", p4: "0"}

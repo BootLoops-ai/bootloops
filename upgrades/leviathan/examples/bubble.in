@@ -1,0 +1,4 @@
+# one-loop equal-mass bubble, Lee-Pomeransky G = U + F
+G   = x1 + x2 + mm*(x1+x2)^2 - s*x1*x2
+kin = s, mm
+x   = x1, x2

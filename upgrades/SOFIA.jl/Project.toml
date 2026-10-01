@@ -1,0 +1,19 @@
+name = "SOFIA"
+uuid = "63a4f10d-0110-474a-98e0-c53dfedb1676"
+authors = ["Matthew D. Schwartz"]
+version = "1.0.0"
+
+[deps]
+AbstractAlgebra = "c3fe647b-3220-5bb0-a1ea-a7954cac585d"
+Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
+Graphs = "86223c79-3864-5bf0-83f7-82e725a168b6"
+Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

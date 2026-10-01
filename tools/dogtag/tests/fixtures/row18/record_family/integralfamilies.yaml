@@ -1,0 +1,35 @@
+# FAMILY OF RECORD, row 18 (gg -> H elliptic masters): families 2 and 5 of arXiv:2501.14435
+# (Frellesvig et al.), transcribed from paper.txt
+# (pdf text; sha256 b5f9569a3518851eb1cd301b9c9d9fcb5a8f2a57c7c683b0cf2aa55267a30ab0) L983-984 (Appendix A.2 = Eq. 3.3) and L1209-1210 (Appendix A.5 = Eq. 3.6).
+# Kira convention: each entry is [momentum, mass^2] and stands for momentum^2 - mass^2.
+# Symbols: k1, k2 loop momenta (L290); p1, p2 incoming gluon momenta (L154, L290); mt2 = mt^2 (top quark, L155-156);
+# M2 = M^2 with M in {mH, mW, mZ} (L242, L250-251); s = (p1 + p2)^2 (Eq. 2.1, L153); kinematics in kinematics.yaml.
+# top_level_sectors = the maximal sectors among the reference's master integrals (A.2: 30 masters, A.5: 26 masters;
+# 'multiple top sectors are grouped together in families 2 and 5', L246-247); the first entry is the sector the
+# figure (fig-ggH.tex) draws for family 2.
+# A transcription for the graph-identity check; not run through Kira or AMFlow.
+integralfamilies:
+  - name: "ggH_fam2"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [63, 79]
+    propagators:
+      - [ "k1", mt2 ]             # D1 = k1^2 - mt^2
+      - [ "k1 + p1", mt2 ]        # D2 = (k1 + p1)^2 - mt^2
+      - [ "k1 - p2", mt2 ]        # D3 = (k1 - p2)^2 - mt^2
+      - [ "k1 + k2", M2 ]         # D4 = (k1 + k2)^2 - M^2
+      - [ "k2 - p1", mt2 ]        # D5 = (k2 - p1)^2 - mt^2
+      - [ "k2 + p2", mt2 ]        # D6 = (k2 + p2)^2 - mt^2
+      - [ "k2", 0 ]               # D7 = k2^2
+    cut_propagators: []
+  - name: "ggH_fam5"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [31, 79, 107, 39]
+    propagators:
+      - [ "k1", mt2 ]             # D1 = k1^2 - mt^2
+      - [ "k1 + p1", mt2 ]        # D2 = (k1 + p1)^2 - mt^2
+      - [ "k1 - p2", mt2 ]        # D3 = (k1 - p2)^2 - mt^2
+      - [ "k1 + k2", M2 ]         # D4 = (k1 + k2)^2 - M^2
+      - [ "k2 - p1", 0 ]          # D5 = (k2 - p1)^2
+      - [ "k2 + p2", mt2 ]        # D6 = (k2 + p2)^2 - mt^2
+      - [ "k2", mt2 ]             # D7 = k2^2 - mt^2
+    cut_propagators: []

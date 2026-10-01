@@ -1,0 +1,47 @@
+{
+ "schema": "subtropica-euler-quad-v1",
+ "id": "synth_zeta3_beta_1var",
+ "title": "synthetic truth: int x^(2eps)(1+x)^(-2-3eps) dx = B(1+2eps,1+eps); zeta(3) at eps^3",
+ "divergent": false,
+ "prefactor": {
+  "c": "1",
+  "eps_power": 0,
+  "gammas": [],
+  "gammaE_eps": "0"
+ },
+ "nu": [
+  [
+   "0",
+   "2"
+  ]
+ ],
+ "polys": [
+  {
+   "poly": "1 + x",
+   "exp": [
+    "-2",
+    "-3"
+   ]
+  }
+ ],
+ "vars": [
+  "x"
+ ],
+ "kinvars": [],
+ "notes": "Synthetic-truth positive control with eps-DEPENDENT exponents (exercises the EpsExp schema and multi-order Laurent comparison). Closed form B(1+2eps,1+eps); Laurent coefficients [1, -3, 9-2zeta(2), -27+6zeta(2)+6zeta(3)] derived from the standard logGamma psi-expansion and verified against sympy's beta series; numeric controls vs mp.beta and direct quadrature at eps=+-1/128.",
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:46+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "derivation": "logGamma series; sympy beta series match"
+ }
+}

@@ -1,0 +1,16 @@
+# DRAWN GRAPH, read off fig-banana-4l.tex (sha256 first 16 hex 34d9bac5f4966c36) with the caption/label sources ['gallery-30.tex', 'results.tex', 'fdiag-style.tex'].
+# Five thick red lines (massM1 = m1 = 1): four arcs and the straight middle line between the two vertex dots, top and bottom arcs labelled m; one external momentum p through. Section cy3-banana-eqmass.tex: two-point function with five equal-mass propagators, m^2 = 1. Table 2: 'Four-loop equal-mass banana'.
+# Vertices ['L', 'R']; internal lines (u--v, mass^2): line1=L--R m2=1; line2=L--R m2=1; line3=L--R m2=1; line4=L--R m2=1; line5=L--R m2=1
+# External legs (all incoming; last = -(sum of the others)): p at L p^2=pp; pout at R p^2=pp
+# Routing by momentum conservation: spanning tree ['line1'], chords ['line2', 'line3', 'line4', 'line5'] carry ['k1', 'k2', 'k3', 'k4'].
+# Line -> propagator: line1: -k1 - k2 - k3 - k4 + p (m2=1); line2: k1 (m2=1); line3: k2 (m2=1); line4: k3 (m2=1); line5: k4 (m2=1)
+integralfamilies:
+  - name: "drawn_banana4L_eqmass"
+    loop_momenta: [k1, k2, k3, k4]
+    top_level_sectors: [31]
+    propagators:
+      - ["-k1 - k2 - k3 - k4 + p", 1]
+      - ["k1", 1]
+      - ["k2", 1]
+      - ["k3", 1]
+      - ["k4", 1]

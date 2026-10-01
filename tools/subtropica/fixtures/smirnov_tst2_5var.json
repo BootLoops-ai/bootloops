@@ -1,0 +1,108 @@
+{
+ "schema": "subtropica-euler-quad-v1",
+ "id": "smirnov_tst2_5var",
+ "title": "Smirnov-class 5-var convergent period (HF test/Smirnov tst2-class)",
+ "divergent": false,
+ "prefactor": {
+  "c": "1",
+  "eps_power": 0,
+  "gammas": [],
+  "gammaE_eps": "0"
+ },
+ "nu": [
+  [
+   "0",
+   "3"
+  ],
+  [
+   "2",
+   "5"
+  ],
+  [
+   "4",
+   "-87"
+  ],
+  [
+   "2",
+   "-12"
+  ],
+  [
+   "1",
+   "19"
+  ]
+ ],
+ "polys": [
+  {
+   "poly": "t1 + t2 + t3",
+   "exp": [
+    "-2",
+    "-17"
+   ]
+  },
+  {
+   "poly": "t5 + 1",
+   "exp": [
+    "-1",
+    "9"
+   ]
+  },
+  {
+   "poly": "t1*t3 + t2*t3 + t2*t4*t5 + t3",
+   "exp": [
+    "-2",
+    "24"
+   ]
+  },
+  {
+   "poly": "t1*t3 + t2*t3 + t2*t4*t5 + t2*t4 + t3",
+   "exp": [
+    "-2",
+    "50"
+   ]
+  },
+  {
+   "poly": "t1*t3 + t2*t3 + t2*t4*t5 + t3^2 + t3*t4*t5",
+   "exp": [
+    "-2",
+    "-3"
+   ]
+  }
+ ],
+ "vars": [
+  "t1",
+  "t2",
+  "t3",
+  "t4",
+  "t5"
+ ],
+ "kinvars": [],
+ "notes": "Smirnov-class convergent 5-variable period integral: base rational integrand of the upstream HyperFLINT regression family test/Smirnov (tst0), eps-twisted per the tst1/tst2 expansion structure; the twist exponents were inferred from the Log coefficients and VERIFIED symbolically (tst1 == base*L, tst2 == base*L^2/2). DESIGN.md Gate A names this the 'eq 4.12 Smirnov period' convergent benchmark. No kinematic symbols; all polynomial coefficients positive. No stored upstream value was read or copied (RT-iii).",
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:46+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "sympy": "1.14.0",
+  "sources": [
+   {
+    "path": "HyperFLINT/test/Smirnov/tst0.txt",
+    "sha256": "663d3d469cde7c7d657547c8b5f3296434219dff1680aa37df20a9d54420579c"
+   },
+   {
+    "path": "HyperFLINT/test/Smirnov/tst1.txt",
+    "sha256": "3f0c95b2a9547ec43e1f7c0561857bd1a28c62d9f0008ddc0736c21fb7602fb8"
+   },
+   {
+    "path": "HyperFLINT/test/Smirnov/tst2.txt",
+    "sha256": "b53a61c797995f40ff61f50a7e64dadd1f72a1fb5ec968782950309c6ed039e6"
+   }
+  ],
+  "extraction": "integrand definition only; twist exponents [3, 5, -87, -12, 19, -17, 9, 24, 50, -3] on factors [t1..t5, t1+t2+t3, 1+t5, P1, P2, P3]; verified: cancel(tst1/tst0)==L, cancel(tst2/tst0)==L^2/2 with Log atoms symbolized"
+ }
+}

@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.DS_Store
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+selftest_results.json
+# batteries that write run records or caches inside their package directory
+tools/frobenius-boundary/asdminer/work/
+tools/frobenius-boundary/deform_transport/work/
+tools/frobenius-boundary/deform_transport/battery/work/
+tools/frobenius-boundary/deform_transport/battery/BATTERY_RECEIPT_PARTIAL.json
+tools/frobenius-boundary/deform_transport/code_snapshots/
+tools/maxcut/decisive_validate.json
+# binaries built locally from shipped source (GPL/LGPL-linked; never commit prebuilt)
+tools/gpl-eval/GPLEval.jl/src/ginac_gpl
+tools/posq/posq_kernel
+upgrades/Eichler.jl/ginac-oracle/ginac_oracle
+# battery outputs written next to the code or into the working directory
+tools/ellipticus/battery_results.json
+/holonomic_SUMMARY.json
+tools/eichler/mirror6_work/
+/surd_work/

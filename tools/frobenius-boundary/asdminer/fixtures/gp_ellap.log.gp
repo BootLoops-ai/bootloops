@@ -1,0 +1,1 @@
+{E1 = ellinit([0, -1, 1, -10, -20]); E2 = ellinit([0, 0, 0, -1, 0]); print("N1=", ellglobalred(E1)[1]); print("N2=", ellglobalred(E2)[1]); print("AP1=", vector(50, i, ellak(E1, prime(i)))); print("AP2=", vector(50, i, ellak(E2, prime(i)))); quit; }

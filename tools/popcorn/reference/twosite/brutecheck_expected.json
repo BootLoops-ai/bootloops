@@ -1,0 +1,36 @@
+{
+ "about": "Expected outcome of the exact-projection check on the shipped synthetic panel tiny_geno.tsv (12 individuals, 24 sites, 276 site pairs; random genotypes and positions, not real data): for n = 4, 6, 8 projected chromosomes (m = 2, 3, 4 individuals; C(12,m) = 66, 220, 495 subsets) the dynamic-programming grid of twosite_projection.project_grid equals the explicit enumeration twosite_projection.brute_grid on every one of the (n+1)^2 cells of every pair (6900, 13524, 22356 cells compared) with exact Fraction equality, and every grid sums to exactly 1. Comparand of the twosite_projection leg; brute_check() returns these fields.",
+ "geno": "tiny_geno.tsv",
+ "n_individuals": 12,
+ "n_sites": 24,
+ "per_n": {
+  "n4": {
+   "m": 2,
+   "n_subsamples": 66,
+   "n_pairs": 276,
+   "cells_checked": 6900,
+   "mismatches": 0,
+   "sum_to_one_failures": 0,
+   "exact_equal": true
+  },
+  "n6": {
+   "m": 3,
+   "n_subsamples": 220,
+   "n_pairs": 276,
+   "cells_checked": 13524,
+   "mismatches": 0,
+   "sum_to_one_failures": 0,
+   "exact_equal": true
+  },
+  "n8": {
+   "m": 4,
+   "n_subsamples": 495,
+   "n_pairs": 276,
+   "cells_checked": 22356,
+   "mismatches": 0,
+   "sum_to_one_failures": 0,
+   "exact_equal": true
+  }
+ },
+ "EXACT_EQUAL_ALL": true
+}

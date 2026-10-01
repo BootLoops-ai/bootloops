@@ -1,0 +1,269 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true,
+  "d0": "2"
+ },
+ "family": {
+  "name": "iccg",
+  "loops": [
+   "l1",
+   "l2"
+  ],
+  "legs": [
+   "P12",
+   "P56"
+  ],
+  "conservation": {},
+  "replacement": {
+   "P12^2": "p12sq",
+   "P56^2": "p56sq",
+   "(P12 - P56)^2": "p34sq"
+  },
+  "propagators": [
+   "l2^2 - m1sq",
+   "(P56 - l2)^2 - m2sq",
+   "l1^2 - m3sq",
+   "(P12 - P56 + l2 - l1)^2 - m4sq",
+   "(l1 + P56)^2",
+   "(l2 + P12)^2",
+   "(l1 + P12)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    1,
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -2,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    -1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    -2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    -1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    -2,
+    0,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 55,
+ "eps_order": 6,
+ "work_dir": "work_ge1_xm2",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 8,
+  "blackbox": {
+   "ibp_rank": 0,
+   "ibp_dot": 2,
+   "integral_order": 5,
+   "n_thread": 8,
+   "numeric_values": {
+    "p12sq": "-2",
+    "p34sq": "-2",
+    "p56sq": "-1",
+    "m1sq": "1",
+    "m2sq": "2",
+    "m3sq": "3",
+    "m4sq": "5"
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+# drawn graph: fig-5pt-nonplanar.tex (sha16 12446ca3171929de) panel (b) "non-planar double-pentagon" AS DRAWN
+# six vertex dots Q1, Q2, Cm, Cb, R1, R2; eight massless lines (rails Q1-Cm, Q2-Cb, Cm-R1, Cb-R2, Q1-Q2, R1-R2; crossed rungs Cm-R2, Cb-R1)
+# legs p1 at Q1, p2 at Q2, p3 at Cm (M3, wavy), p4 at Cb (M4, wavy), p5 at R1; L = E - V + 1 = 3 loops as drawn; p5 = -(p1+p2+p3+p4)
+# external legs (all incoming): p1, p2, p3, p4, p5; p5 = -(p1+p2+p3+p4)
+# leg virtualities: {"p1": "0", "p2": "0", "p3": "mm3", "p4": "mm4", "p5": "0"}
+# edge routing (spanning tree): [{"edge": ["Q1", "Cm"], "momentum": "-k1 - k3 + p1 + p2 + p4", "mass": "0", "tree_edge": true}, {"edge": ["Q2", "Cb"], "momentum": "k1 + k3 - p4", "mass": "0", "tree_edge": true}, {"edge": ["Cm", "R1"], "momentum": "k2 - k3 + p1 + p2 + p3 + p4", "mass": "0", "tree_edge": true}, {"edge": ["Cb", "R2"], "momentum": "k1", "mass": "0", "tree_edge": false}, {"edge": ["Q1", "Q2"], "momentum": "k1 + k3 - p2 - p4", "mass": "0", "tree_edge": true}, {"edge": ["R1", "R2"], "momentum": "k2", "mass": "0", "tree_edge": false}, {"edge": ["Cm", "R2"], "momentum": "-k1 - k2", "mass": "0", "tree_edge": true}, {"edge": ["Cb", "R1"], "momentum": "k3", "mass": "0", "tree_edge": false}]
+integralfamilies:
+  - name: "dpent_drawn_section_fig_b"
+    loop_momenta: [k1, k2, k3]
+    top_level_sectors: [255]
+    propagators:
+      - [ "(-k1 - k3 + p1 + p2 + p4)^2", 0 ]
+      - [ "(k1 + k3 - p4)^2", 0 ]
+      - [ "(k2 - k3 + p1 + p2 + p3 + p4)^2", 0 ]
+      - [ "(k1)^2", 0 ]
+      - [ "(k1 + k3 - p2 - p4)^2", 0 ]
+      - [ "(k2)^2", 0 ]
+      - [ "(-k1 - k2)^2", 0 ]
+      - [ "(k3)^2", 0 ]
+    cut_propagators: []

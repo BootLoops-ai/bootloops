@@ -1,0 +1,21 @@
+name = "GPLEval"
+uuid = "b7e4c9d2-8a1f-4e3b-9c5d-2f6a8b1c3d4e"
+version = "1.0.0"
+authors = ["Matthew D. Schwartz"]
+
+[deps]
+Arblib = "fb37089c-8514-4489-9461-98f9c8763369"
+Eichler = "e1c11e60-0d0e-4d51-a2a3-6b7b1c6e9a01"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+LandauAlphabet = "7a2b9c41-83f5-4d28-9e6a-1c5b0d2f8e33"
+
+[compat]
+Arblib = "1"
+julia = "1.10"
+
+[extras]
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test", "Random"]

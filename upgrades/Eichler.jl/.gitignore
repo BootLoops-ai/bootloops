@@ -1,0 +1,8 @@
+# Zenodo reference data is fetched on demand, not tracked
+# (see vendor/zenodo-2502.00118/README.md)
+vendor/zenodo-2502.00118/*.m
+vendor/zenodo-2502.00118/*.txt
+vendor/zenodo-2502.00118/record.json
+# compiled cross-check oracle (rebuild with ginac-oracle/build.sh)
+ginac-oracle/ginac_oracle
+*.tar

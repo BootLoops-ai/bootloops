@@ -1,0 +1,79 @@
+{
+ "labelled_graph_isomorphism": {
+  "found": true,
+  "n_found": 1,
+  "chosen": {
+   "leg_map": {
+    "p1": "p1",
+    "p2": "p2",
+    "p3": "p3",
+    "p4": "p4"
+   },
+   "identity_legs": true,
+   "mass_map": {
+    "1": "m2",
+    "0": "0"
+   },
+   "virt_map": {
+    "0": "0"
+   }
+  }
+ },
+ "unlabelled_graph_isomorphism": {
+  "found": true,
+  "n_found": 1,
+  "chosen": {
+   "leg_map": {
+    "p1": "p1",
+    "p2": "p2",
+    "p3": "p3",
+    "p4": "p4"
+   },
+   "identity_legs": true,
+   "mass_map": null,
+   "virt_map": null
+  }
+ },
+ "tool_isomorphism_to_signed_loop_perms_and_leg_perms_no_shifts": null,
+ "per_realization": [
+  {
+   "realization": 0,
+   "labelled": {
+    "found": true,
+    "n_found": 1,
+    "chosen": {
+     "leg_map": {
+      "p1": "p1",
+      "p2": "p2",
+      "p3": "p3",
+      "p4": "p4"
+     },
+     "identity_legs": true,
+     "mass_map": {
+      "1": "m2",
+      "0": "0"
+     },
+     "virt_map": {
+      "0": "0"
+     }
+    }
+   },
+   "unlabelled": {
+    "found": true,
+    "n_found": 1,
+    "chosen": {
+     "leg_map": {
+      "p1": "p1",
+      "p2": "p2",
+      "p3": "p3",
+      "p4": "p4"
+     },
+     "identity_legs": true,
+     "mass_map": null,
+     "virt_map": null
+    }
+   }
+  }
+ ],
+ "drawn": "graphspec_opp"
+}

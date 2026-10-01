@@ -1,0 +1,176 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true
+ },
+ "family": {
+  "name": "thrkite_h",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [
+   "p"
+  ],
+  "conservation": {},
+  "replacement": {
+   "p^2": "psq"
+  },
+  "propagators": [
+   "k1^2 - m1sq",
+   "(k1 - p)^2 - m2sq",
+   "k2^2 - Msq",
+   "(k2 - p)^2 - m3sq",
+   "(k1 - k2)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -1,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -2,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    -1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    0,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 80,
+ "eps_order": 4,
+ "work_dir": "thrkite_h_tm2",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "blackbox": {
+   "ibp_rank": 2,
+   "ibp_dot": 1,
+   "n_thread": 8,
+   "numeric_values": {
+    "psq": "-2",
+    "m1sq": "1",
+    "m2sq": "4",
+    "Msq": "9",
+    "m3sq": "2"
+   }
+  }
+ }
+}

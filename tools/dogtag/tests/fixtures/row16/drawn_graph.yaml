@@ -1,0 +1,15 @@
+# DRAWN GRAPH row 16 from figures/fig-icc-generic.tex (dictionary in its header: q1..q4 with m^2 = 1,2,3,5), Table 2 row 16 'masses^2 (1,2,3,5)', gallery tile 16.
+# leg dictionary: {"p1": "P56 at the apex Vb (cone sides m1,m2 meet)", "p2": "P34 at V1 (m1 side meets the scoop)", "p3": "-P12 at V2 (m2 side meets the scoop)", "arrows": "out-out-in"}
+# leg labels (identity): {"p1": "off", "p2": "off", "p3": "off"}
+# leg virtualities (kinematics): {"p1": "p56^2 = -1", "p2": "p34^2 = x", "p3": "p12^2 = x"}
+# convention: all legs incoming, p_N = -(p_1 + ... + p_{N-1}); masses as m^2 in the mass field
+integralfamilies:
+  - name: "iccg_drawn"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [15]
+    propagators:
+      - [ "(l2)^2", 1 ]
+      - [ "(-l2 - p1)^2", 2 ]
+      - [ "(l1)^2", 3 ]
+      - [ "(-l1 + l2 - p2)^2", 5 ]
+    cut_propagators: []

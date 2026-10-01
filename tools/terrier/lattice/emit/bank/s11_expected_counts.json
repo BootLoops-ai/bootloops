@@ -1,0 +1,64 @@
+{
+ "V2a_U_U2": {
+  "candidates": 1280,
+  "entries": 162,
+  "per_trace": {
+   "12": 2,
+   "16": 2,
+   "20": 8,
+   "24": 8,
+   "28": 14,
+   "32": 14,
+   "36": 22,
+   "40": 28,
+   "44": 32,
+   "48": 32
+  }
+ },
+ "V2b_U_G22": {
+  "candidates": 2560,
+  "entries": 322,
+  "per_trace": {
+   "8": 2,
+   "12": 4,
+   "16": 10,
+   "20": 14,
+   "24": 20,
+   "28": 24,
+   "32": 36,
+   "36": 36,
+   "40": 52,
+   "44": 52,
+   "48": 72
+  }
+ },
+ "V3_A5_A5": {
+  "box_B": 300,
+  "candidates_dedup": 4004,
+  "entries": 8,
+  "note": "t=10 (m=1) is the scalar fiber t^2=4*Delta: EMPTY by the Validity Lemma (D0chi = t^2-4*Delta must be > 0), so t=10 is an empty-fiber pin; fibers t<=16 all empty",
+  "per_t_m": {
+   "24,2": 2,
+   "26,1": 2,
+   "34,3": 2,
+   "46,3": 2
+  },
+  "per_trace": {
+   "24": 2,
+   "26": 2,
+   "34": 2,
+   "46": 2
+  },
+  "s0_orbits_per_trace": {
+   "24": 2,
+   "26": 2,
+   "34": 2,
+   "46": 2
+  },
+  "scalar_rejected_candidates": 6108,
+  "t10_fiber_empty": true,
+  "tcap": 48
+ },
+ "predicate": "det M != 0, 0 < t <= cap, D0chi = t^2-4*Delta > 0",
+ "role": "expected entry counts for the s11.jl validation cells V2 (U,U(2)), (U,[[2,2],[2,0]]) and V3 (A5,A5), obtained independently of the s11.jl engine route; s11.jl gates V2/V3 must reproduce them exactly"
+}

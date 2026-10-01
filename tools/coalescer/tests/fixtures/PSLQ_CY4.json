@@ -1,0 +1,498 @@
+{
+ "producer": {
+  "script": "pslq_calpha.py",
+  "script_sha256": "f2d2cafe097b3de919bf0ea23a752f0fb0b250eace51bc8cce23b23e44e158f4",
+  "calpha_rings_sha256": "f31b186255d2aa1f41166382ed00881d927eafde7c82ded8c9a30d14a745ce46",
+  "engine": {
+   "path": "tools/lockpick/pslq_gate.py",
+   "file_sha256": "24f79bed90c9c166d922bfb23d0f54cb4164ed9d82c91540580338a869c0c864",
+   "label": "tools/lockpick/pslq_gate.py (earlier pin)",
+   "protocol_sha256": "ede58bdc5aed46be395f99155d1bd97a15249e611ae318d3f0d5aa4638b1b219",
+   "pinned_protocol_sha256": "ede58bdc5aed46be395f99155d1bd97a15249e611ae318d3f0d5aa4638b1b219",
+   "unlisted_allowed": false
+  },
+  "stamp_utc": "2026-09-07T01:18:19Z",
+  "argv": [
+   "--family",
+   "CY4",
+   "--from-gate",
+   "GATE.json",
+   "--k3-routeB",
+   "ROUTEB_K3_ctrl.json",
+   "--ring",
+   "extended",
+   "--form",
+   "log,additive",
+   "--out",
+   "PSLQ_CY4.json"
+  ],
+  "python": "3.12.3",
+  "mpmath": "1.3.0"
+ },
+ "family": "CY4",
+ "msq": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  25
+ ],
+ "alphas": [
+  "3/2"
+ ],
+ "pi_power": "2",
+ "ring": "extended",
+ "forms": [
+  "log",
+  "additive"
+ ],
+ "targets": {
+  "3/2": {
+   "digits": 248,
+   "head40": "-0.005664026354625174893890651207040158150"
+  },
+  "K3_control": {
+   "digits": 195,
+   "head40": "-0.015314691539494223597536847175360262261"
+  }
+ },
+ "sources": {
+  "3/2": "GATE.json targets[3/2] (248 d)",
+  "K3_control": "ROUTEB_K3_ctrl.json (acc_bits 650 -> 195 d)"
+ },
+ "scans": [
+  {
+   "form": "log",
+   "alpha": "3/2",
+   "target_digits": 248,
+   "names": [
+    "1",
+    "log_pi",
+    "log2",
+    "log3",
+    "log5",
+    "log7",
+    "logG(1/4)",
+    "logG(1/3)"
+   ],
+   "dps_plan": {
+    "fit_pair": [
+     178,
+     208
+    ],
+    "reverify_dps": 243,
+    "held_out_digits": 35,
+    "note": "sealrun plan"
+   },
+   "rungs": [
+    {
+     "height": 10000,
+     "capacity": {
+      "required": 56.0,
+      "available": 178,
+      "ok": true
+     },
+     "result": [
+      2,
+      0,
+      4,
+      6,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "HIT": {
+    "height_rung": 10000,
+    "vector": [
+     2,
+     0,
+     4,
+     6,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "vector_named": {
+     "T": 2,
+     "1": 0,
+     "log_pi": 4,
+     "log2": 6,
+     "log3": 0,
+     "log5": 1,
+     "log7": 0,
+     "logG(1/4)": 0,
+     "logG(1/3)": 0
+    },
+    "height": 6,
+    "reverify": {
+     "relresid": "1.132e-244",
+     "ok": true
+    },
+    "pigeonhole_floor_log10": -6.225210003069149
+   },
+   "expectation": {
+    "vector": [
+     2,
+     0,
+     4,
+     6,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "note": "derived from the closed form -sqrt(5)/(40pi^2)",
+    "match": true
+   },
+   "verdict": "CLOSED"
+  },
+  {
+   "form": "log",
+   "alpha": "K3_control",
+   "target_digits": 195,
+   "names": [
+    "1",
+    "log_pi",
+    "log2",
+    "log3",
+    "log5",
+    "log7",
+    "logG(1/4)",
+    "logG(1/3)"
+   ],
+   "dps_plan": {
+    "fit_pair": [
+     125,
+     155
+    ],
+    "reverify_dps": 190,
+    "held_out_digits": 35,
+    "note": "sealrun plan"
+   },
+   "rungs": [
+    {
+     "height": 10000,
+     "capacity": {
+      "required": 56.0,
+      "available": 125,
+      "ok": true
+     },
+     "result": [
+      2,
+      0,
+      2,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "HIT": {
+    "height_rung": 10000,
+    "vector": [
+     2,
+     0,
+     2,
+     4,
+     3,
+     0,
+     0,
+     0,
+     0
+    ],
+    "vector_named": {
+     "T": 2,
+     "1": 0,
+     "log_pi": 2,
+     "log2": 4,
+     "log3": 3,
+     "log5": 0,
+     "log7": 0,
+     "logG(1/4)": 0,
+     "logG(1/3)": 0
+    },
+    "height": 4,
+    "reverify": {
+     "relresid": "1.343e-191",
+     "ok": true
+    },
+    "pigeonhole_floor_log10": -4.816479930623699
+   },
+   "expectation": {
+    "vector": [
+     2,
+     0,
+     2,
+     4,
+     3,
+     0,
+     0,
+     0,
+     0
+    ],
+    "note": "derived from the closed form -sqrt(3)/(36pi)",
+    "match": true
+   },
+   "verdict": "CLOSED"
+  },
+  {
+   "form": "additive",
+   "alpha": "3/2",
+   "target_digits": 248,
+   "names": [
+    "1",
+    "sqrt5",
+    "sqrt2",
+    "sqrt3",
+    "sqrt7"
+   ],
+   "dps_plan": {
+    "fit_pair": [
+     178,
+     208
+    ],
+    "reverify_dps": 243,
+    "held_out_digits": 35,
+    "note": "sealrun plan"
+   },
+   "rungs": [
+    {
+     "height": 10000,
+     "capacity": {
+      "required": 44.0,
+      "available": 178,
+      "ok": true
+     },
+     "result": [
+      40,
+      0,
+      1,
+      0,
+      0,
+      0
+     ]
+    }
+   ],
+   "HIT": {
+    "height_rung": 10000,
+    "vector": [
+     40,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "vector_named": {
+     "T": 40,
+     "1": 0,
+     "sqrt5": 1,
+     "sqrt2": 0,
+     "sqrt3": 0,
+     "sqrt7": 0
+    },
+    "height": 40,
+    "reverify": {
+     "relresid": "0.0",
+     "ok": true
+    },
+    "pigeonhole_floor_log10": -8.010299956639813
+   },
+   "expectation": {
+    "vector": [
+     40,
+     0,
+     1,
+     0,
+     0,
+     0
+    ],
+    "note": "scan of the closed form value -sqrt(5)/(40pi^2) x pi^2",
+    "match": true
+   },
+   "verdict": "CLOSED"
+  }
+ ],
+ "controls": {
+  "log": {
+   "125,155": {
+    "ok": true,
+    "detail": [
+     {
+      "control": "synthetic (3*1-7*log2)/5",
+      "got": [
+       5,
+       -3,
+       7
+      ],
+      "want": [
+       5,
+       -3,
+       7
+      ],
+      "ok": true
+     },
+     {
+      "control": "planted (3*log_pi - 7*log2 + 2*logG(1/3))/5",
+      "got": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       0,
+       0,
+       0,
+       -2
+      ],
+      "want": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       0,
+       0,
+       0,
+       -2
+      ],
+      "ok": true
+     }
+    ],
+    "negative": {
+     "control": "sha512-derived x logG(1/3) at height 1e+06",
+     "got": null,
+     "ok": true
+    },
+    "dps_pair": [
+     125,
+     155
+    ]
+   },
+   "178,208": {
+    "ok": true,
+    "detail": [
+     {
+      "control": "synthetic (3*1-7*log2)/5",
+      "got": [
+       5,
+       -3,
+       7
+      ],
+      "want": [
+       5,
+       -3,
+       7
+      ],
+      "ok": true
+     },
+     {
+      "control": "planted (3*log_pi - 7*log2 + 2*logG(1/3))/5",
+      "got": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       0,
+       0,
+       0,
+       -2
+      ],
+      "want": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       0,
+       0,
+       0,
+       -2
+      ],
+      "ok": true
+     }
+    ],
+    "negative": {
+     "control": "sha512-derived x logG(1/3) at height 1e+06",
+     "got": null,
+     "ok": true
+    },
+    "dps_pair": [
+     178,
+     208
+    ]
+   }
+  },
+  "additive": {
+   "178,208": {
+    "ok": true,
+    "detail": [
+     {
+      "control": "synthetic (3*1-7*sqrt2)/5",
+      "got": [
+       5,
+       -3,
+       7
+      ],
+      "want": [
+       5,
+       -3,
+       7
+      ],
+      "ok": true
+     },
+     {
+      "control": "planted (3*sqrt5 - 7*sqrt2 + 2*sqrt7)/5",
+      "got": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       -2
+      ],
+      "want": [
+       5,
+       0,
+       -3,
+       7,
+       0,
+       -2
+      ],
+      "ok": true
+     }
+    ],
+    "negative": {
+     "control": "sha512-derived x sqrt7 at height 1e+08",
+     "got": null,
+     "ok": true
+    },
+    "dps_pair": [
+     178,
+     208
+    ]
+   }
+  }
+ },
+ "verdicts": {
+  "log:3/2": "CLOSED",
+  "log:K3_control": "CLOSED",
+  "additive:3/2": "CLOSED"
+ },
+ "wall_s": 0.92,
+ "fails": [],
+ "refusals": [],
+ "status": "CLOSED"
+}

@@ -1,0 +1,45 @@
+{
+ "schema": "subtropica-euler-quad-v1",
+ "id": "divergent_xinv_1var",
+ "title": "DIVERGENT control: int dx/(x(1+x)) -- pipeline must refuse loudly",
+ "divergent": true,
+ "prefactor": {
+  "c": "1",
+  "eps_power": 0,
+  "gammas": [],
+  "gammaE_eps": "0"
+ },
+ "nu": [
+  [
+   "-1",
+   "0"
+  ]
+ ],
+ "polys": [
+  {
+   "poly": "1 + x",
+   "exp": [
+    "-1",
+    "0"
+   ]
+  }
+ ],
+ "vars": [
+  "x"
+ ],
+ "kinvars": [],
+ "notes": "Deliberately divergent (log at x->0; NOT regulated by eps -- the integrand carries no eps). Phase-A gate (iv): standalone run must surface {'divergent':true} as FATAL; any numeric or symbolic 'result' for this fixture is a pipeline bug. verify.jl refuses to compare anything against it.",
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:46+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "control_citation": "control outcome on the v1.2.8 binary: 1/(x(1+x)) returns {'result':[]} silently without check_divergences, loud {'divergent':true} with it (CONTRACTS.md section a)"
+ }
+}

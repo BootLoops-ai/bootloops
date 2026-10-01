@@ -1,0 +1,16 @@
+# DRAWN GRAPH row 23 from figures/fig-threshold-kite.tex (dictionary in its header), caption fig:threshold-kite, Table 2 row 23 'masses^2 (1,4,9,2,0)', gallery tile 23.
+# leg dictionary: {"p1": "p in at L", "p2": "-p at R (p out)"}
+# leg labels (identity): {"p1": "off", "p2": "off"}
+# leg virtualities (kinematics): {"p1": "p^2 = t", "p2": "p^2 = t"}
+# convention: all legs incoming, p_N = -(p_1 + ... + p_{N-1}); masses as m^2 in the mass field
+integralfamilies:
+  - name: "thrkite_drawn"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [31]
+    propagators:
+      - [ "(k1)^2", 1 ]
+      - [ "(k1 - p1)^2", 4 ]
+      - [ "(k2)^2", 9 ]
+      - [ "(k2 - p1)^2", 2 ]
+      - [ "(k1 - k2)^2", 0 ]
+    cut_propagators: []

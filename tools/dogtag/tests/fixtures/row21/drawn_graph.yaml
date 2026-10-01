@@ -1,0 +1,17 @@
+# DRAWN GRAPH of row 21, built by the identity census from fig-lbl3x.tex + caption in lbl3x.tex (K4: massive perimeter, two massless crossing diagonals, p1 TL, p2 TR, p3 BR, p4 BL) + Table 2 label
+# vertices/edges/legs as drawn; edge multiplicity (nu) = [1, 1, 1, 1, 1, 1]
+# legs: p1@TL (p^2=0), p2@TR (p^2=0), p3@BR (p^2=0), p4@BL (p^2=0)
+# loop momenta ['k', 'a', 'b']; {'p4': '-p1-p2-p3'}; cyclic leg order as drawn: ['p1', 'p2', 'p3', 'p4']
+# routing chosen by the census: k on the left perimeter line, a = diagonal TL-BR, b = diagonal TR-BL; m^2 = 1 as in the record
+integralfamilies:
+  - name: "LBL3X_drawn"
+    loop_momenta: [k, a, b]
+    top_level_sectors: [63]
+    propagators:
+      - [ "k", 1 ]
+      - [ "k + p1 - a", 1 ]
+      - [ "k + p1 + p2 - a - b", 1 ]
+      - [ "k - p4 - b", 1 ]
+      - [ "a", 0 ]
+      - [ "b", 0 ]
+    cut_propagators: []

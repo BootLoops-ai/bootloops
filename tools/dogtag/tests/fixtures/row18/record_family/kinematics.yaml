@@ -1,0 +1,17 @@
+# kinematics of arXiv:2501.14435 families 2 and 5 (row 18), read from paper.txt:
+# p1, p2 = the incoming gluon momenta (L154, L290), massless (Figure 1 caption L242-243: thin lines are massless
+# particles; the gluon polarizations of Eq. 2.3, L171-174); s = (p1 + p2)^2 (Eq. 2.1, L153); the Higgs is
+# outgoing (L243) and off-shell with p3^2 = s (L151-153); its momentum p3 = p1 + p2 (the figures' third leg p3).
+# masses: mt2 = mt^2, M2 = M^2, kept symbolic as in the reference (Eq. 2.2, L158-161).
+kinematics:
+  incoming_momenta: [p1, p2]
+  outgoing_momenta: [p3]
+  momentum_conservation: [p3, p1+p2]
+  kinematic_invariants:
+    - [s, 2]
+    - [mt2, 2]
+    - [M2, 2]
+  scalarproduct_rules:
+    - [[p1, p1], 0]
+    - [[p2, p2], 0]
+    - [[p1, p2], s/2]

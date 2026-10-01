@@ -1,0 +1,15 @@
+{
+  "name": "ladder3",
+  "description": "3-loop planar triple-box ladder, all-massless on-shell 2->2. 10 edges, 8 vertices, L=3. Known alphabet {s, t, s+t}.",
+  "edges": [
+    [1,7,0], [7,8,0], [8,2,0],
+    [4,9,0], [9,10,0], [10,3,0],
+    [1,4,0], [7,9,0], [8,10,0], [2,3,0]
+  ],
+  "nodes": {"1": [1], "2": [2], "3": [3], "4": [4]},
+  "kinematics": {
+    "invariants": ["s", "t"],
+    "external_masses": {"1": 0, "2": 0, "3": 0, "4": 0},
+    "channels": {"1,2": "s", "2,3": "t", "1,3": "-s-t"}
+  }
+}

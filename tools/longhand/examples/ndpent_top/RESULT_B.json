@@ -1,0 +1,125 @@
+{
+ "receipt": "RESULT stage B: the sum of 28 landed chunks of 28 (values add per order; bars add in quadrature); NOT a quoted value -- the digits come from the stage-to-stage COMPARE",
+ "stamp_utc": "2026-09-07T01:56:48Z",
+ "stage": "B",
+ "chunks_manifest": "CHUNKS_B.json",
+ "chunks_manifest_sha256": "62e198c19e98200dfbb49bf0913904f141e8a64ea92dacf9fb8639116f68ca11",
+ "n_chunks": 28,
+ "n_landed": 28,
+ "landed": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27
+ ],
+ "missing": [],
+ "complete": true,
+ "kernels_cover_package": true,
+ "n_kernels": 968,
+ "orders": [
+  {
+   "regulator_powers": [
+    -4
+   ],
+   "value_re": 0.00902777777777804,
+   "value_im": 0.0,
+   "err_re": 3.4978010091748574e-15,
+   "err_im": 0.0,
+   "rel_err": 3.8744872717012677e-13,
+   "bar_digits": 12
+  },
+  {
+   "regulator_powers": [
+    -3
+   ],
+   "value_re": 0.0261809260313331,
+   "value_im": 0.0,
+   "err_re": 1.1231393018584768e-09,
+   "err_im": 0.0,
+   "rel_err": 4.289914346476185e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    -2
+   ],
+   "value_re": 0.09350840743483539,
+   "value_im": 0.0,
+   "err_re": 6.294447796143462e-09,
+   "err_im": 0.0,
+   "rel_err": 6.73142444494092e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    -1
+   ],
+   "value_re": 0.274398504238719,
+   "value_im": 0.0,
+   "err_re": 2.6726566729291863e-08,
+   "err_im": 0.0,
+   "rel_err": 9.740055545652866e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    0
+   ],
+   "value_re": 0.8246341248952935,
+   "value_im": 0.0,
+   "err_re": 7.344564291155832e-08,
+   "err_im": 0.0,
+   "rel_err": 8.906452048765742e-08,
+   "bar_digits": 7
+  }
+ ],
+ "chunk_walls_s": {
+  "n": 28,
+  "sum": 2688.6800000000003,
+  "max": 319.47
+ },
+ "chunk_maxrss_kb": {
+  "n": 28,
+  "max": 91232
+ },
+ "settings": {
+  "stage": "B",
+  "W": "8",
+  "points": "1e5",
+  "presamples": "1e4",
+  "shifts": "32",
+  "epsrel": "1e-7",
+  "epsabs_per_chunk": "1.706e-10",
+  "lattice_candidates": "0",
+  "chunk_sectors": "12",
+  "n_chunks": "28",
+  "standin": "0",
+  "stamp_utc": "2026-09-07T01:11:58Z",
+  "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+  "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+ }
+}

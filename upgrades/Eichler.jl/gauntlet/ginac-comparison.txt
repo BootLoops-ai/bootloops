@@ -1,0 +1,11 @@
+e1 = E1(tau;chi0,chi1): |Eichler - GiNaC| = 3.908802148549627e-155  (<1e-100: true)
+e2 = E1(2tau;chi0,chi1): |Eichler - GiNaC| = 9.76964185295371e-155  (<1e-100: true)
+f3(tau): |Eichler - GiNaC| = 1.6000902992921044e-153  (<1e-100: true)
+f4(tau): |Eichler - GiNaC| = 6.285458388711184e-154  (<1e-100: true)
+qbar_t I(f3;q): |Eichler - GiNaC| = 7.505308877212761e-153  (<1e-100: true)
+qbar_t I(1,f3;q): |Eichler - GiNaC| = 1.3087292437435628e-152  (<1e-100: true)
+qbar_t I(1,f4,1,f3;q): |Eichler - GiNaC| = 1.9106192526795855e-152  (<1e-100: true)
+qbar_p I(f3;q): |Eichler - GiNaC| = 5.339899019434153e-153  (<1e-100: true)
+qbar_p I(1,f3;q): |Eichler - GiNaC| = 7.626941836853759e-153  (<1e-100: true)
+qbar_p I(1,f4,1,f3;q): |Eichler - GiNaC| = 8.561489417005137e-153  (<1e-100: true)
+ALL_AGREE_100_DIGITS = true

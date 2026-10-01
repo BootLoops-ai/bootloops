@@ -1,0 +1,38 @@
+# DRAWN GRAPH built from the figure source, not from any family file
+# figure figures/fig-kite-unequal.tex of the paper source  sha256 3d22e06aa3aea5035568ed0524997de130ea18c5e1b3e53822be9c565da97dcb
+# family-table label: Unequal-mass kite top $(1,1,2)$, $\eps^0$
+# caption/text source: kite-unequal.tex fig caption ((m_1^2,m_3^2,m_5^2)=(1,1,2): two of mass 1 (red) and the distinguished leg of mass sqrt2 (blue)); gallery-30.tex tile 14 unequal-mass kite
+# draw lines parsed (verbatim, brackets removed):
+#   \draw<ext> (-1.1,0) -- (L);
+#   \draw<ext> (R) -- (5.1,0);
+#   \draw<massM1>   (L) -- (T);
+#   \draw<massless> (T) -- (R);
+#   \draw<massless> (L) -- (B);
+#   \draw<massM2>   (B) -- (R);
+#   \draw<massM1>   (T) -- (B);
+# mass palette from figures/fdiag-style.tex of the paper source sha256 ed7f1eade6ea0d16a013e2b6b35506745de84a9e00b3a6566dc6f762105a2842:
+#   massless/.style={thin, black},
+#   masslessTHICK/.style={thick, black},
+#   massive/.style={ultra thick, red!70!black},      % m1=1 (red) -- backward compat alias
+#   massM1/.style={ultra thick, red!70!black},       % m1 = 1
+#   massM2/.style={ultra thick, blue!75!black},      % m2 = sqrt(2)
+#   massM3/.style={ultra thick, green!55!black},     % m3 = sqrt(3)
+#   massM4/.style={ultra thick, orange!90!black},    % m4 = 2
+#   massHeavy/.style={ultra thick, violet},          % heavy M: top, Z, H
+# routing (loop momenta on the non-tree edges, tree edges by conservation; p in, p out):
+#   L-T  style massM1  m^2 1  momentum k1
+#   T-R  style massless  m^2 0  momentum k2
+#   L-B  style massless  m^2 0  momentum -k1 + p
+#   B-R  style massM2  m^2 2  momentum -k2 + p
+#   T-B  style massM1  m^2 1  momentum k1 - k2
+integralfamilies:
+  - name: "drawn"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [31]
+    propagators:
+      - [ "(k1)^2 - 1", 0 ]
+      - [ "(k2)^2", 0 ]
+      - [ "(-k1 + p)^2", 0 ]
+      - [ "(-k2 + p)^2 - 2", 0 ]
+      - [ "(k1 - k2)^2 - 1", 0 ]
+    cut_propagators: []

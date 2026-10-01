@@ -1,0 +1,24 @@
+{
+  "name": "synth_7letter",
+  "description": "Synthetic 7-letter validation alphabet (invented letters, no physics family): the seven dlog-independent irreducible letters u, v, 1-u, 1-v, 1+u, 1+v, 1-u*v on the plane (u,v), with a FORMAL Z2xZ2 parity grading on 1+u / 1+v standing in for radical parity on a rationalized chart, and a formal three-channel Steinmann grading (A on the u-family, B on the v-family, C on 1-u*v). Exercises the same cut structure as a 7-letter physical alphabet: a 5-letter first-entry set, a 5-letter last-entry set, the Steinmann adjacent-channel veto, and the parity projection to the even sector. The battery (test_ansatzer.py T4) checks its collapse table with and without the channel block.",
+  "vars": ["u", "v"],
+  "letters": {
+    "u":    "u",
+    "v":    "v",
+    "omu":  "1-u",
+    "omv":  "1-v",
+    "opu":  "1+u",
+    "opv":  "1+v",
+    "omuv": "1-u*v"
+  },
+  "first_entry": ["u", "v", "omu", "omv", "omuv"],
+  "last_entry":  ["u", "v", "opu", "opv", "omuv"],
+  "parity": {"opu": [1, 0], "opv": [0, 1]},
+  "parity_target": [0, 0],
+  "channel": {
+    "u": "A", "omu": "A", "opu": "A",
+    "v": "B", "omv": "B", "opv": "B",
+    "omuv": "C"
+  },
+  "_note": "First-entry dimension at w1 is 5 by construction (five multiplicatively independent letters in first_entry); the parity target [0,0] keeps only words with an even count of each of opu, opv. The channel tags make the w2 Steinmann count hand-checkable: same-channel FE x LE words = {u,omu}x{u,opu} + {v,omv}x{v,opv} + {omuv}x{omuv} = 4+4+1 = 9."
+}

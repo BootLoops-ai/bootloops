@@ -1,0 +1,8 @@
+FORM 5.0.1 (Jun 24 2026, v5.0.1)                 Run: Tue Jul  7 15:30:11 2026
+    #-
+COUNT onshell_nodes = 30
+COUNT onshell_edges = 30
+COUNT census_topo = 20
+COUNT vac3_nodes = 74
+COUNT vac3_edges = 74
+  0.00 sec out of 0.00 sec

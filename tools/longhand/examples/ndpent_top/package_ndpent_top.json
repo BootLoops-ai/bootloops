@@ -1,0 +1,40 @@
+{
+  "name": "ndpent_top",
+  "type": "sum",
+  "max_dimension": 7,
+  "regulators": [
+    "eps"
+  ],
+  "realp": [
+    "s12",
+    "s23",
+    "s34",
+    "s45",
+    "s15",
+    "mm3",
+    "mm4"
+  ],
+  "complexp": [],
+  "complex_result": false,
+  "requested_orders": [
+    0
+  ],
+  "integrals": [
+    "ndpent_top_integral"
+  ],
+  "sums": {
+    "ndpent_top": [
+      {
+        "integral": "ndpent_top_integral",
+        "coefficient": "ndpent_top_integral_coefficient0.txt",
+        "coefficient_lowest_orders": [
+          0
+        ],
+        "coefficient_highest_orders": [
+          4
+        ]
+      }
+    ]
+  },
+  "generated_by": "pySecDec 1.6.6 (d5762dda) [Python 3.12.3, NumPy 2.4.1, SymPy 1.14.0]"
+}

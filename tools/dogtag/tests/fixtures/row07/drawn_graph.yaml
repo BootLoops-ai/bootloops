@@ -1,0 +1,24 @@
+# Drawn graph of row 7, transcribed from figures/fig-c3-dbox.tex and its caption
+# (sections/results/c3-dbox.tex): central rung a2-b2 massM1 (red, m, msq = m^2), the
+# other six lines massless, legs p2@a1 p1@b1 p3@a3 p4@b3 massless on-shell, all incoming,
+# p4 = -p1-p2-p3; s=(p1+p2)^2, t=(p2+p3)^2.
+# Propagator momenta derived by spanning-tree routing in the census script.
+# figure source fig-c3-dbox.tex sha16 512e38eb57e020eb
+# edge list: a1-a2[0]; a2-a3[0]; b1-b2[0]; b2-b3[0]; a1-b1[0]; a3-b3[0]; a2-b2[msq]
+# legs: p2@a1, p1@b1, p3@a3, p4@b3
+integralfamilies:
+  - name: "drawn_row07"
+    loop_momenta: [k1, k2]
+    propagators:
+      - [ "k1 + k2 + p1 + p2 + p4", 0 ]
+      - [ "k1 - p3", 0 ]
+      - [ "-k1 - k2 + p1 + p2 + p3", 0 ]
+      - [ "-k1 + p1 + p2 + p3", 0 ]
+      - [ "-k1 - k2 + p2 + p3", 0 ]
+      - [ "k1", 0 ]
+      - [ "k2", msq ]
+    top_level_sectors: [127]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4]
+    momentum_conservation: {p4: "-p1 - p2 - p3"}
+    leg_virtualities: {p1: "0", p2: "0", p3: "0", p4: "0"}

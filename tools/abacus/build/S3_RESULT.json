@@ -1,0 +1,119 @@
+{
+ "stage": "S3",
+ "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d",
+ "verdict": "S3-PASS",
+ "battery": "BATTERY-PASS(11/11, B5 RUNS+PASS)",
+ "checks_ok": "22/22",
+ "member_rows": [
+  {
+   "member": "B2",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "run_s2 replay S2-PASS (14/14)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B3",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "run_s2 replay S2-PASS (both integer routes + tie receipts inside)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B1",
+   "verdict": "PASS",
+   "primes": [
+    13,
+    31
+   ],
+   "note": "native re-exercise: blocks+C7+theta+pslq+integer routes, both primes",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B4",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "O_K receipts + a_P=0 both routes both primes + deg-16 assembly",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B4s",
+   "verdict": "PASS",
+   "primes": [
+    29
+   ],
+   "note": "(a_P,b_P)=(-6,-2)/(-6,+2) both routes; E[3] congruence; flip detector",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B5",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    29,
+    31
+   ],
+   "note": "Weil-restriction identity both routes, F_p and F_p^2 legs exercised",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N1",
+   "verdict": "PASS",
+   "primes": [
+    13
+   ],
+   "note": "FAIL-as-required: riemann-relation-tau-symmetry fired on entry (1,2)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N2",
+   "verdict": "PASS",
+   "primes": [
+    11
+   ],
+   "note": "FAIL-as-required: polarization-type-frobenius-normal-form, no tau emitted",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N3",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "FAIL-as-required: OK-action-rho-square-eq-minus5 named",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N4",
+   "verdict": "PASS",
+   "primes": [
+    13
+   ],
+   "note": "UNDECIDED-PRECISION as required; no integer emitted; needed-dps quoted",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N5",
+   "verdict": "PASS",
+   "primes": [
+    29
+   ],
+   "note": "FAIL-SIGN-PIN as pre-declared in SEEDS (rides seeds sha)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  }
+ ],
+ "wall_actuals": {
+  "elapsed_s": 36.716,
+  "rss_gb": 0.1035
+ }
+}

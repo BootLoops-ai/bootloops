@@ -1,0 +1,10 @@
+jobs:
+ - reduce_sectors:
+    reduce:
+     - {topologies: [toybox], sectors: [15], r: 5, s: 1}
+    select_integrals:
+      select_mandatory_recursively:
+        - {topologies: [toybox], sectors: [15], r: 5, s: 1, d: 2}
+    preferred_masters: preferred
+    integral_ordering: 5
+    run_initiate: masters

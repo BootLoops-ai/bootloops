@@ -1,0 +1,18 @@
+{
+ "family": "ndpent_top",
+ "integral": "ndpent_top_integral",
+ "point_of_record": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8",
+ "n_sectors": 332,
+ "n_kernels": 968,
+ "files": {
+  "builtin.so": "480bcfb379f1d70e80915b3a4761f402ba40eb4d41921fbb2431add624e9bbdc",
+  "ndpent_top.json": "bbf688c95499ee7e38087905e30e22f9dfa5750d4d86d326add5284041b67c93",
+  "ndpent_top_integral.json": "42b051c5fdd0d6f49d9d71c4989bd6681583e48e6e1581694cac8feb970c13ec",
+  "ndpent_top_integral.so": "166612976659192ebf0e3b730f2f8e01c52ac3475849116c5f2f320ffdb6f385",
+  "coefficients/ndpent_top_integral_coefficient0.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+ },
+ "generate_receipt_sha256": "907489c509404e6f34c1093918c7490808ad907cf14795d5fdd7e49b4064eeed",
+ "generator": "pySecDec 1.6.6 loop_package (geometric decomposition, no contour deformation, requested order eps^0) + make disteval",
+ "note": "the compiled package (13 MB disteval/ + 77 MB sources) is a build of the host it was compiled on and is NOT delivered with this tool; --disteval-dir must match these pins or run --unpinned-package, labeled",
+ "stamp_utc": "2026-09-07T03:14:16Z"
+}

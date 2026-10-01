@@ -1,0 +1,84 @@
+{
+ "_what": "checked-answer comparator fixture for the deform_transport battery: the measured control endpoints the battery COPAIRs its fresh runs against. Values were script-extracted from the full-scale reference receipts; the receipts themselves are not distributed.",
+ "_producer": {
+  "script": "extracted from the reference receipts by a build script",
+  "stamp_utc": "2026-09-02T12:26:52Z"
+ },
+ "cal_a": {
+  "convention_measured": "Rp = 1 - chi2(-1) ap T + p T^2"
+ },
+ "cal_b": {
+  "d_star": {
+   "23": 6,
+   "29": 3
+  }
+ },
+ "wall_rows_of_record": {
+  "recipe1": {
+   "twist": [
+    [
+     "1-x",
+     2
+    ],
+    [
+     "1+x",
+     3
+    ],
+    [
+     "Phi3",
+     1
+    ],
+    [
+     "Phi5",
+     1
+    ]
+   ],
+   "s_twist": 15,
+   "d_star_A": 0,
+   "n_gens_A": 3,
+   "d_star_B": 0,
+   "n_gens_B": 4,
+   "verdict_head": "CAL-D-NOT-CLEAN"
+  },
+  "recipe2": {
+   "twist": [
+    [
+     "1-x",
+     3
+    ],
+    [
+     "1+x",
+     5
+    ],
+    [
+     "Phi3",
+     1
+    ],
+    [
+     "Phi5",
+     1
+    ]
+   ],
+   "s_twist": 15,
+   "d_star_A": 0,
+   "n_gens_A": 3,
+   "GE_mode_A": "gauge-well-defined",
+   "verdict_head": "CAL-D2-NOT-CLEAN"
+  }
+ },
+ "mover_map": {
+  "commutant_dim": 8,
+  "n_gauge_invariant": 5,
+  "movers": [
+   1,
+   6,
+   7
+  ],
+  "diagonal_support_dirs": [
+   1,
+   6,
+   7
+  ],
+  "movers_equal_diagonal_support": true
+ }
+}

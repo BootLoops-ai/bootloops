@@ -1,0 +1,8 @@
+{
+  "_comment": "Large-mass toy, a 1-loop triangle: D1=l^2-m, D2=(l+P)^2-m, D3=(l+p1)^2-M2. M2=1/beta large; m=1,s=-1. Region-I-only list = the trap that converged to WRONG value (ebr-series-wrong-value-trap).",
+  "G": "(x1+x2+x3)*(1+x1+x2+M2*x3) + x1*x2",
+  "kin": ["M2"],
+  "x": ["x1","x2","x3"],
+  "kin_weight": {"M2": -1},
+  "regions": [[0,0,1]]
+}

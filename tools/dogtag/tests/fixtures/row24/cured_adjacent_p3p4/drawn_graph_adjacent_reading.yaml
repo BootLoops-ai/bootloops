@@ -1,0 +1,19 @@
+# the ADJACENT reading of row 24: same tile graph with p3, p4 off shell (equal mass mm), from the table's status text "the adjacent-legs crossing $p_3^2{=}p_4^2{=}m^2$ that carries the two-mass threshold ($154$ masters, count from the record only) and the generic-mass $219$/$190$-master families (symbol level only) are not solved here"
+# and the section figure caption (fivept-nonplanar.tex: legs 3, 4 adjacent off shell)
+# external legs (all incoming): p1, p2, p3, p4, p5; p5 = -(p1+p2+p3+p4)
+# leg virtualities: {"p1": "0", "p2": "0", "p3": "mm", "p4": "mm", "p5": "0"}
+# edge routing (spanning tree): [{"edge": ["T7", "V1"], "momentum": "k1 - p1 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V1", "V2"], "momentum": "k1 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V2", "V3"], "momentum": "k1 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V3", "B6"], "momentum": "k1", "mass": "0", "tree_edge": false}, {"edge": ["T7", "V5"], "momentum": "-k1 + k2 + p1 + p2 + p3 + p4", "mass": "0", "tree_edge": true}, {"edge": ["B6", "V4"], "momentum": "k2", "mass": "0", "tree_edge": false}, {"edge": ["T7", "V4"], "momentum": "-k2 - p4", "mass": "0", "tree_edge": true}, {"edge": ["B6", "V5"], "momentum": "k1 - k2", "mass": "0", "tree_edge": true}]
+integralfamilies:
+  - name: "hexabox_drawn_adjacent_reading_p3p4"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "(k1 - p1 - p2 - p3)^2", 0 ]
+      - [ "(k1 - p2 - p3)^2", 0 ]
+      - [ "(k1 - p3)^2", 0 ]
+      - [ "(k1)^2", 0 ]
+      - [ "(-k1 + k2 + p1 + p2 + p3 + p4)^2", 0 ]
+      - [ "(k2)^2", 0 ]
+      - [ "(-k2 - p4)^2", 0 ]
+      - [ "(k1 - k2)^2", 0 ]
+    cut_propagators: []

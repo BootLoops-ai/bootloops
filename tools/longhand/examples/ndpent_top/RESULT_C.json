@@ -1,0 +1,125 @@
+{
+ "receipt": "RESULT stage C: the sum of 28 landed chunks of 28 (values add per order; bars add in quadrature); NOT a quoted value -- the digits come from the stage-to-stage COMPARE",
+ "stamp_utc": "2026-09-07T03:01:36Z",
+ "stage": "C",
+ "chunks_manifest": "CHUNKS_C.json",
+ "chunks_manifest_sha256": "ae9fb26ea2d488ba819f88dbb6f3a7a9b981e65e5eb0d017896cc18f98a7f2ed",
+ "n_chunks": 28,
+ "n_landed": 28,
+ "landed": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27
+ ],
+ "missing": [],
+ "complete": true,
+ "kernels_cover_package": true,
+ "n_kernels": 968,
+ "orders": [
+  {
+   "regulator_powers": [
+    -4
+   ],
+   "value_re": 0.009027777776653496,
+   "value_im": 0.0,
+   "err_re": 5.417819405335523e-13,
+   "err_im": 0.0,
+   "rel_err": 6.001276880503645e-11,
+   "bar_digits": 10
+  },
+  {
+   "regulator_powers": [
+    -3
+   ],
+   "value_re": 0.02618092601361412,
+   "value_im": 0.0,
+   "err_re": 6.836630259367482e-10,
+   "err_im": 0.0,
+   "rel_err": 2.611301928668384e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    -2
+   ],
+   "value_re": 0.09350840336745588,
+   "value_im": 0.0,
+   "err_re": 2.430977431955019e-09,
+   "err_im": 0.0,
+   "rel_err": 2.599742209694367e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    -1
+   ],
+   "value_re": 0.2743984783620932,
+   "value_im": 0.0,
+   "err_re": 1.225659491546081e-08,
+   "err_im": 0.0,
+   "rel_err": 4.4667138785249176e-08,
+   "bar_digits": 7
+  },
+  {
+   "regulator_powers": [
+    0
+   ],
+   "value_re": 0.8246341198398472,
+   "value_im": 0.0,
+   "err_re": 6.99017399456793e-08,
+   "err_im": 0.0,
+   "rel_err": 8.476697515166479e-08,
+   "bar_digits": 7
+  }
+ ],
+ "chunk_walls_s": {
+  "n": 28,
+  "sum": 3886.26,
+  "max": 395.81
+ },
+ "chunk_maxrss_kb": {
+  "n": 28,
+  "max": 92700
+ },
+ "settings": {
+  "stage": "C",
+  "W": "8",
+  "points": "1e5",
+  "presamples": "1e4",
+  "shifts": "32",
+  "epsrel": "1e-7",
+  "epsabs_per_chunk": "1.706e-10",
+  "lattice_candidates": "11",
+  "chunk_sectors": "12",
+  "n_chunks": "28",
+  "standin": "0",
+  "stamp_utc": "2026-09-07T01:56:48Z",
+  "integrator": "disteval median-lattice rule (--lattice-candidates 11): the SECOND integrator = a different lattice construction on the same kernel library",
+  "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+ }
+}

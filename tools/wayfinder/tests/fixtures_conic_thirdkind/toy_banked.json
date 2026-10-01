@@ -1,0 +1,116 @@
+{
+ "tag": "toy_row",
+ "pin": "u=1",
+ "states": [
+  "L",
+  "M",
+  "BcA",
+  "BcB",
+  "J0",
+  "J1",
+  "J2",
+  "F"
+ ],
+ "atoms": [
+  [
+   "Add(Mul(Integer(-1), Symbol('t', real=True)), Symbol('x', real=True), Integer(-3))",
+   0
+  ],
+  [
+   "Add(Pow(Symbol('t', real=True), Integer(2)), Pow(Symbol('x', real=True), Integer(2)), Integer(2))",
+   0
+  ],
+  [
+   "Add(Pow(Symbol('t', real=True), Integer(2)), Pow(Symbol('x', real=True), Integer(2)), Integer(2))",
+   1
+  ]
+ ],
+ "Q": "Add(Mul(Symbol('t', real=True), Symbol('x', real=True)), Mul(Integer(-1), Pow(Symbol('x', real=True), Integer(2))), Integer(1))",
+ "numer": "Mul(Pow(Add(Symbol('t', real=True), Integer(-7)), Integer(-1)), Add(Symbol('t', real=True), Integer(2)))",
+ "endpoints": [
+  "Rational(-1, 2)",
+  "Rational(1, 2)"
+ ],
+ "Amat": [
+  [
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(3), Symbol('t', real=True)), Integer(-10)), Pow(Add(Mul(Integer(5), Symbol('t', real=True)), Integer(-25)), Integer(-1)))",
+   "Rational(13, 28)",
+   "Rational(15, 28)",
+   "Mul(Add(Symbol('t', real=True), Integer(4)), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(6), Symbol('t', real=True)), Integer(11)), Integer(-1)))",
+   "Mul(Add(Pow(Symbol('t', real=True), Integer(2)), Mul(Integer(-1), Symbol('t', real=True)), Integer(-1)), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(6), Symbol('t', real=True)), Integer(11)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(-1), Symbol('t', real=True)), Integer(-4)), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(6), Symbol('t', real=True)), Integer(11)), Integer(-1)))",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Mul(Symbol('t', real=True), Pow(Add(Pow(Symbol('t', real=True), Integer(2)), Integer(1)), Integer(-1)))",
+   "Rational(1, 4)",
+   "Rational(1, 4)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Integer(0)",
+   "Pow(Add(Mul(Integer(2), Symbol('t', real=True)), Integer(-3)), Integer(-1))",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Pow(Add(Mul(Integer(2), Symbol('t', real=True)), Integer(3)), Integer(-1))",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(-1), Integer(24), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(42), Symbol('t', real=True)), Integer(116)), Pow(Add(Mul(Integer(12), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(56), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(49), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(56), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(4), Symbol('t', real=True)), Integer(-672)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(24), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(90), Symbol('t', real=True)), Integer(116)), Pow(Add(Mul(Integer(12), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(80), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(221), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(440), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(692), Symbol('t', real=True)), Integer(480)), Integer(-1)))",
+   "Mul(Integer(-1), Integer(3), Pow(Add(Mul(Integer(6), Symbol('t', real=True)), Integer(16)), Integer(-1)))",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(16), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(-1), Integer(64), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(96), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(-1), Integer(400), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(176), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(768), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(108), Symbol('t', real=True)), Integer(-432)), Pow(Add(Mul(Integer(16), Pow(Symbol('t', real=True), Integer(11))), Mul(Integer(-1), Integer(24), Pow(Symbol('t', real=True), Integer(10))), Mul(Integer(196), Pow(Symbol('t', real=True), Integer(9))), Mul(Integer(-1), Integer(294), Pow(Symbol('t', real=True), Integer(8))), Mul(Integer(944), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(-1), Integer(1416), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(2258), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(-1), Integer(3387), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(2700), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(4050), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(1296), Symbol('t', real=True)), Integer(-1944)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(-1), Integer(16), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(-1), Integer(64), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(-1), Integer(96), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(-1), Integer(400), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(-1), Integer(176), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(768), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(-1), Integer(108), Symbol('t', real=True)), Integer(-432)), Pow(Add(Mul(Integer(16), Pow(Symbol('t', real=True), Integer(11))), Mul(Integer(24), Pow(Symbol('t', real=True), Integer(10))), Mul(Integer(196), Pow(Symbol('t', real=True), Integer(9))), Mul(Integer(294), Pow(Symbol('t', real=True), Integer(8))), Mul(Integer(944), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(1416), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(2258), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(3387), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(2700), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(4050), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(1296), Symbol('t', real=True)), Integer(1944)), Integer(-1)))",
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(-1), Integer(4), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(-1), Integer(16), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(17), Symbol('t', real=True))), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(12), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(25), Pow(Symbol('t', real=True), Integer(2))), Integer(18)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(-1), Integer(2), Pow(Symbol('t', real=True), Integer(2))), Integer(-3)), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(12), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(25), Pow(Symbol('t', real=True), Integer(2))), Integer(18)), Integer(-1)))",
+   "Integer(0)"
+  ],
+  [
+   "Integer(0)",
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(-1), Integer(8), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(16), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(48), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(108), Symbol('t', real=True)), Integer(108)), Pow(Add(Mul(Integer(16), Pow(Symbol('t', real=True), Integer(9))), Mul(Integer(-1), Integer(24), Pow(Symbol('t', real=True), Integer(8))), Mul(Integer(164), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(-1), Integer(246), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(616), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(-1), Integer(924), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(1026), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(1539), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(648), Symbol('t', real=True)), Integer(-972)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(-1), Integer(8), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(16), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(48), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(108), Symbol('t', real=True)), Integer(-108)), Pow(Add(Mul(Integer(16), Pow(Symbol('t', real=True), Integer(9))), Mul(Integer(24), Pow(Symbol('t', real=True), Integer(8))), Mul(Integer(164), Pow(Symbol('t', real=True), Integer(7))), Mul(Integer(246), Pow(Symbol('t', real=True), Integer(6))), Mul(Integer(616), Pow(Symbol('t', real=True), Integer(5))), Mul(Integer(924), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(1026), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(1539), Pow(Symbol('t', real=True), Integer(2))), Mul(Integer(648), Symbol('t', real=True)), Integer(972)), Integer(-1)))",
+   "Integer(0)",
+   "Mul(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(2))), Integer(3)), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(8), Pow(Symbol('t', real=True), Integer(2))), Integer(9)), Integer(-1)))",
+   "Mul(Add(Mul(Integer(-1), Integer(2), Pow(Symbol('t', real=True), Integer(3))), Mul(Integer(-1), Integer(4), Symbol('t', real=True))), Pow(Add(Mul(Integer(2), Pow(Symbol('t', real=True), Integer(4))), Mul(Integer(8), Pow(Symbol('t', real=True), Integer(2))), Integer(9)), Integer(-1)))",
+   "Integer(0)"
+  ],
+  [
+   "Integer(1)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)",
+   "Integer(0)"
+  ]
+ ]
+}

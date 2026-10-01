@@ -1,0 +1,33 @@
+{
+ "comment": "independent reference values for battery leg L2 (period/cycle-moment layer). period_control: y^2 = (1-x^2)(1-x^2/4), whose half a-cycle period is the CLOSED FORM 2*K(m=1/4) (mpmath ellipk, not the package's AGM route). moment_control: y^2 = x(x-1)(x-2)(x-4), oval (1,2); oint x^k dx/y = 2*int_1^2 x^k dx/sqrt(P) by direct tanh-sinh quadrature at 90 dps.",
+ "period_control": {
+  "quartic_coeffs_desc": [
+   "1/4",
+   "0",
+   "-5/4",
+   "0",
+   "1"
+  ],
+  "closed_form": "2*ellipk(1/4)  [m-convention]",
+  "line": "3.371500709625192085742407315598153979001601788282178088239896595786867"
+ },
+ "moment_control": {
+  "quartic_coeffs_desc": [
+   "1",
+   "-7",
+   "14",
+   "-8",
+   "0"
+  ],
+  "oval": [
+   1,
+   2
+  ],
+  "halves": {
+   "I0": "1.656638170236594166448468372933060990004021623983984502212923282426409",
+   "I1": "2.455460430896571376985674572468669195050141148470432572249627740461766",
+   "I2": "3.848211290264632957149230074787334900607625729732778301318969079405638"
+  }
+ },
+ "bar_digits": 40
+}

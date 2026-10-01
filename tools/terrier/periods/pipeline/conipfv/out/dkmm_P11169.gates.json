@@ -1,0 +1,6 @@
+{
+ "card": "dkmm_P11169",
+ "path": "dkmm.json",
+ "verdict": "NOT-CONI",
+ "note": "K.N^-1.K = 0: PFFV card, defer to g2/pffv_curve"
+}

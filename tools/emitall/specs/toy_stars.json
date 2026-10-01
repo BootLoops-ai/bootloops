@@ -1,0 +1,105 @@
+{
+ "campaign": "toy-stars — example claims spec for an INVENTED star-rating program (format demonstration; every number is synthetic and lives in specs/toy_receipts/)",
+ "register": "each quoted headline re-emitted from the toy receipts at its own printed register; payout bands checked in outward-band mode (printed edges must equal floor/ceil of the computed interval at the stated granularity)",
+ "quote_source": "the quoted strings below play the role of a filed report's headline numbers",
+ "receipts": {
+  "s": {"path": "toy_receipts/summary.json"},
+  "m": {"path": "toy_receipts/measures.csv", "format": "csv"}
+ },
+ "defaults": {
+  "mode": "printed"
+ },
+ "claims": [
+  {
+   "section": "RATINGS",
+   "label": "sites rated",
+   "quoted": "48",
+   "expr": "f('s','/n_sites_rated')"
+  },
+  {
+   "section": "RATINGS",
+   "label": "star changes",
+   "quoted": "5",
+   "expr": "f('s','/n_star_changes')"
+  },
+  {
+   "section": "RATINGS",
+   "label": "pct changed",
+   "quoted": "10.4%",
+   "expr": "100 * f('s','/n_star_changes') / f('s','/n_sites_rated')"
+  },
+  {
+   "section": "RATINGS",
+   "label": "tier sizes",
+   "quoted": "11/17/20",
+   "format": "{a}/{b}/{c}",
+   "exprs": {
+    "a": "f('s','/tiers/t1/n')",
+    "b": "f('s','/tiers/t2/n')",
+    "c": "f('s','/tiers/t3/n')"
+   }
+  },
+  {
+   "section": "RATINGS",
+   "label": "tier-size recount",
+   "quoted": "48",
+   "expr": "sum(vals('s','/tiers/{t1|t2|t3}/n'))"
+  },
+  {
+   "section": "RATINGS",
+   "label": "tiers with a unique best site",
+   "quoted": "2",
+   "lets": {"L": "vals('s','/tiers/{t1|t2|t3}/unique_best')"},
+   "expr": "len(where(L, '==', 1))"
+  },
+  {
+   "section": "MEASURES",
+   "label": "passed measures scoring >= 7",
+   "quoted": "2",
+   "expr": "cw('m','','[[\"score\",\"not_in\",[\"NA\",\"\"]],[\"passed\",\"==\",\"1\"],[\"score\",\">=\",7,\"int\"]]')",
+   "note": "the NA guard must precede the int coercion (conditions AND in order)"
+  },
+  {
+   "section": "BANDS",
+   "label": "payout band, integer $K",
+   "mode": "outward-band",
+   "quoted": "[1234-2766]",
+   "quoted_lo": 1234,
+   "quoted_hi": 2766,
+   "granularity": 1,
+   "scale": "1e-3",
+   "lo_expr": "f('s','/payout_band_usd/lo')",
+   "hi_expr": "f('s','/payout_band_usd/hi')"
+  },
+  {
+   "section": "BANDS",
+   "label": "payout band, 0.1 $M",
+   "mode": "outward-band",
+   "quoted": "[1.2-2.8]",
+   "quoted_lo": "1.2",
+   "quoted_hi": "2.8",
+   "granularity": "0.1",
+   "scale": "1e-6",
+   "lo_expr": "f('s','/payout_band_usd/lo')",
+   "hi_expr": "f('s','/payout_band_usd/hi')"
+  },
+  {
+   "section": "EXACT",
+   "label": "sites rated (exact register)",
+   "mode": "exact",
+   "quoted": "48",
+   "expr": "f('s','/n_sites_rated')"
+  },
+  {
+   "section": "FLAGS",
+   "label": "audit flag",
+   "quoted": "True",
+   "expr": "str(f('s','/audit_flag'))"
+  },
+  {
+   "section": "RECORD",
+   "label": "tier t1 detail (emitted only)",
+   "expr": "jsondump(f('s','/tiers/t1'))"
+  }
+ ]
+}

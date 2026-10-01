@@ -1,0 +1,18 @@
+# DRAWN GRAPH, read off fig-zgamma.tex (sha256 first 16 hex db437a8112228690) with the caption/label sources ['ggZgamma.tex', 'gallery-30.tex', 'results.tex', 'fdiag-style.tex'].
+# Read off the tikz drawing: six vertex dots TL, TM, TR (top) and BL, BM, BR (bottom); thin black lines TL--TM, TL--BL, BL--BM (massless); thick violet lines TM--TR, BM--BR, TR--BM (diagonal, under) and TM--BR (diagonal, hops over TR--BM: no vertex at the crossing), all labelled by one m_t (massHeavy; m_t^2 = 1 in the section); external legs g(p1) at TL, g(p2) at BL, gamma(p3) at TR (thin, on-shell) and Z(p4) at BR drawn with the offshell style (blue wavy) = off-shell, M = m_Z^2/m_t^2 = 7/25 in ggZgamma.tex. All legs taken incoming, p4 = -p1-p2-p3. Independent of the header's edge dictionary: the momenta below come from conservation on this incidence.
+# Vertices ['TL', 'TM', 'TR', 'BL', 'BM', 'BR']; internal lines (u--v, mass^2): TL-TM=TL--TM m2=0; TL-BL=TL--BL m2=0; BL-BM=BL--BM m2=0; TM-TR=TM--TR m2=1; TR-BM=TR--BM m2=1; TM-BR=TM--BR m2=1; BM-BR=BM--BR m2=1
+# External legs (all incoming; last = -(sum of the others)): p1 at TL p^2=0; p2 at BL p^2=0; p3 at TR p^2=0; p4 at BR p^2=M
+# Routing by momentum conservation: spanning tree ['TL-TM', 'TL-BL', 'TM-TR', 'TM-BR', 'BL-BM'], chords ['TR-BM', 'BM-BR'] carry ['l1', 'l2'].
+# Line -> propagator: TL-TM: l1 - l2 + p1 + p2 (m2=0); TL-BL: -l1 + l2 - p2 (m2=0); BL-BM: -l1 + l2 (m2=0); TM-TR: l1 - p3 (m2=1); TR-BM: l1 (m2=1); TM-BR: -l2 + p1 + p2 + p3 (m2=1); BM-BR: l2 (m2=1)
+integralfamilies:
+  - name: "drawn_zgamma_sector127"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [127]
+    propagators:
+      - ["l1 - l2 + p1 + p2", 0]
+      - ["-l1 + l2 - p2", 0]
+      - ["-l1 + l2", 0]
+      - ["l1 - p3", 1]
+      - ["l1", 1]
+      - ["-l2 + p1 + p2 + p3", 1]
+      - ["l2", 1]

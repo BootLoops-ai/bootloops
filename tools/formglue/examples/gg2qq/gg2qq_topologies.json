@@ -1,0 +1,4155 @@
+{
+ "externals": {
+  "incoming": [
+   "p1",
+   "p2"
+  ],
+  "outgoing": [
+   "q1",
+   "q2"
+  ]
+ },
+ "model": "QCD with ghosts, one quark flavor (qua/QUA, gho/GHO, glu)",
+ "oneloop": [
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 1,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 1
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 2,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 1
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1/2",
+   "diagram": 3,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 1
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 4,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      7,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 2
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 5,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      7,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 2
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 6,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q2-k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      5,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 3
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 7,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      5,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 4
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 8,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      5,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 4
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 9,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q1-k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q1",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 5
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 5
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 10,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q1-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 5
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 6
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 11,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2+k4",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q1-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 5
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 6
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 12,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 7
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 13,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      5,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 7
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 14,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      5
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 7
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "-1",
+   "diagram": 15,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      5,
+      7
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "ghost",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 7
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 16,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-q1-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 7
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 17,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 8
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 18,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q2",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 8
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 19,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      5,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q1-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q1",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 9
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 20,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p2-q1-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k4",
+     "momentum": "-p2-q1",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 9
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 21,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      5,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 10
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 22,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q1+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      8,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      4,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 8
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 10
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 23,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q2+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q1-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 7
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 11
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 24,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q2+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-q1-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      8,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      4,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 7
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 11
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 25,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      7,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q2+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-p2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 7
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 12
+  },
+  {
+   "E_int": 4,
+   "L": 1,
+   "V_int": 4,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 26,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1-k4",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-q2+k4",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      8,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "-p2-k4",
+     "v1": 6,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      7,
+      8
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "chord",
+     "label": "k4",
+     "momentum": "k4",
+     "v1": 7,
+     "v2": 8
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 8
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      7
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 7
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k4"
+   ],
+   "topo": 12
+  },
+  {
+   "E_int": 3,
+   "L": 1,
+   "V_int": 3,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1/2",
+   "diagram": 27,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p1-p2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 13
+  },
+  {
+   "E_int": 3,
+   "L": 1,
+   "V_int": 3,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 28,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q2+k3",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k2",
+     "momentum": "-p1-p2-k3",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k3",
+     "momentum": "k3",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      5,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k3"
+   ],
+   "topo": 14
+  },
+  {
+   "E_int": 3,
+   "L": 1,
+   "V_int": 3,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1/2",
+   "diagram": 29,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p1-q1-q2-k2",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k2",
+     "momentum": "k2",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "q1+q2",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k2"
+   ],
+   "topo": 15
+  },
+  {
+   "E_int": 3,
+   "L": 1,
+   "V_int": 3,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1/2",
+   "diagram": 30,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1-q2-k2",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "chord",
+     "label": "k2",
+     "momentum": "k2",
+     "v1": 5,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k3",
+     "momentum": "q1+q2",
+     "v1": 6,
+     "v2": 7
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 7
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [
+    "k2"
+   ],
+   "topo": 20
+  }
+ ],
+ "process": "g g -> q qbar",
+ "provenance": "parsed from FORM 5 diagrams_ node_ terms by the spanning-tree router; fields re-attached from the node_ occurrences; arrows follow fermion flow (conjugate-field end -> field end)",
+ "tree": [
+  {
+   "E_int": 1,
+   "L": 0,
+   "V_int": 2,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 1,
+   "edges": [
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-q1-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [],
+   "topo": 1
+  },
+  {
+   "E_int": 1,
+   "L": 0,
+   "V_int": 2,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 2,
+   "edges": [
+    {
+     "arrow": [
+      6,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q2",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      5,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 5
+    },
+    {
+     "arrow": [
+      4,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 6
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [],
+   "topo": 2
+  },
+  {
+   "E_int": 1,
+   "L": 0,
+   "V_int": 2,
+   "checks": [
+    "externals-once",
+    "vertex-conservation",
+    "euler-count",
+    "betti-count",
+    "chord-unit"
+   ],
+   "coeff": "+1",
+   "diagram": 3,
+   "edges": [
+    {
+     "arrow": [
+      5,
+      6
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "tree",
+     "label": "k1",
+     "momentum": "-p2-q1",
+     "v1": 5,
+     "v2": 6
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p1",
+     "momentum": "p1",
+     "v1": 1,
+     "v2": 5
+    },
+    {
+     "arrow": null,
+     "field": "gluon",
+     "id": null,
+     "kind": "ext",
+     "label": "p2",
+     "momentum": "p2",
+     "v1": 2,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      6,
+      3
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q1",
+     "momentum": "q1",
+     "v1": 3,
+     "v2": 6
+    },
+    {
+     "arrow": [
+      4,
+      5
+     ],
+     "field": "quark",
+     "id": null,
+     "kind": "ext",
+     "label": "q2",
+     "momentum": "q2",
+     "v1": 4,
+     "v2": 5
+    }
+   ],
+   "external_fields": {
+    "p1": "gluon",
+    "p2": "gluon",
+    "q1": "quark",
+    "q2": "quark"
+   },
+   "externals": [
+    "p1",
+    "p2",
+    "q1",
+    "q2"
+   ],
+   "leg_nodes": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "loop_momenta": [],
+   "topo": 3
+  }
+ ]
+}

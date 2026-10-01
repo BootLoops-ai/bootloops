@@ -1,0 +1,1230 @@
+{
+ "stage": "S2",
+ "checks": [
+  {
+   "check": "sha-pin-seeds-binding-verify",
+   "verdict": "OK",
+   "detail": {
+    "M3T_REGISTRATION.md": {
+     "got": "7e05305a12f37d6af5125f77098182d773553bb0c12b5514d056e5828c70292f",
+     "want": "7e05305a12f37d6af5125f77098182d773553bb0c12b5514d056e5828c70292f",
+     "match": true
+    },
+    "M3T_VALIDATION_BATTERY.md": {
+     "got": "2850601889346d492b33cb7dea7a319520ecf88e033a5f7b67d0bcfcf56189d4",
+     "want": "2850601889346d492b33cb7dea7a319520ecf88e033a5f7b67d0bcfcf56189d4",
+     "match": true
+    },
+    "S0PRE_RECEIPT.md": {
+     "got": "eb5201b4a9757bfbe6e95f81f087d8298512a23b3bde88b4e551fc0e09f0c3b8",
+     "want": "eb5201b4a9757bfbe6e95f81f087d8298512a23b3bde88b4e551fc0e09f0c3b8",
+     "match": true
+    },
+    "build/abcount/abcount_s0.py": {
+     "got": "cf0879a33771bbd5f44a4024eee3d933fe55010db2596129955f9cd863f5c14b",
+     "want": "cf0879a33771bbd5f44a4024eee3d933fe55010db2596129955f9cd863f5c14b",
+     "match": true
+    },
+    "build/abcount/abcount_s1.py": {
+     "got": "3c1d0b8eba1e6f30a37af411040525baecaf28efa1dff648d01d1e910776b3aa",
+     "want": "3c1d0b8eba1e6f30a37af411040525baecaf28efa1dff648d01d1e910776b3aa",
+     "match": true
+    },
+    "build/abcount/theta_g4_bridge.jl": {
+     "got": "863f7c3d4f0fd2981a455992a33a58a2e3f616cbacb9a2ebdd8fad322f487fcf",
+     "want": "863f7c3d4f0fd2981a455992a33a58a2e3f616cbacb9a2ebdd8fad322f487fcf",
+     "match": true
+    },
+    "build/abcount/battery/SEEDS.json": {
+     "got": "23c86ba23c6b9b9e16d7f9342bd04b48e70bdffc437c6aa4065aa062f3e3488e",
+     "want": "23c86ba23c6b9b9e16d7f9342bd04b48e70bdffc437c6aa4065aa062f3e3488e",
+     "match": true
+    }
+   }
+  },
+  {
+   "check": "input-contract-and-models",
+   "verdict": "OK",
+   "detail": {
+    "B2": {
+     "f_coeffs": [
+      1,
+      -1,
+      0,
+      0,
+      0,
+      1
+     ],
+     "disc_desk": 2869,
+     "disc_banked": 2869,
+     "good_reduction_at_pilots": true,
+     "pilot_primes": [
+      11,
+      31
+     ],
+     "polarization_elementary_divisors": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "sign_convention": {
+      "s1": "P",
+      "s2": "N/A-B2 (no O_K-action on this member; field carried, never dropped)"
+     },
+     "match": true
+    },
+    "B3": {
+     "f_coeffs": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     "disc_desk": 3125,
+     "disc_banked": 3125,
+     "good_reduction_at_pilots": true,
+     "pilot_primes": [
+      11,
+      31
+     ],
+     "polarization_elementary_divisors": [
+      1,
+      1
+     ],
+     "sign_convention": {
+      "s1": "P",
+      "s2": "N/A-B3 (CM by Q(zeta_5), not by K = Q(sqrt(-5)); no rho input in S2; field carried, never dropped)"
+     },
+     "match": true
+    },
+    "B3_characters_exist": {
+     "both_pilot_primes_1_mod_10": true
+    }
+   }
+  },
+  {
+   "check": "B2-periods-and-homology",
+   "verdict": "OK",
+   "detail": {
+    "period_receipt": {
+     "prec_bits": 350,
+     "max_period_radius": "[2.27098e-100 +/- 1.69e-106]",
+     "pilot_integral_seconds": 0.333186168,
+     "sweep_seconds": 0.177630812,
+     "julia_load_seconds": 0.530133877,
+     "maxrss_gb": 0.4006462097167969,
+     "subprocess_wall_seconds": 2.831463575363159,
+     "scheme": "SEEDS S2_period_construction.segment_integral_scheme (certified; analytic checker + half-plane certificates)"
+    },
+    "period_radius_contract": {
+     "declared": "1e-55",
+     "max_period_radius": "[3.11151e-61 +/- 2.36e-67]",
+     "within_contract": true
+    },
+    "homology_recovery": {
+     "relation_vectors": [
+      [
+       1,
+       0,
+       1,
+       0,
+       0,
+       1
+      ]
+     ],
+     "candidates_tried": [
+      {
+       "candidate_nv": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+       ],
+       "orientation_sign": 1,
+       "pfaffian": 1,
+       "riemann_relation_ball_contains_0": true,
+       "symplectic_identity_SWS^T=J": true,
+       "tau_symmetry_residual_rad": "[1.85715e-60 +/- 4.47e-66]",
+       "reject": "Im tau not certified positive-definite"
+      },
+      {
+       "candidate_nv": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+       ],
+       "orientation_sign": -1,
+       "pfaffian": 1,
+       "riemann_relation_ball_contains_0": true,
+       "symplectic_identity_SWS^T=J": true,
+       "tau_symmetry_residual_rad": "[3.88908e-60 +/- 3.15e-66]",
+       "im_tau_positive_definite_certified": true,
+       "symplectic_S_rows": [
+        [
+         1,
+         0,
+         0,
+         0
+        ],
+        [
+         1,
+         0,
+         1,
+         0
+        ],
+        [
+         0,
+         1,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0,
+         1
+        ]
+       ]
+      }
+     ],
+     "accepted": {
+      "nv": [
+       1,
+       0,
+       1,
+       0,
+       0,
+       1
+      ],
+      "sign": -1
+     }
+    },
+    "tau_mid": [
+     [
+      "(-0.049778378130648206+1.2480895185601204j)",
+      "(-0.1701112400909156-0.7078386176074186j)"
+     ],
+     [
+      "(-0.1701112400909156-0.7078386176074186j)",
+      "(-0.2582821689849149+1.1036941054337457j)"
+     ]
+    ],
+    "tau_max_radius": "[1.51565e-60 +/- 9.15e-67]",
+    "tau_radius_within_contract": true,
+    "im_tau_positive_definite_certified": true,
+    "chain_permutation": [
+     1,
+     2,
+     4,
+     5,
+     3
+    ],
+    "sign_convention": {
+     "s1": "P",
+     "s2": "N/A-B2 (no O_K-action on this member; field carried, never dropped)"
+    }
+   }
+  },
+  {
+   "check": "B2-theta-receipts-g2",
+   "verdict": "OK",
+   "detail": {
+    "dyadic_rule": "exact 64-bit truncation of tau mids (SEEDS tau_dyadic_rule); echo exact: True",
+    "tail_bound_receipt": {
+     "inequality_quoted": "|theta[a;b](0,tau) - S_N| <= g * S_tail(N,lambda) * M(lambda)^(g-1); S_tail = 2 exp(-pi lambda (N+1/2)^2)/(1 - exp(-pi lambda (2N+1))); M = 1 + 2 exp(-pi lambda/4)/(1 - exp(-pi lambda)); lambda = lambda_min(Im tau) [manuals/abcount.md sec 1, PROVED: Rayleigh + union bound + geometric-comparison lemmas L1/L2]",
+     "g": 2,
+     "N": 12,
+     "lambda_lower_bound": "[0.46438073168309462085 +/- 2.49e-21]",
+     "tail_bound_upper": "[1.12780003203e-98 +/- 4.00e-110]"
+    },
+    "matched_truncation": {
+     "desk_N": 12,
+     "matched_prec_bits": 390,
+     "call_prec_bits": 390,
+     "call_prec_floor": "max(matched_prec, member_call_prec_bits = 250)",
+     "rule": "same as S1_C7_pilot: prec = ceil(-log2(desk TailBound(g, 12, lambda_min_lower))) + 64 guard bits"
+    },
+    "pinned_criterion": "acb_theta claimed radius <= desk tail bound at matched truncation on the 10 EVEN characteristics; desk-vs-wrapper enclosure OVERLAP on ALL 16; the 6 ODD characteristics must CONTAIN 0 (their exact value at z = 0) \u2014 ANY violation = STOP (calibrated instrument; declared addition on the NON-DIAGONAL genus-2 domain; the SEALED C7 criterion itself is the S1 pilot receipt, banked 256/256)",
+    "claimed_radius_max_even": "[7.0449280e-117 +/- 2.22e-125]",
+    "claimed_radius_max_odd": "[2.4419780e-59 +/- 2.07e-67]",
+    "odd_radius_note": "odd chars at z=0 are exactly 0; acb_theta_all reaches them by sqrt-of-square, claimed radius ~2^(-prec/2) (SEEDS gate_direction_erratum); gated by zero-containment, not dominance",
+    "tail_bound": "[1.1278000e-98 +/- 3.21e-106]",
+    "dominance_violations_even": [],
+    "desk_vs_wrapper_overlap_failures_16": [],
+    "odd_characteristic_vanishing": {
+     "n_odd": 6,
+     "failures": []
+    },
+    "radius_discipline": {
+     "gate": "1e-30",
+     "failures": []
+    },
+    "call_cost": {
+     "call_seconds": 0.001935852,
+     "maxrss_gb": 0.37473297119140625
+    },
+    "route_T_scope": "theta receipts ONLY; route T emits NO Frobenius data (C2)"
+   }
+  },
+  {
+   "check": "B2-theta-receipts-g4-block",
+   "verdict": "OK",
+   "detail": {
+    "tau4": "diag(tau2, tau2), same dyadic tau2 (SEEDS B2_genus4_block_receipt)",
+    "echo_exact": true,
+    "odd_characteristic_vanishing": {
+     "n_odd": 120,
+     "failures": []
+    },
+    "product_factorization_overlap_256": {
+     "failures": []
+    },
+    "radius_discipline": {
+     "gate": "1e-30",
+     "failures": []
+    },
+    "call_cost": {
+     "call_seconds": 0.319600851,
+     "maxrss_gb": 0.37560272216796875,
+     "prec_bits": 250
+    }
+   }
+  },
+  {
+   "check": "B2-tie-receipt",
+   "verdict": "OK",
+   "detail": {
+    "chi5_nonzero_certified": true,
+    "moebius_branch_matching": {
+     "n_consistent_triples": 1,
+     "first_triples": [
+      [
+       5,
+       4,
+       0
+      ]
+     ],
+     "procedure": "SEEDS S2_tie_receipt.primary"
+    },
+    "covariant_cross_products": [
+     {
+      "check": "C20^5*C100' = C20'^5*C100",
+      "overlap": true,
+      "anchored": true
+     },
+     {
+      "check": "C40*C20'^2 = C40'*C20^2",
+      "overlap": true,
+      "anchored": false
+     },
+     {
+      "check": "C60*C20'^3 = C60'*C20^3",
+      "overlap": true,
+      "anchored": false
+     }
+    ],
+    "anchored_status_as_banked": {
+     "expected_anchored": true,
+     "got_anchored_rows": 1,
+     "seed_caveat": "n/a"
+    },
+    "binding_tie": "both (matching + anchored covariants)"
+   }
+  },
+  {
+   "check": "B3-periods-and-homology",
+   "verdict": "OK",
+   "detail": {
+    "period_receipt": {
+     "prec_bits": 350,
+     "max_period_radius": "[3.51476e-99 +/- 3.61e-105]",
+     "pilot_integral_seconds": 0.311359185,
+     "sweep_seconds": 0.1493559,
+     "julia_load_seconds": 0.523759727,
+     "maxrss_gb": 0.3957023620605469,
+     "subprocess_wall_seconds": 2.701939582824707,
+     "scheme": "SEEDS S2_period_construction.segment_integral_scheme (certified; analytic checker + half-plane certificates)"
+    },
+    "period_radius_contract": {
+     "declared": "1e-55",
+     "max_period_radius": "[3.11151e-61 +/- 2.36e-67]",
+     "within_contract": true
+    },
+    "homology_recovery": {
+     "relation_vectors": [
+      [
+       1,
+       -1,
+       1,
+       -1,
+       -1,
+       1
+      ],
+      [
+       1,
+       0,
+       1,
+       0,
+       0,
+       1
+      ],
+      [
+       -3561992881535637220580608946330,
+       -1086001422290192101763432311777,
+       -2107503770302864536902302304377,
+       368487688942580581914874330176,
+       368487688942580581914874330176,
+       245909047938388136050295187721
+      ],
+      [
+       -51236735153864255133014246258,
+       2191627938927199762217011286570,
+       -51236735153864255133014246258,
+       4545040757168452435169608778668,
+       3090551645935679751491302136715,
+       2302176083087388417819583245840
+      ],
+      [
+       79717188405819366924712173552,
+       -3409866315608530163248977226665,
+       79717188405819366924712173552,
+       2751448432106747866334524399484,
+       -1056453497367277490296379734567,
+       6241031936121097396508213799701
+      ],
+      [
+       3688958266801215608783106197308,
+       1680843230479198341303971338502,
+       -3027921885138355115204411220649,
+       4933179755728931003530859680745,
+       -1228134991986347026052641945404,
+       -3926845592146835104478702070794
+      ]
+     ],
+     "candidates_tried": [
+      {
+       "candidate_nv": [
+        -6,
+        3,
+        -6,
+        3,
+        3,
+        -6
+       ],
+       "orientation_sign": 1,
+       "pfaffian": 9,
+       "reject": "Pfaffian not +-1"
+      },
+      {
+       "candidate_nv": [
+        -6,
+        3,
+        -6,
+        3,
+        3,
+        -6
+       ],
+       "orientation_sign": -1,
+       "pfaffian": 9,
+       "reject": "Pfaffian not +-1"
+      },
+      {
+       "candidate_nv": [
+        -5,
+        3,
+        -5,
+        3,
+        3,
+        -5
+       ],
+       "orientation_sign": 1,
+       "pfaffian": 1,
+       "riemann_relation_ball_contains_0": true,
+       "symplectic_identity_SWS^T=J": true,
+       "tau_symmetry_residual_rad": "[5.23723e-60 +/- 4.85e-66]",
+       "im_tau_positive_definite_certified": true,
+       "symplectic_S_rows": [
+        [
+         1,
+         0,
+         0,
+         0
+        ],
+        [
+         7,
+         -3,
+         6,
+         1
+        ],
+        [
+         0,
+         -1,
+         2,
+         0
+        ],
+        [
+         -5,
+         3,
+         -5,
+         0
+        ]
+       ]
+      }
+     ],
+     "accepted": {
+      "nv": [
+       -5,
+       3,
+       -5,
+       3,
+       3,
+       -5
+      ],
+      "sign": 1
+     }
+    },
+    "tau_mid": [
+     [
+      "(-2.0659362093469293+0.21624573121437995j)",
+      "(0.32871365933980057-0.0486083083094217j)"
+     ],
+     [
+      "(0.32871365933980057-0.0486083083094217j)",
+      "(-0.8517359062455444+0.08758183175785442j)"
+     ]
+    ],
+    "tau_max_radius": "[3.33489e-60 +/- 5.83e-67]",
+    "tau_radius_within_contract": true,
+    "im_tau_positive_definite_certified": true,
+    "chain_permutation": [
+     1,
+     2,
+     4,
+     5,
+     3
+    ],
+    "sign_convention": {
+     "s1": "P",
+     "s2": "N/A-B3 (CM by Q(zeta_5), not by K = Q(sqrt(-5)); no rho input in S2; field carried, never dropped)"
+    }
+   }
+  },
+  {
+   "check": "B3-theta-receipts-g2",
+   "verdict": "OK",
+   "detail": {
+    "dyadic_rule": "exact 64-bit truncation of tau mids (SEEDS tau_dyadic_rule); echo exact: True",
+    "tail_bound_receipt": {
+     "inequality_quoted": "|theta[a;b](0,tau) - S_N| <= g * S_tail(N,lambda) * M(lambda)^(g-1); S_tail = 2 exp(-pi lambda (N+1/2)^2)/(1 - exp(-pi lambda (2N+1))); M = 1 + 2 exp(-pi lambda/4)/(1 - exp(-pi lambda)); lambda = lambda_min(Im tau) [manuals/abcount.md sec 1, PROVED: Rayleigh + union bound + geometric-comparison lemmas L1/L2]",
+     "g": 2,
+     "N": 12,
+     "lambda_lower_bound": "[0.071282724240515340849 +/- 2.59e-22]",
+     "tail_bound_upper": "[2.66344894866e-14 +/- 3.52e-26]"
+    },
+    "matched_truncation": {
+     "desk_N": 12,
+     "matched_prec_bits": 110,
+     "call_prec_bits": 250,
+     "call_prec_floor": "max(matched_prec, member_call_prec_bits = 250)",
+     "rule": "same as S1_C7_pilot: prec = ceil(-log2(desk TailBound(g, 12, lambda_min_lower))) + 64 guard bits"
+    },
+    "pinned_criterion": "acb_theta claimed radius <= desk tail bound at matched truncation on the 10 EVEN characteristics; desk-vs-wrapper enclosure OVERLAP on ALL 16; the 6 ODD characteristics must CONTAIN 0 (their exact value at z = 0) \u2014 ANY violation = STOP (calibrated instrument; declared addition on the NON-DIAGONAL genus-2 domain; the SEALED C7 criterion itself is the S1 pilot receipt, banked 256/256)",
+    "claimed_radius_max_even": "[3.1257597e-72 +/- 3.40e-80]",
+    "claimed_radius_max_odd": "[6.8281857e-38 +/- 4.26e-46]",
+    "odd_radius_note": "odd chars at z=0 are exactly 0; acb_theta_all reaches them by sqrt-of-square, claimed radius ~2^(-prec/2) (SEEDS gate_direction_erratum); gated by zero-containment, not dominance",
+    "tail_bound": "[2.6634489e-14 +/- 4.87e-22]",
+    "dominance_violations_even": [],
+    "desk_vs_wrapper_overlap_failures_16": [],
+    "odd_characteristic_vanishing": {
+     "n_odd": 6,
+     "failures": []
+    },
+    "radius_discipline": {
+     "gate": "1e-30",
+     "failures": []
+    },
+    "call_cost": {
+     "call_seconds": 0.002248403,
+     "maxrss_gb": 0.3751220703125
+    },
+    "route_T_scope": "theta receipts ONLY; route T emits NO Frobenius data (C2)"
+   }
+  },
+  {
+   "check": "B3-tie-receipt",
+   "verdict": "OK",
+   "detail": {
+    "chi5_nonzero_certified": true,
+    "moebius_branch_matching": {
+     "n_consistent_triples": 5,
+     "first_triples": [
+      [
+       0,
+       5,
+       4
+      ],
+      [
+       1,
+       0,
+       4
+      ],
+      [
+       2,
+       3,
+       4
+      ],
+      [
+       3,
+       1,
+       4
+      ],
+      [
+       5,
+       2,
+       4
+      ]
+     ],
+     "procedure": "SEEDS S2_tie_receipt.primary"
+    },
+    "covariant_cross_products": [
+     {
+      "check": "C20^5*C100' = C20'^5*C100",
+      "overlap": true,
+      "anchored": false
+     },
+     {
+      "check": "C40*C20'^2 = C40'*C20^2",
+      "overlap": true,
+      "anchored": false
+     },
+     {
+      "check": "C60*C20'^3 = C60'*C20^3",
+      "overlap": true,
+      "anchored": false
+     }
+    ],
+    "anchored_status_as_banked": {
+     "expected_anchored": false,
+     "got_anchored_rows": 0,
+     "seed_caveat": "C20(x^5 + 1) = 0 (the curve sits on the vanishing locus \u2014 seed-time finding, consistent with its extra automorphism z -> zeta_5 z); the covariant check is therefore UNANCHORED for B3 and the Moebius branch-matching is the binding tie for B3; for B2 both ties bind"
+    },
+    "binding_tie": "Moebius branch-matching"
+   }
+  },
+  {
+   "check": "tie-cross-member-controls",
+   "verdict": "OK",
+   "detail": {
+    "tau(B2)_vs_branchset(B3)": {
+     "n_consistent_triples": 0,
+     "required": "0 (SEEDS controls_pre_declared)",
+     "failed_as_required": true
+    },
+    "tau(B3)_vs_branchset(B2)": {
+     "n_consistent_triples": 0,
+     "required": "0 (SEEDS controls_pre_declared)",
+     "failed_as_required": true
+    }
+   }
+  },
+  {
+   "check": "B2-integer-routes-p11",
+   "verdict": "OK",
+   "detail": {
+    "path1_hyperellcharpoly": [
+     1,
+     7,
+     31,
+     77,
+     121
+    ],
+    "desk_counts": {
+     "count_C_Fp": 19,
+     "count_C_Fp2": 135,
+     "quartic_from_counts": [
+      1,
+      7,
+      31,
+      77,
+      121
+     ]
+    },
+    "banked_desk_truths": {
+     "count_C_Fp": 19,
+     "count_C_Fp2": 135,
+     "charpoly_monic_desc": [
+      1,
+      7,
+      31,
+      77,
+      121
+     ],
+     "jac_order_P1": 237,
+     "count_B2_member": 56169,
+     "count_B2_derivation": "#B2(F_11) = P(1)^2 = 237^2"
+    },
+    "quartic_agreement": "EXACT",
+    "path2": "desk counts (no PARI) -> route-D SQUARING assembly (abcount-internal, exact integers) -> deg-8 Weil box",
+    "assembly": {
+     "deg8_from_desk": [
+      1,
+      14,
+      111,
+      588,
+      2281,
+      6468,
+      13431,
+      18634,
+      14641
+     ],
+     "deg8_from_path1": [
+      1,
+      14,
+      111,
+      588,
+      2281,
+      6468,
+      13431,
+      18634,
+      14641
+     ],
+     "assembled_equal": true,
+     "kernel_receipt": "product-diagonal (J(C) x J(C), identity on each factor; trivial kernel receipt \u2014 route-D split of the product member)"
+    },
+    "functional_equation_deg8": {
+     "k=0": true,
+     "k=1": true,
+     "k=2": true,
+     "k=3": true
+    },
+    "weil_box_deg8": {
+     "verdict": "OK",
+     "unique_tuple_a1_a4": [
+      14,
+      111,
+      588,
+      2281
+     ],
+     "receipt": {
+      "per_k": [
+       {
+        "k": 1,
+        "box_halfwidth": 26,
+        "n_candidates": 1
+       },
+       {
+        "k": 2,
+        "box_halfwidth": 308,
+        "n_candidates": 1
+       },
+       {
+        "k": 3,
+        "box_halfwidth": 2043,
+        "n_candidates": 1
+       },
+       {
+        "k": 4,
+        "box_halfwidth": 8470,
+        "n_candidates": 1
+       }
+      ],
+      "n_tuples_enumerated": 1,
+      "semantics": "FULL enumeration box-intersect-enclosure (C3); never rounding"
+     },
+     "enclosure_source": "integer-exact route D = zero-radius (C3)"
+    },
+    "count_member": {
+     "P1_squared": 56169,
+     "banked": 56169,
+     "agreement": "EXACT-INTEGER"
+    }
+   }
+  },
+  {
+   "check": "B2-integer-routes-p31",
+   "verdict": "OK",
+   "detail": {
+    "path1_hyperellcharpoly": [
+     1,
+     0,
+     28,
+     0,
+     961
+    ],
+    "desk_counts": {
+     "count_C_Fp": 32,
+     "count_C_Fp2": 1018,
+     "quartic_from_counts": [
+      1,
+      0,
+      28,
+      0,
+      961
+     ]
+    },
+    "banked_desk_truths": {
+     "count_C_Fp": 32,
+     "count_C_Fp2": 1018,
+     "charpoly_monic_desc": [
+      1,
+      0,
+      28,
+      0,
+      961
+     ],
+     "jac_order_P1": 990,
+     "count_B2_member": 980100,
+     "count_B2_derivation": "#B2(F_31) = P(1)^2 = 990^2"
+    },
+    "quartic_agreement": "EXACT",
+    "path2": "desk counts (no PARI) -> route-D SQUARING assembly (abcount-internal, exact integers) -> deg-8 Weil box",
+    "assembly": {
+     "deg8_from_desk": [
+      1,
+      0,
+      56,
+      0,
+      2706,
+      0,
+      53816,
+      0,
+      923521
+     ],
+     "deg8_from_path1": [
+      1,
+      0,
+      56,
+      0,
+      2706,
+      0,
+      53816,
+      0,
+      923521
+     ],
+     "assembled_equal": true,
+     "kernel_receipt": "product-diagonal (J(C) x J(C), identity on each factor; trivial kernel receipt \u2014 route-D split of the product member)"
+    },
+    "functional_equation_deg8": {
+     "k=0": true,
+     "k=1": true,
+     "k=2": true,
+     "k=3": true
+    },
+    "weil_box_deg8": {
+     "verdict": "OK",
+     "unique_tuple_a1_a4": [
+      0,
+      56,
+      0,
+      2706
+     ],
+     "receipt": {
+      "per_k": [
+       {
+        "k": 1,
+        "box_halfwidth": 44,
+        "n_candidates": 1
+       },
+       {
+        "k": 2,
+        "box_halfwidth": 868,
+        "n_candidates": 1
+       },
+       {
+        "k": 3,
+        "box_halfwidth": 9665,
+        "n_candidates": 1
+       },
+       {
+        "k": 4,
+        "box_halfwidth": 67270,
+        "n_candidates": 1
+       }
+      ],
+      "n_tuples_enumerated": 1,
+      "semantics": "FULL enumeration box-intersect-enclosure (C3); never rounding"
+     },
+     "enclosure_source": "integer-exact route D = zero-radius (C3)"
+    },
+    "count_member": {
+     "P1_squared": 980100,
+     "banked": 980100,
+     "agreement": "EXACT-INTEGER"
+    }
+   }
+  },
+  {
+   "check": "B3-integer-routes-p11",
+   "verdict": "OK",
+   "detail": {
+    "path1_hyperellcharpoly": [
+     1,
+     -4,
+     6,
+     -44,
+     121
+    ],
+    "desk_counts": {
+     "count_C_Fp": 8,
+     "count_C_Fp2": 118,
+     "quartic_from_counts": [
+      1,
+      -4,
+      6,
+      -44,
+      121
+     ]
+    },
+    "banked_desk_truths": {
+     "count_C_Fp": 8,
+     "count_C_Fp2": 118,
+     "charpoly_monic_desc": [
+      1,
+      -4,
+      6,
+      -44,
+      121
+     ],
+     "jac_order_P1": 80,
+     "charpoly_plusJ_variant": [
+      1,
+      4,
+      6,
+      44,
+      121
+     ],
+     "jsum_vectors_basis_1_z_z2_z3": {
+      "a1": [
+       1,
+       2,
+       2,
+       4
+      ],
+      "a2": [
+       -1,
+       2,
+       0,
+       -2
+      ],
+      "a3": [
+       -3,
+       -2,
+       -4,
+       -2
+      ],
+      "a4": [
+       -1,
+       -2,
+       2,
+       0
+      ]
+     }
+    },
+    "quartic_agreement": "EXACT",
+    "path2_hecke_desk": {
+     "engine": "hecke_desk (in-house exact Z[zeta_5] desk arithmetic; NO PARI code path; Builds item 3a)",
+     "sign_pin": "alpha_a = -J(phi, chi^a) (committed pin \u2014 review item 3)",
+     "generator_canonical_g": 2,
+     "jsum_vectors_basis_1_z_z2_z3": {
+      "a1": [
+       1,
+       2,
+       2,
+       4
+      ],
+      "a2": [
+       -1,
+       2,
+       0,
+       -2
+      ],
+      "a3": [
+       -3,
+       -2,
+       -4,
+       -2
+      ],
+      "a4": [
+       -1,
+       -2,
+       2,
+       0
+      ]
+     },
+     "charpoly_pinned_minusJ": [
+      1,
+      -4,
+      6,
+      -44,
+      121
+     ],
+     "charpoly_plusJ_variant": [
+      1,
+      4,
+      6,
+      44,
+      121
+     ],
+     "pin_discrimination": {
+      "odd_coefficients_differ": true,
+      "even_coefficients_equal": true
+     }
+    },
+    "cross_method": {
+     "hyperellcharpoly_vs_hecke_desk": "EXACT"
+    },
+    "pin_discrimination_receipt": {
+     "plusJ_variant_equals_banked": true,
+     "odd_coefficients_differ": true,
+     "battery_note": "an instantiation against +J would falsely FAIL a correct tool (pinned battery row B3)"
+    },
+    "functional_equation_deg4": {
+     "k=0": true,
+     "k=1": true
+    },
+    "weil_box_deg4": {
+     "verdict": "OK",
+     "unique_pair_a1_a2": [
+      -4,
+      6
+     ],
+     "receipt": {
+      "per_k": [
+       {
+        "k": 1,
+        "box_halfwidth": 13,
+        "n_candidates": 1
+       },
+       {
+        "k": 2,
+        "box_halfwidth": 66,
+        "n_candidates": 1
+       }
+      ],
+      "n_tuples_enumerated": 1,
+      "semantics": "FULL enumeration box-intersect-enclosure; functional equation forces a3, a4; never rounding"
+     },
+     "enclosure_source": "integer-exact hecke_desk = zero-radius"
+    },
+    "count_member": {
+     "P1": 80,
+     "banked": 80,
+     "agreement": "EXACT-INTEGER"
+    }
+   }
+  },
+  {
+   "check": "B3-integer-routes-p31",
+   "verdict": "OK",
+   "detail": {
+    "path1_hyperellcharpoly": [
+     1,
+     -4,
+     46,
+     -124,
+     961
+    ],
+    "desk_counts": {
+     "count_C_Fp": 28,
+     "count_C_Fp2": 1038,
+     "quartic_from_counts": [
+      1,
+      -4,
+      46,
+      -124,
+      961
+     ]
+    },
+    "banked_desk_truths": {
+     "count_C_Fp": 28,
+     "count_C_Fp2": 1038,
+     "charpoly_monic_desc": [
+      1,
+      -4,
+      46,
+      -124,
+      961
+     ],
+     "jac_order_P1": 880,
+     "charpoly_plusJ_variant": [
+      1,
+      4,
+      46,
+      124,
+      961
+     ],
+     "jsum_vectors_basis_1_z_z2_z3": {
+      "a1": [
+       3,
+       6,
+       4,
+       6
+      ],
+      "a2": [
+       -1,
+       2,
+       2,
+       -4
+      ],
+      "a3": [
+       -3,
+       -2,
+       -6,
+       0
+      ],
+      "a4": [
+       -3,
+       -6,
+       0,
+       -2
+      ]
+     }
+    },
+    "quartic_agreement": "EXACT",
+    "path2_hecke_desk": {
+     "engine": "hecke_desk (in-house exact Z[zeta_5] desk arithmetic; NO PARI code path; Builds item 3a)",
+     "sign_pin": "alpha_a = -J(phi, chi^a) (committed pin \u2014 review item 3)",
+     "generator_canonical_g": 3,
+     "jsum_vectors_basis_1_z_z2_z3": {
+      "a1": [
+       3,
+       6,
+       4,
+       6
+      ],
+      "a2": [
+       -1,
+       2,
+       2,
+       -4
+      ],
+      "a3": [
+       -3,
+       -2,
+       -6,
+       0
+      ],
+      "a4": [
+       -3,
+       -6,
+       0,
+       -2
+      ]
+     },
+     "charpoly_pinned_minusJ": [
+      1,
+      -4,
+      46,
+      -124,
+      961
+     ],
+     "charpoly_plusJ_variant": [
+      1,
+      4,
+      46,
+      124,
+      961
+     ],
+     "pin_discrimination": {
+      "odd_coefficients_differ": true,
+      "even_coefficients_equal": true
+     }
+    },
+    "cross_method": {
+     "hyperellcharpoly_vs_hecke_desk": "EXACT"
+    },
+    "pin_discrimination_receipt": {
+     "plusJ_variant_equals_banked": true,
+     "odd_coefficients_differ": true,
+     "battery_note": "an instantiation against +J would falsely FAIL a correct tool (pinned battery row B3)"
+    },
+    "functional_equation_deg4": {
+     "k=0": true,
+     "k=1": true
+    },
+    "weil_box_deg4": {
+     "verdict": "OK",
+     "unique_pair_a1_a2": [
+      -4,
+      46
+     ],
+     "receipt": {
+      "per_k": [
+       {
+        "k": 1,
+        "box_halfwidth": 22,
+        "n_candidates": 1
+       },
+       {
+        "k": 2,
+        "box_halfwidth": 186,
+        "n_candidates": 1
+       }
+      ],
+      "n_tuples_enumerated": 1,
+      "semantics": "FULL enumeration box-intersect-enclosure; functional equation forces a3, a4; never rounding"
+     },
+     "enclosure_source": "integer-exact hecke_desk = zero-radius"
+    },
+    "count_member": {
+     "P1": 880,
+     "banked": 880,
+     "agreement": "EXACT-INTEGER"
+    }
+   }
+  }
+ ],
+ "tool": "abcount (S2 simple-genus-2-blocks extension over the S0 core + S1 products layer)",
+ "verdict": "S2-PASS",
+ "checks_ok": "14/14",
+ "wall_declared": {
+  "seconds": 7200,
+  "mem_gb": 16.0,
+  "dps_cap_declared": 400,
+  "priced_from": "S1_RESULT.md sec 3 banked actuals + in-run period pilot"
+ },
+ "wall_actuals": {
+  "elapsed_s": 27.597,
+  "rss_gb": 0.0429
+ },
+ "sign_convention": {
+  "s1": "P",
+  "s2": "N/A-B2 / N/A-B3 (carried, never dropped)",
+  "conversion_site": "abcount_s0.convert_sign_convention (single site, Q6; NO second site in S2 code)"
+ },
+ "input_invariants_Q3c": {
+  "B2": {
+   "dimension": 4,
+   "member": "J(C)^2, C: y^2 = x^5 - x + 1; base_field Q",
+   "polarization_elementary_divisors": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "disc_f": 2869,
+   "isogeny_declared": "product-diagonal (trivial kernel receipt)"
+  },
+  "B3": {
+   "dimension": 2,
+   "member": "J(C5), C5: y^2 = x^5 + 1; base_field Q",
+   "polarization_elementary_divisors": [
+    1,
+    1
+   ],
+   "disc_f": 3125,
+   "endomorphisms_declared": "CM by Q(zeta_5) (pinned battery row; hecke_desk route)",
+   "isogeny_declared": "NONE (simple CM member)"
+  }
+ },
+ "pinned_lattice_claim": "NONE (Q3d \u2014 no identification against the pinned P is made or implied)",
+ "route_scope": "route T = theta receipts only (NO Frobenius data); route D = integer assembly (B2 squaring; B3 hecke_desk) + Weil box; route C = hyperellcharpoly (planted truth side)"
+}

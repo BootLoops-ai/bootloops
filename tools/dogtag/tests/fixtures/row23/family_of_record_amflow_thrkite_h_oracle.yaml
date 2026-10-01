@@ -1,0 +1,15 @@
+# TRANSCRIPTION of the amflow-cpp family block of thrkite_h_tm2.json (sha16 a3f384283ee36575) for topology_audit (which reads only yaml/jl).
+# family blocks identical across 1 configs: True
+# legs (record): ['p']; replacement: {"p^2": "psq"}; numeric_values: {"psq": "-2", "m1sq": "1", "m2sq": "4", "Msq": "9", "m3sq": "2"}
+# mass symbols substituted from numeric_values: {"m1sq": "1", "m2sq": "4", "Msq": "9", "m3sq": "2"}; top sector = integral [1, 1, 1, 1, 1]
+integralfamilies:
+  - name: "thrkite_h"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [31]
+    propagators:
+      - [ "(k1)^2", 1 ]
+      - [ "(k1 - p)^2", 4 ]
+      - [ "(k2)^2", 9 ]
+      - [ "(k2 - p)^2", 2 ]
+      - [ "(k1 - k2)^2", 0 ]
+    cut_propagators: []

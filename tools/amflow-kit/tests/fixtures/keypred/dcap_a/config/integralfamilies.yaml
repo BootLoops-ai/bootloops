@@ -1,0 +1,9 @@
+integralfamilies:
+  - name: "toybox"
+    loop_momenta: [l1]
+    top_level_sectors: [15]
+    propagators:
+      - [ "l1^2", 0 ]
+      - [ "(l1 + p1)^2", 0 ]
+      - [ "(l1 + p1 + p2)^2", 0 ]
+      - [ "(l1 - p3)^2", 0 ]

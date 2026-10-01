@@ -1,0 +1,71 @@
+{
+ "schema": "subtropica-oracle-run-v1",
+ "kind": "oracle-run",
+ "fixture_id": "synth_zeta3_beta_1var",
+ "oracle": "mpmath",
+ "sanity_only": false,
+ "dps": 60,
+ "point": {},
+ "laurent": {
+  "minorder": 0,
+  "coeffs": [
+   {
+    "order": 0,
+    "value_re": "1.00000000000000000000000000000000000000000000000000000000000",
+    "value_im": "0",
+    "closed_form": "1",
+    "claimed_digits": 60
+   },
+   {
+    "order": 1,
+    "value_re": "-3.00000000000000000000000000000000000000000000000000000000000",
+    "value_im": "0",
+    "closed_form": "-3",
+    "claimed_digits": 60
+   },
+   {
+    "order": 2,
+    "value_re": "5.71013186630354712705516966670794962156210019758640312452888",
+    "value_im": "0",
+    "closed_form": "9 - 2*zeta(2)",
+    "claimed_digits": 60
+   },
+   {
+    "order": 3,
+    "value_re": "-9.91805417995307566876708003105514892009638283871621608283302",
+    "value_im": "0",
+    "closed_form": "-27 + 6*zeta(2) + 6*zeta(3)",
+    "claimed_digits": 60
+   }
+  ]
+ },
+ "cross_check": {
+  "eps_probes": [
+   {
+    "eps": "1/128",
+    "series_vs_beta_digits": 7,
+    "quad_vs_beta_digits": 31
+   },
+   {
+    "eps": "-1/128",
+    "series_vs_beta_digits": 7,
+    "quad_vs_beta_digits": 31
+   }
+  ]
+ },
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:46+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "mpmath": "1.3.0",
+  "sympy": "1.14.0",
+  "method": "closed form B(1+2eps,1+eps) Laurent coefficients [1, -3, 9-2zeta(2), -27+6zeta(2)+6zeta(3)]: derived via the psi-expansion of logGamma, verified against sympy.series(beta(...)); per-order values via mpmath.zeta at dps; controls: 4-term series vs mp.beta at eps=+-1/128 (>=7 digits, eps^4 truncation) and tanh-sinh quadrature vs mp.beta (>=20 digits at dps=30)"
+ }
+}

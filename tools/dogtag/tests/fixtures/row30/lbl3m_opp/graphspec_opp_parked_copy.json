@@ -1,0 +1,88 @@
+{
+  "name": "lbl3m_opp",
+  "description": "LBL3M-opp: 3-loop 1PI QED LbL, SE-arc + cross-chord (opposite rung). V=8 E=10 L=3, 1 fermion loop, planar, all-ee\u03b3.",
+  "edges": [
+    [
+      1,
+      2,
+      "m2"
+    ],
+    [
+      2,
+      3,
+      "m2"
+    ],
+    [
+      3,
+      4,
+      "m2"
+    ],
+    [
+      4,
+      5,
+      "m2"
+    ],
+    [
+      5,
+      6,
+      "m2"
+    ],
+    [
+      6,
+      7,
+      "m2"
+    ],
+    [
+      7,
+      8,
+      "m2"
+    ],
+    [
+      8,
+      1,
+      "m2"
+    ],
+    [
+      2,
+      4,
+      0
+    ],
+    [
+      3,
+      7,
+      0
+    ]
+  ],
+  "nodes": {
+    "1": [
+      1
+    ],
+    "5": [
+      2
+    ],
+    "6": [
+      3
+    ],
+    "8": [
+      4
+    ]
+  },
+  "kinematics": {
+    "external_masses": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    "channels": {
+      "1,2": "s",
+      "2,3": "t",
+      "1,3": "-s-t"
+    },
+    "invariants": [
+      "s",
+      "t",
+      "m2"
+    ]
+  }
+}

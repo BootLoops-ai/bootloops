@@ -1,0 +1,67 @@
+{
+ "package": "tools/famhar",
+ "emitted_at": "2026-09-05T01:10:59Z",
+ "record_tree": "the ladder calibration run's evaluator_harness directory (not shipped; names below are relative to that tree's root)",
+ "vendored": [
+  {
+   "vendored_as": "ladder_reference.py",
+   "record_name": "evaluator_harness/ladder_reference.py",
+   "record_sha256": "4f14762ae182dc3905b2809e2467c17f3a22bc0634056eefda1d4c9906eb2604",
+   "record_size": 9380,
+   "vendored_sha256": "1d636a19de2ee62d9c0e8a96c7922d977c21cf6f3709fbeda92ecd90b7566769",
+   "vendored_size": 12042,
+   "changed": true,
+   "changes": [
+    "_ell_cont: cont=None (no explicit ell_k) now selects the anchored principal branch ell = principal log(a*b) via default_ell_k (k = -1 on the real lambda>0 sheet where a, b are both negative real; 0 on the Euclidean slice and at the anchor); an explicit cont['ell_k'] (0 included) is applied relative to log(a)+log(b) as documented",
+    "default_ell_k(a, b, dps): added (the sheet-selected k)",
+    "ell_sheet(a, b, dps, cont=None): added (reports the k in force and selected_by)",
+    "phi_derivs_chart: ell = _ell_cont(a, b, None, dps+10) (the same default) instead of log(a)+log(b)",
+    "module docstring: the sheet rule stated; the reference-values producer named by file name rather than by path",
+    "docstrings of _ell_cont and phi_derivs_chart updated"
+   ],
+   "masked_ast_vs_record": "DIFFERS _ell_cont, phi_derivs_chart; ADDED default_ell_k, ell_sheet; DOCSTRING-ONLY module docstring; 16 units identical; 0 removed"
+  },
+  {
+   "vendored_as": "build_ladder_config.py",
+   "record_name": "evaluator_harness/build_ladder_config.py",
+   "record_sha256": "25392a2864fea59294e43f478ff45b99e26e4db2eed43c3da6774dc819a37f50",
+   "record_size": 5027,
+   "vendored_sha256": "f6a39c64f727eeefe5a1bf3824ecab2a2353c379ee9918e48cfe91b09a008f88",
+   "vendored_size": 5113,
+   "changed": true,
+   "changes": [
+    "anchor.doc string: reworded ('AMFlow or stored anchor vector')",
+    "calibration_points.refs: the sibling record path of the 100-digit reference values ('../<run>/closedforms/phi_values.json (100d, two-rep crosschecked)') replaced by a file name (phi_values.json, an output of the calibration run not shipped with this package); no other byte changed; the emitted config differs from the record config in exactly those two strings"
+   ]
+  },
+  {
+   "vendored_as": "families/ladder_L4.json",
+   "record_name": "evaluator_harness/families/ladder_L4.json",
+   "record_sha256": "26739b5f16abd77879b88edec55ad23c3456ff138684a51719ceebf71d05a7ad",
+   "record_size": 9292,
+   "vendored_sha256": "70dd6d13a93d55d279f0674ae347d8c78e52457196f0ea3b462ccbe60de7e672",
+   "vendored_size": 9378,
+   "changed": true,
+   "changes": [
+    "emitted by the vendored build_ladder_config.py; differs from the record config in the anchor.doc string and the calibration_points.refs string only (the two edits above); every numeric entry identical"
+   ]
+  }
+ ],
+ "not_vendored": [
+  {
+   "record_name": "evaluator_harness/gates_ladder.py",
+   "record_sha256": "752b454378b663863f4cbeaf5a7d4978358b6968c78263cc1f01dbc04ed38990",
+   "record_size": 19790,
+   "reason": "the gate battery of the calibration run: reads the 100-digit reference values phi_values.json from a sibling record directory that is not part of the package, imports the transport core under its pre-rename module name, carries two absolute paths (a sys.path insert and a manifest entry that is receipt content), and writes receipts into its own directory; measured 2182 s. Named in README/GUIDE as a record."
+  }
+ ],
+ "fixture": {
+  "path": "tests/fixtures/ladder_sheet_receipt.json",
+  "sha256": "5bbecd6b811f8c723c7dc72b659305db49690b7a92e14bf3144129e478ad751a",
+  "record": "IDENTITY_RECEIPT.json",
+  "record_sha256": "3c50aeda13a5c9a203e484f2b2ad9ee4175d0f43b13a4e270933e6e840f3eabb",
+  "record_field": "sheet_checks",
+  "record_dps": 40,
+  "copied_by": "make_fixture.py"
+ }
+}

@@ -1,0 +1,170 @@
+{
+ "about": "Certified enclosure of the transient selected sample SFS E_n(i), i = 1..n-1 (theta = 1), n = 20, genic selection S, truncation M, prec_bits-bit ball arithmetic, on the reference history 'epochs' = [[rho, T], ...] (past -> present, T in 2 N_ref generations) after an ancestral equilibrium at rho = anc_rho = 1. gates: the two certified in-cell checks (stationarity residual of the initial condition contains 0 in every interior row; projected initial balls overlap the closed-form stationary SFS) plus the row-M tail residual bound. moment_diag: LOWER/UPPER bracket separations (ball strings) at j = 1, j = n, j = M and the largest ball radius over j <= n. enclosure: per entry the midpoint printed to 30 digits as an arb interval string 'mid30', the ball radius 'rad' and the relative width 2 rad/|mid|. float_scipy.sfs: the FLOAT register (double-precision dense expm of the same truncated LOWER system), an implementation check that the certified values adjudicate, not the reverse.",
+ "M": 500,
+ "S": -5,
+ "n": 20,
+ "prec_bits": 256,
+ "epochs": [
+  [
+   "1/5",
+   "1/10"
+  ],
+  [
+   "1",
+   "1/20"
+  ]
+ ],
+ "theta": "1",
+ "anc_rho": "1",
+ "gates": {
+  "stationarity_interior_contains_zero": true,
+  "stationarity_max_residual_radius": 6.6874906035147646e-77,
+  "row_M_tail_residual_bound": "[0.00017061 +/- 1.62e-9]",
+  "eq_projection_overlaps_closed_form": true
+ },
+ "moment_diag": {
+  "bracket_sep_mid_j1": "0",
+  "bracket_sep_mid_jn": "0",
+  "bracket_sep_mid_jM": "[4.4187e-9 +/- 1.88e-15]",
+  "max_ball_rad_j_le_n": 2.806754783622918e-77
+ },
+ "enclosure": [
+  {
+   "i": 1,
+   "mid30": "[0.499463965710254264610969665934 +/- 7.74e-32]",
+   "rad": 2.771415097954022e-72,
+   "rel_width": 1.109755773477263e-71
+  },
+  {
+   "i": 2,
+   "mid30": "[0.175066946218424145137139243568 +/- 3.98e-31]",
+   "rad": 1.1612447259165116e-71,
+   "rel_width": 1.3266293278088855e-70
+  },
+  {
+   "i": 3,
+   "mid30": "[0.104155364601798056366015037649 +/- 3.65e-31]",
+   "rad": 3.071646736071913e-71,
+   "rel_width": 5.8982016870956e-70
+  },
+  {
+   "i": 4,
+   "mid30": "[0.0765605574796377370983593185157 +/- 2.12e-33]",
+   "rad": 5.79869268313206e-71,
+   "rel_width": 1.5147989706512513e-69
+  },
+  {
+   "i": 5,
+   "mid30": "[0.0611840852383449155355755164327 +/- 2.80e-34]",
+   "rad": 8.397351344591188e-71,
+   "rel_width": 2.7449462754502216e-69
+  },
+  {
+   "i": 6,
+   "mid30": "[0.0506849801897687047247230623975 +/- 2.40e-32]",
+   "rad": 9.56330491611109e-71,
+   "rel_width": 3.7736248017875494e-69
+  },
+  {
+   "i": 7,
+   "mid30": "[0.0427417028408001403218297141009 +/- 1.11e-32]",
+   "rad": 8.806843022194664e-71,
+   "rel_width": 4.1209602972523016e-69
+  },
+  {
+   "i": 8,
+   "mid30": "[0.0364075232245599734433056926730 +/- 3.74e-32]",
+   "rad": 6.536844401876202e-71,
+   "rel_width": 3.590930567595735e-69
+  },
+  {
+   "i": 9,
+   "mid30": "[0.0312044798085452413061830877529 +/- 2.88e-32]",
+   "rad": 4.037192949268829e-71,
+   "rel_width": 2.587572665232033e-69
+  },
+  {
+   "i": 10,
+   "mid30": "[0.0268507491916687934775917303767 +/- 2.91e-32]",
+   "rad": 2.0808035827630384e-71,
+   "rel_width": 1.549903556068124e-69
+  },
+  {
+   "i": 11,
+   "mid30": "[0.0231620995914559098722257286018 +/- 4.38e-33]",
+   "rad": 8.693978122821311e-72,
+   "rel_width": 7.507072567832638e-70
+  },
+  {
+   "i": 12,
+   "mid30": "[0.0200095147257119550735163051422 +/- 2.37e-32]",
+   "rad": 3.0820242699435255e-72,
+   "rel_width": 3.080558736372718e-70
+  },
+  {
+   "i": 13,
+   "mid30": "[0.0172981330484437898205962474444 +/- 4.47e-32]",
+   "rad": 8.763990027437837e-73,
+   "rel_width": 1.013287388054433e-70
+  },
+  {
+   "i": 14,
+   "mid30": "[0.0149555969343712914857781806820 +/- 4.65e-32]",
+   "rad": 2.0724996597990393e-73,
+   "rel_width": 2.7715371962666013e-71
+  },
+  {
+   "i": 15,
+   "mid30": "[0.0129251006985258513488139500712 +/- 4.95e-32]",
+   "rad": 3.890020478035178e-74,
+   "rel_width": 6.019327150741421e-72
+  },
+  {
+   "i": 16,
+   "mid30": "[0.0111610074148898022639602884612 +/- 8.04e-33]",
+   "rad": 5.843337959148722e-75,
+   "rel_width": 1.0470986608884742e-72
+  },
+  {
+   "i": 17,
+   "mid30": "[0.00962596399251728784561748625088 +/- 5.98e-34]",
+   "rad": 6.394981692308103e-76,
+   "rel_width": 1.3286942891702526e-73
+  },
+  {
+   "i": 18,
+   "mid30": "[0.00828893316239065682010916029197 +/- 7.15e-34]",
+   "rad": 5.1412191444302375e-77,
+   "rel_width": 1.2405020148449188e-74
+  },
+  {
+   "i": 19,
+   "mid30": "[0.00712380846450310633637658806365 +/- 1.18e-33]",
+   "rad": 2.6819351728439626e-78,
+   "rel_width": 7.529498262643226e-76
+  }
+ ],
+ "float_scipy": {
+  "sfs": [
+   0.499463965819125,
+   0.17506694578461154,
+   0.10415536562607978,
+   0.07656055586267767,
+   0.06118408702194883,
+   0.05068497882039182,
+   0.04274170352716407,
+   0.03640752307679089,
+   0.0312044797283709,
+   0.026850749291247467,
+   0.0231620995330547,
+   0.020009514749865103,
+   0.017298133041472645,
+   0.014955596935713217,
+   0.012925100698393765,
+   0.011161007414886891,
+   0.009625963992520643,
+   0.008288933162387643,
+   0.007123808464502343
+  ]
+ }
+}

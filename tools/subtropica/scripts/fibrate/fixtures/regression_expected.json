@@ -1,0 +1,509 @@
+{
+ "source": "engine_memo.pkl (stored pilot memo)",
+ "source_gates": "pilot gates (held-out oracle 38-42d; per-word 2-point validation ~1e-90)",
+ "generated_by": "make_regression.py",
+ "words": [
+  {
+   "word": [
+    "-ze"
+   ],
+   "weight": 1,
+   "terms": [
+    {
+     "gword": [
+      "0"
+     ],
+     "consts": [],
+     "coef": "-1"
+    }
+   ],
+   "own_rep_has_named_constants": false
+  },
+  {
+   "word": [
+    "ze - 1"
+   ],
+   "weight": 1,
+   "terms": [
+    {
+     "gword": [
+      "1"
+     ],
+     "consts": [],
+     "coef": "-1"
+    }
+   ],
+   "own_rep_has_named_constants": false
+  },
+  {
+   "word": [
+    "1/(ze - 1)",
+    "0"
+   ],
+   "weight": 2,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "-1",
+    "-ze"
+   ],
+   "weight": 2,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "ze - 1",
+    "0",
+    "-1"
+   ],
+   "weight": 3,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z3"
+     ],
+     "coef": "-2"
+    },
+    {
+     "gword": [
+      "1"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "-1",
+    "-ze",
+    "-ze"
+   ],
+   "weight": 3,
+   "terms": [
+    {
+     "gword": [
+      "0"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "1"
+    },
+    {
+     "gword": [
+      "1"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "0",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "0"
+     ],
+     "consts": [],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "-1",
+    "-1",
+    "0",
+    "-ze"
+   ],
+   "weight": 4,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z4"
+     ],
+     "coef": "7/4"
+    },
+    {
+     "gword": [
+      "0"
+     ],
+     "consts": [
+      "z3"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "0",
+      "1"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "0",
+      "1",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "1/(ze - 1)",
+    "-1",
+    "1/(ze - 1)",
+    "-1"
+   ],
+   "weight": 4,
+   "terms": [
+    {
+     "gword": [
+      "0",
+      "0",
+      "0",
+      "1"
+     ],
+     "consts": [],
+     "coef": "4"
+    },
+    {
+     "gword": [
+      "0",
+      "0",
+      "1",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "0",
+      "1",
+      "0",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-3"
+    },
+    {
+     "gword": [
+      "0",
+      "1",
+      "1",
+      "1"
+     ],
+     "consts": [],
+     "coef": "3"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "0",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "1",
+      "1"
+     ],
+     "consts": [],
+     "coef": "4"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "0",
+      "1"
+     ],
+     "consts": [],
+     "coef": "3"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "1",
+      "1"
+     ],
+     "consts": [],
+     "coef": "-3"
+    }
+   ],
+   "own_rep_has_named_constants": false
+  },
+  {
+   "word": [
+    "0",
+    "-1",
+    "-ze",
+    "-ze",
+    "-1"
+   ],
+   "weight": 5,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z5"
+     ],
+     "coef": "6"
+    },
+    {
+     "gword": [
+      "1"
+     ],
+     "consts": [
+      "z4"
+     ],
+     "coef": "7/2"
+    },
+    {
+     "gword": [
+      "1",
+      "1"
+     ],
+     "consts": [
+      "z3"
+     ],
+     "coef": "-2"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "0"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "1"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "0"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "0",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "-1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "1",
+      "0",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    },
+    {
+     "gword": [
+      "1",
+      "0",
+      "1",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "0",
+      "0",
+      "0"
+     ],
+     "consts": [],
+     "coef": "2"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "0",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "1"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  },
+  {
+   "word": [
+    "-1",
+    "-ze",
+    "-1",
+    "-1",
+    "-1"
+   ],
+   "weight": 5,
+   "terms": [
+    {
+     "gword": [],
+     "consts": [
+      "z5"
+     ],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "1"
+     ],
+     "consts": [
+      "z4"
+     ],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "1",
+      "1"
+     ],
+     "consts": [
+      "z3"
+     ],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "1"
+     ],
+     "consts": [
+      "z2"
+     ],
+     "coef": "-4"
+    },
+    {
+     "gword": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "0"
+     ],
+     "consts": [],
+     "coef": "4"
+    }
+   ],
+   "own_rep_has_named_constants": true
+  }
+ ]
+}

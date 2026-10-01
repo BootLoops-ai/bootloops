@@ -1,0 +1,104 @@
+{
+  "name": "P4_J25",
+  "n_letters": 4,
+  "letters": [
+    "L_s",
+    "L_t",
+    "L_st",
+    "O_A3"
+  ],
+  "first_entry": [
+    "L_s",
+    "L_t",
+    "O_A3"
+  ],
+  "last_entry": [
+    "L_s",
+    "L_st",
+    "L_t",
+    "O_A3"
+  ],
+  "weight_max": 4,
+  "per_weight": {
+    "0": {
+      "raw": 1,
+      "integrability": 1,
+      "first": 1,
+      "last": 1,
+      "steinmann": 1,
+      "parity": 1,
+      "coproduct": 1,
+      "RESIDUAL": 1,
+      "pts_needed": 2,
+      "rank_method": "trivial"
+    },
+    "1": {
+      "raw": 4,
+      "integrability": 4,
+      "rank_method": "trivial",
+      "first": 3,
+      "last": 3,
+      "steinmann": 3,
+      "parity": 1,
+      "coproduct": 1,
+      "RESIDUAL": 1,
+      "secs": 0.0,
+      "pts_needed": 2
+    },
+    "2": {
+      "raw": 16,
+      "integrability": 12,
+      "rank_method": "exact_Q",
+      "first": 8,
+      "last": 8,
+      "steinmann": 8,
+      "parity": 3,
+      "coproduct": 3,
+      "RESIDUAL": 3,
+      "secs": 0.28,
+      "pts_needed": 4
+    },
+    "3": {
+      "raw": 64,
+      "integrability": 32,
+      "rank_method": "exact_Q",
+      "first": 20,
+      "last": 20,
+      "steinmann": 20,
+      "parity": 8,
+      "coproduct": 8,
+      "RESIDUAL": 8,
+      "secs": 0.04,
+      "pts_needed": 11
+    },
+    "4": {
+      "raw": 256,
+      "integrability": 80,
+      "rank_method": "exact_Q",
+      "first": 48,
+      "last": 48,
+      "steinmann": 48,
+      "parity": 20,
+      "coproduct": 20,
+      "RESIDUAL": 20,
+      "secs": 1.03,
+      "pts_needed": 26
+    }
+  },
+  "per_master": {
+    "None": {
+      "1": 1,
+      "2": 3,
+      "3": 8,
+      "4": 20
+    }
+  },
+  "honesty": {
+    "rank_method": "auto",
+    "coproduct": "SKIPPED (no connection supplied)",
+    "steinmann": "vacuous (no channel tags)"
+  },
+  "RESIDUAL_max": 20,
+  "pts_needed_max": 26,
+  "verdict": "INTERMEDIATE (20/weight; ~26 pts)"
+}

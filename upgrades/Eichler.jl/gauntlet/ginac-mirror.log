@@ -1,0 +1,11 @@
+e1 = E1(tau;chi0,chi1): |diff| = 3.908802148549627e-155  agree>100digits: true
+e2 = E1(2tau;chi0,chi1): |diff| = 9.76964185295371e-155  agree>100digits: true
+f3(tau): |diff| = 1.6000902992921044e-153  agree>100digits: true
+f4(tau): |diff| = 6.285458388711184e-154  agree>100digits: true
+qbar_t I(f3;q): |diff| = 7.505308877212761e-153  agree>100digits: true
+qbar_t I(1,f3;q): |diff| = 1.3087292437435628e-152  agree>100digits: true
+qbar_t I(1,f4,1,f3;q): |diff| = 1.9106192526795855e-152  agree>100digits: true
+qbar_p I(f3;q): |diff| = 5.339899019434153e-153  agree>100digits: true
+qbar_p I(1,f3;q): |diff| = 7.626941836853759e-153  agree>100digits: true
+qbar_p I(1,f4,1,f3;q): |diff| = 8.561489417005137e-153  agree>100digits: true
+ALL_AGREE_100_DIGITS = true

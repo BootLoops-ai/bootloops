@@ -1,0 +1,15 @@
+jobs:
+ - reduce_sectors:
+    reduce:
+     - {topologies: [toybox], sectors: [15], r: 5, s: 1, d: 1}
+    select_integrals:
+      select_mandatory_list:
+        - [toybox, target]
+    preferred_masters: preferred
+    integral_ordering: 5
+    run_initiate: true
+    run_triangular: true
+    run_back_substitution: true
+ - kira2math:
+    target:
+     - [toybox, target]

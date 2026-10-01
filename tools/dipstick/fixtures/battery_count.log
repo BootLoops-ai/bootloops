@@ -1,0 +1,6 @@
+X(3,6): 14 factors, 18 vars, 18 eqs, max deg 3
+crit36.ms written
+
+--- msolve ---
+[msolve-cap] ulimit -v 31457280 KB (= 30 GB address-space cap)
+[msolve-cap] exec: msolve -f crit36.ms -o crit36.out -t 8

@@ -1,0 +1,18 @@
+{
+  "name": "icc",
+  "description": "Ice-cream-cone (massive scoop on a massless cone). Top-sector maximal cut = elliptic; the curve's j-function over the kinematic base does NOT lie on any genus-0 X₁(N) (non-congruence) → DE-transport mandatory (value-fittability class C).",
+  "edges": [[1,2,"1"], [1,2,"1"], [2,3,0], [3,1,0]],
+  "nodes": {"1": [1], "2": [2], "3": [3]},
+  "kinematics": {
+    "invariants": ["w", "t"],
+    "external_masses": {"1": 0, "2": 0, "3": "w"},
+    "channels": {"1,2": "w", "2,3": "t", "1,3": "w-t"}
+  },
+  "maxcut": {
+    "poly": "z*(z-4)*((z-w)**2 - 4*t*w)",
+    "vars": ["z"],
+    "modulus": "w",
+    "source": "scoop maximal cut: inner massive bubble Källén λ(z,1,1)=z(z-4) × outer cone localization (z−w)²−4tw. Generic (w,t) ⇒ 4 distinct roots, j(w) not on Beauville list. Cf. de la Cruz–Vanhove (L_top)."
+  },
+  "fiber_point": {"w": 5, "t": 3}
+}

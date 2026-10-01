@@ -1,0 +1,21 @@
+formglue (tools/formglue) — part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE), with the one exception stated next.
+
+Mixed licensing. Everything in this package is MIT-licensed EXCEPT
+form_hyper.py, whose driver template follows the example drivers shipped with
+HyperFORM (Adam Kardos, Sven-Olaf Moch and Oliver Schnetz; A. Kardos, S.-O.
+Moch, O. Schnetz, "HyperFORM — a FORM package for parametric integration with
+hyperlogarithms", arXiv:2607.01163; https://github.com/adamkardos/HyperFORM;
+HyperFORM v1.0, Zenodo doi:10.5281/zenodo.17706909), and is therefore under
+the GNU General Public License v3.0 (LICENSE-GPL-3.0 beside this file).
+HyperFORM's LICENSE file and its Zenodo record state version 3 only, with no
+later-version option, so form_hyper.py carries none either (SPDX
+GPL-3.0-only). No other module in this package imports form_hyper.py (the
+package __init__ does not load it), so every other source file remains usable
+on its own under MIT; a program that imports formglue.form_hyper is a combined
+work offered under GPL-3.0 terms. Remove form_hyper.py if you need an MIT-only
+build. HyperFORM itself is not included: form_hyper.py writes a driver file
+and runs FORM, with the HyperFORM package obtained from its authors, as a
+separate process.

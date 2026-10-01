@@ -1,0 +1,46 @@
+{
+ "row": "row28",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row28/drawn_graph.yaml",
+   "sha256": "d69e033918b66544d84b5784ee4fc844315908376da35ec812069b6bdd7b64ff",
+   "size": 918,
+   "record_sha256": "bbaef6dbd95ab10f93f1ade3128ea08a96e5788a264e2c676464fb739d40c65a",
+   "record_size": 1065
+  },
+  {
+   "path": "family_of_record.json",
+   "source": "identity_census/rows/row28/family_of_record.json",
+   "sha256": "61c4e46fb523550bb089d02e2f3331822369305000f782c8cc3a252c3801732d",
+   "size": 1877,
+   "record_sha256": "667dd7f5cb1b7bb297099514b77e0d413cb4d6d1411eca453d943be5b54112ad",
+   "record_size": 1909
+  },
+  {
+   "path": "family_of_record.yaml",
+   "source": "identity_census/rows/row28/family_of_record.yaml",
+   "sha256": "f07570cc5983b64d7f24863efbcef2f515d1e30f9ff7df61af7e160301349128",
+   "size": 1025,
+   "record_sha256": "ef4b21f38145ad200a0e49ca96bfbc11dedcbae3f8dccf42160bafa4cfe87aea",
+   "record_size": 1082
+  },
+  {
+   "path": "family_of_record_kira_kinematics.yaml",
+   "source": "identity_census/rows/row28/family_of_record_kira_kinematics.yaml",
+   "sha256": "512fc1c966e86e04d6da17e53af66bd257e7454a2a66033c1f53ff6dfabdb5c9",
+   "size": 541,
+   "record_sha256": "512fc1c966e86e04d6da17e53af66bd257e7454a2a66033c1f53ff6dfabdb5c9",
+   "record_size": 541
+  },
+  {
+   "path": "iso.json",
+   "source": "identity_census/rows/row28/iso.json",
+   "sha256": "1a9d634686489ae444c76d61b5880873e60cd2cce6b7ea6793b29eb701e310b0",
+   "size": 3557,
+   "record_sha256": "2ac6d94802e0be7998dda9fc19bc3ea8541db015253d6628c909fb9ca662b806",
+   "record_size": 4012
+  }
+ ]
+}

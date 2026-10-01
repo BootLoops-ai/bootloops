@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""dipstick — pre-compute triage, unified: check the integral BEFORE you commit
+the farm.  Thin dispatcher: each verb
+execs its member routine unchanged — the usual julia/python mix, no rewrites.
+
+VERBS (regime split — the whole point of the merge):
+  order      pf_rank.jl      Griffiths-Dwork mod-p PF order + GKZ holonomic rank.
+                             n<=4 comfort ceiling; 2-prime mandatory; saturation
+                             (order==Lmax+1) is a REFUSAL, not a result.
+  count      critcount.py    n>=5 regime (closes order's NOT-FOR wall): Lagrange/
+                             ML-degree critical system -> msolve solution count =
+                             holonomic rank.  RANK PROBE, NOT A SOLVER.
+  cycletype  cycletype.py    Frobenius cycle-type statistics of the critical
+                             points.  Assumes squarefree
+                             reduction at the sampled primes.
+  nonres     nonres.py       GKZ facet + beta-pairing nonresonance certificate.
+                             Certifies ONLY at the tested beta (genericity by
+                             sampling).
+  audit      resaudit2.py    msolve-INDEPENDENT exact resultant audit of a
+                             2-roamer-variable .ms critical system: deg Res
+                             minus arrangement-point valuations = crit count.
+                             `--fast` first arg routes to resaudit_fast.py
+                             (evaluate-interpolate F_p variant, n>=20 lines).
+                             2-variable `count` results should always be
+                             cross-checked through this verb.
+  flatchi    flatchi.py /    Exact flat-lattice Mobius chi for hyperplane
+             flatchi_aff.py  arrangements: char poly, chi_top of the projective
+                             complement, Zaslavsky bounded count.  With a file
+                             argument: affine route on a .ms system; with no
+                             args (or --quick): self-contained projective
+                             calibration cages.
+  regions    regions/        Expansion-by-regions completeness check: the
+             regions.jl      lower facets of Newt(U+F) under the small-parameter
+                             weight ARE the regions; certifies a user region
+                             list by two independent sums (volume tiling —
+                             rigorous; chi additivity via Leviathan) and NAMES
+                             the missing region's scaling vector.  Engine-gated:
+                             julia + Oscar + JSON.  Certifies completeness only
+                             (does not build the series); hidden Glauber-type
+                             regions may not enumerate from U+F alone — there a
+                             chi mismatch is the only tell.
+
+USAGE:
+  dipstick order '<Gstr>' <kin_csv> <x_csv> <svar> [Lmax]
+      e.g. dipstick order 'x1*x2+x1*x3+x2*x3 + s*x1*x2*x3 - (x1+x2+x3)*(x1*x2+x1*x3+x2*x3)' s x1,x2,x3 s 3
+      (pf_probe string interface; pf_probe_gen / pf_probe_esc are julia-side
+       entry points — include the member and call them directly, see the manual)
+  dipstick count <npts> [critcount args...]     (emits crit3<n>.ms in CWD;
+      msolve run + degree parse are the external steps)
+  dipstick cycletype [<file.ms>]                (default crit36.ms in CWD;
+      re-runs msolve at ~6 primes, factors eliminants, prints cycle types)
+  dipstick nonres                               (reads the package-vendored
+      GKZ36.json + pinned w5 seed values; prints facet count + verdict)
+  dipstick audit [--fast] <file.ms> [...]       (exact resultant audit; --fast =
+      evaluate-interpolate variant for n>=20 lines)
+  dipstick flatchi [<file.ms> | --quick]        (file: affine flat-lattice route;
+      no file: projective calibration cages, --quick = fast cage only)
+  dipstick regions <in.json> [more.json ...]    (JSON: {"G","kin","x",
+      "kin_weight","regions"?}; several files share ONE Oscar load; needs julia
+      with Oscar + JSON — DIPSTICK_JULIA / DIPSTICK_JULIA_PROJECT as for `order`;
+      DIPSTICK_SKIP_CHI=1 = volume certificate only, chi printed NA)
+
+Series-only inputs are NOT here (that is series_pf.py); LCLM factorization is
+NOT here.  Full guide: GUIDE.md beside this file
+"""
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+JULIA_PROJECT = os.environ.get("DIPSTICK_JULIA_PROJECT", "")
+# (set DIPSTICK_JULIA_PROJECT to a Julia project providing Oscar/Singular for
+#  the `order` and `regions` verbs; empty = the active default Julia
+#  environment)
+
+
+def die_usage():
+    sys.stderr.write(__doc__)
+    sys.exit(2)
+
+
+def main():
+    if len(sys.argv) < 2:
+        die_usage()
+    verb, rest = sys.argv[1], sys.argv[2:]
+    if verb == "order":
+        if len(rest) < 4:
+            die_usage()
+        gstr, kin, xv, svar = rest[0], rest[1].split(","), rest[2].split(","), rest[3]
+        lmax = int(rest[4]) if len(rest) > 4 else 6
+        import json as _j
+        prog = (f'include("{HERE}/pf_rank.jl"); '
+                f'r = pf_probe({_j.dumps(gstr)}, {_j.dumps(kin)}, {_j.dumps(xv)}, '
+                f'{_j.dumps(svar)}; Lmax={lmax}); println(r)')
+        # DIPSTICK_JULIA overrides the julia invocation (e.g. "julia +1.10"
+        # to pin a juliaup channel); default is whatever julia is on PATH.
+        cmd = os.environ.get("DIPSTICK_JULIA", "julia").split() \
+            + ([f"--project={JULIA_PROJECT}"] if JULIA_PROJECT else []) \
+            + ["-e", prog]
+        os.execvp(cmd[0], cmd)
+    elif verb in ("count", "cycletype", "nonres"):
+        member = {"count": "critcount.py", "cycletype": "cycletype.py",
+                  "nonres": "nonres.py"}[verb]
+        os.execvp(sys.executable or "python3",
+                  [sys.executable or "python3", os.path.join(HERE, member)] + rest)
+    elif verb == "audit":
+        if rest and rest[0] == "--fast":
+            member, rest = "resaudit_fast.py", rest[1:]
+        else:
+            member = "resaudit2.py"
+        os.execvp(sys.executable or "python3",
+                  [sys.executable or "python3", os.path.join(HERE, member)] + rest)
+    elif verb == "regions":
+        if not rest:
+            die_usage()
+        # same julia invocation contract as `order` (DIPSTICK_JULIA,
+        # DIPSTICK_JULIA_PROJECT); the member resolves Leviathan itself
+        # (DIPSTICK_LEVIATHAN overrides) and takes one or more input JSONs
+        cmd = os.environ.get("DIPSTICK_JULIA", "julia").split() \
+            + ([f"--project={JULIA_PROJECT}"] if JULIA_PROJECT else []) \
+            + ["--startup-file=no", os.path.join(HERE, "regions", "regions.jl")] + rest
+        os.execvp(cmd[0], cmd)
+    elif verb == "flatchi":
+        # a file argument routes to the affine member; otherwise the projective
+        # calibration (flatchi.py __main__, --quick passes through)
+        member = "flatchi_aff.py" if (rest and not rest[0].startswith("-")) \
+            else "flatchi.py"
+        os.execvp(sys.executable or "python3",
+                  [sys.executable or "python3", os.path.join(HERE, member)] + rest)
+    else:
+        die_usage()
+
+
+if __name__ == "__main__":
+    main()

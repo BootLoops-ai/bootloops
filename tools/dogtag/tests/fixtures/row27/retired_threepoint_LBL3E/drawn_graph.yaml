@@ -1,0 +1,16 @@
+# drawn graph of row 27 from fig-lbl3e.tex (sha16 e1ec779b3caaf7f5): box A, B, C, D with photons p1..p4 at the corners, rung A-B = three mass-m lines, B-C, C-D, D-A mass m
+# external legs (all incoming): p1, p2, p3, p4; p4 = -(p1+p2+p3)
+# leg virtualities: {"p1": "0", "p2": "0", "p3": "0", "p4": "0"}
+# edge routing (spanning tree): [{"edge": ["A", "B"], "momentum": "-k1 - k2 + k3 - p2 - p3", "mass": "m2", "tree_edge": true}, {"edge": ["A", "B"], "momentum": "k1", "mass": "m2", "tree_edge": false}, {"edge": ["A", "B"], "momentum": "k2", "mass": "m2", "tree_edge": false}, {"edge": ["B", "C"], "momentum": "k3 - p3", "mass": "m2", "tree_edge": true}, {"edge": ["C", "D"], "momentum": "k3", "mass": "m2", "tree_edge": false}, {"edge": ["D", "A"], "momentum": "k3 - p1 - p2 - p3", "mass": "m2", "tree_edge": true}]
+integralfamilies:
+  - name: "lbl3e_drawn_box"
+    loop_momenta: [k1, k2, k3]
+    top_level_sectors: [63]
+    propagators:
+      - [ "(-k1 - k2 + k3 - p2 - p3)^2 - m2", 0 ]
+      - [ "(k1)^2 - m2", 0 ]
+      - [ "(k2)^2 - m2", 0 ]
+      - [ "(k3 - p3)^2 - m2", 0 ]
+      - [ "(k3)^2 - m2", 0 ]
+      - [ "(k3 - p1 - p2 - p3)^2 - m2", 0 ]
+    cut_propagators: []

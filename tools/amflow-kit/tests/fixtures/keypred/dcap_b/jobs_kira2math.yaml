@@ -1,0 +1,4 @@
+jobs:
+ - kira2math:
+    target:
+     - [toybox, target]

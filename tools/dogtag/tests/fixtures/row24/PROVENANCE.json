@@ -1,0 +1,110 @@
+{
+ "row": "row24",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "cured_adjacent_p3p4/family_of_record.json",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/family_of_record.json",
+   "sha256": "1864217f1e908a08532a462497b081c3dc1837b6fead4039a4d82acef5af6e61",
+   "size": 1647,
+   "record_sha256": "de08e62a6b7edf474b4dac16f2c94f8176a74e05c69070dd210c0250959bd7e0",
+   "record_size": 1803
+  },
+  {
+   "path": "cured_adjacent_p3p4/family_of_record_transcribed.yaml",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/family_of_record_transcribed.yaml",
+   "sha256": "ade0416796449ea6694f0ad053316ef4be5c7e80db90c73c4ded4260f3782556",
+   "size": 738,
+   "record_sha256": "20a6b08e717fe275a37176b300f06e6c0e66652d2e7825f2a062eb9dfa5041d5",
+   "record_size": 816
+  },
+  {
+   "path": "retired_nonadjacent_p1p3/family_of_record.yaml",
+   "source": "identity_census/rows/row24/retired_nonadjacent_p1p3/family_of_record.yaml",
+   "sha256": "9cb3b9b0d49d4cebe283cfd9f11471c6ae2b349cafb246d5edd1fbbc08ab03b4",
+   "size": 505,
+   "record_sha256": "9cb3b9b0d49d4cebe283cfd9f11471c6ae2b349cafb246d5edd1fbbc08ab03b4",
+   "record_size": 505
+  },
+  {
+   "path": "retired_nonadjacent_p1p3/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row24/retired_nonadjacent_p1p3/kinematics_of_record.yaml",
+   "sha256": "64d62e86c0b095e8e172839f8e629b4d82a5661f76c863f00d69ee294c16dd2b",
+   "size": 546,
+   "record_sha256": "64d62e86c0b095e8e172839f8e629b4d82a5661f76c863f00d69ee294c16dd2b",
+   "record_size": 546
+  },
+  {
+   "path": "cured_adjacent_p3p4/drawn_graph.yaml",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/drawn_graph.yaml",
+   "sha256": "deaf450f7c9f436ddf826da7ece6730630f3be2c141ed00d12e15598cc64688d",
+   "size": 1577,
+   "record_sha256": "f8e2d75946979319496c01e7b5bcf0891c95c7083f8e537ca9a480f3cf0bc455",
+   "record_size": 1638
+  },
+  {
+   "path": "cured_adjacent_p3p4/drawn_graph_adjacent_reading.yaml",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/drawn_graph_adjacent_reading.yaml",
+   "sha256": "0ecab16ea27b1c9c22ae14b66b8a01a83086088c1e55eb52bd3ba8ec274dcb99",
+   "size": 1690,
+   "record_sha256": "6ff67ea18399c22e70d3cdd050c66b4c66fc3fbfb7a54165c7fa482bacd5ffc2",
+   "record_size": 1682
+  },
+  {
+   "path": "cured_adjacent_p3p4/iso.json",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/iso.json",
+   "sha256": "9c5c8bd3dac8d36fcc0aaf1366b0a38ad054ed6cab80be389310fe91c7ced78f",
+   "size": 895,
+   "record_sha256": "9c5c8bd3dac8d36fcc0aaf1366b0a38ad054ed6cab80be389310fe91c7ced78f",
+   "record_size": 895
+  },
+  {
+   "path": "cured_adjacent_p3p4/iso_adjacent_reading.json",
+   "source": "identity_census/rows/row24/cured_adjacent_p3p4/iso_adjacent_reading.json",
+   "sha256": "88007a4990b3a70a0c685c938d8c5c45b5517a983a71f1f52213bc7d03cc7af5",
+   "size": 1335,
+   "record_sha256": "88007a4990b3a70a0c685c938d8c5c45b5517a983a71f1f52213bc7d03cc7af5",
+   "record_size": 1335
+  },
+  {
+   "path": "retired_nonadjacent_p1p3/drawn_graph.yaml",
+   "source": "identity_census/rows/row24/retired_nonadjacent_p1p3/drawn_graph.yaml",
+   "sha256": "deaf450f7c9f436ddf826da7ece6730630f3be2c141ed00d12e15598cc64688d",
+   "size": 1577,
+   "record_sha256": "f8e2d75946979319496c01e7b5bcf0891c95c7083f8e537ca9a480f3cf0bc455",
+   "record_size": 1638
+  },
+  {
+   "path": "double_pentagon/family_of_record.yaml",
+   "source": "identity_census/rows/row24/double_pentagon/family_of_record.yaml",
+   "sha256": "e08d91b95cc5708ac6c6d1a8db2b19350832fee762521e623ec3b1aaab743858",
+   "size": 833,
+   "record_sha256": "e08d91b95cc5708ac6c6d1a8db2b19350832fee762521e623ec3b1aaab743858",
+   "record_size": 833
+  },
+  {
+   "path": "double_pentagon/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row24/double_pentagon/kinematics_of_record.yaml",
+   "sha256": "352698cd1f220498393a47fd1253ce272a3cbfe13921f99ec5222a4adfec74cf",
+   "size": 566,
+   "record_sha256": "352698cd1f220498393a47fd1253ce272a3cbfe13921f99ec5222a4adfec74cf",
+   "record_size": 566
+  },
+  {
+   "path": "double_pentagon/drawn_graph.yaml",
+   "source": "identity_census/rows/row24/double_pentagon/drawn_graph.yaml",
+   "sha256": "80ba6653e7022cc141c4a805dc3dbcb5cb563e03149371fad9ef0bf8dc56f5ef",
+   "size": 1666,
+   "record_sha256": "03c37fc58fd4f0efdd8ec93275303f13abe201898cec98d7488ecbf8f73aaa30",
+   "record_size": 1735
+  },
+  {
+   "path": "double_pentagon/drawn_graph_record_edgelist.yaml",
+   "source": "identity_census/rows/row24/double_pentagon/drawn_graph_record_edgelist.yaml",
+   "sha256": "ad8cdc3cfc6d5fd765ff18835a00957be6c7b4a43aaecafde8e3a3edc455c76a",
+   "size": 1556,
+   "record_sha256": "1f02e675c6e3be010c7ead0ab8d980d278a0e19d480d26ece358a0471972cdf9",
+   "record_size": 1644
+  }
+ ]
+}

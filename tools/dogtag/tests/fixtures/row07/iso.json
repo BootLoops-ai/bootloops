@@ -1,0 +1,62 @@
+{
+ "method": "graph: networkx VF2 isomorphism of the checker's realized graphs with line masses and leg virtualities as labels (routing-independent); propagator-set: signed loop relabelings x leg permutations with momentum conservation re-resolved, (momentum, mass) multisets compared (the checker's own notion, routing-dependent)",
+ "family_of_record_vs_drawn": {
+  "n_lines_A": 7,
+  "n_lines_B": 7,
+  "n_loops_A": 2,
+  "n_loops_B": 2,
+  "n_legs_A": 4,
+  "n_legs_B": 4,
+  "leg_labels_A": {
+   "p1": "0",
+   "p2": "0",
+   "p3": "0",
+   "p4": "0"
+  },
+  "leg_labels_B": {
+   "p1": "0",
+   "p2": "0",
+   "p3": "0",
+   "p4": "0"
+  },
+  "momentum_isomorphic": false,
+  "n_momentum_relabelings_found": 0,
+  "first_momentum_relabeling": null,
+  "labelled_isomorphic": false,
+  "labelled_relabeling": null,
+  "reason": "no signed loop relabeling + leg permutation maps the (momentum, mass) multisets onto each other",
+  "graph": {
+   "bare": true,
+   "bare_leg_map": {
+    "p3": "p1",
+    "p4": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "with_masses": true,
+   "with_masses_leg_map": {
+    "p3": "p1",
+    "p4": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "with_masses_and_legs": true,
+   "with_masses_and_legs_leg_map": {
+    "p3": "p1",
+    "p4": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "V_A": 10,
+   "E_A": 11,
+   "V_B": 10,
+   "E_B": 11
+  },
+  "channel_map": {
+   "family s = (p1 + p2)^2": "-> drawn s (pair ['p3', 'p4'])",
+   "family t = (p2 + p3)^2": "-> drawn t (pair ['p1', 'p4'])",
+   "family_channels_map_onto_drawn_channels_by_name": true
+  }
+ },
+ "extra": {}
+}

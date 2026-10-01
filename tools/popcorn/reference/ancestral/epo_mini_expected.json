@@ -1,0 +1,36 @@
+{
+ "about": "Synthetic 12-bp ancestral FASTA (record 1 = 'ACgtN-' + '.aTGCA'; a second record that must be ignored) and ten sites covering every branch of the join: uppercase anc == ref, uppercase anc == alt, lowercase third allele, lowercase anc == ref on a bare '21' chromosome name, 'N', '-', '.', a position past the sequence end, a non-SNV row (written, not counted as biallelic) and one row of another chromosome (skipped under chrom='chr21'). expected_rows is the full output table in input order; expected_counts and expected_rates are exact.",
+ "fasta": "epo_mini.fa",
+ "sites": "epo_mini_sites.tsv",
+ "chrom": "chr21",
+ "expected_rows": [
+  [1, "A", "G", "A", "high"],
+  [2, "T", "C", "C", "high"],
+  [3, "A", "C", "g", "low"],
+  [4, "T", "A", "t", "low"],
+  [5, "A", "G", "N", "none"],
+  [6, "A", "G", "-", "none"],
+  [7, "A", "G", ".", "none"],
+  [13, "A", "G", ".", "none"],
+  [8, "AT", "A", "a", "low"]
+ ],
+ "expected_counts": {
+  "total_sites": 9,
+  "out_of_fasta_range": 1,
+  "fasta_length": 12,
+  "fasta_extra_sequences": 1,
+  "fasta_header": ">MINI_ANCESTOR test:1:12",
+  "conf_counts_all_sites": {"high": 2, "low": 3, "none": 4},
+  "biallelic_snv": {"n_biallelic_snv": 8, "high": {"anc_eq_ref": 1, "anc_eq_alt": 1, "anc_neither": 0}, "low": {"anc_eq_ref": 1, "anc_eq_alt": 0, "anc_neither": 1}, "unpolarizable": 4},
+  "mismatch_class_biallelic_snv_anc_neither": 1
+ },
+ "expected_rates": {
+  "n_biallelic_snv": 8,
+  "n_anc_called": 4,
+  "frac_anc_eq_ref_of_called": 0.5,
+  "frac_anc_eq_alt_of_called": 0.25,
+  "frac_anc_neither_of_called": 0.25,
+  "frac_low_conf_of_called": 0.5,
+  "frac_unpolarizable_of_biallelic": 0.5
+ }
+}

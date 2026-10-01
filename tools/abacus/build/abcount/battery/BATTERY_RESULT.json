@@ -1,0 +1,43 @@
+{
+ "battery": "abcount full validation battery (M3T_VALIDATION_BATTERY.md 8b57eafb)",
+ "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d",
+ "verdict": "BATTERY-PASS(11/11, B5 RUNS+PASS)",
+ "member_verdicts": {
+  "B2": "PASS",
+  "B3": "PASS",
+  "B1": "PASS",
+  "B4": "PASS",
+  "B4s": "PASS",
+  "B5": "PASS",
+  "N1": "PASS",
+  "N2": "PASS",
+  "N3": "PASS",
+  "N4": "PASS",
+  "N5": "PASS"
+ },
+ "B5_status": "RUNS (precondition confirmed at build + re-probed in-run)",
+ "notes": {
+  "B2": "run_s2 replay S2-PASS (14/14)",
+  "B3": "run_s2 replay S2-PASS (both integer routes + tie receipts inside)",
+  "B1": "native re-exercise: blocks+C7+theta+pslq+integer routes, both primes",
+  "B4": "O_K receipts + a_P=0 both routes both primes + deg-16 assembly",
+  "B4s": "(a_P,b_P)=(-6,-2)/(-6,+2) both routes; E[3] congruence; flip detector",
+  "B5": "Weil-restriction identity both routes, F_p and F_p^2 legs exercised",
+  "N1": "FAIL-as-required: riemann-relation-tau-symmetry fired on entry (1,2)",
+  "N2": "FAIL-as-required: polarization-type-frobenius-normal-form, no tau emitted",
+  "N3": "FAIL-as-required: OK-action-rho-square-eq-minus5 named",
+  "N4": "UNDECIDED-PRECISION as required; no integer emitted; needed-dps quoted",
+  "N5": "FAIL-SIGN-PIN as pre-declared in SEEDS (rides seeds sha)"
+ },
+ "wall_actuals": {
+  "elapsed_s": 36.716,
+  "rss_gb": 0.1035
+ },
+ "stage_receipts": {
+  "S0": "6906a33d",
+  "S1": "8e2d76be",
+  "S2": "2eaeddb0",
+  "S3": "THIS run"
+ },
+ "acceptance": "all positives at all declared primes + all negatives FAIL-as-required + all cross-method pairs exact (battery sec d); B4s CORE exercised"
+}

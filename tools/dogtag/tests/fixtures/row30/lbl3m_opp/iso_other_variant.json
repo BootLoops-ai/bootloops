@@ -1,0 +1,27 @@
+{
+ "labelled_graph_isomorphism": {
+  "found": false,
+  "n_found": 0,
+  "n_realizations_tried": 1
+ },
+ "unlabelled_graph_isomorphism": {
+  "found": false,
+  "n_found": 0,
+  "n_realizations_tried": 1
+ },
+ "tool_isomorphism_to_signed_loop_perms_and_leg_perms_no_shifts": null,
+ "per_realization": [
+  {
+   "realization": 0,
+   "labelled": {
+    "found": false,
+    "n_found": 0
+   },
+   "unlabelled": {
+    "found": false,
+    "n_found": 0
+   }
+  }
+ ],
+ "drawn": "graphspec of the other variant (cross control)"
+}

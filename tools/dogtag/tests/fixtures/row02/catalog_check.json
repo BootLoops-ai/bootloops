@@ -1,0 +1,78 @@
+{
+ "catalog_crossed_tausk_dbox": {
+  "propagators": [
+   "k1^2",
+   "(k1 + p1)^2",
+   "(k1 + p1 + p2)^2",
+   "k2^2",
+   "(k2 + p1 + p2)^2",
+   "(k2 - p3)^2",
+   "(k1 - k2)^2"
+  ],
+  "n_lines_carrying_both_loop_momenta": 1,
+  "realizations": 1,
+  "census_fingerprint": {
+   "abstract_planar": true,
+   "planar_with_legs_in_canonical_order": false,
+   "cut_signature": {
+    "s": 2,
+    "t": 4,
+    "u": 3
+   }
+  },
+  "graph_iso_to_drawn_planar_box": {
+   "bare": true,
+   "bare_leg_map": {
+    "p4": "p1",
+    "p3": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "with_masses": true,
+   "with_masses_leg_map": {
+    "p4": "p1",
+    "p3": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "with_masses_and_legs": true,
+   "with_masses_and_legs_leg_map": {
+    "p4": "p1",
+    "p3": "p2",
+    "p1": "p3",
+    "p2": "p4"
+   },
+   "V_A": 10,
+   "E_A": 11,
+   "V_B": 10,
+   "E_B": 11
+  }
+ },
+ "genuine_crossed_box_theta211": {
+  "yaml": "identity_census/rows/row02/genuine_crossed_box_theta211.yaml",
+  "propagators": [
+   "-k1 - k2 + p3 + p4",
+   "-k1 - k2 - p1",
+   "-k1 - k2",
+   "k1 - p3",
+   "k1",
+   "k2 + p1 + p2 + p3",
+   "k2"
+  ],
+  "n_lines_carrying_both_loop_momenta": 3,
+  "realizations": 1,
+  "census_fingerprint": {
+   "abstract_planar": true,
+   "planar_with_legs_in_canonical_order": false,
+   "cut_signature": {
+    "s": 2,
+    "t": 3,
+    "u": 3
+   }
+  },
+  "planar_with_legs_for_some_leg_order": false,
+  "graph_iso_to_catalog_crossed_tausk_dbox_bare": false,
+  "graph_iso_to_drawn_planar_box_bare": false
+ },
+ "verdict_on_catalog": "the catalog entry 'crossed_tausk_dbox' is the planar double box with legs 3 and 4 interchanged (isomorphic as a bare graph to the drawn planar box, leg map {'p4': 'p1', 'p3': 'p2', 'p1': 'p3', 'p2': 'p4'}; cut signature {'s': 2, 't': 4, 'u': 3}); the genuine crossed box, the (2,1,1) theta graph, is not isomorphic to it, is non-planar with legs in every leg order, and has cut signature {'s': 2, 't': 3, 'u': 3} (the count of lines carrying both loop momenta is routing-dependent and is reported only as information)"
+}

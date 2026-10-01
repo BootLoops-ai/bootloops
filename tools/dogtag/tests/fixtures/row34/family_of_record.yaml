@@ -1,0 +1,21 @@
+integralfamilies:
+  - name: "BAN4"
+    loop_momenta: [k1, k2, k3, k4]
+    top_level_sectors: [31]
+    propagators:
+      # 5 physical equal-mass propagators (sector 31 = 11111)
+      - ["k1", 1]
+      - ["k2", 1]
+      - ["k3", 1]
+      - ["k4", 1]
+      - ["k1+k2+k3+k4-p", 1]
+      # 9 auxiliary (ISP) propagators to complete the 14-dim scalar-product basis.
+      - ["k1-p", 0]
+      - ["k2-p", 0]
+      - ["k3-p", 0]
+      - ["k4-p", 0]
+      - ["k1+k2", 0]
+      - ["k1+k3", 0]
+      - ["k1+k4", 0]
+      - ["k2+k3", 0]
+      - ["k2+k4", 0]

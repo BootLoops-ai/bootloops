@@ -1,0 +1,54 @@
+{
+ "row": "row27",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "retired_threepoint_LBL3E/family_of_record.yaml",
+   "source": "identity_census/rows/row27/retired_threepoint_LBL3E/family_of_record.yaml",
+   "sha256": "4c8d24cf12e8f0872a5a489989d4a889b2464769f144301a4ccf816c1a05936c",
+   "size": 2566,
+   "record_sha256": "5c216e4a63d149c1eed42f0180b76568a78669428016aebd1b7d50afa2c70642",
+   "record_size": 2652
+  },
+  {
+   "path": "retired_threepoint_LBL3E/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row27/retired_threepoint_LBL3E/kinematics_of_record.yaml",
+   "sha256": "25c5b17df803a414d67d6fe67902a90bb8c8488749a7c24c13b0d3c2c08138aa",
+   "size": 506,
+   "record_sha256": "25c5b17df803a414d67d6fe67902a90bb8c8488749a7c24c13b0d3c2c08138aa",
+   "record_size": 506
+  },
+  {
+   "path": "cured_drawn_box_LBL3Ebox/family_of_record.yaml",
+   "source": "identity_census/rows/row27/cured_drawn_box_LBL3Ebox/family_of_record.yaml",
+   "sha256": "d8f4dc0de7d04f580d9ef3ecbe6a347ce86dd4d65479fe8cd53815461fa87a70",
+   "size": 2740,
+   "record_sha256": "12ea800ae6c1ce6ba22f974a578fe0c42fad3e9da91e95a3703e5fe76150b922",
+   "record_size": 3264
+  },
+  {
+   "path": "cured_drawn_box_LBL3Ebox/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row27/cured_drawn_box_LBL3Ebox/kinematics_of_record.yaml",
+   "sha256": "25c5b17df803a414d67d6fe67902a90bb8c8488749a7c24c13b0d3c2c08138aa",
+   "size": 506,
+   "record_sha256": "25c5b17df803a414d67d6fe67902a90bb8c8488749a7c24c13b0d3c2c08138aa",
+   "record_size": 506
+  },
+  {
+   "path": "cured_drawn_box_LBL3Ebox/drawn_graph.yaml",
+   "source": "identity_census/rows/row27/cured_drawn_box_LBL3Ebox/drawn_graph.yaml",
+   "sha256": "ecb7b5a4e4e7b6b5ee317692724bd818dbe4affaba4a05a07a1de275b3f28712",
+   "size": 1178,
+   "record_sha256": "4706de1a52b3233438c785dc96916ad9fc80fb4821fea604786decd974411504",
+   "record_size": 1247
+  },
+  {
+   "path": "retired_threepoint_LBL3E/drawn_graph.yaml",
+   "source": "identity_census/rows/row27/retired_threepoint_LBL3E/drawn_graph.yaml",
+   "sha256": "ecb7b5a4e4e7b6b5ee317692724bd818dbe4affaba4a05a07a1de275b3f28712",
+   "size": 1178,
+   "record_sha256": "4706de1a52b3233438c785dc96916ad9fc80fb4821fea604786decd974411504",
+   "record_size": 1247
+  }
+ ]
+}

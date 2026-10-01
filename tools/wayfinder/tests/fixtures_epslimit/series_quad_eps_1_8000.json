@@ -1,0 +1,30 @@
+{
+ "mode": "black_box_synthetic",
+ "comment": "f(eps) = 7/2 - 3*eps + 11*eps^2 sampled at eps = 1/8000; exact quadratic, so the 3-file grid recovers c_0 = 7/2, c_1 = -3, c_2 = 11 to working precision",
+ "options": {
+  "working_pre": 360,
+  "note": "synthetic fixture, values computed from the closed form in 'comment' at 130 dps"
+ },
+ "result": [
+  {
+   "integral": {
+    "family": "synthetic",
+    "indices": [
+     1
+    ]
+   },
+   "samples": [
+    {
+     "eps": {
+      "re": "0.000125",
+      "im": "0"
+     },
+     "value": {
+      "re": "3.499625171875",
+      "im": "0"
+     }
+    }
+   ]
+  }
+ ]
+}

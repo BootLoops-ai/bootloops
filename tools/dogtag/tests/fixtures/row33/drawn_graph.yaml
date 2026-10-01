@@ -1,0 +1,19 @@
+# DRAWN GRAPH of row 33, built by the identity census from fig-lbl3vp.tex (edge dictionary in its comments) + LBL3VP paragraph in lbl3se.tex + Table 2 label
+# vertices/edges/legs as drawn; edge multiplicity (nu) = [1, 1, 1, 2, 1, 2, 1, 1]
+# legs: p1@BL (p^2=0), p2@TL (p^2=0), p3@TR (p^2=0), p4@BR (p^2=0)
+# loop momenta ['l', 'k1', 'k2']; {'p4': '-p1-p2-p3'}; cyclic leg order as drawn: ['p1', 'p2', 'p3', 'p4']
+# ten lines, eight vertices, two closed fermion loops (box and bubble); stubs BL-A and B-BR both carry l (nu4=2); photon segments A-C and D-B both carry k1 (nu6=2); bubble C-D = k2 and k1-k2, both massive
+integralfamilies:
+  - name: "LBL3VP_drawn"
+    loop_momenta: [l, k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "l + p1", msq ]
+      - [ "l + p1 + p2", msq ]
+      - [ "l + p1 + p2 + p3", msq ]
+      - [ "l", msq ]
+      - [ "l - k1", msq ]
+      - [ "k1", 0 ]
+      - [ "k2", msq ]
+      - [ "k1 - k2", msq ]
+    cut_propagators: []

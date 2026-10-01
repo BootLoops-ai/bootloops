@@ -1,0 +1,17 @@
+FORM 5.0.1 (Jun 24 2026, v5.0.1)                 Run: Tue Jul  7 15:30:55 2026
+    #StartFloat 120d, MZV=4
+    Format floatprecision;
+    L FORACLE = mzv_(2,1);
+    Evaluate;
+    Print +f;
+    .end
+
+Time =       0.00 sec    Generated terms =          1
+         FORACLE         Terms in output =          1
+                         Bytes used      =        208
+
+   FORACLE =
+      1.2020569031595942853997381615114499907649862923404988817922715553418382\
+      0578631309018645587360933525814619915779526071942e+00;
+
+  0.00 sec out of 0.00 sec

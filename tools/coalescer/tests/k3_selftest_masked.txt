@@ -1,0 +1,87 @@
+[selftest] leg 2: K3 operator re-exported to pf_k3_op.json (order=4 degz=5 residual=0 frac_exps=['3/2'] seed terms=500 seed_radius=1/36)  [Ts]
+
+[K3_selftest] Route A monodromy-projection, msq=(1, 1, 1, 9), dps=30
+  PF order=4 degz=5 residual=0
+  threshold exponents: {3/2: 1, 1: 3}  fractional=[3/2]  nilp_rank=3
+  semisimple eigenvalues: {3/2: -1}
+  s-singularities (real): [0.0, 0.753, 4.0, 16.0, 21.247, 36.0]
+  BFKNS seed Nser=500 convergence at s_b=80: 30.0 d  [Ts]
+  adaptive Taylor: ordr=69, frac=0.3
+  Frobenius branches built (Nthr=40): ['3/2']  [Ts]
+
+  >>> s_dec = 0.15
+      two-anchor transport gate at s_dec: 27.6 d  [Ts]
+      det(M)=(-1.0 - 3.5415264488097917932e-27j)  eig-dist={'3/2': 1.4548995308275985e-27}
+      ||(M-I)^k||_F, k=1..4: ['631', '1.92e+03', '1.8e+03', '3.59e+03']
+      c_{3/2} = (-0.015314691539494223598 - 4.1129783637054374205e-28j)
+        row-consistency (4 components agree): 25.4 d   two-anchor: 27.7 d
+
+  s_dec-independence: {}  [Ts total]
+
+[selftest] c_3/2 = (-0.01531469153949422359753685 - 4.112978363705437420542903e-28j)
+[selftest] ref   = -0.01531469153949422359753685
+[selftest] match = 24.73 d   wall = Ts
+
+[selftest] leg 2: --op child output follows (coalescer.py --op pf_k3_op.json --dps 30 --sb 80 --sb2 150 --lift 10 --sdec 0.15 --nthr 40 --out op_out.json)
+  | [anchor-law] op=pf_k3_op.json (banana msq=(1, 1, 1, 9)) seed_radius=0.027777777777777776 order=4 leading_roots=5 min|z_sing|=0.027777777777777776 floor_roots=36.0 floor_seed=36.0 (1/seed_radius; a leading root on |z|=seed_radius: yes; leading roots inside the seed disk: 0, apparent for the seed) law=roots floor=36.0 sb=80.0 (override) sb2=150.0 (override) lift=10.0 (override) verdict=OK  [operator order=4 degz=5 from pf_k3_op.json, seed terms=500, loaded in Ts]
+  | 
+  | [coalescer_op_pf_k3_op] Route A monodromy-projection, banana msq=(1, 1, 1, 9), dps=30
+  |   operator order=4 degz=5 (given), seed terms=500
+  |   threshold exponents: {3/2: 1, 1: 3}  fractional=[3/2]  nilp_rank=3
+  |   semisimple eigenvalues: {3/2: -1}
+  |   s-singularities (real): [0.0, 0.753, 4.0, 16.0, 21.247, 36.0]
+  |   seed series Nser=500 convergence at s_b=80.0: 30.0 d  [Ts]
+  |   adaptive Taylor: ordr=69, frac=0.3
+  |   Frobenius branches built (Nthr=40): ['3/2']  [Ts]
+  | 
+  |   >>> s_dec = 0.15
+  |       two-anchor transport gate at s_dec: 27.6 d  [Ts]
+  |       det(M)=(-1.0 - 2.577051746203564282e-27j)  eig-dist={'3/2': 4.339995135237238e-27}
+  |       ||(M-I)^k||_F, k=1..4: ['631', '1.92e+03', '1.8e+03', '3.59e+03']
+  |       c_{3/2} = (-0.015314691539494223598 + 4.6042645122723550621e-28j)
+  |         row-consistency (4 components agree): 25.3 d   two-anchor: 27.7 d
+  | 
+  |   s_dec-independence: {}  [Ts total]
+  | WROTE op_out.json
+
+[selftest] --op door c_3/2 = (-0.01531469153949422359753685 + 4.604264512272355062071889e-28j)
+[selftest] --op door match = 24.73 d vs closed form; 25.2 d vs the banana door (same kernel; seeds differ only in exact-int vs mp-float construction)   wall = Ts
+
+[selftest] leg 3: --op child output follows (coalescer.py --op examples/gauss_2f1.json --dps 30 --out gauss_out.json)
+  | [anchor-law] op=gauss_2f1.json (Gauss 2F1(1/4,3/4;1;z)) seed_radius=1.0 order=2 leading_roots=1 min|z_sing|=1.0 floor_roots=1.0 floor_seed=1.0 (1/seed_radius; a leading root on |z|=seed_radius: yes; leading roots inside the seed disk: 0, apparent for the seed) law=roots floor=1.0 sb=2.2 (default 2.2*floor) sb2=4.2 (default 4.2*floor) lift=0.25 (default floor/4) verdict=OK  [operator order=2 degz=1 from gauss_2f1.json, seed terms=160, loaded in Ts]
+  | 
+  | [coalescer_op_gauss_2f1] Route A monodromy-projection, Gauss 2F1(1/4,3/4;1;z), dps=30
+  |   operator order=2 degz=1 (given), seed terms=160
+  |   threshold exponents: {3/4: 1, 1/4: 1}  fractional=[1/4, 3/4]  nilp_rank=0
+  |   semisimple eigenvalues: {1/4: I, 3/4: -I}
+  |   s-singularities (real): [-1.0, 0.0]
+  |   seed series Nser=160 convergence at s_b=2.2: 30.0 d  [Ts]
+  |   adaptive Taylor: ordr=69, frac=0.3
+  |   Frobenius branches built (Nthr=60): ['1/4', '3/4']  [Ts]
+  | 
+  |   >>> s_dec = 0.15
+  |       two-anchor transport gate at s_dec: 30.4 d  [Ts]
+  |       det(M)=(1.0 - 3.7530784603553151297e-30j)  eig-dist={'1/4': 7.20222876623887e-30, '3/4': 4.254625270068048e-30}
+  |       ||(M-I)^k||_F, k=1..1: ['5.37']
+  |       c_{1/4} = (0.83462684167407318628 + 0.83462684167407318628j)
+  |         row-consistency (2 components agree): 29.6 d   two-anchor: 30.3 d
+  |       c_{3/4} = (0.19068994087545329702 - 0.19068994087545329702j)
+  |         row-consistency (2 components agree): 28.6 d   two-anchor: 29.6 d
+  | 
+  |   >>> s_dec = 0.3
+  |       two-anchor transport gate at s_dec: 30.0 d  [Ts]
+  |       det(M)=(1.0 + 6.0157471051763893869e-30j)  eig-dist={'1/4': 6.207481126160276e-30, '3/4': 4.634721039918804e-30}
+  |       ||(M-I)^k||_F, k=1..1: ['5.58']
+  |       c_{1/4} = (0.83462684167407318628 + 0.83462684167407318628j)
+  |         row-consistency (2 components agree): 29.6 d   two-anchor: 29.9 d
+  |       c_{3/4} = (0.19068994087545329702 - 0.19068994087545329702j)
+  |         row-consistency (2 components agree): 28.8 d   two-anchor: 29.6 d
+  | 
+  |   s_dec-independence: {'1/4:0.15_vs_0.3': 29.7, '3/4:0.15_vs_0.3': 28.5}  [Ts total]
+  | 
+  | c_{1/4} = (0.8346268416740731862814297 + 0.8346268416740731862814297j)
+  | WROTE gauss_out.json
+[selftest] gauss c_{1/4}: ref = (0.8346268416740731862814297 + 0.8346268416740731862814297j)   match = 25.41 d over s_dec in ['0.15', '0.3']
+[selftest] gauss c_{3/4}: ref = (0.1906899408754532970155815 - 0.1906899408754532970155815j)   match = 25.60 d over s_dec in ['0.15', '0.3']
+[selftest] --op door (Gauss 2F1, not a banana) match = 25.41 d vs Gauss's connection formula   wall = Ts
+[selftest] PASS (probe mode, both doors, K3 round trip + Gauss 2F1; full 195d Route-B gate in GATE.json)

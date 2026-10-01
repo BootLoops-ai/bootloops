@@ -1,0 +1,637 @@
+{
+ "name": "hv4-diag-L5",
+ "schema": "slice-operator-v1",
+ "scope": "DIAG-SLICE (S6-symmetric locus of the 6-param HV4 family)",
+ "comment": "HV4 (Hulek-Verrill fourfold, arXiv:2404.12422 GvdH) DIAGONAL-SLICE order-5 Picard-Fuchs operator card - the S6-symmetric locus phi^1=..=phi^6=phi M6-eigenvalue-+1 period sector. SLICE-RESTRICTED: every quantity DIAG-SLICE; the full 6-param census needs the 6-parameter card (not included). Operator DERIVED as the UNIQUE (order 5, phi-deg 3) annihilator of the two-engine diagonal fundamental-period series (6-letter abelian-square coefficients, eq (5.18) restricted; engines independent to n=400 + direct 6-composition anchor n<=40) and MATCHES the printed JKK operator (arXiv:2404.12422v2 TeX source, ~eq (5.60), cited to Jockers-Kotlewski-Kuusela 2312.07611) coefficient-exactly. Frame-side pin from the 29x29 integer frame matrices (FRAME_RANK5.json): S6-invariant sector of the 29-frame is EXACTLY rank 5, T1..T6 product restricts and is MUM with unipotency index 5, restricted Sigma-Gram det 6480 signature (3,2). Symbol (1-4phi)(1-16phi)(1-36phi) = coefficient line 1 - 56phi + 784phi^2 - 2304phi^3; roots == the three diagonal conifold points {1/36, 1/16, 1/4}; leading D-form coeff = phi^5*symbol -> NO apparent singularities. Exponents: MUM {0^5} at 0; {0,1,3/2,2,3} at each conifold (CY4-node type); {1,1,3/2,2,2} at infinity. K3 vacuum-carrying subsector L3 (Verrill 1996 + JKK; Domb series) carried as k3_sector, battery green, symbol relation sym(L5) = sym(L3)*(1-36phi) verified. GAPS: GAP-D1 exact all-orders annihilation is CITED (JKK) + depth-400 two-engine necessary-condition verified - no independent creative-telescoping certificate issued here; GAP-D2 (= frame G3) conifold monodromies in the 5-frame not closed-form derivable from the frame matrices - needs certified transport. FLUX LAW (GvdH sec 5.3): no fluxes couple to this sector in their construction; vacuum content on the slice lives in k3_sector.",
+ "n_params": 1,
+ "order": 5,
+ "phi_degree": 3,
+ "operator_normal_form": "L5 = sum_j phi^j Q_j(theta), theta = phi d/dphi; recurrence sum_j Q_j(m-j) c_{m-j} = 0 (convention gated on Domb anchor)",
+ "Q_polys_theta": {
+  "Q0_phi0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "Q1_phi1": [
+   -6,
+   -40,
+   -112,
+   -168,
+   -140,
+   -56
+  ],
+  "Q2_phi2": [
+   1020,
+   4628,
+   8548,
+   8076,
+   3920,
+   784
+  ],
+  "Q3_phi3": [
+   -13824,
+   -50688,
+   -72576,
+   -50688,
+   -17280,
+   -2304
+  ]
+ },
+ "R_polys_phi_thetaright": [
+  [
+   0,
+   -6,
+   1020,
+   -13824
+  ],
+  [
+   0,
+   -40,
+   4628,
+   -50688
+  ],
+  [
+   0,
+   -112,
+   8548,
+   -72576
+  ],
+  [
+   0,
+   -168,
+   8076,
+   -50688
+  ],
+  [
+   0,
+   -140,
+   3920,
+   -17280
+  ],
+  [
+   1,
+   -56,
+   784,
+   -2304
+  ]
+ ],
+ "symbol": [
+  1,
+  -56,
+  784,
+  -2304
+ ],
+ "symbol_factors": [
+  "1-4*phi",
+  "1-16*phi",
+  "1-36*phi"
+ ],
+ "singular_points": [
+  "0",
+  "1/36",
+  "1/16",
+  "1/4",
+  "inf"
+ ],
+ "apparent_singularities": "NONE (leading D-form coeff = phi^5 * symbol)",
+ "local_exponents": {
+  "0": {
+   "exponents": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "note": "R_k(0) -> nu^5 MUM"
+  },
+  "1/36": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "1/16": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "1/4": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "inf": {
+   "exponents": [
+    "1",
+    "1",
+    "3/2",
+    "2",
+    "2"
+   ],
+   "residual_deg": 0
+  }
+ },
+ "mum_series_head_c0_c40": [
+  "1",
+  "6",
+  "66",
+  "996",
+  "18306",
+  "384156",
+  "8848236",
+  "218040696",
+  "5651108226",
+  "152254667436",
+  "4229523740916",
+  "120430899525096",
+  "3499628148747756",
+  "103446306284890536",
+  "3102500089343886696",
+  "94219208840385966096",
+  "2892652835496484004226",
+  "89662253086458906345036",
+  "2802887038905690746642916",
+  "88285112311736445352115976",
+  "2799753247995266147347843956",
+  "89333847417312523954034046936",
+  "2866354076060681446555954224696",
+  "92437346938232317505833680390576",
+  "2994900985489170290757597878329836",
+  "97447591912171214828256883106131656",
+  "3183236280393766829982694868375178936",
+  "104363235523568961506091130323484381296",
+  "3433150098404204615367747409340231222376",
+  "113292804630449390414523077344383926930736",
+  "3749593498015432616816199839014231473497136",
+  "124438685799375152191173444580928148226331616",
+  "4140386890068440610567742586524925029208842626",
+  "138093273693648760389487232466632008487098268556",
+  "4616237101589363619424107315336055982588227061316",
+  "154643238715090776461769052462229535066917009716296",
+  "5190976376129449809203046819701042142643950898251876",
+  "174580102876035759598849980550598438577853599389481336",
+  "5881987600620241901798300190848926683935796208144613016",
+  "198516508257702381370914801510101357882654405176272740976",
+  "6710808924308403895947675999397468718194852387440533897076"
+ ],
+ "series_depth": {
+  "N_TWO_ENGINE": 400,
+  "N_DIRECT6_ANCHOR": 40
+ },
+ "pfaffian": {
+  "basis": [
+   "1",
+   "th",
+   "th^2",
+   "th^3",
+   "th^4"
+  ],
+  "frame": "theta-frame: theta v = (A_num/den) v on v=(y,th y,..,th^4 y); d/dphi frame: dv/dphi = A_num/(phi*den) v; den = symbol (1-4phi)(1-16phi)(1-36phi); integer numerators",
+  "A_num": [
+   [
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ]
+   ],
+   [
+    [
+     0,
+     6,
+     -1020,
+     13824
+    ],
+    [
+     0,
+     40,
+     -4628,
+     50688
+    ],
+    [
+     0,
+     112,
+     -8548,
+     72576
+    ],
+    [
+     0,
+     168,
+     -8076,
+     50688
+    ],
+    [
+     0,
+     140,
+     -3920,
+     17280
+    ]
+   ]
+  ],
+  "den": [
+   1,
+   -56,
+   784,
+   -2304
+  ],
+  "deg_table": [
+   [
+    0,
+    3,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  ],
+  "route_choice_point": {
+   "route": "matrix-transport",
+   "law": "transport v' = A(s) v; never eliminate (DESIGN \u00a70)"
+  },
+  "route_choice_scalar": {
+   "route": "scalar-elimination-ok",
+   "slots": 20,
+   "budget": 20000,
+   "probe": {
+    "order": 5,
+    "degree": 3
+   }
+  }
+ },
+ "k3_sector": {
+  "comment": "vacuum-carrying K3 subsector on the slice (Verrill 1996 + JKK via GvdH; Domb series; polynomial periods (1, t, -12t^2+1), Hauptmodul eq (5.71) exact arithmetic - eps0=0, no tiles)",
+  "order": 3,
+  "phi_degree": 2,
+  "Q_polys_theta": {
+   "Q0_phi0": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "Q1_phi1": [
+    -4,
+    -18,
+    -30,
+    -20
+   ],
+   "Q2_phi2": [
+    64,
+    192,
+    192,
+    64
+   ]
+  },
+  "R_polys_phi_thetaright": [
+   [
+    0,
+    -4,
+    64
+   ],
+   [
+    0,
+    -18,
+    192
+   ],
+   [
+    0,
+    -30,
+    192
+   ],
+   [
+    1,
+    -20,
+    64
+   ]
+  ],
+  "symbol": [
+   1,
+   -20,
+   64
+  ],
+  "symbol_factors": [
+   "1-4*phi",
+   "1-16*phi"
+  ],
+  "singular_points": [
+   "0",
+   "1/16",
+   "1/4",
+   "inf"
+  ],
+  "local_exponents": {
+   "0": {
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ],
+    "note": "nu^3 MUM"
+   },
+   "1/16": {
+    "dmin": -2,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ],
+    "residual_deg": 0,
+    "complete": true
+   },
+   "1/4": {
+    "dmin": -2,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ],
+    "residual_deg": 0,
+    "complete": true
+   },
+   "inf": {
+    "exponents": [
+     "1",
+     "1",
+     "1"
+    ],
+    "residual_deg": 0
+   }
+  },
+  "domb_head_c0_c40": [
+   "1",
+   "4",
+   "28",
+   "256",
+   "2716",
+   "31504",
+   "387136",
+   "4951552",
+   "65218204",
+   "878536624",
+   "12046924528",
+   "167595457792",
+   "2359613230144",
+   "33557651538688",
+   "481365424895488",
+   "6956365106016256",
+   "101181938814289564",
+   "1480129751586116848",
+   "21761706991570726096",
+   "321401321741959062016",
+   "4766118425002290943216",
+   "70937237822612227230784",
+   "1059325264441498545599488",
+   "15867288561475917552050176",
+   "238332503119317701296868416",
+   "3588998891197749315801781504",
+   "54173462965779502603086351616",
+   "819495389749956912395778445312",
+   "12421807154893815866971238823424",
+   "188642805226607981502655352817664",
+   "2869841574963193288053914091483136",
+   "43730878432725721843465548973441024",
+   "667399937245443437669503079346407068",
+   "10200254382447298825574575548967751536",
+   "156108141633647980937635705043505590416",
+   "2392191017017513503814506014080704919552",
+   "36702090308427008201617541693784683666128",
+   "563743854083946130320921786223803141743296",
+   "8668473438959946247458998512652899779112192",
+   "133428606234614845702717902156738742788462592",
+   "2055788226622920481910598440275541951365694704"
+  ],
+  "symbol_relation": "sym(L5) = sym(L3) * (1-36*phi)  [verified exact]"
+ },
+ "frame_receipt": {
+  "invariant_sector_dim": 5,
+  "mum_index5": true,
+  "N5_restricted": [
+   [
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    1,
+    2,
+    1,
+    0,
+    0
+   ],
+   [
+    -20,
+    -60,
+    -60,
+    1,
+    0
+   ],
+   [
+    30,
+    120,
+    180,
+    -6,
+    1
+   ]
+  ],
+  "gram5": [
+   [
+    "2",
+    "0",
+    "30",
+    "0",
+    "1"
+   ],
+   [
+    "0",
+    "-60",
+    "0",
+    "6",
+    "0"
+   ],
+   [
+    "30",
+    "0",
+    "180",
+    "0",
+    "0"
+   ],
+   [
+    "0",
+    "6",
+    "0",
+    "0",
+    "0"
+   ],
+   [
+    "1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  ],
+  "gram5_det": "6480",
+  "gram5_signature": [
+   3,
+   2
+  ],
+  "note": "S6-invariant sector of the 29-frame (frame_rank5.py, frame matrices supplied via TERRIER_HV4_FRAME_DIR); the 6-cycle matrix M6 is (5.59)-as-displayed = transpose of printed (5.58); M6 is a slot permutation so the +1-eigenspace is convention-free"
+ },
+ "provenance": {
+  "source": "arXiv:2404.12422v2 TeX source (sha256 4791813f66b1632f46727c5a5f8b0fdf385a60e599bc29ba3c5d889df37e3a52), L5 = ~eq (5.60), L3 + the K3 diagonal fundamental period in the same block",
+  "operator_citation": "Jockers-Kotlewski-Kuusela arXiv:2312.07611 (L5); Verrill J. Math. Kyoto 36 (1996) 423 + JKK (L3)",
+  "frame": "29x29 integer frame matrices (MSWAP, M6, T1..T6, SIGMA; two-engine derived, not included in the package; frame_rank5.py reads them from TERRIER_HV4_FRAME_DIR) -> FRAME_RANK5.json",
+  "recon": "reference diagonal conifold points {1/36, 1/16, 1/4} (HV4 discriminant of arXiv:2404.12422 on the diagonal), used by the symbol gate"
+ },
+ "gaps": [
+  "GAP-D1: exact all-orders annihilation CITED (JKK 2312.07611) + necessary-condition verified to n=400 two-engine; no independent creative-telescoping/Griffiths-Dwork certificate issued here",
+  "GAP-D2 (= frame G3): conifold monodromies of the 5-frame not closed-form derivable from the frame matrices; needs certified transport",
+  "SCOPE: DIAG-SLICE only; the full 6-param family is not covered"
+ ],
+ "battery": {
+  "receipt": "hv4-diag-L5_bank/BATTERY_RECEIPT.json",
+  "scripts": [
+   "engine_a.py",
+   "engine_b.py",
+   "frame_rank5.py",
+   "battery_l5.py",
+   "mkcard.py"
+  ],
+  "verdict": "ALL GATES PASS"
+ },
+ "status": "SLICE-CARD OK (battery green). DIAG-SLICE ONLY - not a census instrument; transport NOT run (no routes field)."
+}

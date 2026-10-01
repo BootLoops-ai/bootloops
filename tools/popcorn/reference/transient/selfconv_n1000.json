@@ -1,0 +1,59 @@
+{
+ "about": "Transient self-convergence of the float engine at n = 1000 on the two-epoch history hist = [(nu, T), ...] (past -> present, T in 2N generations) for each S: dt_maxrel_* = max |E(dt0=1e-4)/E(dt0=4e-4) - 1|, grid_maxrel_* = max |E(G_fine)/E(G) - 1| with G_fine from per_decade=224, dx_mid=5.6e-4; '_massfilt' restricts to entries with E_i > mass_filter_abs, '_unfiltered' to E_i > 1e-12 * max E; n_mass = number of entries passing the mass filter, Emin_mass = smallest such entry.",
+ "n": 1000,
+ "hist": [
+  [
+   0.33,
+   0.47
+  ],
+  [
+   3.38,
+   0.017
+  ]
+ ],
+ "mass_filter_abs": 1e-05,
+ "G": 3273,
+ "G_fine": 4611,
+ "rows": [
+  {
+   "S": 0.0,
+   "n_mass": 999,
+   "dt_maxrel_unfiltered": 0.00038474905068675014,
+   "dt_maxrel_massfilt": 0.00038474905068675014,
+   "grid_maxrel_massfilt": 4.549348269122788e-05,
+   "Emin_mass": 0.0007663185392495839
+  },
+  {
+   "S": -5.0,
+   "n_mass": 999,
+   "dt_maxrel_unfiltered": 0.00036146895658750733,
+   "dt_maxrel_massfilt": 0.00036146895658750733,
+   "grid_maxrel_massfilt": 4.5503279922698425e-05,
+   "Emin_mass": 0.0001522594341079136
+  },
+  {
+   "S": -20.0,
+   "n_mass": 695,
+   "dt_maxrel_unfiltered": 0.0002910737958735643,
+   "dt_maxrel_massfilt": 0.0002910737958735643,
+   "grid_maxrel_massfilt": 4.57428930888959e-05,
+   "Emin_mass": 1.002597545379842e-05
+  },
+  {
+   "S": -100.0,
+   "n_mass": 97,
+   "dt_maxrel_unfiltered": 0.009583436486512498,
+   "dt_maxrel_massfilt": 0.0040239736523286496,
+   "grid_maxrel_massfilt": 0.0011795673946963792,
+   "Emin_mass": 1.0263659667307256e-05
+  },
+  {
+   "S": -200.0,
+   "n_mass": 32,
+   "dt_maxrel_unfiltered": 0.08864650184917511,
+   "dt_maxrel_massfilt": 0.01064057269881924,
+   "grid_maxrel_massfilt": 0.005197933419806677,
+   "Emin_mass": 1.1163530277462428e-05
+  }
+ ]
+}

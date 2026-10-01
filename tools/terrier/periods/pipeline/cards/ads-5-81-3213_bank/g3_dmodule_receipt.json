@@ -1,0 +1,35 @@
+{
+ "context": "ads-5-81-3213 g3: D-module restriction of the card ideal to the PFFV curve (single core)",
+ "headline": "restricted operator ORDER = 13 (not 12); z-degree R > 4052; g3 remains PENDING (exact operator not obtained)",
+ "method": "D-module restriction, sampled (h=5): enriched box-op relation supply from the Gamma-ratio (all |l|_1 <= 2, 50 ops, each termwise-gated on 3125 exact lattice points; l=e_a ops == card ideal ratio 1), on-curve scalar closure at DEGMAX=6 onto B17 = card 12-basis + {th1^2, th1^3, th1*th4, th1^2*th2, th1^2*th3}, connection A(s) 17x17 interpolated exactly mod p, exact F_p[s] Krylov, first-dependency order detection",
+ "structural_findings": {
+  "card_module_basis_12_closure": "FAILS on the curve at every DEGMAX 4-6 (persistent interior free set = the 5 EXTRA monomials); the 12-element module basis of the card is a candidate that does not close",
+  "curve_module_rank": 17,
+  "operator_order": 13,
+  "order_cross_checks": "jets-Krylov closure at 3 independent nodes (40001234/40005678/40009999) AND exact-poly Krylov from interpolated A(s), at BOTH primes 2147483647 / 2147483629 — all give 13",
+  "explains": "certified-empty (r<=213, s<=12) window: the s<=12 cap sat below the true order; order-12 operator does not exist",
+  "vac_layer_impact": "order RISE: order 13 != 2h+2 = 12 and module rank 17 != 12 -> pipe_vac len(module_basis)==order assert and the 2h+2 single-operator transport design cannot hold as-is; order-13 solution space = 12 geometric periods + 1 extra"
+ },
+ "connection": {
+  "A_entry_max_deg": 574,
+  "common_den_deg": 603,
+  "samples_per_prime": 8192,
+  "samples": "one sample set per prime (2147483647, 2147483629; not included in the package)",
+  "sample_note": "consecutive nodes from 34567891 (p1) / 51000001 (p2); ground-truthed vs independent scalar closure at 3 nodes (0/289 diffs)"
+ },
+ "degree_bound": "rho_k = b_k/b_13 rational reconstruction fails at 8128 fit nodes with 64 held-out at BOTH primes -> deg(num)+deg(den) > 8104 -> R > 4052",
+ "data_route_rungs": [
+  {"r": 150, "s": 17, "hit": false, "wall_s": 487.2, "note": "covers all orders <= 17 at r <= 150"},
+  {"r": 195, "s": 13, "hit": false, "wall_s": 346.6, "note": "M=3000 series row-limit at s=13 is r ~ 195; NOHIT == R > 195, consistent"}
+ ],
+ "pitfall": "31-bit modulus int64 overflow: a block-16 int64 modular convolution is safe only for 29-bit primes (16*P^2 < 2^63); at p ~ 2^31 the blocked convolution overflows int64 silently -> garbage modulus poly G -> all rational reconstructions fail while constants still 'pass'. Cure: block size (2^63-1)//(P-1)^2 (= 2 at 31 bits) + per-step-reduced jet multiplication. An early 'deg(A) > 8100' reading was this artifact; the degree_bound above is the corrected one.",
+ "walls_single_core": {
+  "closure_8192_nodes_per_prime_s": 2674,
+  "jets_order_per_node_s": 450,
+  "A_interp_krylov_order_per_prime_s": 160,
+  "rung_150_17_s": 487,
+  "rung_195_13_s": 347
+ },
+ "exact_operator_cost": "exact operator via rho interpolation needs ~2*(2R)+ nodes (>= 17-20k/prime if R ~ 4-5k; more if larger) + W evaluation ~ deg(W_13)=7848 x nodes x 238 polys (~2e13 element operations single-core; parallel over nodes/primes); then exact CRT/Wang over ~40 primes with per-prime cost = closure sampling (dominant). Alternative: sparse-support exact solve on a longer exact series once the mod-p operator support is known. The data route needs M ~ 15R >= 60k series terms.",
+ "g3_verdict": "PENDING: order pinned 13 at 2 primes x 2 methods; exact operator + annihilation + indicial/MUM not obtained; transport blocked"
+}

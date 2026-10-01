@@ -1,0 +1,14 @@
+{
+ "row": "npdbox",
+ "what": "sha-pinned copy of the NP-dbox specimen: the AmflowFamily file historically labeled a nonplanar crossed box that is the planar double box (self-test leg [1]). sha256 / size pin the bytes on disk (refused on drift); record_sha256 / record_size are the original file's, which differs from the copy in one path-valued constant line.",
+ "files": [
+  {
+   "path": "family.jl",
+   "source": "npdbox/family.jl (the specimen AmflowFamily file; not a corpus row)",
+   "sha256": "d9a7d85ff1248e63108122f567c962a398d635ee2d8288b7a6e27926ea691ee0",
+   "size": 3142,
+   "record_sha256": "9d6ebc051081f853fedca95a86eea63db273957bd639feb6b094083bd6d91856",
+   "record_size": 3199
+  }
+ ]
+}

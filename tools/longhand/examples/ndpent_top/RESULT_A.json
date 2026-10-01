@@ -1,0 +1,98 @@
+{
+ "receipt": "RESULT stage A: the sum of 1 landed chunks of 1 (values add per order; bars add in quadrature); NOT a quoted value -- the digits come from the stage-to-stage COMPARE",
+ "stamp_utc": "2026-09-07T01:11:58Z",
+ "stage": "A",
+ "chunks_manifest": "CHUNKS_A.json",
+ "chunks_manifest_sha256": "be5b35321af65aabb1c690a8cbe55d1cb5cfcfc1651963af3ec985e6683c30af",
+ "n_chunks": 1,
+ "n_landed": 1,
+ "landed": [
+  0
+ ],
+ "missing": [],
+ "complete": true,
+ "kernels_cover_package": true,
+ "n_kernels": 968,
+ "orders": [
+  {
+   "regulator_powers": [
+    -4
+   ],
+   "value_re": 0.009027777766571017,
+   "value_im": 0.0,
+   "err_re": 6.440552280354594e-12,
+   "err_im": 0.0,
+   "rel_err": 7.134150227095014e-10,
+   "bar_digits": 9
+  },
+  {
+   "regulator_powers": [
+    -3
+   ],
+   "value_re": 0.026183932797021043,
+   "value_im": 0.0,
+   "err_re": 9.85194637638103e-07,
+   "err_im": 0.0,
+   "rel_err": 3.7625922938138193e-05,
+   "bar_digits": 4
+  },
+  {
+   "regulator_powers": [
+    -2
+   ],
+   "value_re": 0.09351566975075029,
+   "value_im": 0.0,
+   "err_re": 4.756995399567795e-06,
+   "err_im": 0.0,
+   "rel_err": 5.086843105809686e-05,
+   "bar_digits": 4
+  },
+  {
+   "regulator_powers": [
+    -1
+   ],
+   "value_re": 0.2744680939502566,
+   "value_im": 0.0,
+   "err_re": 2.499448410470375e-05,
+   "err_im": 0.0,
+   "rel_err": 9.106517171075499e-05,
+   "bar_digits": 4
+  },
+  {
+   "regulator_powers": [
+    0
+   ],
+   "value_re": 0.8247470108059523,
+   "value_im": 0.0,
+   "err_re": 7.119561932026787e-05,
+   "err_im": 0.0,
+   "rel_err": 8.632419200973482e-05,
+   "bar_digits": 4
+  }
+ ],
+ "chunk_walls_s": {
+  "n": 1,
+  "sum": 24.68,
+  "max": 24.68
+ },
+ "chunk_maxrss_kb": {
+  "n": 1,
+  "max": 120256
+ },
+ "settings": {
+  "stage": "A",
+  "W": "8",
+  "points": "1e4",
+  "presamples": "1e4",
+  "shifts": "32",
+  "epsrel": "1e-4",
+  "epsabs_per_chunk": "1e-12",
+  "lattice_candidates": "0",
+  "chunk_sectors": "0",
+  "n_chunks": "1",
+  "standin": "0",
+  "stamp_utc": "2026-09-07T01:11:33Z",
+  "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+  "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+ }
+}

@@ -1,0 +1,42 @@
+blade (tools/blade) — part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE).
+
+Portions of this package are a Python translation of Blade
+(https://gitee.com/multiloop-pku/blade), Copyright (c) 2022 Xin Guan, Xiao Liu,
+Yan-Qing Ma and Wen-Hao Wu, released under the MIT License; the MIT permission
+notice of LICENSE.md in the Blade fork (the sibling repository
+blade) applies to those portions. The translated
+modules are extension.py, ansatz.py, scheme.py, search.py, adaptive.py and
+semibl.py (each cites the upstream .wl source lines it follows); formats.py and
+pipeline.py implement the file layouts and stage contracts of Blade's C
+programs. The upstream notice is reproduced here:
+
+    MIT License
+
+    Copyright (c) 2022 Xin Guan, Xiao Liu, Yan-Qing Ma and Wen-Hao Wu.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+The C binaries this package drives are built from the Blade fork in the sibling
+repository blade, whose FiniteFlow-derived
+interface files carry their own notice (FiniteFlow, Copyright (c) 2019 Tiziano
+Peraro, MIT License; see THIRD_PARTY.md in that repository). FiniteFlow itself
+is not bundled.

@@ -1,0 +1,25 @@
+# DERIVED Kira-form transcription of the AMFlow-port config of record lbl3kp.json
+# source sha256 0fec931b3d400d3edbd12513b90255004020ed9c2b57e331fc4545f1bbde85ee; propagator strings verbatim; top_level_sectors = nonzero
+# indices of integrals[0] = [1, 1, 1, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]; legs ['p1', 'p2', 'p3', 'p4'], {'p4': '-p1-p2-p3'}
+# written by the identity census (topology_audit reads yaml/jl only)
+integralfamilies:
+  - name: "lbl3kp"
+    loop_momenta: [l, k1, k2]
+    top_level_sectors: [511]
+    propagators:
+      - [ "(l + p1)^2 - msq", 0 ]
+      - [ "(l + p1 + p2)^2 - msq", 0 ]
+      - [ "(l + p1 + p2 + p3)^2 - msq", 0 ]
+      - [ "l^2 - msq", 0 ]
+      - [ "k1^2 - msq", 0 ]
+      - [ "k2^2 - msq", 0 ]
+      - [ "(l - k1 - k2)^2 - msq", 0 ]
+      - [ "(l - k1)^2", 0 ]
+      - [ "(l - k2)^2", 0 ]
+      - [ "(k1 + p1)^2", 0 ]
+      - [ "(k1 + p2)^2", 0 ]
+      - [ "(k1 + p3)^2", 0 ]
+      - [ "(k2 + p1)^2", 0 ]
+      - [ "(k2 + p2)^2", 0 ]
+      - [ "(k2 + p3)^2", 0 ]
+    cut_propagators: []

@@ -1,0 +1,19 @@
+# Genuine two-loop crossed (non-planar) double box built by the census script from the
+# (2,1,1) theta graph: 3-valent vertices mt, mb joined by three paths mt-a1-b1-mb (legs p2, p1),
+# mt-ct-mb (leg p3), mt-cb-mb (leg p4); two lines carry both loop momenta.
+integralfamilies:
+  - name: "crossed_box_theta211"
+    loop_momenta: [k1, k2]
+    propagators:
+      - [ "-k1 - k2 + p3 + p4", 0 ]
+      - [ "-k1 - k2 - p1", 0 ]
+      - [ "-k1 - k2", 0 ]
+      - [ "k1 - p3", 0 ]
+      - [ "k1", 0 ]
+      - [ "k2 + p1 + p2 + p3", 0 ]
+      - [ "k2", 0 ]
+    top_level_sectors: [127]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4]
+    momentum_conservation: {p4: "-p1 - p2 - p3"}
+    leg_virtualities: {p1: "0", p2: "0", p3: "0", p4: "0"}

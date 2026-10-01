@@ -1,0 +1,27 @@
+{
+ "receipt": "generate -- pySecDec loop_package for the ndpent top-sector scalar (package generation step)",
+ "stamp_utc_start": "2026-09-05T21:38:30Z",
+ "stamp_utc_end": "2026-09-05T21:39:10Z",
+ "emitter": "make_ndpent_top.py",
+ "emitter_sha256": "04d784b750be28e7526695a6e28f247f2368063e80605a97079c5e97f07bb9bd",
+ "package_dir": "ndpent_top",
+ "requested_orders": [
+  0
+ ],
+ "contour_deformation": false,
+ "decomposition_method": "geometric",
+ "processes": 2,
+ "form_threads": 1,
+ "form_optimization_level": 2,
+ "real_parameters": [
+  "s12",
+  "s23",
+  "s34",
+  "s45",
+  "s15",
+  "mm3",
+  "mm4"
+ ],
+ "point_json_sha256": "0e006ab16fd623064a19cd72acd0456501f70d942d24ba1f4d65f37a1b33fc3d",
+ "wall_s_python": 39.6
+}

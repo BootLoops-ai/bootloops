@@ -1,0 +1,40 @@
+{
+ "schema": "subtropica-oracle-run-v1",
+ "kind": "oracle-run",
+ "fixture_id": "synth_zeta2_2var",
+ "oracle": "mpmath",
+ "sanity_only": false,
+ "dps": 60,
+ "point": {},
+ "laurent": {
+  "minorder": 0,
+  "coeffs": [
+   {
+    "order": 0,
+    "value_re": "1.64493406684822643647241516664602518921894990120679843773556",
+    "value_im": "0",
+    "closed_form": "zeta(2)",
+    "claimed_digits": 60
+   }
+  ]
+ },
+ "cross_check": {
+  "tanh_sinh_dps": 30,
+  "matched_digits_vs_quadrature": 20
+ },
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:46+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "mpmath": "1.3.0",
+  "sympy": "1.14.0",
+  "method": "closed form zeta(2): exact iterated sympy integration (inner log(1+y)/y, outer pi^2/6), evaluated with mpmath at dps; nested tanh-sinh quadrature cross-check at dps=30 (nested adaptive floor)"
+ }
+}

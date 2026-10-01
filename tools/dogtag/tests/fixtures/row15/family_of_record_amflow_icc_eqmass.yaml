@@ -1,0 +1,17 @@
+# TRANSCRIPTION of the amflow-cpp family block of e1hp_xm1_g320.json (sha16 cb1fbf9c13ee2c87) for topology_audit (which reads only yaml/jl).
+# family blocks identical across 5 configs: True
+# legs (record): ['P12', 'P56']; replacement: {"P12^2": "p12sq", "P56^2": "p56sq", "(P12 - P56)^2": "p34sq"}; numeric_values: {"p12sq": "-1", "p34sq": "-1", "p56sq": "-1", "msq": "1"}
+# mass symbols substituted from numeric_values: {"msq": "1"}; top sector = integral [1, 1, 1, 1, 0, 0, 0]
+integralfamilies:
+  - name: "icc"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [15]
+    propagators:
+      - [ "(l2)^2", 1 ]
+      - [ "(P56 - l2)^2", 1 ]
+      - [ "(l1)^2", 1 ]
+      - [ "(P12 - P56 - l1 + l2)^2", 1 ]
+      - [ "(P56 + l1)^2", 0 ]
+      - [ "(P12 + l2)^2", 0 ]
+      - [ "(P12 + l1)^2", 0 ]
+    cut_propagators: []

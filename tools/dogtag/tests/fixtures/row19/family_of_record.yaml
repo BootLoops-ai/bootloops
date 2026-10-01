@@ -1,0 +1,17 @@
+integralfamilies:
+  - name: "BAN"
+    loop_momenta: [k1, k2, k3]
+    top_level_sectors: [15]
+    propagators:
+      # The 4 physical equal-mass propagators of the 3-loop banana (sector 15 = 1111)
+      - ["k1", 1]
+      - ["k2", 1]
+      - ["k3", 1]
+      - ["k1+k2+k3-p", 1]
+      # 5 auxiliary (ISP) propagators to complete the 9-dim scalar-product basis.
+      # massless / irreducible numerators (only ever appear with non-positive power):
+      - ["k1-p", 0]
+      - ["k2-p", 0]
+      - ["k3-p", 0]
+      - ["k1+k2", 0]
+      - ["k1+k3", 0]

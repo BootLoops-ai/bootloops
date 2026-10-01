@@ -1,0 +1,13 @@
+name = "Counterweight"
+uuid = "e9b1f2a0-3c4d-4e5f-8a90-1b2c3d4e5f60"
+version = "1.0.0"
+authors = ["Matthew D. Schwartz"]
+
+[deps]
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
+
+[compat]
+JSON = "1.6.1"
+Nemo = "0.56"
+julia = "1.11"

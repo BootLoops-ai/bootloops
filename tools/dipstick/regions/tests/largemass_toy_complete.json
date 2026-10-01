@@ -1,0 +1,8 @@
+{
+  "_comment": "Large-mass toy, COMPLETE region list (filled in after enumeration).",
+  "G": "(x1+x2+x3)*(1+x1+x2+M2*x3) + x1*x2",
+  "kin": ["M2"],
+  "x": ["x1","x2","x3"],
+  "kin_weight": {"M2": -1},
+  "regions": [[0,0,1],[1,1,1]]
+}

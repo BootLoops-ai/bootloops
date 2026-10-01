@@ -1,0 +1,11 @@
+# kinematics of the row-32 banana: one external momentum p flows through (figure: 'one momentum p flows through, t = p^2'
+# for the three-loop tile; 'one external momentum p' for the four-loop tile); the period data uses z = 1/p^2 and s = -p^2
+# (pf_engine.py conventions). Masses are numbers (m = 1), so t is the only invariant.
+kinematics:
+  incoming_momenta: [p]
+  outgoing_momenta: []
+  momentum_conservation: []
+  kinematic_invariants:
+    - [t, 2]
+  scalarproduct_rules:
+    - [[p, p], t]

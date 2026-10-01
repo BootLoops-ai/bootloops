@@ -1,0 +1,36 @@
+{
+ "comment": "Example config (schema reference). kira_targets_m and masters must point at YOUR per-point Kira reduction table (kira2math output) and preferred_masters file; every other key is described in cli.py. The selftest refuses to run until these paths exist (set FROB_CONFIG at your filled-in copy).",
+ "kira_targets_m": "(set me) /path/to/your/point/kira_targets_all.m",
+ "masters": "(set me) /path/to/your/preferred_masters",
+ "family": "myfamily",
+ "var": "m2",
+ "mass_slots": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "n_loops": 3,
+ "s_t_numeric": {
+  "s": -5,
+  "t": -3
+ },
+ "eps_list": [
+  "1/101",
+  "1/89",
+  "1/67",
+  "1/53"
+ ],
+ "dps": 50,
+ "dps_eig": 60,
+ "out_dir": "selftest_out",
+ "tag": "example",
+ "branch_n_terms": 10,
+ "Mstart": 196,
+ "kill_integer_eps_indep": false,
+ "ncpu": 4
+}

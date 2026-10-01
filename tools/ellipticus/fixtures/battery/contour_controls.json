@@ -1,0 +1,26 @@
+{
+ "comment": "independent reference values for battery leg L3 (complex-pair contour cycle verb). P = (x^2+2x+2)(x^2-2x+5); the cycle around the conjugate pair -1 +- i equals twice the branch-cut segment integral, computed here by direct quadrature along x(t) = -1 + i(2t-1) with an explicitly continuous sqrt branch (P(x(t)) = 4t(1-t) * ((8-(2t-1)^2) - 4i(2t-1)), second factor Re >= 7 so its principal sqrt never jumps) at 90 dps. Overall cycle ORIENTATION is convention: the battery normalizes one global sign, exactly as documented for stored contour values.",
+ "quartic_coeffs_desc": [
+  "1",
+  "0",
+  "3",
+  "6",
+  "10"
+ ],
+ "pair_rule": "the two roots with Re < 0 (-1 +- i)",
+ "oracle": {
+  "Om": {
+   "re": "2.611669686324717206199534289653633114657776164142364682332185540435388e-52",
+   "im": "2.181686729279743954144361705067148168343037734724499495745896768275626"
+  },
+  "X1": {
+   "re": "8.119384782340478028591569422964614023654401299356441078721474401462298e-52",
+   "im": "-2.464395028554416168697492139971727282879618860122876489109031377275858"
+  },
+  "X2": {
+   "re": "-2.211054363979815862553456130063855517326406450746591256309782914155654e-51",
+   "im": "1.666607907950043748571179213178462696725085913250883702122538272328869"
+  }
+ },
+ "bar_digits": 40
+}

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ibplapper"
+version = "1.0.0"
+license = { text = "MIT" }
+authors = [{ name = "Matthew D. Schwartz" }]
+description = "Winnow (package name: ibplapper): standalone upgraded-Laporta F_p eliminator library with native lambda-witness receipts (verify any reduction row against its generating system)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy"]
+# python-flint is a TEST-ONLY dependency (independent dense-RREF oracle).
+
+[project.optional-dependencies]
+test = ["python-flint"]
+# dense backend (backend='dense'): torch is imported lazily, only when
+# requested — the default cpu path never imports it.
+dense = ["torch"]
+
+[tool.setuptools]
+packages = ["ibplapper", "ibplapper.adapters", "ibplapper.backends", "ibplapper.receipt"]
+
+[tool.setuptools.package-data]
+"ibplapper.receipt" = ["WITNESS_FORMAT.md", "VENDOR_MANIFEST.json"]

@@ -1,0 +1,419 @@
+{
+ "receipt": "COMPARE: stage-to-stage agreement per regulator order (two lattice settings + the median-lattice second rule); the quoted digit count of a value is MIN over the pairs of agreed_digits and over the bars (bar_digits) for that order -- read, never assumed; a sigma > 3 on any pair is a FAIL line for that order",
+ "stamp_utc": "2026-09-07T03:01:36Z",
+ "stages": {
+  "A": {
+   "path": "RESULT_A.json",
+   "sha256": "3bc790fffd5e493cb0b8e9e541411d3f0c9d3fc427f0d8489d64d21eb587a628",
+   "complete": true,
+   "settings": {
+    "stage": "A",
+    "W": "8",
+    "points": "1e4",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-4",
+    "epsabs_per_chunk": "1e-12",
+    "lattice_candidates": "0",
+    "chunk_sectors": "0",
+    "n_chunks": "1",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:11:33Z",
+    "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   }
+  },
+  "B": {
+   "path": "RESULT_B.json",
+   "sha256": "f860bde2dd5305e08871f179b218025ec0123648663ef4a44c257be29bef24f1",
+   "complete": true,
+   "settings": {
+    "stage": "B",
+    "W": "8",
+    "points": "1e5",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-7",
+    "epsabs_per_chunk": "1.706e-10",
+    "lattice_candidates": "0",
+    "chunk_sectors": "12",
+    "n_chunks": "28",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:11:58Z",
+    "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   }
+  },
+  "C": {
+   "path": "RESULT_C.json",
+   "sha256": "1108cb50a4b0d47f22afdaa056ad7d80e894582c84f66b1c720d99f19a760810",
+   "complete": true,
+   "settings": {
+    "stage": "C",
+    "W": "8",
+    "points": "1e5",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-7",
+    "epsabs_per_chunk": "1.706e-10",
+    "lattice_candidates": "11",
+    "chunk_sectors": "12",
+    "n_chunks": "28",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:56:48Z",
+    "integrator": "disteval median-lattice rule (--lattice-candidates 11): the SECOND integrator = a different lattice construction on the same kernel library",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   }
+  }
+ },
+ "all_complete": true,
+ "pairs": [
+  {
+   "pair": [
+    "A",
+    "B"
+   ],
+   "rows": [
+    {
+     "regulator_powers": [
+      -4
+     ],
+     "a": [
+      0.009027777766571017,
+      0.0
+     ],
+     "b": [
+      0.00902777777777804,
+      0.0
+     ],
+     "err_a": 6.440552280354594e-12,
+     "err_b": 3.4978010091748574e-15,
+     "abs_diff": 1.1207023156711848e-11,
+     "sigma": 1.7400715056933418,
+     "agreed_digits": 8,
+     "bar_digits_min": 9,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -3
+     ],
+     "a": [
+      0.026183932797021043,
+      0.0
+     ],
+     "b": [
+      0.0261809260313331,
+      0.0
+     ],
+     "err_a": 9.85194637638103e-07,
+     "err_b": 1.1231393018584768e-09,
+     "abs_diff": 3.0067656879434468e-06,
+     "sigma": 3.0519489441160634,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -2
+     ],
+     "a": [
+      0.09351566975075029,
+      0.0
+     ],
+     "b": [
+      0.09350840743483539,
+      0.0
+     ],
+     "err_a": 4.756995399567795e-06,
+     "err_b": 6.294447796143462e-09,
+     "abs_diff": 7.262315914899342e-06,
+     "sigma": 1.5266589406291824,
+     "agreed_digits": 4,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -1
+     ],
+     "a": [
+      0.2744680939502566,
+      0.0
+     ],
+     "b": [
+      0.274398504238719,
+      0.0
+     ],
+     "err_a": 2.499448410470375e-05,
+     "err_b": 2.6726566729291863e-08,
+     "abs_diff": 6.958971153764315e-05,
+     "sigma": 2.784201164614593,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      0
+     ],
+     "a": [
+      0.8247470108059523,
+      0.0
+     ],
+     "b": [
+      0.8246341248952935,
+      0.0
+     ],
+     "err_a": 7.119561932026787e-05,
+     "err_b": 7.344564291155832e-08,
+     "abs_diff": 0.00011288591065872211,
+     "sigma": 1.5855729842598085,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    }
+   ]
+  },
+  {
+   "pair": [
+    "A",
+    "C"
+   ],
+   "rows": [
+    {
+     "regulator_powers": [
+      -4
+     ],
+     "a": [
+      0.009027777766571017,
+      0.0
+     ],
+     "b": [
+      0.009027777776653496,
+      0.0
+     ],
+     "err_a": 6.440552280354594e-12,
+     "err_b": 5.417819405335523e-13,
+     "abs_diff": 1.0082478255069027e-11,
+     "sigma": 1.5599583686320895,
+     "agreed_digits": 8,
+     "bar_digits_min": 9,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -3
+     ],
+     "a": [
+      0.026183932797021043,
+      0.0
+     ],
+     "b": [
+      0.02618092601361412,
+      0.0
+     ],
+     "err_a": 9.85194637638103e-07,
+     "err_b": 6.836630259367482e-10,
+     "abs_diff": 3.0067834069225086e-06,
+     "sigma": 3.0519681777552745,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -2
+     ],
+     "a": [
+      0.09351566975075029,
+      0.0
+     ],
+     "b": [
+      0.09350840336745588,
+      0.0
+     ],
+     "err_a": 4.756995399567795e-06,
+     "err_b": 2.430977431955019e-09,
+     "abs_diff": 7.266383294415868e-06,
+     "sigma": 1.5275151088551309,
+     "agreed_digits": 4,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -1
+     ],
+     "a": [
+      0.2744680939502566,
+      0.0
+     ],
+     "b": [
+      0.2743984783620932,
+      0.0
+     ],
+     "err_a": 2.499448410470375e-05,
+     "err_b": 1.225659491546081e-08,
+     "abs_diff": 6.961558816342972e-05,
+     "sigma": 2.7852377149198606,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      0
+     ],
+     "a": [
+      0.8247470108059523,
+      0.0
+     ],
+     "b": [
+      0.8246341198398472,
+      0.0
+     ],
+     "err_a": 7.119561932026787e-05,
+     "err_b": 6.99017399456793e-08,
+     "abs_diff": 0.00011289096610500593,
+     "sigma": 1.5856440715084135,
+     "agreed_digits": 3,
+     "bar_digits_min": 4,
+     "within_sum_of_bars": false
+    }
+   ]
+  },
+  {
+   "pair": [
+    "B",
+    "C"
+   ],
+   "rows": [
+    {
+     "regulator_powers": [
+      -4
+     ],
+     "a": [
+      0.00902777777777804,
+      0.0
+     ],
+     "b": [
+      0.009027777776653496,
+      0.0
+     ],
+     "err_a": 3.4978010091748574e-15,
+     "err_b": 5.417819405335523e-13,
+     "abs_diff": 1.124544901642821e-12,
+     "sigma": 2.0755979149601598,
+     "agreed_digits": 9,
+     "bar_digits_min": 10,
+     "within_sum_of_bars": false
+    },
+    {
+     "regulator_powers": [
+      -3
+     ],
+     "a": [
+      0.0261809260313331,
+      0.0
+     ],
+     "b": [
+      0.02618092601361412,
+      0.0
+     ],
+     "err_a": 1.1231393018584768e-09,
+     "err_b": 6.836630259367482e-10,
+     "abs_diff": 1.7718979061775997e-11,
+     "sigma": 0.013476020643004507,
+     "agreed_digits": 9,
+     "bar_digits_min": 7,
+     "within_sum_of_bars": true
+    },
+    {
+     "regulator_powers": [
+      -2
+     ],
+     "a": [
+      0.09350840743483539,
+      0.0
+     ],
+     "b": [
+      0.09350840336745588,
+      0.0
+     ],
+     "err_a": 6.294447796143462e-09,
+     "err_b": 2.430977431955019e-09,
+     "abs_diff": 4.067379516525804e-09,
+     "sigma": 0.6027915931296036,
+     "agreed_digits": 7,
+     "bar_digits_min": 7,
+     "within_sum_of_bars": true
+    },
+    {
+     "regulator_powers": [
+      -1
+     ],
+     "a": [
+      0.274398504238719,
+      0.0
+     ],
+     "b": [
+      0.2743984783620932,
+      0.0
+     ],
+     "err_a": 2.6726566729291863e-08,
+     "err_b": 1.225659491546081e-08,
+     "abs_diff": 2.5876625786569463e-08,
+     "sigma": 0.8800690235815375,
+     "agreed_digits": 7,
+     "bar_digits_min": 7,
+     "within_sum_of_bars": true
+    },
+    {
+     "regulator_powers": [
+      0
+     ],
+     "a": [
+      0.8246341248952935,
+      0.0
+     ],
+     "b": [
+      0.8246341198398472,
+      0.0
+     ],
+     "err_a": 7.344564291155832e-08,
+     "err_b": 6.99017399456793e-08,
+     "abs_diff": 5.055446283819265e-09,
+     "sigma": 0.04985997422395627,
+     "agreed_digits": 8,
+     "bar_digits_min": 7,
+     "within_sum_of_bars": true
+    }
+   ]
+  }
+ ],
+ "min_digits_over_all_orders_and_pairs(the conservative digit count)": 3,
+ "fail_lines": [
+  {
+   "pair": [
+    "A",
+    "B"
+   ],
+   "regulator_powers": [
+    -3
+   ],
+   "sigma": 3.0519489441160634
+  },
+  {
+   "pair": [
+    "A",
+    "C"
+   ],
+   "regulator_powers": [
+    -3
+   ],
+   "sigma": 3.0519681777552745
+  }
+ ]
+}

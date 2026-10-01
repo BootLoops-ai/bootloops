@@ -1,0 +1,17 @@
+# Run-time outputs written next to the scripts by the test batteries and
+# engines. They are regenerated on every run and are not part of the
+# distribution (the pinned fixtures are listed in regression_manifest.json).
+lattice/RESULTS_BUILD.md
+lattice/RUN_*.json
+lattice/CERTS_SIG30.jsonl
+lattice/isom_tmp.gp
+lattice/post_*.gp
+lattice/emit/G48_LIST.jsonl
+lattice/emit/controls_report.json
+lattice/emit/ENGINE_REPORT.json
+lattice/emit/R2S11_*_ENGINE.jsonl
+lattice/emit/SELFTEST_SWEEPCHASSIS.json
+census/SMOKE_RECEIPT.json
+common/out_selftest_dedup_receipt.jsonl
+periods/pipeline/conipfv/out/scoreboard.json
+periods/pipeline/sunit/candidates2/

@@ -1,0 +1,88 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true,
+  "d0": "2"
+ },
+ "family": {
+  "name": "sun114",
+  "loops": [
+   "l1",
+   "l2"
+  ],
+  "legs": [
+   "p"
+  ],
+  "conservation": {},
+  "replacement": {
+   "p^2": "s"
+  },
+  "propagators": [
+   "l1^2 - msq1",
+   "l2^2 - msq2",
+   "(l1 + l2 - p)^2 - msq3",
+   "(l1 + p)^2",
+   "(l2 + p)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    2,
+    1,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    2,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 150,
+ "eps_order": 9,
+ "work_dir": "sun114_d2_tm3_g150_o9a",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 8,
+  "blackbox": {
+   "ibp_rank": 0,
+   "ibp_dot": 2,
+   "integral_order": 5,
+   "n_thread": 16,
+   "numeric_values": {
+    "s": "-3",
+    "msq1": "1",
+    "msq2": "1",
+    "msq3": "4"
+   }
+  }
+ }
+}

@@ -1,0 +1,35 @@
+# LBL3Ebox -- the corrected box family for the graph the row draws (fig-lbl3e.tex), adjudicated against the drawing.
+# 'magic_relations: true' is set because the family's automorphism group is non-trivial (|Aut| = 12, generators S3 on
+# the sunrise lines x a Z2): the symmetry relations are wired into the reduction rather than only counted.
+# Routed exactly as the figure labels it: photons p1@A, p2@B, p3@C, p4@D; sunrise s1,s2,s3 = rung A-B carrying k
+# from A to B; box edges B-C = k+p2, C-D = k+p2+p3, D-A = k+p2+p3+p4 = k-p1. Kinematics: kinematics_of_record.yaml
+# (s=(p1+p2)^2, t=(p2+p3)^2, m2=1).
+# This list reproduces the elliptic candidate's Symanzik polynomials under a relabeling of Feynman parameters only.
+# NOT run through Kira or AMFlow. Difference from the earlier three-point family (retired_threepoint_LBL3E):
+# that family puts the mass on k^2 (the same
+# momentum as the sunrise bundle) and has only two further massive edges (k+p1, k+p1+p2+p3), leaving one box edge
+# as a massless ISP with power 0 in every master; here all three perimeter edges are massive and k^2 is the ISP.
+# The alternative list (k+p1, k+p1+p2, k+p1+p2+p3) is the same graph with the
+# photon labels rotated one corner, i.e. its (s,t) are this file's (t,s).
+integralfamilies:
+  - name: "LBL3Ebox"
+    magic_relations: true
+    loop_momenta: [k, l1, l2]
+    top_level_sectors: [63]
+    propagators:
+      - [ "l1^2 - m2", 0 ]                                   # D1  sunrise s1 (rung A-B)
+      - [ "l2^2 - m2", 0 ]                                   # D2  sunrise s2
+      - [ "(k - l1 - l2)^2 - m2", 0 ]                        # D3  sunrise s3 (bundle momentum k, A -> B)
+      - [ "(k + p2)^2 - m2", 0 ]                             # D4  box edge B-C
+      - [ "(k + p2 + p3)^2 - m2", 0 ]                        # D5  box edge C-D   <- massless ISP with power 0 in the record
+      - [ "(k - p1)^2 - m2", 0 ]                             # D6  box edge D-A  (= k+p2+p3+p4)
+      - [ "k^2", 0 ]                                         # D7  ISP -> k.k     <- the record's massive D4
+      - [ "(k + l1)^2", 0 ]                                  # D8  ISP -> k.l1
+      - [ "(k + l2)^2", 0 ]                                  # D9  ISP -> k.l2
+      - [ "(l1 + p1)^2", 0 ]                                 # D10 ISP -> l1.p1
+      - [ "(l1 + p2)^2", 0 ]                                 # D11 ISP -> l1.p2
+      - [ "(l1 + p3)^2", 0 ]                                 # D12 ISP -> l1.p3
+      - [ "(l2 + p1)^2", 0 ]                                 # D13 ISP -> l2.p1
+      - [ "(l2 + p2)^2", 0 ]                                 # D14 ISP -> l2.p2
+      - [ "(l2 + p3)^2", 0 ]                                 # D15 ISP -> l2.p3
+    cut_propagators: []

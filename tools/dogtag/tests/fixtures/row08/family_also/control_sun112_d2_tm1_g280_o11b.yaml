@@ -1,0 +1,16 @@
+# Transcription of the AMFlow-port config sun112_d2_tm1_g280_o11b.json
+# sha256 2338de8870e245c82c194ae92534049f95b6bafeb7c01146c02bf21cabcc8949
+# masses substituted from amf_options.blackbox.numeric_values: msq1=1, msq2=1, msq3=2
+# kinematics of that run: s=-1 with replacement p^2 -> s
+# top sector from the integral with the most positive indices: [1, 1, 1, 0, 0] -> mask 7
+integralfamilies:
+  - name: "sun112"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [7]
+    propagators:
+      - [ "l1^2 - 1", 0 ]
+      - [ "l2^2 - 1", 0 ]
+      - [ "(l1 + l2 - p)^2 - 2", 0 ]
+      - [ "(l1 + p)^2", 0 ]
+      - [ "(l2 + p)^2", 0 ]
+    cut_propagators: []

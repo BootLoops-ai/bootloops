@@ -1,0 +1,18 @@
+eichler (tools/eichler) — part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE), with the one exception stated next.
+
+Mixed licensing. Everything in this package is MIT-licensed EXCEPT
+genus2/mestre_port.py, which is derived from SageMath
+(https://www.sagemath.org): sage/schemes/hyperelliptic_curves/mestre.py
+(Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng; 2025 Sabrina
+Kunzweiler, Gareth Ma, Giacomo Pope) and
+sage/schemes/hyperelliptic_curves/invariants.py (Copyright (C) 2008 Nick
+Alexander; 2025 Sabrina Kunzweiler, Gareth Ma, Giacomo Pope), and is
+therefore under the GNU General Public License v2.0 or later (LICENSE-GPL-2.0
+beside this file). The eichler.genus2 package imports mestre_port.py, so
+eichler.genus2 as imported is a combined work offered under GPL-2.0-or-later
+terms; every other source file remains usable on its own under MIT. Remove
+genus2/mestre_port.py (and its import line in genus2/__init__.py and the S1
+leg of genus2/selftest.py) if you need an MIT-only build.

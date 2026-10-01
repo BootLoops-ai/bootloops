@@ -1,0 +1,50 @@
+{
+ "record": "IDENTITY_RECEIPT.json",
+ "record_sha256_16": "3c50aeda13a5c9a2",
+ "record_sha256": "3c50aeda13a5c9a203e484f2b2ad9ee4175d0f43b13a4e270933e6e840f3eabb",
+ "record_field": "sheet_checks",
+ "record_dps": 40,
+ "record_dps_note": "the record's sheet_checks values were computed at this working precision; own_value_str carries 50 printed digits of a dps-40 computation, so agreement against it is capped near 40 digits",
+ "L": 3,
+ "call": "phi_value(L, a=w, b=wbar, dps, cont) with a = z/(z-1), b = zbar/(zbar-1); z, zbar the two real roots of t^2 - (1+X-Y) t + X = 0 (z the smaller); cont={'ell_k': -1} is the record's principal-ell call, cont=None the default",
+ "points": [
+  {
+   "record_path": "sheet_checks.points[0]",
+   "X": "1/4",
+   "Y": "1/10",
+   "lambda_exact": "129/400",
+   "lambda_positive": true,
+   "X_plus_Y_below_1": true,
+   "own_value_str": "117.91526848801055833824978736922483231375658468337",
+   "ladder_reference_ellk_minus1_re_str": "117.91526848801055833824978736922483231374927760518",
+   "ladder_reference_ellk_minus1_im_abs": 2.512957871148495e-57,
+   "ladder_reference_cont_none_re_str": "-383.41493995673656119974275017519102448390401743165",
+   "ladder_reference_cont_none_im_abs": 113.78289144262556,
+   "z_str": "0.2910545827099863194553831008",
+   "zbar_str": "0.8589454172900136805446168992",
+   "w_str": "-0.410545827099863194553831008004",
+   "wbar_str": "-6.089454172900136805446168992",
+   "ell_str": "0.916290731874155065183527211768"
+  },
+  {
+   "record_path": "sheet_checks.points[1]",
+   "X": "1/4",
+   "Y": "1/100000000000000000000",
+   "lambda_exact": "5624999999999999999750000000000000000001/10000000000000000000000000000000000000000",
+   "lambda_positive": true,
+   "X_plus_Y_below_1": true,
+   "own_value_str": "62188.809633123758419712605949332894201000101184472",
+   "ladder_reference_ellk_minus1_re_str": "62188.809633123758419712605949332894191507381485261",
+   "ladder_reference_ellk_minus1_im_abs": 3.4194731071419122e-49,
+   "ladder_reference_cont_none_re_str": "-493085.44767616357352686134401863210658991580447068",
+   "ladder_reference_cont_none_im_abs": 549478.651013473,
+   "z_str": "0.250000000000000000003333333333",
+   "zbar_str": "0.999999999999999999986666666667",
+   "w_str": "-0.333333333333333333339259259259",
+   "wbar_str": "-74999999999999999998.6666666667",
+   "ell_str": "44.6654074987610230615253648508"
+  }
+ ],
+ "copied_by": "make_fixture.py",
+ "copied_at": "2026-09-05T00:57:49Z"
+}

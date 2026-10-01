@@ -1,0 +1,12 @@
+{
+  "name": "banana3l_eq",
+  "description": "3-loop equal-mass banana (4 massive lines between 2 vertices, p^2 = t). Maximal cut = quartic K3 in P^3; PF order 3 = Sym² of Γ₁(6) sunrise op. Weight-3 motive = level-15 CM newform f3 (CM by Q(√-15), Livné). Route B.",
+  "edges": [[1,2,"1"], [1,2,"1"], [1,2,"1"], [1,2,"1"]],
+  "nodes": {"1": [1], "2": [2]},
+  "kinematics": {
+    "invariants": ["t"],
+    "external_masses": {"1": "t", "2": "t"},
+    "channels": {"1": "t"}
+  },
+  "fiber_point": {"t": 0}
+}

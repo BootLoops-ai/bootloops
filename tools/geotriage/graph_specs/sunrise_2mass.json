@@ -1,0 +1,11 @@
+{
+  "name": "sunrise_2mass",
+  "description": "2-loop two-mass sunrise (masses m1=m2=1, m3^2=z; p^2 = t). Maximal cut = elliptic curve. Classify geometry/route as function of (t,z).",
+  "edges": [[1,2,"1"], [1,2,"1"], [1,2,"z"]],
+  "nodes": {"1": [1], "2": [2]},
+  "kinematics": {
+    "invariants": ["t", "z"],
+    "external_masses": {"1": "t", "2": "t"},
+    "channels": {"1": "t"}
+  }
+}

@@ -1,0 +1,70 @@
+{
+ "row": "row18",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "family_of_record_amflow_sr2d2_sunrise_subcurve.yaml",
+   "source": "identity_census/rows/row18/family_of_record_amflow_sr2d2_sunrise_subcurve.yaml",
+   "sha256": "8b3206ec548a41fbf726262b037bfea349ea7e101cbf347d2d319da091408ac4",
+   "size": 644,
+   "record_sha256": "c30e6219ce9f16ddd24c4bc38250be96bf49a6f2bdc8eb651ba2c09387311b33",
+   "record_size": 720
+  },
+  {
+   "path": "family_of_record_amflow_sr2d2_sunrise_subcurve__uncut_d2_in_0.json",
+   "source": "identity_census/rows/row18/family_of_record_amflow_sr2d2_sunrise_subcurve__uncut_d2_in_0.json",
+   "sha256": "6176cf1243f0b3c0afa005b98968df9934c15ea0c48091a23d2a3c78da66a94d",
+   "size": 1091,
+   "record_sha256": "5fc8ed282ed6e6551bd3f5d04478cf9c62f72b8f84a87fbb0449017bcc2564c4",
+   "record_size": 1103
+  },
+  {
+   "path": "family_of_record_fam2.yaml",
+   "source": "identity_census/rows/row18/family_of_record_fam2.yaml",
+   "sha256": "c1c9c4e3ea6eb708f03cf0ccd1449d3f807e7b8df10cc49d30d4e24884d8a0ff",
+   "size": 811,
+   "record_sha256": "46ed6f4e8018ac4edab1fdd23da97035aa7e1daad0035c436e9d5b406c8f1409",
+   "record_size": 859
+  },
+  {
+   "path": "family_of_record_fam5.yaml",
+   "source": "identity_census/rows/row18/family_of_record_fam5.yaml",
+   "sha256": "fde54b3979be755be7b0c520b35834cca394222594a590f488c77a42fc299954",
+   "size": 811,
+   "record_sha256": "c321b95726fb5a3750eeca9fa0265eb24dd3c4fd2a0438a24ff2d878bfe60b4e",
+   "record_size": 859
+  },
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row18/drawn_graph.yaml",
+   "sha256": "d1863cd7d2580b6f437f207da0e4232af7cb8936a82c7a0e9d03c7c2e44eb95c",
+   "size": 953,
+   "record_sha256": "d1863cd7d2580b6f437f207da0e4232af7cb8936a82c7a0e9d03c7c2e44eb95c",
+   "record_size": 953
+  },
+  {
+   "path": "iso.json",
+   "source": "identity_census/rows/row18/iso.json",
+   "sha256": "df83c519480ad21bc43e3b610d815f82b869cb8fe0fcbd20946dc23f2fd3fb82",
+   "size": 4736,
+   "record_sha256": "df83c519480ad21bc43e3b610d815f82b869cb8fe0fcbd20946dc23f2fd3fb82",
+   "record_size": 4736
+  },
+  {
+   "path": "record_family/kinematics.yaml",
+   "source": "identity_census/rows/row18/record_family/kinematics.yaml",
+   "sha256": "c954a8dd9227b644741fc17afeab10d10ba8f60c714aef9dedac053262559cbd",
+   "size": 754,
+   "record_sha256": "92a51801e6469b2bf961bfb1ff67f55afe54825c3084dd743f170ce907371fd5",
+   "record_size": 774
+  },
+  {
+   "path": "record_family/integralfamilies.yaml",
+   "source": "identity_census/rows/row18/record_family/integralfamilies.yaml",
+   "sha256": "385204edb7ee54b93de5fd73d03d40da0dcda4f30e53323727385ebda3d0ae10",
+   "size": 2040,
+   "record_sha256": "1404b40f58f2be651d78f0bcc441509f87914e32140de45e3556f581c28cf7a1",
+   "record_size": 2178
+  }
+ ]
+}

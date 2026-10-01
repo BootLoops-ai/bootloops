@@ -1,0 +1,13 @@
+integralfamilies:
+  - name: "iccg"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [15]
+    propagators:
+      - [ "l2^2 - 1", 0 ]
+      - [ "(l2 - P56)^2 - 2", 0 ]
+      - [ "l1^2 - 3", 0 ]
+      - [ "(l1 - l2 - P12 + P56)^2 - 5", 0 ]
+      - [ "(l1 + P56)^2", 0 ]
+      - [ "(l2 + P12)^2", 0 ]
+      - [ "(l1 + P12)^2", 0 ]
+    cut_propagators: []

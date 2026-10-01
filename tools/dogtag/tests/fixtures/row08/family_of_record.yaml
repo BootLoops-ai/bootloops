@@ -1,0 +1,16 @@
+# Transcription of the AMFlow-port config sunrise_d2_tm1_g280_o11b.json
+# sha256 ca48d2e3be44ddfa79fb3b1ebe7fb47b970a310bf09d399e79109bdc9c963958
+# masses substituted from amf_options.blackbox.numeric_values: msq=1
+# kinematics of that run: s=-1 with replacement p^2 -> s
+# top sector from the integral with the most positive indices: [1, 1, 1, 0, 0] -> mask 7
+integralfamilies:
+  - name: "sunrise"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [7]
+    propagators:
+      - [ "l1^2 - 1", 0 ]
+      - [ "l2^2 - 1", 0 ]
+      - [ "(l1 + l2 - p)^2 - 1", 0 ]
+      - [ "(l1 + p)^2", 0 ]
+      - [ "(l2 + p)^2", 0 ]
+    cut_propagators: []

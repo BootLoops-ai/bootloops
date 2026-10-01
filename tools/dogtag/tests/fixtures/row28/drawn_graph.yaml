@@ -1,0 +1,19 @@
+# DRAWN GRAPH of row 28, built by the identity census from fig-lbl3se.tex (edge dictionary in its comments) + caption in lbl3se.tex + Table 2 label
+# vertices/edges/legs as drawn; edge multiplicity (nu) = [1, 1, 1, 1, 1, 1, 1, 1]
+# legs: p1@BL (p^2=0), p2@TL (p^2=0), p3@TR (p^2=0), p4@BR (p^2=0)
+# loop momenta ['ell', 'k1', 'k2']; {'p4': '-p1-p2-p3'}; cyclic leg order as drawn: ['p1', 'p2', 'p3', 'p4']
+# kite between BL and BR on the dressed rung carrying ell: rim k1 (m), ell-k2 (0), ell-k1 (0), k2 (m), diagonal ell-k1-k2 (m); BL and BR four-valent
+integralfamilies:
+  - name: "LBL3SE_drawn"
+    loop_momenta: [ell, k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "ell + p1", msq ]
+      - [ "ell + p1 + p2", msq ]
+      - [ "ell - p4", msq ]
+      - [ "ell - k2", 0 ]
+      - [ "k2", msq ]
+      - [ "k1", msq ]
+      - [ "ell - k1", 0 ]
+      - [ "ell - k1 - k2", msq ]
+    cut_propagators: []

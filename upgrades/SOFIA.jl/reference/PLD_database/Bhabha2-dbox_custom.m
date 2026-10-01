@@ -1,0 +1,1 @@
+singularities = { Ma2, Ma2 - 1/4*s, Ma2 - Mb2, Ma2^2 - 2*Ma2*Mb2 - 2*Ma2*s - 2*Ma2*t + Mb2^2 - 2*Mb2*s - 2*Mb2*t + s^2 + 2*s*t + t^2, Ma2^2 - 2*Ma2*Mb2 - 2*Ma2*t + Mb2^2 - 2*Mb2*t + s*t + t^2, Ma2^2 - 2*Ma2*Mb2 - 2*Ma2*t + Mb2^2 - 2*Mb2*t + t^2, Ma2^2*Mb2 - 1/4*Mb2^2*s + 1/2*Mb2*s*t - 1/4*s*t^2, Mb2, Mb2 - 1/4*s, s, t };

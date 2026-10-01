@@ -1,0 +1,9 @@
+{
+ "op": "toy-sintegrality-control",
+ "note": "SYNTHETIC control card for the shipped battery (not a geometric operator). Leadpoly (7z-1)(z+1) = -1 + 6z + 7z^2; singular divisor {z=1/7, z=-1}. Hand-derived acceptance values (refined-conductor-boxS law): z=-1/7 -> S_min {2,3,7} (lead/const {7}; (7z-1) -> -14 -> {2,7}; (z+1) -> 6 -> {2,3}); z=1/2 -> S_min {2,3,5}; z=1/7 and z=-1 are singular points -> REJECTED; z=1/17 has out-of-box support -> REJECTED; quadratic z = 3+2*sqrt(2) (u^2 of the D=2 fundamental unit, minpoly key 1,-6,1) -> S_min {2}, unit (norms: (7z-1) -> 8, (z+1) -> 8, lead=const=1).",
+ "coeffs": [[-1, 6, 7]],
+ "singular_locus": [
+  {"minpoly": [-1, 7], "mult": 1},
+  {"minpoly": [1, 1], "mult": 1}
+ ]
+}

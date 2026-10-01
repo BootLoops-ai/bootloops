@@ -1,0 +1,47 @@
+{
+ "row": "row15",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row15/drawn_graph.yaml",
+   "sha256": "2673aab9b205d47eaf2378bb50385b8b6b17cce690f4f4a1925f7a8c580aac34",
+   "size": 974,
+   "record_sha256": "2673aab9b205d47eaf2378bb50385b8b6b17cce690f4f4a1925f7a8c580aac34",
+   "record_size": 974
+  },
+  {
+   "path": "family_of_record_amflow_icc_eqmass.yaml",
+   "source": "identity_census/rows/row15/family_of_record_amflow_icc_eqmass.yaml",
+   "sha256": "3f2ac442c8426abfafcff3b6cad81d786484cd09849ad6e26d8baa1eea6e8d45",
+   "size": 819,
+   "record_sha256": "6bae8ca48f19d84e6b5a1e499f651f22eedf8cf0e68d2f6c3f5f0eed0cc99708",
+   "record_size": 891
+  },
+  {
+   "path": "family_of_record_amflow_icc_eqmass__e1hp_xm1_g320.json",
+   "source": "identity_census/rows/row15/family_of_record_amflow_icc_eqmass__e1hp_xm1_g320.json",
+   "sha256": "0c51e5734673787dbc93a2f405b3b7f741e134b07db861b6f3c121a5947fd4f1",
+   "size": 1426,
+   "record_sha256": "cb1fbf9c13ee2c87b4b26cb06aa9b7ee100faf0a4feb1ff4bc1320b80e9df699",
+   "record_size": 1488
+  },
+  {
+   "path": "family_of_record_kira_icc_eqmass.yaml",
+   "source": "identity_census/rows/row15/family_of_record_kira_icc_eqmass.yaml",
+   "sha256": "9d0e526a983173045d5571fd4dd05148c306ca176b414d79353ead17054b82e2",
+   "size": 351,
+   "record_sha256": "9d0e526a983173045d5571fd4dd05148c306ca176b414d79353ead17054b82e2",
+   "record_size": 351
+  },
+  {
+   "path": "kinematics_of_record.yaml",
+   "source": "identity_census/rows/row15/kinematics.yaml",
+   "sha256": "961466e57b445b719a804302f418be1284ab72856961c44a333923f6bedd9a19",
+   "size": 215,
+   "record_sha256": "961466e57b445b719a804302f418be1284ab72856961c44a333923f6bedd9a19",
+   "record_size": 215,
+   "source_note": "the kinematics.yaml beside the row-15 Kira family in the corpus (outside the row directory); copied byte-identical"
+  }
+ ]
+}

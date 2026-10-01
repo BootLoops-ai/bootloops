@@ -1,0 +1,171 @@
+{
+ "name": "cy3_row32_path_of_record",
+ "operator": {
+  "form": "theta_z_Pj",
+  "chart": "z=-1/s",
+  "order": 6,
+  "degz": 9,
+  "Pj": {
+   "0": [
+    0,
+    0,
+    -3360,
+    -449760,
+    34367040,
+    1420765440,
+    32313384960,
+    412251586560,
+    -277736325120,
+    428070666240
+   ],
+   "1": [
+    0,
+    0,
+    -22240,
+    -1403872,
+    174709056,
+    6636381440,
+    148504248320,
+    1599509495808,
+    -1180591718400,
+    1871280340992
+   ],
+   "2": [
+    0,
+    -20,
+    -60768,
+    -1036024,
+    379326928,
+    13287063360,
+    286440962048,
+    2472912027648,
+    -2011464990720,
+    3348124139520
+   ],
+   "3": [
+    0,
+    -112,
+    -84368,
+    1237040,
+    460978016,
+    14887650688,
+    297808437248,
+    1929830989824,
+    -1730118942720,
+    3137146454016
+   ],
+   "4": [
+    -1,
+    180,
+    -41892,
+    3920536,
+    338424912,
+    10208241984,
+    175548016640,
+    787866845184,
+    -765898260480,
+    1623610884096
+   ],
+   "5": [
+    2,
+    -672,
+    -30864,
+    1990960,
+    147633024,
+    4263832320,
+    54403985408,
+    154779844608,
+    -150759014400,
+    440301256704
+   ],
+   "6": [
+    -1,
+    24,
+    18396,
+    1360432,
+    46303296,
+    839681280,
+    6748073984,
+    11541086208,
+    -6370099200,
+    48922361856
+   ]
+  },
+  "source": {
+   "label": "the (1,1,1,1,16) Picard-Fuchs operator data of the CY3-banana family (pf_cy3_data.json)",
+   "sha256": "ce4770aa4b7cdff70efcc6acc434a6308082980081ae06b341b8aced16be5ace"
+  },
+  "note": "the (1,1,1,1,16) Picard-Fuchs operator in theta_z form; it equals the IBP-derived operator under theta_z -> theta_z - 1"
+ },
+ "variable": "s",
+ "seed": {
+  "kind": "bfkns_multinomial",
+  "msq": [
+   1,
+   1,
+   1,
+   1,
+   16
+  ],
+  "at": "100",
+  "N": 1200
+ },
+ "path": [
+  "100",
+  "100+20*I",
+  "1/4+20*I",
+  "1/4",
+  "0"
+ ],
+ "path_note": "rectangular path with s_b = 100, lift = 20, s_dec = 1/4 (the settings of the 80-digit IBP-normalized leg-II transport), continued to the threshold s = 0",
+ "landing": {
+  "kind": "local_basis",
+  "fractional": {
+   "5/4": {
+    "phase": "exp(i*pi*5/4)"
+   },
+   "7/4": {
+    "phase": "exp(i*pi*7/4)"
+   }
+  }
+ },
+ "targets": {
+  "5/4": {
+   "label": "reference Arb value REF_C54 of the cy3-banana evaluator published on the BootLoops site (198 digits)",
+   "value": "-0.0303492466882296557301753163706229879005161050829311035232435345318470894858801077932057795752827576466108783708670915808100848637145028098185258535596997066664622708287607349490105140666249302728790072874269914098711256890305915377922537622701370117823999170612808741599469304641894544350236363096393766640875879653",
+   "im": "0",
+   "digits": 198,
+   "source": {
+    "label": "cy3-banana-evaluate.py as published on the BootLoops site",
+    "sha256": "8e78f21279c228b53c3dd97b9209555c8f969868932c84515e83cc9b62f247cb"
+   },
+   "also": {
+    "80-digit IBP-normalized leg-II transport, real part": "-0.030349246688229655730175316370622987900516105082931103523",
+    "source": {
+     "label": "leg-II transport output of the CY3-banana family (LEGII_CY3.json)",
+     "sha256": "a797911a3e93e9ac16f0fd022acdb3bc69580e3423e6b180afa2b0104ee9f4ef"
+    }
+   }
+  },
+  "7/4": {
+   "label": "reference Arb value REF_C74 of the cy3-banana evaluator published on the BootLoops site (197 digits)",
+   "value": "-0.006918488931750284187386003874378333926188476030768363894798534336415339266092596593361322224742229001215813306151159038027483581915347906368270661140931980574497977154961383970242892527210559993091610240259155726942669335071958135043526924289292275729419475616152845485861612430740148963024916492260815871702614548",
+   "im": "0",
+   "digits": 197,
+   "source": {
+    "label": "cy3-banana-evaluate.py as published on the BootLoops site",
+    "sha256": "8e78f21279c228b53c3dd97b9209555c8f969868932c84515e83cc9b62f247cb"
+   },
+   "also": {
+    "80-digit IBP-normalized leg-II transport, real part": "-0.006918488931750284187386003874378333926188476030768363894",
+    "source": {
+     "label": "leg-II transport output of the CY3-banana family (LEGII_CY3.json)",
+     "sha256": "a797911a3e93e9ac16f0fd022acdb3bc69580e3423e6b180afa2b0104ee9f4ef"
+    }
+   }
+  }
+ },
+ "eps": "1e-100",
+ "prec": 430,
+ "min_digits": 30
+}

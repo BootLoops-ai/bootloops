@@ -1,0 +1,20 @@
+# DRAWN GRAPH of row 29, built by the identity census from fig-lbl3kp.tex (edge dictionary in its comments) + LBL3KP paragraph in lbl3se.tex + Table 2 label
+# vertices/edges/legs as drawn; edge multiplicity (nu) = [1, 1, 1, 2, 1, 1, 1, 1, 1]
+# legs: p1@BL (p^2=0), p2@TL (p^2=0), p3@TR (p^2=0), p4@BR (p^2=0)
+# loop momenta ['l', 'k1', 'k2']; {'p4': '-p1-p2-p3'}; cyclic leg order as drawn: ['p1', 'p2', 'p3', 'p4']
+# ten lines, eight trivalent vertices; the two electron stubs BR-v4 and v1-BL both carry l (the doubled propagator nu4=2); crossed-photon self-energy = interleaved arcs v1-v3 and v2-v4
+integralfamilies:
+  - name: "LBL3KP_drawn"
+    loop_momenta: [l, k1, k2]
+    top_level_sectors: [511]
+    propagators:
+      - [ "l + p1", msq ]
+      - [ "l + p1 + p2", msq ]
+      - [ "l + p1 + p2 + p3", msq ]
+      - [ "l", msq ]
+      - [ "k1", msq ]
+      - [ "k1 + k2 - l", msq ]
+      - [ "k2", msq ]
+      - [ "l - k1", 0 ]
+      - [ "l - k2", 0 ]
+    cut_propagators: []

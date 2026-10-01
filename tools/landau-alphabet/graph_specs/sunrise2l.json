@@ -1,0 +1,11 @@
+{
+  "name": "sunrise2l",
+  "description": "2-loop equal-mass sunrise (3 massive lines between two vertices, p^2=s). Known Landau loci: s, s-m2, s-9m2.",
+  "edges": [[1,2,"m2"], [1,2,"m2"], [1,2,"m2"]],
+  "nodes": {"1": [1], "2": [2]},
+  "kinematics": {
+    "invariants": ["s", "m2"],
+    "external_masses": {"1": "s", "2": "s"},
+    "channels": {"1": "s"}
+  }
+}

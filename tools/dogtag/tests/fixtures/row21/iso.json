@@ -1,0 +1,243 @@
+{
+ "row": 21,
+ "family_of_record": "Rm8m4_ferm.json",
+ "family_sha16": "40e020c38798fa10",
+ "drawn_source": "fig-lbl3x.tex + caption in lbl3x.tex (K4: massive perimeter, two massless crossing diagonals, p1 TL, p2 TR, p3 BR, p4 BL) + Table 2 label",
+ "labeled_isomorphism_drawn_vs_record": {
+  "match": true,
+  "relabeling": "k1 -> -k1, k3 -> -k3; p2 -> p4, p4 -> p2",
+  "leg_perm": {
+   "p1": "p1",
+   "p2": "p4",
+   "p3": "p3",
+   "p4": "p2"
+  },
+  "leg_perm_cyclic_order_preserved": true,
+  "n_relabelings_tried": 126,
+  "n_leg_perms_allowed_by_labels": 24,
+  "realized_graph_isomorphism_VF2": {
+   "tool_realization_connected": true,
+   "connected_realization_found": true,
+   "partitions_rejected_as_disconnected": 0,
+   "variants": [
+    {
+     "drawing_choice": {
+      "surviving_copy_edge_index": [],
+      "contracted_edge_indices": []
+     },
+     "strict_leg_names": {
+      "isomorphic": true,
+      "strict_leg_names": true,
+      "ext_node_mapping": {
+       "ext_p2": "ext_p2",
+       "ext_p1": "ext_p1",
+       "ext_p3": "ext_p3",
+       "ext_p4": "ext_p4"
+      },
+      "n_int_edges": [
+       6,
+       6
+      ]
+     },
+     "leg_labels_only": {
+      "isomorphic": true,
+      "strict_leg_names": false,
+      "ext_node_mapping": {
+       "ext_p4": "ext_p2",
+       "ext_p1": "ext_p1",
+       "ext_p3": "ext_p3",
+       "ext_p2": "ext_p4"
+      },
+      "n_int_edges": [
+       6,
+       6
+      ]
+     }
+    }
+   ],
+   "strict_leg_names": {
+    "isomorphic": true
+   },
+   "leg_labels_only": {
+    "isomorphic": true
+   }
+  },
+  "record_connected_realization_fingerprint": {
+   "connected": true,
+   "abstract_planar": true,
+   "planar_with_legs_closed_in_order": false,
+   "closure_order": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "cut_signature": {
+    "s": 4,
+    "t": 4,
+    "u": 4
+   },
+   "V": 4,
+   "E_distinct_lines": 6,
+   "N": 4
+  }
+ },
+ "record_nu_of_top_sector_integral": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "drawn_edge_multiplicity": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "fingerprint_record_import_route": {
+  "name": "lbl3x",
+  "source": "Rm8m4_ferm.json",
+  "n_loops": 3,
+  "n_genuine_propagators": 6,
+  "n_isp_or_dotproduct": 9,
+  "n_massive_lines": 4,
+  "cut_signature": {
+   "s": 4,
+   "t": 4,
+   "u": 4
+  },
+  "cut_signature_multiset": [
+   4,
+   4,
+   4
+  ],
+  "planar": false,
+  "planarity_method": "networkx.check_planarity with external-leg closure cycle in canonical order 1,2,3,4",
+  "canonical_hash": "ccb63e84071d",
+  "canonical_set_size": 6,
+  "catalog_matches": [],
+  "cut_symmetry": "t<->u symmetric",
+  "warnings": []
+ },
+ "fingerprint_drawn_import_route": {
+  "name": "LBL3X_drawn",
+  "source": "fig-lbl3x.tex + caption in lbl3x.tex (K4: massive perimeter, two massless crossing diagonals, p1 TL, p2 TR, p3 BR, p4 BL) + Table 2 label",
+  "n_loops": 3,
+  "n_genuine_propagators": 6,
+  "n_isp_or_dotproduct": 0,
+  "n_massive_lines": 4,
+  "cut_signature": {
+   "s": 4,
+   "t": 4,
+   "u": 4
+  },
+  "cut_signature_multiset": [
+   4,
+   4,
+   4
+  ],
+  "planar": false,
+  "planarity_method": "networkx.check_planarity with external-leg closure cycle in canonical order 1,2,3,4",
+  "canonical_hash": "aa5b7aeef6f2",
+  "canonical_set_size": 6,
+  "catalog_matches": [],
+  "cut_symmetry": "t<->u symmetric",
+  "warnings": []
+ },
+ "extra_checks": {
+  "sector938_of_LBL3Q": {
+   "parent_file_read_only": "integralfamilies.yaml",
+   "parent_sha16": "b152a4eaa0d9f98f",
+   "sector": 938,
+   "realized_graph_isomorphism_VF2_sector938_vs_record": {
+    "parent_sector_realized": true,
+    "record_realized": true,
+    "strict_leg_names": {
+     "isomorphic": true,
+     "strict_leg_names": true,
+     "ext_node_mapping": {
+      "ext_p2": "ext_p2",
+      "ext_p1": "ext_p1",
+      "ext_p3": "ext_p3",
+      "ext_p4": "ext_p4"
+     },
+     "n_int_edges": [
+      6,
+      6
+     ]
+    },
+    "leg_labels_only": {
+     "isomorphic": true,
+     "strict_leg_names": false,
+     "ext_node_mapping": {
+      "ext_p2": "ext_p2",
+      "ext_p3": "ext_p1",
+      "ext_p1": "ext_p3",
+      "ext_p4": "ext_p4"
+     },
+     "n_int_edges": [
+      6,
+      6
+     ]
+    }
+   },
+   "reading": "the labeled propagator-SET test below can miss identity when the two routings differ by a loop-momentum shift (k1 -> k1 + k2), which signed permutations do not reach; the realized-graph test is the routing-independent one",
+   "sector_bits_1_indexed": [
+    2,
+    4,
+    6,
+    8,
+    9,
+    10
+   ],
+   "sector_propagators": [
+    "(k1 - k2)^2 - m2",
+    "(k1 - k2 - k3 + p2)^2 - m2",
+    "(k1 - k3 + p2 + p3)^2 - m2",
+    "(k1 - p1)^2 - m2",
+    "k2^2",
+    "k3^2"
+   ],
+   "mass_map_parent": {
+    "m2": "1"
+   },
+   "labeled_isomorphism_sector938_vs_record": {
+    "match": false,
+    "reason": "no signed loop relabeling + label-preserving leg permutation maps the labeled sets",
+    "n_relabelings_tried": 1152,
+    "n_leg_perms_allowed_by_labels": 24
+   }
+  },
+  "kira_form_lbl3x_crossing_C": {
+   "kira_form_file": "integralfamilies.yaml",
+   "sha16": "a386aa17d07cce54",
+   "free_text_header": "NON-PLANAR crossed double-diagonal massive box (file comment, not trusted)",
+   "labeled_isomorphism_kira_form_vs_record": {
+    "match": true,
+    "relabeling": "identity",
+    "leg_perm": {
+     "p1": "p1",
+     "p2": "p2",
+     "p3": "p3",
+     "p4": "p4"
+    },
+    "leg_perm_cyclic_order_preserved": true,
+    "n_relabelings_tried": 1,
+    "n_leg_perms_allowed_by_labels": 24
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+stamp_utc=2026-09-07T03:01:36Z
+leafname=record_leaf
+W=8
+label=PROBE
+work=record_run
+stages_rc= A=0 B=0 C=0 compare=0
+wall_s=6603
+maxrss_kb_over_chunks=120256
+memory.max=377241600
+memory.high=max
+memory.current=10412032
+memory.peak=108417024
+memory.swap.peak=0
+cpuset.cpus=13,15,18,23,109,111,114,119
+cpuset.mems=0
+cpu.max=800000 100000
+memory.events=low 0 high 0 max 0 oom 0 oom_kill 0 oom_group_kill 0 
+oom_kill=0
+cpu.stat=usage_usec 48034230580 user_usec 48022092462 system_usec 12138117 nice_usec 48065145000 core_sched.force_idle_usec 0 nr_periods 66029 nr_throttled 27995 throttled_usec 57401021 nr_bursts 0 burst_usec 0 

@@ -1,0 +1,123 @@
+{
+ "receipt": "BASIS: memory.max of the record leaf by W = the MEASURED per-worker maxrss x W x 1.3 page-rounded (the nominal per-worker form); the labeled 2x raise-once knob; W 8 PROBE at 2x",
+ "stamp_utc": "2026-09-06T23:04:23Z",
+ "host": "<host>",
+ "basis_kind": "MEASURED (the second-host smoke leaf smoke_leaf: per-worker maxrss = max VmHWM over the pysecdec_cpuworker pids of both legs, sampled every 0.2 s; GNU time maxrss and the leaf memory.peak beside)",
+ "source": {
+  "smoke_receipt": "SMOKE_RECEIPT.json",
+  "smoke_receipt_sha256": "a81a0566de4a87db41dbe8acbd339c239dfe809375e4b2313b6bbab391dcf3e8",
+  "leafname": "smoke_leaf",
+  "per_worker_maxrss": {
+   "kb": 6348,
+   "bytes": 6500352,
+   "n_worker_pids": 4,
+   "rule": "max VmHWM over the pysecdec_cpuworker pids of both legs (the sampler, 0.2 s)"
+  },
+  "driver_maxrss": {
+   "kb": 90908,
+   "bytes": 93089792,
+   "n_driver_pids": 3,
+   "rule": "max VmHWM over the python3 -m pySecDec.disteval driver pids of both legs"
+  },
+  "leaf_memory_peak_B": 71184384,
+  "gnu_time_maxrss_kb_per_leg": [
+   89516,
+   89680
+  ],
+  "smoke_W": 2
+ },
+ "formula_nominal": "memory_max_bytes(W) = page_up(1.3 x W x per_worker_maxrss_B) (the nominal per-worker form); PROBE (W 8): 2 x; raise_once = 2 x memory_max_bytes",
+ "formula_used": "memory_max_bytes(W) = page_up(1.3 x (driver_maxrss_B + W x per_worker_maxrss_B)) -- the corrected form, used because the disteval workers are ~6 MB C++ processes and the python driver carries ~90 MB, so the per-worker formula alone leaves no room for the driver and would OOM at spawn (driver_fits_in_formula_headroom False); the nominal figure can be forced by the caller, labeled",
+ "headroom_note": "both figures are listed per W; the leaf memory.peak of the W=2 smoke (the cgroup total: driver + 2 workers + bash/time/sampler) is beside as the cross-check",
+ "per_W": {
+  "8": {
+   "W": 8,
+   "per_worker_maxrss_B": 6500352,
+   "W_x_worker_B": 52002816,
+   "driver_maxrss_B": 93089792,
+   "formula_memory_max_B(per_worker x W x 1.3, page_up)": 67604480,
+   "formula_headroom_over_W_x_worker_B": 15601664,
+   "driver_fits_in_formula_headroom": false,
+   "corrected_memory_max_B(1.3 x (driver + W x per_worker), page_up)": 188620800,
+   "label": "PROBE",
+   "memory_max_bytes": 377241600,
+   "memory_max_GiB": 0.351,
+   "memory_max_rule": "W 8 = PROBE: memory.max = the labeled 2x of the W-8 basis (the placement label); the basis USED = the CORRECTED figure (driver + W x per-worker) x 1.3 -- the nominal per-worker formula alone undershoots (see driver_fits_in_formula_headroom)",
+   "raise_once_bytes": 754483200,
+   "raise_once_rule": "ONE labeled 2x raise at 0.85 x memory.max, rewriting the declaration file",
+   "census_memg_gib": 1
+  },
+  "12": {
+   "W": 12,
+   "per_worker_maxrss_B": 6500352,
+   "W_x_worker_B": 78004224,
+   "driver_maxrss_B": 93089792,
+   "formula_memory_max_B(per_worker x W x 1.3, page_up)": 101408768,
+   "formula_headroom_over_W_x_worker_B": 23404544,
+   "driver_fits_in_formula_headroom": false,
+   "corrected_memory_max_B(1.3 x (driver + W x per_worker), page_up)": 222425088,
+   "label": "UNCONTENDED",
+   "memory_max_bytes": 222425088,
+   "memory_max_GiB": 0.207,
+   "memory_max_rule": "memory.max = the basis; the basis USED = the CORRECTED figure (driver + W x per-worker) x 1.3 -- the nominal per-worker formula alone undershoots (see driver_fits_in_formula_headroom)",
+   "raise_once_bytes": 444850176,
+   "raise_once_rule": "ONE labeled 2x raise at 0.85 x memory.max, rewriting the declaration file",
+   "census_memg_gib": 1
+  },
+  "16": {
+   "W": 16,
+   "per_worker_maxrss_B": 6500352,
+   "W_x_worker_B": 104005632,
+   "driver_maxrss_B": 93089792,
+   "formula_memory_max_B(per_worker x W x 1.3, page_up)": 135208960,
+   "formula_headroom_over_W_x_worker_B": 31203328,
+   "driver_fits_in_formula_headroom": false,
+   "corrected_memory_max_B(1.3 x (driver + W x per_worker), page_up)": 256225280,
+   "label": "UNCONTENDED",
+   "memory_max_bytes": 256225280,
+   "memory_max_GiB": 0.239,
+   "memory_max_rule": "memory.max = the basis; the basis USED = the CORRECTED figure (driver + W x per-worker) x 1.3 -- the nominal per-worker formula alone undershoots (see driver_fits_in_formula_headroom)",
+   "raise_once_bytes": 512450560,
+   "raise_once_rule": "ONE labeled 2x raise at 0.85 x memory.max, rewriting the declaration file",
+   "census_memg_gib": 1
+  },
+  "24": {
+   "W": 24,
+   "per_worker_maxrss_B": 6500352,
+   "W_x_worker_B": 156008448,
+   "driver_maxrss_B": 93089792,
+   "formula_memory_max_B(per_worker x W x 1.3, page_up)": 202813440,
+   "formula_headroom_over_W_x_worker_B": 46804992,
+   "driver_fits_in_formula_headroom": false,
+   "corrected_memory_max_B(1.3 x (driver + W x per_worker), page_up)": 323829760,
+   "label": "UNCONTENDED",
+   "memory_max_bytes": 323829760,
+   "memory_max_GiB": 0.302,
+   "memory_max_rule": "memory.max = the basis; the basis USED = the CORRECTED figure (driver + W x per-worker) x 1.3 -- the nominal per-worker formula alone undershoots (see driver_fits_in_formula_headroom)",
+   "raise_once_bytes": 647659520,
+   "raise_once_rule": "ONE labeled 2x raise at 0.85 x memory.max, rewriting the declaration file",
+   "census_memg_gib": 1
+  }
+ },
+ "W_knob_of_record": [
+  12,
+  8
+ ],
+ "default_W": 12,
+ "checkpoint_plan": {
+  "unit": "a CHUNK = a group of sectors (kernels sector_<n>_order_<k> filtered into a copy of the disteval data dir; stage_chunks.py); stage A unchunked (one result), stages B and C chunked by CHUNK_SECTORS (default 12 sectors -> 28 chunks of the 332 sectors); each chunk = disteval result.json + time.txt + rc + DONE under work/<stamp>/stage_<X>/chunks/chunk_NNN/",
+  "resume": "the identical line with --resume: chunks with a DONE marker are skipped; a stage with STAGE_DONE is skipped; the assembled RESULT_<stage>.json is rebuilt from the chunk files",
+  "lost_on_a_stop": "the chunk in flight (its lattice sequence restarts from --points; the shifts are seeded RandomState(0) per kernel, disteval.py line 556)",
+  "order_of_stages": [
+   "A: --points 1e4 --shifts 32 --epsrel EPSREL_A (1e-4) unchunked (fast; gives the per-order magnitudes for the chunk epsabs of B and C)",
+   "B: --points 1e5 --shifts 32 --epsrel EPSREL_B (1e-6) chunked; epsabs per chunk = EPSREL_B x |order value from A| / sqrt(n_chunks)",
+   "C: the second integrator = the median-lattice rule --lattice-candidates 11 (a different lattice construction, same kernel library) at the B targets, chunked"
+  ],
+  "digits": "quoted only from the compare (per order: min over pairs of agreed digits and over the bars), never from one run"
+ },
+ "PRODUCER": {
+  "script": "memory_basis.py",
+  "sha256": "9bae61107adcd624126c16c1945ab384e3cf72bd0f9e29efdc3e24eb9a367ee3",
+  "stamp_source": "date -u"
+ }
+}

@@ -1,0 +1,15 @@
+integralfamilies:
+  - name: "wpairT4"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [487]
+    propagators:
+      - [ "l1^2", 0 ]
+      - [ "(l1 + p1)^2", 0 ]
+      - [ "(l1 - p2)^2", 0 ]
+      - [ "l2^2", 0 ]
+      - [ "(l2 + p1)^2", 0 ]
+      - [ "(l2 - p2)^2", 0 ]
+      - [ "(l1 - l2)^2", 0 ]
+      - [ "(l1 - l2 - p4)^2 - 1", 0 ]
+      - [ "(l2 - p2 - p3)^2 - 1", 0 ]
+    cut_propagators: []

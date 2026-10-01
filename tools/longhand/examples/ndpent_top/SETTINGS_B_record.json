@@ -1,0 +1,16 @@
+{
+ "stage": "B",
+ "W": "8",
+ "points": "1e5",
+ "presamples": "1e4",
+ "shifts": "32",
+ "epsrel": "1e-7",
+ "epsabs_per_chunk": "1.706e-10",
+ "lattice_candidates": "0",
+ "chunk_sectors": "12",
+ "n_chunks": "28",
+ "standin": "0",
+ "stamp_utc": "2026-09-07T01:11:58Z",
+ "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+ "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+}

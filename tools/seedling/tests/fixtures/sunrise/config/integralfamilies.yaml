@@ -1,0 +1,11 @@
+integralfamilies:
+  - name: "sunriseEM"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [7]
+    propagators:
+      - [ "l1^2 - 1", 0 ]
+      - [ "l2^2 - 1", 0 ]
+      - [ "(l1 + l2 - p)^2 - 1", 0 ]
+      - [ "(l1 + p)^2", 0 ]
+      - [ "(l2 + p)^2", 0 ]
+    cut_propagators: []

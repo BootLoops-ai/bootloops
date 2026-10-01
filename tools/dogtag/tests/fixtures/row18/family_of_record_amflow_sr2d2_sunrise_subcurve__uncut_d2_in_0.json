@@ -1,0 +1,78 @@
+{
+  "mode": "solve_integrals",
+  "options": {
+    "working_pre": 110,
+    "chop_pre": 20,
+    "silent_mode": true,
+    "x_order": 200,
+    "extra_x_order": 80,
+    "d0": "2"
+  },
+  "family": {
+    "name": "sr2d2",
+    "loops": [
+      "l1",
+      "l2"
+    ],
+    "legs": [
+      "p"
+    ],
+    "replacement": {
+      "p^2": "s"
+    },
+    "propagators": [
+      "l1^2 - 1",
+      "l2^2 - 1",
+      "(l1 + l2 - p)^2 - Msq",
+      "(l1 - p)^2",
+      "(l2 - p)^2"
+    ]
+  },
+  "integrals": [
+    {
+      "indices": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "indices": [
+        2,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "indices": [
+        1,
+        1,
+        2,
+        0,
+        0
+      ]
+    }
+  ],
+  "goal_digits": 55,
+  "eps_order": 5,
+  "work_dir": "wd_0",
+  "amf_options": {
+    "ending_schemes": [
+      "Tradition",
+      "SingleMass"
+    ],
+    "blackbox": {
+      "ibp_rank": 0,
+      "ibp_dot": 5,
+      "n_thread": 8,
+      "numeric_values": {
+        "s": "-1",
+        "Msq": "9/10"
+      }
+    }
+  }
+}

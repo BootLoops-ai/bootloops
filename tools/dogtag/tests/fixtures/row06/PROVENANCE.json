@@ -1,0 +1,54 @@
+{
+ "row": "row06",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "cured_ladder_sudakovPR0/family_of_record.yaml",
+   "source": "identity_census/rows/row06/cured_ladder_sudakovPR0/family_of_record.yaml",
+   "sha256": "403fa62eebcfe2e3e5aa55d3caf0c38b727c71bf3fa428d8d9237e3abbf39bd7",
+   "size": 337,
+   "record_sha256": "403fa62eebcfe2e3e5aa55d3caf0c38b727c71bf3fa428d8d9237e3abbf39bd7",
+   "record_size": 337
+  },
+  {
+   "path": "cured_ladder_sudakovPR0/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row06/cured_ladder_sudakovPR0/kinematics_of_record.yaml",
+   "sha256": "965813f3b8b86f9f61044d8c3a46fe3c40c14dfe6890213ce3b3bb9c008039a4",
+   "size": 249,
+   "record_sha256": "965813f3b8b86f9f61044d8c3a46fe3c40c14dfe6890213ce3b3bb9c008039a4",
+   "record_size": 249
+  },
+  {
+   "path": "retired_sevenline_vertex2L/family_of_record.json",
+   "source": "identity_census/rows/row06/retired_sevenline_vertex2L/family_of_record.json",
+   "sha256": "bdfc6ccc26612fffd7d0356609e59c8a0d0df9290bf4f19cd057f566335fce51",
+   "size": 1212,
+   "record_sha256": "8fbdbc08dbeaae9f88ed7144f569ab96cce42be1747f89604f8cb8a3745f699d",
+   "record_size": 1288
+  },
+  {
+   "path": "retired_sevenline_vertex2L/family_of_record_transcribed.yaml",
+   "source": "identity_census/rows/row06/retired_sevenline_vertex2L/family_of_record_transcribed.yaml",
+   "sha256": "e759606f59374bd60bf8593867ac650a44990107466b46802f550fcb5c1649d5",
+   "size": 596,
+   "record_sha256": "d2ab1bfb257e970394f303cf34ed529d37ca2962ba157b554b312662ee824dfb",
+   "record_size": 675
+  },
+  {
+   "path": "cured_ladder_sudakovPR0/drawn_graph.yaml",
+   "source": "identity_census/rows/row06/cured_ladder_sudakovPR0/drawn_graph.yaml",
+   "sha256": "bed3ac955c603574ca768a1c3c67f58f421fc289ef7d8ed4cc22d4e8f3897e8a",
+   "size": 1189,
+   "record_sha256": "0bd538562c46d2c1f417ddf2da8336ab583cf9a9b1d7e04b178d1d0de498316a",
+   "record_size": 1258
+  },
+  {
+   "path": "retired_sevenline_vertex2L/drawn_graph.yaml",
+   "source": "identity_census/rows/row06/retired_sevenline_vertex2L/drawn_graph.yaml",
+   "sha256": "9466132e2064caef33a5687465344a7a0160f10c32ce30e617e1e5554fa3bc49",
+   "size": 1064,
+   "record_sha256": "0ea0d1c20ec4bf5f425f749591a1ba4b40eb7f98142d1dbc2616b94a0e6e6bda",
+   "record_size": 1133
+  }
+ ]
+}

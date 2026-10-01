@@ -1,0 +1,8 @@
+kinematics:
+  incoming_momenta: [p, kite_thrAuxLeg]
+  outgoing_momenta: []
+  momentum_conservation: [kite_thrAuxLeg, -(p)]
+  kinematic_invariants:
+    - [s, 2]
+  scalarproduct_rules:
+    - [[p,p], s]

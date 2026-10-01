@@ -1,0 +1,39 @@
+# LBL3E -- 3-loop QED LbL ELLIPTIC variant.
+# One-loop massive-fermion box (4 massless external photons) with a 2-loop
+# massive SUNRISE self-energy insertion on one box rung. All 6 internal lines
+# mass m. Maximal cut = BMSW sunrise plane cubic (Gamma_1(6)), generically NON-CM.
+#
+# Vertices A,B,C,D (box, cyclic). Sunrise (lines s1,s2,s3, mass m) sits on rung A-B.
+# Box perimeter lines B-C, C-D, D-A (mass m). External photons p1@A,p2@B,p3@C,p4@D.
+# Loop momenta:
+#   l1, l2 = sunrise internal loops; k = box loop.
+#   sunrise bundle carries P_AB; lines = l1, l2, (P_AB - l1 - l2).
+# Complete index set: 6 genuine propagators + ISPs to span the loop-momentum bilinears.
+# #scalar products for L=3 with 3 indep externals = 6 (kk,ll,kl) + 3*3 (k.pi,l.pi) = 15.
+integralfamilies:
+  - name: "LBL3E"
+    loop_momenta: [k, l1, l2]
+    top_level_sectors: [63]          # 6 genuine propagators -> 2^6-1; subsectors auto
+    propagators:
+      # --- 2-loop sunrise on rung A-B (3 massive lines, mass m) ---
+      - [ "l1^2 - m2", 0 ]                                   # D1  s1
+      - [ "l2^2 - m2", 0 ]                                   # D2  s2
+      - [ "(k - l1 - l2)^2 - m2", 0 ]                        # D3  s3  (P_AB = k)
+      # --- one-loop massive box perimeter (mass m) ---
+      - [ "k^2 - m2", 0 ]                                    # D4  box rung carrying P_AB=k
+      - [ "(k + p1)^2 - m2", 0 ]                             # D5  edge after A (B-C)
+      - [ "(k + p1 + p2 + p3)^2 - m2", 0 ]                   # D6  edge before D (D-A); k - p4
+      # --- ISPs (numerator) to complete the 15 bilinears ---
+      # Already covered by D1-D6: k.k, l1.l1, l2.l2, l1.l2 (from D3), k.p1, k.p3.
+      # ISPs must supply: k.(p1+p2) i.e. k.p2; l1.p1,l1.p2,l1.p3; l2.p1,l2.p2,l2.p3;
+      # k.l1, k.l2.  (rank-15 verified by basis-completeness script.)
+      - [ "(k + p1 + p2)^2", 0 ]                             # D7  -> completes k.p2
+      - [ "l1 * p1", 0 ]                                     # D8  -> l1.p1
+      - [ "l1 * p2", 0 ]                                     # D9  -> l1.p2
+      - [ "l2 * p1", 0 ]                                     # D10 -> l2.p1
+      - [ "l2 * p2", 0 ]                                     # D11 -> l2.p2
+      - [ "k * l1", 0 ]                                      # D12 -> k.l1
+      - [ "k * l2", 0 ]                                      # D13 -> k.l2
+      - [ "l1 * p3", 0 ]                                     # D14 -> l1.p3
+      - [ "l2 * p3", 0 ]                                     # D15 -> l2.p3
+    cut_propagators: []

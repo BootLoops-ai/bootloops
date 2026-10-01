@@ -1,0 +1,102 @@
+{
+ "row": "row30",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "lbl3m_adj/drawn_graph.yaml",
+   "source": "identity_census/rows/row30/lbl3m_adj/drawn_graph.yaml",
+   "sha256": "1d1e8738e19d6de9d2e519351e2fabafd98d159680841307882717ead2ffccb2",
+   "size": 1799,
+   "record_sha256": "d40bf6a9ad5422b7b108745cec784602811b5e3f34a59b1652108dba38f8349e",
+   "record_size": 1889
+  },
+  {
+   "path": "lbl3m_adj/family_of_record.yaml",
+   "source": "identity_census/rows/row30/lbl3m_adj/family_of_record.yaml",
+   "sha256": "4f1978a04928776425f5efaee754b71ac0a4713dfa519b7a9de3984e0574d699",
+   "size": 623,
+   "record_sha256": "4f1978a04928776425f5efaee754b71ac0a4713dfa519b7a9de3984e0574d699",
+   "record_size": 623
+  },
+  {
+   "path": "lbl3m_adj/graphspec_adj_parked_copy.json",
+   "source": "identity_census/rows/row30/lbl3m_adj/graphspec_adj_parked_copy.json",
+   "sha256": "eb021170bf42347c7ef1106b5f26a04921849047530d7457ab25d36de96c3b87",
+   "size": 968,
+   "record_sha256": "eb021170bf42347c7ef1106b5f26a04921849047530d7457ab25d36de96c3b87",
+   "record_size": 968
+  },
+  {
+   "path": "lbl3m_adj/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row30/lbl3m_adj/kinematics_of_record.yaml",
+   "sha256": "9b5ce587ba9fe3ade08843b1ee1adca0367daf64749b0be9a3ce52c847170f69",
+   "size": 324,
+   "record_sha256": "9b5ce587ba9fe3ade08843b1ee1adca0367daf64749b0be9a3ce52c847170f69",
+   "record_size": 324
+  },
+  {
+   "path": "lbl3m_adj/iso.json",
+   "source": "identity_census/rows/row30/lbl3m_adj/iso.json",
+   "sha256": "138ad8582e71121f30db8c2146efa9483caa180cfe05bcdb9b31ad6bdf6645be",
+   "size": 1243,
+   "record_sha256": "138ad8582e71121f30db8c2146efa9483caa180cfe05bcdb9b31ad6bdf6645be",
+   "record_size": 1243
+  },
+  {
+   "path": "lbl3m_adj/iso_other_variant.json",
+   "source": "identity_census/rows/row30/lbl3m_adj/iso_other_variant.json",
+   "sha256": "d31e6972eb5832f073b255d0a1315a60b3598fcb1f3d6e61b0df34965d00bc8d",
+   "size": 510,
+   "record_sha256": "d31e6972eb5832f073b255d0a1315a60b3598fcb1f3d6e61b0df34965d00bc8d",
+   "record_size": 510
+  },
+  {
+   "path": "lbl3m_opp/family_of_record.yaml",
+   "source": "identity_census/rows/row30/lbl3m_opp/family_of_record.yaml",
+   "sha256": "9c62f7a94f1095faceaace670cc64788410bfa73f56840342e770c617ac23a23",
+   "size": 633,
+   "record_sha256": "9c62f7a94f1095faceaace670cc64788410bfa73f56840342e770c617ac23a23",
+   "record_size": 633
+  },
+  {
+   "path": "lbl3m_opp/kinematics_of_record.yaml",
+   "source": "identity_census/rows/row30/lbl3m_opp/kinematics_of_record.yaml",
+   "sha256": "790156fdebd95d1e6b5ea6de842eb229e9dc3cf4286c561cd033fce1ea164602",
+   "size": 324,
+   "record_sha256": "790156fdebd95d1e6b5ea6de842eb229e9dc3cf4286c561cd033fce1ea164602",
+   "record_size": 324
+  },
+  {
+   "path": "lbl3m_opp/drawn_graph.yaml",
+   "source": "identity_census/rows/row30/lbl3m_opp/drawn_graph.yaml",
+   "sha256": "19451703ecb416cf41dc2f3b9021b4038b0ef6e774b22162d4bd14b215eb4a42",
+   "size": 1817,
+   "record_sha256": "4488568ea3a26297ffbaa5af34added6b439a9dbffcad8ff44e97027e2ea8d3d",
+   "record_size": 1907
+  },
+  {
+   "path": "lbl3m_opp/graphspec_opp_parked_copy.json",
+   "source": "identity_census/rows/row30/lbl3m_opp/graphspec_opp_parked_copy.json",
+   "sha256": "52277a61df3959c2fdc47177880a1a2d8d3988dfcaa274af5eb4729bde4b5241",
+   "size": 968,
+   "record_sha256": "52277a61df3959c2fdc47177880a1a2d8d3988dfcaa274af5eb4729bde4b5241",
+   "record_size": 968
+  },
+  {
+   "path": "lbl3m_opp/iso.json",
+   "source": "identity_census/rows/row30/lbl3m_opp/iso.json",
+   "sha256": "4060f1ad0870da0567e49463cc7c5552cd563e6e479036089457adc8e81b631a",
+   "size": 1243,
+   "record_sha256": "4060f1ad0870da0567e49463cc7c5552cd563e6e479036089457adc8e81b631a",
+   "record_size": 1243
+  },
+  {
+   "path": "lbl3m_opp/iso_other_variant.json",
+   "source": "identity_census/rows/row30/lbl3m_opp/iso_other_variant.json",
+   "sha256": "d31e6972eb5832f073b255d0a1315a60b3598fcb1f3d6e61b0df34965d00bc8d",
+   "size": 510,
+   "record_sha256": "d31e6972eb5832f073b255d0a1315a60b3598fcb1f3d6e61b0df34965d00bc8d",
+   "record_size": 510
+  }
+ ]
+}

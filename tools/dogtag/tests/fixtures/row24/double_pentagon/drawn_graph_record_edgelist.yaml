@@ -1,0 +1,19 @@
+# the record's own edge list (from the family's provenance file, sha16 9b066cff82ab1a62): edges [[1, 2], [2, 6], [6, 3], [3, 4], [4, 7], [7, 1], [7, 5], [5, 6]], legs p_i at vertex i (i = 1..5), hubs v6, v7
+# p3^2 = mm3, p4^2 = mm4 (kinematics.yaml of record); all eight lines massless
+# external legs (all incoming): p1, p2, p3, p4, p5; p5 = -(p1+p2+p3+p4)
+# leg virtualities: {"p1": "0", "p2": "0", "p3": "mm3", "p4": "mm4", "p5": "0"}
+# edge routing (spanning tree): [{"edge": ["v1", "v2"], "momentum": "k1 - k2 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["v2", "v6"], "momentum": "k1 - k2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["v6", "v3"], "momentum": "k1 - p3", "mass": "0", "tree_edge": true}, {"edge": ["v3", "v4"], "momentum": "k1", "mass": "0", "tree_edge": false}, {"edge": ["v4", "v7"], "momentum": "k1 + p4", "mass": "0", "tree_edge": true}, {"edge": ["v7", "v1"], "momentum": "k1 - k2 - p1 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["v7", "v5"], "momentum": "k2 + p1 + p2 + p3 + p4", "mass": "0", "tree_edge": true}, {"edge": ["v5", "v6"], "momentum": "k2", "mass": "0", "tree_edge": false}]
+integralfamilies:
+  - name: "dpent_record_edgelist"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "(k1 - k2 - p2 - p3)^2", 0 ]
+      - [ "(k1 - k2 - p3)^2", 0 ]
+      - [ "(k1 - p3)^2", 0 ]
+      - [ "(k1)^2", 0 ]
+      - [ "(k1 + p4)^2", 0 ]
+      - [ "(k1 - k2 - p1 - p2 - p3)^2", 0 ]
+      - [ "(k2 + p1 + p2 + p3 + p4)^2", 0 ]
+      - [ "(k2)^2", 0 ]
+    cut_propagators: []

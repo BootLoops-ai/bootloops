@@ -1,0 +1,36 @@
+{
+ "_comment": "reference modulus/chart pins for battery leg L5 (ellred member): printed Legendre modulus m strings, cubic polynomial strings and region labels the leg checks the chart layer against; values are independent high-precision chart outputs, not produced by the code path under test at battery time",
+ "quartic_E": {
+  "A": {
+   "m": "0.999254824838200256293563454482"
+  },
+  "B": {
+   "m": "0.999934925803706596630583597513"
+  }
+ },
+ "cubic": {
+  "E_alg_A": {
+   "cube": "-(x - 1)*(784*x**2 - 784*x + 125)",
+   "region": "e1e2",
+   "m": "0.751457549191504333262047338989"
+  },
+  "E_alg_B": {
+   "cube": "-(x - 1)*(256*x**2 - 256*x + 45)",
+   "region": "e1e2",
+   "m": "0.705386291036683929684260260928"
+  },
+  "Kasin_img_A": {
+   "cube": "-x*(784*x**2 - 784*x + 125)/784",
+   "region": "e2e3",
+   "m": "0.751457549191504333262047338989"
+  },
+  "Kasin_img_B": {
+   "cube": "-x*(256*x**2 - 256*x + 45)/256",
+   "region": "e2e3",
+   "m": "0.705386291036683929684260260928"
+  }
+ },
+ "kasin_E2": {
+  "modulus_m": "0.231579953037807790467338361779843424193"
+ }
+}

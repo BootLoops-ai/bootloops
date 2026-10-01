@@ -1,0 +1,322 @@
+{
+ "card": "hv4-diag-L5",
+ "scope": "DIAG-SLICE",
+ "series_gate": {
+  "two_engine_N": 400,
+  "direct6_anchor_N": 40,
+  "pass": true
+ },
+ "fit": {
+  "ansatz": "(order 5, phi-deg 3, theta-deg<=5), rows m=0..60",
+  "nullspace_dim_1": true,
+  "matches_printed_L5": true
+ },
+ "minimality": {
+  "no_order_le4_deg_le10": true,
+  "no_order5_deg_le2": true
+ },
+ "recurrence_full_depth": {
+  "L5_n400": true,
+  "L3_domb_n400": true
+ },
+ "mum_regeneration_n400": true,
+ "jet_gate_Rform": {
+  "L5": true,
+  "L3": true
+ },
+ "symbol": {
+  "coeff_line": [
+   "1",
+   "-56",
+   "784",
+   "-2304"
+  ],
+  "factors": [
+   "1-4*phi",
+   "1-16*phi",
+   "1-36*phi"
+  ],
+  "matches_reference_discriminant_points": true,
+  "leading_Dform_no_apparent_sing": true
+ },
+ "exponents_L5": {
+  "0": {
+   "exponents": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "note": "R_k(0) -> nu^5 MUM"
+  },
+  "1/36": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "1/16": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "1/4": {
+   "dmin": -4,
+   "exponents": [
+    "0",
+    "1",
+    "3/2",
+    "2",
+    "3"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "inf": {
+   "exponents": [
+    "1",
+    "1",
+    "3/2",
+    "2",
+    "2"
+   ],
+   "residual_deg": 0
+  }
+ },
+ "exponents_L3": {
+  "0": {
+   "exponents": [
+    "0",
+    "0",
+    "0"
+   ],
+   "note": "nu^3 MUM"
+  },
+  "1/16": {
+   "dmin": -2,
+   "exponents": [
+    "0",
+    "1/2",
+    "1"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "1/4": {
+   "dmin": -2,
+   "exponents": [
+    "0",
+    "1/2",
+    "1"
+   ],
+   "residual_deg": 0,
+   "complete": true
+  },
+  "inf": {
+   "exponents": [
+    "1",
+    "1",
+    "1"
+   ],
+   "residual_deg": 0
+  }
+ },
+ "k3_fit": {
+  "nullspace_dim_1": true,
+  "matches_printed_L3": true
+ },
+ "pfaffian_payload": {
+  "basis": [
+   "1",
+   "th",
+   "th^2",
+   "th^3",
+   "th^4"
+  ],
+  "frame": "theta-frame: theta v = (A_num/den) v on v=(y,th y,..,th^4 y); d/dphi frame: dv/dphi = A_num/(phi*den) v; den = symbol (1-4phi)(1-16phi)(1-36phi); integer numerators",
+  "A_num": [
+   [
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ],
+    [
+     0
+    ]
+   ],
+   [
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     0
+    ],
+    [
+     1,
+     -56,
+     784,
+     -2304
+    ]
+   ],
+   [
+    [
+     0,
+     6,
+     -1020,
+     13824
+    ],
+    [
+     0,
+     40,
+     -4628,
+     50688
+    ],
+    [
+     0,
+     112,
+     -8548,
+     72576
+    ],
+    [
+     0,
+     168,
+     -8076,
+     50688
+    ],
+    [
+     0,
+     140,
+     -3920,
+     17280
+    ]
+   ]
+  ],
+  "den": [
+   1,
+   -56,
+   784,
+   -2304
+  ],
+  "deg_table": [
+   [
+    0,
+    3,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    3,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    3,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0,
+    3
+   ],
+   [
+    3,
+    3,
+    3,
+    3,
+    3
+   ]
+  ],
+  "route_choice_point": {
+   "route": "matrix-transport",
+   "law": "transport v' = A(s) v; never eliminate (DESIGN \u00a70)"
+  },
+  "route_choice_scalar": {
+   "route": "scalar-elimination-ok",
+   "slots": 20,
+   "budget": 20000,
+   "probe": {
+    "order": 5,
+    "degree": 3
+   }
+  }
+ }
+}

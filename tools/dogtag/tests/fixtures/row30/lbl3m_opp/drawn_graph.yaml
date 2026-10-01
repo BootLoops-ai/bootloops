@@ -1,0 +1,21 @@
+# drawn graph of row 30 (opp): the paper draws no figure (gallery-30.tex: "each at the scope its row states; row~30 (LBL3M) is listed in the table but"); built from the row words and the graphspec graphspec_opp.json (sha16 52277a61df3959c2)
+# octagon 1..8 of mass-m2 lines, massless chords [('2', '4'), ('3', '7')], photons {'p1': '1', 'p2': '5', 'p3': '6', 'p4': '8'}
+# external legs (all incoming): p1, p2, p3, p4; p4 = -(p1+p2+p3)
+# leg virtualities: {"p1": "0", "p2": "0", "p3": "0", "p4": "0"}
+# edge routing (spanning tree): [{"edge": ["1", "2"], "momentum": "k2 + k3 - p2", "mass": "m2", "tree_edge": true}, {"edge": ["2", "3"], "momentum": "k1 + k3", "mass": "m2", "tree_edge": true}, {"edge": ["3", "4"], "momentum": "k1", "mass": "m2", "tree_edge": false}, {"edge": ["4", "5"], "momentum": "k2 - p2", "mass": "m2", "tree_edge": true}, {"edge": ["5", "6"], "momentum": "k2", "mass": "m2", "tree_edge": false}, {"edge": ["6", "7"], "momentum": "k2 + p3", "mass": "m2", "tree_edge": true}, {"edge": ["7", "8"], "momentum": "k2 + k3 + p3", "mass": "m2", "tree_edge": true}, {"edge": ["8", "1"], "momentum": "k2 + k3 - p1 - p2", "mass": "m2", "tree_edge": true}, {"edge": ["2", "4"], "momentum": "-k1 + k2 - p2", "mass": "0", "tree_edge": true}, {"edge": ["3", "7"], "momentum": "k3", "mass": "0", "tree_edge": false}]
+integralfamilies:
+  - name: "lbl3m_opp_graphspec"
+    loop_momenta: [k1, k2, k3]
+    top_level_sectors: [1023]
+    propagators:
+      - [ "(k2 + k3 - p2)^2 - m2", 0 ]
+      - [ "(k1 + k3)^2 - m2", 0 ]
+      - [ "(k1)^2 - m2", 0 ]
+      - [ "(k2 - p2)^2 - m2", 0 ]
+      - [ "(k2)^2 - m2", 0 ]
+      - [ "(k2 + p3)^2 - m2", 0 ]
+      - [ "(k2 + k3 + p3)^2 - m2", 0 ]
+      - [ "(k2 + k3 - p1 - p2)^2 - m2", 0 ]
+      - [ "(-k1 + k2 - p2)^2", 0 ]
+      - [ "(k3)^2", 0 ]
+    cut_propagators: []

@@ -1,0 +1,143 @@
+{
+ "method": "propagator-set match under external-leg permutations (virtuality classes respected) and loop relabelings k -> U k + c.p (U unimodular with entries in {-1,0,1} for L<=3, signed permutations for L>=4; c in {-1,0,1}), masses as labels; cross-check: networkx VF2 on the realized graphs with line masses and leg virtuality classes as labels",
+ "drawn_vs_family": {
+  "labeled_masses_and_legs": {
+   "found": true,
+   "loop_relabeling": [
+    "k1 -> k1",
+    "k2 -> k2",
+    "k3 -> k3",
+    "k4 -> -k1 -k2 -k3 -k4 +p"
+   ],
+   "loop_map_matrix": [
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   ],
+   "leg_map": {
+    "p": "p",
+    "pout": "pB"
+   },
+   "tried": 366,
+   "with_mass": true,
+   "respect_virtuality": true,
+   "n_leg_perms_admissible": 2,
+   "loop_map_class": "signed permutations composed with the two-vertex line reflections R_i (L >= 4)"
+  },
+  "masses_only_any_leg_perm": {
+   "found": true,
+   "loop_relabeling": [
+    "k1 -> k1",
+    "k2 -> k2",
+    "k3 -> k3",
+    "k4 -> -k1 -k2 -k3 -k4 +p"
+   ],
+   "loop_map_matrix": [
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     -1,
+     -1,
+     -1,
+     -1
+    ]
+   ],
+   "leg_map": {
+    "p": "p",
+    "pout": "pB"
+   },
+   "tried": 366,
+   "with_mass": true,
+   "respect_virtuality": false,
+   "n_leg_perms_admissible": 2,
+   "loop_map_class": "signed permutations composed with the two-vertex line reflections R_i (L >= 4)"
+  },
+  "topology_only": {
+   "found": true,
+   "loop_relabeling": [
+    "k1 -> k1",
+    "k2 -> k2",
+    "k3 -> k3",
+    "k4 -> k4"
+   ],
+   "loop_map_matrix": [
+    [
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   "leg_map": {
+    "p": "p",
+    "pout": "pB"
+   },
+   "tried": 41,
+   "with_mass": false,
+   "respect_virtuality": false,
+   "n_leg_perms_admissible": 2,
+   "loop_map_class": "signed permutations composed with the two-vertex line reflections R_i (L >= 4)"
+  },
+  "networkx_vf2": {
+   "labeled": true,
+   "masses_only": true,
+   "topology_only": true
+  }
+ },
+ "cofamilies": []
+}

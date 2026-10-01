@@ -1,0 +1,11 @@
+{
+  "name": "sunrise_eq",
+  "description": "2-loop equal-mass sunrise (3 massive lines, p^2 = t·m^2). Maximal cut = elliptic curve on Γ₁(6); special fibers at t∈{0,1,9,∞}. CM at threshold t=9 (j=0, D=-3). Route B.",
+  "edges": [[1,2,"1"], [1,2,"1"], [1,2,"1"]],
+  "nodes": {"1": [1], "2": [2]},
+  "kinematics": {
+    "invariants": ["t"],
+    "external_masses": {"1": "t", "2": "t"},
+    "channels": {"1": "t"}
+  }
+}

@@ -1,0 +1,26 @@
+MIXALOT battery record
+PASS  M1 pins integrity  42 pinned; drift=0
+PASS  M2 tampered vendor refuses (mutation control)  rc=1
+PASS  M2b pyc-shadow control: poisoned cache has NO effect  rc=0 out=8025569/2144534071680
+PASS  M3 cross-engine exact agreement (zseries/closed_form/w1/bigg)  4+4 cells
+PASS  M4a coin10 flagship == COIN10_REF (vendored, in-process)  0.00s
+PASS  M5a planted 2-segment corpus: g* = 2 recovered  g1:-303.7236 g2:-245.5670 g3:-249.4002 g4:-253.2145
+PASS  M5b exact-vs-float cross-route <= 5e-12 (synthetic, g=1..4)  max delta 5.684e-14
+PASS  M6a blend recorded case (v1==blind==recorded)  11721623169/848260156250
+PASS  M6b presence BF recorded case  27542119402189/8590418784375
+PASS  M7a Z_DPM((2,1),1) = 5/48  
+PASS  M7b g*(Z_g - Z_DPM) = -1/48 exactly at g=64/128/256  
+PASS  M7c larger recorded DP rationals (3 instances)  
+PASS  M8 scaling row k=100 N=10000 lnZ=-41336.613834  lnZ=-41336.613834 0.37s
+PASS  M11a exact truth == recorded GATE_ESTIMATORS truth_logZ  -71.07939015730
+PASS  M11b vendored MC nested seed=1: calibrated vs exact (|z|<4)  logZ_hat=-71.02035658503 z=0.60 recorded-bit-repro=True
+PASS  M12 input hardening (counts/priors/measure/size-guard/g1-shortcut/shape-guard)  failed=[]
+PASS  M14 etienne_evaluate --selftest rc=0 (vendored member)  SELFTEST PASS (worked example, exact + ball + cross)
+PASS  M15 telegraph_evaluate --selftest rc=0 (vendored member)  }
+PASS  M16 boxwalk selftest rc=0 (member, python -m mixalot.boxwalk)  [selftest] TOTAL: PASS (17.5s) -> SELFTEST.json
+PASS  M17 swap_route selftest verdict PASS (k=2 float vs exact)  SELFTEST PASS
+PASS  M18 dirichlet emitter gate rc=0 incl. polynomial branch (vendored member)  DIRICHLET EMITTER: PASS
+PASS  M19 eco/pilot member gate (gate_engines G1/G2 at load)  0.21s
+PASS  M13 worked examples: clean-cwd run, print-only, live computations present  rc=0 wrote=[] missing=[]
+PASS  M10 comparator mutation controls all FAIL as required  vacuous=[]
+OVERALL PASS [FAST] (24 checks, 36s)

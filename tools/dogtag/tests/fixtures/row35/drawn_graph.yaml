@@ -1,0 +1,18 @@
+# DRAWN GRAPH of row 35, built by the identity census from fig-wpair-fc.tex (edge dictionary in its comments) + caption in wpair-fc.tex + Table 2 label
+# vertices/edges/legs as drawn; edge multiplicity (nu) = [1, 1, 1, 1, 1, 1, 1]
+# legs: p1@BL (p^2=0), p2@TL (p^2=0), p3@TR (p^2=mW2), p4@BR (p^2=mW2)
+# loop momenta ['l1', 'l2']; {'p4': '-p1-p2-p3'}; cyclic leg order as drawn: ['p1', 'p2', 'p3', 'p4']
+# seven lines, six trivalent vertices; D8 and D9 carry m_t (m_t^2 = 1 in the record's units); D7 x D9 cross without a vertex; W legs p3, p4 off-shell at m_W^2 = mW2; quark legs massless
+integralfamilies:
+  - name: "WpairT4_drawn"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [127]
+    propagators:
+      - [ "l1 - p2", 0 ]
+      - [ "l1", 0 ]
+      - [ "l1 + p1", 0 ]
+      - [ "l1 - l2 - p4", 1 ]
+      - [ "l2 - p2 - p3", 1 ]
+      - [ "l1 - l2", 0 ]
+      - [ "l2 - p2", 0 ]
+    cut_propagators: []

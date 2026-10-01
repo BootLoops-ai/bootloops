@@ -1,0 +1,10 @@
+# DERIVED propagator list: the record holds no Kira/AMFlow propagator file for this row; the printed value comes from the Picard-Fuchs operator of the BFKNS banana period built from the squared-mass list msq=[1, 1, 1, 9] read from CERT_INDICIAL.json (sha256 first 16 hex cc75d68ace8e9fe1). The 3-loop banana with 4 lines and those masses is the only graph that period defines (pf_engine.py docstring: c_n = sum_(k1+..+kL=n) (n!/prod k_i!)^2 prod m_i^(2 k_i), one k per line).
+integralfamilies:
+  - name: "BAN_1119"
+    loop_momenta: [k1, k2, k3]
+    top_level_sectors: [15]
+    propagators:
+      - ["k1", 1]
+      - ["k2", 1]
+      - ["k3", 1]
+      - ["k1+k2+k3-p", 9]

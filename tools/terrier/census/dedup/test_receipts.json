@@ -1,0 +1,186 @@
+{
+ "N_classes_truth": 10,
+ "N_raw": 43,
+ "agreement": {
+  "halt": false,
+  "orbit_size_hist_by_label": {
+   "off": {
+    "1": 2,
+    "3": 1,
+    "5": 2,
+    "6": 1
+   },
+   "on": {
+    "5": 2,
+    "6": 2
+   }
+  },
+  "plant_own_class": true,
+  "plant_rows": [
+   {
+    "class": 8,
+    "own_class": true,
+    "plant_idx": 10
+   },
+   {
+    "class": 9,
+    "own_class": true,
+    "plant_idx": 20
+   }
+  ],
+  "status": "GREEN-AGREE"
+ },
+ "checks": [
+  {
+   "check": "T1-symplectic-gens",
+   "detail": "gens=[[[1, 0, 0, 0], [-1, 2, 0, -1], [1, -1, 1, 1], [-1, 1, 0, 0]], [[2, 1, -1, -1], [1, 2, -1, -1], [1, 1, 0, -1], [1, 1, -1, 0]]]",
+   "pass": true
+  },
+  {
+   "check": "T2-budget-invariance-and-inverses",
+   "detail": "300 probes",
+   "pass": true
+  },
+  {
+   "check": "T3-engineA-ground-truth",
+   "detail": "N_dedup_A=10 nodes=146304",
+   "pass": true
+  },
+  {
+   "check": "T4-engineB-ground-truth",
+   "detail": "N_dedup_B=10 nodes=290792",
+   "pass": true
+  },
+  {
+   "check": "T5-all-witnesses-verify",
+   "detail": "43 witnesses x 2 engines",
+   "pass": true
+  },
+  {
+   "check": "T6-reconcile-green",
+   "detail": "status=GREEN-AGREE hist={'off': {'6': 1, '5': 2, '3': 1, '1': 2}, 'on': {'6': 2, '5': 2}}",
+   "pass": true
+  },
+  {
+   "check": "T7-red-reconciled-miss",
+   "detail": "missA=19",
+   "pass": true
+  },
+  {
+   "check": "T8-red-witness-fail",
+   "detail": "failures=1",
+   "pass": true
+  }
+ ],
+ "config": {
+  "family_size_range": [
+   3,
+   6
+  ],
+  "honest_budgets": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "member_n2_cap": 150,
+  "n": 4,
+  "n_gens": 2,
+  "on_locus_label_budget_max": 4,
+  "path_l1_cap": 288,
+  "path_n2_cap": 576,
+  "plant_budgets": [
+   9,
+   10
+  ],
+  "wordlen_max": 6
+ },
+ "drill_T7": {
+  "engine_miss_A": 19,
+  "halt": true,
+  "reconciled_equals_truth": true,
+  "status": "RED-RECONCILED-MISS"
+ },
+ "drill_T8": {
+  "halt": true,
+  "status": "RED-WITNESS-FAIL",
+  "witness_failures": 1
+ },
+ "engine_A": {
+  "N_dedup": 10,
+  "nodes": 146304,
+  "truncated": false
+ },
+ "engine_B": {
+  "N_dedup": 10,
+  "nodes": 290792,
+  "truncated": false
+ },
+ "gens": [
+  [
+   [
+    1,
+    0,
+    0,
+    0
+   ],
+   [
+    -1,
+    2,
+    0,
+    -1
+   ],
+   [
+    1,
+    -1,
+    1,
+    1
+   ],
+   [
+    -1,
+    1,
+    0,
+    0
+   ]
+  ],
+  [
+   [
+    2,
+    1,
+    -1,
+    -1
+   ],
+   [
+    1,
+    2,
+    -1,
+    -1
+   ],
+   [
+    1,
+    1,
+    0,
+    -1
+   ],
+   [
+    1,
+    1,
+    -1,
+    0
+   ]
+  ]
+ ],
+ "inputs": "SYNTHETIC fixed-seed battery only (no census data)",
+ "module": "census/dedup",
+ "n_plants": 2,
+ "seeds": {
+  "families": 20260715002,
+  "gens_synth": 20260715001,
+  "invariance_probe": 20260715004,
+  "shuffle": 20260715003
+ }
+}

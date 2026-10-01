@@ -1,0 +1,12 @@
+{
+ "program": "toy-stars (invented demonstration program; every number in this receipt is made up)",
+ "n_sites_rated": 48,
+ "n_star_changes": 5,
+ "tiers": {
+  "t1": {"n": 11, "unique_best": 1},
+  "t2": {"n": 17, "unique_best": 1},
+  "t3": {"n": 20, "unique_best": 2}
+ },
+ "payout_band_usd": {"lo": 1234500, "hi": 2765400},
+ "audit_flag": true
+}

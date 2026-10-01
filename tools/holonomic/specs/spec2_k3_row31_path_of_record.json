@@ -1,0 +1,106 @@
+{
+ "name": "k3_row31_path_of_record",
+ "operator": {
+  "form": "theta_z_Pj",
+  "chart": "z=-1/s",
+  "order": 4,
+  "degz": 5,
+  "Pj": {
+   "0": [
+    0,
+    0,
+    576,
+    13968,
+    137088,
+    55296
+   ],
+   "1": [
+    0,
+    12,
+    2424,
+    55464,
+    458304,
+    202752
+   ],
+   "2": [
+    0,
+    54,
+    4156,
+    87880,
+    563008,
+    276480
+   ],
+   "3": [
+    -1,
+    40,
+    3704,
+    66272,
+    303872,
+    165888
+   ],
+   "4": [
+    1,
+    78,
+    2032,
+    20448,
+    63232,
+    36864
+   ]
+  },
+  "source": {
+   "label": "the exact (1,1,1,9) Picard-Fuchs operator of the threshold-banana evaluator published on the BootLoops site (PF_119_EXACT.json)",
+   "sha256": "62198a7a0a5b4bbdcccaf1b7948e4006e9c50d2692193ccb6ceb9180f28ff4e3"
+  },
+  "note": "the (1,1,1,9) Picard-Fuchs operator in theta_z form; it equals the IBP-derived operator under theta_z -> theta_z - 1"
+ },
+ "variable": "s",
+ "seed": {
+  "kind": "bfkns_multinomial",
+  "msq": [
+   1,
+   1,
+   1,
+   9
+  ],
+  "at": "80",
+  "N": 1200
+ },
+ "path": [
+  "80",
+  "80+10*I",
+  "1/4+10*I",
+  "1/4",
+  "0"
+ ],
+ "path_note": "rectangular path [s_b, s_b + i lift, s_dec + i lift, s_dec] with s_b = 80, lift = 10, s_dec = 1/4, continued to the threshold s = 0 for the Frobenius landing",
+ "landing": {
+  "kind": "local_basis",
+  "fractional": {
+   "3/2": {
+    "phase": "exp(i*pi*3/2)"
+   }
+  }
+ },
+ "targets": {
+  "3/2": {
+   "label": "reference Arb value of the s^(3/2) threshold coefficient (195 digits)",
+   "value": "-0.01531469153949422359753684717536026226103851334351779591109350056363973065192416096778833413397696914465827970348884947342805812313051692629590881161944422277729854364955194835822349292058384942464",
+   "im": "0",
+   "digits": 195,
+   "source": {
+    "label": "independent Arb evaluation of the s^(3/2) coefficient (195 digits)",
+    "sha256": "126b53beae35358841ba59a18ca0cfbbc8074120147e9e94a7ae7775d9abf433"
+   },
+   "also": {
+    "IBP-normalized transport (c1 = -12) read at s_dec = 0.15, 78.6-digit row consistency": "-0.015314691539494223597536847175360262261038513343517795911093500563639730651924214",
+    "source": {
+     "label": "leg-II transport settings and values of the threshold-banana evaluator published on the BootLoops site (LEGII_S2.json)",
+     "sha256": "179239e878794168bcf8b00ce0dc6be948d037403201bd79543ee9af7fd8b7a0"
+    }
+   }
+  }
+ },
+ "eps": "1e-100",
+ "prec": 430,
+ "min_digits": 30
+}

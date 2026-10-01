@@ -1,0 +1,81 @@
+{
+ "schema": "subtropica-euler-quad-v1",
+ "id": "moller_box_eq41",
+ "title": "one-loop massive Moller box (paper Sec 4.1.1), Cheng-Wu x3=1",
+ "divergent": false,
+ "prefactor": {
+  "c": "1",
+  "eps_power": 0,
+  "gammas": [
+   {
+    "arg": [
+     "2",
+     "1"
+    ],
+    "power": 1
+   }
+  ],
+  "gammaE_eps": "0"
+ },
+ "nu": [
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ]
+ ],
+ "polys": [
+  {
+   "poly": "x0 + x1 + x2 + 1",
+   "exp": [
+    "0",
+    "2"
+   ]
+  },
+  {
+   "poly": "x0^2*msq + x0*x2*tb + 2*x0*x2*msq + x1*sb + x2^2*msq",
+   "exp": [
+    "-2",
+    "-1"
+   ]
+  }
+ ],
+ "vars": [
+  "x0",
+  "x1",
+  "x2"
+ ],
+ "kinvars": [
+  "sb",
+  "tb",
+  "msq"
+ ],
+ "notes": "Paper Sec 4.1.1 / eq 4.1-class one-loop massive Moller box (PaperChecks.wl:254 Lstlisting 17; upstream pin adac2f72). pySecDec disteval normalization (int d^D l/(i pi^(D/2)) per loop) -- same convention as tools/hiprec_sectordecomp (its README benchmarks this very topology). Euclidean chart sb=-s>0, tb=-t>0, msq>0; u=4*msq+sb+tb is then ABOVE the u-channel threshold, which is invisible in this parametric rep (F stays coefficient-positive) but matters for momentum-space oracles. RAY WARNING: the scaling x0,x2 ~ lam, x1 ~ lam^2 (soft massless edge {1,4} gauged to 1) gives F ~ lam^2 and measure lam^4 dlam/lam, i.e. integral ~ int lam^(-1-2*eps) dlam: a MARGINAL (log) ray at eps=0, regulated only for eps<0 \u2014 with divergence checks ON this integrand is flagged divergent at eps^0; use the subtraction route or an off-shell deformation. divergent=false records only that the Euler integral converges for eps in a strip (dim-reg sense).",
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "scripts/make_fixtures.py"
+  ],
+  "timestamp_utc": "2026-07-08T18:46:47+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "pysecdec": "1.6.6",
+  "sympy": "1.14.0",
+  "graph": "internal [m,[1,2]],[0,[2,3]],[m,[3,4]],[0,[4,1]]; external p1..p4; p_i^2=msq",
+  "mandelstams": "(p1+p2)^2=s=-sb, (p2+p3)^2=t=-tb, u=4*msq-s-t",
+  "gauge": "Cheng-Wu x3=1 (last Feynman parameter, massless edge {1,4})",
+  "exponent_convention": "eU=nu-(L+1)D/2=2eps, eF=-(nu-LD/2)=-2-eps, prefactor Gamma(-eF)/prod Gamma(nu_i) (DESIGN.md C2; SubTropica.wl STGetIntegrandData:2975)",
+  "euclidean_positivity_check": "all monomial coefficients of U|x3=1, F|x3=1 positive over (sb,tb,msq) -- enforced by emitter",
+  "paperchecks_citation": "PaperChecks.wl:254 (Lstlisting 17, Sec 4.1.1)"
+ }
+}

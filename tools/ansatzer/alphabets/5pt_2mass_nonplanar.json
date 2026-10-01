@@ -1,0 +1,25 @@
+{
+  "name": "5pt_2mass_nonplanar",
+  "description": "2-mass 5pt non-planar (hexa-box + double-pentagon) shared 19-letter EVEN alphabet on the 7-scale physical slice {s12,s23,s34,s45,s15,M3,M4}, rationalized M3=w3^2, M4=w4^2. Reference K=[9,28,62,120].",
+  "vars": ["s12","s23","s34","s45","s15","w3","w4"],
+  "letters": {
+    "s12":"s12","s23":"s23","s34":"s34","s45":"s45","s15":"s15",
+    "M3":"w3**2","M4":"w4**2",
+    "s45-M4":"s45-w4**2","s23-M3":"s23-w3**2",
+    "M4+s12-s34-s45":"w4**2+s12-s34-s45",
+    "M3+s15-s34-s23":"w3**2+s15-s23-s34",
+    "M3+M4+s12-s34-s45":"w3**2+w4**2+s12-s34-s45",
+    "M3+M4+s15-s34-s23":"w3**2+w4**2+s15-s23-s34",
+    "s34-s12":"s34-s12","s34-s15":"s34-s15",
+    "s34-(mu3+mu4)^2":"s34-(w3+w4)**2",
+    "s34-(mu3-mu4)^2":"s34-(w3-w4)**2",
+    "s23+s34+s45-M3-M4":"s23+s34+s45-w3**2-w4**2",
+    "s12+s15-s34":"s12+s15-s34"
+  },
+  "first_entry": ["s12","s23","s34","s45","s15",
+                  "s34-(mu3+mu4)^2","s34-(mu3-mu4)^2","s45-M4","s23-M3"],
+  "last_entry":  ["s12","s23","s34","s45","s15",
+                  "s34-(mu3+mu4)^2","s34-(mu3-mu4)^2","s45-M4","s23-M3",
+                  "M3","M4","M4+s12-s34-s45","M3+s15-s34-s23",
+                  "M3+M4+s12-s34-s45","M3+M4+s15-s34-s23"]
+}

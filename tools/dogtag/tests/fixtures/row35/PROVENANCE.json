@@ -1,0 +1,38 @@
+{
+ "row": "row35",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "family_of_record.yaml",
+   "source": "identity_census/rows/row35/family_of_record.yaml",
+   "sha256": "3d3f3825b7b833260ea37931a8c25694d7cbf132ad37d5ca470110c29e88f672",
+   "size": 400,
+   "record_sha256": "3d3f3825b7b833260ea37931a8c25694d7cbf132ad37d5ca470110c29e88f672",
+   "record_size": 400
+  },
+  {
+   "path": "kinematics_of_record.yaml",
+   "source": "identity_census/rows/row35/kinematics_of_record.yaml",
+   "sha256": "63aee0ed7532670639a53dd1c943b63b4014aa89361f4d9b47956e636df32eb7",
+   "size": 484,
+   "record_sha256": "63aee0ed7532670639a53dd1c943b63b4014aa89361f4d9b47956e636df32eb7",
+   "record_size": 484
+  },
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row35/drawn_graph.yaml",
+   "sha256": "1d180206dd0640e35869998a18ec8b2dc0e80154029438eb153c3b284b4c4554",
+   "size": 911,
+   "record_sha256": "d20c7d003630b2982ede9c9717a3498793650c9dfafb803fdff9b784ef955ec3",
+   "record_size": 1058
+  },
+  {
+   "path": "iso.json",
+   "source": "identity_census/rows/row35/iso.json",
+   "sha256": "b5e635c1398b94f8daee121910e81b4b64fcf7d213db9670d3439ac4e32b95c5",
+   "size": 3623,
+   "record_sha256": "500e66e5d0993a6e01f150a8ba36ab49249e333b7ca9422d6d8812f13707bd54",
+   "record_size": 4163
+  }
+ ]
+}

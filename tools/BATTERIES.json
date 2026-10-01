@@ -1,0 +1,199 @@
+{
+ "abacus": {
+  "cmd": "python3 tools/abacus/selftest.py",
+  "cwd": "root"
+ },
+ "amflow-kit": {
+  "cmd": "python3 selftest.py && python3 -m pytest tests -q -rs -p no:cacheprovider",
+  "cwd": "package"
+ },
+ "annihilator": {
+  "cmd": "python3 tools/annihilator/annihilator.py --selftest && python3 tools/annihilator/eigenring/s4_eigenring_pilot.py --selftest && python3 tools/annihilator/ore/ore_ops.py && python3 tools/annihilator/ore/ore_rdiv_modp.py && python3 tools/annihilator/nullspace_fast/test_nullspace_fast.py && python3 tools/annihilator/ore/known_factors.py && python3 tools/annihilator/ore/lclm_modp.py",
+  "cwd": "root"
+ },
+ "ansatzer": {
+  "cmd": "python3 tools/ansatzer/test_ansatzer.py",
+  "cwd": "root"
+ },
+ "baller": {
+  "cmd": "cd \"$(mktemp -d)\" && python3 \"$OLDPWD\"/tools/baller/battery/battery.py",
+  "cwd": "root"
+ },
+ "blade": {
+  "cmd": "python3 -m blade.selftest --full",
+  "cwd": "root"
+ },
+ "clinch": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "coalescer": {
+  "cmd": "python3 tools/coalescer/coalescer.py --test",
+  "cwd": "root"
+ },
+ "cosmoflow": {
+  "cmd": "COSMOFLOW_SELFTEST_OUT=\"$(mktemp)\" python3 tools/cosmoflow/selftest.py",
+  "cwd": "root"
+ },
+ "counterweight": {
+  "cmd": "julia --project=. test/runtests.jl",
+  "cwd": "package"
+ },
+ "dipstick": {
+  "cmd": "D=\"$(mktemp -d)\" && python3 tools/dipstick/battery.py --receipts \"$D\" --summary-out \"$D/battery_SUMMARY.json\"",
+  "cwd": "root",
+  "serial": true
+ },
+ "dogtag": {
+  "cmd": "python3 topology_audit.py --selftest",
+  "cwd": "package"
+ },
+ "eichler": {
+  "cmd": "python3 selftest.py --outdir \"$(mktemp -d)\"",
+  "cwd": "package"
+ },
+ "ellipticus": {
+  "cmd": "ELLIPTICUS_BATTERY_OUT=\"$(mktemp)\" python3 -m ellipticus.battery",
+  "cwd": "root"
+ },
+ "emitall": {
+  "cmd": "python3 -m pytest tools/emitall -x -q -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "eras": {
+  "cmd": "python3 eras.py selftest",
+  "cwd": "package"
+ },
+ "famhar": {
+  "cmd": "python3 tools/famhar/famhar.py --selftest",
+  "cwd": "root"
+ },
+ "ffcapital": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "formglue": {
+  "cmd": "python3 -m pytest tools/formglue -x -q -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "frobenius-boundary": {
+  "cmd": "python3 asdminer/run_control.py && python3 deform_transport/battery/run_battery_deform.py --stages S0,S1 && python3 -m frobenius_boundary.selftest",
+  "cwd": "package"
+ },
+ "galois": {
+  "cmd": "python3 svmap21.py selftest",
+  "cwd": "package"
+ },
+ "gatekeeper": {
+  "cmd": "python3 tools/gatekeeper/ctrl_per_order.py --selftest && python3 tools/gatekeeper/test_gatekeeper.py",
+  "cwd": "root"
+ },
+ "geotriage": {
+  "cmd": "GEOTRIAGE_TEST_OUT=\"$(mktemp)\" python3 tools/geotriage/test_geotriage.py",
+  "cwd": "root"
+ },
+ "gpl-eval": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "holonomic": {
+  "cmd": "cd \"$(mktemp -d)\" && python3 \"$OLDPWD\"/tools/holonomic/battery.py",
+  "cwd": "root"
+ },
+ "kira-stack": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "landau-alphabet": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "lockpick": {
+  "cmd": "python3 tools/pslq_gate.py --selftest",
+  "cwd": "root"
+ },
+ "longhand": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "maxcut": {
+  "cmd": "python3 -m maxcut.decisive_validate && python3 -m maxcut.de_transport --selftest",
+  "cwd": "root"
+ },
+ "membound": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "mixalot": {
+  "cmd": "MIXALOT_BATTERY_OUT=\"$(mktemp -d)\" python3 battery/battery.py",
+  "cwd": "package"
+ },
+ "nestor": {
+  "cmd": "python3 -m nestor.selftest",
+  "cwd": "root"
+ },
+ "numkin": {
+  "cmd": "python3 tools/numkin/selftest.py",
+  "cwd": "root"
+ },
+ "pmflow": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "popcorn": {
+  "cmd": "python3 tools/popcorn/selftest.py",
+  "cwd": "root"
+ },
+ "posq": {
+  "cmd": "python3 posq.py --selftest",
+  "cwd": "package"
+ },
+ "qinvert": {
+  "cmd": "python3 -m pytest tools/qinvert -x -q -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "rankscreen": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "ratfit": {
+  "cmd": "python3 -m pytest tools/ratfit -x -q -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "seedling": {
+  "cmd": "python3 -m pytest tools/seedling -x -q -rs -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "subtropica": {
+  "cmd": "python3 tools/subtropica/selftest.py",
+  "cwd": "root"
+ },
+ "surd": {
+  "cmd": "python3 -B tools/surd/tests/run_tests.py",
+  "cwd": "root"
+ },
+ "terrier": {
+  "cmd": "python3 selftest.py",
+  "cwd": "package"
+ },
+ "tropical-sampler": {
+  "cmd": "python3 tools/tropical-sampler/tropical_sampler.py --selftest && CEGM_GJ_OUT=\"$(mktemp -d)\" python3 tools/tropical-sampler/cegm_gj/t3_prod.py sanity --procs 4",
+  "cwd": "root"
+ },
+ "trust": {
+  "cmd": "sh tools/trust/selftest.sh \"$(mktemp -d)\"",
+  "cwd": "root"
+ },
+ "vopclose": {
+  "cmd": "python3 tools/vopclose/vopclose.py --test",
+  "cwd": "root"
+ },
+ "wayfinder": {
+  "cmd": "python3 -m pytest tools/wayfinder -x -q -p no:cacheprovider",
+  "cwd": "root"
+ },
+ "winnow": {
+  "cmd": "sh tools/winnow/tests/run_tests.sh",
+  "cwd": "root"
+ }
+}

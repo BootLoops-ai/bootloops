@@ -1,0 +1,15 @@
+p=1073741827: cycle type [1, 3, 8, 14]
+p=1073741831: cycle type [1, 1, 3, 6, 6, 9]
+p=1073741833: cycle type [1, 1, 2, 5, 17]
+p=1073741839: cycle type [1, 2, 3, 3, 3, 3, 11]
+p=1073741789: cycle type [5, 21]
+p=1073741783: cycle type [4, 6, 16]
+
+rational-factor candidate degrees: NONE (irreducible/transitive)
+  [1, 3, 8, 14]: even permutation
+  [1, 1, 3, 6, 6, 9]: even permutation
+  [1, 1, 2, 5, 17]: ODD permutation
+  [1, 2, 3, 3, 3, 3, 11]: ODD permutation
+  [5, 21]: even permutation
+  [4, 6, 16]: ODD permutation
+Jordan: a prime cycle q with n/2 < q <= n-3 forces A_n; + any odd element forces S_n.  (n = 26)

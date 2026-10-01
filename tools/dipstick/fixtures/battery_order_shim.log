@@ -1,0 +1,18 @@
+# tool under test: pf_rank.jl
+
+c1 sunrise v1-probe: order=2 2p=(2, 2) hr=7 (expect 2, hr 7) 16.0s
+c1 PASS
+c2 sunrise gen-jet:  order=2 2p=(2, 2) (expect 2) 0.6s
+c2 PASS
+c3 Legendre(s^2):    order=2 2p=(2, 2) (expect 2) 0.4s
+c3 PASS
+c4 const-period:     order=1 2p=(1, 1) (expect 1) 0.0s
+c4 PASS
+c5 drain+probe:      chain=["z1", "z2"] residual=["z3"] order=1 (expect [z1,z2]->z3, 1)
+c5 PASS
+c6 drain->elliptic:  chain=["z1"] order=2 (expect 2)
+c6 PASS
+c7 3L-banana v1:     order=3 2p=(3, 3) hr=15 (expect 3, hr 15) 4.0s
+c7 PASS
+
+RESULT: 7/7 PASS

@@ -1,0 +1,13 @@
+name = "LandauAlphabet"
+uuid = "7a2b9c41-83f5-4d28-9e6a-1c5b0d2f8e33"
+authors = ["Matthew D. Schwartz"]
+version = "1.0.0"
+
+[deps]
+Arblib = "fb37089c-8514-4489-9461-98f9c8763369"
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.11"

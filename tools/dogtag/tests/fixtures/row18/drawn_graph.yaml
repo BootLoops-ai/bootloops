@@ -1,0 +1,18 @@
+# DRAWN GRAPH row 18 from figures/fig-ggH.tex (dictionary in its header = family 2, Eq. 3.3 of arXiv:2501.14435), caption fig:ggH, Table 2 row 18, gallery tile 18.
+# masses kept symbolic: mt2 = m_t^2 on the five quark lines, M2 = M^2 on the rung GL-GR (M in {m_H, m_W, m_Z}).
+# leg dictionary: {"p1": "gluon in at TL (on-shell)", "p2": "gluon in at TR (on-shell)", "p3": "Higgs out at TT, p3^2 = s (off-shell)"}
+# leg labels (identity): {"p1": "on", "p2": "on", "p3": "off"}
+# leg virtualities (kinematics): {"p1": "0", "p2": "0", "p3": "s"}
+# convention: all legs incoming, p_N = -(p_1 + ... + p_{N-1}); masses as m^2 in the mass field
+integralfamilies:
+  - name: "ggH_drawn"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [63]
+    propagators:
+      - [ "(k1)^2", mt2 ]
+      - [ "(k1 + p1)^2", mt2 ]
+      - [ "(k1 - p2)^2", mt2 ]
+      - [ "(k1 + k2)^2", M2 ]
+      - [ "(k2 - p1)^2", mt2 ]
+      - [ "(k2 + p2)^2", mt2 ]
+    cut_propagators: []

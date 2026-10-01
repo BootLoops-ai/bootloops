@@ -1,0 +1,72 @@
+{
+ "closed_form": {
+  "3/2": "-sqrt(5)/(40pi^2)"
+ },
+ "c_3/2": {
+  "closed_value": "-0.005664026354625174893890651207040158150127078114898186113007458042441367465606958244617608916836807983909502920058735366531846195291616897476939135671785363457530634302552685681592349696923117395944665447881815211224211025296187166228558904948571804092",
+  "per_sample_vs_closed": {
+   "A:coalescer_1,1,1,1,1,25@0.15": 70.6,
+   "A:coalescer_1,1,1,1,1,25@0.25": 70.53,
+   "B:B@1//4": 248.22,
+   "B:B@7//40": 257.93,
+   "cross_route_gate_d": 70.53,
+   "A_sdec_ind_d": 70.26,
+   "B_sdec_ind_d": 248.22
+  }
+ },
+ "K3_control": {
+  "A:K3_control@0.15": 74.8,
+  "A:K3_control@0.25": 74.8,
+  "B:B@1//4": 223.28
+ },
+ "targets": {
+  "3/2": {
+   "value": "-0.0056640263546251748938906512070401581501270781148981861130074580424413674656069582446176089168368079839095029200587353665318461952916168974769391356717853634575306343025526856815923496969231173959446654478818152112242110252961871662285589049485718041",
+   "digits": 248,
+   "acc_bits": 870,
+   "source": "ROUTEB_CY4_1280_sdec14.json",
+   "ball_digits": 261,
+   "B_sdec_ind_d": 248.22,
+   "rule": "int(min(ball digits floor(acc_bits*log10 2) = 261, B s_dec-independence = 248.22 d)) = 248; the best Route B midpoint trimmed to 248 digits"
+  }
+ },
+ "family": "CY4",
+ "msq": [
+  1,
+  1,
+  1,
+  1,
+  1,
+  25
+ ],
+ "alphas": [
+  "3/2"
+ ],
+ "gate": {
+  "bar_d": 30.0,
+  "cross_route_gate_d": {
+   "3/2": 70.53
+  },
+  "verdict": "PASS",
+  "fails": []
+ },
+ "producer": {
+  "script": "gate_compare.py",
+  "script_sha256": "79f19b3ade5f56cb3173d9fc6b4adb2f04d4aba29eaf8169aa0a0ab7d26e13ad",
+  "calpha_rings_sha256": "f31b186255d2aa1f41166382ed00881d927eafde7c82ded8c9a30d14a745ce46",
+  "dps": 300,
+  "stamp_utc": "2026-09-07T01:18:18Z",
+  "inputs": {
+   "routeA": [
+    "ROUTEA_CY4_dps80.json"
+   ],
+   "routeB": [
+    "ROUTEB_CY4_1280_sdec14.json",
+    "ROUTEB_CY4_896_sdec740.json"
+   ],
+   "k3_routeA": "ROUTEA_K3.json",
+   "k3_routeB": "ROUTEB_K3_ctrl.json",
+   "closed": "auto"
+  }
+ }
+}

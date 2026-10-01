@@ -1,0 +1,143 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "working_pre": 80,
+  "chop_pre": 20,
+  "rationalize_pre": 70,
+  "silent_mode": false,
+  "x_order": 140,
+  "extra_x_order": 180,
+  "learn_x_order": -1,
+  "test_x_order": 5,
+  "d0": "4",
+  "run_candidate": 10,
+  "run_direction": "NegIm",
+  "run_length": 1000,
+  "run_radius": 2
+ },
+ "family": {
+  "name": "lbl3x",
+  "loops": [
+   "k",
+   "a",
+   "b"
+  ],
+  "legs": [
+   "p1",
+   "p2",
+   "p3",
+   "p4"
+  ],
+  "conservation": {
+   "p4": "-p1-p2-p3"
+  },
+  "replacement": {
+   "p1^2": "0",
+   "p2^2": "0",
+   "p3^2": "0",
+   "p4^2": "0",
+   "(p1+p2)^2": "s",
+   "(p2+p3)^2": "t"
+  },
+  "propagators": [
+   "k^2 - 1",
+   "(k+p2-b)^2 - 1",
+   "(k+a-b+p2+p3)^2 - 1",
+   "(k+a-p1)^2 - 1",
+   "a^2",
+   "b^2",
+   "(k+p1)^2",
+   "(k+p3)^2",
+   "(a+p1)^2",
+   "(a+p2)^2",
+   "(a+p3)^2",
+   "(b+p1)^2",
+   "(b+p2)^2",
+   "(b+p3)^2",
+   "(k+b)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 40,
+ "target_eps_power": 0,
+ "work_dir": "Rm8m4_ferm",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 12,
+  "eps_parallel": 4,
+  "blackbox": {
+   "ibp_rank": 1,
+   "ibp_dot": 3,
+   "integral_order": 5,
+   "n_thread": 6,
+   "kira3_truncate_sp": true,
+   "symbolic_ibp": false,
+   "ibp_cache_dir": "lbl3x_conn_cache",
+   "numeric_values": {
+    "s": "-8",
+    "t": "-4"
+   }
+  }
+ }
+}

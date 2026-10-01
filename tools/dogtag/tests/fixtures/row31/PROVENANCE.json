@@ -1,0 +1,54 @@
+{
+ "row": "row31",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "family_of_record.yaml",
+   "source": "identity_census/rows/row31/family_of_record.yaml",
+   "sha256": "4c748aa2bdb4c57d7265cde2c5f10fc46f5302a9dc63103259b7b2b0b57e978d",
+   "size": 671,
+   "record_sha256": "dd7fc290c424410bed4a1105b24b323d046a2d766429fa9bf37aa6d54310e0c7",
+   "record_size": 735
+  },
+  {
+   "path": "family_kinematics.yaml",
+   "source": "identity_census/rows/row31/family_kinematics.yaml",
+   "sha256": "d39dcfe38892d94ae340d735260af4825b5ecdaf76af04989fa92e2dcef87c9e",
+   "size": 172,
+   "record_sha256": "d39dcfe38892d94ae340d735260af4825b5ecdaf76af04989fa92e2dcef87c9e",
+   "record_size": 172
+  },
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row31/drawn_graph.yaml",
+   "sha256": "4bcc152d1d63c98f4022ca5a1d55ac7dd00f7c1dca6ae6e67518fa7796e62698",
+   "size": 1234,
+   "record_sha256": "f92e3f9afba94897041d0b75b5109c2d45ebaf6cb15ebffe141fcfde8a03aa91",
+   "record_size": 1512
+  },
+  {
+   "path": "drawn_kinematics.yaml",
+   "source": "identity_census/rows/row31/drawn_kinematics.yaml",
+   "sha256": "08ccb1bef756189c550f16bb4a94074f7ebd49c3b98d385d3fc40f8ee6a136b4",
+   "size": 230,
+   "record_sha256": "08ccb1bef756189c550f16bb4a94074f7ebd49c3b98d385d3fc40f8ee6a136b4",
+   "record_size": 230
+  },
+  {
+   "path": "record_family/integralfamilies.yaml",
+   "source": "identity_census/rows/row31/record_family/integralfamilies.yaml",
+   "sha256": "ad8c148d5ff32a7de74a9695b572f7205ab88b0000d9349df6a3326055aa04d5",
+   "size": 1656,
+   "record_sha256": "776a687f302b631ed9f0ed2256c09f5b3fcd16b0e72f2e7925b15c80b84b691d",
+   "record_size": 2012
+  },
+  {
+   "path": "record_family/kinematics.yaml",
+   "source": "identity_census/rows/row31/record_family/kinematics.yaml",
+   "sha256": "dbe80a5cec70645d1eb060abdbb2fd6e7bab76904126320539f97feff276c94d",
+   "size": 495,
+   "record_sha256": "3fa0d25073c77c7503727a41c42e2b8ba5133898682ca2d1d764bce205f954d0",
+   "record_size": 522
+  }
+ ]
+}

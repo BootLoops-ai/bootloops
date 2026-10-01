@@ -1,0 +1,22 @@
+{
+ "fixture": "sec53_qorbit",
+ "files": {
+  "b53_chart1_x.json": "c7e5e626d22a56931549b8b64fa846dc4628a836677b150da75cc3bb2c53441b",
+  "b53_landau_x.json": "24d216824e8c1af92000f2d5c613439c5e10b86cf00aaa63b740ccc064a5ffbf",
+  "b53_raw_s.json": "8d4d2beffe62976730ebd68c61becd492c8839785ef88d67c2ab1e798f957528",
+  "out_engine_b53_chart1_x.json": "570d8d072c43345845f99b80ff99dd021f9950ef44a3f3b9acfc150549c8c25e",
+  "out_lee_b53_chart1_x.json": "720f9e2b764cb1e12338f08a3e73f16c4b336f69095cb31f0305a53ba060d9b0",
+  "planted_drop_last_balance.json": "b76290520d4cdc04d3a68dc1f21d31a31fbb26d348859f46b4a93844aae8e343",
+  "planted_eps_in_Atilde.json": "00338421de8eb5748f27ebbc85f311044dda99da194ac816328352bd33d8e6c7",
+  "planted_mutated_Atilde.json": "0721b04619d9390088ff80bbddc64bbab7d5cb54cf9f1b84719c819c46e75348",
+  "sec53_qorbit_block.json": "8d53adc12fbfdc69c67d0e5e2a73d3892e0f49f950c0742440873ce8a202c99a",
+  "sec53_qorbit_epsform.json": "717e91e4bf69d45097de09dd0a259caff159b8e655f20d882078a805ca523ed0",
+  "verify_epsform_point.py": "3eee08c446f9077ae1dc43aa6683faaa7eef489a18d99dbbc7427210aebc5c29"
+ },
+ "expected": {
+  "b53_chart1_x.json": "engine ok=true; verifier PASS on out_lee_b53_chart1_x.json and on out_engine_b53_chart1_x.json; exact check PASS; q-residue odd part 0",
+  "b53_raw_s.json": "engine STOP: no eps^0-reducing balance found (half-integer exponents at 25s-7, 25s+93)",
+  "b53_landau_x.json": "engine STOP: no eps^0-reducing balance found (half-integer exponents at both quadratic orbits)",
+  "planted_*.json": "verifier FAIL rc 3 (identity False; eps_in_Atilde also eps-free False)"
+ }
+}

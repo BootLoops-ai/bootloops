@@ -1,0 +1,734 @@
+{
+ "description": "The GPL/q letters of the N=4 SYM 1->4 collinear limit (arXiv:2401.06463 ancillary files) restricted to the dipole slice d12=t^2, d34=1, d13=d24=t^2/4+3t/10+1/4, d14=d23=t^2/4-3t/10+1/4 over the 12 labeling classes: 63 pre-slice letters -> 34 irreducible Q[t]-norm factors ('letters', canonical primitive polynomials in t with degree, discriminant, whether it comes from a q letter, number of source letters and a sample of them); 'degenerate_on_slice' lists pre-slice letters that become 0 or constant per class; 'gates' are the exact identity checks passed by the construction.",
+ "slice": "dipole t, cos phi=3/5 sin phi=4/5",
+ "n_classes": 12,
+ "n_preslice_letters": 63,
+ "n_slice_letters": 34,
+ "field_discs": [
+  -7,
+  -1,
+  6,
+  21
+ ],
+ "max_degree": 10,
+ "letters": {
+  "t": {
+   "degree": 1,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 340,
+   "sources_sample": [
+    "cls0:u + ub - 2",
+    "cls0:u - 1",
+    "cls0:u - ub",
+    "cls0:u**2*ub - u**2*vb - u*ub**2 + u*vb + ub**2*v - ub*v"
+   ]
+  },
+  "t + 1": {
+   "degree": 1,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 88,
+   "sources_sample": [
+    "cls0:u + vb - 1",
+    "cls0:u*ub*v - u*ub*vb - u*v*vb + u*vb + ub*v*vb - ub*v",
+    "cls0:ub + v - 1",
+    "cls0:y1 + 1"
+   ]
+  },
+  "t + 1/5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls0:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls0:u*ub*y1 + u*ub - u - ub + 1",
+    "cls0:v*vb*y1 + v*vb - v - vb + 1",
+    "cls10:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t + 3/5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls11:u*ub - u*vb - ub*v + v*vb + v + vb - 1",
+    "cls11:v + vb",
+    "cls1:u + ub - 2",
+    "cls1:u*ub - u*vb - u - ub*v - ub + v*vb + 1"
+   ]
+  },
+  "t + 5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls0:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls0:u*ub*y1 + u*ub - u - ub + 1",
+    "cls0:v*vb*y1 + v*vb - v - vb + 1",
+    "cls10:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t + 5/3": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls11:u + ub - 2",
+    "cls11:u*ub - u*vb - u - ub*v - ub + v*vb + 1",
+    "cls1:u*ub - u*vb - ub*v + v*vb + v + vb - 1",
+    "cls1:v + vb"
+   ]
+  },
+  "t - 1": {
+   "degree": 1,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 88,
+   "sources_sample": [
+    "cls0:u + vb - 1",
+    "cls0:u*ub*v - u*ub*vb - u*v*vb + u*vb + ub*v*vb - ub*v",
+    "cls0:ub + v - 1",
+    "cls0:y1 + 1"
+   ]
+  },
+  "t - 1/5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls11:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls11:u*ub*y1 + u*ub - u - ub + 1",
+    "cls11:v*vb*y1 + v*vb - v - vb + 1",
+    "cls1:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t - 3/5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls0:u + ub - 2",
+    "cls0:u*ub - u*vb - u - ub*v - ub + v*vb + 1",
+    "cls10:u*ub - u*vb - ub*v + v*vb + v + vb - 1",
+    "cls10:v + vb"
+   ]
+  },
+  "t - 5": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls11:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls11:u*ub*y1 + u*ub - u - ub + 1",
+    "cls11:v*vb*y1 + v*vb - v - vb + 1",
+    "cls1:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t - 5/3": {
+   "degree": 1,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls0:u*ub - u*vb - ub*v + v*vb + v + vb - 1",
+    "cls0:v + vb",
+    "cls10:u + ub - 2",
+    "cls10:u*ub - u*vb - u - ub*v - ub + v*vb + 1"
+   ]
+  },
+  "t**10 + 74*t**9/5 - 737*t**8/75 + 62344*t**7/3375 + 82418*t**6/5625 - 4238444*t**5/84375 + 82418*t**4/5625 + 62344*t**3/3375 - 737*t**2/75 + 74*t/5 + 1": {
+   "degree": 10,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 4,
+   "sources_sample": [
+    "cls0:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls10:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls2:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls7:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2"
+   ]
+  },
+  "t**10 - 74*t**9/5 - 737*t**8/75 - 62344*t**7/3375 + 82418*t**6/5625 + 4238444*t**5/84375 + 82418*t**4/5625 - 62344*t**3/3375 - 737*t**2/75 - 74*t/5 + 1": {
+   "degree": 10,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 4,
+   "sources_sample": [
+    "cls11:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls1:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls4:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls9:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2"
+   ]
+  },
+  "t**2 + 1": {
+   "degree": 2,
+   "disc": -1,
+   "from_q": true,
+   "n_sources": 40,
+   "sources_sample": [
+    "cls3:u**2*ub - u**2*vb - u*ub**2 + u*vb + ub**2*v - ub*v",
+    "cls3:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls3:u*ub - u*vb + vb",
+    "cls3:u*ub - ub*v + v"
+   ]
+  },
+  "t**2 + 14*t/5 + 1": {
+   "degree": 2,
+   "disc": 6,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls11:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls11:u*ub*y1 + u*ub - u - ub + 1",
+    "cls11:v*vb*y1 + v*vb - v - vb + 1",
+    "cls1:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t**2 + 2*t/5 - 1/3": {
+   "degree": 2,
+   "disc": 21,
+   "from_q": true,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u*vb - u + ub*v - ub - v*vb + 1",
+    "cls10:u*ub - u*vb - ub*v",
+    "cls11:u*vb**2 - u*vb - ub*v**2 + ub*v + v**2*vb - v*vb**2",
+    "cls11:v + vb - 1"
+   ]
+  },
+  "t**2 + 25/7": {
+   "degree": 2,
+   "disc": -7,
+   "from_q": true,
+   "n_sources": 2,
+   "sources_sample": [
+    "cls3:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls5:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2"
+   ]
+  },
+  "t**2 + 6*t/5 + 1": {
+   "degree": 2,
+   "disc": -1,
+   "from_q": true,
+   "n_sources": 322,
+   "sources_sample": [
+    "cls0:u",
+    "cls0:u*ub*y1 + u*ub - u - ub + 1",
+    "cls0:u*y1 + u - 1",
+    "cls0:ub"
+   ]
+  },
+  "t**2 + 6*t/5 - 3": {
+   "degree": 2,
+   "disc": 21,
+   "from_q": true,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u*vb**2 - u*vb - ub*v**2 + ub*v + v**2*vb - v*vb**2",
+    "cls0:v + vb - 1",
+    "cls10:u + ub - 1",
+    "cls10:u**2*ub - u**2*vb - u*ub**2 + u*vb + ub**2*v - ub*v"
+   ]
+  },
+  "t**2 + 7/25": {
+   "degree": 2,
+   "disc": -7,
+   "from_q": true,
+   "n_sources": 2,
+   "sources_sample": [
+    "cls6:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2",
+    "cls8:u**4*ub**4*v**2 - 2*u**4*ub**4*v*vb + u**4*ub**4*vb**2 - 2*u**4*ub**3*v**3 + 2*u**4*ub**3*v**2*vb + 2*u**4*ub**3*v*vb**2 - 2*u**4*ub**3*vb**3 + u**4*ub**2*v**4 + 2*u**4*ub**2*v**3*vb - 6*u**4*ub**2*v**2*vb**2 + 2*u**4*ub**2*v*vb**3 + u**4*ub**2*vb**4 - 2*u**4*ub*v**4*vb + 2*u**4*ub*v**3*vb**2 + 2*u**4*ub*v**2*vb**3 - 2*u**4*ub*v*vb**4 + u**4*v**4*vb**2 - 2*u**4*v**3*vb**3 + u**4*v**2*vb**4 - 2*u**3*ub**4*v**3 + 2*u**3*ub**4*v**2*vb + 2*u**3*ub**4*v*vb**2 - 2*u**3*ub**4*vb**3 - 2*u**3*ub**3*v**4 + 8*u**3*ub**3*v**3*vb + 8*u**3*ub**3*v**3 - 8*u**3*ub**3*v**2*vb**2 - 12*u**3*ub**3*v**2*vb - 2*u**3*ub**3*v**2 + 8*u**3*ub**3*v*vb**3 - 12*u**3*ub**3*v*vb**2 + 8*u**3*ub**3*v*vb - 2*u**3*ub**3*vb**4 + 8*u**3*ub**3*vb**3 - 2*u**3*ub**3*vb**2 + 2*u**3*ub**2*v**4*vb - 8*u**3*ub**2*v**3*vb**2 - 12*u**3*ub**2*v**3*vb - 2*u**3*ub**2*v**3 - 8*u**3*ub**2*v**2*vb**3 + 48*u**3*ub**2*v**2*vb**2 - 4*u**3*ub**2*v**2*vb + 2*u**3*ub**2*v*vb**4 - 12*u**3*ub**2*v*vb**3 - 4*u**3*ub**2*v*vb**2 - 2*u**3*ub**2*vb**3 + 2*u**3*ub*v**4*vb**2 + 8*u**3*ub*v**3*vb**3 - 12*u**3*ub*v**3*vb**2 + 8*u**3*ub*v**3*vb + 2*u**3*ub*v**2*vb**4 - 12*u**3*ub*v**2*vb**3 - 4*u**3*ub*v**2*vb**2 + 8*u**3*ub*v*vb**3 - 2*u**3*v**4*vb**3 - 2*u**3*v**3*vb**4 + 8*u**3*v**3*vb**3 - 2*u**3*v**3*vb**2 - 2*u**3*v**2*vb**3 + u**2*ub**4*v**4 + 2*u**2*ub**4*v**3*vb - 6*u**2*ub**4*v**2*vb**2 + 2*u**2*ub**4*v*vb**3 + u**2*ub**4*vb**4 + 2*u**2*ub**3*v**4*vb - 8*u**2*ub**3*v**3*vb**2 - 12*u**2*ub**3*v**3*vb - 2*u**2*ub**3*v**3 - 8*u**2*ub**3*v**2*vb**3 + 48*u**2*ub**3*v**2*vb**2 - 4*u**2*ub**3*v**2*vb + 2*u**2*ub**3*v*vb**4 - 12*u**2*ub**3*v*vb**3 - 4*u**2*ub**3*v*vb**2 - 2*u**2*ub**3*vb**3 - 6*u**2*ub**2*v**4*vb**2 - 8*u**2*ub**2*v**3*vb**3 + 48*u**2*ub**2*v**3*vb**2 - 4*u**2*ub**2*v**3*vb - 6*u**2*ub**2*v**2*vb**4 + 48*u**2*ub**2*v**2*vb**3 - 132*u**2*ub**2*v**2*vb**2 + 36*u**2*ub**2*v**2*vb + u**2*ub**2*v**2 - 4*u**2*ub**2*v*vb**3 + 36*u**2*ub**2*v*vb**2 - 10*u**2*ub**2*v*vb + u**2*ub**2*vb**2 + 2*u**2*ub*v**4*vb**3 + 2*u**2*ub*v**3*vb**4 - 12*u**2*ub*v**3*vb**3 - 4*u**2*ub*v**3*vb**2 - 4*u**2*ub*v**2*vb**3 + 36*u**2*ub*v**2*vb**2 - 10*u**2*ub*v**2*vb - 10*u**2*ub*v*vb**2 + u**2*v**4*vb**4 - 2*u**2*v**3*vb**3 + u**2*v**2*vb**2 - 2*u*ub**4*v**4*vb + 2*u*ub**4*v**3*vb**2 + 2*u*ub**4*v**2*vb**3 - 2*u*ub**4*v*vb**4 + 2*u*ub**3*v**4*vb**2 + 8*u*ub**3*v**3*vb**3 - 12*u*ub**3*v**3*vb**2 + 8*u*ub**3*v**3*vb + 2*u*ub**3*v**2*vb**4 - 12*u*ub**3*v**2*vb**3 - 4*u*ub**3*v**2*vb**2 + 8*u*ub**3*v*vb**3 + 2*u*ub**2*v**4*vb**3 + 2*u*ub**2*v**3*vb**4 - 12*u*ub**2*v**3*vb**3 - 4*u*ub**2*v**3*vb**2 - 4*u*ub**2*v**2*vb**3 + 36*u*ub**2*v**2*vb**2 - 10*u*ub**2*v**2*vb - 10*u*ub**2*v*vb**2 - 2*u*ub*v**4*vb**4 + 8*u*ub*v**3*vb**3 - 10*u*ub*v**2*vb**2 + 4*u*ub*v*vb + ub**4*v**4*vb**2 - 2*ub**4*v**3*vb**3 + ub**4*v**2*vb**4 - 2*ub**3*v**4*vb**3 - 2*ub**3*v**3*vb**4 + 8*ub**3*v**3*vb**3 - 2*ub**3*v**3*vb**2 - 2*ub**3*v**2*vb**3 + ub**2*v**4*vb**4 - 2*ub**2*v**3*vb**3 + ub**2*v**2*vb**2"
+   ]
+  },
+  "t**2 - 14*t/5 + 1": {
+   "degree": 2,
+   "disc": 6,
+   "from_q": false,
+   "n_sources": 12,
+   "sources_sample": [
+    "cls0:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb",
+    "cls0:u*ub*y1 + u*ub - u - ub + 1",
+    "cls0:v*vb*y1 + v*vb - v - vb + 1",
+    "cls10:u*ub*v + u*ub*vb - u*ub - u*v*vb - ub*v*vb + v*vb"
+   ]
+  },
+  "t**2 - 2*t/5 - 1/3": {
+   "degree": 2,
+   "disc": 21,
+   "from_q": true,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u + ub - 1",
+    "cls0:u**2*ub - u**2*vb - u*ub**2 + u*vb + ub**2*v - ub*v",
+    "cls10:u*vb**2 - u*vb - ub*v**2 + ub*v + v**2*vb - v*vb**2",
+    "cls10:v + vb - 1"
+   ]
+  },
+  "t**2 - 6*t/5 + 1": {
+   "degree": 2,
+   "disc": -1,
+   "from_q": true,
+   "n_sources": 322,
+   "sources_sample": [
+    "cls0:u",
+    "cls0:u + ub - 1",
+    "cls0:u + ub - 2",
+    "cls0:u + vb - 1"
+   ]
+  },
+  "t**2 - 6*t/5 - 3": {
+   "degree": 2,
+   "disc": 21,
+   "from_q": true,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u*ub - u*vb - ub*v",
+    "cls10:u*vb - u + ub*v - ub - v*vb + 1",
+    "cls11:u + ub - 1",
+    "cls11:u**2*ub - u**2*vb - u*ub**2 + u*vb + ub**2*v - ub*v"
+   ]
+  },
+  "t**4 + 12*t**3/5 + 342*t**2/25 + 12*t/5 + 1": {
+   "degree": 4,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 16,
+   "sources_sample": [
+    "cls11:u - vb",
+    "cls11:u*ub - u*vb + vb",
+    "cls11:u*ub - ub*v + v",
+    "cls11:u*vb - v*vb + v - 1"
+   ]
+  },
+  "t**4 + 86*t**2/25 + 97/25": {
+   "degree": 4,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls6:u*ub - u*v - ub*v + v",
+    "cls6:u*ub - u*vb - ub*vb + vb",
+    "cls6:u*v + u*vb - u - v*vb",
+    "cls6:ub*v + ub*vb - ub - v*vb"
+   ]
+  },
+  "t**4 + 86*t**2/97 + 25/97": {
+   "degree": 4,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls3:u*ub - u*v - ub*v + v",
+    "cls3:u*ub - u*vb - ub*vb + vb",
+    "cls3:u*v + u*vb - u - v*vb",
+    "cls3:ub*v + ub*vb - ub - v*vb"
+   ]
+  },
+  "t**4 - 114*t**2/25 + 153/25": {
+   "degree": 4,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u*ub + u*v - u - ub*v",
+    "cls0:u*ub - u*vb + ub*vb - ub",
+    "cls10:u*v - u*vb + v*vb - v",
+    "cls10:ub*v - ub*vb - v*vb + vb"
+   ]
+  },
+  "t**4 - 12*t**3/5 + 342*t**2/25 - 12*t/5 + 1": {
+   "degree": 4,
+   "disc": null,
+   "from_q": true,
+   "n_sources": 16,
+   "sources_sample": [
+    "cls0:u - vb",
+    "cls0:u*ub - u*vb + vb",
+    "cls0:u*ub - ub*v + v",
+    "cls0:u*vb - v*vb + v - 1"
+   ]
+  },
+  "t**4 - 38*t**2/51 + 25/153": {
+   "degree": 4,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 24,
+   "sources_sample": [
+    "cls0:u*v - u*vb + v*vb - v",
+    "cls0:ub*v - ub*vb - v*vb + vb",
+    "cls10:u*ub + u*v - u - ub*v",
+    "cls10:u*ub - u*vb + ub*vb - ub"
+   ]
+  },
+  "t**6 + 18*t**5/5 - 217*t**4/25 - 2484*t**3/125 + 219*t**2/5 - 6*t + 1": {
+   "degree": 6,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls0:u*v + u*vb - u - v*vb",
+    "cls0:ub*v + ub*vb - ub - v*vb",
+    "cls10:u*ub - u*v - ub*v + v",
+    "cls10:u*ub - u*vb - ub*vb + vb"
+   ]
+  },
+  "t**6 + 6*t**5 + 219*t**4/5 + 2484*t**3/125 - 217*t**2/25 - 18*t/5 + 1": {
+   "degree": 6,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls11:u*v + u*vb - u - v*vb",
+    "cls11:ub*v + ub*vb - ub - v*vb",
+    "cls1:u*ub - u*v - ub*v + v",
+    "cls1:u*ub - u*vb - ub*vb + vb"
+   ]
+  },
+  "t**6 - 18*t**5/5 - 217*t**4/25 + 2484*t**3/125 + 219*t**2/5 + 6*t + 1": {
+   "degree": 6,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls11:u*ub - u*v - ub*v + v",
+    "cls11:u*ub - u*vb - ub*vb + vb",
+    "cls1:u*v + u*vb - u - v*vb",
+    "cls1:ub*v + ub*vb - ub - v*vb"
+   ]
+  },
+  "t**6 - 6*t**5 + 219*t**4/5 - 2484*t**3/125 - 217*t**2/25 + 18*t/5 + 1": {
+   "degree": 6,
+   "disc": null,
+   "from_q": false,
+   "n_sources": 8,
+   "sources_sample": [
+    "cls0:u*ub - u*v - ub*v + v",
+    "cls0:u*ub - u*vb - ub*vb + vb",
+    "cls10:u*v + u*vb - u - v*vb",
+    "cls10:ub*v + ub*vb - ub - v*vb"
+   ]
+  }
+ },
+ "degenerate_on_slice": {
+  "u - ub - v + vb": [
+   "cls0:ZERO",
+   "cls1:ZERO",
+   "cls2:ZERO",
+   "cls4:ZERO",
+   "cls7:ZERO",
+   "cls9:ZERO",
+   "cls10:ZERO",
+   "cls11:ZERO"
+  ],
+  "u - v": [
+   "cls0:CONST",
+   "cls1:CONST",
+   "cls2:CONST",
+   "cls4:CONST",
+   "cls7:CONST",
+   "cls9:CONST",
+   "cls10:CONST",
+   "cls11:CONST"
+  ],
+  "u - v - 1": [
+   "cls0:CONST",
+   "cls1:CONST",
+   "cls2:ZERO",
+   "cls4:ZERO",
+   "cls7:ZERO",
+   "cls9:ZERO",
+   "cls10:CONST",
+   "cls11:CONST"
+  ],
+  "u*vb - ub*v + v - vb": [
+   "cls2:ZERO",
+   "cls3:ZERO",
+   "cls4:ZERO",
+   "cls5:ZERO",
+   "cls6:ZERO",
+   "cls7:ZERO",
+   "cls8:ZERO",
+   "cls9:ZERO"
+  ],
+  "ub - vb": [
+   "cls0:CONST",
+   "cls1:CONST",
+   "cls2:CONST",
+   "cls4:CONST",
+   "cls7:CONST",
+   "cls9:CONST",
+   "cls10:CONST",
+   "cls11:CONST"
+  ],
+  "ub - vb - 1": [
+   "cls0:CONST",
+   "cls1:CONST",
+   "cls2:ZERO",
+   "cls4:ZERO",
+   "cls7:ZERO",
+   "cls9:ZERO",
+   "cls10:CONST",
+   "cls11:CONST"
+  ],
+  "y1 + 1": [
+   "cls3:ZERO",
+   "cls5:ZERO",
+   "cls6:ZERO",
+   "cls8:ZERO"
+  ]
+ },
+ "gates": {
+  "G0_cubic_real_all": true,
+  "G1_identities_all": true,
+  "G1_per_class": [
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   },
+   {
+    "uub=zz13": true,
+    "(1-u)(1-ub)=zz12": true,
+    "vvb=zz34": true,
+    "(1-v)(1-vb)=zz24": true,
+    "(u-v)(ub-vb)=zz14": true,
+    "q5:lam(12,13,23)": true,
+    "q12:lam(24,34,23)": true,
+    "q15:lam(13,34,14)": true,
+    "q18:lam(12,24,14)": true,
+    "q17:4pt": true,
+    "q22:lam(13*24,12*34,14*23)": true,
+    "q9:zz13-1": true,
+    "q20:zz24-1": true,
+    "q23:cubic-disc": true
+   }
+  ],
+  "G2_map_points": [
+   {
+    "t": "2/5",
+    "u": "21/17 + 16*I/17",
+    "ub": "21/17 - 16*I/17",
+    "v": "38/17 + 16*I/17",
+    "vb": "38/17 - 16*I/17",
+    "d": {
+     "12": "4/25",
+     "13": "41/100",
+     "14": "17/100",
+     "23": "17/100",
+     "24": "41/100",
+     "34": "1"
+    }
+   },
+   {
+    "t": "3/7",
+    "u": "50/41 + 42*I/41",
+    "ub": "50/41 - 42*I/41",
+    "v": "91/41 + 42*I/41",
+    "vb": "91/41 - 42*I/41",
+    "d": {
+     "12": "9/49",
+     "13": "104/245",
+     "14": "41/245",
+     "23": "41/245",
+     "24": "104/245",
+     "34": "1"
+    }
+   },
+   {
+    "t": "7/11",
+    "u": "90/97 + 154*I/97",
+    "ub": "90/97 - 154*I/97",
+    "v": "187/97 + 154*I/97",
+    "vb": "187/97 - 154*I/97",
+    "d": {
+     "12": "49/121",
+     "13": "328/605",
+     "14": "97/605",
+     "23": "97/605",
+     "24": "328/605",
+     "34": "1"
+    }
+   }
+  ]
+ },
+ "note": "norm construction: Q[t] factors of L*conj(L) for num and den separately; root letters via exact cubic resultant (Galois-stable norm over the three roots of P)"
+}

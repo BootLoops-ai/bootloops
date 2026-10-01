@@ -1,0 +1,67 @@
+{
+ "pair_goal50.json": "47f63b461b6096f27db280d2190e242f8e47a3e640cc5c6125b26fa172cb2e3c",
+ "pair_goal70.json": "831918e11e092ab9b42424296e16612229d7ad53b22fd24173035cc67718283c",
+ "pair_compare_previous.out": "5d5a96a12d283556d81b6feae3b71ebd6c0eeb4d18a2ddd01cb23890eadf9f81",
+ "pair_q1b_goal30.json": "ec9aab6eecc4d347c5f54083c6c387cd679382c763cc6323504ee400a3ce8247",
+ "pair_q1b_goal60.json": "acfdd714dce80bf6708dcc3a741a099d5e5a4a03c8d9dc4f7376c2acf12940df",
+ "pair_goal50.config.json": "4c63e89cd2595df4af197f290ccc15220909485303f199729799bacfbf778d9a",
+ "pair_goal70.config.json": "ca6d95eac7b23e64bc456cc6e7667e1cb234ebde26b349fb891c18d444ee8427",
+ "pair_radii_only_previous.out": "62ce106da861cb67fe931aaf0839df841ed9d56a0d0bc41bdb86e2dd3f954ad6",
+ "_vendored_from": {
+  "pair_goal50.json": {
+   "sha256": "47f63b461b6096f27db280d2190e242f8e47a3e640cc5c6125b26fa172cb2e3c",
+   "recut": false,
+   "what": "the solve_integrals output at goal 50 of the reference pair"
+  },
+  "pair_goal70.json": {
+   "sha256": "831918e11e092ab9b42424296e16612229d7ad53b22fd24173035cc67718283c",
+   "recut": false,
+   "what": "the solve_integrals output at goal 70 of the reference pair"
+  },
+  "pair_compare_previous.out": {
+   "sha256": "5d5a96a12d283556d81b6feae3b71ebd6c0eeb4d18a2ddd01cb23890eadf9f81",
+   "recut": false,
+   "what": "the reading of that pair by an earlier version of the tool without the numerical-zero and window rules (OVERALL FAIL)"
+  },
+  "pair_q1b_goal30.json": {
+   "sha256": "ec9aab6eecc4d347c5f54083c6c387cd679382c763cc6323504ee400a3ce8247",
+   "recut": false,
+   "what": "the solve_integrals output at goal 30 of the second pair (98 integrals of one family; the im parts of real coefficients are numerical zeros)"
+  },
+  "pair_q1b_goal60.json": {
+   "sha256": "acfdd714dce80bf6708dcc3a741a099d5e5a4a03c8d9dc4f7376c2acf12940df",
+   "recut": false,
+   "what": "the solve_integrals output at goal 60 of the second pair"
+  },
+  "pair_goal50.config.json": {
+   "sha256": "9575c7b1963fbcdad6072b5cbaaaaefb31d82e68d2f5eefb8da8bb009b7a5a90",
+   "recut": true,
+   "what": "the amflow_cli input config of the goal-50 member of the reference pair (goal_digits 50), re-cut: every string value that carries a machine path replaced by <re-cut> and the producer bookkeeping block removed",
+   "goal_digits_kept": 50,
+   "recut_fields": [
+    ".work_dir",
+    ".amf_options.blackbox.fermat_executable",
+    ".amf_options.blackbox.kira_executable",
+    "._PRODUCER (removed)"
+   ]
+  },
+  "pair_goal70.config.json": {
+   "sha256": "62632461f4e9952e9b453ccfd4cfe9eb3d59897577b61bf559faf5da385a79d0",
+   "recut": true,
+   "what": "the amflow_cli input config of the goal-70 member of the reference pair (goal_digits 70), re-cut likewise",
+   "goal_digits_kept": 70,
+   "recut_fields": [
+    ".work_dir",
+    ".amf_options.blackbox.fermat_executable",
+    ".amf_options.blackbox.kira_executable",
+    "._PRODUCER (removed)"
+   ]
+  },
+  "pair_radii_only_previous.out": {
+   "sha256": "62ce106da861cb67fe931aaf0839df841ed9d56a0d0bc41bdb86e2dd3f954ad6",
+   "recut": false,
+   "what": "the no-goal reading of the reference pair (the zero threshold from the two radii alone: OVERALL FAIL), which --radii-only reproduces byte for byte"
+  }
+ },
+ "_note": "sha256 of each fixture; _vendored_from names the source object's sha256 (recut false = identical bytes; recut true = the two configs, whose machine paths are replaced by <re-cut> and whose producer bookkeeping block is removed, with goal_digits kept and the re-cut fields listed)"
+}

@@ -1,0 +1,245 @@
+{
+ "about": "Reference pins of popcorn.planted (synth_truths.py): the single base seed every random stream of the shipped reference set derives from (seed_law), the pinned constants, the map-average crossover rate that fixes r/mu for the recombining arms (the length-weighted mean of a human chromosome-21 genetic map, 1.9638 cM/Mb), the fitted epoch sizes of class TK2 with the achieved match of its normalized expected spectrum to TK1's at n = 4 and 6 (xi_target = TK1, xi_fitted = TK2, from expected_branch_sfs; reproduced to 1e-12 by the battery), the class and arm tables, and the library versions the reference truths and arm were generated with (bit-for-bit regeneration is expected only under these versions). Every generator takes this file as input; load_pins() returns it by default.",
+ "generator": "popcorn synth_truths",
+ "versions": {
+  "python": "3.12.3",
+  "msprime": "1.4.2",
+  "numpy": "2.4.1",
+  "scipy": "1.16.3",
+  "tskit": "1.0.3"
+ },
+ "register": "simulation: ploidy-1 Kingman/Lambda coalescents (msprime); diploid individuals = exchangeable-paired chromosomes",
+ "base_seed": 2930833519701123745,
+ "seed_law": "sha256('<base_seed>:<tag>')[:4] -> 1..2^31-2; tags: truth:<cls>:n<n>, arm:<arm>:{calib,ancestry,mutation,refalt}; selftest stream prefixes tags with 'selftest:'",
+ "pinned": {
+  "mu_human": 1.25e-08,
+  "target_density": 0.0037,
+  "n_dip": 500,
+  "region_L": 5000000,
+  "gc_region_L": 1000000,
+  "gc_tract_bp": 300.0,
+  "gc_nco_factor": 2.0,
+  "dirac_c": 10.0,
+  "npop_chrom": 20000.0,
+  "truth_reps_default": 20000,
+  "truth_ns": [
+   4,
+   6
+  ],
+  "tk1_epochs": [
+   [
+    0.0,
+    20000.0
+   ],
+   [
+    500.0,
+    3000.0
+   ],
+   [
+    1500.0,
+    16000.0
+   ]
+  ],
+  "tk2_times": [
+   0.0,
+   150.0,
+   700.0,
+   2500.0
+  ]
+ },
+ "recomb_law": "r_arm = mu_arm * (r_map_per_bp / mu_human); mu_arm = target_density / mean single-tree total branch length at the arm's n (CALIB_REPS=8 reps); for constant-N=2e4 Kingman at n=1000 this recovers mu ~= 1.25e-8 and r ~= r_map; multi-epoch and MMC classes rescale mu (and r with it) to hold the site density and the r/mu ratio \u2014 the population-scaled pins",
+ "map": {
+  "source": "length-weighted mean over chr21 of the UCSC recombAvg track (GRCh38 recombination-rate average, bedGraph, cM/Mb); only this mean is used, as a fixed constant of the reference set",
+  "chrom": "chr21",
+  "rows": 17538,
+  "bp_covered": 32018666,
+  "mean_cM_per_Mb": 1.9638417791079283,
+  "r_map_per_bp": 1.9638417791079285e-08,
+  "usage": "mean rate only: synthetic arms use a FLAT rate r = mu * r_map_per_bp / mu_human"
+ },
+ "tk2_fitted_sizes": [
+  16999.74844919023,
+  199999.9999999997,
+  5146.452612182203,
+  25959.819461949508
+ ],
+ "tk2_match": {
+  "converged": true,
+  "cost": 4.2620973157481705e-09,
+  "achieved": {
+   "n4": {
+    "xi_target": [
+     0.47718016972963706,
+     0.29970228979424185,
+     0.22311754047612106
+    ],
+    "xi_fitted": [
+     0.47718117611017713,
+     0.2997020578458168,
+     0.22311676604400596
+    ],
+    "max_abs_rel_diff": 3.470960254626525e-06
+   },
+   "n6": {
+    "xi_target": [
+     0.35822281636959247,
+     0.22108921787605934,
+     0.1702655876298264,
+     0.1371089039482916,
+     0.11331347417623011
+    ],
+    "xi_fitted": [
+     0.3582223379044219,
+     0.22108826463622644,
+     0.1702721610927385,
+     0.13709899320907545,
+     0.11331824315753772
+    ],
+    "max_abs_rel_diff": 7.228370244920262e-05
+   }
+  }
+ },
+ "classes": {
+  "TK1": {
+   "kind": "kingman_epochs",
+   "epochs": [
+    [
+     0.0,
+     20000.0
+    ],
+    [
+     500.0,
+     3000.0
+    ],
+    [
+     1500.0,
+     16000.0
+    ]
+   ]
+  },
+  "TK2": {
+   "kind": "kingman_epochs",
+   "epochs": [
+    [
+     0.0,
+     16999.74844919023
+    ],
+    [
+     150.0,
+     199999.9999999997
+    ],
+    [
+     700.0,
+     5146.452612182203
+    ],
+    [
+     2500.0,
+     25959.819461949508
+    ]
+   ]
+  },
+  "B13": {
+   "kind": "beta",
+   "alpha": 1.3,
+   "N": 20000.0
+  },
+  "B17": {
+   "kind": "beta",
+   "alpha": 1.7,
+   "N": 20000.0
+  },
+  "D005": {
+   "kind": "dirac",
+   "psi": 0.05,
+   "c": 10.0,
+   "N": 20000.0
+  },
+  "D020": {
+   "kind": "dirac",
+   "psi": 0.2,
+   "c": 10.0,
+   "N": 20000.0
+  }
+ },
+ "arms": {
+  "TK1_rON": {
+   "cls": "TK1",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "TK1_rOFF": {
+   "cls": "TK1",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "TK2_rON": {
+   "cls": "TK2",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "TK2_rOFF": {
+   "cls": "TK2",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "B13_rON": {
+   "cls": "B13",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "B13_rOFF": {
+   "cls": "B13",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "B17_rON": {
+   "cls": "B17",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "B17_rOFF": {
+   "cls": "B17",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "D005_rON": {
+   "cls": "D005",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "D005_rOFF": {
+   "cls": "D005",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "D020_rON": {
+   "cls": "D020",
+   "recomb": true,
+   "gc": false,
+   "L": 5000000
+  },
+  "D020_rOFF": {
+   "cls": "D020",
+   "recomb": false,
+   "gc": false,
+   "L": 5000000
+  },
+  "TK1_rON_GC": {
+   "cls": "TK1",
+   "recomb": true,
+   "gc": true,
+   "L": 1000000
+  }
+ },
+ "note": "written BEFORE any truth/arm generation; never regenerated"
+}

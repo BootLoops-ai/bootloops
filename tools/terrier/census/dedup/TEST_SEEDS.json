@@ -1,0 +1,37 @@
+{
+  "module": "census/dedup",
+  "law": "Synthetic-only fixed test seeds: no census data is touched, generated, or read by this module's tests; inputs are synthetic orbit families + plant-tagged states only. Consumed only by test_dedup.py.",
+  "seeds": {
+    "gens_synth": 20260715001,
+    "families": 20260715002,
+    "shuffle": 20260715003,
+    "invariance_probe": 20260715004
+  },
+  "config": {
+    "n": 4,
+    "n_gens": 2,
+    "honest_budgets": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "plant_budgets": [
+      9,
+      10
+    ],
+    "family_size_range": [
+      3,
+      6
+    ],
+    "wordlen_max": 6,
+    "member_n2_cap": 150,
+    "path_n2_cap": 576,
+    "path_l1_cap": 288,
+    "on_locus_label_budget_max": 4
+  }
+}

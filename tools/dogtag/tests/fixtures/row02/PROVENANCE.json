@@ -1,0 +1,54 @@
+{
+ "row": "row02",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "catalog_check.json",
+   "source": "identity_census/rows/row02/catalog_check.json",
+   "sha256": "892422b5b8ba0fac09fe148564989962746b13cfc6237fc3cbd7516c6f58ca5f",
+   "size": 2062,
+   "record_sha256": "d3a7364bfab393966b10c6b47d2cb7876d3e447e2f7866bb01edaecd413f1207",
+   "record_size": 2089
+  },
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row02/drawn_graph.yaml",
+   "sha256": "61dd5328d6ffdcfb03e96c8c3c8da67572877d45e0758943b68d7143970e7999",
+   "size": 1067,
+   "record_sha256": "3be486171db7df8b24e50796e19cc99d14ab2b2349765311f4ef629a532f276d",
+   "record_size": 1136
+  },
+  {
+   "path": "family_of_record.jl",
+   "source": "identity_census/rows/row02/family_of_record.jl",
+   "sha256": "ddc75ae24954b08103d01e996f614cae6a6b74a8bbc485c80711cc7e17434917",
+   "size": 9745,
+   "record_sha256": "9956a26df0f422113bab9e3ef11534e2cacdc53bdda41b9c8af8e9d1941e4627",
+   "record_size": 9818
+  },
+  {
+   "path": "genuine_crossed_box_theta211.yaml",
+   "source": "identity_census/rows/row02/genuine_crossed_box_theta211.yaml",
+   "sha256": "05d1300140c4b9cad4929783b25df5225b1e35623491a0b96903097d5c18690e",
+   "size": 797,
+   "record_sha256": "05d1300140c4b9cad4929783b25df5225b1e35623491a0b96903097d5c18690e",
+   "record_size": 797
+  },
+  {
+   "path": "smirnov_2box_as_printed.yaml",
+   "source": "identity_census/rows/row02/smirnov_2box_as_printed.yaml",
+   "sha256": "93717fc0180fd92bd72e8956fcbfe745d527afec60073d171da8d347e200d522",
+   "size": 923,
+   "record_sha256": "4e5ca77f0ccab8162b754b1383cb81de500dbfc76b5d021b8c15de3dcac2eb31",
+   "record_size": 979
+  },
+  {
+   "path": "iso.json",
+   "source": "identity_census/rows/row02/iso.json",
+   "sha256": "5484bd046ea6e7dd4a024c4b4049b9ba9c2cf0b4d89e9b481c9919e9593a9083",
+   "size": 5590,
+   "record_sha256": "a76c927cead977d435f9d0ae9f46dd4118a4af75fea4dc663e8e6ea53c73ba6e",
+   "record_size": 5672
+  }
+ ]
+}

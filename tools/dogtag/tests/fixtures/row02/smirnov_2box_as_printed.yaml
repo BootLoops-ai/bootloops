@@ -1,0 +1,21 @@
+# Smirnov hep-ph/9905323 eq. (2box) transcribed as printed in the local arXiv TeX
+# (9905323.tex, sha16 543464ba3768821a, lines 151-161):
+# (k^2+2p1k)(k^2-2p2k) k^2 (k-l)^2 (l^2+2p1l)(l^2-2p2l)(l-p1-p3)^2 with p_i^2=0,
+# i.e. (k+p1)^2 (k-p2)^2 k^2 (k-l)^2 (l+p1)^2 (l-p2)^2 (l-p1-p3)^2; s=(p1+p2)^2, t=(p1+p3)^2.
+# Kept beside the family of record only to test whether the printed seventh line closes a graph.
+integralfamilies:
+  - name: "smirnov_2box_as_printed"
+    loop_momenta: [k, l]
+    propagators:
+      - [ "k + p1", 0 ]
+      - [ "k - p2", 0 ]
+      - [ "k", 0 ]
+      - [ "k - l", 0 ]
+      - [ "l + p1", 0 ]
+      - [ "l - p2", 0 ]
+      - [ "l - p1 - p3", 0 ]
+    top_level_sectors: [127]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4]
+    momentum_conservation: {p4: "-p1 - p2 - p3"}
+    leg_virtualities: {p1: "0", p2: "0", p3: "0", p4: "0"}

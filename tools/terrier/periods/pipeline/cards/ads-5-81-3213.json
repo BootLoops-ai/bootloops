@@ -1,0 +1,342 @@
+{
+ "name": "ads-5-81-3213",
+ "comment": "AdS KKLT vacuum 5-81-3213 of arXiv:2107.09064 (ancillary data set 5-81-3213: h21=5, h11=81, polytope 3213). Mirror-side effective family derived from the ancillary dual_points/dual_simplices (9 rays, facet-interior point (-1,0,0,0) dropped; chi=-152 exact). Frame: nef(Y) unimodular J-basis over the ancillary prime-divisor basis B0=dual_points{2,3,4,5,9} (J rows = [[1, 1, 0, 0, 0], [1, 1, 1, 0, 0], [0, 1, 0, 1, 1], [1, 1, 1, 1, 0], [1, 2, 1, 1, 0]]); fluxes M'=(J^T)^-1 M_anc, K'=J K_anc; PFFV K.N^-1K=0 exact, p=(3/8,5/12,5/12,5/12,5/12), d=24, curve z~=(s^9,s^10,s^10,s^10,s^10); racetrack 9/24:10/24 == the 2107.09064 Discussion footnote. W0 normalization: the ancillary W_0 values are UNDRESSED (convention A7, dressing residue not pinned). Status PENDING-CARD: g1 PASS; g2 = CONDITIONAL-C2 PASS (half-integral tadpole 71/2 accepted via allow_half_tadpole with the paper's true value as pin; N_D3 = 8 == the paper's 'eight mobile' D3-branes); g3 open: the restricted operator has ORDER 13, NOT 12 - the card module_basis (12) does NOT close on the curve; curve module rank = 17 (basis = 12 + {th1^2,th1^3,th1th4,th1^2th2,th1^2th3}); order 13 pinned at 2 primes x 2 independent methods (jets Krylov at 3 nodes + exact-poly Krylov from the interpolated 17x17 connection, A max deg 574 / common den 603); z-degree R > 4052 (rho_k rational reconstruction fails at 8128 nodes, both primes) and R > 195 by the data rung (195,13) with no hit; the certified-empty windows (r<=213,s<=12)/(r<=427,s<=5)/(r<=498,s<=4) are explained by the s cap sitting below the true order (see ads-5-81-3213_bank/g3_dmodule_receipt.json). ORDER RISE: 13 != 2h+2 = 12, rank 17 != 12 -> the vacuum layer's 2h+2 single-operator design (pipe_vac) cannot hold as-is for this card; the exact order-13 operator is not included. tau* = 24 ln(180)/2pi matches the ancillary 1/g_s to 7 digits; vacuum at Re tau = 12 (q_s* ~ -1/180 < 0, hence s_star < 0). routes are estimates scaled from the DKMM example (no envelope scan); module_basis/N_EXT/M_FIT are untested candidates (vacuum layer beyond this card's g-battery).",
+ "h": 5,
+ "n_num": 1,
+ "charge_vectors": [
+  [
+   0,
+   0,
+   1,
+   0,
+   -1,
+   0,
+   -1,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1,
+   -1,
+   0,
+   0,
+   -1,
+   1
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   -1,
+   -1,
+   1
+  ],
+  [
+   -4,
+   2,
+   1,
+   -1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   -1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   -1
+  ]
+ ],
+ "kappa": {
+  "0,1,2": "2",
+  "0,1,3": "2",
+  "0,1,4": "2",
+  "0,2,3": "2",
+  "0,2,4": "2",
+  "0,3,3": "4",
+  "0,3,4": "4",
+  "0,4,4": "4",
+  "1,1,2": "2",
+  "1,1,3": "2",
+  "1,1,4": "2",
+  "1,2,2": "2",
+  "1,2,3": "4",
+  "1,2,4": "4",
+  "1,3,3": "6",
+  "1,3,4": "6",
+  "1,4,4": "6",
+  "2,2,3": "2",
+  "2,2,4": "2",
+  "2,3,3": "6",
+  "2,3,4": "6",
+  "2,4,4": "6",
+  "3,3,3": "8",
+  "3,3,4": "10",
+  "3,4,4": "10",
+  "4,4,4": "10"
+ },
+ "a_mat": [
+  [
+   "0",
+   "0",
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0",
+   "1",
+   "1",
+   "1"
+  ],
+  [
+   "0",
+   "1",
+   "0",
+   "1",
+   "1"
+  ],
+  [
+   "0",
+   "1",
+   "1",
+   "4",
+   "5"
+  ],
+  [
+   "0",
+   "1",
+   "1",
+   "5",
+   "5"
+  ]
+ ],
+ "c2D": [
+  24,
+  36,
+  36,
+  56,
+  64
+ ],
+ "chi_A": -152,
+ "gv_pinned": {
+  "1,0,0,0,0": 2,
+  "0,0,0,1,0": 56,
+  "0,0,1,0,0": 2,
+  "0,1,0,0,0": 2,
+  "0,0,0,1,1": 56,
+  "0,0,0,2,0": -272,
+  "0,0,1,0,1": 2,
+  "0,1,0,0,1": 2,
+  "0,0,0,3,0": 3240,
+  "0,0,1,1,1": 208,
+  "0,1,0,1,1": 208
+ },
+ "gv_window": [
+  1,
+  1,
+  1,
+  3,
+  1
+ ],
+ "M_flux": [
+  1,
+  -1,
+  -5,
+  6,
+  -3
+ ],
+ "K_flux": [
+  0,
+  -4,
+  9,
+  -5,
+  0
+ ],
+ "Q_D3": 44,
+ "allow_half_tadpole": {
+  "paper_true_tadpole": "71/2",
+  "provenance": "paper's true value: printed -M.K/2 = 71/2 == recomputed from the eq. (6.27)-class flux vectors M=(3,-5,2,-2,-5), K=(-5,5,-4,-1,5) of arXiv:2107.09064 (ancillary data == printed); Gauss check 71/2 + 8 + 1/2 = 44 = Q_D3 from the paper's own sentence 'eight mobile D3-branes and a single half D3-brane'; half-D3 convention = 2107.09064 eq. (2.10) footnote + the sec. 3 footnote on half-integral D3 charge"
+ },
+ "sigma": [
+  1,
+  1,
+  1,
+  1,
+  1
+ ],
+ "eps": 1,
+ "s_star": "-0.00555555555555555555555555555556",
+ "tau_pin": "19.8356340499703866831702370891",
+ "racetrack_Nm": {
+  "9": "2",
+  "10": "60",
+  "11": "0",
+  "12": "0"
+ },
+ "routes": {
+  "R": {
+   "s0": "-1/320",
+   "rho0": "1/80",
+   "hints": [
+    [
+     "-1/230",
+     "0"
+    ],
+    [
+     "-13/2500",
+     "0"
+    ]
+   ]
+  },
+  "C": {
+   "s0": "-13/5000",
+   "rho0": "1/80",
+   "hints": [
+    [
+     "-33/10000",
+     "-3/5000"
+    ],
+    [
+     "-9/2000",
+     "-1/800"
+    ],
+    [
+     "-11/2000",
+     "-3/5000"
+    ]
+   ]
+  }
+ },
+ "ideal": [
+  "(th1+th4-th5)*(th1-th2-th3+th5) - z1*(-th1+th2)*(-th1+th3)",
+  "(-th1+th2)*(th2+th3-th5) - z2*(-th2+th4)*(th1-th2-th3+th5)",
+  "(-th1+th3)*(th2+th3-th5) - z3*(-th3+th4)*(th1-th2-th3+th5)",
+  "(th1+th4-th5)*(-th2+th4)*(-th3+th4) - 4*z4*(4*th4+1)*(4*th4+3)*(-th4+th5)",
+  "(-th4+th5)*(th1-th2-th3+th5) - z5*(th1+th4-th5)*(th2+th3-th5)"
+ ],
+ "module_basis": [
+  [
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  [
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   2,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  [
+   1,
+   1,
+   1,
+   0,
+   0
+  ]
+ ],
+ "op_search": {
+  "rmax": 213,
+  "smax": 12,
+  "p2": 2147483629,
+  "trunc2": 2400,
+  "n_primes": 40,
+  "order_pinned": 13,
+  "module_rank_curve": 17,
+  "rdeg_lower_bound": 4052,
+  "certified_empty_extra": [[150, 17], [195, 13]],
+  "receipt": "ads-5-81-3213_bank/g3_dmodule_receipt.json"
+ },
+ "series_depth": {
+  "M0": 3000,
+  "M_TOW": 60,
+  "N_EXT": 420,
+  "M_FIT_LO": 14,
+  "M_FIT_HI": 20
+ }
+}

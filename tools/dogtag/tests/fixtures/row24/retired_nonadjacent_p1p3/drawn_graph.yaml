@@ -1,0 +1,19 @@
+# drawn graph of row 24 as published: gallery tile fig-hexabox-eqmass.tex (sha16 a7c91498a7e53fd9), family-table label "2L 5-pt NP hexa-box, eq.-mass non-adjacent legs ($p_1^2{=}p_3^2{=}m^2$)"
+# seven vertices T7, B6, V1..V5; eight massless lines; p1, p3 off shell (equal mass mm), p2, p4, p5 on shell; p5 = -(p1+p2+p3+p4)
+# external legs (all incoming): p1, p2, p3, p4, p5; p5 = -(p1+p2+p3+p4)
+# leg virtualities: {"p1": "mm", "p2": "0", "p3": "mm", "p4": "0", "p5": "0"}
+# edge routing (spanning tree): [{"edge": ["T7", "V1"], "momentum": "k1 - p1 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V1", "V2"], "momentum": "k1 - p2 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V2", "V3"], "momentum": "k1 - p3", "mass": "0", "tree_edge": true}, {"edge": ["V3", "B6"], "momentum": "k1", "mass": "0", "tree_edge": false}, {"edge": ["T7", "V5"], "momentum": "-k1 + k2 + p1 + p2 + p3 + p4", "mass": "0", "tree_edge": true}, {"edge": ["B6", "V4"], "momentum": "k2", "mass": "0", "tree_edge": false}, {"edge": ["T7", "V4"], "momentum": "-k2 - p4", "mass": "0", "tree_edge": true}, {"edge": ["B6", "V5"], "momentum": "k1 - k2", "mass": "0", "tree_edge": true}]
+integralfamilies:
+  - name: "hexabox_drawn_tile_p1p3"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "(k1 - p1 - p2 - p3)^2", 0 ]
+      - [ "(k1 - p2 - p3)^2", 0 ]
+      - [ "(k1 - p3)^2", 0 ]
+      - [ "(k1)^2", 0 ]
+      - [ "(-k1 + k2 + p1 + p2 + p3 + p4)^2", 0 ]
+      - [ "(k2)^2", 0 ]
+      - [ "(-k2 - p4)^2", 0 ]
+      - [ "(k1 - k2)^2", 0 ]
+    cut_propagators: []

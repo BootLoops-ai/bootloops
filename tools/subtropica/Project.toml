@@ -1,0 +1,28 @@
+name = "SubTropica"
+uuid = "b61084cf-1515-4522-8b61-f3c481a4944b"
+version = "1.0.0"
+authors = ["Matthew D. Schwartz"]
+
+[deps]
+Hwloc_jll = "e33a78d0-f292-5ffc-b300-72abe9b543c8"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
+Oscar = "f1435218-dba5-11e9-1e4d-f1a5fab5fc13"
+Parsers = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
+libcxxwrap_julia_jll = "3eaa8342-bff7-56a5-9981-c04077f7cee7"
+
+[compat]
+Hwloc_jll = "2.13.0"
+JSON = "1"
+Nemo = "0.54"
+Oscar = "1.7"
+Parsers = "2.8.5"
+julia = "1.11"
+libcxxwrap_julia_jll = "0.14.10"
+
+[extras]
+Test = "8dfed614-fdb6-577c-9345-67c9a537596f"
+
+[targets]
+test = ["Test"]

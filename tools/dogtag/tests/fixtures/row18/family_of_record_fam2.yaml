@@ -1,0 +1,16 @@
+# TRANSCRIPTION of paper.txt (sha16 b5f9569a3518851e) L983-984 = arXiv:2501.14435 Appendix A.2 propagator list (= Eq. (3.3)); pdf text, superscripts restored by regex.
+# raw text: Di        = { k12 − mt2 , (k1 + p1 )2 − mt2 , (k1 − p2 )2 − mt2 , (k1 + k2 )2 − M 2 , (k2 − p1 )2 − mt2 , (k2 + p2 )2 − mt2 , k22 } .
+# top sector mask used: [True, True, True, True, True, True, False] (D7 taken as the ISP per figures/fig-ggH.tex header)
+integralfamilies:
+  - name: "fam2"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [63]
+    propagators:
+      - [ "k1^2 - mt2", 0 ]
+      - [ "(k1 + p1 )^2 - mt2", 0 ]
+      - [ "(k1 - p2 )^2 - mt2", 0 ]
+      - [ "(k1 + k2 )^2 - M2", 0 ]
+      - [ "(k2 - p1 )^2 - mt2", 0 ]
+      - [ "(k2 + p2 )^2 - mt2", 0 ]
+      - [ "k2^2", 0 ]
+    cut_propagators: []

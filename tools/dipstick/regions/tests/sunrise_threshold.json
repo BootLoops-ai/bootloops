@@ -1,0 +1,7 @@
+{
+  "_comment": "2L equal-mass sunrise threshold expansion: s -> 9mm + delta, small=delta. Sanity check only (regions enumerated, no user list).",
+  "G": "x1*x2 + x1*x3 + x2*x3 + (9*mm+del)*x1*x2*x3 - mm*(x1+x2+x3)*(x1*x2+x1*x3+x2*x3)",
+  "kin": ["mm","del"],
+  "x": ["x1","x2","x3"],
+  "kin_weight": {"del": 1, "mm": 0}
+}

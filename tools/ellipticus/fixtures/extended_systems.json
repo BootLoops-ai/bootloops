@@ -1,0 +1,21 @@
+{
+ "comment": "synthetic demonstration families for the selftest/battery: quartic F = x^2*(x+1)^2 - z*x (perfect-square fibre at z=0) and cubic G = -x^3 + x^2 - (z/4)*x (square-x-linear fibre), window [1/4, 1/2], parameter z. Invented for this distribution; no external data involved.",
+ "P4_coeffs_x_desc": [
+  "1",
+  "2",
+  "1",
+  "-z",
+  "0"
+ ],
+ "cubic_coeffs_x_desc": [
+  "-1",
+  "1",
+  "-z/4",
+  "0"
+ ],
+ "window": [
+  "1/4",
+  "1/2"
+ ],
+ "param": "z"
+}

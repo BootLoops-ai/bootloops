@@ -1,0 +1,11 @@
+{
+  "name": "box1l",
+  "description": "1-loop massless on-shell box. Known PLD alphabet {s, t} (leading sing 1/(st); validated against PLD.jl output).",
+  "edges": [[1,2,0], [2,3,0], [3,4,0], [4,1,0]],
+  "nodes": {"1": [1], "2": [2], "3": [3], "4": [4]},
+  "kinematics": {
+    "invariants": ["s", "t"],
+    "external_masses": {"1": 0, "2": 0, "3": 0, "4": 0},
+    "channels": {"1,2": "s", "2,3": "t", "1,3": "-s-t"}
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "row": "row23",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "family_of_record_amflow_thrkite_h_oracle.yaml",
+   "source": "identity_census/rows/row23/family_of_record_amflow_thrkite_h_oracle.yaml",
+   "sha256": "779159f8f8705c162245f7eb514883096d905884122dbcb95584da691b1a48ac",
+   "size": 732,
+   "record_sha256": "b5efd93665a4c6a1e0bdbdc93e692e2ae650463225c0971ca5e2c428a79811f8",
+   "record_size": 807
+  },
+  {
+   "path": "family_of_record_amflow_thrkite_h_oracle__thrkite_h_tm2.json",
+   "source": "identity_census/rows/row23/family_of_record_amflow_thrkite_h_oracle__thrkite_h_tm2.json",
+   "sha256": "d7f51e4e54aa6c742b636d339d279036980930d33757bff4f4318fe8fd662d11",
+   "size": 1604,
+   "record_sha256": "a3f384283ee365759567234a1922285dc44cc43e9503d4c2bd952a238e04f65e",
+   "record_size": 1676
+  },
+  {
+   "path": "family_of_record_kira_kite_thr_detransport.yaml",
+   "source": "identity_census/rows/row23/family_of_record_kira_kite_thr_detransport.yaml",
+   "sha256": "53657fedefba613701d1c1b0b30598b77794af060499ab2300da757e1493f44d",
+   "size": 280,
+   "record_sha256": "53657fedefba613701d1c1b0b30598b77794af060499ab2300da757e1493f44d",
+   "record_size": 280
+  },
+  {
+   "path": "kinematics_of_record.yaml",
+   "source": "identity_census/rows/row23/kinematics.yaml",
+   "sha256": "5ee9f2717eca1c021de4b2222605b2f3bbf5c84e286c1b09e00c6d43977bb0a2",
+   "size": 200,
+   "record_sha256": "5ee9f2717eca1c021de4b2222605b2f3bbf5c84e286c1b09e00c6d43977bb0a2",
+   "record_size": 200,
+   "source_note": "the kinematics.yaml beside the row-15 Kira family in the corpus (outside the row directory); copied byte-identical"
+  },
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row23/drawn_graph.yaml",
+   "sha256": "d543cee9d642d5ff425e48133301331bfaeb77cdf292236bc11114f100ae90f3",
+   "size": 722,
+   "record_sha256": "d543cee9d642d5ff425e48133301331bfaeb77cdf292236bc11114f100ae90f3",
+   "record_size": 722
+  }
+ ]
+}

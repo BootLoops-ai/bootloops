@@ -1,0 +1,84 @@
+{
+ "method": "graph: networkx VF2 isomorphism of the checker's realized graphs with line masses and leg virtualities as labels (routing-independent); propagator-set: signed loop relabelings x leg permutations with momentum conservation re-resolved, (momentum, mass) multisets compared (the checker's own notion, routing-dependent)",
+ "family_of_record_vs_drawn": {
+  "n_lines_A": 9,
+  "n_lines_B": 10,
+  "n_loops_A": 3,
+  "n_loops_B": 3,
+  "n_legs_A": 3,
+  "n_legs_B": 4,
+  "leg_labels_A": {
+   "p1": "offshell",
+   "p2": "0",
+   "p3": "offshell"
+  },
+  "leg_labels_B": {
+   "p1": "0",
+   "p2": "0",
+   "p3": "0",
+   "p4": "0"
+  },
+  "momentum_isomorphic": false,
+  "labelled_isomorphic": false,
+  "reason": "line, loop or leg counts differ",
+  "graph": {
+   "bare": false,
+   "with_masses": false,
+   "with_masses_and_legs": false,
+   "V_A": 10,
+   "E_A": 12,
+   "V_B": 12,
+   "E_B": 14
+  },
+  "channel_map": null
+ },
+ "extra": {
+  "family_of_record_reading_b_4pt.yaml": {
+   "n_lines_A": 10,
+   "n_lines_B": 10,
+   "n_loops_A": 3,
+   "n_loops_B": 3,
+   "n_legs_A": 4,
+   "n_legs_B": 4,
+   "leg_labels_A": {
+    "p1": "offshell",
+    "p2": "0",
+    "p3": "offshell",
+    "p4": "0"
+   },
+   "leg_labels_B": {
+    "p1": "0",
+    "p2": "0",
+    "p3": "0",
+    "p4": "0"
+   },
+   "momentum_isomorphic": true,
+   "n_momentum_relabelings_found": 2,
+   "first_momentum_relabeling": "identity",
+   "labelled_isomorphic": false,
+   "labelled_relabeling": null,
+   "reason": "same lines and masses under some relabeling, but no such relabeling carries the off-shell-leg labels onto each other",
+   "graph": {
+    "bare": true,
+    "bare_leg_map": {
+     "p1": "p1",
+     "p2": "p2",
+     "p3": "p3",
+     "p4": "p4"
+    },
+    "with_masses": true,
+    "with_masses_leg_map": {
+     "p1": "p1",
+     "p2": "p2",
+     "p3": "p3",
+     "p4": "p4"
+    },
+    "with_masses_and_legs": false,
+    "V_A": 12,
+    "E_A": 14,
+    "V_B": 12,
+    "E_B": 14
+   }
+  }
+ }
+}

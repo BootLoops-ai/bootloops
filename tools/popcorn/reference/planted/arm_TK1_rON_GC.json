@@ -1,0 +1,63 @@
+{
+ "about": "Arm TK1_rON_GC at production scale (class TK1, 500 individuals = 1000 chromosomes, 1 Mb, crossover r = mu x 1.5711, gene conversion at 2 r with 300 bp mean tracts): calibrated rates, the four seeds, site counts, and the mtime-free payload hashes (gz_payload_sha256: decompressed lines except '##' meta lines) of the genotype and polarization tables it writes. `synth_truths.py arm --arm TK1_rON_GC --out DIR` regenerates it (~3 s); params/seeds/counts and both payload hashes are expected equal under pins.json versions.",
+ "arm": "TK1_rON_GC",
+ "cls": "TK1",
+ "model": {
+  "kind": "kingman_epochs",
+  "epochs": [
+   [
+    0.0,
+    20000.0
+   ],
+   [
+    500.0,
+    3000.0
+   ],
+   [
+    1500.0,
+    16000.0
+   ]
+  ]
+ },
+ "params": {
+  "n_dip": 500,
+  "n_hap": 1000,
+  "region_L": 1000000,
+  "mu_per_bp_gen": 1.9269383665021904e-08,
+  "r_per_bp_gen": 3.02736165592239e-08,
+  "recomb_on": true,
+  "gc_on": true,
+  "gc_rate": 6.05472331184478e-08,
+  "gc_tract_bp": 300.0,
+  "target_density": 0.0037,
+  "calib_bhat_gen": 192014.44448461005,
+  "calib_btot_cv": 0.1759362910185556,
+  "r_over_mu": 1.5710734232863428
+ },
+ "seeds": {
+  "calib": 1222425164,
+  "ancestry": 1328310356,
+  "mutation": 1710423468,
+  "refalt": 1175836063
+ },
+ "counts": {
+  "num_trees": 26747,
+  "sites_mutated_total": 3751,
+  "dropped_multi_mutation": 4,
+  "dropped_non_segregating": 0,
+  "kept_biallelic_snv": 3747,
+  "singletons": 728,
+  "doubletons": 364,
+  "achieved_density_per_bp": 0.003747
+ },
+ "files": {
+  "gt": {
+   "bytes": 213421,
+   "payload_sha256": "78fcd0bbbf493dbda3699f8b5546995f2285fd833aece14bcca79513cdf7d0f8"
+  },
+  "anc": {
+   "bytes": 16158,
+   "payload_sha256": "5dcee898e3d500a3db035c735a7b8538ea1e8f7763cf284793cb268b27f8558c"
+  }
+ }
+}

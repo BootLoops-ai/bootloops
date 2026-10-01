@@ -1,0 +1,8 @@
+{
+  "name": "P4_J23",
+  "description": "P4 J23 family (sector 63, ε⁴, rational). 3-letter {s,t,s+t}, FE={s,s+t}. Validated counts: integrable tower (3,7,15,31), residual (2,4,8,16).",
+  "vars": ["s", "t"],
+  "letters": {"L_s": "s", "L_t": "t", "L_st": "s+t"},
+  "first_entry": ["L_s", "L_st"],
+  "last_entry":  ["L_s", "L_t", "L_st"]
+}

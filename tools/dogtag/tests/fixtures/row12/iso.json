@@ -1,0 +1,350 @@
+{
+ "row": 12,
+ "method": "mass-labelled canonical propagator sets under signed loop relabellings + leg permutations (topology_audit._apply_signed_perm_to_vec/_canon_vec), then unimodular loop-basis changes; graph-level VF2 check on the realized multigraphs with the outgoing leg made explicit",
+ "pairs": [
+  {
+   "family_role": "(1,1,2) t=-5 goal 150 (printed E1(-5) = 12.166814...; close_final_112.json m5 agree 150)",
+   "family": "sun112_d2_tm5_g150_o11b.json",
+   "family_sha16": "53dd1fa882bc91b0",
+   "drawn": "identity_census/rows/row12/drawn_graph_112.yaml",
+   "drawn_tag": "112",
+   "family_lines": [
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "mass_sq": "2"
+    }
+   ],
+   "drawn_lines": [
+    {
+     "momentum": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "2"
+    }
+   ],
+   "mass_multiset_family": [
+    "1",
+    "1",
+    "2"
+   ],
+   "mass_multiset_drawn": [
+    "1",
+    "1",
+    "2"
+   ],
+   "mass_multisets_equal": true,
+   "labelled_iso": {
+    "found": true,
+    "stage": "B affine unimodular loop redefinition k_i -> sum_j M_ij k_j + sum_a S_ia p_a (entries in {-1,0,1}) + leg permutation + current sign",
+    "loop_matrix_M": [
+     [
+      -1,
+      -1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "shift_matrix_S": [
+     [
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "current_sign": 1
+   },
+   "unlabelled_iso": {
+    "found": true,
+    "stage": "A signed loop permutation + leg permutation (topology_audit relabelling)",
+    "relabeling": "identity"
+   },
+   "graph_level": {
+    "available": true,
+    "labelled_isomorphic": true,
+    "unlabelled_isomorphic": true,
+    "family_min_lines_cut_between_the_two_legs": 3,
+    "drawn_min_lines_cut_between_the_two_legs": 3
+   },
+   "identity": true,
+   "methods_disagree": false
+  },
+  {
+   "family_role": "(1,2,3) t=-5 goal 180 (close_final_123.json m5 agree 149 = the (1,2,3) floor)",
+   "family": "sun123_d2_tm5_g180_o11b.json",
+   "family_sha16": "37b71c6968a9cb5e",
+   "drawn": "identity_census/rows/row12/drawn_graph_123.yaml",
+   "drawn_tag": "123",
+   "family_lines": [
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "2"
+    },
+    {
+     "momentum": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "mass_sq": "3"
+    }
+   ],
+   "drawn_lines": [
+    {
+     "momentum": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "2"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "3"
+    }
+   ],
+   "mass_multiset_family": [
+    "1",
+    "2",
+    "3"
+   ],
+   "mass_multiset_drawn": [
+    "1",
+    "2",
+    "3"
+   ],
+   "mass_multisets_equal": true,
+   "labelled_iso": {
+    "found": true,
+    "stage": "B affine unimodular loop redefinition k_i -> sum_j M_ij k_j + sum_a S_ia p_a (entries in {-1,0,1}) + leg permutation + current sign",
+    "loop_matrix_M": [
+     [
+      -1,
+      -1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "shift_matrix_S": [
+     [
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "current_sign": 1
+   },
+   "unlabelled_iso": {
+    "found": true,
+    "stage": "A signed loop permutation + leg permutation (topology_audit relabelling)",
+    "relabeling": "identity"
+   },
+   "graph_level": {
+    "available": true,
+    "labelled_isomorphic": true,
+    "unlabelled_isomorphic": true,
+    "family_min_lines_cut_between_the_two_legs": 3,
+    "drawn_min_lines_cut_between_the_two_legs": 3
+   },
+   "identity": true,
+   "methods_disagree": false
+  },
+  {
+   "family_role": "(1,1,4) t=-2 goal 280 (close_final_114.json m2 agree 75 = the printed floor)",
+   "family": "sun114_d2_tm2_g280_o11b.json",
+   "family_sha16": "d3b0013fdc24304c",
+   "drawn": "identity_census/rows/row12/drawn_graph_114.yaml",
+   "drawn_tag": "114",
+   "family_lines": [
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "1",
+      "1",
+      "-1"
+     ],
+     "mass_sq": "4"
+    }
+   ],
+   "drawn_lines": [
+    {
+     "momentum": [
+      "-1",
+      "-1",
+      "1"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "1",
+      "0",
+      "0"
+     ],
+     "mass_sq": "1"
+    },
+    {
+     "momentum": [
+      "0",
+      "1",
+      "0"
+     ],
+     "mass_sq": "4"
+    }
+   ],
+   "mass_multiset_family": [
+    "1",
+    "1",
+    "4"
+   ],
+   "mass_multiset_drawn": [
+    "1",
+    "1",
+    "4"
+   ],
+   "mass_multisets_equal": true,
+   "labelled_iso": {
+    "found": true,
+    "stage": "B affine unimodular loop redefinition k_i -> sum_j M_ij k_j + sum_a S_ia p_a (entries in {-1,0,1}) + leg permutation + current sign",
+    "loop_matrix_M": [
+     [
+      -1,
+      -1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "shift_matrix_S": [
+     [
+      1
+     ],
+     [
+      0
+     ]
+    ],
+    "current_sign": 1
+   },
+   "unlabelled_iso": {
+    "found": true,
+    "stage": "A signed loop permutation + leg permutation (topology_audit relabelling)",
+    "relabeling": "identity"
+   },
+   "graph_level": {
+    "available": true,
+    "labelled_isomorphic": true,
+    "unlabelled_isomorphic": true,
+    "family_min_lines_cut_between_the_two_legs": 3,
+    "drawn_min_lines_cut_between_the_two_legs": 3
+   },
+   "identity": true,
+   "methods_disagree": false
+  }
+ ],
+ "controls": [
+  {
+   "control": "(1,1,2) family against the (1,2,3) panel must fail the labelled test",
+   "path": "sun112_d2_tm5_g150_o11b.json",
+   "sha16": "53dd1fa882bc91b0",
+   "expected_labelled": false,
+   "labelled_found": false,
+   "unlabelled_found": true,
+   "control_ok": true
+  },
+  {
+   "control": "(1,1,4) family against the (1,1,2) panel must fail the labelled test",
+   "path": "sun114_d2_tm2_g280_o11b.json",
+   "sha16": "d3b0013fdc24304c",
+   "expected_labelled": false,
+   "labelled_found": false,
+   "unlabelled_found": true,
+   "control_ok": true
+  }
+ ],
+ "all_pairs_identity": true,
+ "controls_ok": true,
+ "emitted_utc": "2026-09-04T15:25:53Z"
+}

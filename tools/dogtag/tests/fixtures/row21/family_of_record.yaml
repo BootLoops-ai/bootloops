@@ -1,0 +1,25 @@
+# DERIVED Kira-form transcription of the AMFlow-port config of record Rm8m4_ferm.json
+# source sha256 40e020c38798fa10eefb4d2f9c4a367eaea47d4d49d0fb731f89c1ea62213571; propagator strings verbatim; top_level_sectors = nonzero
+# indices of integrals[2] = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]; legs ['p1', 'p2', 'p3', 'p4'], {'p4': '-p1-p2-p3'}
+# written by the identity census (topology_audit reads yaml/jl only)
+integralfamilies:
+  - name: "lbl3x"
+    loop_momenta: [k, a, b]
+    top_level_sectors: [63]
+    propagators:
+      - [ "k^2 - 1", 0 ]
+      - [ "(k+p2-b)^2 - 1", 0 ]
+      - [ "(k+a-b+p2+p3)^2 - 1", 0 ]
+      - [ "(k+a-p1)^2 - 1", 0 ]
+      - [ "a^2", 0 ]
+      - [ "b^2", 0 ]
+      - [ "(k+p1)^2", 0 ]
+      - [ "(k+p3)^2", 0 ]
+      - [ "(a+p1)^2", 0 ]
+      - [ "(a+p2)^2", 0 ]
+      - [ "(a+p3)^2", 0 ]
+      - [ "(b+p1)^2", 0 ]
+      - [ "(b+p2)^2", 0 ]
+      - [ "(b+p3)^2", 0 ]
+      - [ "(k+b)^2", 0 ]
+    cut_propagators: []

@@ -1,0 +1,19 @@
+/* GNU ld version script for libhf_cabi.so — export ONLY the public
+ * hf_* stable C ABI surface (include/hyperflint/c_abi.h + golden file
+ * test/abi/symbols_golden.txt). Everything else (FLINT wrappers, C++
+ * internals) stays LOCAL so a Julia process that also loads another
+ * FLINT (e.g. via Nemo/FLINT_jll) cannot cross-resolve symbols.
+ */
+{
+  global:
+    hf_free_string;
+    hf_partial_fractions;
+    hf_linear_factors;
+    hf_find_lr_orders;
+    hf_find_lr_orders_scan;
+    hf_factor_table;
+    hf_hyperflint_sym;
+    hf_version_string;
+  local:
+    *;
+};

@@ -1,0 +1,404 @@
+{
+ "artifacts": {
+  "census/dedup/TEST_SEEDS.json": "69c5615f35a8e2d2d5a63f799a750abb1da283f915650e13abcd00af9ff804b6",
+  "common/data/KNOWN_ORBIT.jsonl": "f80e7ef56357798de35ad3f8786bcdb6062174fb4fe46dbbce8fb85f3a47e7ff",
+  "lattice/emit/bank/k3xk3_flux_N_Q25_arxiv2010.10519_appB.json": "125f3600e2a9de53daba92477af16a8c990878e4a513c7616014022e193c4684",
+  "lattice/emit/bank/s11_expected_counts.json": "cdf47f8000d0dc31a848a5bf6c94e3470527172442b79828baab3624fd43d55b",
+  "lattice/emit/bank/sound_minvecs.json": "b9b75fd251dc771139d984da47199e1eafa9aa57261b0ab61ff3e9d575d5cc24",
+  "periods/pipeline/cards/ads-5-81-3213.json": "17856f07583974b3697817c446cf6c16eaf1ce62a9efd174667331b1b447b746",
+  "periods/pipeline/cards/dkmm.json": "71a8ac250f0da6d86f794eb0a9da38c507fbc823d376ff34a0440e5cc67eb9c1",
+  "periods/pipeline/cards/hv4-diag-L5.json": "40baf80cec1b0e4e5512f0d6f17216cf217787013c6b3239f3b3affc653a6cd7",
+  "periods/pipeline/cards/hv4-diag-L5_bank/BATTERY_RECEIPT_reference.json": "68d78c0e83a1280918c675bda2f6753a3f4aa6e6881df7518279e8b4dba639ee",
+  "periods/pipeline/cards/hv4-diag-L5_bank/FRAME_RANK5.json": "b60b9635ef602c048d76351fe4f1740e3dedb388c553ded51cc2de6490f01813",
+  "periods/pipeline/cards/hv4-diag-L5_bank/SERIES_A.json": "c2101a2454292738b60fecd66252653c55c198645fff793cdecf5f9388e7b503",
+  "periods/pipeline/cards/hv4-diag-L5_bank/SERIES_B.json": "537784ecf1fa3eca72aec06a0e5db5c21b73d50a036e94015c76ea1ee67bfac5",
+  "periods/pipeline/conipfv/out/dkmm_P11169.gates.json": "de901f6e13137cf93bedd8e80884293aed5ddcc25e14cd734794ceca61006e75",
+  "periods/pipeline/dkmm/operator_LS.json": "2809468f5fdfa829eeabc99cab54a53bdce81d7f86da6ce7e46e787a59c3c176",
+  "periods/pipeline/dkmm/series_curve.json": "a10d8e1dcdde850101d376c7cb10d4a4c22f9746e059cd194daf3d8c42322d3c",
+  "periods/pipeline/ffp/banks/BCM_GATE.jsonl": "2d1f79ee45cf0ecea6978f3fdf75ca9d9cc00244fb9b66e7f611709586ec2d71",
+  "periods/pipeline/ffp/banks/CHECKER_GATE.jsonl": "72ba34b5bdb9e0abed7191225b7d3005a680fc736eb48cac5983697bce2a2605",
+  "periods/pipeline/ffp/nf_14_4_a_a.json": "3522dfe4f748a45b770936a0438a174ee98c4fba2960a46c4103a44105a3bf58",
+  "periods/pipeline/ffp/nf_34_2_b_a.json": "9fd1726cb766503e6c018761f273e1d1bfbf77ebb0c5cda69382bed4147d891a",
+  "periods/pipeline/ffp/scale/nf_180_4_a_e.json": "921ba9ab14f79cafb7f6cf822754691740dbf9c9384e3af80a42249a05b1861c",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p109.json": "1b9722fc15df789da1b13c5a6a8edad76f661601bfd5eb10bef5663d0afa8f7b",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p157.json": "f2fdd72ba7e1e0c36ee0b9c10e37923935dcd8c01cfd1c52214bd9a9144093ed",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p181.json": "f68ece7780c03a2e8fe0fbd262a9d58125b439df192d5f3f235c6cf72acffdc5",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p193.json": "ac0e9014a69aa68e222640f5f441233338cc571ed1a26872ffaaaa4a1adde339",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p229.json": "982a2626e91a67ef98f09e9a5e44bb4f00de5495727e1215feba1c9b6303edf5",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p241.json": "7f4693277c528fe529d8443eb3ffeffeccdfaeca23b73182e5ed205e5879a1d2",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p277.json": "69b71cd176ece4d1aab47e9fa44d3439d06b151e83a2853e69adb9682c3889a2",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p313.json": "9b57747b2b141ddacd7954ef271a56cdcc492fb665d26318352d5e6b779aa8a6",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p337.json": "b5e0298ef9e8982fb2acd92c817b1ae1f25c5f6ccdf2b4a370eb25e1424b6d17",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p61.json": "adb28e6a4e9c40243d85a381137bd5a77bb7842f868ce031e62977cec89df4d1",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p73.json": "ba6f3f3c2aec5989a679b8801598a5fba496241c7217dd1fa044d2ec5eaece8d",
+  "periods/pipeline/ffp/scale/passsets/AESZ11.p97.json": "cadcc2b04bc63cf1ee054bc4b55d97a42c00a0b793f3838768fcd1c7f822e4f4",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p101.json": "7b525f06ea97eb7219d4433dd6586e335e3ba262e31ddf50e25877f58cf3de86",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p103.json": "ee6640d6aacea2cd6fd1b2b2fbae4b21bfa0a6e2188f9717b7c66c9fd15bd7f4",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p113.json": "45084e900896bc1c611e81d4d98019d41f2e3121e499d798bdce7e22ce1aa258",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p127.json": "86f5f23a7ca128b6a3407930cb147bcf8842ed492082598f5d9b9a9f7fc1b4c9",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p53.json": "319365d3636779f7fb65bab312566dda3f550f669591936c6329b2261a4252f5",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p59.json": "2d18b7a442c6949429d4cb2a98500a91203622ed606fa71f9ea30e8a33e8dde5",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p61.json": "421f19f8eab3978304959ff4c3482995a1165b875b8a7bc4c46691c2f6dc27eb",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p67.json": "182a1a89e4b72d68410ee8e4cb4298d74063dee77938c4f6890b4f10acd19bc4",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p71.json": "c5dd02d5f987e88f37a6e1dea14433e599f30c4fa77a97487046067c42728a6d",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p73.json": "231c750f59cc0c202f0e14288d5649c160fcbef4562b2e848355286914e450a0",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p79.json": "5f03f59832d1b8121b00445d501b78d7df079e12eb64abb32d1eb396f3505be7",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p83.json": "0da01b96040252c53516a5e02b15923c880c6ccd6c15e2c26b22a17306696514",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p89.json": "910be7f5d9b779dc2f275c53e68b4960399f4b20868bc2f76b305ee717fd48b7",
+  "periods/pipeline/ffp/scale/passsets/AESZ34.p97.json": "eaf955ab6e900e4f6a84ac98b3cfb040a037b333593605021675f73878fbfb65",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p109.json": "8d65790c32f0f0707973618e4a006e108e5466cec04f608f5833fd68c3cf3b9d",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p157.json": "ac0450d99ccc134f539bba6f6bcb1b7b0ba2c80a652e7fd2eb0f4dbff78b4bf9",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p181.json": "05c15361d9fa2dc109d18e70f68d9bcf6bf8b026b1ac2f01aaf48786ec0f47a4",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p193.json": "3bff463848e20275139b521f0c383e279a2e1815d73c3626c5c3b9e61cc59421",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p229.json": "56bf4371999fa88bcd71dc38b6df639d618a9602cca32cd59ec4288f2b754733",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p241.json": "d3194a0700c897d52a3b28e649c7ea82aff7f4b07043c54372f66cdce0a1563a",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p277.json": "c1d9cc644aa2972a7b1212d1adbbf139d08e46881326772c3a895dc49c9ad510",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p313.json": "8a7f9b52793c376692c9bab86da4d443171956b9f1a390490ff58660c72031be",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p337.json": "b0d34489bcbac3d7a517d3b7ff32b8bb0f4c117583913513a7eb763a61fc8c1e",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p61.json": "291415458534cfb8b33b173adaf100e4db2ba740b239a37eae65abb851e6c5f7",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p73.json": "ce7edc5beeedad64aa6c0d08e837a739a14e7434f19e7e829efb3d17acca68c0",
+  "periods/pipeline/ffp/scale/passsets/AESZ4.p97.json": "733f1fe3a654cbb08bb7082ff323e733f222ac692ef72f15cc1bc3c3fed243b4",
+  "periods/pipeline/sunit/atlas/TOY7.json": "1920d36caa433b79b929d08ba118febccfd9d16d58576437e2e3b794defe264c"
+ },
+ "batteries": [
+  {
+   "id": "cards",
+   "path": "periods/selftest_cards.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "periods"
+  },
+  {
+   "id": "geffseries",
+   "path": "periods/selftest_geffseries.py",
+   "runner": "python",
+   "timeout_s": 1800,
+   "wing": "periods"
+  },
+  {
+   "id": "fluxcurves",
+   "path": "periods/selftest_fluxcurves.py",
+   "runner": "python",
+   "timeout_s": 1800,
+   "wing": "periods"
+  },
+  {
+   "id": "opderive",
+   "path": "periods/selftest_opderive.py",
+   "runner": "python",
+   "timeout_s": 1800,
+   "wing": "periods"
+  },
+  {
+   "id": "transport",
+   "path": "periods/selftest_transport.py",
+   "runner": "python",
+   "timeout_s": 1800,
+   "wing": "periods"
+  },
+  {
+   "id": "verdicts",
+   "path": "periods/selftest_verdicts.py",
+   "runner": "python",
+   "timeout_s": 700,
+   "wing": "periods"
+  },
+  {
+   "id": "envelope",
+   "path": "periods/selftest_envelope.py",
+   "runner": "python",
+   "timeout_s": 600,
+   "wing": "periods"
+  },
+  {
+   "id": "receipts",
+   "path": "common/selftest_receipts.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "controls",
+   "path": "common/selftest_controls.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "frames",
+   "path": "common/selftest_frames.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "certs",
+   "path": "common/selftest_certs.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "verdict",
+   "path": "common/selftest_verdict.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "lattice_L1",
+   "path": "lattice/selftest_lattice.jl",
+   "runner": "julia",
+   "timeout_s": 1200,
+   "wing": "lattice"
+  },
+  {
+   "id": "nikulin_L1b",
+   "path": "lattice/selftest_nikulin.jl",
+   "runner": "julia",
+   "timeout_s": 1200,
+   "wing": "lattice"
+  },
+  {
+   "id": "emit_L2",
+   "path": "lattice/emit/selftest_emit.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "lattice"
+  },
+  {
+   "id": "sweepchassis_L2b",
+   "path": "lattice/emit/selftest_sweepchassis.py",
+   "runner": "python",
+   "timeout_s": 600,
+   "wing": "lattice"
+  },
+  {
+   "id": "pfaffian",
+   "path": "periods/selftest_pfaffian.py",
+   "runner": "python",
+   "timeout_s": 600,
+   "wing": "periods"
+  },
+  {
+   "id": "conifold",
+   "path": "periods/selftest_conifold.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "periods"
+  },
+  {
+   "id": "ffp",
+   "path": "periods/selftest_ffp.py",
+   "runner": "python",
+   "timeout_s": 600,
+   "wing": "periods"
+  },
+  {
+   "id": "sunit",
+   "path": "periods/selftest_sunit.py",
+   "runner": "python",
+   "timeout_s": 900,
+   "wing": "periods"
+  },
+  {
+   "id": "dedup",
+   "path": "common/selftest_dedup.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "common"
+  },
+  {
+   "id": "foldhnf",
+   "path": "census/selftest_foldhnf.py",
+   "runner": "python",
+   "timeout_s": 1800,
+   "wing": "census"
+  },
+  {
+   "id": "dedup_census",
+   "path": "census/selftest_dedup_census.py",
+   "runner": "python",
+   "timeout_s": 900,
+   "wing": "census"
+  },
+  {
+   "id": "distcert",
+   "path": "census/selftest_distcert.py",
+   "runner": "python",
+   "timeout_s": 900,
+   "wing": "census"
+  },
+  {
+   "id": "controlsampler",
+   "path": "census/selftest_controlsampler.py",
+   "runner": "python",
+   "timeout_s": 900,
+   "wing": "census"
+  },
+  {
+   "id": "census_smoke",
+   "path": "census/selftest_census_smoke.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "census"
+  },
+  {
+   "id": "summation",
+   "path": "periods/selftest_summation_reduced_u1s.py",
+   "runner": "python",
+   "timeout_s": 600,
+   "wing": "periods"
+  },
+  {
+   "id": "slicecard",
+   "path": "periods/selftest_slice_operator_card.py",
+   "runner": "python",
+   "timeout_s": 300,
+   "wing": "periods"
+  },
+  {
+   "id": "lpkill",
+   "path": "lattice/selftest_lpkill_a1n_mustfail.py",
+   "runner": "python",
+   "timeout_s": 1500,
+   "wing": "lattice"
+  },
+  {
+   "id": "genusenum",
+   "path": "lattice/selftest_genus_control_replay.jl",
+   "runner": "julia",
+   "timeout_s": 3600,
+   "wing": "lattice"
+  }
+ ],
+ "generated": "terrier 1.0",
+ "n_artifacts": 59,
+ "note": "shipped-fixture manifest: selftest.py verifies every pin FIRST and refuses battery replays on any miss (NAMED, no silent skips). Batteries whose inputs are reference data not included in the package print a NAMED SKIP naming the env var to set.",
+ "root": ".",
+ "wing_regressions": {
+  "census_distcert_off": {
+   "batteries": [
+    "distcert"
+   ],
+   "gate": "37/37: exact balls, certified sqrt/ln, z/WP charts, Fincke-Pohst exhaustive OFF certificates, planted near-miss balls certified OFF"
+  },
+  "census_fold_acceptance": {
+   "batteries": [
+    "foldhnf"
+   ],
+   "gate": "G4 anchor-set EXACT: B=1 bin 6612 + window total 49544; 256 corner merges witnessed; 5 tampered-word must-fails; order invariance"
+  },
+  "census_sampler_exact": {
+   "batteries": [
+    "controlsampler"
+   ],
+   "gate": "19/19: dyadic-coin AD rejection exact, CP brackets exact, p_U only-widens, no-exclusion tubes at closed-form rates"
+  },
+  "census_smoke_e2e": {
+   "batteries": [
+    "census_smoke"
+   ],
+   "gate": "synthetic 2x2 window end-to-end: fold(48->4, witnessed+S/T-invariant) -> two-stack dedup GREEN-AGREE (2 transported merge back, plant own-class) -> dist_cert ON/OFF -> common receipt validated"
+  },
+  "census_twostack_red": {
+   "batteries": [
+    "dedup_census"
+   ],
+   "gate": "8/8: T1-T8 synthetic (partition == proof-level truth both engines; RED-RECONCILED-MISS + RED-WITNESS-FAIL drills)"
+  },
+  "coni_notconi_control": {
+   "batteries": [
+    "conifold"
+   ],
+   "gate": "CP0 routing: DKMM PFFV control returns NOT-CONI == reference; DKMM tower log-branch-flip + branch-swap mutations caught; transport fail-closed without coni_op"
+  },
+  "dedup_orbit_controls": {
+   "batteries": [
+    "dedup"
+   ],
+   "gate": "packaged KNOWN_ORBIT 9 rows; 5 must-fire (incl. the X118 pullback of T3) + 3 must-not-fire orbit controls; newform backstop 4 fire + 1 unknown must-not-fire; explicit-receipt law (no ledger write without a path); CLI rc 10/0"
+  },
+  "dkmm_ball_reproduction": {
+   "batteries": [
+    "transport"
+   ],
+   "gate": "route R 150 + vac 150 R re-run; W0/W0_vac ball midpoints string-EXACT (matched_digits 999) vs the reference data (TERRIER_KKLT_BANK); radius ratio in [0.9,1.12]"
+  },
+  "emit_glue_predicates": {
+   "batteries": [
+    "emit_L2"
+   ],
+   "gate": "E1 44-row known-answer glue table exact (dual-integrality + trace + det-chain identities, exact arithmetic); E2 closed-form A2xA2 case; E3 tampered-glue + tampered-value mutations caught"
+  },
+  "ffp_fingerprint_regression": {
+   "batteries": [
+    "ffp"
+   ],
+   "gate": "int64 front door refuses p >= 2^31; brute q-battery exact; HV AESZ34 p53 + BCM AESZ4/AESZ11 p61 pass-sets REGENERATED == shipped reference; ground-truth p19 replay (b+40 control pinned 14/15); checker + BCM control batteries == shipped CHECKER_GATE/BCM_GATE; stripped-fire mutation caught"
+  },
+  "genus_control_replay": {
+   "batteries": [
+    "genusenum"
+   ],
+   "gate": "Aut-free Kneser control genus det 92: CONTROL-PASS (6 classes, mass 53/768 exact, qfisom bijection + per-class |Aut| vs the reference receipt (TERRIER_GENUS_CONTROL_RECEIPT))"
+  },
+  "lattice_18_18": {
+   "batteries": [
+    "lattice_L1"
+   ],
+   "gate": "validate.jl full battery 18/18 PASS in situ (writes its results report)"
+  },
+  "lpkill_a1n_mustfail": {
+   "batteries": [
+    "lpkill"
+   ],
+   "gate": "A1^6 control line BYTE-matches the reference (strict h=2 KILLED, relaxed FEASIBLE n0=36) + d4 genus replay JSON-equal vs the reference receipt (TERRIER_R18_DIR)"
+  },
+  "mutation_control_trio": {
+   "batteries": [
+    "fluxcurves",
+    "verdicts",
+    "emit_L2"
+   ],
+   "gate": "f3 xi-mutation MUST-FAIL (fluxcurves) + ball_gate radius-bar must-fail (verdicts) + tampered glue/value caught (emit E3)"
+  },
+  "pfaffian_ball_reproduction": {
+   "batteries": [
+    "pfaffian"
+   ],
+   "gate": "ads-5-81 W0 ball (dps 60+90) byte-exact vs the reference receipts (TERRIER_PFAFFIAN_BANK); fresh-prime gate 0 diffs; fresh-prime mutation control caught"
+  },
+  "planted_error_rc": {
+   "batteries": [
+    "sweepchassis_L2b"
+   ],
+   "gate": "planted-error rc=8 (control + integrity legs); halt law rc=9 + clear+resume"
+  },
+  "reference_shard_replay": {
+   "batteries": [
+    "sweepchassis_L2b"
+   ],
+   "gate": "SC3 reference-shard replay byte-identical (pinned clock); SC7 20/20 check_ids byte-compatible with the reference shard receipt (TERRIER_SWEEP_SHARD_RECEIPT)"
+  },
+  "slice_operator_card": {
+   "batteries": [
+    "cards",
+    "slicecard"
+   ],
+   "gate": "hv4-diag-L5 bank battery PASS (fit==printed JKK op, exponents, MUM, pfaffian payload) + receipt fields == reference; cards.py n_slice >= 1"
+  },
+  "summation_reduced_u1s": {
+   "batteries": [
+    "summation"
+   ],
+   "gate": "reduced-size u1s: ratio-law 200; termwise 12 ops x 4^6 all zero; S6-equivariance; GF==lattice EXACT M=3 rho+theta; K4 entropy law; b7 Cauchy floors 4/4 (full-size gates need TERRIER_BOXOPS_BANK)"
+  },
+  "sunit_planted_point_gate": {
+   "batteries": [
+    "sunit"
+   ],
+   "gate": "planted rational + quadratic points refound under a reduced documented net with HAND-DERIVED S_min EXACT (shipped synthetic control card); singular + out-of-box must-fail controls; known-orbit tagging law; truncation statement machine-readable (bounded net, NOT a finiteness proof); zero blowup alarms"
+  }
+ }
+}

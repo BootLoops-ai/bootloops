@@ -1,0 +1,175 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true
+ },
+ "family": {
+  "name": "kite112",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [
+   "p"
+  ],
+  "conservation": {},
+  "replacement": {
+   "p^2": "psq"
+  },
+  "propagators": [
+   "k1^2 - msq1",
+   "k2^2",
+   "(k1 - k2)^2 - msq3",
+   "(k1 - p)^2",
+   "(k2 - p)^2 - msq5"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    -1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -1,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -2,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    0,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  }
+ ],
+ "goal_digits": 120,
+ "eps_order": 8,
+ "work_dir": "work_kira14_sm2",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "blackbox": {
+   "ibp_rank": 2,
+   "ibp_dot": 1,
+   "n_thread": 8,
+   "numeric_values": {
+    "psq": "-2",
+    "msq1": "1",
+    "msq3": "1",
+    "msq5": "2"
+   }
+  }
+ }
+}

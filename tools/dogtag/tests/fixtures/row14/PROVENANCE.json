@@ -1,0 +1,46 @@
+{
+ "row": "row14",
+ "what": "sha-pinned copies of the identity-census corpus files for this entry. sha256 / size pin the bytes on disk, which every battery and self-test leg refuses on drift; record_sha256 / record_size are the digest and size of the original corpus file. The two differ where a comment or an unread configuration line (a local path, a provenance note) was rewritten in the copy; no field a reader consumes differs. source is the corpus-relative name (identity_census/rows/<row>/<file>).",
+ "files": [
+  {
+   "path": "drawn_graph.yaml",
+   "source": "identity_census/rows/row14/drawn_graph.yaml",
+   "sha256": "e9c6eb631a18d650026a2a54ea2d5cd61e7ad274b5a930b8ff066407cb0bfa48",
+   "size": 1964,
+   "record_sha256": "9d1bb8cf6ca784e3330b115f0e3f5d4a5bb87a4bd803997e14c1b03ce0263372",
+   "record_size": 1988
+  },
+  {
+   "path": "family_also/control_kite_tm3_g150_o10.yaml",
+   "source": "identity_census/rows/row14/family_also/control_kite_tm3_g150_o10.yaml",
+   "sha256": "00fa399594fc002ab6f88c7fc03cd9a9ddb5583601a9d1253671f2fb6d399a09",
+   "size": 631,
+   "record_sha256": "c164f140a1b70f8903781b15e8de5684d434dc35182a9586daa28ac96ab40703",
+   "record_size": 699
+  },
+  {
+   "path": "family_also/kira14_sm2.json",
+   "source": "identity_census/rows/row14/family_also/kira14_sm2.json",
+   "sha256": "fe134467a6731fe502e5b63f33b113a7395863eb2caf1280471fc296382e654a",
+   "size": 1583,
+   "record_sha256": "ccf76cca7d8b180c485c6ee2438b9b2617450b6cbc2f1ff06f59deeab77697a3",
+   "record_size": 1652
+  },
+  {
+   "path": "family_also/kira14_sm2.yaml",
+   "source": "identity_census/rows/row14/family_also/kira14_sm2.yaml",
+   "sha256": "07a68b4b83ee5175d3b808dd128c50a11c117e8e0ca0be8ca96e8dffb0ece7a6",
+   "size": 644,
+   "record_sha256": "e08e2f768965829d3c2879dd1604f2b8b4f2414325efbaa632010138ce5ded10",
+   "record_size": 685
+  },
+  {
+   "path": "family_of_record.yaml",
+   "source": "identity_census/rows/row14/family_of_record.yaml",
+   "sha256": "a6d50193eabd44f376f9176e58c7c0a3291476e0fbce9ea4af2ad10d127f766b",
+   "size": 275,
+   "record_sha256": "a6d50193eabd44f376f9176e58c7c0a3291476e0fbce9ea4af2ad10d127f766b",
+   "record_size": 275
+  }
+ ]
+}

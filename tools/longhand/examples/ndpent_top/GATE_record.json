@@ -1,0 +1,415 @@
+{
+ "receipt": "GATE (the record run): lattice setting 2 (B) and the second integrator (C, median lattices), both at epsrel 1e-7, agree per order to the digit counts below by object; lattice setting 1 (A, epsrel 1e-4) is the coarse consistency check (its sigma per order listed); controls by name: PLANTED-FAIL, FOREIGN (the smoke on the build host, the smoke on the second host); PASS",
+ "stamp_utc": "2026-09-07T03:02:45Z",
+ "run_stamp": "20260907T011132Z",
+ "leaf": "record_leaf",
+ "gate": "PASS",
+ "landed_all_three_stages": true,
+ "stages": {
+  "A": {
+   "result_present": true,
+   "complete": true,
+   "n_chunks": 1,
+   "n_landed": 1,
+   "chunks_DONE_on_disk": 1,
+   "rc": "rc=0",
+   "settings": {
+    "stage": "A",
+    "W": "8",
+    "points": "1e4",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-4",
+    "epsabs_per_chunk": "1e-12",
+    "lattice_candidates": "0",
+    "chunk_sectors": "0",
+    "n_chunks": "1",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:11:33Z",
+    "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   },
+   "result_sha256": "3bc790fffd5e493cb0b8e9e541411d3f0c9d3fc427f0d8489d64d21eb587a628",
+   "chunk_walls_s": {
+    "n": 1,
+    "sum": 24.68,
+    "max": 24.68
+   },
+   "chunk_maxrss_kb": {
+    "n": 1,
+    "max": 120256
+   }
+  },
+  "B": {
+   "result_present": true,
+   "complete": true,
+   "n_chunks": 28,
+   "n_landed": 28,
+   "chunks_DONE_on_disk": 28,
+   "rc": "rc=0",
+   "settings": {
+    "stage": "B",
+    "W": "8",
+    "points": "1e5",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-7",
+    "epsabs_per_chunk": "1.706e-10",
+    "lattice_candidates": "0",
+    "chunk_sectors": "12",
+    "n_chunks": "28",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:11:58Z",
+    "integrator": "disteval standard (tabulated Korobov generating vectors) rank-1 lattices",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   },
+   "result_sha256": "f860bde2dd5305e08871f179b218025ec0123648663ef4a44c257be29bef24f1",
+   "chunk_walls_s": {
+    "n": 28,
+    "sum": 2688.6800000000003,
+    "max": 319.47
+   },
+   "chunk_maxrss_kb": {
+    "n": 28,
+    "max": 91232
+   }
+  },
+  "C": {
+   "result_present": true,
+   "complete": true,
+   "n_chunks": 28,
+   "n_landed": 28,
+   "chunks_DONE_on_disk": 28,
+   "rc": "rc=0",
+   "settings": {
+    "stage": "C",
+    "W": "8",
+    "points": "1e5",
+    "presamples": "1e4",
+    "shifts": "32",
+    "epsrel": "1e-7",
+    "epsabs_per_chunk": "1.706e-10",
+    "lattice_candidates": "11",
+    "chunk_sectors": "12",
+    "n_chunks": "28",
+    "standin": "0",
+    "stamp_utc": "2026-09-07T01:56:48Z",
+    "integrator": "disteval median-lattice rule (--lattice-candidates 11): the SECOND integrator = a different lattice construction on the same kernel library",
+    "point": "s12=-7 s23=-9 s34=-13 s45=-10 s15=-5 mm3=-12 mm4=-8"
+   },
+   "result_sha256": "1108cb50a4b0d47f22afdaa056ad7d80e894582c84f66b1c720d99f19a760810",
+   "chunk_walls_s": {
+    "n": 28,
+    "sum": 3886.26,
+    "max": 395.81
+   },
+   "chunk_maxrss_kb": {
+    "n": 28,
+    "max": 92700
+   }
+  }
+ },
+ "digit_class": {
+  "min_digits_over_orders(conservative)": 7,
+  "per_order": [
+   {
+    "regulator_powers": [
+     -4
+    ],
+    "A_value": [
+     0.009027777766571017,
+     0.0
+    ],
+    "A_err": 6.440552280354594e-12,
+    "A_bar_digits": 9,
+    "B_value": [
+     0.00902777777777804,
+     0.0
+    ],
+    "B_err": 3.4978010091748574e-15,
+    "B_bar_digits": 12,
+    "C_value": [
+     0.009027777776653496,
+     0.0
+    ],
+    "C_err": 5.417819405335523e-13,
+    "C_bar_digits": 10,
+    "A-B_sigma": 1.7400715056933418,
+    "A-B_agreed_digits": 8,
+    "A-C_sigma": 1.5599583686320895,
+    "A-C_agreed_digits": 8,
+    "B-C_sigma": 2.0755979149601598,
+    "B-C_agreed_digits": 9,
+    "digits(min over the B-C pair and the B, C bars)": 9
+   },
+   {
+    "regulator_powers": [
+     -3
+    ],
+    "A_value": [
+     0.026183932797021043,
+     0.0
+    ],
+    "A_err": 9.85194637638103e-07,
+    "A_bar_digits": 4,
+    "B_value": [
+     0.0261809260313331,
+     0.0
+    ],
+    "B_err": 1.1231393018584768e-09,
+    "B_bar_digits": 7,
+    "C_value": [
+     0.02618092601361412,
+     0.0
+    ],
+    "C_err": 6.836630259367482e-10,
+    "C_bar_digits": 7,
+    "A-B_sigma": 3.0519489441160634,
+    "A-B_agreed_digits": 3,
+    "A-C_sigma": 3.0519681777552745,
+    "A-C_agreed_digits": 3,
+    "B-C_sigma": 0.013476020643004507,
+    "B-C_agreed_digits": 9,
+    "digits(min over the B-C pair and the B, C bars)": 7
+   },
+   {
+    "regulator_powers": [
+     -2
+    ],
+    "A_value": [
+     0.09351566975075029,
+     0.0
+    ],
+    "A_err": 4.756995399567795e-06,
+    "A_bar_digits": 4,
+    "B_value": [
+     0.09350840743483539,
+     0.0
+    ],
+    "B_err": 6.294447796143462e-09,
+    "B_bar_digits": 7,
+    "C_value": [
+     0.09350840336745588,
+     0.0
+    ],
+    "C_err": 2.430977431955019e-09,
+    "C_bar_digits": 7,
+    "A-B_sigma": 1.5266589406291824,
+    "A-B_agreed_digits": 4,
+    "A-C_sigma": 1.5275151088551309,
+    "A-C_agreed_digits": 4,
+    "B-C_sigma": 0.6027915931296036,
+    "B-C_agreed_digits": 7,
+    "digits(min over the B-C pair and the B, C bars)": 7
+   },
+   {
+    "regulator_powers": [
+     -1
+    ],
+    "A_value": [
+     0.2744680939502566,
+     0.0
+    ],
+    "A_err": 2.499448410470375e-05,
+    "A_bar_digits": 4,
+    "B_value": [
+     0.274398504238719,
+     0.0
+    ],
+    "B_err": 2.6726566729291863e-08,
+    "B_bar_digits": 7,
+    "C_value": [
+     0.2743984783620932,
+     0.0
+    ],
+    "C_err": 1.225659491546081e-08,
+    "C_bar_digits": 7,
+    "A-B_sigma": 2.784201164614593,
+    "A-B_agreed_digits": 3,
+    "A-C_sigma": 2.7852377149198606,
+    "A-C_agreed_digits": 3,
+    "B-C_sigma": 0.8800690235815375,
+    "B-C_agreed_digits": 7,
+    "digits(min over the B-C pair and the B, C bars)": 7
+   },
+   {
+    "regulator_powers": [
+     0
+    ],
+    "A_value": [
+     0.8247470108059523,
+     0.0
+    ],
+    "A_err": 7.119561932026787e-05,
+    "A_bar_digits": 4,
+    "B_value": [
+     0.8246341248952935,
+     0.0
+    ],
+    "B_err": 7.344564291155832e-08,
+    "B_bar_digits": 7,
+    "C_value": [
+     0.8246341198398472,
+     0.0
+    ],
+    "C_err": 6.99017399456793e-08,
+    "C_bar_digits": 7,
+    "A-B_sigma": 1.5855729842598085,
+    "A-B_agreed_digits": 3,
+    "A-C_sigma": 1.5856440715084135,
+    "A-C_agreed_digits": 3,
+    "B-C_sigma": 0.04985997422395627,
+    "B-C_agreed_digits": 8,
+    "digits(min over the B-C pair and the B, C bars)": 7
+   }
+  ],
+  "rule": "digits(order) = min over the B-C pair (lattice setting 2 vs the median-lattice second integrator, both at epsrel 1e-7) of floor(-log10(|diff|/|value|)) and over the B and C bars floor(-log10(err/|value|)); the quoted digit count of the value is the min over orders; stage A (lattice setting 1, epsrel 1e-4) is the coarse consistency check, its sigma vs B and C listed per order; double-precision disteval house ceiling ~8-9 d"
+ },
+ "fail_lines(B-C sigma > 3 on an order)": [],
+ "A_consistency": {
+  "max_sigma_A_vs_B_or_C": 3.0519681777552745,
+  "lines_over_3_sigma": [
+   {
+    "pair": "A-B",
+    "regulator_powers": [
+     -3
+    ],
+    "sigma": 3.0519489441160634,
+    "reading": "stage A (epsrel 1e-4, 32-shift bar) vs the target-precision stage: the difference exceeds 3x the summed bars; A is the coarse consistency setting, its bar is a 32-sample estimate"
+   },
+   {
+    "pair": "A-C",
+    "regulator_powers": [
+     -3
+    ],
+    "sigma": 3.0519681777552745,
+    "reading": "stage A (epsrel 1e-4, 32-shift bar) vs the target-precision stage: the difference exceeds 3x the summed bars; A is the coarse consistency setting, its bar is a 32-sample estimate"
+   }
+  ],
+  "verdict": "MARGINAL (2 line(s) over 3 sigma; A is the epsrel 1e-4 setting with a 32-shift bar)"
+ },
+ "controls": {
+  "planted_fail": {
+   "name": "PLANTED-FAIL (RESULT_B copy, eps^0 value x (1 + 1e-3))",
+   "sigma_vs_A": 9.99707344790171,
+   "sigma_vs_C": 8133.10753740778,
+   "raised_fail_line": true,
+   "rule": "the compare must flag a 1e-3 shift as > 3 sigma on eps^0 (the bars are ~1e-7 relative); if it does not, the compare is blind and the gate FAILS"
+  },
+  "foreign": [
+   {
+    "name": "the smoke on the build host (lattice 1e3, 4 shifts, 2 workers, epsrel 1e-2)",
+    "path": "smoke.out",
+    "sha256": "08b84b0f4b9482c043136bb833a30de43e1438775a683176690a6b7bdd8ad90b",
+    "rows": {
+     "[-4]": {
+      "abs_diff": 6.999684776295284e-07,
+      "sigma": 1.717724232013687,
+      "agreed_digits": 4,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     },
+     "[-3]": {
+      "abs_diff": 0.00033679657943867444,
+      "sigma": 1.6802705817273529,
+      "agreed_digits": 1,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     },
+     "[-2]": {
+      "abs_diff": 0.0002107473485139788,
+      "sigma": 0.3263959206546141,
+      "agreed_digits": 2,
+      "within_sum_of_bars": true,
+      "within_3x_sum_of_bars": true
+     },
+     "[-1]": {
+      "abs_diff": 0.0015090290515806237,
+      "sigma": 0.7371618089778046,
+      "agreed_digits": 2,
+      "within_sum_of_bars": true,
+      "within_3x_sum_of_bars": true
+     },
+     "[0]": {
+      "abs_diff": 0.0003108373472741066,
+      "sigma": 0.054511241840011895,
+      "agreed_digits": 3,
+      "within_sum_of_bars": true,
+      "within_3x_sum_of_bars": true
+     }
+    },
+    "all_within_3x_sum_of_bars": true,
+    "max_sigma": 1.717724232013687
+   },
+   {
+    "name": "the smoke on the second host (the same setting, the same .so sha)",
+    "path": "smoke.out",
+    "sha256": "e7656964dbcec8843eae4026362333166bb7d99f18569399268f019ce0fee2df",
+    "rows": {
+     "[-4]": {
+      "abs_diff": 6.999684776295284e-07,
+      "sigma": 1.717724232013687,
+      "agreed_digits": 4,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     },
+     "[-3]": {
+      "abs_diff": 1.1597319302263792e-05,
+      "sigma": 0.054874555027296296,
+      "agreed_digits": 3,
+      "within_sum_of_bars": true,
+      "within_3x_sum_of_bars": true
+     },
+     "[-2]": {
+      "abs_diff": 0.0023581749826117604,
+      "sigma": 2.9485284820009676,
+      "agreed_digits": 1,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     },
+     "[-1]": {
+      "abs_diff": 0.005371809558590623,
+      "sigma": 2.4913037867206453,
+      "agreed_digits": 1,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     },
+     "[0]": {
+      "abs_diff": 0.007987602545901695,
+      "sigma": 1.246017937864008,
+      "agreed_digits": 2,
+      "within_sum_of_bars": false,
+      "within_3x_sum_of_bars": true
+     }
+    },
+    "all_within_3x_sum_of_bars": true,
+    "max_sigma": 2.9485284820009676
+   }
+  ],
+  "foreign_ok": true
+ },
+ "leaf_at_end": {
+  "memory.peak": "108417024",
+  "memory.max": "377241600",
+  "oom_kill": "0",
+  "wall_s": "6603",
+  "maxrss_kb_over_chunks": "120256",
+  "stages_rc": " A=0 B=0 C=0 compare=0",
+  "cpu.stat": "usage_usec 48034230580 user_usec 48022092462 system_usec 12138117 nice_usec 48065145000 core_sched.force_idle_usec 0 nr_periods 66029 nr_throttled 27995 throttled_usec 57401021 nr_bursts 0 burst_usec 0 "
+ },
+ "compare_receipt": {
+  "path": "COMPARE.json",
+  "sha256": "4697ae1f61da027c71aa45011bbacf62cebc7d0134de5e7517b0f0a4b21678a9"
+ },
+ "not_established": [
+  "a value at any Minkowski point (contour deformation not built)",
+  "the other 8 top-sector masters and orders eps^1..eps^4 (separate packages)",
+  "digits beyond the double-precision ceiling of disteval (the 30-digit closure is the AMFlow route)",
+  "this is a FIRST VALUE of the fixture family at its point: its bar is its own three-way agreement"
+ ],
+ "PRODUCER": {
+  "script": "emit_gate.py",
+  "sha256": "b7b7e9ecc98bf172c8513b67c6389d66d6cac05fdc4aa34ab2d0556c2e67b236",
+  "stamp_source": "date -u"
+ }
+}

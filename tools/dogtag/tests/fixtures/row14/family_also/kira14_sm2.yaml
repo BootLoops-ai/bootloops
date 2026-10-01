@@ -1,0 +1,16 @@
+# Transcription of the AMFlow-port config kira14_sm2.json
+# sha256 ccf76cca7d8b180c485c6ee2438b9b2617450b6cbc2f1ff06f59deeab77697a3
+# masses substituted from amf_options.blackbox.numeric_values: msq1=1, msq3=1, msq5=2
+# kinematics of that run: psq=-2 with replacement p^2 -> psq
+# top sector from the integral with the most positive indices: [1, 1, 1, 1, 1] -> mask 31
+integralfamilies:
+  - name: "kite112"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [31]
+    propagators:
+      - [ "k1^2 - 1", 0 ]
+      - [ "k2^2", 0 ]
+      - [ "(k1 - k2)^2 - 1", 0 ]
+      - [ "(k1 - p)^2", 0 ]
+      - [ "(k2 - p)^2 - 2", 0 ]
+    cut_propagators: []

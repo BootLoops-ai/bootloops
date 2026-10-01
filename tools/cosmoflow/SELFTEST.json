@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "fast": {
+    "pass": true,
+    "wall_s": 4.57,
+    "legs": {
+      "A_twosite_vs_print342": {
+        "point": "X1=2, X2=3, Y=1, eps=-1/4",
+        "agree_digits": 51.3,
+        "floor": 40,
+        "pass": true,
+        "wall_s": 0.019
+      },
+      "B_twosite_eps0_certified": {
+        "point": "X1=2, X2=3, Y=1",
+        "certified_digits": 50,
+        "floor": 40,
+        "pass": true,
+        "wall_s": 0.023
+      },
+      "C_twosite_eps1_certified": {
+        "point": "X1=2, X2=3, Y=1",
+        "certified_digits": 50,
+        "floor": 40,
+        "pass": true,
+        "wall_s": 0.028
+      },
+      "D_alphabet_censuses": {
+        "got": [
+          5,
+          10,
+          17
+        ],
+        "expected": [
+          5,
+          10,
+          17
+        ],
+        "pass": true,
+        "wall_s": 3.514
+      },
+      "E_L2_varpi0_symbolic_proof": {
+        "pass": true,
+        "wall_s": 0.777
+      },
+      "F_period_wronskian": {
+        "point": "a=2, lam=1/2",
+        "agree_digits": 40.9,
+        "floor": 30,
+        "pass": true,
+        "wall_s": 0.001
+      },
+      "G_maxcut_sampler_selfagree": {
+        "point": "a=2, lam=3/10, c=2",
+        "agree_digits": 31.3,
+        "floor": 25,
+        "pass": true,
+        "wall_s": 0.051
+      },
+      "H_pinch_locus": {
+        "point": "X=(7/5,7/10,1), y23=1; controls y23=5/2 and X=(9/10,3/10,1)",
+        "roots": 2,
+        "interior": true,
+        "controls_empty": true,
+        "root_residual_digits": 40.8,
+        "floor": 25,
+        "pass": true,
+        "wall_s": 0.001
+      },
+      "I_graph_front_door_consistency": {
+        "ring_vs_loop_ngon3": true,
+        "path_vs_tree_chain3": true,
+        "cli_graph_kind": true,
+        "n_letters": [
+          22,
+          11
+        ],
+        "pass": true,
+        "wall_s": 0.158
+      }
+    }
+  },
+  "deep": {
+    "status": "SKIP",
+    "note": "deep-oracle-probe not run (HEAVY leg, ~450 s measured for the probe alone): reproduce triangle e6(a=2, lam=1/2, c=1, eps=0). Run `python3 selftest.py --deep` to execute and record it."
+  }
+}

@@ -1,0 +1,17 @@
+# Environment for the Leviathan chi-drop engine (instantiate, then run the CLI with
+# --project pointed here). builder.jl additionally needs the external PLD package
+# (ENV["PLD_PATH"]), which brings its own environment.
+name = "Leviathan"
+uuid = "457c6e3a-b22b-4fc9-8833-02c902b651dd"
+version = "1.0.0"
+authors = ["Matthew D. Schwartz"]
+
+[deps]
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
+Oscar = "f1435218-dba5-11e9-1e4d-f1a5fab5fc13"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+Oscar = "1.7"
+julia = "1.10"

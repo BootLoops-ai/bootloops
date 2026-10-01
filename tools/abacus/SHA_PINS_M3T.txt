@@ -1,0 +1,5 @@
+# SHA_PINS_M3T — the sha-pinned spec set; any tool change re-runs the full battery.
+# abcount; run order: verify pins -> S0 build+sanity -> S1..S3 staged -> FULL BATTERY -> evidence status.
+85ed68777d171378c70c4b590ae35c25abb768431274bf00af6e2ed959b7bdba  M3T_REGISTRATION.md
+af97c604704f64e74194d64ddcd05fe5d5076f0fd999511b4875194c980b0d0c  M3T_VALIDATION_BATTERY.md
+a23cb2ebe8de4b0819b08c4ffb9e9f59c9f891c5ef6ef99ede56c71154e9ec2e  S0PRE_RECEIPT.md

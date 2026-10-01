@@ -1,0 +1,26 @@
+{
+ "about": "A fixed linear functional on the 19-simplex, F(x) = sum_i w[i-1] x_i + w0, with 19 exact rationals w and the dyadic constant w0 = -4898883/2^26 ('w0_dyadic'). Carried as a separating functional for the Kingman class at n = 20: F >= 0 on every expected normalized unfolded spectrum of the Kingman coalescent under a variable population size (a curve-positivity certificate of the kind popcorn.certificates.positivity decides; taken as given here, not re-derived by popcorn.lambda_coalescent), so an exact F(x) < 0 places x outside that class. lambda_exact.load_witness() reads this file; lambda_exact.witness_margin(w, w0, x) evaluates F exactly.",
+ "n": 20,
+ "w": [
+  "281653700641825/3855675953189414",
+  "137816638489010/1927837976594707",
+  "175559744490794/1927837976594707",
+  "-90085544044831/3855675953189414",
+  "578889745057952/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "1385636716982648/1927837976594707",
+  "-158800498507535/3855675953189414",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "1",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707",
+  "-140737488355328/1927837976594707"
+ ],
+ "w0_dyadic": "-4898883/67108864"
+}

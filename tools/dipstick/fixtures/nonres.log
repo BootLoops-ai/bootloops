@@ -1,0 +1,10 @@
+5044 candidate cone facets from qhull
+43 exact-verified distinct facets
+RESONANT facets at the physical point: 10 of 43
+   (-1, -1, -1, 0, -1, -1, -2, -1, -1) ... pairing 2
+   (0, 1, -1, 0, -1, 0, 0, 0, 0) ... pairing 0
+   (-1, 0, 0, 1, -1, 0, 0, -1, 0) ... pairing 0
+   (1, 1, 0, 1, 0, 1, 1, 0, 0) ... pairing 0
+   (1, 0, 0, -1, 0, -1, 0, 0, 0) ... pairing 0
+   (1, 0, 1, 1, 1, 0, 1, 0, 0) ... pairing 1
+VERDICT: RESONANT AT THIS POINT — check genericity in s

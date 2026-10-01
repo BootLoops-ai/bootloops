@@ -1,0 +1,7 @@
+# derived with the propagator list above
+kinematics:
+  incoming_momenta: [p]
+  outgoing_momenta: []
+  momentum_conservation: []
+  scalarproduct_rules:
+    - [[p, p], "pp"]

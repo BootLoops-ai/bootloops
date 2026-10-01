@@ -1,0 +1,1148 @@
+{
+ "what": "the compare battery's manifest. The identity-census corpus is 30 published Feynman-integral families (the rows of the paper's family table) each paired with the graph the paper draws for it; several rows carry more than one family (a corrected family beside the one it replaced, or two variants). For every family-level entry this file names the sha-pinned fixtures that are the corpus's family file, kinematics and drawn graph, and the census's verdict string, which the compare mode must reproduce exactly; the dual cases (one family against a second reading of the drawing) carry their own expected strings; the row-level rollups ('see families: X / Y') are joined from the family verdicts in the census's order; the census's verdict-count summary and counting rule are copied here and re-derived by the battery from the entries. Fixture directory names are corpus identifiers: cured_* is a corrected family, retired_* the family it replaced.",
+ "census": "identity_census",
+ "summary_verdict_counts": {
+  "IDENTITY-PASS": 29,
+  "FAMILY-MISMATCH": 4,
+  "NON-GRAPH": 1
+ },
+ "verdict_count_convention": {
+  "counting_rule": "verdict_counts counts ONE verdict per corpus row: for a row with family-level entries the family verdicts (each family counted), for a row without them the row verdict; entry_counts counts every entry (row-level and family-level); the two differ where a row carries several entries; the rows listed under rows_not_compared are excluded from both",
+  "per_row_verdict_counts_rederived": {
+   "IDENTITY-PASS": 29,
+   "FAMILY-MISMATCH": 4,
+   "NON-GRAPH": 1
+  },
+  "per_row_rule_text": "per row: a row's family-level entries replace its row-level entry",
+  "summary_entry_counts": {
+   "IDENTITY-PASS": 32,
+   "FAMILY-MISMATCH": 4,
+   "see": 3,
+   "NON-GRAPH": 1
+  },
+  "entry_counts_rederived": {
+   "IDENTITY-PASS": 32,
+   "FAMILY-MISMATCH": 4,
+   "see": 3,
+   "NON-GRAPH": 1
+  },
+  "rollup_bucket": "see",
+  "rollup_bucket_rule": "the one key of summary_entry_counts that is not a key of summary_verdict_counts: the row-level 'see families' pointer entries, one per rollup",
+  "pair_verdict_counts": {
+   "IDENTITY-PASS": 32,
+   "FAMILY-MISMATCH": 4,
+   "NON-GRAPH": 1
+  },
+  "pair_verdict_counts_rule": "over the battery's pairs (row-level entries that are not rollups + every family-level entry) = summary_entry_counts without the rollup bucket"
+ },
+ "n_entries_in_rows": 40,
+ "n_rows": 30,
+ "n_family_level": 37,
+ "n_rollups": 3,
+ "rows_not_compared": {
+  "rows": [
+   30
+  ],
+  "reason": "row 30 (the LBL3M pair) has no drawn figure in the paper, so the census gave it no compare verdict against a drawing; its family files ship under row30/ as fixtures for the isomorphism and label batteries only, and this manifest names no entry, no rollup and no fixture for it"
+ },
+ "entries": [
+  {
+   "key": "row01",
+   "row": 1,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row01/family_of_record.jl",
+     "record_sha16": "437a14442988383e",
+     "vendored_sha16": "f252b561257b7839"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row01/drawn_graph.yaml",
+     "record_sha16": "3717ac6c9f91b2e5",
+     "vendored_sha16": "160f4f486799b5a1"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row02",
+   "row": 2,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row02/family_of_record.jl",
+     "record_sha16": "9956a26df0f42211",
+     "vendored_sha16": "ddc75ae24954b081"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row02/drawn_graph.yaml",
+     "record_sha16": "3be486171db7df8b",
+     "vendored_sha16": "61dd5328d6ffdcfb"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row04",
+   "row": 4,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row04/family_of_record.yaml",
+     "record_sha16": "c61b80c50011b900",
+     "vendored_sha16": "c61b80c50011b900"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row04/drawn_graph.yaml",
+     "record_sha16": "805fb0c14e9ecc76",
+     "vendored_sha16": "87bcbde125b06c81"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "FAMILY-MISMATCH"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row05",
+   "row": 5,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row05/family_of_record.yaml",
+     "record_sha16": "7704a3a5bae7ba03",
+     "vendored_sha16": "0ec539a5fec61bdf"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row05/drawn_graph.yaml",
+     "record_sha16": "c98556ede2cf7f47",
+     "vendored_sha16": "33984b814f95f701"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row06/cured_ladder_sudakovPR0",
+   "row": 6,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row06/cured_ladder_sudakovPR0/family_of_record.yaml",
+     "record_sha16": "403fa62eebcfe2e3",
+     "vendored_sha16": "403fa62eebcfe2e3"
+    },
+    "kinematics": {
+     "fixture": "row06/cured_ladder_sudakovPR0/kinematics_of_record.yaml",
+     "record_sha16": "965813f3b8b86f9f",
+     "vendored_sha16": "965813f3b8b86f9f"
+    },
+    "drawn": {
+     "fixture": "row06/cured_ladder_sudakovPR0/drawn_graph.yaml",
+     "record_sha16": "0bd538562c46d2c1",
+     "vendored_sha16": "bed3ac955c603574"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row06/retired_sevenline_vertex2L",
+   "row": 6,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row06/retired_sevenline_vertex2L/family_of_record.json",
+     "record_sha16": "8fbdbc08dbeaae9f",
+     "vendored_sha16": "bdfc6ccc26612fff"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row06/retired_sevenline_vertex2L/drawn_graph.yaml",
+     "record_sha16": "0ea0d1c20ec4bf5f",
+     "vendored_sha16": "9466132e2064caef"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "NON-GRAPH"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row07",
+   "row": 7,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row07/family_of_record.jl",
+     "record_sha16": "2a05037b35e9bad8",
+     "vendored_sha16": "59dccd6ed629b5d1"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row07/drawn_graph.yaml",
+     "record_sha16": "012e5601e036bc1d",
+     "vendored_sha16": "047a94a5a2be7935"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row08",
+   "row": 8,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row08/family_of_record.json",
+     "record_sha16": "ca48d2e3be44ddfa",
+     "vendored_sha16": "4109f261715a4cfe"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row08/drawn_graph.yaml",
+     "record_sha16": "c5fbaf98d7894f31",
+     "vendored_sha16": "fa24dcb7064d9cd3"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row09",
+   "row": 9,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row09/family_of_record.json",
+     "record_sha16": "b4789d3265a44523",
+     "vendored_sha16": "8321e31459aa5e2b"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row09/drawn_graph.yaml",
+     "record_sha16": "b5861adc561d5306",
+     "vendored_sha16": "2841e2ae08759216"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row10",
+   "row": 10,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row10/family_of_record.json",
+     "record_sha16": "ce8e31ce94988a48",
+     "vendored_sha16": "adb680a25b1132ac"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row10/drawn_graph.yaml",
+     "record_sha16": "69dbc58e2446372a",
+     "vendored_sha16": "2ad28d93667e43ec"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row11",
+   "row": 11,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row11/family_of_record.json",
+     "record_sha16": "23e2e0a5f6bad622",
+     "vendored_sha16": "a7acd63a397d3e0f"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row11/drawn_graph.yaml",
+     "record_sha16": "fd11a93933969f5c",
+     "vendored_sha16": "3d676688bb7f44c7"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row12",
+   "row": 12,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row12/family_of_record.json",
+     "record_sha16": "53dd1fa882bc91b0",
+     "vendored_sha16": "2f4f811368032eb8"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row12/drawn_graph_112.yaml",
+     "record_sha16": "e6fc38633a622cb3",
+     "vendored_sha16": "3afedc59b3a4ad57"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row13",
+   "row": 13,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row13/family_of_record.json",
+     "record_sha16": "0eda3ecf6d628faf",
+     "vendored_sha16": "3acdcb030faec81f"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row13/drawn_graph.yaml",
+     "record_sha16": "1d9f848a33e08047",
+     "vendored_sha16": "f2e0a018ce4e788f"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row14",
+   "row": 14,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row14/family_of_record.yaml",
+     "record_sha16": "a6d50193eabd44f3",
+     "vendored_sha16": "a6d50193eabd44f3"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row14/drawn_graph.yaml",
+     "record_sha16": "9d1bb8cf6ca784e3",
+     "vendored_sha16": "e9c6eb631a18d650"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row15",
+   "row": 15,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row15/family_of_record_kira_icc_eqmass.yaml",
+     "record_sha16": "9d0e526a98317304",
+     "vendored_sha16": "9d0e526a98317304"
+    },
+    "kinematics": {
+     "fixture": "row15/kinematics_of_record.yaml",
+     "record_sha16": "961466e57b445b71",
+     "vendored_sha16": "961466e57b445b71"
+    },
+    "drawn": {
+     "fixture": "row15/drawn_graph.yaml",
+     "record_sha16": "2673aab9b205d47e",
+     "vendored_sha16": "2673aab9b205d47e"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row16",
+   "row": 16,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row16/family_of_record_amflow_iccg_generic__ge1_xm2.json",
+     "record_sha16": "a64d37f50cabdce0",
+     "vendored_sha16": "87d4becb98d7d813"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row16/drawn_graph.yaml",
+     "record_sha16": "0d09c246ad198687",
+     "vendored_sha16": "0d09c246ad198687"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row17",
+   "row": 17,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row17/family_of_record_amflow_icc_eqmass__e1hp_xm1_g320.json",
+     "record_sha16": "cb1fbf9c13ee2c87",
+     "vendored_sha16": "0c51e5734673787d"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row17/drawn_graph.yaml",
+     "record_sha16": "5af083c5647fb019",
+     "vendored_sha16": "5af083c5647fb019"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": [
+    {
+     "family": {
+      "fixture": "row17/family_of_record_amflow_iccg_generic__ge1_xm2.json",
+      "record_sha16": "a64d37f50cabdce0",
+      "vendored_sha16": "87d4becb98d7d813"
+     },
+     "kinematics": null,
+     "drawn": {
+      "fixture": "row17/drawn_graph_generic_panel.yaml",
+      "record_sha16": "378c80e6b36bae0c",
+      "vendored_sha16": "378c80e6b36bae0c"
+     },
+     "expected": "IDENTITY-PASS",
+     "why": "the right panel of the figure against the generic-mass family"
+    }
+   ]
+  },
+  {
+   "key": "row18",
+   "row": 18,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row18/family_of_record_fam2.yaml",
+     "record_sha16": "46ed6f4e8018ac4e",
+     "vendored_sha16": "c1c9c4e3ea6eb708"
+    },
+    "kinematics": {
+     "fixture": "row18/record_family/kinematics.yaml",
+     "record_sha16": "92a51801e6469b2b",
+     "vendored_sha16": "c954a8dd9227b644"
+    },
+    "drawn": {
+     "fixture": "row18/drawn_graph.yaml",
+     "record_sha16": "d1863cd7d2580b6f",
+     "vendored_sha16": "d1863cd7d2580b6f"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row18/record_family",
+   "row": 18,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row18/record_family/integralfamilies.yaml",
+     "record_sha16": "1404b40f58f2be65",
+     "vendored_sha16": "385204edb7ee54b9"
+    },
+    "kinematics": {
+     "fixture": "row18/record_family/kinematics.yaml",
+     "record_sha16": "92a51801e6469b2b",
+     "vendored_sha16": "c954a8dd9227b644"
+    },
+    "drawn": {
+     "fixture": "row18/drawn_graph.yaml",
+     "record_sha16": "d1863cd7d2580b6f",
+     "vendored_sha16": "d1863cd7d2580b6f"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": "ggH_fam2",
+    "families_in_file": [
+     "ggH_fam2",
+     "ggH_fam5"
+    ],
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row19",
+   "row": 19,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row19/family_of_record.yaml",
+     "record_sha16": "e50056c83e5bbb9b",
+     "vendored_sha16": "e50056c83e5bbb9b"
+    },
+    "kinematics": {
+     "fixture": "row19/family_kinematics.yaml",
+     "record_sha16": "2b383b50c72a400c",
+     "vendored_sha16": "2b383b50c72a400c"
+    },
+    "drawn": {
+     "fixture": "row19/drawn_graph.yaml",
+     "record_sha16": "8a224ca4ebbaac29",
+     "vendored_sha16": "ab3399318550a5a6"
+    },
+    "drawn_kinematics": {
+     "fixture": "row19/drawn_kinematics.yaml",
+     "record_sha16": "08ccb1bef756189c",
+     "vendored_sha16": "08ccb1bef756189c"
+    },
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row20",
+   "row": 20,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row20/family_of_record.yaml",
+     "record_sha16": "d4aef7e8609a1f65",
+     "vendored_sha16": "d4aef7e8609a1f65"
+    },
+    "kinematics": {
+     "fixture": "row20/family_kinematics.yaml",
+     "record_sha16": "9fb7631fb6a8455a",
+     "vendored_sha16": "9fb7631fb6a8455a"
+    },
+    "drawn": {
+     "fixture": "row20/drawn_graph.yaml",
+     "record_sha16": "ada3afeb450681d5",
+     "vendored_sha16": "c756f4b316e8953f"
+    },
+    "drawn_kinematics": {
+     "fixture": "row20/drawn_kinematics.yaml",
+     "record_sha16": "b749dd5cf53fee3f",
+     "vendored_sha16": "b749dd5cf53fee3f"
+    },
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row21",
+   "row": 21,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row21/family_of_record.json",
+     "record_sha16": "40e020c38798fa10",
+     "vendored_sha16": "209d2d1741147557"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row21/drawn_graph.yaml",
+     "record_sha16": "6aad21f0c76a2a10",
+     "vendored_sha16": "c307f8008add78e6"
+    },
+    "drawn_kinematics": null,
+    "integral_index": 2,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row23",
+   "row": 23,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row23/family_of_record_kira_kite_thr_detransport.yaml",
+     "record_sha16": "53657fedefba6137",
+     "vendored_sha16": "53657fedefba6137"
+    },
+    "kinematics": {
+     "fixture": "row23/kinematics_of_record.yaml",
+     "record_sha16": "5ee9f2717eca1c02",
+     "vendored_sha16": "5ee9f2717eca1c02"
+    },
+    "drawn": {
+     "fixture": "row23/drawn_graph.yaml",
+     "record_sha16": "d543cee9d642d5ff",
+     "vendored_sha16": "d543cee9d642d5ff"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row24/cured_adjacent_p3p4",
+   "row": 24,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row24/cured_adjacent_p3p4/family_of_record.json",
+     "record_sha16": "de08e62a6b7edf47",
+     "vendored_sha16": "1864217f1e908a08"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row24/cured_adjacent_p3p4/drawn_graph.yaml",
+     "record_sha16": "f8e2d75946979319",
+     "vendored_sha16": "deaf450f7c9f436d"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "FAMILY-MISMATCH"
+   },
+   "extras": [
+    {
+     "drawn": {
+      "fixture": "row24/cured_adjacent_p3p4/drawn_graph_adjacent_reading.yaml",
+      "record_sha16": "6ff67ea18399c22e",
+      "vendored_sha16": "0ecab16ea27b1c9c"
+     },
+     "drawn_kinematics": null,
+     "expected": "IDENTITY-PASS",
+     "reading": "the adjacent reading of the drawing (p3, p4 off shell)"
+    }
+   ],
+   "also": []
+  },
+  {
+   "key": "row24/double_pentagon",
+   "row": 24,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row24/double_pentagon/family_of_record.yaml",
+     "record_sha16": "e08d91b95cc5708a",
+     "vendored_sha16": "e08d91b95cc5708a"
+    },
+    "kinematics": {
+     "fixture": "row24/double_pentagon/kinematics_of_record.yaml",
+     "record_sha16": "352698cd1f220498",
+     "vendored_sha16": "352698cd1f220498"
+    },
+    "drawn": {
+     "fixture": "row24/double_pentagon/drawn_graph.yaml",
+     "record_sha16": "03c37fc58fd4f0ef",
+     "vendored_sha16": "80ba6653e7022cc1"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "FAMILY-MISMATCH"
+   },
+   "extras": [
+    {
+     "drawn": {
+      "fixture": "row24/double_pentagon/drawn_graph_record_edgelist.yaml",
+      "record_sha16": "1f02e675c6e3be01",
+      "vendored_sha16": "ad8cdc3cfc6d5fd7"
+     },
+     "drawn_kinematics": null,
+     "expected": "IDENTITY-PASS",
+     "reading": "the family's own edge list"
+    }
+   ],
+   "also": []
+  },
+  {
+   "key": "row24/retired_nonadjacent_p1p3",
+   "row": 24,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row24/retired_nonadjacent_p1p3/family_of_record.yaml",
+     "record_sha16": "9cb3b9b0d49d4ceb",
+     "vendored_sha16": "9cb3b9b0d49d4ceb"
+    },
+    "kinematics": {
+     "fixture": "row24/retired_nonadjacent_p1p3/kinematics_of_record.yaml",
+     "record_sha16": "64d62e86c0b095e8",
+     "vendored_sha16": "64d62e86c0b095e8"
+    },
+    "drawn": {
+     "fixture": "row24/retired_nonadjacent_p1p3/drawn_graph.yaml",
+     "record_sha16": "f8e2d75946979319",
+     "vendored_sha16": "deaf450f7c9f436d"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [
+    {
+     "drawn": {
+      "fixture": "row24/cured_adjacent_p3p4/drawn_graph_adjacent_reading.yaml",
+      "record_sha16": "6ff67ea18399c22e",
+      "vendored_sha16": "0ecab16ea27b1c9c"
+     },
+     "drawn_kinematics": null,
+     "expected": "FAMILY-MISMATCH",
+     "reading": "the adjacent reading of the drawing (p3, p4 off shell)"
+    }
+   ],
+   "also": []
+  },
+  {
+   "key": "row27/cured_drawn_box_LBL3Ebox",
+   "row": 27,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row27/cured_drawn_box_LBL3Ebox/family_of_record.yaml",
+     "record_sha16": "12ea800ae6c1ce6b",
+     "vendored_sha16": "d8f4dc0de7d04f58"
+    },
+    "kinematics": {
+     "fixture": "row27/cured_drawn_box_LBL3Ebox/kinematics_of_record.yaml",
+     "record_sha16": "25c5b17df803a414",
+     "vendored_sha16": "25c5b17df803a414"
+    },
+    "drawn": {
+     "fixture": "row27/cured_drawn_box_LBL3Ebox/drawn_graph.yaml",
+     "record_sha16": "4706de1a52b32334",
+     "vendored_sha16": "ecb7b5a4e4e7b6b5"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row27/retired_threepoint_LBL3E",
+   "row": 27,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row27/retired_threepoint_LBL3E/family_of_record.yaml",
+     "record_sha16": "5c216e4a63d149c1",
+     "vendored_sha16": "4c8d24cf12e8f087"
+    },
+    "kinematics": {
+     "fixture": "row27/retired_threepoint_LBL3E/kinematics_of_record.yaml",
+     "record_sha16": "25c5b17df803a414",
+     "vendored_sha16": "25c5b17df803a414"
+    },
+    "drawn": {
+     "fixture": "row27/retired_threepoint_LBL3E/drawn_graph.yaml",
+     "record_sha16": "4706de1a52b32334",
+     "vendored_sha16": "ecb7b5a4e4e7b6b5"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "FAMILY-MISMATCH"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row28",
+   "row": 28,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row28/family_of_record.json",
+     "record_sha16": "667dd7f5cb1b7bb2",
+     "vendored_sha16": "61c4e46fb523550b"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row28/drawn_graph.yaml",
+     "record_sha16": "bbaef6dbd95ab10f",
+     "vendored_sha16": "d69e033918b66544"
+    },
+    "drawn_kinematics": null,
+    "integral_index": 0,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row29",
+   "row": 29,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row29/family_of_record.json",
+     "record_sha16": "0fec931b3d400d3e",
+     "vendored_sha16": "768fd40d15f65236"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row29/drawn_graph.yaml",
+     "record_sha16": "f18dcda6972d46be",
+     "vendored_sha16": "440576817cc5bd06"
+    },
+    "drawn_kinematics": null,
+    "integral_index": 0,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row31",
+   "row": 31,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row31/family_of_record.yaml",
+     "record_sha16": "dd7fc290c424410b",
+     "vendored_sha16": "4c748aa2bdb4c57d"
+    },
+    "kinematics": {
+     "fixture": "row31/family_kinematics.yaml",
+     "record_sha16": "d39dcfe38892d94a",
+     "vendored_sha16": "d39dcfe38892d94a"
+    },
+    "drawn": {
+     "fixture": "row31/drawn_graph.yaml",
+     "record_sha16": "f92e3f9afba94897",
+     "vendored_sha16": "4bcc152d1d63c98f"
+    },
+    "drawn_kinematics": {
+     "fixture": "row31/drawn_kinematics.yaml",
+     "record_sha16": "08ccb1bef756189c",
+     "vendored_sha16": "08ccb1bef756189c"
+    },
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row31/record_family",
+   "row": 31,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row31/record_family/integralfamilies.yaml",
+     "record_sha16": "776a687f302b631e",
+     "vendored_sha16": "ad8c148d5ff32a7d"
+    },
+    "kinematics": {
+     "fixture": "row31/record_family/kinematics.yaml",
+     "record_sha16": "3fa0d25073c77c75",
+     "vendored_sha16": "dbe80a5cec70645d"
+    },
+    "drawn": {
+     "fixture": "row31/drawn_graph.yaml",
+     "record_sha16": "f92e3f9afba94897",
+     "vendored_sha16": "4bcc152d1d63c98f"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row32",
+   "row": 32,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row32/family_of_record.yaml",
+     "record_sha16": "e71b606b6c308293",
+     "vendored_sha16": "457e82a9a53b2b5f"
+    },
+    "kinematics": {
+     "fixture": "row32/family_kinematics.yaml",
+     "record_sha16": "d39dcfe38892d94a",
+     "vendored_sha16": "d39dcfe38892d94a"
+    },
+    "drawn": {
+     "fixture": "row32/drawn_graph.yaml",
+     "record_sha16": "2d38f65ee8d6183b",
+     "vendored_sha16": "bc0157b2f5eb579c"
+    },
+    "drawn_kinematics": {
+     "fixture": "row32/drawn_kinematics.yaml",
+     "record_sha16": "08ccb1bef756189c",
+     "vendored_sha16": "08ccb1bef756189c"
+    },
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row32/record_family",
+   "row": 32,
+   "level": "family",
+   "pair": {
+    "family": {
+     "fixture": "row32/record_family/integralfamilies.yaml",
+     "record_sha16": "6c41be5c5ff85e5a",
+     "vendored_sha16": "387c1050ace40b31"
+    },
+    "kinematics": {
+     "fixture": "row32/record_family/kinematics.yaml",
+     "record_sha16": "61c2eefdca3e47eb",
+     "vendored_sha16": "492d308419d8ab36"
+    },
+    "drawn": {
+     "fixture": "row32/drawn_graph.yaml",
+     "record_sha16": "2d38f65ee8d6183b",
+     "vendored_sha16": "bc0157b2f5eb579c"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row33",
+   "row": 33,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row33/family_of_record.json",
+     "record_sha16": "2595b3b08b7112aa",
+     "vendored_sha16": "460475b5991282e8"
+    },
+    "kinematics": null,
+    "drawn": {
+     "fixture": "row33/drawn_graph.yaml",
+     "record_sha16": "97b371761eb34206",
+     "vendored_sha16": "484ccb7f9657f612"
+    },
+    "drawn_kinematics": null,
+    "integral_index": 0,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row34",
+   "row": 34,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row34/family_of_record.yaml",
+     "record_sha16": "14c51713c29a4f59",
+     "vendored_sha16": "14c51713c29a4f59"
+    },
+    "kinematics": {
+     "fixture": "row34/family_kinematics.yaml",
+     "record_sha16": "2b383b50c72a400c",
+     "vendored_sha16": "2b383b50c72a400c"
+    },
+    "drawn": {
+     "fixture": "row34/drawn_graph.yaml",
+     "record_sha16": "5fb2edbfacc2d500",
+     "vendored_sha16": "7170eb1c9bdafff6"
+    },
+    "drawn_kinematics": {
+     "fixture": "row34/drawn_kinematics.yaml",
+     "record_sha16": "08ccb1bef756189c",
+     "vendored_sha16": "08ccb1bef756189c"
+    },
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  },
+  {
+   "key": "row35",
+   "row": 35,
+   "level": "row",
+   "pair": {
+    "family": {
+     "fixture": "row35/family_of_record.yaml",
+     "record_sha16": "3d3f3825b7b83326",
+     "vendored_sha16": "3d3f3825b7b83326"
+    },
+    "kinematics": {
+     "fixture": "row35/kinematics_of_record.yaml",
+     "record_sha16": "63aee0ed75326706",
+     "vendored_sha16": "63aee0ed75326706"
+    },
+    "drawn": {
+     "fixture": "row35/drawn_graph.yaml",
+     "record_sha16": "d20c7d003630b298",
+     "vendored_sha16": "1d180206dd0640e3"
+    },
+    "drawn_kinematics": null,
+    "integral_index": null,
+    "family_name": null,
+    "families_in_file": null,
+    "expected": "IDENTITY-PASS"
+   },
+   "extras": [],
+   "also": []
+  }
+ ],
+ "rollups": [
+  {
+   "key": "row06",
+   "row": 6,
+   "level": "row",
+   "verdict": "see families: IDENTITY-PASS / NON-GRAPH",
+   "families_in_order": [
+    "row06/cured_ladder_sudakovPR0",
+    "row06/retired_sevenline_vertex2L"
+   ]
+  },
+  {
+   "key": "row24",
+   "row": 24,
+   "level": "row",
+   "verdict": "see families: FAMILY-MISMATCH / FAMILY-MISMATCH / IDENTITY-PASS",
+   "families_in_order": [
+    "row24/cured_adjacent_p3p4",
+    "row24/double_pentagon",
+    "row24/retired_nonadjacent_p1p3"
+   ]
+  },
+  {
+   "key": "row27",
+   "row": 27,
+   "level": "row",
+   "verdict": "see families: IDENTITY-PASS / FAMILY-MISMATCH",
+   "families_in_order": [
+    "row27/cured_drawn_box_LBL3Ebox",
+    "row27/retired_threepoint_LBL3E"
+   ]
+  }
+ ]
+}

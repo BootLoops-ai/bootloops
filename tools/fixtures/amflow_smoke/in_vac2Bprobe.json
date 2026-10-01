@@ -1,0 +1,82 @@
+{
+ "mode": "solve_integrals",
+ "family": {
+  "name": "vac2B",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [],
+  "replacement": {},
+  "propagators": [
+   "(k1)^2",
+   "(k1 + k2)^2 - Msq",
+   "(k2)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    2,
+    1
+   ]
+  },
+  {
+   "indices": [
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    3
+   ]
+  },
+  {
+   "indices": [
+    -1,
+    2,
+    2
+   ]
+  }
+ ],
+ "options": {
+  "working_pre": 200,
+  "chop_pre": 40,
+  "rationalize_pre": 160,
+  "x_order": 60,
+  "eps_parallel": 4,
+  "silent_mode": true
+ },
+ "eps_order": 12,
+ "goal": 60,
+ "work_dir": "/tmp/amflow_work_vac",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 12,
+  "blackbox": {
+   "ibp_rank": 2,
+   "ibp_dot": 2,
+   "integral_order": 5,
+   "n_thread": 4,
+   "numeric_values": {
+    "Msq": "1"
+   },
+   "eps_parallel": 4
+  }
+ }
+}

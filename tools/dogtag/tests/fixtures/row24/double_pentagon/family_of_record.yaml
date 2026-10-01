@@ -1,0 +1,19 @@
+integralfamilies:
+  - name: "ndpent"
+    loop_momenta: [k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      # 8 genuine massless propagators of the non-planar double-pentagon
+      - [ "k1", 0 ]                       # D1  edge a
+      - [ "k2", 0 ]                       # D2  edge d
+      - [ "k1 + p2", 0 ]                  # D3  edge b
+      - [ "k2 - p3", 0 ]                  # D4  edge c
+      - [ "k2 + p4", 0 ]                  # D5  edge e
+      - [ "k1 - p1", 0 ]                  # D6  edge f
+      - [ "-k1 + k2 + p1 + p4", 0 ]       # D7  edge g
+      - [ "-k1 + k2 - p2 - p3", 0 ]       # D8  edge h
+      # 3 ISPs
+      - [ "k1 + p3", 0 ]                  # ISP1 ~ k1.p3
+      - [ "k2 + p1", 0 ]                  # ISP2 ~ k2.p1
+      - [ "k1 + p4", 0 ]                  # ISP3 ~ k1.p4
+    cut_propagators: []

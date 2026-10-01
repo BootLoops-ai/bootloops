@@ -1,0 +1,15 @@
+# TRANSCRIPTION of the amflow-cpp family block of uncut_d2_in_0.json (sha16 5fc8ed282ed6e655) for topology_audit (which reads only yaml/jl).
+# family blocks identical across 1 configs: True
+# legs (record): ['p']; replacement: {"p^2": "s"}; numeric_values: {"s": "-1", "Msq": "9/10"}
+# mass symbols substituted from numeric_values: {}; top sector = integral [1, 1, 1, 0, 0]
+integralfamilies:
+  - name: "sr2d2"
+    loop_momenta: [l1, l2]
+    top_level_sectors: [7]
+    propagators:
+      - [ "(l1)^2", 1 ]
+      - [ "(l2)^2", 1 ]
+      - [ "(l1 + l2 - p)^2", Msq ]
+      - [ "(l1 - p)^2", 0 ]
+      - [ "(l2 - p)^2", 0 ]
+    cut_propagators: []

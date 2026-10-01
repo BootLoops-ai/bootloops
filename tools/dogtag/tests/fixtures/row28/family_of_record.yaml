@@ -1,0 +1,25 @@
+# DERIVED Kira-form transcription of the AMFlow-port config of record deepgrid.json
+# source sha256 667dd7f5cb1b7bb297099514b77e0d413cb4d6d1411eca453d943be5b54112ad; propagator strings verbatim; top_level_sectors = nonzero
+# indices of integrals[0] = [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]; legs ['p1', 'p2', 'p3', 'p4'], {'p4': '-p1-p2-p3'}
+# written by the identity census (topology_audit reads yaml/jl only)
+integralfamilies:
+  - name: "lbl3se"
+    loop_momenta: [l, k1, k2]
+    top_level_sectors: [255]
+    propagators:
+      - [ "(l + p1)^2 - msq", 0 ]
+      - [ "(l + p1 + p2)^2 - msq", 0 ]
+      - [ "(l + p1 + p2 + p3)^2 - msq", 0 ]
+      - [ "k1^2 - msq", 0 ]
+      - [ "k2^2 - msq", 0 ]
+      - [ "(l - k1 - k2)^2 - msq", 0 ]
+      - [ "(l - k1)^2", 0 ]
+      - [ "(l - k2)^2", 0 ]
+      - [ "(l + p2)^2", 0 ]
+      - [ "(k1 + p1)^2", 0 ]
+      - [ "(k1 + p2)^2", 0 ]
+      - [ "(k1 + p3)^2", 0 ]
+      - [ "(k2 + p1)^2", 0 ]
+      - [ "(k2 + p2)^2", 0 ]
+      - [ "(k2 + p3)^2", 0 ]
+    cut_propagators: []

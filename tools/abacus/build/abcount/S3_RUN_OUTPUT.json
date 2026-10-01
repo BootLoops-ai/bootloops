@@ -1,0 +1,967 @@
+{
+ "stage": "S3",
+ "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d",
+ "checks": [
+  {
+   "check": "sha-pin-seeds-binding-verify",
+   "verdict": "OK",
+   "detail": {
+    "M3T_REGISTRATION.md": {
+     "got": "85ed68777d171378",
+     "match": true
+    },
+    "M3T_VALIDATION_BATTERY.md": {
+     "got": "af97c604704f64e7",
+     "match": true
+    },
+    "S0PRE_RECEIPT.md": {
+     "got": "a23cb2ebe8de4b08",
+     "match": true
+    },
+    "build/abcount/abcount_s0.py": {
+     "got": "cf0879a33771bbd5",
+     "match": true
+    },
+    "build/abcount/abcount_s1.py": {
+     "got": "3c1d0b8eba1e6f30",
+     "match": true
+    },
+    "build/abcount/abcount_s2.py": {
+     "got": "3dd63aa52e25e855",
+     "match": true
+    },
+    "build/abcount/hecke_desk.py": {
+     "got": "38433f503ffbbcf8",
+     "match": true
+    },
+    "build/abcount/theta_g4_bridge.jl": {
+     "got": "863f7c3d4f0fd298",
+     "match": true
+    },
+    "build/abcount/period_g2_bridge.jl": {
+     "got": "19874a48bb95c91e",
+     "match": true
+    },
+    "build/abcount/battery/SEEDS.json": {
+     "got": "9da4d6eebfced237",
+     "match": true
+    }
+   }
+  },
+  {
+   "check": "B2-B3-replay-run_s2-under-reconstructed-S2-revision",
+   "verdict": "OK",
+   "detail": {
+    "seeds_swap": {
+     "reconstructed_s2_sha": "23c86ba23c6b9b9e16d7f9342bd04b48e70bdffc437c6aa4065aa062f3e3488e",
+     "isolation": "replay ran in a scratch copy of the lane; the shipped SEEDS.json was never written",
+     "shipped_s3_sha_ok": true,
+     "s2stage_artifact_preserved": "S2_RUN_OUTPUT_s2stage.json"
+    },
+    "run_s2": {
+     "returncode": 0,
+     "verdict": "S2-PASS",
+     "checks_ok": "14/14",
+     "wall_seconds": 30.6,
+     "verdict_line": "VERDICT: S2-PASS 14/14 wall: {'elapsed_s': 30.511, 'rss_gb': 0.0431}"
+    },
+    "discipline": "verifier re-run, result checked, never quoted from memory"
+   }
+  },
+  {
+   "check": "B1-blocks-tau-H1-genus1-theta",
+   "verdict": "OK",
+   "detail": [
+    {
+     "label": "11a1",
+     "disc_match": true,
+     "arb_vs_desk_overlap": [
+      true,
+      true,
+      true
+     ],
+     "jacobi_ok": true,
+     "im_tau_pos": true
+    },
+    {
+     "label": "14a1",
+     "disc_match": true,
+     "arb_vs_desk_overlap": [
+      true,
+      true,
+      true
+     ],
+     "jacobi_ok": true,
+     "im_tau_pos": true
+    },
+    {
+     "label": "15a1",
+     "disc_match": true,
+     "arb_vs_desk_overlap": [
+      true,
+      true,
+      true
+     ],
+     "jacobi_ok": true,
+     "im_tau_pos": true
+    },
+    {
+     "label": "17a1",
+     "disc_match": true,
+     "arb_vs_desk_overlap": [
+      true,
+      true,
+      true
+     ],
+     "jacobi_ok": true,
+     "im_tau_pos": true
+    }
+   ]
+  },
+  {
+   "check": "B1-C7-pilot-cross-check",
+   "verdict": "OK",
+   "detail": {
+    "tail_bound": "[4.6515550e-188 +/- 6.75e-197]",
+    "matched_prec_bits": 687,
+    "dominance_violations": [],
+    "overlap_failures": [],
+    "tau_echo_exact": true,
+    "tail_bound_receipt_N": 12,
+    "pilot_cost_s": 1.6152889728546143
+   }
+  },
+  {
+   "check": "B1-member-theta-receipts-route-T",
+   "verdict": "OK",
+   "detail": {
+    "odd_failures": [],
+    "product_failures": [],
+    "radius_failures": [],
+    "route_T_scope": "receipts only, no Frobenius data"
+   }
+  },
+  {
+   "check": "B1-pslq-recognition-control",
+   "verdict": "OK",
+   "detail": {
+    "vector_got": [
+     161051,
+     122023936
+    ],
+    "vector_expected": [
+     161051,
+     122023936
+    ],
+    "reverify_ok": true
+   }
+  },
+  {
+   "check": "B1-integer-routes-p13",
+   "verdict": "OK",
+   "detail": {
+    "path1_ellap": [
+     4,
+     -4,
+     -2,
+     -2
+    ],
+    "path2_desk": [
+     4,
+     -4,
+     -2,
+     -2
+    ],
+    "L_c0_c8": [
+     1,
+     4,
+     40,
+     92,
+     638,
+     1196,
+     6760,
+     8788,
+     28561
+    ],
+    "weil_box": "OK",
+    "count_P1": 46080,
+    "pinned_truth": 46080,
+    "functional_equation": true
+   }
+  },
+  {
+   "check": "B1-integer-routes-p31",
+   "verdict": "OK",
+   "detail": {
+    "path1_ellap": [
+     7,
+     -4,
+     0,
+     4
+    ],
+    "path2_desk": [
+     7,
+     -4,
+     0,
+     4
+    ],
+    "L_c0_c8": [
+     1,
+     -7,
+     108,
+     -539,
+     4774,
+     -16709,
+     103788,
+     -208537,
+     923521
+    ],
+    "weil_box": "OK",
+    "count_P1": 806400,
+    "pinned_truth": 806400,
+    "functional_equation": true
+   }
+  },
+  {
+   "check": "B4-OK-action-layer",
+   "verdict": "OK",
+   "detail": {
+    "rho_receipts": {
+     "predicates": [
+      {
+       "name": "OK-action-rho-square-eq-minus5",
+       "ok": true,
+       "claim": "rho^2 = -5*Id (exact integer)",
+       "residual_nonzero_entries": []
+      },
+      {
+       "name": "OK-action-lattice-preservation",
+       "ok": true,
+       "claim": "rho is an integer matrix on the pinned lattice basis"
+      },
+      {
+       "name": "OK-action-rosati-scaling",
+       "ok": true,
+       "claim": "E(rho x, rho y) = 5 E(x, y): rho^T E rho = 5E"
+      },
+      {
+       "name": "OK-action-rosati-antiadjoint",
+       "ok": true,
+       "claim": "E(rho x, y) + E(x, rho y) = 0 (Rosati(rho) = -rho)"
+      }
+     ],
+     "failing_predicate": null
+    },
+    "polarization": {
+     "predicate": "polarization-type-frobenius-normal-form",
+     "alternating_integral": true,
+     "snf_divisors": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "snf_pair_structure_ok": true,
+     "symplectic_type": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "declared_elementary_divisors": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "match": true,
+     "failing_predicate": null
+    },
+    "analytic": {
+     "predicates": [
+      {
+       "name": "rho-C-linearity(A*Pi=Pi*M)",
+       "ok": true
+      },
+      {
+       "name": "rho-analytic-square-eq-minus5",
+       "ok": true
+      },
+      {
+       "name": "rho-holomorphic-eigenvalue-scalar",
+       "ok": true
+      }
+     ],
+     "holomorphic_eigenvalue": "s*i*sqrt(5), s = +1",
+     "failing_predicate": null
+    },
+    "sign_pin": {
+     "predicate": "sign-convention-pin(s1)",
+     "declared_s1": "P",
+     "required_holomorphic_sign": 1,
+     "input_holomorphic_sign": 1,
+     "verdict": "OK",
+     "law": "verification only; NO conversion here (single site = abcount_s0.convert_sign_convention)"
+    }
+   }
+  },
+  {
+   "check": "B4-routes-p11",
+   "verdict": "OK",
+   "detail": {
+    "path1_ellap_per_P": [
+     {
+      "sqrt5_residue": 4,
+      "j_mod_P": 0,
+      "model": "ellfromj (standard model singular: j(1728-j) = 0 mod p)",
+      "twist_invariance_license": "p inert in K => supersingular => a_P = 0 for EVERY twist (SEEDS B4.model_degeneracy_note + derivation_p11_twist_invariance)",
+      "ellap": 0
+     },
+     {
+      "sqrt5_residue": 7,
+      "j_mod_P": 1,
+      "model": "ellfromj (standard model singular: j(1728-j) = 0 mod p)",
+      "twist_invariance_license": "p inert in K => supersingular => a_P = 0 for EVERY twist (SEEDS B4.model_degeneracy_note + derivation_p11_twist_invariance)",
+      "ellap": 0
+     }
+    ],
+    "path2_hecke_desk": {
+     "euler_criterion": "(-5|11) = -1",
+     "closed_form": "inert => supersingular reduction => a_P = 0 mod p; |a_P| <= 2*sqrt(p) < p => a_P = 0 exactly",
+     "pari_free": true
+    },
+    "L_p_deg16_c0_c4": [
+     1,
+     0,
+     88,
+     0,
+     3388
+    ],
+    "functional_equation_deg16": true,
+    "count_of_record": 429981696,
+    "weil_box_per_P": [
+     "OK",
+     "OK"
+    ],
+    "agreement": "EXACT-INTEGER"
+   }
+  },
+  {
+   "check": "B4-routes-p31",
+   "verdict": "OK",
+   "detail": {
+    "path1_ellap_per_P": [
+     {
+      "sqrt5_residue": 6,
+      "j_mod_P": 2,
+      "model": "pinned standard model reduced at P",
+      "ellap": 0
+     },
+     {
+      "sqrt5_residue": 25,
+      "j_mod_P": 4,
+      "model": "pinned standard model reduced at P",
+      "ellap": 0
+     }
+    ],
+    "path2_hecke_desk": {
+     "euler_criterion": "(-5|31) = -1",
+     "closed_form": "inert => supersingular reduction => a_P = 0 mod p; |a_P| <= 2*sqrt(p) < p => a_P = 0 exactly",
+     "pari_free": true
+    },
+    "L_p_deg16_c0_c4": [
+     1,
+     0,
+     248,
+     0,
+     26908
+    ],
+    "functional_equation_deg16": true,
+    "count_of_record": 1099511627776,
+    "weil_box_per_P": [
+     "OK",
+     "OK"
+    ],
+    "agreement": "EXACT-INTEGER"
+   }
+  },
+  {
+   "check": "B4s-detector-routes",
+   "verdict": "OK",
+   "detail": {
+    "path2_hecke_desk": {
+     "at_pinned": {
+      "a_P": -6,
+      "b_P": -2,
+      "Frob": "u*(3 + 2*rho)"
+     },
+     "at_conjugate": {
+      "a_P": -6,
+      "b_P": 2,
+      "Frob": "u*(3 - 2*rho)"
+     },
+     "receipt": {
+      "cornacchia": "3^2 + 5*2^2 = 29 (exact)",
+      "unit_pin_u": -1,
+      "norm_checks": {
+       "N(pi-1)": 24,
+       "N(pi+1)": 36
+      },
+      "pari_free": true
+     }
+    },
+    "path1_ellap": [
+     {
+      "sqrt5_residue": 11,
+      "j_mod_P": 12,
+      "ellap": -6
+     },
+     {
+      "sqrt5_residue": 18,
+      "j_mod_P": 23,
+      "ellap": -6
+     }
+    ],
+    "path1_torsion_E3": [
+     {
+      "j_mod_P": 12,
+      "F_on_E3": [
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "receipt": {
+       "m": 3,
+       "R_eq_halfinv_uF_minus_3": [
+        [
+         2,
+         0
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "charpoly_ties_ellap": {
+        "tr_F_mod_m": 0,
+        "a_P_mod_m": 0,
+        "det_F_mod_m": 2,
+        "p_mod_m": 2,
+        "ok": true
+       },
+       "rho_relations": {
+        "R^2=-5I": true,
+        "tr=0": true,
+        "det=5": true,
+        "nonscalar": true
+       },
+       "claimed_bP_coherence": {
+        "b_pinned": -2,
+        "b_conjugate": 2,
+        "flip_ok": true
+       },
+       "scope": "congruence-structure receipt: Frob_P = u*(3 + b_P*rho) verified on E[3] up to the rho vs -rho orientation, which is supplied by the ANALYTIC sign pin s (input rho/complex structure) + the Path-2 conjugation-aware CM desk truth (committed desk derivation)",
+       "failing": null
+      }
+     },
+     {
+      "j_mod_P": 23,
+      "F_on_E3": [
+       [
+        2,
+        0
+       ],
+       [
+        0,
+        1
+       ]
+      ],
+      "receipt": {
+       "m": 3,
+       "R_eq_halfinv_uF_minus_3": [
+        [
+         2,
+         0
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "charpoly_ties_ellap": {
+        "tr_F_mod_m": 0,
+        "a_P_mod_m": 0,
+        "det_F_mod_m": 2,
+        "p_mod_m": 2,
+        "ok": true
+       },
+       "rho_relations": {
+        "R^2=-5I": true,
+        "tr=0": true,
+        "det=5": true,
+        "nonscalar": true
+       },
+       "claimed_bP_coherence": {
+        "b_pinned": -2,
+        "b_conjugate": 2,
+        "flip_ok": true
+       },
+       "scope": "congruence-structure receipt: Frob_P = u*(3 + b_P*rho) verified on E[3] up to the rho vs -rho orientation, which is supplied by the ANALYTIC sign pin s (input rho/complex structure) + the Path-2 conjugation-aware CM desk truth (committed desk derivation)",
+       "failing": null
+      }
+     }
+    ],
+    "torsion_pilot_seconds": 0.004,
+    "pair_weil_box": {
+     "enumeration": [
+      [
+       -6,
+       -2
+      ],
+      [
+       -6,
+       2
+      ],
+      [
+       6,
+       -2
+      ],
+      [
+       6,
+       2
+      ]
+     ],
+     "ok": true,
+     "semantics": "FULL enumeration (a/2)^2+5b^2 = 29, a even"
+    },
+    "rho_flip_detector": {
+     "s_pinned": 1,
+     "s_negated_rho": -1,
+     "emitted_at_pinned": {
+      "a_P": -6,
+      "b_P": -2
+     },
+     "emitted_at_pinned_negated_rho": {
+      "a_P": -6,
+      "b_P": 2
+     },
+     "b_P_flips_a_P_invariant": true
+    },
+    "count_E20_F_P": 36
+   }
+  },
+  {
+   "check": "B5-precondition-reprobe",
+   "verdict": "OK",
+   "detail": {
+    "seeds_status": "RUNS",
+    "in_run_probe_ok": true
+   }
+  },
+  {
+   "check": "B5-pilot-pricing",
+   "verdict": "OK",
+   "detail": {
+    "t_F11^4_pilot_s": 0.02,
+    "est_F31^4_s": 1.3,
+    "budget_s": 600
+   }
+  },
+  {
+   "check": "B5-routes-p11",
+   "verdict": "OK",
+   "detail": {
+    "p": 11,
+    "q": 121,
+    "cp_over_Fq": [
+     1,
+     18,
+     276,
+     2178,
+     14641
+    ],
+    "counts": [
+     140,
+     14870
+    ],
+    "L8_c0_c8": [
+     1,
+     0,
+     18,
+     0,
+     276,
+     0,
+     2178,
+     0,
+     14641
+    ],
+    "functional_equation": true,
+    "weil_box": "OK",
+    "count_Res_Fp": 17114,
+    "banked_count": 17114,
+    "path1_eq_path2": true,
+    "path2_eq_banked": true
+   }
+  },
+  {
+   "check": "B5-routes-p29",
+   "verdict": "OK",
+   "detail": {
+    "p": 29,
+    "pinned_s13_cp": [
+     1,
+     10,
+     54,
+     290,
+     841
+    ],
+    "conj_s16_cp": [
+     1,
+     -5,
+     16,
+     -145,
+     841
+    ],
+    "L8_c0_c8": [
+     1,
+     5,
+     20,
+     35,
+     -354,
+     1015,
+     16820,
+     121945,
+     707281
+    ],
+    "functional_equation": true,
+    "weil_box": "OK",
+    "count_Res_Fp": 846768,
+    "banked_count": 846768,
+    "path1_eq_path2": true,
+    "path2_eq_banked": true
+   }
+  },
+  {
+   "check": "B5-routes-p31",
+   "verdict": "OK",
+   "detail": {
+    "p": 31,
+    "q": 961,
+    "cp_over_Fq": [
+     1,
+     -26,
+     1052,
+     -24986,
+     923521
+    ],
+    "counts": [
+     936,
+     924950
+    ],
+    "L8_c0_c8": [
+     1,
+     0,
+     -26,
+     0,
+     1052,
+     0,
+     -24986,
+     0,
+     923521
+    ],
+    "functional_equation": true,
+    "weil_box": "OK",
+    "count_Res_Fp": 899562,
+    "banked_count": 899562,
+    "path1_eq_path2": true,
+    "path2_eq_banked": true
+   }
+  },
+  {
+   "check": "N1-perturbed-offdiag-tau",
+   "verdict": "OK",
+   "detail": {
+    "required": "FAIL at Riemann-relation/polarization consistency, named",
+    "named_predicate": "riemann-relation-tau-symmetry",
+    "violating_entries": [
+     [
+      1,
+      2
+     ]
+    ],
+    "perturbation": "tau_(1,2) += 1e-6 (> per-entry radius 1e-55; SEEDS N1_pinned_entry)",
+    "second_channel": "cross-method mismatch vs planted truth armed (unused here: primary predicate fired)"
+   }
+  },
+  {
+   "check": "N2-wrong-elementary-divisors",
+   "verdict": "OK",
+   "detail": {
+    "required": "FAIL at the Frobenius-normal-form / polarization-type check, named predicate in the receipt; NO tau emitted downstream of the failure",
+    "receipt": {
+     "predicate": "polarization-type-frobenius-normal-form",
+     "alternating_integral": true,
+     "snf_divisors": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+     ],
+     "snf_pair_structure_ok": true,
+     "symplectic_type": [
+      1,
+      1,
+      2,
+      2
+     ],
+     "declared_elementary_divisors": [
+      1,
+      1,
+      1,
+      1
+     ],
+     "match": false,
+     "failing_predicate": "polarization-type-frobenius-normal-form"
+    },
+    "no_tau_emitted": "code path returns before any tau construction"
+   }
+  },
+  {
+   "check": "N3-rho-tamper",
+   "verdict": "OK",
+   "detail": {
+    "required": "FAIL at the exact O_K-action receipt (rho^2 = -5 predicate fires first for this entry; lattice-preservation and Rosati checks also armed), named failing predicate in machine-readable output",
+    "tamper": "B4 input with rho_8x8 tampered in exactly ONE entry: rho[1][2] += 1 (1-based row 1, column 2: the (-5) in the first 2x2 block becomes -4)",
+    "failing_predicate": "OK-action-rho-square-eq-minus5",
+    "residuals": [
+     [
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ]
+   }
+  },
+  {
+   "check": "N4-precision-starvation",
+   "verdict": "OK",
+   "detail": {
+    "required": "UNDECIDED-PRECISION with a needed-dps estimate in the receipt; ANY emitted integer = battery FAIL (the tool must refuse, never guess)",
+    "per_factor": [
+     {
+      "label": "11a1",
+      "verdict": "UNDECIDED-PRECISION",
+      "n_candidates": 3,
+      "needed_dps_estimate": 5
+     },
+     {
+      "label": "14a1",
+      "verdict": "UNDECIDED-PRECISION",
+      "n_candidates": 3,
+      "needed_dps_estimate": 5
+     },
+     {
+      "label": "15a1",
+      "verdict": "UNDECIDED-PRECISION",
+      "n_candidates": 3,
+      "needed_dps_estimate": 5
+     },
+     {
+      "label": "17a1",
+      "verdict": "UNDECIDED-PRECISION",
+      "n_candidates": 3,
+      "needed_dps_estimate": 5
+     }
+    ],
+    "inflated_radius": "1.5 per SEEDS N4_precision_starvation (erratum revision)",
+    "integer_emitted": false
+   }
+  },
+  {
+   "check": "N5-conjugated-complex-structure",
+   "verdict": "OK",
+   "detail": {
+    "pre_declared": "FAIL-SIGN-PIN",
+    "got": "FAIL-SIGN-PIN",
+    "holomorphic_sign": -1,
+    "coherent_conjugate_geometry": true,
+    "silent_same_answer": false,
+    "receipt": {
+     "predicate": "sign-convention-pin(s1)",
+     "declared_s1": "P",
+     "required_holomorphic_sign": 1,
+     "input_holomorphic_sign": -1,
+     "verdict": "FAIL-SIGN-PIN",
+     "law": "verification only; NO conversion here (single site = abcount_s0.convert_sign_convention)"
+    }
+   }
+  }
+ ],
+ "member_rows": [
+  {
+   "member": "B2",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "run_s2 replay S2-PASS (14/14)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B3",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "run_s2 replay S2-PASS (both integer routes + tie receipts inside)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B1",
+   "verdict": "PASS",
+   "primes": [
+    13,
+    31
+   ],
+   "note": "native re-exercise: blocks+C7+theta+pslq+integer routes, both primes",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B4",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "O_K receipts + a_P=0 both routes both primes + deg-16 assembly",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B4s",
+   "verdict": "PASS",
+   "primes": [
+    29
+   ],
+   "note": "(a_P,b_P)=(-6,-2)/(-6,+2) both routes; E[3] congruence; flip detector",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "B5",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    29,
+    31
+   ],
+   "note": "Weil-restriction identity both routes, F_p and F_p^2 legs exercised",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N1",
+   "verdict": "PASS",
+   "primes": [
+    13
+   ],
+   "note": "FAIL-as-required: riemann-relation-tau-symmetry fired on entry (1,2)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N2",
+   "verdict": "PASS",
+   "primes": [
+    11
+   ],
+   "note": "FAIL-as-required: polarization-type-frobenius-normal-form, no tau emitted",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N3",
+   "verdict": "PASS",
+   "primes": [
+    11,
+    31
+   ],
+   "note": "FAIL-as-required: OK-action-rho-square-eq-minus5 named",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N4",
+   "verdict": "PASS",
+   "primes": [
+    13
+   ],
+   "note": "UNDECIDED-PRECISION as required; no integer emitted; needed-dps quoted",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  },
+  {
+   "member": "N5",
+   "verdict": "PASS",
+   "primes": [
+    29
+   ],
+   "note": "FAIL-SIGN-PIN as pre-declared in SEEDS (rides seeds sha)",
+   "seeds_revision_sha": "9da4d6eebfced2378cc4b7b84f43d21f61c2b22d8c437c6ac78eeed429e5842d"
+  }
+ ],
+ "tool": "abcount (S3 general (2,2) layer over the S0-S2 core)",
+ "verdict": "S3-PASS",
+ "battery": "BATTERY-PASS(11/11, B5 RUNS+PASS)",
+ "checks_ok": "22/22",
+ "wall_declared": {
+  "seconds": 3600,
+  "mem_gb": 4.0,
+  "dps_cap": 400,
+  "provenance": "SEEDS S3_walls, priced from S2 actuals BEFORE launch"
+ },
+ "wall_actuals": {
+  "elapsed_s": 36.716,
+  "rss_gb": 0.1035
+ },
+ "sign_convention": {
+  "s1": "P",
+  "s2": "K-embedding pinned (rho = +i*sqrt5 holomorphic)",
+  "conversion_site": "abcount_s0.convert_sign_convention (single site, Q6); S3 sign-pin receipt verifies/refuses only, never converts"
+ },
+ "input_invariants_Q3c": {
+  "B4_B4s": {
+   "dimension": 4,
+   "base_field": "Q(sqrt5)",
+   "polarization_elementary_divisors": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "O_K_action": "Z[sqrt(-5)] diagonal, rho 8x8 pinned in SEEDS",
+   "isogeny_declared": "product-diagonal (identity factors)"
+  },
+  "B5": {
+   "dimension": 4,
+   "base_field": "Q (Weil restriction from K)",
+   "curve": "y^2 = x^5 + sqrt(-5) x + 1 over K",
+   "isogeny_declared": "NONE (restriction of scalars, declared split over K)"
+  }
+ },
+ "pinned_lattice_claim": "NONE (Q3d \u2014 no identification against the pinned P is made or implied)",
+ "route_scope": "route T = theta receipts only; route D = integer assembly + Weil box; route C = ellap/hyperellcharpoly truth side; hecke_desk = PARI-free Path 2"
+}

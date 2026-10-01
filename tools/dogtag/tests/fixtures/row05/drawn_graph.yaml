@@ -1,0 +1,21 @@
+# Drawn graph of row 5, transcribed from figures/fig-pentagon.tex and its caption
+# (sections/results/pentagon.tex): five massless lines P1-P2-P3-P4-P5-P1, legs p_i@P_i,
+# all massless on-shell, all incoming, p5 = -p1-p2-p3-p4; v_i = (p_i+p_{i+1})^2.
+# Propagator momenta derived by spanning-tree routing in the census script.
+# figure source fig-pentagon.tex sha16 af4183fc32eedde2
+# edge list: P1-P2[0]; P2-P3[0]; P3-P4[0]; P4-P5[0]; P5-P1[0]
+# legs: p1@P1, p2@P2, p3@P3, p4@P4, p5@P5
+integralfamilies:
+  - name: "drawn_row05"
+    loop_momenta: [k1]
+    propagators:
+      - [ "k1 - p2 - p3 - p4 - p5", 0 ]
+      - [ "k1 + p1 + p2", 0 ]
+      - [ "k1 + p1 + p2 + p3", 0 ]
+      - [ "k1 + p1 + p2 + p3 + p4", 0 ]
+      - [ "k1", 0 ]
+    top_level_sectors: [31]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4, p5]
+    momentum_conservation: {p5: "-p1 - p2 - p3 - p4"}
+    leg_virtualities: {p1: "0", p2: "0", p3: "0", p4: "0", p5: "0"}

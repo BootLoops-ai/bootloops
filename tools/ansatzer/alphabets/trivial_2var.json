@@ -1,0 +1,8 @@
+{
+  "name": "trivial_2var",
+  "description": "2-letter {x,y} in 2 vars. dlog x ∧ dlog y = dx∧dy/(xy) ≠ 0, so integrability kills the antisymmetric part: w=2 dim 4→3, w=3 dim 8→4. Hand-checkable.",
+  "vars": ["x", "y"],
+  "letters": {"x": "x", "y": "y"},
+  "first_entry": ["x", "y"],
+  "last_entry": ["x", "y"]
+}

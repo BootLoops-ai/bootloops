@@ -1,0 +1,9 @@
+kinematics:
+  incoming_momenta: [p1, p2, p3]
+  outgoing_momenta: []
+  momentum_conservation: [p3, -(p1 + p2)]
+  kinematic_invariants:
+  scalarproduct_rules:
+    - [[p1,p1], 0]
+    - [[p2,p2], 0]
+    - [[p1,p2], (-1)/(2)]

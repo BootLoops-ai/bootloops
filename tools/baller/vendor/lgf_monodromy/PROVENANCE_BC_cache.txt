@@ -1,0 +1,6 @@
+BC_cache.pkl — pinned binary input cache (exact integer ODE coefficient
+polynomials b_0..b_5 of the order-5 operator L5 at rates (2,3,5)), consumed
+by valmono.get_BC(); binary, so provenance lives here.
+sha256: 138ce13f818e1b32f06c02b1d821a679a5a2ea29b4d59d66b3dc1d07acd1fdac
+The derivation script that regenerates it is not vendored; the cache is the
+shipped source of truth and is sha-pinned in baller/_pins.py.

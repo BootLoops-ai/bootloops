@@ -1,0 +1,9 @@
+{
+  "_comment": "Toy 2-master canonical connection on the P4_J23 3-letter alphabet, demonstrating the coproduct/Disc cut. dF = ε(A_s dlog s + A_t dlog t + A_st dlog(s+t))·F. Master m1 only couples through {L_s,L_st}; m2 only through {L_t,L_st}. So coproduct restricts m1's last letter to {L_s,L_st}, m2's to {L_t,L_st}.",
+  "masters": ["m1", "m2"],
+  "A": {
+    "L_s":  [[0,0,"1"], [0,1,"1"]],
+    "L_t":  [[1,0,"1"], [1,1,"1"]],
+    "L_st": [[0,0,"-1"], [1,1,"-1"]]
+  }
+}

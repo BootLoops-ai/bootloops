@@ -1,0 +1,28 @@
+{
+ "tag": "toy_row",
+ "mtag": "toy_M",
+ "cap": "toy",
+ "var": "t",
+ "rows": {
+  "toy_row": {
+   "t": {
+    "H": "Add(Mul(Symbol('u', real=True), Symbol('x', real=True)), Mul(Rational(1, 7), Pow(Symbol('x', real=True), Integer(2))))",
+    "c": "Add(Rational(3, 5), Pow(Add(Symbol('t', real=True), Integer(-5)), Integer(-1)))",
+    "T": "Mul(Add(Symbol('u', real=True), Symbol('x', real=True)), Pow(Add(Mul(Integer(-1), Symbol('t', real=True)), Symbol('x', real=True), Integer(-3)), Integer(-1)), Pow(Add(Pow(Symbol('t', real=True), Integer(2)), Pow(Symbol('x', real=True), Integer(2)), Integer(2)), Integer(-1)))"
+   }
+  },
+  "toy_M": {
+   "t": {
+    "H": "Mul(Rational(1, 2), Symbol('x', real=True))",
+    "c": "Mul(Symbol('t', real=True), Pow(Add(Pow(Symbol('t', real=True), Integer(2)), Integer(1)), Integer(-1)))",
+    "T": "Integer(0)"
+   }
+  }
+ },
+ "Q": {
+  "toy": "Add(Mul(Symbol('t', real=True), Symbol('x', real=True)), Symbol('u', real=True), Mul(Integer(-1), Pow(Symbol('x', real=True), Integer(2))))"
+ },
+ "numerators": {
+  "toy_row": "Mul(Pow(Add(Symbol('t', real=True), Integer(-7)), Integer(-1)), Add(Symbol('t', real=True), Integer(2)))"
+ }
+}

@@ -1,0 +1,68 @@
+BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC
+
+Created by Matthew D. Schwartz. Code written by Claude (Anthropic) under his
+supervision. This is not an officially supported Anthropic product; it is
+maintained by Matthew D. Schwartz (https://www.bootloops.ai).
+
+These are research instruments. Validate outputs before relying on them;
+nothing here is intended or fit for clinical, actuarial, payment, regulatory
+or public-safety decisions.
+
+Licensing
+---------
+The code in this repository is released under the MIT License (see LICENSE).
+The prose, documentation pages and figures written for BootLoops are released
+under the Creative Commons Attribution 4.0 International License (see
+LICENSE-CONTENT).
+
+Third-party and vendored components are not covered by the two statements
+above. They keep their own licenses and copyright notices, which govern inside
+their directories:
+
+  upgrades/SOFIA.jl/reference/     SOFIA, the original Mathematica package by Correia, Giroux and Mizera (scr.m, scrj.m, README)     MIT       README.md (grant), EffortlessMarch2025/LICENSE
+  upgrades/SOFIA.jl/reference/PLD_database/  PLD database (Fevola, Mizera, Telen; data)  CC BY 4.0  README.md
+  tools/surd/data/N4_SLICE.json    letters adapted from arXiv:2401.06463 ancillaries (Chicherin, Moult, Sokatchev, Yan, Zhu)  CC BY 4.0  tools/surd/DATA.md
+  tools/surd/gate/cells/           1->4 splitting function of Del Duca, Duhr, Haindl, Lazopoulos, Michel (arXiv:1912.06425, 2007.05345; derived cell data)  CC BY 4.0, adapted  tools/surd/DATA.md
+  tools/terrier/periods/pipeline/cards/ads-5-81-3213*  KKLT vacuum of Demirtas, Kim, McAllister, Moritz, Rios-Tascon (arXiv:2107.09064; derived card)  CC BY 4.0, adapted  card comment field, tools/terrier/README.md
+  tools/terrier/lattice/lp_kill_rank_agnostic.py  short_vectors search-window rule and output contract after Hecke.jl src/QuadForm/Enumeration.jl (Hecke contributors: Claus Fieker, Tommy Hofmann and others; github.com/thofma/Hecke.jl)  BSD-2-Clause  file header
+  tools/clinch/adapters/certpass/twin_etas.py, assemble_etas_np.py  upper_gamma_ext (seven lines) and round_half_up (three lines) from lmizrahi/etas (Mizrahi)  MIT  PROVENANCE.md
+  tools/subtropica/reference/      SubTropica + HyperFLINT (reference files)   MIT   LICENSE, LICENSE-HyperFLINT
+  tools/subtropica/                SubTropica front end (Julia port)   MIT     NOTICE
+  tools/subtropica/src/lr_refine.jl (+ test/test_lr_refine.jl)  derived from HyperInt (E. Panzer)  GPL-3.0-or-later  tools/subtropica/NOTICE, LICENSE-GPL-3.0
+  tools/eichler/genus2/mestre_port.py  sympy translation of SageMath's mestre.py and invariants.py (Florian Bouyer, Marco Streng, Nick Alexander)  GPL-2.0-or-later  tools/eichler/NOTICE, LICENSE-GPL-2.0
+  tools/formglue/form_hyper.py     HyperFORM driver template after the example drivers shipped with HyperFORM (Adam Kardos, Sven-Olaf Moch, Oliver Schnetz)  GPL-3.0-only  tools/formglue/NOTICE, LICENSE-GPL-3.0
+  tools/blade/                     Blade search logic (Python port) MIT     NOTICE
+
+The complete list, with where each component comes from and what was modified, is
+THIRD_PARTY.md. The patched engine forks that the toolkit drives (Kira,
+GPL-3.0-or-later; Blade, MIT; AMFlow.cpp, MIT) are distributed in their own
+repositories published beside this one by the same organization
+(kira, blade, amflow-cpp), each under
+the license of its original authors, and are not part of this repository. BootLoops runs
+Kira, FireFly and FORM as separate programs
+and does not link them into MIT-licensed code. Three GPL-licensed sources ship
+in this repository: tools/subtropica/src/lr_refine.jl and its test (derived from
+HyperInt by Erik Panzer; GPL-3.0-or-later; see tools/subtropica/NOTICE for what
+that means for the SubTropica module), tools/eichler/genus2/mestre_port.py (a
+sympy translation of SageMath's mestre.py and invariants.py by Florian Bouyer,
+Marco Streng and Nick Alexander; GPL-2.0-or-later; see tools/eichler/NOTICE for
+what that means for eichler.genus2) and tools/formglue/form_hyper.py (whose
+HyperFORM driver template follows the example drivers shipped with HyperFORM
+v1.0 by Adam Kardos, Sven-Olaf Moch and Oliver Schnetz; GPL-3.0-only, as
+HyperFORM's own license states, with no later-version option; see
+tools/formglue/NOTICE for what that means for formglue). External engines that are used
+but not bundled (their licenses and where to obtain them) are listed in
+toolkit/external/TOOLS.md.
+
+Mathematica and Wolfram Language are trademarks of Wolfram Research, Inc.;
+MATLAB of The MathWorks, Inc.; SAS of SAS Institute Inc. BootLoops is not
+affiliated with or endorsed by them.
+
+How to cite
+-----------
+M. D. Schwartz, BootLoops 1.0 (2026), https://www.bootloops.ai
+
+BootLoops drives, ports and reimplements software and methods created by others;
+README.md (Acknowledgments), REFERENCES.md and each package's GUIDE.md name them —
+please cite those authors alongside BootLoops.

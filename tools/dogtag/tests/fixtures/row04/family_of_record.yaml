@@ -1,0 +1,27 @@
+# Family of record, row 4 (reading a): the L=3 Usyukina-Davydychev three-point ladder
+# C^(3)(p1^2,p2^2,p3^2) = (p3^2)^-3 Phi^(3)(x,y), x = p1^2/p3^2, y = p2^2/p3^2
+# (Davydychev arXiv:1007.0237, Fig. 1a and the sentence after eq. PhiLint; the same
+# Phi^(L) as Isaev-Derkachov-Shumilov eq. d4).  The fitted object f_3(x) is the
+# holomorphic block of Phi^(3) in the slice y -> 0, X = -x (ud_genuine.py docstring:
+# 'the one-leg-massless ladder Y -> 0 with X = -x'), so p2^2 = 0 and p1^2, p3^2 off shell.
+# Nine massless lines, three loops, three legs; apex A carries p3, the far rung U3-D3
+# carries p1 (off shell) and p2 (on shell).  No Kira/AMFlow family exists for this row;
+# this is a transcription of the reference definition, routed by the census script.
+integralfamilies:
+  - name: "ud_ladder3_threepoint"
+    loop_momenta: [k1, k2, k3]
+    propagators:
+      - [ "k1 + k2 + k3 + p2 + p3", 0 ]
+      - [ "-k1 - k2 - k3 - p2", 0 ]
+      - [ "k2 + k3 - p1", 0 ]
+      - [ "k3 - p1", 0 ]
+      - [ "-k2 - k3 - p2", 0 ]
+      - [ "-k3 - p2", 0 ]
+      - [ "k1", 0 ]
+      - [ "k2", 0 ]
+      - [ "k3", 0 ]
+    top_level_sectors: [511]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3]
+    momentum_conservation: {p3: "-p1 - p2"}
+    leg_virtualities: {p1: "offshell", p2: "0", p3: "offshell"}

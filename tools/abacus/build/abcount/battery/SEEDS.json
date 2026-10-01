@@ -1,0 +1,268 @@
+{
+  "_purpose": "battery/SEEDS.json — sha-pinned seed commitments (M3T_VALIDATION_BATTERY.md Scope; review items). Written BEFORE any battery-member run. Integers and exact declarations only; nothing here is discovered at run time.",
+  "_committed_stage": "S3 revision (extends the S2 revision sha 23c86ba23c6b9b9e16d7f9342bd04b48e70bdffc437c6aa4065aa062f3e3488e per this file's stage law: later stages EXTEND before their own first run and quote the new sha; S1/S2 receipts quote their own revisions, S3 receipts quote THIS revision). B1/S1_C7_pilot/B2/B3/S2_*/N1/N5 blocks carried verbatim from the S2 revision; B4, B4s (with B4s_twist_sign_u FILLED), B5, N2, N3, N4 and S3_walls are the S3 additions, committed BEFORE any S3 battery run; every numerical desk truth below was computed at seed time by pure-integer python arithmetic (PARI used only as seed-time cross-check where stated).",
+  "committed_before_any_battery_run": true,
+
+  "B1": {
+    "member": "E1 x E2 x E3 x E4, pairwise non-isogenous non-CM elliptic curves over Q; product principal polarization; base_field Q",
+    "curves": [
+      {"label": "11a1", "weierstrass": [0, -1, 1, -10, -20], "disc_banked": -161051},
+      {"label": "14a1", "weierstrass": [1, 0, 1, 4, -6], "disc_banked": -21952},
+      {"label": "15a1", "weierstrass": [1, 1, 1, -10, -10], "disc_banked": 50625},
+      {"label": "17a1", "weierstrass": [1, -1, 1, -1, -14], "disc_banked": -83521}
+    ],
+    "model_commit_note": "Weierstrass tuples verified EXACTLY against the pinned discriminants (-161051, -21952, 50625, -83521) by pure-integer desk arithmetic BEFORE this commit; no PARI call involved in the verification.",
+    "pilot_primes": [13, 31],
+    "prime_exclusion": "p = 11 EXCLUDED (11a1 bad at 11, 11 | disc = -161051 = -11^5) — pre-committed per battery Scope, never discovered at run time",
+    "banked_desk_truths": {
+      "a_13": {"11a1": 4, "14a1": -4, "15a1": -2, "17a1": -2},
+      "count_F13": 46080,
+      "count_F13_derivation": "10*18*16*16 (battery Scope ground truth)",
+      "a_31": {"11a1": 7, "14a1": -4, "15a1": 0, "17a1": 4},
+      "a_31_provenance": "values confirmed by pure-integer desk arithmetic at seed time",
+      "count_F31_derived": 806400,
+      "count_F31_derivation": "(32-7)*(32+4)*(32-0)*(32-4) = 25*36*32*28, derived at seed time from the banked a_31 list; the pinned acceptance number of record for S1 remains count_F13 = 46080"
+    },
+    "precision": {"dps": 60, "per_entry_radius": "1e-55"},
+    "polarization_elementary_divisors": [1, 1, 1, 1],
+    "sign_convention": {"s1": "P", "s2": "N/A-B1 (no O_K-action on this member; field carried, never dropped)"}
+  },
+
+  "S1_C7_pilot": {
+    "desk_truncation_N": 12,
+    "desk_truncation_note": "pinned in advance = the S0-banked desk truncation choice; the desk tail bound is evaluated at this N with lambda_min(Im tau) lower-bounded in ball arithmetic",
+    "matched_precision_rule": "wrapper precision for the ONE pilot call = ceil(-log2(desk tail bound at N=12)) + 64 guard bits, so wrapper and desk target the same truncation depth ('matched truncation')",
+    "pilot_input_rule": "pilot tau = EXACT dyadic 64-bit truncations of the member tau midpoints (deterministic from the B1 period data at the committed dps); exact on both the Julia/acb_theta side and the python-flint desk side",
+    "gate_direction": "acb_theta claimed radius <= desk tail bound at matched truncation (desk bound must DOMINATE; ANY violation = STOP) — M3T_REGISTRATION.md sec 4 row S1, review item C7",
+    "pilot_prime": 13,
+    "pilot_scope": "ONE member (B1), ONE prime (13), ONE genus-4 acb_theta call measured for cost BEFORE the member sweep"
+  },
+
+  "B2": {
+    "member": "J(C)^2, C: y^2 = x^5 - x + 1 (genus 2, generic Jacobian); analytic Jacobian to declared dps; product principal polarization; base_field Q; dimension 4",
+    "curve": {
+      "f_coeffs_c0_to_c5": [1, -1, 0, 0, 0, 1],
+      "model": "y^2 = x^5 - x + 1",
+      "disc_f_banked": 2869,
+      "disc_f_factorization": "19 * 151",
+      "bad_primes": [2, 19, 151],
+      "good_reduction_check": "desk Sylvester-resultant discriminant computed by pure-integer/fraction arithmetic at seed time (no PARI); 11 and 31 divide neither 2869 nor 2"
+    },
+    "pilot_primes": [11, 31],
+    "pilot_prime_note": "battery Scope base set {11, 31}; good reduction verified at seed time (see curve.good_reduction_check); no fallback needed",
+    "banked_desk_truths": {
+      "derivation": "seed-time desk enumeration over F_p and F_p^2 (pure python integer arithmetic, quadratic character by Euler criterion, F_p^2 as F_p[s]/(s^2 - nonresidue); NO PARI): #C(F_p) = p + 1 - t1, #C(F_p^2) = p^2 + 1 - t2 with t_i = power sums of the four Frobenius eigenvalues; e1 = t1, e2 = (t1^2 - t2)/2, e3 = p e1, e4 = p^2; charpoly P(T) = T^4 - e1 T^3 + e2 T^2 - e3 T + e4",
+      "p11": {"count_C_Fp": 19, "count_C_Fp2": 135, "charpoly_monic_desc": [1, 7, 31, 77, 121], "jac_order_P1": 237, "count_B2_member": 56169, "count_B2_derivation": "#B2(F_11) = P(1)^2 = 237^2"},
+      "p31": {"count_C_Fp": 32, "count_C_Fp2": 1018, "charpoly_monic_desc": [1, 0, 28, 0, 961], "jac_order_P1": 990, "count_B2_member": 980100, "count_B2_derivation": "#B2(F_31) = P(1)^2 = 990^2"},
+      "run_time_rule": "the RUN recomputes both the PARI hyperellcharpoly quartic (Path 1, planted truth) and the desk-count quartic (no PARI; route-D input) and requires EXACT equality with these banked values; the deg-8 member truth is the SQUARE of the Path-1 quartic (battery row B2)"
+    },
+    "precision": {"dps": 60, "per_entry_radius": "1e-55", "period_working_prec_bits": 350, "note": "certified period radii must come in AT OR BELOW the declared per-entry radius; receipt quotes actual max radius"},
+    "polarization_elementary_divisors": [1, 1, 1, 1],
+    "polarization_note": "product of two principal genus-2 polarizations; E = diag(J2, J2) on the product symplectic basis",
+    "sign_convention": {"s1": "P", "s2": "N/A-B2 (no O_K-action on this member; field carried, never dropped)"},
+    "isogeny_declared": "product-diagonal (J(C) x J(C), identity on each factor; trivial kernel receipt — route-D split of the product member)"
+  },
+
+  "B3": {
+    "member": "J(C5), C5: y^2 = x^5 + 1 (genus 2, CM by Q(zeta_5)); the CM abelian variety with known L-factor; base_field Q; dimension 2 (simple genus-2 block, battery row B3)",
+    "curve": {
+      "f_coeffs_c0_to_c5": [1, 0, 0, 0, 0, 1],
+      "model": "y^2 = x^5 + 1",
+      "disc_f_banked": 3125,
+      "disc_f_factorization": "5^5",
+      "bad_primes": [2, 5],
+      "good_reduction_check": "desk Sylvester-resultant discriminant at seed time (no PARI); 11 and 31 divide neither 3125 nor 2; both pilot primes are 1 mod 10 so the quintic and quadratic characters both exist mod p (Jacobi-sum route applicable)"
+    },
+    "pilot_primes": [11, 31],
+    "cm_declaration": "CM by Q(zeta_5) (sealed battery row B3); exercised via the route-D hecke_desk Jacobi-sum closed form; NO rho input in S2 (the Z[sqrt(-5)]-action predicate is a B4/B4s obligation, stage S3)",
+    "jacobi_sign_pin": {
+      "pin": "alpha_a = -J(phi, chi^a), a = 1..4 (hecke_desk carries the same pin)",
+      "character_conventions": "phi = quadratic character (Euler criterion), chi = quintic character with chi(g) = zeta_5 for the canonical generator g; J(phi, chi^a) = sum over x in F_p, x != 0,1 of phi(x) chi^a(1 - x), computed in exact Z[zeta_5] desk arithmetic (basis 1, z, z^2, z^3; z^4 = -1 - z - z^2 - z^3)",
+      "generator_rule": "g = smallest integer >= 2 with g^((p-1)/q) != 1 mod p for ALL primes q | p - 1 (full primitivity check; note p = 31 needs q = 3 as well as q in {2, 5})",
+      "generators_banked": {"p11": 2, "p31": 3},
+      "generator_independence_note": "a different primitive root permutes the alpha_a among themselves (a -> a k mod 5), so the charpoly prod_a (T - alpha_a) is generator-independent; the banked J-sum VECTORS below are for the banked canonical g",
+      "pin_discrimination_receipt_required": "the run must ALSO expand the +J variant and verify it differs from the count-derived charpoly in the odd coefficients (the battery's falsely-FAIL note, exercised as a positive discrimination receipt)"
+    },
+    "banked_desk_truths": {
+      "p11": {"count_C_Fp": 8, "count_C_Fp2": 118, "charpoly_monic_desc": [1, -4, 6, -44, 121], "jac_order_P1": 80, "charpoly_plusJ_variant": [1, 4, 6, 44, 121], "jsum_vectors_basis_1_z_z2_z3": {"a1": [1, 2, 2, 4], "a2": [-1, 2, 0, -2], "a3": [-3, -2, -4, -2], "a4": [-1, -2, 2, 0]}},
+      "p31": {"count_C_Fp": 28, "count_C_Fp2": 1038, "charpoly_monic_desc": [1, -4, 46, -124, 961], "jac_order_P1": 880, "charpoly_plusJ_variant": [1, 4, 46, 124, 961], "jsum_vectors_basis_1_z_z2_z3": {"a1": [3, 6, 4, 6], "a2": [-1, 2, 2, -4], "a3": [-3, -2, -6, 0], "a4": [-3, -6, 0, -2]}},
+      "derivation": "seed-time desk: (i) naive counts + power-sum quartic exactly as B2; (ii) independent Z[zeta_5] Jacobi-sum expansion under the -J pin; the two agreed EXACTLY at both primes at seed time; the RUN recomputes hyperellcharpoly (Path 1), the naive-count quartic, and the hecke_desk Jacobi-sum quartic (Path 2) and requires exact equality with these banked values"
+    },
+    "precision": {"dps": 60, "per_entry_radius": "1e-55", "period_working_prec_bits": 350},
+    "polarization_elementary_divisors": [1, 1],
+    "sign_convention": {"s1": "P", "s2": "N/A-B3 (CM by Q(zeta_5), not by K = Q(sqrt(-5)); no rho input in S2; field carried, never dropped)"},
+    "isogeny_declared": "NONE (simple CM member)"
+  },
+
+  "S2_period_construction": {
+    "scope": "member instantiation of the 'analytic Jacobian to declared dps' for B2 and B3 (non-real-ordered branch points: the sealed wrapper's real-ordered period path does not apply; its own docstring exposes the primitives for complex chains — assembled here in NEW code period_g2_bridge.jl; sealed files untouched)",
+    "root_sort_rule": "the 5 certified roots of the quintic (acb_poly_find_roots inside the sealed HyperellipticCurve constructor) sorted by (midpoint real part, midpoint imaginary part), ascending; the 6th branch point is infinity",
+    "chain_permutation": {"B2": [1, 2, 4, 5, 3], "B3": [1, 2, 4, 5, 3]},
+    "chain_note": "indices into the sorted root list; consecutive pairs are the four chain segments (straight chords); committed from the seed-time root layout (both quintics: one real root + two conjugate pairs in convex position; the chain walks the convex pentagon so no chord approaches a third root); rigor does not depend on this geometric intuition — the certified integrator's analytic checker and the half-plane certificates fail loudly if a chord misbehaves",
+    "segment_integral_scheme": "period of the chain cycle around (a, b) = 2 * integral over the chord of x^k dx / y, k = 0, 1, via trig desingularisation x = m + delta sin(theta) ((x-a)(x-b) = -delta^2 cos^2 theta absorbs both endpoint square-root singularities); y restricted to the chord as cos(theta) * K * prod_l sqrt_principal((x - r_l)/u_l), K = sqrt_principal(-lead delta^2 prod_l u_l), where for each non-endpoint root r_l the unit u_l (angular bisector of the endpoint directions) is CERTIFIED to put the whole factor segment in the open right half-plane (Re > 0 at both endpoints, linear in between); Arblib.integrate with check_analytic = true, rtol = 10^(-0.28 * prec), prec = 350 bits; the analytic checker returns indeterminate off the certified half-planes (sealed hyper_gap_integral pattern)",
+    "homology_recovery_rule": "the four chain cycles are a candidate H_1 basis with UNKNOWN integer intersection data (per-segment branch orientations arbitrary); recover it rigorously-downstream: (i) LLL (fmpz_mat.lll) on the 6 antisymmetric unknowns n_ij against the two real linear forms Re/Im of (Pi N Pi^T)_{12} scaled by 10^80 from midpoints; (ii) relation vectors = LLL rows with residual columns < 10^20; expected relation rank: 1 for B2 (generic, NS rank 1), 2 for B3 (CM, NS rank 2); (iii) candidate enumeration in DETERMINISTIC order: for rank 1 the primitive vector +v then -v; for rank 2 combos x*v1 + y*v2 with (x, y) in lexicographic order over |x|,|y| <= 3, skipping (0,0); (iv) accept the FIRST candidate N with Pfaffian(N) = +-1 AND certified ball check (Pi N Pi^T)_{12} contains 0 AND (trying W = N^{-1} then -W = (-N)^{-1}) integer symplectic reduction S W S^T = J_std followed by tau = A^{-1} B (columns split of Pi S^T) giving CERTIFIED tau symmetric (ball overlap of tau_12, tau_21; then tightened by ball intersection, sealed period_matrix pattern) and Im tau positive-definite (Im tau_11 > 0 and det Im tau > 0 certified); (v) the accepted tau must then pass the S2_tie_receipt — a candidate that fails the tie is a construction FAILURE (STOP), never silently retried",
+    "symplectic_reduction": "exact integer symplectic Gram-Schmidt on the unimodular antisymmetric W (pair with pairing +-1 or gcd-built partner, project, recurse); verified in-run by the identity S W S^T = J_std before use",
+    "tau_dyadic_rule": "theta-call tau input = EXACT 64-bit dyadic truncations of the accepted tau midpoints (the S1_C7_pilot pilot_input_rule, unchanged); the SAME dyadic tau feeds the genus-2 call, the genus-4 block call (B2), and the desk partial sums"
+  },
+
+  "S2_theta_receipts": {
+    "desk_truncation_N": 12,
+    "matched_precision_rule": "same as S1_C7_pilot: prec = ceil(-log2(desk TailBound(g, 12, lambda_min_lower))) + 64 guard bits",
+    "lambda_min_rule": "certified lower bound of the smallest eigenvalue of Im tau (2x2: (tr - sqrt(tr^2 - 4 det))/2 in ball arithmetic, .lower(); genus-4 block-diagonal: min over blocks)",
+    "gate_direction": "acb_theta claimed radius <= desk tail bound at matched truncation on the 10 EVEN characteristics; desk-vs-wrapper enclosure OVERLAP on ALL 16; the 6 ODD characteristics must CONTAIN 0 (their exact value at z = 0) — ANY violation = STOP (calibrated instrument; declared addition on the NON-DIAGONAL genus-2 domain; the SEALED C7 criterion itself is the S1 pilot receipt, banked 256/256)",
+    "gate_direction_erratum": "attempt-1 committed this gate as 'ALL characteristics' and STOPped on the 6 odd characteristics (receipt preserved: S2_RUN_OUTPUT_attempt1.json, banked before this revision): at z = 0 the odd-characteristic thetas are EXACTLY 0 and acb_theta_all reaches them by sqrt-of-square, so its honest claimed radius there is ~2^(-prec/2) — a rounding artifact of the wrapper's algorithm, not a truncation tail; comparing it to the DIRECT-SUMMATION tail bound certifies nothing (the desk bound bounds |theta - S_N| for the desk algorithm). The calibrated instrument keeps every meaningful comparison: even-char dominance (truncation-level), all-16 enclosure overlap (consistency), odd-char exact-zero containment (correctness). Attempt-1's run PASSED overlap 16/16, odd-vanishing 6/6, and the 1e-30 radius-discipline gate; the STOP was the instrument, not the wrapper. Instrument recalibration declared HERE before the re-run, sha re-pinned; no sealed criterion touched (sealed S2 STOPs are cross-method disagreement and walls; sealed C7 is the S1-banked pilot receipt).",
+    "desk_sum_note": "genus-2 desk partial sum is the direct 2-D box sum over ||n||_inf <= N of exp(i pi ((n + a/2)^T tau (n + a/2) + (n + a/2) . b)) in ball arithmetic — no factorization shortcut exists for non-diagonal tau; 625 lattice points x 16 characteristics",
+    "member_call_prec_bits": 250,
+    "radius_discipline_gate": "1e-30",
+    "genus2_odd_char_vanishing": "6 odd characteristics must contain 0",
+    "B2_genus4_block_receipt": "tau4 = diag(tau2, tau2) with the SAME dyadic tau2; all 256 values; 120 odd-characteristic vanishings; product factorization theta4[(a1 a2; b1 b2)] = theta2[a1; b1] * theta2[a2; b2] must ball-overlap for all 256 characteristics"
+  },
+
+  "S2_tie_receipt": {
+    "purpose": "ties the constructed tau to the MEMBER CURVE (the sealed member definition is the curve's analytic Jacobian, so the instantiation must be receipted against the curve, not just internally consistent)",
+    "primary": "Moebius branch-matching: thomae_sextic(tau) (sealed FLINT inverse, chi5 certified nonzero) has 6 certified roots; the input curve has branch set {r1..r5, infinity}; canonical input normalization M(z) = (z - r1)/(r2 - r1) (r1 -> 0, r2 -> 1, infinity -> infinity) gives 3 target balls; the run searches ALL 120 ordered triples of the 6 Thomae roots for a Moebius map sending that triple to (0, 1, infinity) whose images of the remaining 3 roots ball-match the 3 targets as a multiset; ANY consistent triple = PASS",
+    "secondary_covariant_check": "weight-balanced cross-products of igusa_clebsch covariants of the input sextic-normalized curve vs the Thomae sextic must ball-overlap: C20(f)^5 C100(f') = C20(f')^5 C100(f), C40 C20'^2 = C40' C20^2, C60 C20'^3 = C60' C20^3; ANCHORED (discriminating) only when the paired covariants are certified nonzero",
+    "B3_covariant_caveat_banked": "C20(x^5 + 1) = 0 (the curve sits on the vanishing locus — seed-time finding, consistent with its extra automorphism z -> zeta_5 z); the covariant check is therefore UNANCHORED for B3 and the Moebius branch-matching is the binding tie for B3; for B2 both ties bind",
+    "controls_pre_declared": "cross-member mismatch controls MUST FAIL: (i) tau(B2) matched against the B3 branch set -> NO consistent triple; (ii) tau(B3) matched against the B2 branch set -> NO consistent triple; a control that passes = S2 FAIL (tie receipt not discriminating)",
+    "run_stage": "S2"
+  },
+
+  "S2_walls": {
+    "sealed_wall": "<= 7200 s wallclock, <= 16 GB per member-prime (M3T_REGISTRATION.md sec 4 row S2), priced from the S1 actuals banked in S1_RESULT.md sec 3",
+    "pricing_from_S1": "S1 banked: ONE genus-4 acb_theta call 0.2916 s at 687 bits, julia load 0.529 s, subprocess wall 1.561 s, 0.338 GB maxrss; S2 theta budget (2 members x [1 genus-2 + matched-prec pilot] + 1 genus-4 block call + 2 thomae/tie calls) is minutes at most",
+    "pilot_integral_pricing": "the ONE new cost class (certified chord integrals) is measured FIRST in-run: ONE segment integral timed, then the 16-integral sweep priced BEFORE launch of the sweep; breach of the declared budget = STOP-WALL, no silent retry",
+    "declared_budget": {"wallclock_seconds": 7200, "mem_gb": 16.0, "dps_cap": 400, "expected_seconds_note": "internal estimate ~300-900 s total across both members and both primes; walls remain the sealed row values"}
+  },
+
+  "N1_pinned_entry": {
+    "commitment": "off-diagonal tau entry (1,2) of the normalized (I|tau) form of the B1 period matrix, perturbed by 1e-6 (strictly exceeding the declared per-entry radius 1e-55)",
+    "reason": "predicate-visible per review item 2 (diagonal-tau entries EXCLUDED: consistency-preserving); run at stage S3",
+    "run_stage": "S3"
+  },
+  "N5_required_verdict": {
+    "pre_declaration": "FAIL-SIGN-PIN",
+    "meaning": "N5 (B4 with complex structure conjugated while the declared sign_convention still claims s1 = P) must FAIL at the sign-pin check with the named predicate; a coherent silently-relabeled output is NOT accepted",
+    "authority": "review item C8 — either/or outcome pre-declared here, before any run; rides this file's sha",
+    "run_stage": "S3"
+  },
+  "B4s_twist_sign_u": {
+    "commitment": "committed together with the E20 model instantiation at stage S3 (battery: 'committed with the model in SEEDS.json'); the model is not instantiated at S1, so u is not yet chooseable — this field records the obligation, and the S3 revision of this file must fill it BEFORE any B4/B4s run",
+    "u": -1,
+    "u_derivation": "pinned global model (B4.model below) reduced at both primes P|29 gives a_P = -6 by ellap on the reduced model (seed-time gp receipt; model bug caught at seed time: B = 2j(1728-j)^2, NOT 2(j(1728-j))^2); a_P = 6u => u = -1; #E20(F_P) = 29 + 1 - (-6) = 36 = N(pi+1), matching the seed-time desk derivation (u = -1 -> 36); the quadratic twist by the nonresidue 2 gives +6/24 = N(pi-1), NOT chosen",
+    "run_stage": "S3"
+  },
+
+  "B4": {
+    "member": "E20^4, E20 with CM by O_K = Z[sqrt(-5)] (disc -20, class number 2), O_K acting DIAGONALLY; base_field F = Q(sqrt(5)); dimension 4 over F; product principal polarization",
+    "model": {
+      "j_invariant": "632000 + 282880*sqrt(5), root of H_-20(x) = x^2 - 1264000*x - 681472000 (seed-time receipts: gp polclass(-20) match + exact Z[sqrt5] root check: (a,b) = (632000, 282880): a^2 + 5 b^2 - 1264000 a - 681472000 = 0 and 2 a b - 1264000 b = 0)",
+      "global_model": "y^2 = x^3 + A x + B with A = 3 j (1728 - j), B = 2 j (1728 - j)^2 in Z[sqrt5] (the standard E_j model; j != 0, 1728 exactly so it is nonsingular over F)",
+      "model_degeneracy_note": "the standard model becomes SINGULAR at any prime P of F with j = 0 or 1728 mod P; this happens exactly at the two primes above 11 (j mod P in {0, 1} = {0, 1728 mod 11}); at such P the run uses ANY F_P-model with the reduced j-invariant (ellfromj), legal because at INERT-in-K primes a_P is twist-invariant (a_P = 0; receipts below); at 29 and 31 the standard model reduces nonsingularly and the pinned model (with u above) is the model of record"
+    },
+    "rho_8x8": {
+      "per_factor_2x2_basis_1_rho": [[0, -5], [1, 0]],
+      "convention": "rational representation of multiplication by rho = sqrt(-5) on the rank-2 O_K-module lattice in the PINNED basis {1, rho}: rho*1 = rho -> column (0,1); rho*rho = -5 -> column (-5,0); the 8x8 matrix is block-diagonal, four identical 2x2 blocks (diagonal O_K-action)",
+      "predicates_required": "rho^2 = -5*Id (exact integer 8x8), lattice preservation (integrality — trivially receipted), Rosati compatibility: E(rho x, rho y) = 5 E(x, y) and E(rho x, y) + E(x, rho y) = 0 (rho Rosati-adjoint = -rho), J-commutation J rho = rho J, holomorphic eigenvalue receipt s: rho acts on the holomorphic tangent space as s*i*sqrt(5) with s = +1 under the PINNED K-embedding (sign_convention s1 = P lane); s = -1 on a P-claiming input = FAIL-SIGN-PIN",
+      "n5_note": "N5 conjugates the complex structure of THIS member"
+    },
+    "pilot_primes": [11, 31],
+    "splitting_receipts": "(5|11) = (5|31) = +1 (11, 31 split in F; two degree-1 primes each); (-5|11), (-5|31) nonresidues (11, 31 INERT in K); computed by Euler criterion at seed time",
+    "banked_desk_truths": {
+      "a_P": 0,
+      "a_P_scope": "all four primes P (both above 11 and both above 31)",
+      "derivation_closed_form": "p inert in K = CM field => E20 mod P supersingular => a_P = 0 mod p; Weil bound |a_P| <= 2*sqrt(p) < p => a_P = 0 exactly (NO PARI: pure divisibility + inequality)",
+      "derivation_p31_model_check": "seed-time gp receipt: sqrt5 mod 31 = {6, 25}, j mod P = {2, 4}, ellap(reduced standard model) = 0 at BOTH primes",
+      "derivation_p11_twist_invariance": "sqrt5 mod 11 = {4, 7}, j mod P = {0, 1}; pure-python exhaustive receipts: ALL quadratic/sextic twist classes y^2 = x^3 + b (b = 1..10) have 12 points over F_11 and ALL y^2 = x^3 + a x (a = 1..10) have 12 points => a_P = 0 model-independently at both primes above 11",
+      "induced_L_p": "L_p(B4/F, T) = prod over P|p of L_P(E20, T^f(P))^4 with f(P) = 1 for all four primes: = (1 + p T^2)^8, degree 16, degree bookkeeping: 2 primes x deg-2 L_P x 4th power",
+      "count_of_record": {"p11": 429981696, "p11_derivation": "(1+11)^8 = 12^8", "p31": 1099511627776, "p31_derivation": "(1+31)^8 = 32^8"}
+    },
+    "precision": {"dps": 60, "per_entry_radius": "1e-55"},
+    "polarization_elementary_divisors": [1, 1, 1, 1],
+    "sign_convention": {"s1": "P", "s2": "K-embedding PINNED: rho acts as +i*sqrt(5) on the holomorphic tangent space (the P lane); rho -> -rho is the N5/B4s-detected flip"},
+    "isogeny_declared": "product-diagonal (E20^4, identity on each factor)"
+  },
+
+  "B4s": {
+    "member": "same object as B4 (E20^4, same rho_8x8, same polarization, same pinned model with u = -1) at the SPLIT pilot prime p = 29",
+    "splitting_receipts": "(5|29) = +1 AND (-5|29) = +1 (Euler criterion, seed time); 29 = 3^2 + 5*2^2; pi = 3 + 2*sqrt(-5), pibar = 3 - 2*sqrt(-5), both principal; N(pi-1) = 24, N(pi+1) = 36 (exact integer receipts)",
+    "pinned_F_prime": "P_pin = (29, sqrt(5) - 11): sqrt(5) -> 11, j mod P_pin = 12; conjugate P_conj = (29, sqrt(5) - 18): sqrt(5) -> 18, j mod P_conj = 23 (632000 = 3, 282880 = 14 mod 29)",
+    "pinned_K_prime": "the O_K-prime selected by the pinned K-embedding is (pi) = (29, sqrt(-5) - 13) (receipt: 3 + 2*13 = 29 = 0 mod 29; the conjugate (29, sqrt(-5) - 16) contains pibar); sqrt(-5) mod 29 = {13, 16} (16^2 = 256 = 24 = -5 mod 29)",
+    "banked_desk_truths": {
+      "required_output": "(a_P, b_P) per prime P|29 with Frob_P = (a_P/2) + b_P*rho in the PINNED basis {1, rho}",
+      "at_P_pin": {"a_P": -6, "b_P": -2, "Frob": "u*(3 + 2*rho) = -(3 + 2*rho) = -3 - 2*rho"},
+      "at_P_conj": {"a_P": -6, "b_P": 2, "Frob": "u*(3 - 2*rho) = -3 + 2*rho"},
+      "count_E20_F_P": 36,
+      "L_P": "1 + 6 T + 29 T^2 per prime (L_P(1) = 36 = N(pi+1)); member L_p(B4s/F, T) = (1 + 6T + 29T^2)^8 across both primes (deg 16)",
+      "detector_property": "rho -> -rho flips the SIGN of b_P at both primes (4*u*rho != 0) while a_P, counts, and every B1-B4 legacy output are invariant"
+    },
+    "torsion_check": {
+      "m": 3,
+      "m_rule_receipt": "m odd, gcd(m, 10*29) = gcd(3, 290) = 1",
+      "congruence": "on E20[3]: R := 2^(-1)*(u*FrobMat - 3*Id) mod 3 must satisfy R^2 = -5*Id = Id mod 3, trace(R) = 0, det(R) = 5 = 2 mod 3, R nonscalar; eigen-pairing: eigenvalues of u*FrobMat on the rho-eigenlines must pair as {3 + b_P*lambda : lambda eigenvalue of rho mod 3} per the O_K/3 = F_3 x F_3 module split (identification O_K-equivariant, unique up to per-line unit scaling which preserves the pairing)",
+      "frobenius_side": "FrobMat computed on an explicit basis of E20[3] over the reduced curve (ellap-side reductions; PARI elltors/division-polynomial route legal here — Path 1)"
+    },
+    "cross_method": "Path 2 = hecke_desk conjugation-aware desk truth u*(3 +/- 2*rho) per O_K-prime in exact Z[sqrt(-5)] arithmetic (NO PARI)",
+    "precision": {"dps": 60, "per_entry_radius": "1e-55"},
+    "sign_convention": {"s1": "P", "s2": "K-embedding PINNED as in B4; THIS member is the rho-embedding detector"}
+  },
+
+  "B5": {
+    "member": "Res_{K/Q}(J(C_K)), K = Q(sqrt(-5)): abelian FOURFOLD with genuine K-action (target class); STRETCH member, precondition-flagged",
+    "precondition": {
+      "requirement": "in-house PARI hyperellcharpoly support over F_p AND F_p^2 (battery row B5: confirmed at build time else B5 dropped with receipt + TARGET-CLASS-UNEXERCISED flag)",
+      "build_time_probe": "CONFIRMED 2026-07-30 seed time: gp hyperellcharpoly(x^5 + t*x + 1) over F_11^2 (t = ffgen([11,2])) returned x^4 + x^3 - 36 x^2 + 121 x + 14641, rc = 0; over F_11 likewise; B5 RUNS",
+      "status": "RUNS"
+    },
+    "curve": {
+      "model": "C_K: y^2 = x^5 + sqrt(-5)*x + 1 over K",
+      "f_coeffs_c0_to_c5": "[1, sqrt(-5), 0, 0, 0, 1] (c1 = sqrt(-5))",
+      "disc_f_banked": "3125 + 6400*sqrt(-5) (disc(x^5 + a x + b) = 4^4 a^5 + 5^5 b^4, a = sqrt(-5): a^5 = 25*sqrt(-5), b = 1)",
+      "disc_norm": 214565625,
+      "good_reduction_check": "N(disc) = 3125^2 + 5*6400^2 = 214565625; N(disc) mod {2, 11, 29, 31} = {1, 10, 19, 24}, all nonzero => good reduction at every pilot prime (bad primes divide 2*N(disc)); pure-integer seed receipt"
+    },
+    "pilot_primes": [11, 29, 31],
+    "prime_note": "11, 31 INERT in K (residue field F_p^2 — the F_p^2-support leg); 29 SPLIT in K (two degree-1 primes — the F_p leg); pinned K-prime at 29 = (pi) = (29, sqrt(-5) - 13) => pinned reduction s -> 13, conjugate s -> 16 (consistent with the B4s pinned_K_prime)",
+    "banked_desk_truths": {
+      "derivation": "seed-time desk enumeration by pure python integer arithmetic (field towers F_p[s]/(s^2 - c) and quadratic extension by a nonsquare; quadratic character by squares-set membership; B2-pattern power sums: e1 = t1, e2 = (t1^2 - t2)/2, e3 = q e1, e4 = q^2 over the RESIDUE field F_q); seed-time PARI cross-check: hyperellcharpoly over F_121, F_961, F_29 (both conjugates) agreed EXACTLY on all four charpolys",
+      "p11": {"q": 121, "field": "F_11[s]/(s^2 - 6) (-5 = 6 mod 11, nonresidue)", "count_C_Fq": 140, "count_C_Fq2": 14870, "charpoly_over_Fq_monic_desc": [1, 18, 276, 2178, 14641], "L_p_assembly": "L_11(Res, T) = L_P(J, T^2), deg 8", "count_Res_Fp": 17114},
+      "p29": {
+        "pinned_s13": {"count_C_Fp": 40, "count_C_Fp2": 850, "charpoly_monic_desc": [1, 10, 54, 290, 841]},
+        "conj_s16": {"count_C_Fp": 25, "count_C_Fp2": 849, "charpoly_monic_desc": [1, -5, 16, -145, 841]},
+        "L_p_assembly": "L_29(Res, T) = L_(pi)(J, T) * L_(pibar)(J, T), deg 8", "count_Res_Fp": 846768, "count_derivation": "1196 * 708"
+      },
+      "p31": {"q": 961, "field": "F_31[s]/(s^2 - 26) (-5 = 26 mod 31, nonresidue)", "count_C_Fq": 936, "count_C_Fq2": 924950, "charpoly_over_Fq_monic_desc": [1, -26, 1052, -24986, 923521], "L_p_assembly": "L_31(Res, T) = L_P(J, T^2), deg 8", "count_Res_Fp": 899562},
+      "frobenius_twist_note": "at inert primes the charpoly is independent of the sqrt(-5) sign choice in F_q (Frobenius-conjugate curve, same zeta); at the split prime the two conjugate reductions are genuinely different curves and BOTH are banked with the pinned/conjugate labels above"
+    },
+    "cross_method": "Path 1 = PARI hyperellcharpoly over the residue fields; Path 2 = abcount route-D Weil-restriction identity L_p(Res B', T) = prod over P|p of L_P(B', T^f(P)) assembled from the desk-count charpolys (pure python, hecke_desk-independent, NO PARI); agreement = exact integer equality of the deg-8 polynomials + Weil-box isolation receipt",
+    "run_time_pilot": "the F_31^4 desk enumeration is the one new heavy desk cost class: pilot-time the F_11^4 enumeration first, then the F_31^4 run (seed-time actual: 2.4 s total) — breach of the S3 wall = STOP-WALL",
+    "precision": {"dps": 60, "per_entry_radius": "1e-55"},
+    "sign_convention": {"s1": "P", "s2": "K-action via sqrt(-5) coefficient of the model; K-embedding pin as in B4s (pinned K-prime at 29 = (pi))"}
+  },
+
+  "N2_wrong_divisors": {
+    "commitment": "B2 input with polarization E replaced by the alternating integer matrix E' = [[0, D], [-D, 0]] in the B2 product symplectic basis, D = diag(1, 1, 2, 2) — elementary divisors [1, 1, 2, 2] instead of the declared principal [1, 1, 1, 1]",
+    "required_verdict": "FAIL at the Frobenius-normal-form / polarization-type check, named predicate in the receipt; NO tau emitted downstream of the failure",
+    "run_stage": "S3"
+  },
+  "N3_rho_tamper": {
+    "commitment": "B4 input with rho_8x8 tampered in exactly ONE entry: rho[1][2] += 1 (1-based row 1, column 2: the (-5) in the first 2x2 block becomes -4)",
+    "required_verdict": "FAIL at the exact O_K-action receipt (rho^2 = -5 predicate fires first for this entry; lattice-preservation and Rosati checks also armed), named failing predicate in machine-readable output",
+    "run_stage": "S3"
+  },
+  "N4_precision_starvation": {
+    "commitment_attempt1_preserved": "B1 precision-starvation control: the four per-factor a_p enclosures entering the Weil box carry INFLATED radius 0.6 each (inflated from the working ~1e-50; 0.6 > 1/2 guarantees >= 2 integer candidates per factor interval) at p = 13",
+    "erratum": "the attempt-1 justification was an ARITHMETIC ERROR at seed time: an interval of halfwidth 0.6 around an integer contains exactly ONE integer (a second integer needs halfwidth > 1), so the pin did not meet the sealed operative condition 'radii inflated until the Weil box contains >1 integer candidate' (battery row N4); the run correctly isolated a unique integer and STOPped (receipt preserved: S3_RUN_OUTPUT_attempt1.json, banked before this revision); the TOOL behaved correctly — this revision conforms the SEED to the sealed condition; no sealed criterion touched (S2 attempt-1 erratum precedent)",
+    "commitment": "B1 precision-starvation control: the four per-factor a_p enclosures entering the Weil box carry INFLATED radius 1.5 each (inflated from the working ~1e-50; halfwidth 1.5 > 1 guarantees 3 integer candidates per factor interval) at p = 13",
+    "inflated_radius": "1.5",
+    "required_verdict": "UNDECIDED-PRECISION with a needed-dps estimate in the receipt; ANY emitted integer = battery FAIL (the tool must refuse, never guess)",
+    "run_stage": "S3"
+  },
+
+  "S3_walls": {
+    "sealed_rule": "M3T_REGISTRATION.md sec 4 row S3: priced from S2 actuals BEFORE launch, declared in the build-cycle prereg (THIS block)",
+    "pricing_from_S2": "S2 actuals (S2_RESULT.md sec 3): python total 24.5 s / 0.043 GB; julia maxrss 0.395 GB; member period run ~2.5 s; g2 theta 0.0021 s @ 390 bits; g4 theta 0.270 s @ 250 bits; S3 additions measured at seed time: full B5 desk enumeration 2.5 s python; gp ellap/hyperellcharpoly calls all sub-second",
+    "declared_budget": {"wallclock_seconds": 3600, "mem_gb": 4.0, "dps_cap": 400},
+    "pilot_pricing": "the two NEW cost classes are measured in-run BEFORE their sweeps: (i) F_11^4 desk enumeration timed before the F_31^4 enumeration; (ii) ONE E20[3] torsion basis + Frobenius matrix computation timed before the per-prime torsion sweep; breach of the declared budget = STOP-WALL, no silent retry",
+    "run_stage": "S3"
+  }
+}

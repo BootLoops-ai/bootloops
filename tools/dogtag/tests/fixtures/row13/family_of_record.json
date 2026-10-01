@@ -1,0 +1,128 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true
+ },
+ "family": {
+  "name": "kite",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [
+   "p"
+  ],
+  "conservation": {},
+  "replacement": {
+   "p^2": "psq"
+  },
+  "propagators": [
+   "k1^2 - msq",
+   "k2^2",
+   "(k1 - k2)^2 - msq",
+   "(k1 - p)^2",
+   "(k2 - p)^2 - msq"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    2,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    -1,
+    1,
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    -2,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    1,
+    1
+   ]
+  }
+ ],
+ "goal_digits": 150,
+ "eps_order": 10,
+ "work_dir": "kite_tm3_g150_o10",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "blackbox": {
+   "ibp_rank": 2,
+   "ibp_dot": 1,
+   "n_thread": 8,
+   "numeric_values": {
+    "psq": "-3",
+    "msq": "1"
+   }
+  }
+ }
+}

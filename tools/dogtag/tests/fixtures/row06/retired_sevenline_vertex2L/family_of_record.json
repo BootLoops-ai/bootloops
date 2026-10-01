@@ -1,0 +1,113 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true,
+  "d0": "4"
+ },
+ "family": {
+  "name": "vertex2L",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [
+   "p1",
+   "p2",
+   "p3"
+  ],
+  "conservation": {
+   "p3": "-(p1+p2)"
+  },
+  "replacement": {
+   "p1^2": "0",
+   "p2^2": "0",
+   "p3^2": "s",
+   "p1*p2": "s/2"
+  },
+  "propagators": [
+   "k1^2",
+   "k2^2",
+   "(k1 + k2)^2",
+   "(k1 + p1)^2",
+   "(k2 + p1)^2",
+   "(k1 + p1 + p2)^2",
+   "(k2 + p1 + p2)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "indices": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "indices": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 40,
+ "eps_order": 9,
+ "work_dir": "vertex2L_ssm1_g40_o9a",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 16,
+  "blackbox": {
+   "ibp_rank": 0,
+   "ibp_dot": 2,
+   "integral_order": 5,
+   "n_thread": 8,
+   "numeric_values": {
+    "s": "-1"
+   }
+  }
+ }
+}

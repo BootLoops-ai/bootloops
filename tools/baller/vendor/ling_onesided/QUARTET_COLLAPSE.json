@@ -1,0 +1,38 @@
+{
+ "registration_rule": "quartet = 4 highest concept_count in DravLex v1.0 languages.csv, ties alphabetical by Language ID; characters = cognate sets; MISSING if meaning unattested; any-MISSING characters dropped; quartet-level ascertainment: observed 0000 excluded and counted, likelihood conditioned on non-all-absent",
+ "quartet": [
+  "Betta_Kurumba",
+  "Brahui",
+  "Gondi",
+  "Kannada"
+ ],
+ "quartet_concept_counts": {
+  "Betta_Kurumba": 100,
+  "Brahui": 100,
+  "Gondi": 100,
+  "Kannada": 100
+ },
+ "total_cognate_sets": 778,
+ "multi_meaning_sets": 0,
+ "dropped_missing": 0,
+ "observed_all_absent_dropped": 460,
+ "n_characters_used": 318,
+ "pattern_counts": {
+  "0001": 55,
+  "0010": 64,
+  "0011": 6,
+  "0100": 76,
+  "0101": 3,
+  "0110": 5,
+  "0111": 4,
+  "1000": 45,
+  "1001": 27,
+  "1010": 4,
+  "1011": 13,
+  "1101": 5,
+  "1110": 1,
+  "1111": 10
+ },
+ "source_zip_sha256": "53ced9ddfe6f4a4f6fc5cbbfac5a247e3d361d0e827befec6d082ff607f885bf",
+ "generated_utc": "Wed Jul 15 02:59:14 UTC 2026"
+}

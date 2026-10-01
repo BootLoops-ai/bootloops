@@ -1,0 +1,234 @@
+{
+ "pairs": [
+  {
+   "drawn": "drawn_row18_fig_ggH",
+   "family": "fam2",
+   "family_sha16": "b5f9569a3518851e",
+   "labeled_match": true,
+   "labeled_matches": [
+    {
+     "loops": [
+      "k1 -> k1",
+      "k2 -> k2"
+     ],
+     "legs": [
+      "p1 -> p1",
+      "p2 -> p2",
+      "p3 -> p3"
+     ],
+     "tool_style": "identity"
+    },
+    {
+     "loops": [
+      "k1 -> -k1",
+      "k2 -> -k2"
+     ],
+     "legs": [
+      "p1 -> p2",
+      "p2 -> p1",
+      "p3 -> p3"
+     ],
+     "tool_style": "k1 -> -k1, k2 -> -k2; p1 -> p2, p2 -> p1"
+    }
+   ],
+   "n_relabelings_tested": 16,
+   "mass_and_label_blind_match": true,
+   "mass_labeled_leg_labels_ignored_match": true,
+   "tool_isomorphism_to_mass_blind": "identity",
+   "hash_drawn": "996d57175c92",
+   "hash_family": "996d57175c92",
+   "mass_multiset_drawn": [
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ],
+   "mass_multiset_family": [
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ]
+  },
+  {
+   "drawn": "drawn_row18_fig_ggH",
+   "family": "fam5",
+   "family_sha16": "b5f9569a3518851e",
+   "labeled_match": false,
+   "labeled_matches": [],
+   "n_relabelings_tested": 16,
+   "mass_and_label_blind_match": true,
+   "mass_labeled_leg_labels_ignored_match": false,
+   "tool_isomorphism_to_mass_blind": "identity",
+   "hash_drawn": "996d57175c92",
+   "hash_family": "996d57175c92",
+   "mass_multiset_drawn": [
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ],
+   "mass_multiset_family": [
+    "0",
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ]
+  },
+  {
+   "drawn": "drawn_row18_fig_ggH",
+   "family": "amflow_sr2d2_sunrise_subcurve",
+   "family_sha16": "5fc8ed282ed6e655",
+   "labeled_match": false,
+   "labeled_matches": [],
+   "n_relabelings_tested": null,
+   "mass_and_label_blind_match": false,
+   "mass_labeled_leg_labels_ignored_match": false,
+   "tool_isomorphism_to_mass_blind": null,
+   "hash_drawn": "996d57175c92",
+   "hash_family": "f76322b9b54c",
+   "mass_multiset_drawn": [
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ],
+   "mass_multiset_family": [
+    "1",
+    "1",
+    "Msq"
+   ]
+  },
+  {
+   "drawn": "drawn_row18_subsector_D2D4D6",
+   "family": "fam2",
+   "family_sha16": "b5f9569a3518851e",
+   "labeled_match": false,
+   "labeled_matches": [],
+   "n_relabelings_tested": null,
+   "mass_and_label_blind_match": false,
+   "mass_labeled_leg_labels_ignored_match": false,
+   "tool_isomorphism_to_mass_blind": null,
+   "hash_drawn": "9f4faa7ca4ae",
+   "hash_family": "996d57175c92",
+   "mass_multiset_drawn": [
+    "1",
+    "1",
+    "Msq"
+   ],
+   "mass_multiset_family": [
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ]
+  },
+  {
+   "drawn": "drawn_row18_subsector_D2D4D6",
+   "family": "fam5",
+   "family_sha16": "b5f9569a3518851e",
+   "labeled_match": false,
+   "labeled_matches": [],
+   "n_relabelings_tested": null,
+   "mass_and_label_blind_match": false,
+   "mass_labeled_leg_labels_ignored_match": false,
+   "tool_isomorphism_to_mass_blind": null,
+   "hash_drawn": "9f4faa7ca4ae",
+   "hash_family": "996d57175c92",
+   "mass_multiset_drawn": [
+    "1",
+    "1",
+    "Msq"
+   ],
+   "mass_multiset_family": [
+    "0",
+    "M2",
+    "mt2",
+    "mt2",
+    "mt2",
+    "mt2"
+   ]
+  },
+  {
+   "drawn": "drawn_row18_subsector_D2D4D6",
+   "family": "amflow_sr2d2_sunrise_subcurve",
+   "family_sha16": "5fc8ed282ed6e655",
+   "labeled_match": true,
+   "labeled_matches": [
+    {
+     "loops": [
+      "K1 -> K1",
+      "K2 -> K2"
+     ],
+     "legs": [
+      "p1 -> p2",
+      "p2 -> p1"
+     ],
+     "tool_style": "identity; p1 -> p2, p2 -> p1"
+    },
+    {
+     "loops": [
+      "K1 -> -K1",
+      "K2 -> -K2"
+     ],
+     "legs": [
+      "p1 -> p1",
+      "p2 -> p2"
+     ],
+     "tool_style": "k1 -> -k1, k2 -> -k2"
+    },
+    {
+     "loops": [
+      "K1 -> K2",
+      "K2 -> K1"
+     ],
+     "legs": [
+      "p1 -> p2",
+      "p2 -> p1"
+     ],
+     "tool_style": "k1 -> k2, k2 -> k1; p1 -> p2, p2 -> p1"
+    },
+    {
+     "loops": [
+      "K1 -> -K2",
+      "K2 -> -K1"
+     ],
+     "legs": [
+      "p1 -> p1",
+      "p2 -> p2"
+     ],
+     "tool_style": "k1 -> -k2, k2 -> -k1"
+    }
+   ],
+   "n_relabelings_tested": 16,
+   "mass_and_label_blind_match": true,
+   "mass_labeled_leg_labels_ignored_match": true,
+   "tool_isomorphism_to_mass_blind": "k1 -> -k1, k2 -> -k2",
+   "hash_drawn": "9f4faa7ca4ae",
+   "hash_family": "f76322b9b54c",
+   "mass_multiset_drawn": [
+    "1",
+    "1",
+    "Msq"
+   ],
+   "mass_multiset_family": [
+    "1",
+    "1",
+    "Msq"
+   ]
+  }
+ ],
+ "rule": "identity = signed loop relabeling + leg permutation mapping the labeled propagator set (momentum, m^2) onto the family's, with on/off-shell leg labels preserved"
+}

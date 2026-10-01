@@ -1,0 +1,10 @@
+{
+ "vendored_from": "tools/trust/receipt",
+ "rule": "byte-identical vendor; NEVER fork \u2014 test_vendor_integrity.py enforces sha256 equality vs the canonical tools/trust/receipt files",
+ "files": {
+  "core.py": "96b0a223365cfb0be0a513a52880b34ced31269130c111ee63db689fa322beb0",
+  "emitter.py": "4cdce5422b45ca13c15bf3c170081919c5209094334c6fbc18adfa24117534d2",
+  "detector.py": "e241aa95e0484de079cecf4f51a0437603cb9160951f6fe7d3dd82cbc28f3573",
+  "WITNESS_FORMAT.md": "59562276a88e11a25f482705bf241938a67340476a4e315c5ddb583d96725052"
+ }
+}

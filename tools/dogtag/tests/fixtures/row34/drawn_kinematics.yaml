@@ -1,0 +1,7 @@
+# kinematics of the drawn graph (legs all incoming; virtualities as drawn/captioned)
+kinematics:
+  incoming_momenta: [p, pout]
+  outgoing_momenta: []
+  momentum_conservation: [pout, -p]
+  scalarproduct_rules:
+    - [[p, p], "pp"]

@@ -1,0 +1,126 @@
+{
+ "what": "Bench fixtures for tools/posq/closure_interface.py \u2014 small self-contained loglik closures with analytically exact truth values. Truths are exact closed forms (the exact register); estimator outputs are float-class R3 and gated by recorded tolerances derived from a measured 8-seed sweep (2026-07-20 UTC, numpy 2.4.1 / scipy 1.17.1 / mpmath 1.3.0).",
+ "harness": "closures rebuilt from 'kind' + 'params' by selftest_closure_interface.py (no pickles); formulas in FIXTURES_README.md",
+ "fixtures": [
+  {
+   "id": "F1-separable-power",
+   "kind": "separable_power",
+   "params": {
+    "a": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dim": 3,
+   "loglik_form": "loglik(u) = sum_i a_i * ln(u_i)",
+   "truth_lnZ": "-3.178053830347945619646941601006",
+   "truth_form": "Z = prod_i 1/(a_i+1) = 1/24 exact rational; lnZ = -ln 24",
+   "truth_register": "exact (closed form, rational Z)",
+   "gate": {
+    "budget": 100000,
+    "seeds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "tol": 0.0005
+   },
+   "measured": {
+    "maxabsdev_budget50k_seeds1-8": 2.42e-05,
+    "maxabsdev_budget200k_seeds1-8": 1.71e-06,
+    "tol_margin": ">= 20x over the 50k-budget measured max"
+   }
+  },
+  {
+   "id": "F2-constant",
+   "kind": "constant",
+   "params": {
+    "c": -3.5
+   },
+   "dim": 2,
+   "loglik_form": "loglik(u) = c (constant)",
+   "truth_lnZ": "-3.5",
+   "truth_form": "Z = e^c exactly; lnZ = c = -7/2 exact",
+   "truth_register": "exact (closed form)",
+   "gate": {
+    "budget": 100000,
+    "seeds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "tol": 0.0005
+   },
+   "measured": {
+    "maxabsdev_budget50k_seeds1-8": 1.89e-05,
+    "maxabsdev_budget200k_seeds1-8": 3.5e-06,
+    "tol_margin": ">= 26x over the 50k-budget measured max"
+   }
+  },
+  {
+   "id": "F3-hazard7-toy",
+   "kind": "hazard7_toy",
+   "params": {
+    "events": [
+     3,
+     2,
+     9,
+     2,
+     3,
+     8,
+     2
+    ],
+    "exposure": [
+     40,
+     40,
+     40,
+     40,
+     40,
+     40,
+     40
+    ]
+   },
+   "dim": 7,
+   "loglik_form": "loglik(h) = sum_b [ d_b * ln(h_b) - h_b * E_b ], h_b = u_b (uniform prior per bin)",
+   "truth_lnZ": "-103.7302694899220089698478854995",
+   "truth_form": "Z = prod_b Integral_0^1 h^{d_b} e^{-E_b h} dh = prod_b E_b^{-(d_b+1)} * gamma_lower(d_b+1, E_b); 30-digit value via mpmath dps=40 (derivation in FIXTURES_README.md)",
+   "truth_register": "exact closed form in incomplete-gamma values; decimal computed at 40 dps",
+   "note": "hazard-field-SHAPED toy only: 7 bins, bins 3 and 6 carrying elevated event counts (a 'crisis' texture). It demonstrates a hazard-field-style closure through the harness; it is NOT a full hazard-field model (no covariates, no gamma slot heterogeneity \u2014 those belong inside the consumer's own closure).",
+   "gate": {
+    "budget": 100000,
+    "seeds": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "tol": 0.005
+   },
+   "measured": {
+    "maxabsdev_budget50k_seeds1-8": 0.000174,
+    "maxabsdev_budget200k_seeds1-8": 6.55e-05,
+    "tol_margin": ">= 28x over the 50k-budget measured max"
+   }
+  }
+ ],
+ "plants": [
+  {
+   "id": "P1-wrong-shape",
+   "what": "closure returning shape (n,2) \u2014 check_closure must raise ClosureInterfaceError",
+   "must": "fire"
+  },
+  {
+   "id": "P2-nan",
+   "what": "closure returning NaN at probed points \u2014 check_closure must raise ClosureInterfaceError",
+   "must": "fire"
+  },
+  {
+   "id": "P3-missing-object",
+   "what": "infer_hazard_field() and posterior_draws() must raise ClosureObjectMissing with non-empty reason and unlock",
+   "must": "fire"
+  }
+ ]
+}

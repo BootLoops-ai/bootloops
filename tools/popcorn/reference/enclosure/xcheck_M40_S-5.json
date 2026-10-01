@@ -1,0 +1,9 @@
+{
+ "about": "FLOAT-HP cross-check instance: independent mpmath vector-Taylor substep integrator (nsub substeps, dps digits) of the truncated LOWER moment system vs the ball route, M = 40, S = -5, single epoch rho = 1/5 for T = 1/10 after the ancestral equilibrium; worst_rel_dev = max over w_1..w_20 of |mpmath LOWER value - hull midpoint| / |midpoint|; at M = 40 this equals the half LOWER/UPPER bracket at j = 20 (1.5e-32), while against the LOWER-bracket midpoint the mpmath route agrees to 2e-50 (its working precision).",
+ "M": 40,
+ "S": -5,
+ "nsub": 512,
+ "dps": 50,
+ "worst_rel_dev": 1.5476287441759765e-32,
+ "agree_digits": 31.810333212705583
+}

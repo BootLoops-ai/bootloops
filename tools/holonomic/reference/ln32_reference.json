@@ -1,0 +1,25 @@
+{
+ "what": "Recorded enclosures from the worked example: L = (1+x)*Dx^2 + Dx annihilates ln(1+x); certified transport of (f, f') = (0, 1) along [0, 1/2] at eps 1e-40, algorithm='naive'. The transported value is ln(3/2). Both records come from the reference build (SageMath 10.7 + ore_algebra 0.5); the battery's engine-free leg recomputes ln(3/2) independently in pure Python integer arithmetic and verifies these recorded balls contain it and are internally consistent.",
+ "target": "ln(3/2)",
+ "engine": {"sage": "10.7", "ore_algebra": "0.5", "algorithm": "naive"},
+ "records": [
+  {
+   "source": "raw transition-matrix entry (0,1), printed ball at 42 decimal digits",
+   "midpoint": "0.405465108108164381978013115464349136571990",
+   "printed_radius": "4.24e-43",
+   "certified_radius": "2.0018179e-47",
+   "abs_err_vs_ln32_upper": "2.234941887374979311650131885272398769636e-47",
+   "eps": "1e-40",
+   "wall_s": 0.35
+  },
+  {
+   "source": "certified_transport() house-layer call (entry re-wrapped in RealBallField(430)), printed ball at 41 decimal digits",
+   "midpoint": "0.40546510810816438197801311546434913657199",
+   "printed_radius": "3.93e-42",
+   "certified_radius": "2.869879273944904e-42",
+   "eps": "1e-40",
+   "wall_s": 0.46
+  }
+ ],
+ "notes": "printed_radius is the radius of the DECIMAL-PRINTED ball (it absorbs the print-rounding of the midpoint), so containment of the true value is checked against printed_radius; certified_radius is the internal Arb radius of the same ball. abs_err_vs_ln32_upper is the recorded upper bound on |ball - ln(3/2)| against a 300-bit evaluation of the logarithm; containment implies it is at most 2*certified_radius plus the comparison ball's own (negligible) radius."
+}

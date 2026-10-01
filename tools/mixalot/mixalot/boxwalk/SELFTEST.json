@@ -1,0 +1,21 @@
+{
+ "PASS": true,
+ "results": {
+  "A_sympy_exact": true,
+  "A_gates": true,
+  "B_jc_toy_walk_vs_oracle": true,
+  "C_mutation_refill": true,
+  "C_mutation_slab": true,
+  "D_fiber_fit_lift_verify": true,
+  "D_fiber_extend": true,
+  "D_gcrd_recover": true,
+  "D_gcrd_lclm": true,
+  "D_gcrd_mutation": true,
+  "D_gcrd_fiber": true,
+  "E_singular_smoke": true,
+  "F_verify_pass": true,
+  "F_verify_mutation": true
+ },
+ "wall_s": 17.6,
+ "date": "2026-09-29T14:10:18Z"
+}

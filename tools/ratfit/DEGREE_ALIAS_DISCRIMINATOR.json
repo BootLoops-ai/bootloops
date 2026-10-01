@@ -1,0 +1,24 @@
+{
+ "receipt": "DEGREE-ALIAS DISCRIMINATOR (two-sided oracle proof)",
+ "law": "per-prime fit degrees on failing entries decide the failure axis: pinned at grid ceiling (nd-1, neta-1) with trivial denominator = DEGREE-ALIASED (interpolation alias, consistent across ALL primes, MQRR reads as interior -> position classifier is blind to it; fix = single-axis extension); stable degrees below ceiling with nontrivial denominator = HEIGHT (fix = +prime passes)",
+ "side_A_alias": {
+  "sector": 5806,
+  "grid": [
+   50,
+   100
+  ],
+  "probed": 5,
+  "fit_degs": "(49,99) num, (0,0) den, identical at 7 primes",
+  "corroboration": "0/272 lifted at 8p and 9p"
+ },
+ "side_B_height": {
+  "sector": 5805,
+  "grid": [
+   29,
+   101
+  ],
+  "probed": 5,
+  "fit_degs": "(11-13, 45-47) num, (9-10, 46-48) den, identical at 5 primes, well below ceiling",
+  "corroboration": "all 1031 lifted by +1 prime"
+ }
+}

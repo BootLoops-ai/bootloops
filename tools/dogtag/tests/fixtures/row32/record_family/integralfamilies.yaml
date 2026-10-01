@@ -1,0 +1,21 @@
+# FAMILY OF RECORD, row 32 (4L banana $\mathrm{CY}_3$ $(1{,}1{,}1{,}1{,}16)$: $c_{5/4},c_{7/4}$): the 4-loop banana with 5 lines between two vertices,
+# squared masses (1, 1, 1, 1, 16) on the lines as the figure labels them, one external momentum p.
+# Transcribed from the paper's own definition: the family-table row 32,
+# the gallery tile and its caption,
+# the figure fig-banana-4l-11116.tex (sha256 4d61b039caba9a197d5c1279d0fafb2b6a0d2fe52f5bfa04eff5ab7bb6cc1e4f): 4 massM1 lines labelled m and one massM2 line labelled 4m,
+# and the period data's msq list pf_cy3_data.json (sha256 ce4770aa4b7cdff70efcc6acc434a6308082980081ae06b341b8aced16be5ace).
+# Kira convention: [momentum, mass^2] stands for momentum^2 - mass^2; masses in units m = 1, so m -> 1 and 4m -> 16 (= 4^2), the squared masses of the table label and the msq list.
+# Routing: k1..k4 on the m-lines, p - k1 - ... - k4 on the heavy line (fig-banana-4l-11116.tex header L6-8; the same convention taken for the three-loop figure, which prints no routing).
+# The printed digits of this row are period-level (Picard-Fuchs data of this family), not an IBP reduction of it; this file was
+# written as a transcription for the graph-identity check and never run through Kira or AMFlow.
+integralfamilies:
+  - name: "banana4L_11116"
+    loop_momenta: [k1, k2, k3, k4]
+    top_level_sectors: [31]
+    propagators:
+      - [ "k1", 1 ]                     # line 1: m-line (massM1, red)
+      - [ "k2", 1 ]                     # line 2: m-line (massM1, red)
+      - [ "k3", 1 ]                     # line 3: m-line (massM1, red)
+      - [ "k4", 1 ]                     # line 4: m-line (massM1, red)
+      - [ "p - k1 - k2 - k3 - k4", 16 ] # line 5: heavy line (massM2, blue, label 4m)
+    cut_propagators: []

@@ -1,0 +1,12 @@
+# deliberately asymmetric 1-loop box: three different internal masses,
+# no external crossing survives -> Aut must be trivial.
+integralfamilies:
+  - name: "asymbox"
+    loop_momenta: [k]
+    top_level_sectors: [15]
+    propagators:
+      - [ "k^2 - 1", 0 ]
+      - [ "(k + p1)^2 - 2", 0 ]
+      - [ "(k + p1 + p2)^2 - 3", 0 ]
+      - [ "(k + p1 + p2 + p3)^2", 0 ]
+    cut_propagators: []

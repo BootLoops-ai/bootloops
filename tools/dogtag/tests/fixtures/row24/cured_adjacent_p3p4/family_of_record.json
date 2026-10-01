@@ -1,0 +1,121 @@
+{
+ "mode": "solve_integrals",
+ "options": {
+  "silent_mode": true,
+  "d0": "4",
+  "run_direction": "NegRe"
+ },
+ "family": {
+  "name": "hexaboxP3P4",
+  "loops": [
+   "k1",
+   "k2"
+  ],
+  "legs": [
+   "p1",
+   "p2",
+   "p3",
+   "p4"
+  ],
+  "conservation": {},
+  "replacement": {
+   "p1^2": "0",
+   "p2^2": "0",
+   "p3^2": "mm",
+   "p4^2": "mm",
+   "(p1+p2)^2": "s12",
+   "(p2+p3)^2": "s23",
+   "(p3+p4)^2": "s34",
+   "(p1+p4)^2": "mm - s15 + s23 - s45",
+   "(p1+p3)^2": "mm - s12 - s23 + s45",
+   "(p2+p4)^2": "2*mm + s15 - s23 - s34"
+  },
+  "propagators": [
+   "k1^2",
+   "k2^2",
+   "(k1 - k2 + p4)^2",
+   "(k2 - p4)^2",
+   "(k1 + p1 + p2 + p3 + p4)^2",
+   "(k1 - k2 + p1 + p2 + p3 + p4)^2",
+   "(k1 - k2 + p2 + p3 + p4)^2",
+   "(k1 - k2 + p3 + p4)^2",
+   "(k1 + p1)^2",
+   "(k2 + p2)^2",
+   "(k2 + p3)^2"
+  ]
+ },
+ "integrals": [
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "indices": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    -2,
+    0,
+    0
+   ]
+  }
+ ],
+ "goal_digits": 40,
+ "target_eps_power": 0,
+ "work_dir": "pB40",
+ "amf_options": {
+  "ending_schemes": [
+   "Tradition",
+   "SingleMass"
+  ],
+  "max_recursion_depth": 16,
+  "blackbox": {
+   "ibp_rank": 2,
+   "ibp_dot": 1,
+   "integral_order": 5,
+   "n_thread": 16,
+   "kira3_truncate_sp": true,
+   "kira_executable": "kira",
+   "fermat_executable": "fer64",
+   "numeric_values": {
+    "s12": "-3",
+    "s23": "-5",
+    "s34": "-7",
+    "s45": "-11",
+    "s15": "-17",
+    "mm": "2"
+   }
+  }
+ }
+}

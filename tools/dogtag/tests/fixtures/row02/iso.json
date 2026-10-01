@@ -1,0 +1,213 @@
+{
+ "method": "graph: networkx VF2 isomorphism of the checker's realized graphs with line masses and leg virtualities as labels (routing-independent); propagator-set: signed loop relabelings x leg permutations with momentum conservation re-resolved, (momentum, mass) multisets compared (the checker's own notion, routing-dependent)",
+ "family_of_record_vs_drawn": {
+  "n_lines_A": 7,
+  "n_lines_B": 7,
+  "n_loops_A": 2,
+  "n_loops_B": 2,
+  "n_legs_A": 4,
+  "n_legs_B": 4,
+  "leg_labels_A": {
+   "p1": "0",
+   "p2": "0",
+   "p3": "0",
+   "p4": "0"
+  },
+  "leg_labels_B": {
+   "p1": "0",
+   "p2": "0",
+   "p3": "0",
+   "p4": "0"
+  },
+  "momentum_isomorphic": false,
+  "n_momentum_relabelings_found": 0,
+  "first_momentum_relabeling": null,
+  "labelled_isomorphic": false,
+  "labelled_relabeling": null,
+  "reason": "no signed loop relabeling + leg permutation maps the (momentum, mass) multisets onto each other",
+  "graph": {
+   "bare": true,
+   "bare_leg_map": {
+    "p2": "p1",
+    "p1": "p2",
+    "p3": "p3",
+    "p4": "p4"
+   },
+   "with_masses": true,
+   "with_masses_leg_map": {
+    "p2": "p1",
+    "p1": "p2",
+    "p3": "p3",
+    "p4": "p4"
+   },
+   "with_masses_and_legs": true,
+   "with_masses_and_legs_leg_map": {
+    "p2": "p1",
+    "p1": "p2",
+    "p3": "p3",
+    "p4": "p4"
+   },
+   "V_A": 10,
+   "E_A": 11,
+   "V_B": 10,
+   "E_B": 11
+  },
+  "channel_map": {
+   "family s = (p1 + p2)^2": "-> drawn s (pair ['p1', 'p2'])",
+   "family t = (p1 + p3)^2": "-> drawn t (pair ['p2', 'p3'])",
+   "family_channels_map_onto_drawn_channels_by_name": true
+  }
+ },
+ "extra": {
+  "smirnov_2box_as_printed.yaml_vs_family_of_record": {
+   "n_lines_A": 7,
+   "n_lines_B": 7,
+   "n_loops_A": 2,
+   "n_loops_B": 2,
+   "n_legs_A": 3,
+   "n_legs_B": 4,
+   "leg_labels_A": {
+    "p1": "0",
+    "p2": "0",
+    "p3": "0",
+    "p4": "0"
+   },
+   "leg_labels_B": {
+    "p1": "0",
+    "p2": "0",
+    "p3": "0",
+    "p4": "0"
+   },
+   "momentum_isomorphic": false,
+   "labelled_isomorphic": false,
+   "reason": "line, loop or leg counts differ",
+   "graph": {
+    "error": "vertex realization failed for A",
+    "bare": null,
+    "with_masses": null,
+    "with_masses_and_legs": null
+   }
+  },
+  "smirnov_2box_as_printed.yaml_lint": {
+   "family_name": "smirnov_2box_as_printed",
+   "source": "identity_census/rows/row02/smirnov_2box_as_printed.yaml",
+   "loop_momenta_declared": [
+    "k",
+    "l"
+   ],
+   "n_loops_declared": 2,
+   "external_momenta": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "ext_subs": {
+    "p3": "-p1 - p2"
+   },
+   "n_propagators_listed": 7,
+   "n_top_sector_lines": 7,
+   "n_numerator_or_isp_excluded": 0,
+   "n_massive_lines": 0,
+   "loop_rank_of_top_sector_lines": 2,
+   "loop_count_ok": true,
+   "top_sector_not_a_line": [],
+   "checker_realizer": {
+    "ok": true,
+    "V": 4
+   },
+   "vertex_realization": false,
+   "realizations": {
+    "n_partitions_with_V_eq_E_minus_L_plus_1": 0,
+    "n_distinct_connected_graphs": 0,
+    "unique": false,
+    "budget_exhausted": false
+   },
+   "conservation_at_every_vertex": null,
+   "V": null,
+   "E": 7,
+   "N": 3,
+   "test_3V_le_2E_plus_N": null,
+   "is_graph": false,
+   "note": "no partition of the half-edges into momentum-conserving vertices with V = E - L + 1 exists: the top-sector lines do not close a connected graph with the declared loop count",
+   "isp_in_denominator_flag": true
+  },
+  "catalog_check": {
+   "catalog_crossed_tausk_dbox": {
+    "propagators": [
+     "k1^2",
+     "(k1 + p1)^2",
+     "(k1 + p1 + p2)^2",
+     "k2^2",
+     "(k2 + p1 + p2)^2",
+     "(k2 - p3)^2",
+     "(k1 - k2)^2"
+    ],
+    "n_lines_carrying_both_loop_momenta": 1,
+    "realizations": 1,
+    "census_fingerprint": {
+     "abstract_planar": true,
+     "planar_with_legs_in_canonical_order": false,
+     "cut_signature": {
+      "s": 2,
+      "t": 4,
+      "u": 3
+     }
+    },
+    "graph_iso_to_drawn_planar_box": {
+     "bare": true,
+     "bare_leg_map": {
+      "p4": "p1",
+      "p3": "p2",
+      "p1": "p3",
+      "p2": "p4"
+     },
+     "with_masses": true,
+     "with_masses_leg_map": {
+      "p4": "p1",
+      "p3": "p2",
+      "p1": "p3",
+      "p2": "p4"
+     },
+     "with_masses_and_legs": true,
+     "with_masses_and_legs_leg_map": {
+      "p4": "p1",
+      "p3": "p2",
+      "p1": "p3",
+      "p2": "p4"
+     },
+     "V_A": 10,
+     "E_A": 11,
+     "V_B": 10,
+     "E_B": 11
+    }
+   },
+   "genuine_crossed_box_theta211": {
+    "yaml": "identity_census/rows/row02/genuine_crossed_box_theta211.yaml",
+    "propagators": [
+     "-k1 - k2 + p3 + p4",
+     "-k1 - k2 - p1",
+     "-k1 - k2",
+     "k1 - p3",
+     "k1",
+     "k2 + p1 + p2 + p3",
+     "k2"
+    ],
+    "n_lines_carrying_both_loop_momenta": 3,
+    "realizations": 1,
+    "census_fingerprint": {
+     "abstract_planar": true,
+     "planar_with_legs_in_canonical_order": false,
+     "cut_signature": {
+      "s": 2,
+      "t": 3,
+      "u": 3
+     }
+    },
+    "planar_with_legs_for_some_leg_order": false,
+    "graph_iso_to_catalog_crossed_tausk_dbox_bare": false,
+    "graph_iso_to_drawn_planar_box_bare": false
+   },
+   "verdict_on_catalog": "the catalog entry 'crossed_tausk_dbox' is the planar double box with legs 3 and 4 interchanged (isomorphic as a bare graph to the drawn planar box, leg map {'p4': 'p1', 'p3': 'p2', 'p1': 'p3', 'p2': 'p4'}; cut signature {'s': 2, 't': 4, 'u': 3}); the genuine crossed box, the (2,1,1) theta graph, is not isomorphic to it, is non-planar with legs in every leg order, and has cut signature {'s': 2, 't': 3, 'u': 3} (the count of lines carrying both loop momenta is routing-dependent and is reported only as information)"
+  }
+ }
+}

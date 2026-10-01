@@ -1,0 +1,8 @@
+{
+  "_comment": "1-loop massive bubble large-Q^2 expansion (textbook 3-region: hard + 2 collinear). G=U+F, Q^2=-1, small t=m^2.",
+  "G": "x1+x2 + t*(x1+x2)^2 + x1*x2",
+  "kin": ["t"],
+  "x": ["x1","x2"],
+  "kin_weight": {"t": 1},
+  "regions": [[0,0],[-1,0],[0,-1]]
+}

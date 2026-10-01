@@ -1,0 +1,15 @@
+{
+  "name": "P4_J25",
+  "description": "P4 J25 family (sector 121, ε³, LS=A3). 4-letter {s,t,s+t,O_A3} on the FAITHFUL 2-var rationalized chart (s,y): t=4/(1+y^2), rA3=sqrt((4-t)t)=4y/(1+y^2), O_A3=(2+rA3)/(2-rA3)=((1+y)/(1-y))^2. Parity = y→-y (rA3→-rA3). Validated chain: w2 16→12→3.",
+  "vars": ["s", "y"],
+  "letters": {
+    "L_s":  "s",
+    "L_t":  "4/(1+y**2)",
+    "L_st": "s + 4/(1+y**2)",
+    "O_A3": "((1+y)/(1-y))**2"
+  },
+  "first_entry": ["L_s", "L_t", "O_A3"],
+  "last_entry":  ["L_s", "L_t", "L_st", "O_A3"],
+  "parity": {"O_A3": [1]},
+  "parity_target": [1]
+}

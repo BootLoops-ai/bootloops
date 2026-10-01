@@ -1,0 +1,264 @@
+{
+ "row": 33,
+ "family_of_record": "lbl3vp.json",
+ "family_sha16": "2595b3b08b7112aa",
+ "drawn_source": "fig-lbl3vp.tex (edge dictionary in its comments) + LBL3VP paragraph in lbl3se.tex + Table 2 label",
+ "labeled_isomorphism_drawn_vs_record": {
+  "match": true,
+  "relabeling": "identity",
+  "leg_perm": {
+   "p1": "p1",
+   "p2": "p2",
+   "p3": "p3",
+   "p4": "p4"
+  },
+  "leg_perm_cyclic_order_preserved": true,
+  "n_relabelings_tried": 1,
+  "n_leg_perms_allowed_by_labels": 24,
+  "realized_graph_isomorphism_VF2": {
+   "tool_realization_connected": true,
+   "connected_realization_found": true,
+   "partitions_rejected_as_disconnected": 0,
+   "variants": [
+    {
+     "drawing_choice": {
+      "surviving_copy_edge_index": [
+       3,
+       6
+      ],
+      "contracted_edge_indices": [
+       4,
+       7
+      ]
+     },
+     "strict_leg_names": {
+      "isomorphic": false,
+      "strict_leg_names": true,
+      "ext_node_mapping": null,
+      "n_int_edges": [
+       8,
+       8
+      ]
+     },
+     "leg_labels_only": {
+      "isomorphic": false,
+      "strict_leg_names": false,
+      "ext_node_mapping": null,
+      "n_int_edges": [
+       8,
+       8
+      ]
+     }
+    },
+    {
+     "drawing_choice": {
+      "surviving_copy_edge_index": [
+       3,
+       7
+      ],
+      "contracted_edge_indices": [
+       4,
+       6
+      ]
+     },
+     "strict_leg_names": {
+      "isomorphic": false,
+      "strict_leg_names": true,
+      "ext_node_mapping": null,
+      "n_int_edges": [
+       8,
+       8
+      ]
+     },
+     "leg_labels_only": {
+      "isomorphic": true,
+      "strict_leg_names": false,
+      "ext_node_mapping": {
+       "ext_p3": "ext_p2",
+       "ext_p4": "ext_p1",
+       "ext_p2": "ext_p3",
+       "ext_p1": "ext_p4"
+      },
+      "n_int_edges": [
+       8,
+       8
+      ]
+     }
+    },
+    {
+     "drawing_choice": {
+      "surviving_copy_edge_index": [
+       4,
+       6
+      ],
+      "contracted_edge_indices": [
+       3,
+       7
+      ]
+     },
+     "strict_leg_names": {
+      "isomorphic": true,
+      "strict_leg_names": true,
+      "ext_node_mapping": {
+       "ext_p2": "ext_p2",
+       "ext_p1": "ext_p1",
+       "ext_p3": "ext_p3",
+       "ext_p4": "ext_p4"
+      },
+      "n_int_edges": [
+       8,
+       8
+      ]
+     },
+     "leg_labels_only": {
+      "isomorphic": true,
+      "strict_leg_names": false,
+      "ext_node_mapping": {
+       "ext_p2": "ext_p2",
+       "ext_p1": "ext_p1",
+       "ext_p3": "ext_p3",
+       "ext_p4": "ext_p4"
+      },
+      "n_int_edges": [
+       8,
+       8
+      ]
+     }
+    },
+    {
+     "drawing_choice": {
+      "surviving_copy_edge_index": [
+       4,
+       7
+      ],
+      "contracted_edge_indices": [
+       3,
+       6
+      ]
+     },
+     "strict_leg_names": {
+      "isomorphic": false,
+      "strict_leg_names": true,
+      "ext_node_mapping": null,
+      "n_int_edges": [
+       8,
+       8
+      ]
+     },
+     "leg_labels_only": {
+      "isomorphic": false,
+      "strict_leg_names": false,
+      "ext_node_mapping": null,
+      "n_int_edges": [
+       8,
+       8
+      ]
+     }
+    }
+   ],
+   "strict_leg_names": {
+    "isomorphic": true
+   },
+   "leg_labels_only": {
+    "isomorphic": true
+   }
+  },
+  "record_connected_realization_fingerprint": {
+   "connected": true,
+   "abstract_planar": true,
+   "planar_with_legs_closed_in_order": true,
+   "closure_order": [
+    "p1",
+    "p2",
+    "p3",
+    "p4"
+   ],
+   "cut_signature": {
+    "s": 2,
+    "t": 2,
+    "u": 4
+   },
+   "V": 6,
+   "E_distinct_lines": 8,
+   "N": 4
+  }
+ },
+ "record_nu_of_top_sector_integral": [
+  1,
+  1,
+  1,
+  2,
+  1,
+  2,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "drawn_edge_multiplicity": [
+  1,
+  1,
+  1,
+  2,
+  1,
+  2,
+  1,
+  1
+ ],
+ "fingerprint_record_import_route": {
+  "name": "lbl3vp",
+  "source": "lbl3vp.json",
+  "n_loops": 3,
+  "n_genuine_propagators": 8,
+  "n_isp_or_dotproduct": 7,
+  "n_massive_lines": 7,
+  "cut_signature": {
+   "s": 2,
+   "t": 2,
+   "u": 4
+  },
+  "cut_signature_multiset": [
+   2,
+   2,
+   4
+  ],
+  "planar": true,
+  "planarity_method": "networkx.check_planarity with external-leg closure cycle in canonical order 1,2,3,4",
+  "canonical_hash": "364b988a1df5",
+  "canonical_set_size": 8,
+  "catalog_matches": [],
+  "cut_symmetry": "t/u asymmetric",
+  "warnings": []
+ },
+ "fingerprint_drawn_import_route": {
+  "name": "LBL3VP_drawn",
+  "source": "fig-lbl3vp.tex (edge dictionary in its comments) + LBL3VP paragraph in lbl3se.tex + Table 2 label",
+  "n_loops": 3,
+  "n_genuine_propagators": 8,
+  "n_isp_or_dotproduct": 0,
+  "n_massive_lines": 7,
+  "cut_signature": {
+   "s": 2,
+   "t": 2,
+   "u": 4
+  },
+  "cut_signature_multiset": [
+   2,
+   2,
+   4
+  ],
+  "planar": true,
+  "planarity_method": "networkx.check_planarity with external-leg closure cycle in canonical order 1,2,3,4",
+  "canonical_hash": "364b988a1df5",
+  "canonical_set_size": 8,
+  "catalog_matches": [],
+  "cut_symmetry": "t/u asymmetric",
+  "warnings": []
+ },
+ "extra_checks": {}
+}

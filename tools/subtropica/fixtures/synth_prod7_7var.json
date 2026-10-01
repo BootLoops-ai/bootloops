@@ -1,0 +1,77 @@
+{
+ "schema": "subtropica-euler-quad-v1",
+ "id": "synth_prod7_7var",
+ "title": "synthetic 7-var product control: int P^(-2-eps), P = prod(1+x_i), = (1+eps)^(-7) by per-variable factorization",
+ "divergent": false,
+ "prefactor": {
+  "c": "1",
+  "eps_power": 0,
+  "gammas": [],
+  "gammaE_eps": "0"
+ },
+ "nu": [
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0",
+   "0"
+  ]
+ ],
+ "polys": [
+  {
+   "poly": "x0*x1*x2*x3*x4*x5*x6 + x0*x1*x2*x3*x4*x5 + x0*x1*x2*x3*x4*x6 + x0*x1*x2*x3*x4 + x0*x1*x2*x3*x5*x6 + x0*x1*x2*x3*x5 + x0*x1*x2*x3*x6 + x0*x1*x2*x3 + x0*x1*x2*x4*x5*x6 + x0*x1*x2*x4*x5 + x0*x1*x2*x4*x6 + x0*x1*x2*x4 + x0*x1*x2*x5*x6 + x0*x1*x2*x5 + x0*x1*x2*x6 + x0*x1*x2 + x0*x1*x3*x4*x5*x6 + x0*x1*x3*x4*x5 + x0*x1*x3*x4*x6 + x0*x1*x3*x4 + x0*x1*x3*x5*x6 + x0*x1*x3*x5 + x0*x1*x3*x6 + x0*x1*x3 + x0*x1*x4*x5*x6 + x0*x1*x4*x5 + x0*x1*x4*x6 + x0*x1*x4 + x0*x1*x5*x6 + x0*x1*x5 + x0*x1*x6 + x0*x1 + x0*x2*x3*x4*x5*x6 + x0*x2*x3*x4*x5 + x0*x2*x3*x4*x6 + x0*x2*x3*x4 + x0*x2*x3*x5*x6 + x0*x2*x3*x5 + x0*x2*x3*x6 + x0*x2*x3 + x0*x2*x4*x5*x6 + x0*x2*x4*x5 + x0*x2*x4*x6 + x0*x2*x4 + x0*x2*x5*x6 + x0*x2*x5 + x0*x2*x6 + x0*x2 + x0*x3*x4*x5*x6 + x0*x3*x4*x5 + x0*x3*x4*x6 + x0*x3*x4 + x0*x3*x5*x6 + x0*x3*x5 + x0*x3*x6 + x0*x3 + x0*x4*x5*x6 + x0*x4*x5 + x0*x4*x6 + x0*x4 + x0*x5*x6 + x0*x5 + x0*x6 + x0 + x1*x2*x3*x4*x5*x6 + x1*x2*x3*x4*x5 + x1*x2*x3*x4*x6 + x1*x2*x3*x4 + x1*x2*x3*x5*x6 + x1*x2*x3*x5 + x1*x2*x3*x6 + x1*x2*x3 + x1*x2*x4*x5*x6 + x1*x2*x4*x5 + x1*x2*x4*x6 + x1*x2*x4 + x1*x2*x5*x6 + x1*x2*x5 + x1*x2*x6 + x1*x2 + x1*x3*x4*x5*x6 + x1*x3*x4*x5 + x1*x3*x4*x6 + x1*x3*x4 + x1*x3*x5*x6 + x1*x3*x5 + x1*x3*x6 + x1*x3 + x1*x4*x5*x6 + x1*x4*x5 + x1*x4*x6 + x1*x4 + x1*x5*x6 + x1*x5 + x1*x6 + x1 + x2*x3*x4*x5*x6 + x2*x3*x4*x5 + x2*x3*x4*x6 + x2*x3*x4 + x2*x3*x5*x6 + x2*x3*x5 + x2*x3*x6 + x2*x3 + x2*x4*x5*x6 + x2*x4*x5 + x2*x4*x6 + x2*x4 + x2*x5*x6 + x2*x5 + x2*x6 + x2 + x3*x4*x5*x6 + x3*x4*x5 + x3*x4*x6 + x3*x4 + x3*x5*x6 + x3*x5 + x3*x6 + x3 + x4*x5*x6 + x4*x5 + x4*x6 + x4 + x5*x6 + x5 + x6 + 1",
+   "exp": [
+    "-2",
+    "-1"
+   ]
+  }
+ ],
+ "vars": [
+  "x0",
+  "x1",
+  "x2",
+  "x3",
+  "x4",
+  "x5",
+  "x6"
+ ],
+ "kinvars": [],
+ "notes": "Synthetic 7-variable positive control. The integrand factorizes per variable, so I(eps) = (1+eps)^(-7) exactly (each factor integrates to 1/(1+eps); derived in make_fixtures.py via sympy and asserted at generation time). The closed form is documentation only -- no numeric value is stored in this file (RT-iii). The Julia suite reconstructs P = prod(1+x_i) independently and requires exact equality.",
+ "provenance": {
+  "generated_by": "subtropica scripts/make_fixtures.py",
+  "argv": [
+   "make_fixtures.py",
+   "--synthetic-only"
+  ],
+  "timestamp_utc": "2026-08-27T01:20:56+00:00",
+  "host": "redacted",
+  "user": "redacted",
+  "python": "3.12.3",
+  "memcap": "ulimit -v 32505856",
+  "upstream_wl_pin": "adac2f722be64337aa095b2b2e7266628b03289b",
+  "sympy": "1.14.0",
+  "derivation": "int (1+x)^(-2-e) dx = 1/(1+e); product over 7 variables"
+ }
+}

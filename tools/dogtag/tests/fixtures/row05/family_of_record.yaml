@@ -1,0 +1,19 @@
+# Family of record, row 5: the graph of samples
+# psd_build_pentagon.py (pySecDec LoopIntegralFromGraph), read from that file by the census
+# script: internal_lines ['0',[1,2]],['0',[2,3]],['0',[3,4]],['0',[4,5]],['0',[5,1]],
+# external p1..p5 at vertices 1..5, replacement rules p_i^2 = 0, p_i.p_{i+1} = v_i/2.
+# Routed by the census script (one loop momentum k1, p5 = -p1-p2-p3-p4).
+integralfamilies:
+  - name: "pentagon1L"
+    loop_momenta: [k1]
+    propagators:
+      - [ "k1 - p2 - p3 - p4 - p5", 0 ]
+      - [ "k1 + p1 + p2", 0 ]
+      - [ "k1 + p1 + p2 + p3", 0 ]
+      - [ "k1 + p1 + p2 + p3 + p4", 0 ]
+      - [ "k1", 0 ]
+    top_level_sectors: [31]
+    # census labels (not read by the checker; read by the census script):
+    external_momenta: [p1, p2, p3, p4, p5]
+    momentum_conservation: {p5: "-p1 - p2 - p3 - p4"}
+    leg_virtualities: {p1: "0", p2: "0", p3: "0", p4: "0", p5: "0"}
