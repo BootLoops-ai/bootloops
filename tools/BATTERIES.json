@@ -195,5 +195,9 @@
  "winnow": {
   "cmd": "sh tools/winnow/tests/run_tests.sh",
   "cwd": "root"
+ },
+ "cohortgate": {
+  "cmd": "python3 tools/cohortgate/selftest.py",
+  "cwd": "root"
  }
 }

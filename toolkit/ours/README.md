@@ -36,7 +36,8 @@ The registered packages, grouped as the index groups them:
   `memfence` as members; it rides the AMFlow page), Baller (the ball-arithmetic instruments under one
   front door, the mpmath precision linter in its hygiene wing), ERAS, Clinch, Gatekeeper
   (with the kink-splitting quadrature as member), Emitall (the per-result sha-pin
-  writer/verifier pairs it standardizes stay with their result pages).
+  writer/verifier pairs it standardizes stay with their result pages), Cohortgate (the cohort and
+  group-label integrity gate).
 - **Number recognition and closure** — Lockpick (with the curated constant ring as its
   ring-basis member), Annihilator, Ansatzer, Galois, Rankscreen.
 - **Exact statistics and evidence** — Mixalot (with Boxwalk, the exact box-moment
