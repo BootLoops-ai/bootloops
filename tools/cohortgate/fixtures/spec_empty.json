@@ -1,0 +1,9 @@
+{
+  "campaign": "cohortgate battery fixture - empty rule set (proves an empty gate is refused, never silently passed)",
+  "id_column": "subject_id",
+  "declared_n": 6,
+  "group_rule": {
+    "check_declared_label": true,
+    "rules": {}
+  }
+}

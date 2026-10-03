@@ -1,0 +1,13 @@
+{
+  "campaign": "cohortgate battery fixture - declared_n deliberately wrong (negative control: the gate must fire)",
+  "id_column": "subject_id",
+  "declared_n": 7,
+  "group_rule": {
+    "check_declared_label": true,
+    "rules": {
+      "balanced":   [["lactate", "<=", 2]],
+      "glycolytic": [["lactate", ">", 2], ["bili", "<=", 1.2]],
+      "hepatic":    [["lactate", ">", 2], ["bili", ">", 1.2]]
+    }
+  }
+}
