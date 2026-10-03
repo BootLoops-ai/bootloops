@@ -65,8 +65,15 @@ def run_pkg(pkg, cls, timeout):
     # Julia-component packages: make the committed environment concrete first
     if os.path.isfile(os.path.join(d, "Project.toml")):
         with JULIA_LOCK:
-            subprocess.run("julia --project=. -e 'using Pkg; Pkg.instantiate()'",
-                           shell=True, cwd=d, capture_output=True, timeout=1800)
+            try:
+                subprocess.run("julia --project=. -e 'using Pkg; Pkg.instantiate()'",
+                               shell=True, cwd=d, capture_output=True, timeout=1800)
+            except subprocess.TimeoutExpired:
+                # fail this package, not the whole run: the other results must still land
+                return {"class": cls, "status": "FAIL",
+                        "tail": "julia Pkg.instantiate() timed out after 1800s",
+                        "fix": "run `julia --project=. -e 'using Pkg; Pkg.instantiate()'` "
+                               f"in tools/{pkg} once (network/registry), then rerun"}
     pypath = [TOOLS, d, HERE]
     if os.path.isdir(os.path.join(d, "src")):        # src-layout packages
         pypath.insert(0, os.path.join(d, "src"))
