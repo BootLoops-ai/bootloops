@@ -1,5 +1,15 @@
 # blade — python library for the Wolfram-free Blade C pipeline
 
+Blade is the block-triangular reduction program of Xin Guan, Xiao Liu,
+Yan-Qing Ma and Wen-Hao Wu (arXiv:2405.14621, MIT;
+https://gitee.com/multiloop-pku/blade), built on Tiziano Peraro's FiniteFlow
+(arXiv:1905.08019, MIT). This package is a Python port of its Wolfram-language
+layer: the search, scheme, ansatz, extension, adaptive and symbolic-table
+modules are translations of the authors' code, the per-point reducer is a
+Python counterpart of their `ssolve` stage working from exported exact
+relations, and the one-command driver and the degree scan are BootLoops code.
+See "Upstream notice" below.
+
 Status: **tool-complete**. Plain python3 + sympy (lazy, assembly
 only) + flint (scheme RREF); no heavy deps. C binaries:
 `{redg1,fitrel,ssolve,recmod,dynamicrr,dumppoints,fflowcli}` built from the
@@ -196,7 +206,15 @@ Portions of this package are a Python translation of Blade
 Liu, Yan-Qing Ma and Wen-Hao Wu, released under the MIT License; their
 copyright and permission notice is reproduced in [`NOTICE`](NOTICE) in this
 directory and in `LICENSE.md` of the fork (the sibling repository `blade`),
-and applies to those portions. The FiniteFlow-derived C interface in the fork
+and applies to those portions. Nine modules derive from Blade: `extension.py`,
+`ansatz.py`, `scheme.py`, `search.py`, `adaptive.py` and `semibl.py` are
+translations of the upstream `.wl` sources (each cites the lines it follows);
+`formats.py` and `pipeline.py` implement the file layouts and stage contracts
+of Blade's C programs; the exact back end of `probe.py` is a Python
+counterpart of the block solve of Blade's `ssolve` stage
+(`src/ssolve/block.c`), and its second back end runs `ssolve` itself.
+`ratrec.py` drives Blade's `recmod` and `dynamicrr` programs.
+The FiniteFlow-derived C interface in the fork
 is Copyright (c) 2019 Tiziano Peraro, MIT License (`THIRD_PARTY.md` in that
 repository).
 

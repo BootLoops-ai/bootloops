@@ -2,7 +2,7 @@
 
 Leg A (the DCM model, computed LIVE here): dcm.py on the pinned input
 fixtures/in_MW30.json (V=30 listed + 1 residual, kappa = 4893729/1000)
-must reproduce the independent DCM reference's exact outputs
+must reproduce the exact outputs of the DCM reference
 fixtures/outA_MW30.json —
 mixture mean, the three ln Bayes factors, change-point mean, seam-vs-M and
 H-vs-M factors, endpoint mass and the discrete quantiles (10 checks, each to

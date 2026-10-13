@@ -13,7 +13,7 @@ detect   --json FAMILY.json --etac CSV
          whether successive levels have identical names-modulo-suffix (fixed point) or descend.
 
 discover --json CHAIN.json --keys-out keys.json [--etac CSV] [--force-depth N]
-         Zero-probe iteration (from eb_discover.sh): run with all-zero explicit_boundary,
+         Zero-probe key discovery loop: run with all-zero explicit_boundary,
          parse MISS keys, append, repeat (max 15) until solved; write final key list.
          DUAL-SURFACE: both error shapes are MISS surfaces —
            * "no Vacuum entry" master keys (classic surface, kind "vacuum";
@@ -79,7 +79,8 @@ DEFAULT_IBP_CACHE = os.environ.get("AMFLOW_IBP_CACHE", "")
 DEFAULT_ETAC = "0,0,0,0,0,0,-1,-1,0,0,0,0,0,0,0"
 
 # --- discover MISS surfaces (dual-surface) ---------------------------------
-# Current binary (amfsystem.cpp:963,996) prints the key BEFORE the phrase:
+# Current binary (amfsystem.cpp, the AMFSystem::solve error text) prints the
+# key BEFORE the phrase:
 #   "ending system master 'FAM|i|...' has no Vacuum entry, no explicit_boundary
 #    value, and reduction did not lower it"
 # The older binary shape (key AFTER the phrase) is kept as a fallback — a
@@ -132,7 +133,8 @@ def _resolve_etac(args, tag):
 
 def _etac_env(etac):
     """Env fragment for an etac choice; '' means no override (engine treats
-    an empty AMFLOW_ETAC_OVERRIDE as unset, amfsystem.cpp:4253)."""
+    an empty AMFLOW_ETAC_OVERRIDE as unset; amfsystem.cpp of our amflow-cpp
+    fork)."""
     return {} if etac == "" else {"AMFLOW_ETAC_OVERRIDE": etac}
 
 
@@ -407,7 +409,7 @@ def cmd_detect(args):
 
     print(f"[detect] VERDICT: {verdict}")
     if verdict == "FIXED_POINT":
-        print("[detect] → AMFlow recursion fixed point detected: vanilla AMFlow cannot produce")
+        print("[detect] → AMFlow recursion fixed point detected: this AMFlow.cpp build does not produce")
         print("[detect]   boundary data. Proceed: discover → respond → solve → inject.")
     else:
         print("[detect] → Recursion descends; standard AMFlow may suffice.")
@@ -421,7 +423,7 @@ def cmd_detect(args):
 
 def cmd_discover(args):
     """
-    Zero-probe iteration from eb_discover.sh, generalized; dual-surface.
+    Zero-probe key discovery loop; dual-surface.
 
     Run with all-zero explicit_boundary, parse the MISS surface, append,
     repeat (max 15), until solved.  Write final key list to --keys-out.
@@ -929,7 +931,7 @@ def build_parser():
 
     # discover
     dsc = sub.add_parser("discover",
-                         help="Zero-probe key discovery loop (from eb_discover.sh)")
+                         help="Zero-probe key discovery loop")
     _add_common(dsc)
     dsc.add_argument("--json", required=True, metavar="CHAIN.json",
                      help="AMFlow input JSON for the chain family")

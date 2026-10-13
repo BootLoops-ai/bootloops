@@ -27,10 +27,12 @@ USE-WHEN:
   15-propagator system OOMed >313 GB; the support-pinned staging of the
   identical 161-sector system completed in 334 s at 7.42 GB, value-validated
   442/442 against two independent references.
-- BEFORE the first kira run on any NEW family: `seedling audit` — kira's own
-  symmetry finder never composes a loop map with an external-leg crossing, so
-  it silently carries redundant masters (measured on every audited production
-  family that had such a symmetry).
+- BEFORE the first kira run on any NEW family: `seedling audit`. Kira 3.0
+  and 3.1 as released do not compose a loop map with a permutation of the
+  external legs (Kira 2.x did; the search is the one described in the Kira
+  paper [Kira1], sec. 2), so with those versions a family that has such a
+  symmetry silently carries redundant masters (measured on every audited
+  production family that had such a symmetry).
 - On EVERY paper-transcribed family BEFORE probing: `seedling identity` — a
   wrong momentum convention (outgoing vs all-incoming) with the paper's
   propagators is a WRONG family (a 76-vs-98-masters class error). A
@@ -139,7 +141,9 @@ FOOTGUNS:
 - Degenerate inputs raise loudly — treat a quiet run with empty gates as
   suspect; check the ledger.
 - Skipping `seedling audit` before kira is how redundant masters enter
-  silently — kira never tries crossing ∘ C. Wire the emitted
+  silently: Kira 3.0 and 3.1 as released do not try permutations of the
+  external legs (they still test sign flips of the external momenta on the
+  identity ordering; Kira 2.x tried the permutations too). Wire the emitted
   `magic_relations.yaml` / `.kira` seeds into the config; reading |Aut| and
   moving on buys nothing. A trivial Aut result does NOT certify basis
   integrity — embedding-unrealizable symmetries (e.g. S4 on an equal-mass
@@ -188,5 +192,15 @@ Maierhöfer, J. Usovitsch [Kira2]; F. Lange, J. Usovitsch, Z. Wu [Kira3] — is 
 being staged, with FireFly [FF1, FF2] and Fermat (R. H. Lewis) beneath it.
 Support-pinned seeding is in the same spirit as Kira 3's improved seeding and equation
 selection [Kira3]; this package only predicts, pins, gates and certifies what Kira runs.
+Seedling is Python code written for BootLoops around Kira, which it runs as a separate
+program.
+Its `audit` command re-implements, with an algorithm written for this tool and without Kira source, the
+symmetry search described in the Kira paper ([Kira1], sec. 2: integer loop-momentum maps
+composed with permutations and sign flips of external momenta that leave the invariants
+unchanged), which Kira 3.0 and 3.1 as released apply without the permutations; the
+statement about Kira 3.0 and 3.1 is a reading of their source, not the result of a run,
+and Kira 2.x applied the permutations. The `identity` command works with the second
+Symanzik polynomial, a textbook object; the propagators of its built-in two-loop fixture
+marked "PAPER T_4" are transcribed from He et al., arXiv:2409.08879.
 Exact elimination by winnow (Laporta [Lap]). Bracketed keys resolve in REFERENCES.md at
 the repository root.

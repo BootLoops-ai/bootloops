@@ -3,6 +3,11 @@ r"""
 pld_groebner_backend.py -- fast Groebner backend for the PLD / Landau Alphabet
 per-face discriminant (Landau-letter) computation.
 
+CREDIT: the object computed here (the critical ideal of the face polynomial,
+saturated against the torus and eliminated) is the principal Landau determinant
+of C. Fevola, S. Mizera and S. Telen (arXiv:2311.16219, Algorithm 1) and the
+Landau discriminant of S. Mizera and S. Telen (arXiv:2109.08036, Sec. 3.1).
+
 WHY THIS EXISTS
 ---------------
 The per-face Landau letters are the discriminant of the face Symanzik

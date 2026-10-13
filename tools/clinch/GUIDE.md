@@ -94,9 +94,16 @@ in baller.certify.block_krawczyk over Arb (F. Johansson 2017) via python-flint.
 adapters/certpass certifies optima of the ETAS model (Y. Ogata 1988, JASA 83:9) as
 fitted by the open `etas` package of L. Mizrahi, S. Nandan & S. Wiemer (2021, Seismol.
 Res. Lett. 92:2333; github.com/lmizrahi/etas, MIT), whose EM follows Veen & Schoenberg
-(2008, JASA 103:614) — we thank its authors for a codebase clean enough to certify
-against; adapters/etienne certifies optima of Etienne's (2005, 2007) neutral sampling
-formula. The hierarchical reference model and its fit code are an in-house study,
+(2008, JASA 103:614); we thank its authors for a codebase clean enough to certify
+against. The ETAS files of adapters/certpass follow the code of that package: the
+pair table, the E-step check and the source-integral formula are rewritten from
+etas/inversion.py in vectorized form, two helper functions and the parameter bounds
+are copied unchanged (Copyright (c) 2024 ETH Zurich, Leila Mizrahi, MIT License;
+details in adapters/certpass/PROVENANCE.md), and the package itself is imported at
+run time for reference values; the ball-arithmetic oracle, its derivatives and the
+certificates are BootLoops code. adapters/etienne certifies optima of Etienne's
+(2005, 2007) neutral sampling formula and of the different-I likelihood of Etienne
+(2009, J. Theor. Biol. 257:510). The hierarchical reference model and its fit code are a study of this project,
 consumed read-only.
 
 ## License

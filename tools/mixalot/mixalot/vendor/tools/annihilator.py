@@ -13,7 +13,8 @@ sequence a[0..N].  Use this when you have a fast series generator (LGF moments,
 maxcut Taylor, diagonal coefficients) but no clean integrand.
 
 THIN FRONTEND to tools/nullspace_fast (numpy int64 mod-p RREF, p < 2^31), adding:
-  * ODE-order-first search (s outer, r inner) — the genuinely-new bit.  The
+  * ODE-order-first search (s outer, r inner): the piece this frontend adds
+    (gfun searches by ascending order as well).  The
     default nullspace_fast sort is by #unknowns, which returns inflated ODE
     orders carrying apparent-singularity indicial factors (hit on the LGF).
     s-first guarantees the FIRST hit is the true minimal θ-order.

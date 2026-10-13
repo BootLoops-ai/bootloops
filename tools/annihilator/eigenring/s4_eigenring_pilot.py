@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # What this is: eigenring/hom-space right-factor splitter for linear ODE
-# operators mod p (an open reimplementation of the van Hoeij / DFactor-style eigenring factorization).  Implements the
+# operators mod p.  Implements the eigenring method (Singer 1996; M. van Hoeij,
+# "Rational Solutions of the Mixed Differential Equation and its Application to
+# Factorization of Differential Operators", ISSAC 1996) with a dense series
+# ansatz.  It is not a port of the eigenring and DFactorLCLM procedures of
+# van Hoeij's Maple DEtools code, whose algorithm (valuation bounds and local
+# lifting) differs.  Builds the
 # eigenring E(L) and the hom-space Hom(D/D.A, D/D.B) over F_p(x) with the
 # annihilator-kit primitives (ore_rdiv_modp, lclm_modp, flint nmod_mat
 # nullspace), and extracts Jordan/log-entangled right factors that plain
@@ -280,6 +285,10 @@ def hyp_series_x2(a, b, c, p, N):
     return flint.nmod_poly(coeffs, p)
 
 def build_z(p, N):
+    # Series of the solution of L^(5)_4 as printed, in terms of 2F1([1/2,1/2],[1];x^2)
+    # and 2F1([1/2,3/2],[2];x^2), in M. Assis, S. Boukraa, S. Hassani, M. van Hoeij,
+    # J.-M. Maillard, B. M. McCoy, J. Phys. A 45 (2012) 075205, arXiv:1110.1705;
+    # the polynomial coefficients below are transcribed from that paper.
     F0 = hyp_series_x2(Fraction(1, 2), Fraction(1, 2), Fraction(1), p, N)
     F1 = hyp_series_x2(Fraction(1, 2), Fraction(3, 2), Fraction(2), p, N)
     def trunc(g): return flint.nmod_poly([int(g[i]) for i in range(min(N, g.degree() + 1))], p)

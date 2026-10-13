@@ -291,10 +291,13 @@ CREDIT: differential equations for master integrals after Kotikov [Kotikov], Rem
 [Rem] and Gehrmann–Remiddi [GR], in Henn's ε-form [Henn] where available; transport by
 generalized series expansions around singular points in the line of Lee, Smirnov and
 Smirnov [LSS], Moriello [Moriello], Hidding's DiffExp [DiffExp],
-Armadillo–Bonciani–Devoto–Rana–Vicini's SeaSyde [SeaSyde] and Liu–Ma's AMFlow [AMFlow],
-whose vacuum-boundary conventions (Liu, Ma, Wang [AMF1]; AMFlow.cpp contributors
-[AMFcpp]; see the AMFlow.cpp fork, the sibling repository amflow-cpp) are ported
-verbatim; local theory after Wasow and Moser/Turrittin (classical), Sylvester solves by
+Armadillo–Bonciani–Devoto–Rana–Vicini's SeaSyde [SeaSyde] and Liu–Ma's AMFlow [AMFlow].
+The boundary member's vacuum table, SingleMass prefactor and ending-value rule are a
+Python port of the vacuum boundary routines of AMFlow.cpp, by the AMFlow.cpp
+contributors [AMFcpp] (MIT; our fork is the sibling repository amflow-cpp), which
+carry the formulas of AMFlow by Liu and Ma [AMFlow] (MIT; method of Liu, Ma, Wang
+[AMF1]); both notices are in the NOTICE file in this directory. Local theory after
+Wasow and Moser/Turrittin (classical), Sylvester solves by
 Bartels–Stewart [BS]; Ising-class test operators from Assis et al. [Ising11]. The
 epslimit member is Richardson extrapolation (L. F. Richardson 1911; Richardson and Gaunt
 1927 [Richardson]) on ε-grid inputs from AMFlow [AMFlow] and pySecDec [pySecDec], with

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""emit_receipt.py — mechanical script-snapshot receipt emitter (vendored for
-the deform_transport member): an emitter that writes a receipt should
+"""emit_receipt.py: writes the run record together with a snapshot of the script
+that produced it (copied from this project's earlier rounds into the
+deform_transport member): an emitter that writes a record should
 snapshot the script it ran, not trust the file to sit still.
 
 Every receipt JSON is emitted THROUGH this helper (or an equivalent that

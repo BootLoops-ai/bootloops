@@ -10,7 +10,7 @@ tokens iid theta_d; integrating theta_d out,
 (add-half profiles over V listed categories + 1 residual bucket, so every
 token counts). ONE kappa is shared by the components, fitted on the known-pure
 objects and then treated as an exact rational (the reference convention:
-float ML rounded to 3 decimals, as in the independent DCM reference computation
+float ML rounded to 3 decimals, as in the DCM reference computation
 that the fixtures reproduce).
 
 Token-mixture: each token is component H's with probability f ~ Beta(1,1); the
@@ -22,8 +22,9 @@ linear-factor lattice class as the frozen-profile blend). Contiguous
 All evidences exact rationals. Reference fixtures: in_MW30.json holds the word
 counts of Federalist No. 55 and of the Hamilton and Madison training sets over
 a 30-word function-word list (derived from the public-domain texts);
-outA_MW30.json holds the No. 55 outputs of an independent implementation of
-the same model, which dcm.py reproduces to their printed digits.
+outA_MW30.json holds the No. 55 outputs of a second computation of the same
+model (its author and program are not recorded in this repository), which
+dcm.py reproduces to their printed digits.
 
 Scaled-integer conventions (all integers):
   kappa = kn/1000;  D_A = 1000*(2*N_A + V + 1);  a_Aw = kn*(2*n_Aw + 1)

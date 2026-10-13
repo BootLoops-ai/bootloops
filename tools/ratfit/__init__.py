@@ -30,6 +30,20 @@ Conventions:
   polynomials flint.fmpq_poly, coefficients ascending
   qex         {(i,j): {m: [coeff_strs]}} — validated exact denominators per
               DE entry (i,j) and epsilon-order m, as cached by the production fits
+
+Method and credit:
+  Thiele's continued-fraction interpolation (Thiele, 1909) and Newton's
+  divided differences are classical. The early-termination test and the use of
+  modular arithmetic are the ones that T. Peraro (arXiv:1608.01902; FiniteFlow,
+  arXiv:1905.08019) and J. Klappert, S. Y. Klein and F. Lange (FireFly,
+  arXiv:1904.00009, arXiv:2004.01463) made standard for amplitude
+  calculations; screening modulo a prime before an exact reconstruction
+  follows FireFly's approach.
+
+Lineage:
+  canonical_255.py and probe_knownQ4.py, named in the docstrings below, are
+  earlier scripts of this project from which these routines were carried over. They
+  are not part of this release.
 """
 from fractions import Fraction
 import flint
@@ -40,7 +54,8 @@ __all__ = ["coincidence_loci", "design_grid",
            "extract_stairs", "row_lcm", "degree_budget", "parametric_rec_interp",
            "mpoly_eval", "fq", "qpoly", "poly_lcm", "exact_div", "SCREEN_PRIMES"]
 
-# mod-p screen primes: 2^61-1 (Mersenne) + a 2nd 61-bit prime for 0-div fallback.
+# mod-p screen primes: 2^61-1 (Mersenne) + a second prime, 2^61+15 (62 bits),
+# for 0-div fallback.
 SCREEN_PRIMES = [(1 << 61) - 1, 2305843009213693967]
 
 
@@ -78,7 +93,8 @@ def _loo_split(n, n_loo):
 
 def thiele(xs, ys):
     """Exact Thiele continued-fraction rational interpolation -> (P, Q) fmpq_polys.
-    Verbatim port of the origin implementation."""
+    Thiele's classical reciprocal-difference formula. Carried over unchanged
+    from an earlier script of this project (see Lineage in the module docstring)."""
     if all(y == 0 for y in ys):
         return flint.fmpq_poly([0]), flint.fmpq_poly([1])
     n = len(xs)
@@ -116,7 +132,9 @@ def thiele(xs, ys):
 
 def newton_interp(xv, yv):
     """Exact Newton-form polynomial interpolation over fmpq, O(n^2).
-    Port: canonical_255.py::newton_interp_fmpq / probe_knownQ4.py::newton_interp."""
+    Newton's divided differences (textbook). Carried over from the earlier
+    scripts of this project canonical_255.py (newton_interp_fmpq) and
+    probe_knownQ4.py (newton_interp); see Lineage in the module docstring."""
     m = len(xv)
     dd = list(yv)
     for k in range(1, m):
@@ -136,7 +154,8 @@ def ratrecon_with_denom(xs, ys, Qknown, n_loo=6):
     on held-out nodes, gcd-reduce on success. Returns (Pnum, Qden, ok, deg).
     ok=False also when Qknown vanishes at ANY node (fit or held-out): that
     node's sample would be absorbed (y*Qknown = 0 there) -- the fit-point D check.
-    Verbatim port: canonical_255.py ([DENOM] route, mm0_route_223_v2 lineage)."""
+    Carried over unchanged from the earlier script of this project canonical_255.py
+    (its known-denominator route); see Lineage in the module docstring."""
     n = len(xs)
     xq = [fq(x) for x in xs]
     yQ = [fq(y) * Qknown(xq[k]) for k, y in enumerate(ys)]
@@ -169,8 +188,10 @@ def screen_modp(xs, ys, Q, n_loo=6):
     No false rejects: arithmetic is exact mod p and any 0-division falls
     through to the 2nd prime (SCREEN_PRIMES); false-accept prob ~ n_loo/p ~
     1e-18 — ALWAYS follow a pass with the exact ratrecon_with_denom certify.
-    Verbatim port of the origin implementation (validated standalone,
-    sub-rows 18/18)."""
+    Screening modulo a prime before an exact reconstruction follows FireFly's
+    approach (J. Klappert, F. Lange, arXiv:1904.00009). Carried over unchanged
+    from an earlier script of this project (validated standalone, sub-rows 18/18);
+    see Lineage in the module docstring."""
     n = len(xs)
     test_idx, fit_idx = _loo_split(n, n_loo)
     Qc = Q.coeffs()
@@ -206,7 +227,8 @@ def screen_modp(xs, ys, Q, n_loo=6):
 def thiele_loo(xs, ys, n_loo=6):
     """Blind exact Thiele fit, LOO-validated over 3 node orderings; on success
     returns (P, Q, True, deg); on all-fail returns the single full-node exact
-    Thiele with ok=False (deg report). Verbatim port: canonical_255.py."""
+    Thiele with ok=False (deg report). Carried over unchanged from the earlier
+    script of this project canonical_255.py; see Lineage in the module docstring."""
     n = len(xs)
     test_idx, fit_idx = _loo_split(n, n_loo)
     for od in [fit_idx, list(reversed(fit_idx)), fit_idx[0::2] + fit_idx[1::2]]:
@@ -300,8 +322,8 @@ def thiele_loo_screened(xs, ys, n_loo=6):
 
 
 def extract_stairs(qex, cap=12):
-    """Per-row stair-ratio library R = Q_{m+1}/Q_m (origin Rlib
-    implementation). qex: {(i,j): {m: [coeff_strs]}}. For every
+    """Per-row stair-ratio library R = Q_{m+1}/Q_m (carried over from the
+    Rlib routine of an earlier script of this project). qex: {(i,j): {m: [coeff_strs]}}. For every
     consecutive-m pair of validated denominators, keep the ratio iff the
     division is exact (r*Q_m == Q_{m+1} verified by exact_div) and deg r >= 1;
     dedupe by str(coeffs); cap `cap`=12 distinct ratios per row.

@@ -23,10 +23,13 @@ parse of the input rows.
   certificate caught it, 0/16 rows in span).
 - Kira sidecar Route A: run Kira with `run_initiate: true` (Generate+Select,
   no back-sub), then eliminate the `SYSTEM_*.gz` dump yourself.
-- Route B: eliminate equation files in kira's documented
-  `user_defined_system` input format (`integral*coefficient` term lines,
-  blank-line splits; weight or `name[indices]` notation) — no Kira
-  install, no version pinning.
+- Route B: eliminate equation files in kira's
+  `user_defined_system` input format, specified in the Kira 2.0 paper
+  (`integral*coefficient` term lines, blank-line splits; weight or
+  `name[indices]` notation; rules the paper leaves open follow Kira's parser):
+  no Kira install, no version pinning. The reader for these files
+  (`ibplapper/adapters/user_system.py`) follows Kira's parser and is
+  GPL-3.0-or-later (see CREDIT and License below).
 - When leftover master-relations must surface, never be silently absorbed.
 
 ## NOT-FOR
@@ -182,8 +185,30 @@ Peraro [Per16] and Kira 2 [Kira2], with CRT and Wang/Monagan rational reconstruc
 [Wang81, Monagan]. Input formats and Generate/Select artifacts are Kira's (Maierhöfer,
 Usovitsch, Uwer; Klappert, Lange; Wu [Kira1, Kira2, Kira3]) — we thank the Kira
 developers for documenting the user-defined-system format that makes the sidecar route
-possible. The SYSTEM_*.gz term-weight packing that `ibplapper/adapters/weights.py` decodes
-is Kira's internal convention (Kira 3.1, WEIGHTBITS as recorded in kira.db) [Kira3]; the
-decode was established empirically from run artifacts and is version-guarded
-(`adapters/kira.py`); no Kira source is included. The λ-witness receipts are ours.
+possible. Winnow's elimination engine and per-row certificates were written for
+BootLoops; its reader for Kira's user-defined-system equation files
+(`ibplapper/adapters/user_system.py`) follows the parser of Kira (P. Maierhöfer,
+J. Usovitsch, P. Uwer, J. Klappert, F. Lange, Z. Wu; `src/pyred/interface.cpp` and
+`src/pyred/integrals.cpp` at Kira 3.1; Copyright (C) 2017-2025 The Kira Developers;
+GPL-3.0-or-later). The format itself is specified in the Kira 2.0 paper [Kira2]; the
+reader also reproduces rules that only Kira's source states (hidden files skipped,
+compression decided by content, no equation across files, comment lines refused) and
+carries one of Kira's error messages word for word, so that module is distributed under
+GPL-3.0-or-later with the Kira notice in its header. The SYSTEM_*.gz term-weight packing
+that `ibplapper/adapters/weights.py` decodes is Kira's internal convention (Kira 3.1,
+WEIGHTBITS as recorded in kira.db) [Kira3]; that decode was established empirically from
+run artifacts and is version-guarded (`adapters/kira.py`). The certificate solver
+implements Wiedemann's algorithm with Berlekamp-Massey and Kaltofen-Saunders
+preconditioning. The λ-witness certificates were written for BootLoops.
 Bracketed keys resolve in REFERENCES.md at the repository root.
+
+## License
+
+Mixed licensing. `ibplapper/adapters/user_system.py` is GPL-3.0-or-later (it follows
+Kira's parser; the Kira copyright notice is in its header, the license text is
+LICENSE-GPL-3.0 beside this file, and NOTICE beside this file says what that means for
+the package as imported). Every other source file in this package is under the MIT
+License, Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See
+LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep
+their own licenses (THIRD_PARTY.md).

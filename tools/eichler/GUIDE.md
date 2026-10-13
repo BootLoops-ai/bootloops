@@ -101,13 +101,17 @@ integrals in Python); tools/wayfinder (DE transport core); tools/lockpick
 (sealed PSLQ gate and ambient-precision law); tools/vopclose (closure tools
 whose claims the genus2 PSLQ law governs).
 
-CREDIT: D. van Straten (arXiv:1704.00164), Bönisch-Klemm-Sheykin-Zagier
+CREDIT: D. van Straten (arXiv:1704.00164), Bönisch-Klemm-Scheidegger-Zagier
 (arXiv:2203.09426) and the AESZ tables (arXiv:math/0507430) for the published
 control numbers mirror6 reproduces; FLINT's `acb_theta` (via Arblib.jl) under
 theta9; J.-F. Mestre (1991) and K. Lauter, T. Yang (2011) for the genus-2
-reconstruction and invariant conventions, with SageMath's published doctest
-values as the exact cross-check for `mestre_port.py`.
+reconstruction and invariant conventions. `genus2/mestre_port.py`, and the
+conic set-up at the top of `genus2/conic_fast.py`, are a translation of
+SageMath's `mestre.py` by Florian Bouyer and Marco Streng and `invariants.py`
+by Nick Alexander, with Sabrina Kunzweiler, Gareth Ma and Giacomo Pope
+(GPL-2.0-or-later, distributed with their notice); SageMath's published doctest
+values are the exact cross-check for `mestre_port.py`.
 
 ## License
 
-MIT License, except `genus2/mestre_port.py`, which is GPL-2.0-or-later (derived from SageMath's `hyperelliptic_curves.mestre` and `invariants` modules, Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng, 2008 Nick Alexander, 2025 Sabrina Kunzweiler, Gareth Ma, Giacomo Pope; see `NOTICE` and `LICENSE-GPL-2.0` in this directory). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License, except `genus2/mestre_port.py` and `genus2/conic_fast.py`, which are GPL-2.0-or-later (`mestre_port.py` is a translation of SageMath's `hyperelliptic_curves.mestre` and `invariants` modules, and `conic_fast.py` carries six statements translated from the `mestre` module; Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng, 2008 Nick Alexander, 2025 Sabrina Kunzweiler, Gareth Ma, Giacomo Pope; see `NOTICE` and `LICENSE-GPL-2.0` in this directory). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

@@ -32,7 +32,11 @@ the census wing (fold/dedup/adjudicate/dist_cert/controls/verdicts).
 - Lattice: SL2 definite-BQF reduction + class enumeration (covers the Hecke d<0
   NotImplemented gap), nikulin.jl disc-form route at sig(0,3) (avoids the sig(3,0)
   primitive_embeddings hang), emit/ + sweepchassis; genus enumeration -> genus_enum.jl
-  (Aut-free Kneser + PARI qfauto mass, avoids the Hecke OOM); Venkov LP kill at any
+  (the Kneser-neighbor traversal of Hecke.jl, by C. Fieker, T. Hofmann and the Hecke
+  contributors, BSD 2-Clause, adapted with the invariant and the isometry test
+  replaced so that no automorphism group is computed during enumeration, where
+  Hecke's default runs out of memory at rank 19; PARI qfauto mass check afterwards;
+  notice in NOTICE beside this file); Venkov LP kill at any
   rank -> lp_kill_rank_agnostic.py (exact Fraction Farkas certs; ranks 3/4/6/7)
 - Census: fold_hnf (HNF+detU complete orbit key, witnessed merges), dedup two-stack RED
   law + witness/reconcile (reconciled count AUDIT-ONLY, never consumed), isd_cutoff

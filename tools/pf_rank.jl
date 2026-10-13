@@ -9,6 +9,9 @@
 # _feed!, _mm, _row, _pf_core) in the caller's module, exactly as before.
 # (The validation harness tools/dipstick/pf_rank_validate.jl includes the
 # dipstick member directly, not this shim.)
+# Loads the Leviathan engine (upgrades/leviathan), a Julia port of the method
+# of Chestnov, Crisanti and Giroux, in part translated from their code and
+# from DiscKosky; see upgrades/leviathan/NOTICE.
 # Do not add logic here; see tools/dipstick/pf_rank.jl.
 # ============================================================================
 include(joinpath(@__DIR__, "dipstick", "pf_rank.jl"))

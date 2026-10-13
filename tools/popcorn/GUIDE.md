@@ -813,9 +813,11 @@ Klassmann, Raineri, Ramos-Onsins, Wiehe & Achaz (2018, Theor. Popul. Biol.
 123:70); branch-length moments under Lambda-coalescents: Birkner, Blath &
 Eldon (2013, Genetics 195:1037). Bernstein-basis positivity certificates
 rest on the classical convex-hull and subdivision properties (Farouki 2012,
-Comput. Aided Geom. Des. 29:379). The folding map, the pullback
-certificates and the conic obstruction are this package's own
-constructions.
+Comput. Aided Geom. Des. 29:379). The folded two-site spectrum is defined
+in Fenton, Rice, Novembre & Desai (2025, Genetics 229:iyaf023) and
+implemented in their code twosfs (github.com/desai-lab/twosfs, MIT
+License). The pullback certificates and the conic obstruction have no
+counterpart in twosfs and were written for this package.
 
 Two-site genotype spectra: the pair projection is the
 multivariate-hypergeometric (subsampling without replacement) analogue,
@@ -846,8 +848,10 @@ Tavaré's (1984, Theor. Popul. Biol. 26:119) ancestral-process transition
 function with the branch-class weights of Fu (1995); explicit expressions of
 this kind are Polanski & Kimmel (2003, Genetics 165:427); that different
 histories can share a frequency spectrum is Myers, Fefferman & Patterson
-(2008, Theor. Popul. Biol. 73:342); the site-density target is Watterson's
-(1975) estimator. The one map-derived constant (r/mu via a mean of 1.96
+(2008, Theor. Popul. Biol. 73:342); testing the two-site spectrum against
+a Kingman history matched to the same SFS is the test design of Fenton,
+Rice, Novembre & Desai (2025, Genetics 229:iyaf023); the site-density
+target is Watterson's (1975) estimator. The one map-derived constant (r/mu via a mean of 1.96
 cM/Mb) is the length-weighted chromosome-21 mean of the UCSC GRCh38
 recombAvg track, i.e. the sex-averaged deCODE genetic map of Halldorsson et
 al. (2019, Science 363:eaau1043); only that mean is used.
@@ -867,10 +871,19 @@ the coalescent is Wiuf & Hein (2000, Genetics 155:451); the sweep model
 msprime implements is the structured coalescent of Braverman et al. (1995,
 Genetics 140:783) as in discoal (Kern & Schrider 2016, Bioinformatics
 32:3839); the rho = 0 exact comparand is the Kingman E[L_i L_j] of Fu (1995,
-Theor. Popul. Biol. 48:172) as computed by `popcorn.twosfs`. This module
-only arranges the windows, the seed/batch law, the pooling and the
-jackknife.
+Theor. Popul. Biol. 48:172) as computed by `popcorn.twosfs`. The two-site
+test this harness implements is that of Fenton, Rice, Novembre & Desai
+(2025, Genetics 229:iyaf023), and the harness reuses code of their package
+twosfs (D. P. Rice, E. F. Fenton, J. Novembre & M. M. Desai;
+github.com/desai-lab/twosfs, MIT License, Copyright (c) 2020 Daniel P.
+Rice): the seed-hash function (`seed_from_name` is their `filename2seed`),
+the scheme that derives the msprime seeds from a run name through a numpy
+Generator, and the form of the tskit branch-spectrum call. The twosfs
+notice is reproduced in `NOTICE` beside this file. This module adds the
+window geometry, the batching, the pooling and the jackknife. The
+submodule name `popcorn.twosfs` denotes the two-site frequency spectrum; it
+is not the twosfs package.
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md). `twowindow_sim.py` contains code from twosfs (Copyright (c) 2020 Daniel P. Rice, MIT License); the notice is reproduced in `NOTICE` in this directory.

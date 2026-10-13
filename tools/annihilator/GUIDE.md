@@ -27,7 +27,9 @@ USE-WHEN:
   factors.
 
 NOT-FOR: Does not certify the operator geometrically (pair with an integrand-route
-tool when the integrand exists). Kernel returns ONE nullvector, not a basis. Numpy
+tool when the integrand exists). Contains no creative telescoping: the telescoper
+in this toolkit is `tools/ellipticus/gmtel` (its route A); Annihilator is the
+series-fit route B. Kernel returns ONE nullvector, not a basis. Numpy
 engine requires p < 2^31 (int64; constraint p²·dim < 2^63); default p = 2^31−1.
 
 INVOKE: `import annihilator` (or legacy `import series_pf` / `from nullspace_fast
@@ -92,17 +94,28 @@ FOOTGUNS:
 
 RELATED: `pf_rank.jl` (integrand-route sibling; mod-p Griffiths–Dwork) and `sparse_cascade.py` (sparse complement of the dense-ansatz kernel), both at the `tools/` root; the maxcut kit's Krylov/series route (`tools/maxcut/`).
 
-CREDIT: recovering an annihilating operator from series coefficients is the 'guessing'
-method of Salvy and Zimmermann's gfun [gfun] and Kauers' Guess, used at scale with
-modular arithmetic by Boukraa, Hassani, Maillard, Zenine, McCoy, van Hoeij, Koutschan
-and collaborators, from whose diagonal-Ising paper (Assis, Boukraa, Hassani, van Hoeij,
-Maillard, McCoy [Ising11]) our operator fixtures are transcribed. The order-degree
-trade-off behind the ODE-order-first search, and the apparent singularities it avoids,
-are explained by Chen, Jaroschek, Kauers and Singer [CJKS]. Operator factorization and
-the eigenring method follow Mark van Hoeij [vH97] (whose Maple DFactor is the reference
-implementation) and Singer; LCLMs via Sylvester matrices are classical (Ore). Mod-p
-linear algebra by numpy and python-flint [Arb]. Bracketed keys resolve in REFERENCES.md
-at the repository root.
+CREDIT: Annihilator is a Python implementation, written for BootLoops, of standard
+computer-algebra methods. Recovering an annihilating operator from series coefficients
+is the 'guessing' method of Salvy and Zimmermann's gfun [gfun] and Kauers' Guess; it is
+also available in ore_algebra (Kauers, Jaroschek, Johansson; Mezzarobba) [ore]. The
+method was used at scale with modular arithmetic by Boukraa, Hassani, Maillard, Zenine,
+McCoy, van Hoeij, Koutschan and collaborators, from whose diagonal-Ising paper (Assis,
+Boukraa, Hassani, van Hoeij, Maillard, McCoy [Ising11]) our operator fixtures in
+`ore/known_factors.py` and the series in `eigenring/s4_eigenring_pilot.py` (`build_z`)
+are transcribed. The order-degree trade-off behind the ODE-order-first search, and the
+apparent singularities it avoids, are explained by Chen, Jaroschek, Kauers and Singer
+[CJKS]; searching by ascending differential order is not new here (gfun does the same).
+The eigenring method is due to Singer (1996) and van Hoeij (ISSAC 1996); operator
+factorization follows van Hoeij [vH97]. The public reference implementations are the
+`eigenring`, `DFactorLCLM` and `DFactor` procedures of van Hoeij's Maple DEtools code
+and the factorization module of ore_algebra (Goyer; Chyzak, Goyer, Mezzarobba 2022).
+Our `eigenring/` member uses a dense series ansatz and a series fit for the factor; it
+has neither the valuation bounds and local lifting of van Hoeij's code nor the numerical
+monodromy of ore_algebra's. LCLMs via Sylvester matrices are classical (Ore). A
+side-by-side reading against van Hoeij's Maple source, ore_algebra and gfun found no
+code from those packages in this one; the source of Guess is not public. Mod-p linear
+algebra by numpy and python-flint [Arb]. Bracketed keys resolve in REFERENCES.md at the
+repository root.
 
 ## License
 

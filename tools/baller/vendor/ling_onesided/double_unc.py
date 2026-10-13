@@ -1,5 +1,15 @@
-# baller engine — two-sided enclosure supports (uncertainty panels).
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0; see LICENSE and NOTICE beside this file.
+# baller engine — two-sided enclosure supports (uncertainty panels).
+#
+# The routine pvand in this file is the Bjorck-Pereyra Vandermonde solver
+# (A. Bjorck and V. Pereyra, "Solution of Vandermonde Systems of Equations",
+# Math. Comp. 24 (1970) 893-903) as coded by John Burkardt in his VANDERMONDE
+# library (pvand.m and vandermonde.c,
+# https://people.sc.fsu.edu/~jburkardt/m_src/vandermonde/pvand.m; the routine
+# header reads "This code is distributed under the MIT license."), run here in
+# ball arithmetic. Notices: tools/baller/NOTICE.
 """double_unc.py — WP-G (y2,y3) DOUBLE collapse, UNCORRECTED arm, both shapes.
 
 COLLAPSE_MEMO.md section 6, second partial-collapse route. Per pattern the
@@ -186,7 +196,13 @@ def pvand(al, b):
     weight system) by Bjorck-Pereyra, O(n^2), all ops ball arithmetic ->
     the returned balls rigorously contain the exact solution.
     (Verified against dense solve at n=6; at n=319/prec 1152 the measured
-    weights are ~all positive in [7e-11, 7e-3] with radii ~1e-106.)"""
+    weights are ~all positive in [7e-11, 7e-3] with radii ~1e-106.)
+
+    Source: the routine pvand of John Burkardt's VANDERMONDE library (MIT),
+    after A. Bjorck and V. Pereyra, Math. Comp. 24 (1970) 893-903.  The
+    loops and statements below are those of Burkardt's routine in its
+    zero-based form (vandermonde.c), less the argument n; the change is
+    that every operation acts on Arb balls."""
     n = len(b)
     x = list(b)
     for k in range(n - 1):

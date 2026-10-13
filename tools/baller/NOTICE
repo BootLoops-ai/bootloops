@@ -1,0 +1,154 @@
+baller (tools/baller), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE).
+
+Three vendored modules of this package contain code that derives from other
+authors' public code. Those portions keep the licenses of their sources. The
+attribution, the license notice and the statement of changes for each are given
+below. The rest of the package is covered by the first paragraph.
+
+
+1. vendor/certlane/ : matPTF (INGV), CC BY 4.0
+----------------------------------------------
+
+Files: vendor/certlane/primitives.py, vendor/certlane/test_primitives.py,
+vendor/certlane/attack_primitives.py.
+
+certlane is a port, into ball arithmetic, of the alert layer of matPTF, the
+probabilistic tsunami forecasting code of INGV.
+
+  Authors   J. Selva, S. Lorito, M. Volpe, F. Romano, R. Tonini, P. Perfetti,
+            F. Bernardi and co-authors
+  Code      https://github.com/INGV/matPTF, version 1.0, commit
+            fe4dd958b18de0b5464e83246f8fa95588d96f43
+            (archived as doi:10.5281/zenodo.6390936);
+            files PTF_AlertLevels.m and PTF_1_0.m
+  License   Creative Commons Attribution 4.0 International (CC BY 4.0),
+            https://creativecommons.org/licenses/by/4.0/
+            (the file LICENSE.txt of the matPTF repository). The matPTF source
+            files carry no copyright line.
+  Paper     Selva, J., Lorito, S., Volpe, M., Romano, F., Tonini, R.,
+            Perfetti, P., Bernardi, F., Taroni, M., Scala, A., Babeyko, A.,
+            Løvholt, F., Gibbons, S.J., Macías, J., Castro, M.J.,
+            González-Vida, J.M., Sánchez-Linares, C., Bayraktar, H.B.,
+            Basili, R., Maesano, F.E., Tiberti, M.M., Mele, F., Piatanesi, A.,
+            Amato, A., "Probabilistic tsunami forecasting for early warning",
+            Nat. Commun. 12, 5677 (2021),
+            https://doi.org/10.1038/s41467-021-25815-w
+
+What was taken. primitives.py was written with the Matlab code open. Its
+routines _interp_path, cert_percentile_bracket, _boundary_ball and
+cert_alert_level, and the mu = -inf rule of cert_lognormal_survival, follow
+PTF_AlertLevels.m (lines 26, 104-121, 139, 143) and PTF_1_0.m (lines 768,
+776-785) step for step and reproduce their conventions. The functions
+oracle_percentile and oracle_alert_level in test_primitives.py and in
+attack_primitives.py are Python translations of PTF_AlertLevels.m, lines
+106-121 and 139. These portions remain under CC BY 4.0.
+
+Changes made. The material was translated from Matlab to Python. In
+primitives.py the arithmetic is done in Arb balls instead of float64,
+comparisons that the balls cannot decide are carried as a union over all
+consistent paths, and the INDET and STRADDLES results are added. In the two
+test files the oracles are evaluated with mpmath at 60 and 80 digits, and
+explicit returns are added for degenerate inputs (a curve that is not
+monotone, an index past the last threshold, a probability out of range). The
+enclosures, the handling of undecidable comparisons, the convex-combination
+tightener (cert_normalized_weighted_sum), the containment tests, the
+planted-error controls and the attack harness are additions by BootLoops,
+under the MIT License.
+
+No endorsement. INGV and the authors of matPTF do not endorse this port.
+certlane is a research instrument for studying the
+numerical certification of a published hazard computation. It is not a
+tsunami-warning system and must not be used operationally. The matPTF
+material is provided under the disclaimer of warranties and limitation of
+liability of Section 5 of the CC BY 4.0 license.
+
+
+2. vendor/geo/mc.py : pyCSEP, BSD-3-Clause
+------------------------------------------
+
+mc.py follows the Poisson L-test simulation of pyCSEP.
+
+  Authors   W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling and
+            co-authors
+  Code      https://github.com/cseptesting/pycsep; functions
+            _simulate_catalog and _poisson_likelihood_test
+            (csep/core/poisson_evaluations.py) and
+            poisson_joint_log_likelihood_ndarray (csep/utils/stats.py)
+  Paper     W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling et
+            al., "pyCSEP: A Python Toolkit For Earthquake Forecast
+            Developers", J. Open Source Softw. 7(69) (2022) 3658
+
+What was taken. mc.py was written with that code open. The sampling statement
+numpy.searchsorted(..., side='right') in sim_ll_fixed_n and sim_ll_poisson_n
+is pyCSEP's, the two simulation functions follow the loop of
+_poisson_likelihood_test, and obs_ll keeps the three terms of pyCSEP's joint
+log-likelihood in the same order. The pyCSEP version that was open when
+mc.py was written was not recorded; the comparison on record was made against
+commit 2f9f66bf130eca99c7b0205f9919f0685075842f.
+
+Changes made. The simulation is batched over many catalogs at once, the
+multiplicity penalty is computed from sorted runs, catalogs are grouped by
+event count, and a Clopper-Pearson interval (quantile_ci) is added. These
+additions are by BootLoops, under the MIT License.
+
+The pyCSEP license notice is reproduced here:
+
+    Copyright (c) 2021, The University of Southern California
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice, this
+      list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright notice,
+      this list of conditions and the following disclaimer in the documentation
+      and/or other materials provided with the distribution.
+
+    * Neither the name of the copyright holder nor the names of its
+      contributors may be used to endorse or promote products derived from
+      this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+
+
+3. vendor/ling_onesided/double_unc.py, routine pvand : John Burkardt, MIT
+-------------------------------------------------------------------------
+
+The routine pvand in double_unc.py is the Björck-Pereyra Vandermonde solver
+as coded by John Burkardt in his VANDERMONDE library, run here in ball
+arithmetic.
+
+  Author    John Burkardt
+  Code      pvand.m and vandermonde.c of the VANDERMONDE library,
+            https://people.sc.fsu.edu/~jburkardt/m_src/vandermonde/pvand.m
+            and
+            https://people.sc.fsu.edu/~jburkardt/c_src/vandermonde/vandermonde.c
+  License   The header of the routine reads: "Licensing: This code is
+            distributed under the MIT license." (Modified: 14 November 2013;
+            Author: John Burkardt.) The library carries no separate license
+            file and no copyright line. The terms of the MIT License are
+            those printed in the LICENSE file at the root of this repository;
+            the copyright line printed there is that of BootLoops and not of
+            John Burkardt.
+  Method    A. Björck and V. Pereyra, "Solution of Vandermonde Systems of
+            Equations", Math. Comp. 24 (1970) 893-903
+
+What was taken. The loops and statements of pvand are those of Burkardt's
+routine in its zero-based form, less the argument n.
+
+Changes made. Translated to Python; every operation acts on Arb balls, so the
+returned balls contain the exact solution.

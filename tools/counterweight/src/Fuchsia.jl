@@ -1,6 +1,12 @@
 # Fuchsia.jl — Lee's algorithm (arXiv:1411.0911) for reducing a Fuchsian linear system
 # dI/dx = A(eps,x) I  to epsilon-form  A = eps * Atilde(x),  Atilde eps-independent, dlog.
 #
+# NAME. The algorithm is R. N. Lee's.  This file and its module share their name with Fuchsia,
+# the public program of O. Gituliar and V. Magerya (Comput. Phys. Commun. 219 (2017) 329,
+# arXiv:1701.04269), which implements the same algorithm.  This module is not that program and
+# shares no code with it.  Other public implementations of the algorithm: fuchsia.cpp
+# (V. Magerya), epsilon (M. Prausa, arXiv:1701.00725) and Libra (R. N. Lee, arXiv:2012.00279).
+#
 # The three Lee stages (this file implements the ones a UT construction needs):
 #   (1) Fuchsianize: remove poles of order > 1 in x by balance transformations.  IBP-derived
 #       connection matrices in the ratio variable, after stripping the overall LS prefactor, are
@@ -409,8 +415,9 @@ end
 #
 # Candidate gauges, in order:
 #   (i)  Lee rank-1 balance  B(P, b, a) = (I-P) + (x-a)/(x-b) P  with  P = u vᵀ/(vᵀu),
-#        u ∈ ker A₀,  vᵀ A₀ = 0,  vᵀu ≠ 0  — provably drops rank A₀ by 1 (Lee 1411.0911 §3)
-#        and, being degree-0 in x, leaves the pole at ∞ untouched.
+#        u ∈ ker A₀,  vᵀ A₀ = 0,  vᵀu ≠ 0: it provably drops rank A₀ by 1 and, being
+#        degree-0 in x, leaves the pole at ∞ untouched.  (The balance is Lee's, 1411.0911;
+#        this kernel/cokernel choice of P is not the projector of the paper's Algorithm 1.)
 #   (ii) Full right-kernel shear  Q·diag((x-a)/(x-b) on ker, 1)·Q⁻¹  (Barkatou).
 #   (iii) Left-kernel (cokernel) shear, same shape.
 # The partner b runs over the other singular points (lowest-order first) and finally :inf.

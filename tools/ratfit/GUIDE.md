@@ -50,7 +50,7 @@ core API — `thiele` / `thiele_loo` (blind + leave-one-out), `thiele_loo_screen
 `screen_modp` (screen-then-certify: no false rejects, certify stays exact),
 `extract_stairs` (exact ratios R=Q_{m+1}/Q_m), `row_lcm`, `degree_budget`,
 `coincidence_loci`/`design_grid`, `exact_entry_from_samples` (the vopclose
-entry point), `parametric_rec_interp`/`mpoly_eval` (multivariate iterated-Newton
+entry point; it is defined in tools/vopclose and calls this package), `parametric_rec_interp`/`mpoly_eval` (multivariate iterated-Newton
 lift of parametric recurrence coefficients over a tensor-product param grid,
 cross-checked at 2 off-grid param-tuples). `ratfit.thiele_gate`: `fit/validate/gate` API + `gate_family`
 (parallel over components) + JSON CLI (also via the flat shim). `ratfit.li2close`:
@@ -58,7 +58,7 @@ atom-list → ReLi₂ + log-bilinear closed form + standalone pure-mpmath evalua
 emitter (no CLI).
 
 INPUTS: exact rational sample points (Fraction); screen primes 2⁶¹−1 + a second
-61-bit prime; known denominators when blind fitting saturates. li2close atoms:
+prime, 2⁶¹+15 (62 bits); known denominators when blind fitting saturates. li2close atoms:
 `c·ln|P0+P1·t|/(W0+W1·t)` on (lo,hi), lo=0 ε-regularized, hi=∞ Λ-regularized;
 coefficients rational or rational-in-one-parameter sympy exprs.
 
@@ -159,6 +159,20 @@ for exact-sample fits lives in the core FOOTGUNS above (LOO-fails at the ceiling
   skipped. The 2 skips are positive controls against reference data (not shipped; marked
   in the test files; they SKIP when that data is absent). Requires python-flint.
 
+## CREDIT
+
+Ratfit is Python code written for BootLoops on python-flint. It implements Thiele's classical
+continued-fraction interpolation (Thiele, 1909) and Newton interpolation, with the
+early-termination test and the modular arithmetic that T. Peraro ([Per16]; FiniteFlow
+[FFlow]) and J. Klappert, S. Y. Klein and F. Lange (FireFly [FF1, FF2]) made standard for
+amplitude calculations. Screening modulo a prime before an exact reconstruction follows
+FireFly's approach [FF1]. Both programs reconstruct univariate rational functions by
+Thiele interpolation; what Ratfit adds is exact arithmetic over the rationals on a fixed
+set of expensive samples, held-out certification, the known-denominator route and the
+grid design. The core routines were carried over from earlier scripts of this project
+(`canonical_255.py`, `probe_knownQ4.py`, named in the docstrings) that are not part of
+this release. python-flint and FLINT are credited in the repository-root README.md and
+THIRD_PARTY.md. Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 

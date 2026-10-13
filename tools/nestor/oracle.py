@@ -14,7 +14,7 @@ consolidated layer behind a single call:
 ENTRY POINTS
 ============
   nestor.integrate(f, a, b, dps=30, ...) -> mpf
-      The value at >= dps certified-by-agreement digits, or a NAMED
+      The value at >= dps digits of measured agreement, or a NAMED
       refusal (NestorRefusal subclass; .exit_code follows the evaluators'
       0/2/3/4 contract).  A value never escapes a failed loop.
   nestor.oracle(f, a, b, dps=30, ...) -> receipt dict
@@ -26,7 +26,8 @@ ROUTES
 ======
   serial (default): cert_quad -- nested tanh-sinh depths escalated until
       the double-refinement agreement beats 10^-(dps+guard) (the
-      originating certified-quadrature design, ported in ladder.py).
+      originating refine-until-agreement design, ported in ladder.py; the
+      depth loop and the rule are mpmath's, see ladder.py).
   farmed (nproc>1 or md set): the oracle_par.py explicit-grid engine
       (farm.py) -- one grid at level md farmed over a Pool, md-1<->md
       self-consistency free from grid nesting, PLUS a ladder over md rungs
@@ -35,7 +36,7 @@ ROUTES
 NESTING
 =======
   An integrand may itself call nestor.integrate (the production nesting
-  pattern: certification evaluators whose integrands integrate).
+  pattern: high-precision quadrature evaluators whose integrands integrate).
   Inner requests should use inner_tol_exp(D)/wp_for(D) from ladder.py so
   working precision scales per level -- the "wp-scaled ladder" of the
   NESTOR registration.

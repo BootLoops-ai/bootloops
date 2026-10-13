@@ -1,9 +1,35 @@
+# SPDX-License-Identifier: MIT AND CC-BY-4.0
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0; see LICENSE and NOTICE beside this file.
 # baller engine — certified arb-ball enclosure primitives.
+#
+# This file is a port, into ball arithmetic, of the alert layer of matPTF, the
+# probabilistic tsunami forecasting code of INGV, by J. Selva, S. Lorito,
+# M. Volpe, F. Romano, R. Tonini, P. Perfetti, F. Bernardi and co-authors:
+#   code   https://github.com/INGV/matPTF, version 1.0, commit
+#          fe4dd958b18de0b5464e83246f8fa95588d96f43, files PTF_AlertLevels.m and
+#          PTF_1_0.m, licensed CC BY 4.0
+#          (https://creativecommons.org/licenses/by/4.0/)
+#   paper  J. Selva et al., "Probabilistic tsunami forecasting for early
+#          warning", Nat. Commun. 12, 5677 (2021)
+# It was written with that Matlab code open. The routines _interp_path,
+# cert_percentile_bracket, _boundary_ball and cert_alert_level, and the
+# mu = -inf rule of cert_lognormal_survival, follow PTF_AlertLevels.m (lines 26,
+# 104-121, 139, 143) and PTF_1_0.m (lines 768, 776-785) step for step and
+# reproduce their conventions; the docstrings cite the Matlab lines. The
+# lognormal survival formula is Eq. 5 of the paper.
+# Changes made to the matPTF material: translated from Matlab to Python;
+# evaluated in Arb balls instead of float64; comparisons that the balls cannot
+# decide are carried as a union over all consistent paths; the INDET and
+# STRADDLES results, working_prec, pin and cert_normalized_weighted_sum are
+# added. The added parts are by BootLoops and are under the MIT License; the
+# parts taken from matPTF stay under CC BY 4.0. INGV and the matPTF authors do
+# not endorse this port. Notices: tools/baller/NOTICE.
 """Certified enclosure primitives for the matPTF alert computation.
 
 Ball-arithmetic (python-flint arb 0.9.0) enclosures of a float64 reference
 implementation of matPTF's hazard/alert/conventions layers (matPTF commit
-fe4dd95).
+fe4dd95).  This module is a port of the alert layer of matPTF; the header
+above names its authors, the files followed and the changes made.
 
 BINDING LAWS
 ------------

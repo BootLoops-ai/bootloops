@@ -67,8 +67,8 @@ PROVENANCE
     alphabet                       : tools/landau-alphabet/landau_alphabet.py
     UT rotation (LS, default)      : tools/canonical_form/canonical_form.py
     PSLQ/LLL rationalize, lstsq    : tools/gatekeeper/heldout_cv.py
-    amflow-cpp solve_integrals     : Software/AMFlow-port/.../run_json.cpp:718
-    libp_deriv scope note          : Software/AMFlow-port/.../libp_deriv.hpp:26
+    amflow-cpp solve_integrals     : src/api/run_json.cpp (sibling repository amflow-cpp)
+    libp_deriv scope note          : include/amflow/ibp/libp_deriv.hpp (same repository)
 """
 from __future__ import annotations
 import argparse

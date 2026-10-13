@@ -10,7 +10,8 @@ means
     J_i = ε^{p_i} · (1/LS_i(x)) · I_i^raw      (diagonal leading-order rotation)
 
 where LS_i is the maximal-cut leading singularity of the i-th master, computed
-loop-by-loop in the Baikov representation.  This module produces that diagonal
+by iterated residues in the standard Baikov representation (P. A. Baikov,
+hep-ph/9611449).  This module produces that diagonal
 rotation directly from the family definition (the same `family` block
 amflow-cpp already consumes), and exports it in the format
 
@@ -19,8 +20,9 @@ amflow-cpp already consumes), and exports it in the format
 that `gatekeeper.heldout_cv.heldout_certify(ut_rotation=...)` accepts.
 
 The full Henn algorithm (fuchsify → normalize → ε-factorize → dlog) is
-DELEGATED to the in-house Julia engine `Counterweight` (Lee 1411.0911 over
-Nemo/Flint), which this module wraps via a subprocess bridge.  No Mathematica
+DELEGATED to the Julia engine `Counterweight` in this package (an
+implementation of R. N. Lee's algorithm, arXiv:1411.0911, over Nemo/Flint),
+which this module wraps via a subprocess bridge.  No Mathematica
 (CANONICA / Libra) is required, but if those are present the bridge can be
 swapped.  Where no engine is available the heavy steps raise a documented
 NotImplemented with a recipe pointer.
@@ -297,7 +299,7 @@ class Family:
 
 
 # ===========================================================================
-#  Leading singularities  (loop-by-loop Baikov, iterated residues)
+#  Leading singularities  (standard Baikov representation, iterated residues)
 # ===========================================================================
 @dataclass
 class LSResult:
@@ -735,7 +737,7 @@ def fuchsify(A: sp.Matrix, x: sp.Symbol, eps_: sp.Symbol = eps):
             "(leading_singularities()); the LS-normalized DE is Fuchsian for "
             "dlog sectors by construction. (ii) For genuinely irregular "
             "(Moser-irreducible) singular points no automatic route exists "
-            "(see e.g. github.com/magv/fuchsia.git, `fuchsify`).")
+            "(see e.g. github.com/magv/fuchsia.cpp, `fuchsify`).")
     T = _strmat(r["T"]) if r.get("T") else None
     Anew = _strmat(r["Anew"]) if r.get("Anew") else _strmat(r.get("Atilde"))
     return Anew, T, r.get("report", {})
@@ -765,7 +767,7 @@ _NO_ENGINE_MSG = (
     "Not found / not requested.  Alternatives (NOT auto-wrapped):\n"
     "  • CANONICA (Meyer, 1611.01087)  — Mathematica, Get[\"CANONICA.m\"]\n"
     "  • Libra    (Lee,   2012.00279)  — Mathematica\n"
-    "  • Fuchsia  (Gituliar–Magerya, 1701.04269) — Python2/Maple,\n"
+    "  • Fuchsia  (Gituliar and Magerya, 1701.04269): Python on SageMath,\n"
     "             github.com/gituliar/fuchsia\n"
     "  • epsilon  (Prausa, 1701.00725) — C++, github.com/mprausa/epsilon\n"
     "Recipe: export A as a Mathematica/Maple matrix and run the tool there;\n"

@@ -244,6 +244,13 @@ core-hours; Lin, Sturmfels & Xu reported 16 days of Maple in 2009); bigg g=3 mem
 
 ## References
 
+All engines here are Python code written for BootLoops from the papers below. The
+authors of the mixture-evidence method (Lin, Sturmfels and Xu) have their own public
+Maple library, announced in Section 4 of their paper; it is not used or followed here.
+The bridge sampling estimator is our own implementation of the formulation of Gronau
+et al. (2017); it is not a run of the R package bridgesampling and does not use that
+package's defaults.
+
 - S. Lin, B. Sturmfels & Z. Xu, JMLR 10 (2009) 1611-1631, arXiv:0805.3602 ("LSX").
 - Evans, Gilula & Guttman, Biometrika 76 (1989) 557-563 (the 3x3 table of LSX Ex. 5.5).
 - Ferguson, Ann. Stat. 1 (1973) 209; Antoniak, Ann. Stat. 2 (1974) 1152.
@@ -254,6 +261,7 @@ core-hours; Lin, Sturmfels & Xu reported 16 days of Maple in 2009); bigg g=3 mem
 - J. Peccoud & B. Ycart, Theor. Popul. Biol. 48 (1995) 222-234; Larsson et al., Nature 565 (2019) 251-254 (txburst).
 - Madsen, Kauchak & Elkan, ICML 2005, 545-552.
 - F. Mosteller & D. Wallace, JASA 58 (1963) 275 ("MW30" = their 30 function words).
+- Gronau et al., J. Math. Psych. 81 (2017) 80-97, arXiv:1703.05984 (bridge sampling as implemented here); Frühwirth-Schnatter (2004) (its error estimate); Hoffman & Gelman (2014) (step-size adaptation).
 - Newton & Raftery, JRSS-B 56 (1994) 3; Meng & Wong, Stat. Sinica 6 (1996) 831-860; Xie, Lewis, Fan, Kuo & Chen, Syst. Biol. 60 (2011) 150; Chib, JASA 90 (1995) 1313; Neal (1999); Skilling, Bayesian Anal. 1 (2006) 833; Speagle, MNRAS 493 (2020) 3132 (dynesty).
 - R. E. Moore, SIAM J. Numer. Anal. 14 (1977) 611; R. Krawczyk, Computing 4 (1969) 187; S. M. Rump, Acta Numer. 19 (2010) 287.
 - F. Johansson, IEEE Trans. Comput. 66 (2017) 1281 (Arb).

@@ -3,8 +3,8 @@ r"""li2close.py -- close finite sums of log/linear ATOMS in ReLi2 + log
 products, with an endpoint-divergence cancellation ledger and a pure-mpmath
 evaluator emitter.
 
-Generalized from an internal production closure script (wall constants
-K0(u), K1).
+Generalized from an earlier script of this project, not part of this release, that
+closed the wall constants K0(u), K1.
 
 INPUT: a list of atoms, each meaning
 

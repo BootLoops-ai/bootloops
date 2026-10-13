@@ -1,6 +1,8 @@
 # Tools written for BootLoops
 
-These tools were built mid-calculation, when no public tool covered the need as used here.
+These tools were written for BootLoops in the course of the work. For many of them public
+programs for the same task exist; the CREDIT paragraph of each package's GUIDE.md names them.
+A few entries are ports of other authors' programs and are marked as such below.
 Each has a page at [bootloops.ai/tools](https://www.bootloops.ai/tools/index.html)
 describing what it does, what existed before, and its verification story — that index
 organizes them by theme. The package code ships in this repository under
@@ -18,10 +20,13 @@ The registered packages, grouped as the index groups them:
   FireFly reconstruction state from dead or capped runs), and Cutbasis (the geometric master-basis selector on the maximal cut:
   Kira preferred_masters from arXiv:2511.15381's Algorithms 1–3, with the certified
   reducer comparison).
-- **Singularities and geometry** — Landau Alphabet, Leviathan, Dipstick, GeoTriage,
-  Coalescer, SubTropica, Surd (exact slice integration with radical last-variable letters
-  over SubTropica's fibration conventions), plus the in-house Gröbner backend and the SOFIA
-  port behind the adopted singular-locus engines.
+- **Singularities and geometry**: Landau Alphabet, Leviathan (a port; see
+  `upgrades/leviathan/NOTICE`), Dipstick, GeoTriage,
+  Coalescer, Surd (exact slice integration with radical last-variable letters
+  over SubTropica's fibration conventions), plus the Gröbner backend of Landau Alphabet and the
+  SOFIA port behind the adopted singular-locus engines. The Julia port of SubTropica in
+  `tools/subtropica` is listed with its authors in
+  [`../external/TOOLS.md`](../external/TOOLS.md).
 - **Differential equations and transport** — Counterweight (the ε-factorizer, with
   Canonify as member), Wayfinder (with the ε→0 extrapolator and the FLINT
   rational-function exporter as members), Famhar, Ratfit (with the degree-alias
@@ -58,10 +63,12 @@ the dispersion quadrature is `tools/nestor/dispersion`, the expansion-by-regions
 certifier is `tools/dipstick/regions`, loomcheck ships inside `tools/dogtag`,
 basisland ships inside `tools/numkin`, keypred and memfence import as
 `amflow_kit.keypred` / `amflow_kit.memfence` from `tools/amflow-kit`,
-and the in-house Gröbner backend is a `tools/landau-alphabet` member; Eichler,
+and the Gröbner backend is a `tools/landau-alphabet` member; Eichler,
 Leviathan, and the SOFIA port live under `upgrades/` (`Eichler.jl`,
 `leviathan`, `SOFIA.jl`). JaCK & Jill (Python package `phyloexact`) lives in its
-own repository, `jackandjill`, published beside this one.
+own repository, `jackandjill`, published beside this one. Its big-integer printer follows
+CPython's int_to_decimal (Tim Peters, PSF License) and its sampling kernel uses Vigna's
+public-domain generators.
 Winnow's certificate layer is the
 receipt component vendored inside its package (byte-identical to Trust's receipt
 member, `tools/trust/receipt`, test-enforced).
@@ -75,10 +82,12 @@ What runs today:
   ([bootloops.ai](https://www.bootloops.ai)), standalone beside their result pages,
   with their (PyPI) dependencies stated in each script's header — the standalone
   witness-verifier bundle and the FORM worked example among them;
-- three engines of our own shipped in full under `../../upgrades/`: Eichler.jl (the certified
-  Eichler-integral / sunrise-period package), Leviathan (a Julia
-  implementation of the Euler-characteristic-drop Landau method of Chestnov, Crisanti and Giroux), and SOFIA.jl (a Julia
-  translation of the SOFIA package by Correia, Giroux and Mizera, with no Wolfram dependency) — see [`../../upgrades/README.md`](../../upgrades/README.md);
+- three engines shipped in full under `../../upgrades/`: Eichler.jl (the certified
+  Eichler-integral / sunrise-period package), Leviathan (a Julia port of the
+  Euler-characteristic-drop Landau method of Chestnov, Crisanti and Giroux, in part translated
+  from their Mathematica code and from DiscKosky by Crisanti, Lippstreu, McLeod and Polackova),
+  and SOFIA.jl (a Julia translation of the SOFIA package by Correia, Giroux and Mizera, with no
+  Wolfram dependency); see [`../../upgrades/README.md`](../../upgrades/README.md);
 - the patched forks of Kira, Blade and AMFlow.cpp that the reduction and oracle packages
   drive, each in its own repository with a `PATCHES.md` — listed, with base commits,
   licenses and the environment variables the packages read, in

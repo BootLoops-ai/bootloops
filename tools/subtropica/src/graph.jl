@@ -26,6 +26,13 @@
 #    line 68). Equality of the two routes is the standard matrix-tree /
 #    all-minors theorem; we additionally cross-check U against the direct
 #    spanning-tree sum on every call (crosscheck kwarg).
+#    NOTE ON THIS CITATION: pld_complete_c3.jl is not part of this release,
+#    so the line numbers cited for it here and below cannot be checked from
+#    this repository. The formulas are the spanning-tree and spanning-2-forest
+#    sums that define U and F (Bogner and Weinzierl, arXiv:1002.3458); the
+#    same construction ships in tools/landau-alphabet (landau_alphabet.py
+#    symanzik_subgraph and pld_bridge.jl _face_symanzik). This block is not a
+#    translation of SubTropica.wl.
 #  * CenterDot NUMERATOR machinery (STSymanzik step 5 wl:3546-3568, step 7
 #    postprocessing wl:3606-3660; STGetIntegrandDataNumerators wl:3014-3080):
 #    NOT ported in this pass — numerators REFUSE, typed (:NumeratorsNotSupported),

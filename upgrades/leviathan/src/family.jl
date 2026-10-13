@@ -1,5 +1,5 @@
-# family.jl — Family struct (Lee–Pomeransky G + kinematic parameters) and specializations.
-
+# family.jl: Family struct (Lee-Pomeransky G + kinematic parameters) and specializations. The cut list (line 10)
+# follows DiscKosky's counters; spec_ring_midq (lines 62-74) follows landau_codes.m:39-40, 73. See PATCHES.md.
 struct Family
     R::Oscar.MPolyRing          # QQ[kin..., x1..xE]
     G::Oscar.MPolyRingElem

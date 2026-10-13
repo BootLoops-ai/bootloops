@@ -14,13 +14,27 @@ source file remains usable on its own under MIT. Remove src/lr_refine.jl (and
 its include/export lines in src/SubTropica.jl) if you need an MIT-only build.
 
 Portions of src/ (hlogexpr.jl, assemble.jl, eps_expand.jl, lr_dispatch.jl,
-serialize.jl, b1_types.jl, b1_driver.jl, tropical.jl, polytope.jl, subtract.jl,
-continue.jl, graph.jl, verify.jl) and scripts/make_fixtures.py are a
-Julia/Python translation of SubTropica (https://github.com/SubTropica/SubTropica
+serialize.jl, hf_bridge.jl, b1_types.jl, b1_driver.jl, tropical.jl,
+polytope.jl, subtract.jl, continue.jl, graph.jl, verify.jl, lr_refine.jl and
+the module file SubTropica.jl) and scripts/make_fixtures.py are a Julia/Python
+translation of SubTropica (https://github.com/SubTropica/SubTropica
 @ adac2f72), Copyright (c) 2025-2026 Sebastian Mizera, Mathieu Giroux, Giulio
 Salvatori, released under the MIT License; the MIT permission notice below
 applies to those portions, and each file cites the SubTropica.wl lines it
-follows. The vendored files under reference/ are upstream's own: SubTropica.wl
+follows. By file: tropical.jl, subtract.jl and continue.jl are translations of
+the corresponding SubTropica.wl routines, as is the token dictionary of
+hlogexpr.jl; polytope.jl, b1_types.jl, b1_driver.jl, eps_expand.jl and
+assemble.jl follow the conventions and the order of steps of SubTropica.wl;
+serialize.jl, hf_bridge.jl and lr_dispatch.jl drive the HyperFLINT engine and
+follow its request grammar and error handling (reference/
+hyperflint_cli_main.cpp, reference/hyperflint_bridge_handlers.cpp) together
+with the SubTropica.wl lines they cite; lr_refine.jl follows routines of
+SubTropica.wl in addition to HyperInt, as its header states; graph.jl takes its
+exponent and prefactor conventions from SubTropica.wl (STGetIntegrandData),
+while its builder of the graph polynomials U and F is not taken from
+SubTropica.wl, which builds them in momentum space (see the header of
+graph.jl); verify.jl cites one line of SubTropica.wl and has no other upstream
+counterpart. The vendored files under reference/ are upstream's own: SubTropica.wl
 and LICENSE, Copyright (c) 2025-2026 Sebastian Mizera, Mathieu Giroux, Giulio
 Salvatori; hyperflint_cli_main.cpp, hyperflint_bridge_handlers.cpp and
 HyperFLINT_README.md, Copyright (c) 2026 Sebastian Mizera and SubTropica

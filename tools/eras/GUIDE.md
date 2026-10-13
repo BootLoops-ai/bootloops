@@ -95,8 +95,18 @@ mean-value form (R. E. Moore, Interval Analysis, Prentice-Hall 1966), the center
 of Krawczyk & Neumaier (1985, SIAM J. Numer. Anal. 22:604), the Taylor models of Makino
 & Berz (2003, Int. J. Pure Appl. Math. 4:379) and the Taylor forms of Neumaier (2003,
 Reliable Computing 9:43) — carried in Arb ball arithmetic (Johansson 2017) via
-python-flint; ERAS's contribution is the forward-mode assembly and the adversarial
-battery, not the forms. Data: DravLex v1.0 (Kolipakam, Jordan, Dunn, Greenhill,
+python-flint. ERAS is Python code written for BootLoops; it packages these classical
+forms for one use (forward-mode derivatives and truncated series over Arb balls, both
+textbook constructions) and adds the adversarial verifier. It claims neither the forms
+nor the construction as new. Strictly, ERAS implements Taylor forms with interval
+coefficients, not the Taylor models of Makino and Berz. Established software for
+Taylor models and Taylor series exists and predates ERAS: COSY INFINITY (Berz and
+Makino), TaylorModels.jl (D. P. Sanders and L. Benet, MIT) and TaylorSeries.jl
+(L. Benet and D. P. Sanders, MIT). A side-by-side reading of the two Julia packages
+found no code in common with ERAS; the source of COSY INFINITY is not publicly
+downloadable and was not read. The reference likelihood in `L_prod_D` and `L_prod_S`
+is Felsenstein's (1981, J. Mol. Evol. 17:368). Data: DravLex v1.0 (Kolipakam, Jordan,
+Dunn, Greenhill,
 Bouckaert, Gray & Verkerk 2018, R. Soc. Open Sci. 5:171504; lexibank/dravlex,
 doi:10.5281/zenodo.5121580), CC BY 4.0.
 

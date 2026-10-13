@@ -1,7 +1,7 @@
 # Installing BootLoops
 
 BootLoops has two parts: the **toolkit** (the computing packages and the
-house engines, in this repository) and the **skills** (the working protocols,
+engines under `upgrades/`, all in this repository) and the **skills** (the working protocols,
 plain-markdown instruction files in the
 [Agent Skills](https://agentskills.io) format, readable by Claude Code, Codex,
 Copilot, Cursor, and most other agent frameworks, in their own repository,
@@ -20,7 +20,7 @@ git clone https://github.com/BootLoops-ai/bootloops
 No GitHub account is needed: public repositories clone anonymously, and the
 same tree downloads as a plain tarball from the repository page.
 
-You get the full toolkit under `tools/` and the house engines under
+You get the full toolkit under `tools/` and the engines under
 `upgrades/` (SOFIA.jl, Eichler.jl, Leviathan). (The papers and the per-problem
 result files live on [bootloops.ai](https://bootloops.ai), not in the
 repository.)
@@ -48,8 +48,8 @@ installer — a clone is the installation. Per-package setup:
 - **External engines.** Several packages drive external programs — Kira,
   FireFly, FORM, AMFlow, Blade, FLINT, msolve, Singular, OSCAR/Julia among them.
   The catalog, with licenses and where to obtain each, is
-  [`toolkit/external/TOOLS.md`](toolkit/external/TOOLS.md). The house engines
-  ship in full source under [`upgrades/`](upgrades/README.md) with
+  [`toolkit/external/TOOLS.md`](toolkit/external/TOOLS.md). The engines under `upgrades/`
+  ship in full source ([`upgrades/README.md`](upgrades/README.md)) with
   per-directory build notes; the patched forks of Kira, Blade, and AMFlow.cpp
   build from their own repositories (next section); packages locate the
   binaries via `PATH` or the environment variables named in their GUIDEs.

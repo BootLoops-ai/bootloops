@@ -14,6 +14,8 @@
 #   Normalize  — Lee balance driver: eigenvalue normalization + eps-decoupling.
 #   Multivar   — multivariate (s,t,eps): eps-factorize in one ratio variable, verify flatness.
 #   KiraDE     — parse Kira derive_dgl output into a connection matrix A(eps,s,t).
+#   (The submodule Fuchsia shares its name with the Fuchsia program of Gituliar and Magerya;
+#   it is not that program.)
 
 module Counterweight
 

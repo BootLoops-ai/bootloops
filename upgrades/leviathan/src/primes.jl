@@ -16,7 +16,7 @@ function random_kinvals(rng, names::Vector{String}, p::Int)
 end
 
 "Distinct small generic rationals for regulators (nu_i, d/2) over QQ.
-Small numerators keep the exact function-field lane fast (measured: nf cost doubles
+Small numerators keep the exact function-field route fast (measured: nf cost doubles
 from ~9 s to ~19 s on sunrise-top when numerators grow to ~1e4)."
 function generic_regulators(rng, E::Int)
     ps = [103, 107, 109, 113, 127, 131, 137, 139, 149, 151]

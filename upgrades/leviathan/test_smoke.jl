@@ -1,5 +1,5 @@
-# Gate 1 smoke: one-loop equal-mass bubble. Expect chi=3, factors {s, mm, s-4mm},
-# additivity 3 = 1+1+1, all diagnostics PASS.
+# Smoke test: one-loop equal-mass bubble, the Type-1.2 example of the authors' demo notebook
+# (functions_demo.nb). Expect chi=3 = 1+1+1, factors {s, mm, s-4mm}; Type 1.2 fails by design (below).
 include(joinpath(@__DIR__, "src", "Leviathan.jl"))
 using .Leviathan, Random
 
@@ -23,7 +23,7 @@ for (k, v) in sort(collect(d), by=first)
 end
 @assert d["type1.1_sector_dim"][1]
 @assert d["type2.1_chi_additivity"][1]
-# type1.2 correctly FAILS on bubble: s=0 is nu=0-degenerate (second-type, regulated-lane-only).
+# type1.2 correctly FAILS on bubble: s=0 is nu=0-degenerate (second-type, regulated-route-only).
 @assert !d["type1.2_nodegeneracy"][1] &&
         all(occursin("s", g) for (_, g) in d["type1.2_nodegeneracy"][2].offenders)
 

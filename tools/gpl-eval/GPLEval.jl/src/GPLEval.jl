@@ -7,10 +7,14 @@ A thin package layered on:
   * `Arblib.polylog!`                                 — depth-1 Liₘ primitive;
   * Vollinga–Weinzierl Hölder convolution (0410259)   — reaches |z| ≥ min|aᵢ|
     when no letter sits on the segment (the series path's blind spot);
-  * VW §5 / FTW 1601.02649 path-concatenation         — native analytic
+  * path split through a complex midpoint (Chen's path-composition formula;
+    our own treatment, not the algorithm of Vollinga–Weinzierl §5): native analytic
     continuation when a nonzero letter lies on (0,z); the ±iπ side is fixed by
     `prescription` (default `:ginac` = aₖ+i0, matching GiNaC's 2-arg G);
-  * GiNaC `G(lst{a...}, z).evalf()` (via tiny C++ CLI) — independent oracle;
+  * GiNaC `G(lst{a...}, z).evalf()` (via tiny C++ CLI): reference value from
+    other authors' code (GiNaC's polylogarithm module is Vollinga and
+    Weinzierl's own implementation; trailing zeros and Hölder are the same
+    published method there and here);
   * `Eichler.iterated_integral` / `EllipticSector`    — eMPL bridge.
 
 Core entry points:
@@ -23,8 +27,9 @@ Core entry points:
     empl(kernels, t, sec::EllipticSector)       -> Acb
     gpl_ginac(a, z; digits)                     -> Complex{BigFloat}
 
-Conventions (Goncharov / Remiddi–Vermaseren, matching the project's
-hand-rolled `hpl_fast.py` / `hpl_basis.py` and `LandauAlphabet.gpl`):
+Conventions (Goncharov / Remiddi–Vermaseren, matching `LandauAlphabet.gpl` and
+two earlier scripts of this project, `hpl_fast.py` / `hpl_basis.py`, which are
+not distributed):
 
     G(a₁,…,aₙ; z) = ∫₀ᶻ dt/(t−a₁) G(a₂,…,aₙ; t),   G(; z) = 1,
     G(0,…,0; z)   = logⁿ(z)/n!,

@@ -1,9 +1,9 @@
-# ratrec.jl — multivariate rational-function reconstruction from F_p samples.
+# ratrec.jl: multivariate rational-function reconstruction from F_p samples.
 # Dense-ansatz nullspace mod p (FireFly-shape, no Thiele): for each prime p and sample
 # set {(kvec_j, val_j)}, solve [N_mons(k_j) | -val_j*D_mons(k_j)] · c = 0 over GF(p),
 # gcd-reduce, normalize by leading_coefficient(D)=1, CRT across primes, Nemo.reconstruct→QQ.
-# Ports the *idea* (screen-then-certify) of an earlier univariate fitter, not its code;
-# fresh multivariate Julia.
+# The screen-then-certify idea comes from an earlier univariate fitter. rehomogenize (lines 111-117)
+# follows the "AutoDehomogenise" option of SPQRLandau in landau_codes.m:143-147, 240-247. See PATCHES.md.
 
 "All monomial exponent vectors of total degree ≤ d in n vars (lex on (deg,exp))."
 function monoms_upto(n::Int, d::Int)

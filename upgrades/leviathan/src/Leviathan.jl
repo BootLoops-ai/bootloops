@@ -1,10 +1,10 @@
-# Leviathan.jl — chi-drop Landau-singularity method: a Julia implementation of the
-# Euler-characteristic-drop method of Vsevolod Chestnov, Giulio Crisanti and Mathieu Giroux
-# (arXiv:2606.29612) and Vsevolod Chestnov and Giulio Crisanti (arXiv:2511.14875).
-# No code was copied or translated. The authors' public Mathematica code (landau_codes.m
-# in Landau-s-Leviathans; euler_characteristic.m in DiscKosky by Crisanti, Lippstreu,
-# McLeod and Polackova) was read as the reference for five details the papers leave to
-# the code (PATCHES.md, "What follows the authors' code"). MIT; see LICENSE.
+# Leviathan.jl: chi-drop Landau-singularity engine. A Julia port of the Euler-characteristic-drop
+# method of Vsevolod Chestnov, Giulio Crisanti and Mathieu Giroux (arXiv:2606.29612) and of the
+# elimination object of SPQR by Vsevolod Chestnov and Giulio Crisanti (arXiv:2511.14875).
+# Written with the authors' public Mathematica code open (landau_codes.m in Landau-s-Leviathans;
+# euler_characteristic.m and irreducible_monomials.m in DiscKosky by Crisanti, Lippstreu, McLeod
+# and Polackova; SPQR). Parts are translations of that code into Julia/Oscar, listed with file and
+# line in PATCHES.md. That code carries no license file; NOTICE states what LICENSE (MIT) covers.
 # Stack: Julia 1.10 + Oscar 1.7.3 (see README.md / Project.toml for the environment).
 
 module Leviathan

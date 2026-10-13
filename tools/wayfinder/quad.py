@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT AND BSD-3-Clause
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0 (repository-root
+# LICENSE and NOTICE). The refinement loop of _segment follows the loop of
+# QuadratureRule.summation in mpmath, Copyright (c) 2005-2021 Fredrik Johansson
+# and mpmath contributors, BSD 3-Clause License; the mpmath notice is
+# reproduced in the NOTICE file beside this file.
 r"""
 quad.py — THE standardized adaptive-quadrature refine-until-gate helper.
 One shared helper — consumers import quad_refine; nothing here is wired into
@@ -239,6 +245,11 @@ def _segment(rule, f, a, b, prec, tol_seg, depth0, cap, wp, dps, guard,
     (sum_next(previous=results)); Gauss-Legendre re-evaluates its full
     (non-nested) node set — same rule, deeper level, never a different
     formula."""
+    # The loop below (the a == b shortcut, the (-inf, inf) fold and the
+    # get_nodes / sum_next / append sequence) follows the loop of
+    # QuadratureRule.summation in mpmath 1.3.0 (Copyright (c) 2005-2021
+    # Fredrik Johansson and mpmath contributors, BSD 3-Clause License; notice
+    # in the NOTICE file beside this file).  The acceptance test is ours.
     if a == b:
         return mp.zero, mp.zero, 0
     # mpmath summation()'s own (-inf, inf) fold: better accuracy with 0 as

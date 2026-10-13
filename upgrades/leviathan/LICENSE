@@ -1,7 +1,18 @@
 MIT License
 
-Copyright (c) 2026 Anthropic, PBC
-Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision.
+Copyright (c) 2026 Anthropic, PBC (the parts of this package written for
+BootLoops). Created by Matthew D. Schwartz; code written by Claude (Anthropic)
+under his supervision.
+
+Leviathan is a Julia port of the Euler-characteristic-drop method of Vsevolod
+Chestnov, Giulio Crisanti and Mathieu Giroux (arXiv:2606.29612). Portions of
+src/ are translations of the authors' Mathematica code: landau_codes.m in
+github.com/Giu989/Landau-s-Leviathans @ 47028b7 (Chestnov, Crisanti, Giroux)
+and Kernel/euler_characteristic.m in github.com/Giu989/DiscKosky @ 5dca910
+(Giulio Crisanti, Luke Lippstreu, Andrew J. McLeod, Maria Polackova). Those
+repositories carry no license file. The copyright line above and the
+permission below do not cover the translated portions, which NOTICE beside
+this file lists by file and line.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -76,11 +76,22 @@ lockpick value-fits and gatekeeper CV. ginac_bridge/ginac_gpl.cpp = GiNaC
 cross-check leg; empl_bridge connects toward the elliptic evaluators
 (upgrades/Eichler.jl).
 
-CREDIT: Goncharov multiple polylogarithms [Gon] and Remiddi–Vermaseren HPLs [RV];
-reference numerics through GiNaC by Christian Bauer, Alexander Frink and Richard Kreckel
-[GiNaC] with the polylogarithm algorithms of Jens Vollinga and Stefan Weinzierl [VW]
-(GPL, compiled locally, run as a subprocess); on-path test words from Ajjath, Chaubey
-and Shao [Ajjath]; ball arithmetic by Arb [Arb]. Elliptic MPLs route to tools/ellipticus /
+CREDIT: GPLEval is a Julia program written for BootLoops that evaluates Goncharov
+multiple polylogarithms [Gon] and Remiddi–Vermaseren HPLs [RV] by the method of Jens
+Vollinga and Stefan Weinzierl [VW] (hep-ph/0410259): its removal of trailing zeros and
+its Hölder convolution (the identity of Borwein, Bradley, Broadhurst and Lisonek) are
+the formulas of that paper. Its power-series core with a proven error bound in Arb ball
+arithmetic, its choice of the Hölder parameter, its contour-splitting treatment of
+letters on the integration path (Chen's path-composition formula, which is classical)
+and its quadrature fallback are ours. Other public evaluators of the same functions
+are GiNaC, whose polylogarithm module is Vollinga and Weinzierl's own implementation of
+the same method, handyG (Naterop, Signer, Ulrich, arXiv:1909.01656) and FastGPL (Wang,
+Yang, Zhou, arXiv:2112.04122); none of them returns a proven error radius, and none of
+their code is used in GPLEval. Reference numerics come from GiNaC by Christian Bauer,
+Alexander Frink and Richard Kreckel [GiNaC], used unmodified (GPL, compiled locally,
+run as a subprocess); GiNaC is other authors' code but, for the two steps named above,
+the same published algorithm. On-path test words from Ajjath, Chaubey and Shao
+[Ajjath]; ball arithmetic by Arb [Arb]. Elliptic MPLs route to tools/ellipticus /
 Eichler.jl (Broedel–Duhr–Dulat–Penante–Tancredi [BDDT, BDDPT]; Walden–Weinzierl [WW]).
 Bracketed keys resolve in REFERENCES.md at the repository root.
 

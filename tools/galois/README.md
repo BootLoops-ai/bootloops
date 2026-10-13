@@ -57,8 +57,7 @@ verification.
 
 ## Installation and data
 
-The package is plain Python: `python3` + `sympy` + `mpmath` (plus `gmpy2` for
-the ring eliminations). Single-core; the coaction engine stays under 1 GB RSS
+The package is plain Python: `python3` + `sympy` + `mpmath`. Single-core; the coaction engine stays under 1 GB RSS
 and the ring under 100 MB through wmax = 23. Put this repository's `tools/`
 directory on `sys.path` (or `PYTHONPATH`) and import:
 
@@ -228,6 +227,20 @@ Ihara, Kaneko and Zagier [IKZ], Hoffman's relations [Hoffman] and the Broadhurst
 depth-graded dimensions [BK]; literature checks against Brown [BrDec] and Schlotterer,
 Sohnle and Tao [SST25]; 200-digit spot checks by FORM [FORM4]. Bracketed keys resolve in
 REFERENCES.md at the repository root.
+
+Galois is Python code written for BootLoops from the papers above. Public programs that
+cover the same mathematics are SageMath's multiple_zeta module (F. Chapoton),
+HyperlogProcedures (O. Schnetz), the MZV Data Mine (Blümlein, Broadhurst and Vermaseren
+[BBV]) and PolyLogTools (Duhr and Dulat). HyperlogProcedures also produced the solved
+results that the `vspace` parser reads from the ancillary files of arXiv:2607.11645
+(X. Jiang), and the f[...] and I[z,...,0] notation that `core.ZTOK` and `vspace.FTOK`
+read is its notation. The method of the relation ring (all stuffle and shuffle relations
+per weight, exact elimination, survivors of minimal depth) is that of the Data Mine paper
+[BBV], whose basis conventions the relation tables follow; the statement that
+zeta(6,4,1,1) is the first depth-4 basis element, at weight 12, is from the same paper.
+The recursion in `svmap21.phi_sym` is Brown's (arXiv:1102.1310), with the normalization
+q_i = 0 of Schlotterer, Sohnle and Tao [SST25] (arXiv:2511.15883). None of the code of
+these programs is used here, and none of their files is shipped.
 
 ## License
 

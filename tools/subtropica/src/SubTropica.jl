@@ -2,7 +2,8 @@
 # Shared types live in types.jl and b1_types.jl. Design: DESIGN.md;
 # wire/handoff contracts: CONTRACTS.md.
 #
-# subtropica — no-Wolfram Julia rewrite of SubTropica's front-end driving the
+# subtropica: unofficial no-Wolfram Julia port of the front end of SubTropica
+# (M. Giroux, S. Mizera, G. Salvatori, arXiv:2604.20954), driving their
 # HyperFLINT C++ engine (v1.2.8 binary, READ-ONLY, CLI eval-json transport).
 # Phase A scope: convergent, proven-LR Euler integrals from raw quadruples;
 # check_divergences hard-ON; Euclidean region only.

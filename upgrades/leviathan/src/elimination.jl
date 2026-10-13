@@ -1,8 +1,8 @@
-# elimination.jl — exact elimination over Q(s)[x0,x_S] (Eq. 8 leading-coefficient criterion).
-# Exact route: Oscar/Singular GB over the rational function field (no FiniteFlow reconstruction);
-# candidates = irreducible factors of the LCM of denominators of the monic elimination
-# polynomial coefficients f_k = c_k/c_m, over all variables x_i (i in {0} u S).
-
+# elimination.jl: exact elimination over Q(s)[x0,x_S] (elimination ideal and its leading coefficient,
+# Eqs. 8-9 of arXiv:2606.29612v1) by an Oscar/Singular Groebner basis over the function field.
+# From the authors' code (no license file): the cut-edge block of ff_ideal (lines 26-33) is a
+# translation of DiscKosky euler_characteristic.m:157-180 (the MIT grant does not cover it; NOTICE);
+# candidates = factors of the LCM of denominators of f_k = c_k/c_m follows landau_codes.m:238.
 "Function-field specialization: K = QQ(kin), Rk = K[x0, x_i (i in S)]."
 function ff_ring(fam::Family, S)
     K, kg = Oscar.rational_function_field(Nemo.QQ, fam.kinnames)

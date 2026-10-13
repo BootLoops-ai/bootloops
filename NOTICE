@@ -23,16 +23,38 @@ their directories:
   upgrades/SOFIA.jl/reference/     SOFIA, the original Mathematica package by Correia, Giroux and Mizera (scr.m, scrj.m, README)     MIT       README.md (grant), EffortlessMarch2025/LICENSE
   upgrades/SOFIA.jl/reference/PLD_database/  PLD database (Fevola, Mizera, Telen; data)  CC BY 4.0  README.md
   tools/surd/data/N4_SLICE.json    letters adapted from arXiv:2401.06463 ancillaries (Chicherin, Moult, Sokatchev, Yan, Zhu)  CC BY 4.0  tools/surd/DATA.md
-  tools/surd/gate/cells/           1->4 splitting function of Del Duca, Duhr, Haindl, Lazopoulos, Michel (arXiv:1912.06425, 2007.05345; derived cell data)  CC BY 4.0, adapted  tools/surd/DATA.md
-  tools/terrier/periods/pipeline/cards/ads-5-81-3213*  KKLT vacuum of Demirtas, Kim, McAllister, Moritz, Rios-Tascon (arXiv:2107.09064; derived card)  CC BY 4.0, adapted  card comment field, tools/terrier/README.md
-  tools/terrier/lattice/lp_kill_rank_agnostic.py  short_vectors search-window rule and output contract after Hecke.jl src/QuadForm/Enumeration.jl (Hecke contributors: Claus Fieker, Tommy Hofmann and others; github.com/thofma/Hecke.jl)  BSD-2-Clause  file header
-  tools/clinch/adapters/certpass/twin_etas.py, assemble_etas_np.py  upper_gamma_ext (seven lines) and round_half_up (three lines) from lmizrahi/etas (Mizrahi)  MIT  PROVENANCE.md
+  tools/surd/gate/cells/           cell data derived from the file P_qbp_qp_g_q.m of Del Duca, Duhr, Haindl, Lazopoulos, Michel (people.phys.ethz.ch/~pheno/quadruple_collinear; result of arXiv:1912.06425)  no license stated by the source; not covered by the grants above  tools/surd/DATA.md
+  tools/eras/QUARTET_COLLAPSE.json    quartet-collapse summary derived from DravLex v1.0 (Kolipakam, Jordan, Dunn, Greenhill, Bouckaert, Gray, Verkerk; doi:10.5281/zenodo.5121580)  CC BY 4.0  tools/eras/DATA.md
+  tools/terrier/periods/pipeline/cards/ads-5-81-3213*  KKLT vacuum of Demirtas, Kim, McAllister, Moritz, Rios-Tascon (arXiv:2107.09064; derived card)  arXiv non-exclusive license (derived values; no file reproduced)  card comment field, tools/terrier/README.md
+  tools/terrier/lattice/lp_kill_rank_agnostic.py  short_vectors search-window rule and output contract after Hecke.jl src/QuadForm/Enumeration.jl (Hecke contributors: Claus Fieker, Tommy Hofmann and others; github.com/thofma/Hecke.jl)  BSD-2-Clause  file header, tools/terrier/NOTICE
+  tools/terrier/lattice/genus_enum.jl  genus traversal adapted from Hecke.jl src/QuadForm/Quad/ZGenusRep.jl, _enumerate_definite_genus! (Hecke contributors: Claus Fieker, Tommy Hofmann and others; github.com/thofma/Hecke.jl)  BSD-2-Clause  tools/terrier/NOTICE
+  tools/clinch/adapters/certpass/twin_etas.py, assemble_etas_np.py, run_etas.py, recertify_taupinned.py  upper_gamma_ext and round_half_up copied, parameter bounds copied, pair table, E-step check and source integral following etas/inversion.py, from lmizrahi/etas (L. Mizrahi, S. Nandan, S. Wiemer; Copyright (c) 2024 ETH Zurich, Leila Mizrahi)  MIT  PROVENANCE.md
+  tools/baller/vendor/certlane/    port, into ball arithmetic, of the alert layer of matPTF (Selva, Lorito, Volpe, Romano, Tonini, Perfetti, Bernardi and co-authors, INGV; github.com/INGV/matPTF)  CC BY 4.0  tools/baller/NOTICE
+  tools/baller/vendor/geo/mc.py    Poisson L-test simulation after pyCSEP (Savran, Werner, Schorlemmer, Maechling and co-authors; github.com/cseptesting/pycsep)  BSD-3-Clause  tools/baller/NOTICE
+  tools/baller/vendor/ling_onesided/double_unc.py  routine pvand, the Björck-Pereyra Vandermonde solver as coded by John Burkardt (VANDERMONDE library)  MIT  tools/baller/NOTICE
+  tools/popcorn/twowindow_sim.py  seed-hash function, seed scheme and tskit branch-spectrum call from twosfs (Rice, Fenton, Novembre, Desai; github.com/desai-lab/twosfs)  MIT  tools/popcorn/NOTICE
+  tools/posq/bench_rung1_gauss.py  routine recur_coeffs after r_jacobi.m and r_jacobi01.m of OPQ (W. Gautschi; r_jacobi.m supplied by D. Laurie; doi:10.4231/R7959FHP)  CC0 1.0  docstring of the routine
   tools/subtropica/reference/      SubTropica + HyperFLINT (reference files)   MIT   LICENSE, LICENSE-HyperFLINT
   tools/subtropica/                SubTropica front end (Julia port)   MIT     NOTICE
   tools/subtropica/src/lr_refine.jl (+ test/test_lr_refine.jl)  derived from HyperInt (E. Panzer)  GPL-3.0-or-later  tools/subtropica/NOTICE, LICENSE-GPL-3.0
-  tools/eichler/genus2/mestre_port.py  sympy translation of SageMath's mestre.py and invariants.py (Florian Bouyer, Marco Streng, Nick Alexander)  GPL-2.0-or-later  tools/eichler/NOTICE, LICENSE-GPL-2.0
+  tools/eichler/genus2/mestre_port.py, conic_fast.py  sympy translation of SageMath's mestre.py and invariants.py (Florian Bouyer, Marco Streng, Nick Alexander); conic_fast.py carries six statements of mestre.py  GPL-2.0-or-later  tools/eichler/NOTICE, LICENSE-GPL-2.0
+  upgrades/Eichler.jl/src/siegel.jl (block in igusa_clebsch)  six transvectant calls after FLINT src/acb_theta/g2_covariants.c (Jean Kieffer)  LGPL-3.0-or-later  upgrades/Eichler.jl/NOTICE, LICENSE-LGPL-3.0
+  upgrades/leviathan/              Julia port, in part translated from landau_codes.m (Chestnov, Crisanti, Giroux; github.com/Giu989/Landau-s-Leviathans) and Kernel/euler_characteristic.m (Crisanti, Lippstreu, McLeod, Polackova; github.com/Giu989/DiscKosky)  translated portions: no license stated by the source, not covered by the grants above; the rest MIT  upgrades/leviathan/NOTICE
   tools/formglue/form_hyper.py     HyperFORM driver template after the example drivers shipped with HyperFORM (Adam Kardos, Sven-Olaf Moch, Oliver Schnetz)  GPL-3.0-only  tools/formglue/NOTICE, LICENSE-GPL-3.0
+  tools/winnow/ibplapper/adapters/user_system.py  reader for Kira's user-defined-system files, follows the parser of Kira (The Kira Developers)  GPL-3.0-or-later  tools/winnow/NOTICE, LICENSE-GPL-3.0
+  tools/kira-stack/parallel_kira_gen.py, parallel_kira_gen_uds.py  write and read Kira's internal equation files, following Kira's source (The Kira Developers)  GPL-3.0-or-later  tools/kira-stack/NOTICE, LICENSE-GPL-3.0
+  tools/ffcapital/harvest_ffsave_eta.py, harvest_ffsave_2var.py  first 40 entries of FireFly's prime table and its state-file layout (Jonas Klappert, Fabian Lange; FireFly by Klappert, Klein, Lange)  GPL-3.0-or-later  tools/ffcapital/NOTICE, LICENSE-GPL-3.0
   tools/blade/                     Blade search logic (Python port) MIT     NOTICE
+  tools/wayfinder/boundary.py      vacuum boundary routines ported from AMFlow.cpp (AMFlow.cpp contributors), the C++ port of AMFlow (Xiao Liu, Yan-Qing Ma)  MIT  tools/wayfinder/NOTICE
+  tools/wayfinder/quad.py          refinement loop after QuadratureRule.summation of mpmath (Fredrik Johansson and mpmath contributors)  BSD-3-Clause  tools/wayfinder/NOTICE
+  tools/nestor/ladder.py           depth loop of cert_quad after QuadratureRule.summation of mpmath (Fredrik Johansson and mpmath contributors)  BSD-3-Clause  file header, tools/nestor/NOTICE
+
+Two of the rows above have a source that states no license: the file behind the
+cell data under tools/surd/gate/cells/, and the repositories whose code is in
+part translated in upgrades/leviathan/. For those portions there is no license
+of the source to keep; the copyright line and the two license statements above
+do not cover them. tools/surd/DATA.md and upgrades/leviathan/NOTICE state the
+facts.
 
 The complete list, with where each component comes from and what was modified, is
 THIRD_PARTY.md. The patched engine forks that the toolkit drives (Kira,
@@ -41,17 +63,28 @@ repositories published beside this one by the same organization
 (kira, blade, amflow-cpp), each under
 the license of its original authors, and are not part of this repository. BootLoops runs
 Kira, FireFly and FORM as separate programs
-and does not link them into MIT-licensed code. Three GPL-licensed sources ship
+and does not link them into MIT-licensed code. GPL-licensed sources ship
 in this repository: tools/subtropica/src/lr_refine.jl and its test (derived from
 HyperInt by Erik Panzer; GPL-3.0-or-later; see tools/subtropica/NOTICE for what
 that means for the SubTropica module), tools/eichler/genus2/mestre_port.py (a
 sympy translation of SageMath's mestre.py and invariants.py by Florian Bouyer,
-Marco Streng and Nick Alexander; GPL-2.0-or-later; see tools/eichler/NOTICE for
-what that means for eichler.genus2) and tools/formglue/form_hyper.py (whose
+Marco Streng and Nick Alexander) and tools/eichler/genus2/conic_fast.py (which
+carries six statements of the same mestre.py), both GPL-2.0-or-later (see
+tools/eichler/NOTICE for what that means for eichler.genus2), and
+tools/formglue/form_hyper.py (whose
 HyperFORM driver template follows the example drivers shipped with HyperFORM
 v1.0 by Adam Kardos, Sven-Olaf Moch and Oliver Schnetz; GPL-3.0-only, as
 HyperFORM's own license states, with no later-version option; see
-tools/formglue/NOTICE for what that means for formglue). External engines that are used
+tools/formglue/NOTICE for what that means for formglue). Five more files follow
+or copy GPL code of the engines themselves and are GPL-3.0-or-later:
+tools/winnow/ibplapper/adapters/user_system.py and
+tools/kira-stack/parallel_kira_gen.py and parallel_kira_gen_uds.py (after the
+source of Kira, Copyright (C) 2017-2025 The Kira Developers), and
+tools/ffcapital/harvest_ffsave_eta.py and harvest_ffsave_2var.py (after the
+source of FireFly, Copyright (C) 2020 Jonas Klappert and Fabian Lange); see the
+NOTICE file in each of those packages. One block of
+upgrades/Eichler.jl/src/siegel.jl follows FLINT (Jean Kieffer) and is
+LGPL-3.0-or-later; see upgrades/Eichler.jl/NOTICE. External engines that are used
 but not bundled (their licenses and where to obtain them) are listed in
 toolkit/external/TOOLS.md.
 

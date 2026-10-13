@@ -96,9 +96,12 @@ upstream commit it replays. The FORK half extends the engine: the
 no-Wolfram build itself; the streaming sibling driver (`fflowcli_stream`
 — streaming evalmany writes plus subgraph build/load, compiled from its
 own translation units so the stock driver stays byte-identical); the
-per-point numeric reduction oracle (`probe`/BTOracle), which has no
-upstream analogue; standalone rational reconstruction over cached
-evaluation tables (`ratrec`); the measured artifact-gate discipline in
+per-point numeric reduction oracle (`probe`/BTOracle), a Python
+counterpart of upstream's `ssolve` block solve (`src/ssolve/block.c`)
+that works from the exported exact relations at any prime, with a second
+back end that runs `ssolve` itself; standalone rational reconstruction
+over cached evaluation tables (`ratrec`), which drives upstream's
+`recmod` and `dynamicrr` programs; the measured artifact checks in
 `pipeline` (upstream's binaries can exit 0 on failure paths, so byte
 sizes, table dimensions, and held-out compares gate instead of return
 codes); and a small set of declared divergences inside the ported
@@ -146,9 +149,17 @@ The fork source lives in the sibling repository `blade`
 (including the `fflowcli_stream` streaming sibling — see its `PATCHES.md`); the
 reference bank of search results is not distributed.
 
-CREDIT: Blade — X. Guan, X. Liu, Y.-Q. Ma, W.-H. Wu (arXiv:2405.14621);
-block-triangular method lineage arXiv:1801.10523 + arXiv:1912.09294. Our port
-removes the Wolfram dependency; algorithmic credit theirs. The fork replays
+CREDIT: Blade is by X. Guan, X. Liu, Y.-Q. Ma and W.-H. Wu (arXiv:2405.14621,
+MIT; gitee.com/multiloop-pku/blade), built on T. Peraro's FiniteFlow
+(arXiv:1905.08019, MIT); block-triangular method lineage arXiv:1801.10523 +
+arXiv:1912.09294. Our port removes the Wolfram dependency; the algorithms and
+the code it translates are theirs. Nine of the library modules derive from
+Blade: `extension`, `ansatz`, `scheme`, `search`, `adaptive` and `semibl` are
+Python translations of the authors' `.wl` sources; `formats` and `pipeline` implement the file
+layouts and stage contracts read from Blade's C programs; and the exact back
+end of `probe` is a Python counterpart of their `ssolve` block solve
+(`src/ssolve/block.c`). The one-command driver (`blade_family`), the degree
+scan in `ratrec` and the self-test are BootLoops code. The fork replays
 upstream commit c0a06cb (+2707/−8 across eight files; the full diff record is
 `PATCHES.md` in `blade`); the C wrapper layer is adapted from
 FiniteFlow's MathLink wrappers at FiniteFlow commit 278344c (T. Peraro, arXiv:1905.08019, MIT —

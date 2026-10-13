@@ -67,7 +67,8 @@ it: a measured refusal boundary — two independent recipes both ending in a
 licensed, receipted refusal — reproduced (scaled) in the battery so every
 consumer watches the instrument refuse correctly before trusting its
 acceptances.  Layout: `code/` (deform_kit.py matrix engine; lfact_kit.py
-single-series wing; vendored engines r2_kit.py / f2_lib.py / emit_receipt.py;
+single-series wing; r2_kit.py / f2_lib.py / emit_receipt.py, engines copied from
+this project's earlier rounds;
 build_sym5.py operator builder; run_cal_a/b/d/d2 calibration chain;
 preflight_invariance.py; run_license/license2; emit_wall),
 `battery/` (run_battery_deform.py stages S0–S5 + fixtures/deform_controls.json
@@ -152,3 +153,35 @@ hour-class and S4 additionally needs FROB_L6_OPERATOR.
 RELATED: consumed by wayfinder.boundary_branches (thin delegator, restates the
 eig(D1) caveat); upstream = per-point Kira tables; downstream = anchor solves in
 transport pipelines.
+
+CREDIT: all code in this package was written for BootLoops; the methods of the two
+members are published and are other people's.
+- `deform_transport` is our own implementation of the deformation method of Dwork and
+  Lauder for the Frobenius matrix of a differential operator, in the form given for
+  Picard-Fuchs operators by Candelas, de la Ossa and van Straten (arXiv:2104.07816);
+  see also Pancratz and Tuitman (arXiv:1307.1250). The steps of the method (local
+  solution matrix, Frobenius at the base point, transport, clearing the poles with a
+  power of the discriminant at x^p, evaluation at a Teichmuller point, integer recovery
+  from the Weil bound and the functional equation) are theirs; the exponent law we use
+  for the pole clearing and the scalar normalization were fixed by our own
+  measurements. The authors' own programs for Calabi-Yau operators are CY3Zeta
+  (Candelas, de la Ossa, Kuusela, arXiv:2405.08067) and PFLFunction (Kuusela, Lathwood,
+  Mosso Rojas, Stepniczka, arXiv:2604.01191), both GPL-3.0; none of their code is used
+  here.
+- The single-series wing (`r2_kit.py`, `lfact_kit.py`) reads unit roots from the ratio
+  of truncated series at a Teichmuller point, which is Dwork's unit-root formula.
+- `asdminer` mines the three-term congruences of Atkin and Swinnerton-Dyer and checks
+  itself against Honda's theorem on formal groups, Hecke eigenvalues and Beukers's
+  congruences for Apery numbers; the invariant differential follows Silverman (IV.1).
+  PARI/GP is run as a separate program by `run_control.py`.
+- The core package (`frobenius_boundary/`): the shear reduction is Moser's (1960); the
+  rest (polynomial equation from a Kira table, expansion at infinity, multi-epsilon
+  classification, branch series) has no counterpart in any code or paper that a
+  comparison found. Kira output is read as a file format; no Kira code is included.
+- This package does not obtain boundary constants from arithmetic modulo primes; that
+  recipe is `tools/geotriage` with `tools/lockpick`, and its point-counting mechanism
+  follows A. Lauder (Found. Comput. Math. 4 (2004) 221) and K. Kedlaya
+  (arXiv:math/0105031).
+Runs on python-flint, gmpy2, mpmath, sympy, numpy and scipy, all imported and none
+shipped. Classical items are listed by author and year in REFERENCES.md at the
+repository root.

@@ -75,7 +75,8 @@ NOT-FOR:
   (`series_pf.py`, tools/annihilator) instead.
 - `regions` certifies completeness only; it does not construct the series.
   Hidden (Glauber-type) regions are NOT guaranteed to be enumerated from U+F
-  alone — for those the χ mismatch is the tell, not the facet diff.
+  alone (the caveat of Jantzen, Smirnov and Smirnov, arXiv:1206.0546): for those
+  the χ mismatch is the tell, not the facet diff.
 
 INVOKE:
 - CLI: `dipstick order '<Gstr>' <kin_csv> <x_csv> <svar> [Lmax]` · `dipstick count
@@ -177,10 +178,15 @@ the kinematic symbols, the integration variables, and an integer weight saying
 which kinematic symbol is the small parameter), enumerate the lower facets of
 the Newton polytope of G in one dimension higher (last coordinate = the
 small-parameter weight). Those facets ARE the regions of the expansion by
-regions, each with its scaling vector v_R. Two independent sums certify a
+regions, each with its scaling vector v_R; this enumeration is the
+Newton-polytope construction of A. Pak and A. Smirnov (arXiv:1011.4863),
+implemented here from the paper. Two independent sums certify a
 region list: (vol) Σ_R n!·Vol(G_R) = n!·Vol(G), a rigorous tiling identity, and
 (χ) Σ_R χ_reg(G_R) = χ_reg(G), the master-count additivity computed with the
-Leviathan engine. A user-supplied list is diffed against the enumeration and
+Leviathan engine (upgrades/leviathan, a Julia port of the method of Chestnov,
+Crisanti and Giroux, in part translated from their Mathematica code and from
+DiscKosky by Crisanti, Lippstreu, McLeod and Polackova; Dipstick calls it and
+contains none of its lines). A user-supplied list is diffed against the enumeration and
 the MISSING region is named by its v_R. Scaling vectors may have negative
 components (linear-programming convention, no δ shift).
 
@@ -252,7 +258,8 @@ FOOTGUNS (member):
   runaway-allocation hazard — cap the OUTERMOST process that mallocs.
 
 RELATED: upgrades/leviathan in this repo (χ_regulated engine shared by `order`
-and `regions`; the main in-process msolve consumer — same cap law applies);
+and `regions`, a Julia port of the Euler-characteristic-drop method of Chestnov,
+Crisanti and Giroux; the main in-process msolve consumer, so the same cap law applies);
 routes into GeoTriage / A-B-C value-fittability; `regions` sits upstream of any
 region-based boundary/moment resummation, and its lower-facet enumeration
 parallels the tropical/Newton machinery in tools/tropical-sampler. The wrapper mirrors the jemalloc memory-guard
@@ -261,12 +268,22 @@ CREDIT: `order` — Griffiths–Dwork reduction (Griffiths [Griffiths]; Lairez [
 the Lee–Pomeransky count of master integrals as critical points [LP]; `count` —
 holonomic rank of Euler integrals as a signed Euler characteristic / ML degree after Huh
 [Huh], Catanese–Hoşten–Khetan–Sturmfels [CHKS], Bitoun–Bogner–Klausen–Panzer [BBKP] and
-Agostini–Fevola–Sattelberger–Telen [AFST], with χ-drop counting following Chestnov,
-Crisanti and Giroux [Leviathans] (see upgrades/leviathan); `flatchi`/`audit` —
+Agostini–Fevola–Sattelberger–Telen [AFST]; `flatchi`/`audit`:
 Orlik–Terao [OT] and Zaslavsky [Zas] for arrangements; `nonres` — GKZ systems
 (Gelfand–Kapranov–Zelevinsky; Saito–Sturmfels–Takayama, classical); the X(3,6) controls
-are CEGM integrals of Cachazo, Early, Guevara and Mizera [CEGM]; `regions` — expansion
-by regions (Beneke–Smirnov school) and Newton-polytope region geometry, with χ-drop
-counting per the Leviathan engine. Gröbner engines: msolve by Berthomieu, Eder and Safey
+are CEGM integrals of Cachazo, Early, Guevara and Mizera [CEGM]; `regions`: the
+expansion by regions of Beneke and Smirnov in the Newton-polytope formulation of A. Pak
+and A. Smirnov, "Geometric approach to asymptotic expansion of Feynman integrals"
+(arXiv:1011.4863), with the caveat on Glauber-type and potential regions of Jantzen,
+Smirnov and Smirnov (arXiv:1206.0546); the region enumeration was written from the
+Pak-Smirnov paper, and the completeness certificate (volume and χ sums, diff against a
+user list) was written for BootLoops. The master-integral counts of `order` and
+`regions` (χ_regulated) are computed by the Leviathan engine in upgrades/leviathan:
+a Julia port of the Euler-characteristic-drop method of Vsevolod Chestnov, Giulio
+Crisanti and Mathieu Giroux [Leviathans] (github.com/Giu989/Landau-s-Leviathans), in
+part translated from their Mathematica code and from DiscKosky by Giulio Crisanti, Luke
+Lippstreu, Andrew J. McLeod and Maria Polackova (github.com/Giu989/DiscKosky); see
+upgrades/leviathan/NOTICE and PATCHES.md. Dipstick calls that engine at run time and
+contains none of its lines. Gröbner engines: msolve by Berthomieu, Eder and Safey
 El Din [msolve], Singular. Bracketed keys resolve in REFERENCES.md at the repository
 root.

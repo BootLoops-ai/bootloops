@@ -98,10 +98,15 @@ INVOKE: `import mixalot` (front door: `mixalot.Z`, `mixalot.gstar`,
 `python3 -m mixalot.boxwalk ...` (the box-moment member's CLI);
 `python3 battery/battery.py [--full]`; worked examples in `examples/`.
 
-CREDIT: the exact mixture-evidence integrals, their conventions and the worked examples
-(swiss, coin, Ex. 5.5) are those of S. Lin, B. Sturmfels & Z. Xu, 'Marginal likelihood
-integrals for mixtures of independence models', JMLR 10 (2009) 1611-1631,
-arXiv:0805.3602 — mixalot exists to make their integrals routine, and every LSX row is
+CREDIT: the exact mixture-evidence integrals, their finite-sum formula and recurrence
+algorithm, their conventions and the worked examples (swiss, coin, Ex. 5.5) are those of
+S. Lin, B. Sturmfels & Z. Xu, 'Marginal likelihood integrals for mixtures of
+independence models', JMLR 10 (2009) 1611-1631, arXiv:0805.3602. The authors' own Maple
+library is public and is announced in Section 4 of their paper; Mixalot is a second
+implementation, new Python code written for BootLoops from the paper, and does not
+contain or follow that library. What Mixalot adds to the published method is the
+modular route with Chinese remaindering for large tables and the closed forms in
+harmonic numbers. Every LSX row is
 gated against their printed values (Ex. 5.5 is the 3x3 table of Evans, Gilula & Guttman
 1989, Biometrika 76:557); the Dirichlet-process limit is Ferguson (1973, Ann. Stat.
 1:209) / Antoniak (1974, Ann. Stat. 2:1152). The ecology member evaluates R. S.
@@ -112,12 +117,24 @@ gated against Etienne's own worked example as carried by R. K. S. Hankin's untb 
 Volkov, Banavar, He, Hubbell & Maritan (2005, Nature 438:658); the urn oracle is Hoppe's
 (1984, J. Math. Biol. 20:91). The scRNA member evaluates the telegraph model of Peccoud
 & Ycart (1995, Theor. Popul. Biol. 48:222) in the Beta–Poisson form, with parameter
-conventions pinned to txburst (Larsson et al. 2019, Nature 565:251). The DCM burstiness
+conventions pinned to txburst (Larsson et al. 2019, Nature 565:251): the parameter order
+was read from the txburst code, and nothing else of txburst is used. The DCM burstiness
 arm follows Madsen, Kauchak & Elkan (2005, ICML); the Federalist fixtures use the
 function-word lists of Mosteller & Wallace (1963, JASA 58:275; 1964). The Monte-Carlo
 comparison suite implements the estimators of Newton & Raftery (1994), Meng & Wong
 (1996), Xie et al. (2011), Chib (1995; with Neal's 1999 label-switching caveat) and
-nested sampling (Skilling 2006) via dynesty (Speagle 2020, MNRAS 493:3132), on JAX;
+nested sampling (Skilling 2006) via dynesty (Speagle 2020, MNRAS 493:3132), on JAX,
+with the step-size adaptation of Hoffman & Gelman (2014) in the sampler. The bridge
+sampling estimator is the formulation of Gronau et al. (2017, J. Math. Psych. 81:80-97,
+arXiv:1703.05984), with the error estimate of Frühwirth-Schnatter (2004), in our own
+implementation (logit transform, starting value 1, tolerance 1e-8, batch-means error
+estimate). It is not a run of the R package bridgesampling and does not use that
+package's defaults, although the settings strings in `vendor/jeff/estimators.py` call
+the configuration "bridgesampling default"; numbers this suite reports for bridge
+sampling are measurements of our implementation, not of the R package. Apart from
+dynesty, all estimators in the suite are our own implementations at our own settings.
+The file `vendor/tools/annihilator.py` is an older copy of `tools/annihilator` (see the
+CREDIT of `tools/annihilator/GUIDE.md`).
 certified ML uses interval Newton (Moore 1977; Krawczyk 1969; Rump 2010). Ball
 arithmetic: Arb (Johansson 2017) via python-flint.
 

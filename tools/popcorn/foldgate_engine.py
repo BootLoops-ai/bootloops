@@ -213,6 +213,9 @@ References
     1037-1053.
   Farouki, R. T. (2012). The Bernstein polynomial basis: a centennial
     retrospective. Comput. Aided Geom. Des. 29, 379-419.
+  Fenton, E. F., Rice, D. P., Novembre, J. & Desai, M. M. (2025). Genetics
+    229, iyaf023.  (Defines the folded two-site frequency spectrum; their
+    code is twosfs, https://github.com/desai-lab/twosfs, MIT License.)
 """
 import argparse
 import json

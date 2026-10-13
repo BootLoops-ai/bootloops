@@ -2,6 +2,11 @@
 """asdlib.py — Atkin–Swinnerton-Dyer congruence miner core (member of the
 frobenius-boundary package).
 
+Method credit: the three-term congruence is that of Atkin and Swinnerton-Dyer;
+the controls use Honda's theorem on formal groups, Hecke eigenvalues and
+Beukers's congruences for Apery numbers; the invariant differential follows
+Silverman (IV.1).
+
 Law mined:
     a(np) - gamma_p a(n) + p^(k-1) a(n/p) == 0 (mod p^(s(n))),
     a(n/p) := 0 if p !| n;  floor law s(n) = 1 + ord_p(n).

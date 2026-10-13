@@ -120,14 +120,23 @@ RELATED: tools/kira-stack (gen pass provider; η route selector); tools/ratfit
 (reconstruction backend + grid design). Flat `tools/numkin_sweep.sh`,
 `tools/numkin_harvest.py`, `tools/shift_opt.py` are compat shims/wrappers.
 
-CREDIT: numkin drives Kira (Maierhöfer, Usovitsch, Uwer; Klappert, Lange; Wu [Kira1,
-Kira2, Kira3]) with FireFly (Klappert, Klein, Lange [FF1, FF2]) and Fermat (R. H.
-Lewis), and AMFlow's η-differential-equation systems (Liu, Ma [AMFlow]). Freezing one
-scale and reconstructing it by Thiele/Padé interpolation with held-out verification is
-the classical rational-interpolation strategy that FireFly [FF1] and the finite-field
-programme of von Manteuffel–Schabinger [vMS] and Peraro [Per16] made standard; the
-sed-substitution driver, shift optimizer and basisland are ours. Bracketed keys resolve
-in REFERENCES.md at the repository root.
+CREDIT: Numkin is a set of driver scripts, written for BootLoops, around Kira
+(Maierhöfer, Usovitsch, Uwer; Klappert, Lange; Wu [Kira1, Kira2, Kira3]) with FireFly
+(Klappert, Klein, Lange [FF1, FF2]) and Fermat (R. H. Lewis), and around AMFlow's
+η-differential-equation systems (Liu, Ma [AMFlow]) for the shift search. It substitutes
+numbers for one variable in Kira's generated equation files, runs Kira at each value,
+and rebuilds the variable by exact Padé interpolation with held-out checks. The
+strategy of reducing at numeric values of a variable and reconstructing it afterwards
+is established and is not ours: it is the published workflow of FIRE's
+Reconstruction.m (Belitsky, Smirnov, Yakovlev, arXiv:2303.02511), of FireFly [FF1] and
+of Kira's numerical-points mode, within the finite-field programme of von
+Manteuffel–Schabinger [vMS] and Peraro [Per16]. No code from those programs is used.
+What is ours is the sed-substitution driver that reuses Kira's generated system files,
+the shift optimizer, and `basisland`, which is the textbook loop of modular
+elimination, Chinese remaindering and Wang's rational reconstruction [Wang81]. The
+routine named `thiele_ratd_var` is a Padé fit by an integer nullspace; despite the
+name it contains no Thiele recursion. Bracketed keys resolve in REFERENCES.md at the
+repository root.
 
 ## License
 

@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: MIT AND LGPL-3.0-or-later
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0; see LICENSE, LICENSE-LGPL-3.0 and NOTICE in the package directory.
+# One block of igusa_clebsch follows FLINT's src/acb_theta/g2_covariants.c, Copyright (C) 2023 Jean Kieffer, LGPL-3.0-or-later (notice at the block).
+#
 # Genus-2 / hyperelliptic + Siegel-modular layer.
 #
 # This is the geometry class beyond the elliptic layer: a hyperelliptic curve y² = f(x) of degree
@@ -18,7 +22,10 @@
 # `check_analytic` flag (acb_calc rigorous quadrature, same discipline as
 # curve.jl).  Theta functions and Siegel modular forms are FLINT's `acb_theta`
 # (Kieffer 2023, certified ball arithmetic with proved error bounds — quasi-
-# linear in precision); we wrap, we do NOT reimplement.
+# linear in precision); we wrap, we do NOT reimplement.  One block restates part
+# of a FLINT routine instead of calling it: the six transvectant calls in
+# `igusa_clebsch` follow FLINT's src/acb_theta/g2_covariants.c (see the notice
+# at that function).
 #
 # CONVENTION.  For real-ordered branch points e₁ < … < e_n (n ∈ {5,6}), the
 # branch of y is the analytic continuation from y > 0 on (e_n, ∞) through the
@@ -546,6 +553,16 @@ undefined — use `igusa_invariants(τ)` (χ₁₀ ≠ 0 off the diagonal ℍ₁
 function igusa_clebsch(coeffs::Vector, prec::Int)
     f = AcbPoly(prec = prec)
     for (i, c) in enumerate(coeffs); Arblib.set_coeff!(f, i - 1, Acb(c; prec)); end
+    # NOTICE.  The six transvectant calls below (C24, C32, C20, C40, C60, C100)
+    # and the product C32^3 follow `acb_theta_g2_transvectants` in FLINT,
+    # src/acb_theta/g2_covariants.c, Copyright (C) 2023 Jean Kieffer, which is
+    # part of FLINT and licensed under the GNU Lesser General Public License,
+    # version 3 or (at your option) any later version (LGPL-3.0-or-later): same
+    # argument tuples, same intermediate covariants, same choice of the
+    # degree-6 and degree-10 generators.  These lines are distributed under
+    # LGPL-3.0-or-later (LICENSE-LGPL-3.0 and NOTICE in the package directory);
+    # the rest of this file is under the package's MIT license.
+    #
     # Transvectant chain (FLINT g2_covariants).  Intermediate scalings (75,30…)
     # are omitted: they contribute homogeneous powers that cancel in the
     # absolute invariants `igusa_absolute`, and scale the bare (C₂₀,C₄₀,C₆₀,

@@ -32,12 +32,18 @@ scr.m and scrj.m, included with their license under `reference/`):
   the grant is carried in their README — see License below).
 
 The odd-letter construction is a translation of **Effortless** by Antonela Matijašić and
-Julian Miczajka (<https://github.com/antonela-matijasic/Effortless>, MIT).
+Julian Miczajka (<https://github.com/antonela-matijasic/Effortless>, MIT), whose algorithm
+is described in A. Matijašić, *Singularity structure of Feynman integrals with applications
+to six-particle scattering processes*, PhD thesis, LMU Munich (2024), section 3.4
+(<https://edoc.ub.uni-muenchen.de/34154/>). The translation covers the construction and
+independence steps that SOFIA calls, not the whole Effortless package, and its letter set
+is not guaranteed to equal theirs: the differences are listed in the header of
+`src/effortless.jl`. It is tested on the one-loop bubble alphabet (`test/runtests.jl`).
 
 **All algorithmic credit belongs to the original authors.** This repository
 contributes only the Julia translation and its test/validation harness.
 If you use this software in research, please cite the SOFIA paper above
-(and Effortless, if you use the letter construction). The loop-by-loop Baikov
+(and Effortless and the thesis above, if you use the letter construction). The loop-by-loop Baikov
 construction follows Frellesvig and Papadopoulos (JHEP 04 (2017) 083,
 arXiv:1701.07356) on Baikov's representation (Nucl. Instrum. Meth. A 389 (1997)
 347), as in the SOFIA authors' code.

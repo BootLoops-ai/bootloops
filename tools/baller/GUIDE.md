@@ -27,8 +27,9 @@ USE-WHEN:
 
 NOT-FOR: Taylor-form enclosures; wrapping/renaming Arb;
 Fraction/Decimal/str inputs to march (raw TypeErrors — use float/arb/acb/fmpq).
-The vendored certlane member is a research re-implementation used to study numerical
-certification of a published hazard computation (Selva et al. 2021, INGV matPTF). It
+The vendored certlane member is a port, into ball arithmetic, of the alert layer of
+INGV's matPTF code (Selva et al. 2021), used for research on the numerical
+certification of a published hazard computation. It
 is not a tsunami-warning system, is not endorsed by INGV, and must not be used
 operationally.
 
@@ -145,7 +146,8 @@ at unusual dps vs their stored values.
 Beside the kklt/geo engines, three member families ship under `vendor/`
 (all 22 vendor files pinned in `baller/_pins.py`; battery leg L20 keeps
 them live): **certlane/** — certified arb-ball enclosure primitives for the
-matPTF alert computation, with a 26-case containment pytest suite and a
+matPTF alert computation (a port of the alert layer of INGV's matPTF; see
+CREDIT and `NOTICE`), with a 26-case containment pytest suite and a
 four-surface adversarial harness; **ling_onesided/** — the
 positive-integrand one-sided evidence kit (centered forms, priced-lever
 gates, certified tail sups, peeling-circuit evidence engine, one-sided
@@ -207,14 +209,37 @@ Johansson, O. Benjamin and contributors); every certified digit in this package 
 theirs first, and we are grateful to them. Certification: Krawczyk (1969, Computing
 4:187), Moore (1977, SIAM J. Numer. Anal. 14:611), Rump (2010, Acta Numerica 19:287).
 The front-door reference figure is J.-M. Muller's recurrence (Muller et al., Handbook of
-Floating-Point Arithmetic, Birkhäuser 2010). certlane re-derives, in ball arithmetic,
-layers of INGV's matPTF (Selva, Lorito, Volpe, Romano, Tonini, Perfetti, Bernardi et al.
-2021, Nat. Commun. 12:5677; code github.com/INGV/matPTF) — no matPTF code is copied and
-INGV does not endorse this re-implementation; ling_onesided's counts derive from DravLex
+Floating-Point Arithmetic, Birkhäuser 2010).
+
+Three vendored modules derive from other authors' code:
+
+- **certlane** (`vendor/certlane/`). The percentile and alert-level routines are a
+  port, into ball arithmetic, of the alert layer of INGV's matPTF Matlab code
+  (`PTF_AlertLevels.m` and the hazard-curve block of `PTF_1_0.m` at commit fe4dd95,
+  github.com/INGV/matPTF; J. Selva, S. Lorito, M. Volpe, F. Romano, R. Tonini,
+  P. Perfetti, F. Bernardi and co-authors; CC BY 4.0; paper: Selva et al. 2021, Nat.
+  Commun. 12:5677). They were written with that code open and reproduce its
+  conventions step for step, and the two test oracles are translations of
+  `PTF_AlertLevels.m`. The enclosures, the handling of undecidable comparisons and
+  the tests are BootLoops' additions, and INGV does not endorse them.
+- **mc** (`vendor/geo/mc.py`). `mc` follows the Poisson L-test simulation of pyCSEP
+  (`_simulate_catalog` and `_poisson_likelihood_test`; W. H. Savran, M. J. Werner,
+  D. Schorlemmer, P. J. Maechling and co-authors, J. Open Source Softw. 7(69) (2022)
+  3658; github.com/cseptesting/pycsep; BSD-3-Clause, (c) 2021 The University of
+  Southern California). It was written with that code open and keeps its sampling
+  statement. The batching, the multiplicity penalty and the Clopper-Pearson interval
+  are BootLoops' additions.
+- **pvand** (in `vendor/ling_onesided/double_unc.py`). `pvand` is the Björck-Pereyra
+  Vandermonde solver (A. Björck and V. Pereyra, Math. Comp. 24 (1970) 893) as coded in
+  John Burkardt's VANDERMONDE library (MIT), run here in ball arithmetic.
+
+The attributions, license notices and statements of changes for these three are in
+`NOTICE` in this directory. ling_onesided's counts derive from DravLex
 v1.0 (Kolipakam, Jordan, Dunn, Greenhill, Bouckaert, Gray & Verkerk 2018, R. Soc. Open
-Sci. 5:171504; CC BY 4.0). The vendored kklt/geo engines are in-house and ship
-sha-pinned; the minted checks encode the documented footgun catalog.
+Sci. 5:171504; CC BY 4.0). The vendored kklt engines were written in this project and ship
+sha-pinned. The package also uses mpmath, NumPy, SciPy, SymPy and pytest. The minted
+checks encode the documented footgun catalog.
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md). The portions of `vendor/certlane/` taken from matPTF stay under CC BY 4.0, the portions of `vendor/geo/mc.py` taken from pyCSEP under BSD-3-Clause, and `pvand` under John Burkardt's MIT statement; their notices are in `NOTICE` in this directory.

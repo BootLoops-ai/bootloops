@@ -1,6 +1,20 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision.
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Parts of this script follow the source code of Kira
+# (https://gitlab.com/kira-pyred/kira, tag 3.1), Copyright (C) 2017-2025 The
+# Kira Developers (Fabian Lange, Johann Usovitsch, Zihao Wu; Jonas Klappert;
+# Philipp Maierhoefer; Peter Uwer), licensed under the GNU General Public
+# License v3.0 or later: the operator-template reader (FAM_RE, AI_RE,
+# load_ops) and the substitution of seed indices in gen_sector follow
+# src/pyred/relations.cpp (the import of the IBP and LI files and
+# IntegralRelations::sow_ibp_streq). The meaning of the templates is stated in
+# Kira's source and not in its papers. The monomial parser (_parse_coeff,
+# _fmt), the seed enumeration and the driver were written for BootLoops. This
+# Python script is Copyright (c) 2026 Anthropic, PBC; created by Matthew D.
+# Schwartz, code written by Claude (Anthropic) under his supervision, and is
+# distributed under the same GNU General Public License v3.0 or later. See
+# NOTICE and LICENSE-GPL-3.0 beside this file.
 """parallel_kira_gen --mode=uds : generate IBP equations per-sector directly
 from Kira's own sectormappings/{IBP,LI} operator templates, write in
 `TOPO[idx,...]*(coeff)` blank-line-separated format, and feed to
@@ -12,7 +26,9 @@ Operator template semantics (Kira's sectormappings/<fam>/IBP, blank-line
 separated ops; each line `TOPO[s1,...,s15]*(poly(a1..a15,d,m2))`):
 applied to a seed n = (n1..n15), substitute a_i -> n_i (integer), add shift
 s to the seed indices, and the equation is Σ_terms coeff * I[n+s] = 0.
-This is the same convention pyred uses (relations.cpp generate_system).
+This is the same convention pyred uses (Kira's src/pyred/relations.cpp,
+IntegralRelations::sow_ibp_streq, called from generate_system in
+src/pyred/relations.h); it was taken from that source.
 
 Coeffs after substitution are polys in {d, m2} with RATIONAL constants —
 exactly what Kira's read_equations / FireFly parser accept.
@@ -25,6 +41,8 @@ import argparse, gzip, json, multiprocessing as mp, os, re, sys, time
 from fractions import Fraction as F
 
 FAM_RE = re.compile(r'^(\w+)\[([\d, +-]+)\]\*\((.+)\)$')
+# AI_RE is the placeholder pattern of Kira's src/pyred/relations.cpp (line 59
+# at tag 3.1). It is not used below: _parse_coeff finds the placeholder itself.
 AI_RE = re.compile(r'\ba(\d+)\b')
 
 

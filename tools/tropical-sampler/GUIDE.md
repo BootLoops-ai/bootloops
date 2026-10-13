@@ -14,13 +14,15 @@ scipy is not in the common core — `pip install scipy`.
 ## PURPOSE
 
 Borinsky–Sattelberger–Sturmfels–Telen (BSST) tropical importance sampling (Algorithm 1 of
-arXiv:2204.06414, reimplemented in
-pure python/numpy/scipy) for Euler-type integrals
+arXiv:2204.06414, implemented from the paper in
+pure python/numpy/scipy; the authors' own Julia program is at
+https://mathrepo.mis.mpg.de/BayesianIntegrals) for Euler-type integrals
 ∫_{ℝ₊^E} ∏_k Q_k(t)^{u_k} ∏_e (1+t_e)^{−c} dt with subtraction-free Q_k. Exact-integer
 Minkowski normal fan (Bareiss determinants, Fraction sector integrals,
-fan-refinement-invariant I^tr) + TWO additions over plain BSST: per-cone Neyman
-stratification and pilot-fitted per-cone exponential tilting (proposal exact, weights
-bounded, unbiased).
+fan-refinement-invariant I^tr) + TWO additions over Algorithm 1 of BSST: Neyman
+allocation of the samples among the cones after a pilot run (the authors' Julia code
+already allocates samples cone by cone, in proportion to the sector integrals) and
+pilot-fitted per-cone exponential tilting (proposal exact, weights bounded, unbiased).
 
 ## USE-WHEN
 
@@ -158,15 +160,22 @@ FOOTGUNS:
   probe first (levers: cone-orbit symmetry, sum-factorization, further C
   work, a DE-transport leg).
 
-CREDIT: the sampler reimplements Algorithm 1 of Michael Borinsky, Anna-Laura
-Sattelberger, Bernd Sturmfels and Simon Telen [BSST], itself built on Borinsky's
-tropical Monte Carlo [Bor20] (see also feyntrop by Borinsky, Munch and Tellander
-[feyntrop]); stratification and tilting are our additions. Stringy canonical forms /
-Grassmannian string integrals after Arkani-Hamed, He and Lam [AHL]; CEGM amplitudes
-after Cachazo, Early, Guevara and Mizera [CEGM]; positive parametrization and the
-split-kinematics oracle after Bruno Giménez Umbert and Bernd Sturmfels [GUS]. Cone
-decomposition, Gauss–Jacobi hoisting and the C-MPFR kernel are in-house; hulls by
-SciPy/Qhull. Bracketed keys resolve in REFERENCES.md at the repository root.
+CREDIT: the sampler implements Algorithm 1 of Michael Borinsky, Anna-Laura
+Sattelberger, Bernd Sturmfels and Simon Telen [BSST], written for BootLoops from the
+paper. The authors' own Julia implementation (`BITV.jl`) is at
+https://mathrepo.mis.mpg.de/BayesianIntegrals; a side-by-side reading found no code of
+theirs in this package. Their method is itself built on Borinsky's tropical Monte Carlo
+[Bor20] (see also feyntrop by Borinsky, Munch and Tellander [feyntrop]). Our additions
+are the exact-integer construction of the fan without Polymake, Neyman allocation of
+samples among cones, and per-cone exponential tilting; stratification by cone as such
+is not ours (the authors' code already allocates samples cone by cone in proportion to
+the sector integrals). Stringy canonical forms / Grassmannian string integrals after
+Arkani-Hamed, He and Lam [AHL]; CEGM amplitudes after Cachazo, Early, Guevara and
+Mizera [CEGM]; positive parametrization and the split-kinematics oracle after Bruno
+Giménez Umbert and Bernd Sturmfels [GUS]. In `cegm_gj/`, the cone-by-cone
+decomposition onto unit cubes is the sector decomposition of [BSST]; the way the fan
+is found, the Gauss–Jacobi evaluator, the hoisting and the C-MPFR kernel are ours;
+hulls by SciPy/Qhull. Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 

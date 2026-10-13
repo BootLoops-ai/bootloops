@@ -305,3 +305,20 @@ singular.uni-kl.de) and exact linear algebra with FLINT (W. Hart, F. Johansson, 
 Ahlbäck and the FLINT developers) via python-flint; the elimination order is Laporta's
 (2000). We are grateful to the Kira, FireFly, Fermat, Singular and FLINT developers: the
 triad is only meaningful because their engines are independently excellent.
+
+The method of check 3 is published and is not ours: integration by parts in the
+Lee-Pomeransky representation (R. N. Lee and A. A. Pomeransky, arXiv:1308.6676 [LP]),
+with first-order annihilators obtained as syzygies of the derivatives of the polynomial
+(T. Bitoun, C. Bogner, R. P. Klausen and E. Panzer, arXiv:1712.09215 [BBKP]) and with
+boundary terms that land on subsectors (W. Chen, arXiv:1902.10387). Related public code is
+CALICO (G. Bertolini, G. Fontana and T. Peraro, JHEP 10 (2025) 018, arXiv:2506.13653;
+MIT) and Magic-Test.m (Crisanti, Frellesvig, Pokraka and Smith, ancillary file of
+arXiv:2605.29789). The code in `vendor/lpsyz` is Python written for this project; a
+side-by-side reading of the shipped code against CALICO and Magic-Test.m found nothing
+taken from either. The source headers in `vendor/lpsyz`, `receipt/` and `strata/` name
+earlier scripts of this project that are not distributed. In check 2 the retrofit
+emitter uses the Berlekamp-Massey algorithm (Berlekamp 1968; Massey 1969) inside
+Wiedemann's solver, with the preconditioning of Kaltofen and Saunders (1991). The
+weight decode in `strata/weights.py` reads Kira's own term-weight convention from run
+artifacts and contains no Kira source code. Bracketed keys resolve in REFERENCES.md at
+the repository root.

@@ -166,15 +166,29 @@ FOOTGUNS:
   to the theta route; g_n_certified then certifies by route agreement (not a
   series bound) — the returned "bound" is the measured route difference there.
 
-CREDIT: Kronecker–Eisenstein kernels and τ-iterated integrals implement the conventions
-of Bogner, Müller-Stach and Weinzierl [BMSW] and Adams and Weinzierl [AW]; elliptic
-multiple polylogarithms in the sense of Brown and Levin [BL] and Broedel, Duhr, Dulat,
-Penante and Tancredi [BDDT, BDDPT]; independent numerics cross-checked against
-Walden–Weinzierl's GiNaC implementation [WW] where applicable;
-moment_system/transport/seed charts are validated against independent quadrature oracles
-in the battery; sunrise closed forms = the rows machinery (vendor/rowscripts_empl.py).
-Certification layers are ours. Bracketed keys resolve in REFERENCES.md at the repository
-root.
+CREDIT: Ellipticus is Python code written for BootLoops. Its Kronecker–Eisenstein
+kernels, τ-iterated integrals and sunrise closed form are written from the paper of
+C. Bogner, S. Müller-Stach and S. Weinzierl (arXiv:1907.01251) [BMSW], in the notation
+of L. Adams and S. Weinzierl (arXiv:1704.08895) [AW]; the curve data and the closed form
+at order ε^0 in `vendor/rowscripts_empl.py` are the equations of that paper. The parser
+in `vendor/itint.py` (`series_for_form`, `parse_mpl_poly`) reads the supplementary Maple
+file of arXiv:1907.01251 (`supplementary_material.mpl`, distributed inside the arXiv
+source of the paper) and uses that file's names for the one-forms and words; the file
+itself is not shipped here. Elliptic multiple polylogarithms are meant in the sense of
+Brown and Levin [BL] and Broedel, Duhr, Dulat, Penante and Tancredi [BDDT, BDDPT].
+The same integrals can be evaluated with GiNaC (M. Walden and S. Weinzierl,
+arXiv:2010.05271 [WW]; C. Duhr, Lorkowski, Marzucca, Mauch and Weinzierl,
+arXiv:2602.09956), and iterated integrals in general with IterInt (G. Baur and C. Duhr,
+arXiv:2606.02744); none of their code is used here, and no comparison of values with
+GiNaC ships in this package. The `gmtel` member computes Picard–Fuchs operators by
+creative telescoping (D. Zeilberger; F. Chyzak; C. Koutschan, arXiv:1004.3314) in our
+own implementation; public programs for the same task include
+github.com/lairez/periods and github.com/HBrochet/CreativeTelescoping, whose algorithms
+differ from ours. The `ellred` member follows Byrd and Friedman,
+Carlson, DLMF 19.29 and Gradshteyn and Ryzhik, and calls mpmath for the Carlson
+functions. moment_system/transport/seed charts are validated against quadrature oracles
+by `battery.py`. The proven tail bounds and the other certification layers are ours.
+Bracketed keys resolve in REFERENCES.md at the repository root.
 
 RELATED: tools/eichler + upgrades/Eichler.jl (modular-form periods and the
 Gamma_1(6)/iterated-Eisenstein certified engine — route, don't rebuild);

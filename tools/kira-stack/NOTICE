@@ -1,0 +1,48 @@
+kira-stack (tools/kira-stack), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE), with the exception stated next.
+
+Mixed licensing. build_restage.py, kira_gpl_tools.py and selftest.py are
+MIT-licensed. parallel_kira_gen.py and parallel_kira_gen_uds.py follow the
+source code of Kira (https://gitlab.com/kira-pyred/kira, tag 3.1, commit
+5760f42), Copyright (C) 2017-2025 The Kira Developers (Fabian Lange, Johann
+Usovitsch, Zihao Wu; Jonas Klappert; Philipp Maierhoefer; Peter Uwer),
+licensed under the GNU General Public License v3.0 or later, and are
+therefore distributed under the GNU General Public License v3.0 or later
+(LICENSE-GPL-3.0 beside this file), with the Kira notice in their headers.
+
+What follows Kira's source, by file:
+  parallel_kira_gen.py
+    read_system_eqs, and the file naming and SYSTEMconfig handling in merge:
+      the SYSTEM_*.gz loader, src/kira/reductionFF.cpp (Kira::load_ff_system),
+      and the writer, src/kira/kira.cpp
+    emit_top, block writer and token order:  src/kira/kira.cpp
+    emit_top, preferred-master weights:      src/pyred/integrals.cpp
+                                             (Integral::set_preferred_masters)
+    emit_top, operator templates:            src/pyred/relations.cpp
+  parallel_kira_gen_uds.py
+    FAM_RE, AI_RE, load_ops:                 src/pyred/relations.cpp
+                                             (import of the IBP and LI files)
+    gen_sector, substitution of seed indices: src/pyred/relations.cpp
+                                             (IntegralRelations::sow_ibp_streq)
+No block is a copy or a statement-by-statement translation of Kira's code.
+The scripts reproduce formats and conventions that Kira's source states and
+Kira's papers do not. The sharding by cover tops, the synthetic targets, the
+union and deduplication in merge, the launcher, the probe, the monomial parser
+and the seed enumeration were written for BootLoops.
+
+selftest.py and the flat aliases tools/parallel_kira_gen.py and
+tools/parallel_kira_gen_uds.py load the two GPL scripts; a program that loads
+them is a combined work offered under GPL-3.0-or-later terms. The top-emit
+route also loads pyred_weight.py, a GPL-3.0-or-later tool shipped in the
+sibling repository kira (bootloops-tools/). build_restage.py and
+kira_gpl_tools.py do not load either script and remain usable on their own
+under MIT.
+
+Kira, FireFly and Fermat are not included; kira-stack runs them as separate
+programs. Please cite P. Maierhöfer, J. Usovitsch, P. Uwer, Comput. Phys.
+Commun. 230 (2018) 99, arXiv:1705.05610; J. Klappert, F. Lange, P. Maierhöfer,
+J. Usovitsch, Comput. Phys. Commun. 266 (2021) 108024, arXiv:2008.06494;
+F. Lange, J. Usovitsch, Z. Wu, Comput. Phys. Commun. 322 (2026) 109999,
+arXiv:2505.20197.

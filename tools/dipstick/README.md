@@ -34,6 +34,19 @@ of the regions member).
 Not here: series-only inputs (series_pf.py), LCLM factorization.
 Manual: `GUIDE.md` in this directory.
 
+## Credits
+
+The master-integral counts of `order` and `regions` are computed by the Leviathan
+engine (`upgrades/leviathan`), a Julia port of the Euler-characteristic-drop method of
+Vsevolod Chestnov, Giulio Crisanti and Mathieu Giroux (arXiv:2606.29612), in part
+translated from their Mathematica code and from DiscKosky by Giulio Crisanti, Luke
+Lippstreu, Andrew J. McLeod and Maria Polackova. Dipstick calls that engine at run time
+and contains none of its lines; see `upgrades/leviathan/NOTICE`. The region enumeration
+of `regions` implements the Newton-polytope construction of A. Pak and A. Smirnov
+(arXiv:1011.4863); the caveat on Glauber-type and potential regions is that of Jantzen,
+Smirnov and Smirnov (arXiv:1206.0546). The credits of the other verbs are in the CREDIT
+paragraph of `GUIDE.md`.
+
 ## License
 
 MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

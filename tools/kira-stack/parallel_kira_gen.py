@@ -1,6 +1,23 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision.
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Parts of this script follow the source code of Kira
+# (https://gitlab.com/kira-pyred/kira, tag 3.1), Copyright (C) 2017-2025 The
+# Kira Developers (Fabian Lange, Johann Usovitsch, Zihao Wu; Jonas Klappert;
+# Philipp Maierhoefer; Peter Uwer), licensed under the GNU General Public
+# License v3.0 or later: read_system_eqs and the file naming in merge follow
+# the SYSTEM_*.gz loader in src/kira/reductionFF.cpp (Kira::load_ff_system)
+# and the writer in src/kira/kira.cpp; emit_top writes that block format after
+# src/kira/kira.cpp, assigns preferred-master weights after
+# src/pyred/integrals.cpp and applies the IBP operator templates after
+# src/pyred/relations.cpp. These formats and conventions are stated in Kira's
+# source and not in its papers. The sharding by cover tops, the synthetic
+# targets, the union and deduplication in merge, the launcher and the probe
+# were written for BootLoops. This Python script is Copyright (c) 2026
+# Anthropic, PBC; created by Matthew D. Schwartz, code written by Claude
+# (Anthropic) under his supervision, and is distributed under the same GNU
+# General Public License v3.0 or later. See NOTICE and LICENSE-GPL-3.0 beside
+# this file.
 """parallel_kira_gen — parallelize Kira's initiate (IBP-generation) phase by
 sharding the sector tree across N independent kira instances, then merging
 their SYSTEM_*.gz files for a single `run_initiate:false, run_firefly:true`
@@ -484,6 +501,10 @@ def emit_top(out, db=None, out_dir=None):
                if x.strip()) if os.path.exists(tp) else set()
     # preferred-master custom weights (file order, trivial-sector entries
     # skipped) — only when the shards generated WITH preferred_masters
+    # This rule follows Kira's Integral::set_preferred_masters
+    # (src/pyred/integrals.cpp, lines 1492-1527 at tag 3.1); the same block
+    # is in the GPL tool ffsave_degree_census.py of the sibling repository
+    # kira.
     custom = {}
     if not meta.get('no_pm'):
         k = 0

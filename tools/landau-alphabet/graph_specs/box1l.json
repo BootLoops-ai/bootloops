@@ -1,6 +1,6 @@
 {
   "name": "box1l",
-  "description": "1-loop massless on-shell box. Known PLD alphabet {s, t} (leading sing 1/(st); validated against PLD.jl output).",
+  "description": "1-loop massless on-shell box. Alphabet {s, t} after this package's pruning of second-type letters (leading sing 1/(st)). PLD.jl by Fevola, Mizera and Telen returns {s, s + t, t} for this diagram (entry A4 with zero masses in the PLD database).",
   "edges": [[1,2,0], [2,3,0], [3,4,0], [4,1,0]],
   "nodes": {"1": [1], "2": [2], "3": [3], "4": [4]},
   "kinematics": {

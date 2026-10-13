@@ -32,7 +32,8 @@ The kinds of things it does:
   case and prove that none was missed.
 - **Open implementations of standard statistical procedures** — routines
   specified by public documentation and the underlying methods papers,
-  written from scratch in open code and validated against published outputs.
+  written for BootLoops from the public documentation and the methods papers,
+  and validated against published outputs.
 - **Comprehensive field-specific codebases** — JaCKandJill (Bayesian
   phylogenetics, in its own repository), Mixalot (statistics), Terrier (the
   string landscape), Popcorn (population genetics).
@@ -111,11 +112,13 @@ reproduces the solver's reference results in about a minute and a half.
   [`ours/RECIPES.md`](toolkit/ours/RECIPES.md) (working recipes with their
   checks), [`external/TOOLS.md`](toolkit/external/TOOLS.md) (the external
   engines, with licenses and where to obtain each).
-- [`upgrades/`](upgrades/README.md) — the house engines, shipped in full
+- [`upgrades/`](upgrades/README.md): engines shipped in full
   source: SOFIA.jl (a Julia translation of the SOFIA package by Correia, Giroux
   and Mizera, with no Wolfram dependency and their original files under
-  `reference/`), Eichler.jl, and the Leviathan
-  Landau engine. Each directory carries `PATCHES.md` and its license. The
+  `reference/`), Eichler.jl, and Leviathan (a Julia port of the Landau-singularity
+  method of Chestnov, Crisanti and Giroux, in part translated from their Mathematica code
+  and from DiscKosky). Each directory carries `PATCHES.md` and its license; `leviathan/` and
+  `Eichler.jl/` also carry a `NOTICE`. The
   patched forks of Kira, Blade, and AMFlow.cpp live in their own repositories
   (below).
 - [`ops/`](ops/README.md) — operations packages: infrastructure for running
@@ -127,18 +130,23 @@ reproduces the solver's reference results in about a minute and a half.
 
 BootLoops is six repositories published side by side at
 [github.com/BootLoops-ai](https://github.com/BootLoops-ai). This
-one, `bootloops`, holds the toolkit and the house engines; the other five
+one, `bootloops`, holds the toolkit and the engines under `upgrades/`; the other five
 are listed below. Where the code or the guides assume a location for a sibling
 repository, it is a checkout beside this one (`../<name>` relative to this
 repository's root).
 
 - `jackandjill` —
   JaCKandJill, exact and certified Bayesian evidence for phylogenetic models
-  (Python package `phyloexact`, with its own self-certification suite). MIT.
+  (Python package `phyloexact`, with its own self-certification suite). MIT; its
+  big-integer printer follows CPython's int_to_decimal (Tim Peters, PSF License Version 2)
+  and its sampling kernel uses Sebastiano Vigna's public-domain SplitMix64 and xorshift64*
+  generators (notice and credits in that repository's NOTICE and THIRD_PARTY.md).
 - `amflow-cpp` — the
   patched fork of AMFlow.cpp (precision fixes, Kira/FireFly robustness,
   checkpoint/resume) with the validation wrapper suite in `bootloops-wrappers/`;
-  `PATCHES.md` records every change against the AMFlow.cpp authors' code. MIT.
+  `PATCHES.md` describes the main changes against the AMFlow.cpp authors' code and lists
+  every file added or changed. MIT (the derivative routines descend from T. Peraro's LiteIBP,
+  which carries no license file; see the fork's `NOTICE`).
 - `kira` — the patched fork of
   Kira 3.1 (parallel back-substitution, SQLite autocommit guards, the
   128-bit-weight build variant); `PATCHES.md` and `PATCHES.diff` record the
@@ -176,8 +184,8 @@ validation command above before relying on anything there.
 ## External engines
 
 Several packages drive external programs (Kira, FireFly, FORM, AMFlow,
-FLINT, msolve, Singular, OSCAR among them). The house engines ship in this
-repository in full source under `upgrades/`; the patched forks of Kira, Blade,
+FLINT, msolve, Singular, OSCAR among them). Three engines (SOFIA.jl, Eichler.jl, Leviathan)
+ship in this repository in full source under `upgrades/`; the patched forks of Kira, Blade,
 and AMFlow.cpp build from their own repositories (see Related repositories
 above and [INSTALL.md](INSTALL.md)); the rest are **not** downloaded
 automatically: you (or your agent) install them when a tool needs one.
@@ -191,7 +199,7 @@ it asks for."*
 ## Installing
 
 See [INSTALL.md](INSTALL.md): clone the repository for the toolkit and the
-house engines; the skills install from the sibling repository
+engines under `upgrades/`; the skills install from the sibling repository
 `skills` by clone or through the plugin routes described there.
 The toolkit packages are plain
 Python (plus Julia for a few); path setup and the external-engine
@@ -218,9 +226,9 @@ BootLoops is a harness around other people's mathematics and software, and it is
 
 **Exact arithmetic and computer algebra.** Every certified digit here passes through FLINT and Arb (William Hart, Fredrik Johansson, Albin Ahlbäck and the FLINT developers; `acb_theta` by Jean Kieffer) via python-flint (Fredrik Johansson, Oscar Benjamin), Nemo/Hecke and Arblib.jl, alongside mpmath, SymPy, SageMath, `ore_algebra`, Singular, msolve, OSCAR, PARI/GP, GiNaC, fplll and Julia.
 
-**Loop-integral engines.** Kira (Philipp Maierhöfer, Johann Usovitsch, Peter Uwer, Jonas Klappert, Fabian Lange, Zihao Wu) with FireFly (Jonas Klappert, Sven Yannick Klein, Fabian Lange) and Robert H. Lewis's Fermat; the auxiliary-mass-flow method and AMFlow (Xiao Liu, Yan-Qing Ma and collaborators) and AMFlow.cpp (its contributors, maintainer @chang18); Blade (Xin Guan, Xiao Liu, Yan-Qing Ma, Wen-Hao Wu) on Tiziano Peraro's FiniteFlow; FORM (Jos Vermaseren and the FORM developers), HyperFORM (Adam Kardos, Sven-Olaf Moch, Oliver Schnetz) and Erik Panzer's HyperInt; pySecDec (Sophia Borowka, Gudrun Heinrich, Stephen Jones et al.); FIRE and FIESTA (Alexander Smirnov et al.); SOFIA, PLD and SubTropica (Miguel Correia, Claudia Fevola, Mathieu Giroux, Sebastian Mizera, Giulio Salvatori, Simon Telen) with Effortless (Antonela Matijašić, Julian Miczajka); Landau's Leviathans and SPQR (Vsevolod Chestnov, Giulio Crisanti, Mathieu Giroux); PentagonFunctions (Dmitry Chicherin, Vasily Sotnikov, Simone Zoia). The Landau-bootstrap and sequential-discontinuity tools grew out of work with Holmfridur Hannesdottir, Andrew McLeod, Cristian Vergu and Jacob Bourjaily; the lattice-reduction regression out of work with Oscar Barrera, Aurélien Dersy, Rabia Husain and Xiaoyuan Zhang.
+**Loop-integral engines.** Kira (Philipp Maierhöfer, Johann Usovitsch, Peter Uwer, Jonas Klappert, Fabian Lange, Zihao Wu) with FireFly (Jonas Klappert, Sven Yannick Klein, Fabian Lange) and Robert H. Lewis's Fermat; the auxiliary-mass-flow method and AMFlow (Xiao Liu, Yan-Qing Ma and collaborators) and AMFlow.cpp (its contributors, maintainer @chang18), whose derivative routines descend from Tiziano Peraro's LiteIBP; Blade (Xin Guan, Xiao Liu, Yan-Qing Ma, Wen-Hao Wu) on Tiziano Peraro's FiniteFlow; FORM (Jos Vermaseren and the FORM developers), HyperFORM (Adam Kardos, Sven-Olaf Moch, Oliver Schnetz) and Erik Panzer's HyperInt; pySecDec (Sophia Borowka, Gudrun Heinrich, Stephen Jones et al.); FIRE and FIESTA (Alexander Smirnov et al.); SOFIA, PLD and SubTropica (Miguel Correia, Claudia Fevola, Mathieu Giroux, Sebastian Mizera, Giulio Salvatori, Simon Telen) with Effortless (Antonela Matijašić, Julian Miczajka); Landau's Leviathans and SPQR (Vsevolod Chestnov, Giulio Crisanti, Mathieu Giroux) and DiscKosky (Giulio Crisanti, Luke Lippstreu, Andrew J. McLeod, Maria Polackova), from whose code the Leviathan port is in part translated; PentagonFunctions (Dmitry Chicherin, Vasily Sotnikov, Simone Zoia). The Landau-bootstrap and sequential-discontinuity tools grew out of work with Holmfridur Hannesdottir, Andrew McLeod, Cristian Vergu and Jacob Bourjaily; the lattice-reduction regression out of work with Oscar Barrera, Aurélien Dersy, Rabia Husain and Xiaoyuan Zhang.
 
-**Applied packages and data.** The population-genetics, ecology, seismology, phylogenetics and public-records tools stand on dadi, fitdadi, polyDFE, fastDFE, moments, msprime/tskit, `etas`, matPTF, SageMath's genus-2 modules and the papers named in each `GUIDE.md`; the datasets of Dmitry Chicherin, Ian Moult, Emery Sokatchev, Kai Yan and Yunyue Zhu and of the DravLex team (Vishnupriya Kolipakam and co-authors) are used under CC BY 4.0 with thanks.
+**Applied packages and data.** The population-genetics, ecology, seismology, phylogenetics and public-records tools stand on dadi, fitdadi, polyDFE, fastDFE, moments, msprime/tskit, twosfs, `etas`, matPTF, pyCSEP, John Burkardt's VANDERMONDE library, Hecke.jl, SageMath's genus-2 modules and the papers named in each `GUIDE.md`; the datasets of Dmitry Chicherin, Ian Moult, Emery Sokatchev, Kai Yan and Yunyue Zhu and of the DravLex team (Vishnupriya Kolipakam and co-authors) are used under CC BY 4.0 with thanks.
 
 Full author lists and references are in [`toolkit/external/TOOLS.md`](toolkit/external/TOOLS.md), [`REFERENCES.md`](REFERENCES.md) and each package's CREDIT paragraph; please cite those authors, not only BootLoops. Omissions are ours to fix: open an issue and they will be.
 
@@ -253,15 +261,30 @@ are released under CC BY 4.0 ([LICENSE-CONTENT](LICENSE-CONTENT)). The reference
 sources under `upgrades/SOFIA.jl/reference/` and `tools/subtropica/reference/`, and the
 Python port of Blade's search logic in `tools/blade/` and the Julia port of
 SubTropica's front end in `tools/subtropica/`, keep their original
-licenses and copyright notices (MIT under their authors' copyright); three files are
+licenses and copyright notices (MIT under their authors' copyright); the following files are
 GPL: `tools/subtropica/src/lr_refine.jl` (with its test), derived from Erik Panzer's
 HyperInt, GPL-3.0-or-later (see `tools/subtropica/NOTICE`);
 `tools/eichler/genus2/mestre_port.py`, a sympy translation of SageMath's `mestre.py`
-and `invariants.py` by Florian Bouyer, Marco Streng and Nick Alexander,
-GPL-2.0-or-later (see `tools/eichler/NOTICE`); and `tools/formglue/form_hyper.py`,
+and `invariants.py` by Florian Bouyer, Marco Streng and Nick Alexander, and
+`tools/eichler/genus2/conic_fast.py`, which carries six statements of the same
+`mestre.py`, both GPL-2.0-or-later (see `tools/eichler/NOTICE`);
+`tools/formglue/form_hyper.py`,
 whose HyperFORM driver template follows the example drivers shipped with HyperFORM
 by Adam Kardos, Sven-Olaf Moch and Oliver Schnetz, GPL-3.0-only (see
-`tools/formglue/NOTICE`). The
+`tools/formglue/NOTICE`); `tools/winnow/ibplapper/adapters/user_system.py`,
+`tools/kira-stack/parallel_kira_gen.py` and `tools/kira-stack/parallel_kira_gen_uds.py`,
+which follow the source of Kira (The Kira Developers), GPL-3.0-or-later (see
+`tools/winnow/NOTICE`, `tools/kira-stack/NOTICE`); and
+`tools/ffcapital/harvest_ffsave_eta.py` and `tools/ffcapital/harvest_ffsave_2var.py`,
+which carry the first 40 entries of FireFly's prime table and follow its state-file
+writer (Jonas Klappert and Fabian Lange), GPL-3.0-or-later (see `tools/ffcapital/NOTICE`).
+One block of `upgrades/Eichler.jl/src/siegel.jl` follows FLINT and is LGPL-3.0-or-later
+(see `upgrades/Eichler.jl/NOTICE`). Other portions derived from third-party code keep the
+license of their source (BSD, MIT, CC BY 4.0, CC0) with the notice in the package's `NOTICE`.
+Two sources state no license: the repositories whose code is in part translated in
+`upgrades/leviathan/` and the file behind the cell data in `tools/surd/gate/cells/`; the
+Anthropic copyright and the MIT and CC BY 4.0 grants do not cover those portions (see
+`upgrades/leviathan/NOTICE` and `tools/surd/DATA.md`). The
 patched engine forks are distributed in their own repositories under the same
 organization, each under the license of its original authors (Kira GPL-3.0-or-later; Blade
 and AMFlow.cpp MIT), and are not part of this repository.

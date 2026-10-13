@@ -157,6 +157,22 @@ References
   Fu, Y.-X. (1995). Statistical properties of segregating sites. Theor.
     Popul. Biol. 48, 172-197.  (Exact Kingman E[L_i L_j], the rho = 0
     comparand.)
+  Fenton, E. F., Rice, D. P., Novembre, J. & Desai, M. M. (2025). Genetics
+    229, iyaf023.  (The two-site test this harness implements.)
+
+Third-party code
+  This module reuses code of twosfs, the package of D. P. Rice, E. F.
+  Fenton, J. Novembre and M. M. Desai (https://github.com/desai-lab/twosfs,
+  commit 069d84d6; MIT License, Copyright (c) 2020 Daniel P. Rice):
+  seed_from_name is filename2seed of twosfs/simulations.py; the seed scheme
+  (run name -> hash -> numpy Generator -> msprime seeds; root_seed and the
+  per-batch seed draws) follows twosfs; and the tskit call
+  allele_frequency_spectrum(mode='branch', windows=..., polarised=True,
+  span_normalise=False) in _run_2w and _accumulate is written as in
+  twosfs/spectra.py. The twosfs copyright and permission notice is
+  reproduced in the NOTICE file beside this module. The window geometry,
+  gene conversion and sweep arms, batching, pooling and jackknife have no
+  counterpart in twosfs.
 """
 import math
 import time
@@ -195,6 +211,10 @@ def _require_msprime():
 
 
 # ------------------------------------------------------------------- seeds
+# seed_from_name is filename2seed from twosfs/simulations.py
+# (https://github.com/desai-lab/twosfs, commit 069d84d6), Copyright (c) 2020
+# Daniel P. Rice, MIT License; root_seed and the per-batch seed draws follow
+# the same package. See NOTICE beside this file.
 def seed_from_name(name):
     """str -> 32-bit root seed (blake2b, 4-byte digest, big-endian)."""
     h = blake2b(name.encode(), digest_size=4)

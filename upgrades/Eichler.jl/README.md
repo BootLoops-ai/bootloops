@@ -114,10 +114,17 @@ module by Jean Kieffer [Kief], which implements the quasi-linear algorithm of No
 Elkies and Jean Kieffer [EK]; all ball arithmetic is Fredrik Johansson's Arb [Arb] via
 Arblib.jl (Marek Kaluba, Joel Dahne and contributors) and Nemo [Nemo]; the optional
 oracle drives GiNaC's elliptic machinery by Moritz Walden and Stefan Weinzierl [WW,
-GiNaC]. The code, rigor architecture and certified bounds are ours; the mathematics is
-theirs. Bracketed keys resolve in [`REFERENCES.md`](../../REFERENCES.md) at the
-repository root.
+GiNaC]. GiNaC already evaluates the same iterated integrals of modular forms in floating
+point and is the cross-check used here; what Eichler.jl adds is a proved error bound on
+every value. The mathematics is the cited authors'. The code, rigor architecture and
+certified bounds were written for BootLoops, with one exception: the six transvectant
+calls of `igusa_clebsch` in `src/siegel.jl` follow `acb_theta_g2_transvectants` in FLINT
+(`src/acb_theta/g2_covariants.c`, Copyright (C) 2023 Jean Kieffer, LGPL-3.0-or-later) and
+are distributed under that license (`NOTICE`, `LICENSE-LGPL-3.0`). Other public programs
+for parts of the same tasks (hcperiods by Molin and Neurohr, ore_algebra, the Bonn
+group's BananaAmplitude.gp) are listed in `PATCHES.md`. Bracketed keys resolve in
+[`REFERENCES.md`](../../REFERENCES.md) at the repository root.
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License, except the block of `src/siegel.jl` that follows FLINT (LGPL-3.0-or-later; see `NOTICE` and `LICENSE-LGPL-3.0` in this directory). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

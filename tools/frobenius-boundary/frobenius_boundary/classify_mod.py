@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """classify_mod.py — multi-eps classification of the exponent spectrum.
 
-Port of analyze_frobenius.py + exclude_rational.py:
+From this project's earlier scripts (analyze_frobenius.py and
+exclude_rational.py, not distributed):
  * pair eigenvalue lists across eps by exhaustive 2-pt line fits (first vs
    last eps), each candidate line checked against ALL middle eps lists
    (the 4-eps verification pattern);

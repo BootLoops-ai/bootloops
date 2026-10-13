@@ -11,11 +11,12 @@ modify), `gf_eps0_ratios.py`, `DESIGN.md`.
 ## PURPOSE
 
 Self-consistent auxiliary-mass-flow CLI for cut-eikonal (PM) integral families where
-the standard AMFlow boundary recursion is a FIXED POINT (cut props are forbidden
+the boundary recursion of our AMFlow.cpp build is a FIXED POINT (cut props are forbidden
 η-positions; η→∞ rescaling reproduces the family; Cutkosky declines −2k·u cut
 "masses" ≠ phase volume). Pipeline detect → discover → respond → solve → inject → map
-closes the boundary system that the stock boundary recursion does not close for
-this class. Plus ε⁰ ratio salvage +
+closes the boundary system that the boundary recursion of our AMFlow.cpp build does
+not close for this class (the Mathematica AMFlow was not tested on it; see CREDIT).
+Plus ε⁰ ratio salvage +
 exact-rational identification for such runs.
 
 ## USE-WHEN
@@ -130,6 +131,16 @@ CREDIT: pmflow is a driver around the auxiliary-mass-flow method of Xiao Liu, Ya
 Ma and Chen-Yu Wang [AMF1, AMF2] as implemented in AMFlow [AMFlow] and AMFlow.cpp (the
 AMFlow.cpp contributors [AMFcpp]; our fork is the sibling repository `amflow-cpp`); the η→∞
 boundary recursion, ending schemes and vacuum boundary conventions are theirs. The
+auxiliary-mass-flow treatment of integrals with linear propagators is due to Zhi-Feng
+Liu and Yan-Qing Ma, "Automatic computation of Feynman integrals containing linear
+propagators via auxiliary mass flow", Phys. Rev. D 105 (2022) 074003, arXiv:2201.11636,
+and ships in the Mathematica AMFlow; pmflow uses a different route (it leaves the linear
+propagators as they are and solves a self-consistency condition for the boundary) and
+has not been compared against the Mathematica AMFlow on a cut-eikonal family. Supplying
+boundary integrals that the engine does not compute is an AMFlow feature (the
+`user_defined_ending` example of AMFlow, `AMFSystemWrite[..., "Solution", ...]`), which
+AMFlow.cpp carries as its `explicit_boundary` option; `discover` and `inject` automate
+that hand procedure. The
 fixed-point detection and the self-consistent respond/inject loop for cut-eikonal
 (post-Minkowskian) families — the integral class of e.g. Driesse, Jakobsen, Mogull,
 Nega, Plefka, Sauer and Usovitsch [DJMNPSU] — are this package's addition. Bracketed

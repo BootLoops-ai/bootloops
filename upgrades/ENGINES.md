@@ -2,13 +2,16 @@
 
 Three of the external engines the toolkit drives run as patched forks rather than stock
 builds: Kira (IBP reduction), Blade (block-triangular IBP reduction) and AMFlow.cpp
-(auxiliary-mass-flow numerics). Each fork is its own repository, carrying upstream's
-full history, upstream's license and notices unchanged, and a `PATCHES.md` at the
-repository root that states exactly what changed versus upstream and why, which changes
-are candidates to offer upstream, and how the fork was verified (the Kira fork also
-carries the complete unified diff as `PATCHES.diff`). None of their source is in this
-repository. The engines written for BootLoops itself (Eichler.jl, SOFIA.jl, Leviathan)
-are a different matter and ship here, under [`upgrades/`](README.md).
+(auxiliary-mass-flow numerics). Each fork is its own repository, started from a snapshot
+of upstream at the base commit in the table (upstream's commit history stays in upstream's
+repository), with upstream's license unchanged, upstream's notices kept and added to where
+the table says so, and a `PATCHES.md` at the repository root that describes the main changes
+versus upstream and why, which changes are candidates to offer upstream, and how the fork was
+verified (the Kira fork also carries the complete unified diff as `PATCHES.diff`). None of
+their source is in this repository. The engines that ship in this repository are a different
+matter: Eichler.jl, SOFIA.jl (a Julia translation of SOFIA and of Effortless) and Leviathan (a
+Julia port, in part translated from the code of Chestnov, Crisanti and Giroux and of DiscKosky)
+are under [`upgrades/`](README.md).
 
 The engine repositories are published beside this one by the same organization; the
 commands and defaults below assume they are cloned side by side with this repository
@@ -18,12 +21,10 @@ commands and defaults below assume they are cloned side by side with this reposi
 |------------|---------|------|---------|----------------------|
 | `kira` | **Kira** by the Kira developers — created by P. Maierhöfer, J. Usovitsch and P. Uwer (Comput. Phys. Commun. 230 (2018) 99, arXiv:1705.05610); developed today by F. Lange, J. Usovitsch and Z. Wu (Kira 3, Comput. Phys. Commun. 322 (2026) 109999, arXiv:2505.20197), with J. Klappert on Kira 2.0 (arXiv:2008.06494) — [gitlab.com/kira-pyred/kira](https://gitlab.com/kira-pyred/kira) | Kira 3.1: tag `3.1` = commit `5760f42` | GPL-3.0-or-later (`COPYING` intact; our delta under the same terms, with a modification notice in each touched file) | parallel `treatcoeff` — each worker thread gets its own Fermat pool slot and the Fermat call runs outside the cache lock, removing the single-Fermat back-substitution bottleneck — plus idempotent SQLite `BEGIN`/`COMMIT` guards; +65/−19 lines over 5 files, reduction output byte-identical to stock. The jemalloc (`-Djemalloc=true`) and 128-bit-weight (`-Dweight_width=128`, binary `kira128`) build variants the harness relies on are upstream meson options, documented there. FireFly is the stock subproject. The same repository carries `bootloops-tools/`: two GPL Python utilities derived from Kira's weight layout and FireFly's save format (`pyred_weight.py`, `ffsave_degree_census.py`) that `kira-stack` and `ffcapital` here use optionally through `tools/kira-stack/kira_gpl_tools.py` (side-by-side checkout, or env `BOOTLOOPS_KIRA_TOOLS`). |
 | `blade` | **Blade** by X. Guan, X. Liu, Y.-Q. Ma, W.-H. Wu (Comput. Phys. Commun. 310 (2025) 109538, arXiv:2405.14621), running on FiniteFlow by T. Peraro (JHEP 07 (2019) 031, arXiv:1905.08019) — [gitee.com/multiloop-pku/blade](https://gitee.com/multiloop-pku/blade) | commit `c0a06cb` ("Propagate MaxDegree to recmod") | MIT (`LICENSE.md` and upstream `THIRD_PARTY.md` intact) | Mathematica removed from the compiled toolchain: a no-Wolfram CMake build against a local FiniteFlow; plain-C FiniteFlow wrappers (`fflowC`, transcribed from FiniteFlow's MathLink layer with a checked failure contract) and the `fflowcli` and `dumppoints` executables in place of MathLink; the `fflowcli_stream` sibling with streaming/resumable `evalmany` and subgraph build modes (output bytes identical to stock); a hardened `auto_install`. The optional notebook layer (`Blade.wl`, `BL*/`) is upstream's, unmodified. |
-| `amflow-cpp` | **AMFlow.cpp** by the AMFlow.cpp contributors (maintainer GitHub @chang18; doi:10.5281/zenodo.20087172) — [github.com/chang18/amflow-cpp](https://github.com/chang18/amflow-cpp), a C++17 reimplementation of **AMFlow** by X. Liu and Y.-Q. Ma (Comput. Phys. Commun. 283 (2023) 108565, arXiv:2201.11669; auxiliary-mass-flow method with C.-Y. Wang, arXiv:1711.09572; [gitlab.com/multiloop-pku/amflow](https://gitlab.com/multiloop-pku/amflow); the Mathematica original is not bundled) | upstream `main` at commit `006a275` (version 1.1.0) | MIT (`LICENSE` and `NOTICE` intact, SPDX headers kept) | precision correctness headed by the exponent-separation solver fix (chop/rationalization tolerances that scale with the ε grid, so `η^(n+aε)` and `η^n` behaviors never merge silently); robustness of the embedded Kira/FireFly reduce (SIG6/SIG11 → FireFly auto-staging with a dot-cap, a CPU-progress stall watchdog, real child-error surfacing, resumable `ff_save` reduces, jemalloc auto-preload); boundary and vacuum extensions (massless-vacuum auto-complete to every loop order, the product-of-tadpoles vacuum for linear propagators, eikonal regions, `Bubble` mode, an env-gated Mercedes maximal-cut closed form); scale and operations (DE checkpoint/resume, ε-grid and node-tree parallelism, a load-adaptive IBP cache, strict JSON config). 579/579 tests pass. `bootloops-wrappers/` in the same repository is our validation harness: the 228-case Mathematica-reference parity run, closed-form and Bessel-moment anchors at 30/100/300 digits, order-by-order comparison and cost-scaling fits. |
+| `amflow-cpp` | **AMFlow.cpp** by the AMFlow.cpp contributors (maintainer GitHub @chang18; doi:10.5281/zenodo.20087172), [github.com/chang18/amflow-cpp](https://github.com/chang18/amflow-cpp), the C++17 port of **AMFlow** by X. Liu and Y.-Q. Ma (AMFlow 2.0 with R.-J. Huang, arXiv:2607.08477; Comput. Phys. Commun. 283 (2023) 108565, arXiv:2201.11669; auxiliary-mass-flow method with C.-Y. Wang, arXiv:1711.09572; [gitlab.com/multiloop-pku/amflow](https://gitlab.com/multiloop-pku/amflow); the Mathematica original is not bundled) | upstream `main` at commit `006a275` (version 1.1.0) | MIT (`LICENSE` unchanged; `NOTICE` is upstream's text with sections appended by the fork; SPDX headers kept). The derivative routines (`src/ibp/libp_deriv.cpp`) descend from LiteIBP by T. Peraro (github.com/peraro/finiteflow-mathtools, which carries no license file) through AMFlow's Kira interface; see the fork's `NOTICE` | precision correctness headed by the exponent-separation solver fix (chop/rationalization tolerances that scale with the ε grid, so `η^(n+aε)` and `η^n` behaviors never merge silently); robustness of the embedded Kira/FireFly reduce (SIG6/SIG11 → FireFly auto-staging with a dot-cap, a CPU-progress stall watchdog, real child-error surfacing, resumable `ff_save` reduces, jemalloc auto-preload); boundary and vacuum extensions (massless-vacuum auto-complete to every loop order, the product-of-tadpoles vacuum for linear propagators, eikonal regions, `Bubble` mode, an env-gated Mercedes maximal-cut closed form); scale and operations (DE checkpoint/resume, ε-grid and node-tree parallelism, a load-adaptive IBP cache, strict JSON config). 579/579 tests pass. `bootloops-wrappers/` in the same repository is our validation harness: the 228-case Mathematica-reference parity run, closed-form and Bessel-moment anchors at 30/100/300 digits, order-by-order comparison and cost-scaling fits. The additions were written with the Mathematica source of AMFlow 2.0 open; `PATCHES.md` says which follow it. |
 
-**What to check out.** In all three repositories upstream's default branch is left as
-upstream has it; the BootLoops changes are on the branch `bootloops`, and the 1.0
-release of each fork is the annotated tag `bootloops-1.0` on that branch. Clone, check
-out `bootloops` (or `bootloops-1.0`), and build as each repository's own instructions
+**What to check out.** In all three repositories the BootLoops changes are on the branch
+`main`. Clone and build as each repository's own instructions
 say (`README.rst`/meson for Kira, `README.md` + `install.in.txt`/CMake for Blade,
 `BUILD.md`/CMake for AMFlow.cpp).
 
@@ -63,8 +64,9 @@ repository's `PATCHES.md`, `BUILD.md` and `docs/JSON_SCHEMA.md`; the packages th
 them say so in their `GUIDE.md`.
 
 **Licenses of the forks.** The three fork repositories are distributed under their
-upstream licenses — GPL-3.0-or-later for `kira`, MIT for `blade`
-and `amflow-cpp` —
+upstream licenses (GPL-3.0-or-later for `kira`, MIT for `blade`
+and `amflow-cpp`; for the derivative routines of `amflow-cpp` that descend from LiteIBP see
+the table above),
 with our modifications contributed under those same licenses (Copyright (c) 2026
 Anthropic, PBC; created by Matthew D. Schwartz, code written by Claude (Anthropic)
 under his supervision) and upstream's copyright notices unchanged; each `PATCHES.md`

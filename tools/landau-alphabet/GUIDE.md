@@ -18,7 +18,8 @@ USE-WHEN:
   flush).
 - A face times out under sympy → hand exactly that face to `pld_bridge.jl` (same input,
   same output schema; needs PLD.jl, obtain upstream).
-- Want an INDEPENDENT numerical cross-check of a sympy-backend alphabet without
+- Want a numerical cross-check of a sympy-backend alphabet (independent of the sympy
+  chain; the method is the line-slicing method of Fevola, Mizera and Telen) without
   PLD.jl/Oscar → `julia pld_bridge.jl SPEC.json OUT.json --fallback --check
   SYMPY_OUT.json` (HomotopyContinuation-only fallback; auto-engaged when PLD/Oscar
   fail to load, e.g. any Julia >= 1.11): per-face torus critical systems of the
@@ -120,9 +121,11 @@ Fast Gröbner backend for the heavy face discriminants the bounded sympy
 resultant chain cannot do: per-face Landau letters via Rabinowitsch-saturated
 Jacobian-ideal elimination (saturate against the Feynman-parameter torus,
 eliminate the x_i, factor the elimination-ideal generators over the kinematic
-ring). Benchmark (a 3-loop K4 degree-267 face): sympy >900 s timeout / PLD.jl
-homotopy error at 837 s → msolve 32 s; 5-edge faces 1-5 s; finds letters the
-sympy chain misses.
+ring). The construction (the critical ideal of the face polynomial, saturated
+against the torus and eliminated) is that of Fevola, Mizera and Telen [PLD] and of
+Mizera and Telen (arXiv:2109.08036); the elimination engines and the factoring are
+this package's. Benchmark (a 3-loop K4 degree-267 face): sympy >900 s timeout →
+msolve 32 s; 5-edge faces 1-5 s; finds letters the sympy chain misses.
 
 INVOKE (member): automatic — `landau_alphabet.py` escalates to it on
 FaceTimeout or a PARTIAL/EMPTY chain result (`PLD_GROEBNER=off` disables,
@@ -197,12 +200,23 @@ CREDIT: the Landau equations are L. D. Landau's [Landau]; this package implement
 graph side of the Landau bootstrap developed by H. S. Hannesdottir, A. J. McLeod, M. D.
 Schwartz and C. Vergu [LB1, LB2, LB3]. Principal Landau determinants and the PLD.jl
 cross-validation backend are by Claudia Fevola, Sebastian Mizera and Simon Telen [PLD,
-FMT]; the numerical fallback uses HomotopyContinuation.jl by Paul Breiding and Sascha
-Timme [HCjl]; graph polynomials in Lee–Pomeransky form [LP]; Gröbner escalation by
+FMT]; Landau discriminants are by Sebastian Mizera and Simon Telen (arXiv:2109.08036).
+The face-by-face discriminant computation of this package follows their constructions
+with its own graph polynomials and its own elimination. The numerical fallback in
+`pld_bridge.jl` applies their incidence-variety and line-slicing method
+(arXiv:2311.16219, Algorithm 1; arXiv:2109.08036, Sec. 3) and was written with the
+PLD.jl source open; it solves with HomotopyContinuation.jl by Paul Breiding and Sascha
+Timme [HCjl]. For the massless box PLD.jl returns {s, s + t, t}; the {s, t} of the
+sympy backend is the alphabet after this package's pruning of second-type letters.
+Graph polynomials in Lee–Pomeransky form [LP]; Gröbner escalation by
 msolve (J. Berthomieu, C. Eder, M. Safey El Din [msolve]) and Singular; the
 blind-alphabet sibling is SOFIA by M. Correia, M. Giroux and S. Mizera [SOFIA] (see
 upgrades/SOFIA.jl). LandauAlphabet.jl follows the modular-form and iterated-integral
 conventions of Luise Adams and Stefan Weinzierl [AW] for the Γ₁(6) sunrise/kite kernels,
 evaluates Goncharov polylogarithms [Gon] in the Vollinga–Weinzierl conventions [VW], and
-fits with PSLQ [PSLQ] and LLL [LLL] on Nemo/Arblib [Nemo, Arb]. Bracketed keys resolve
+fits with PSLQ [PSLQ] and LLL [LLL] on Nemo/Arblib [Nemo, Arb]; its ansatz and fitting
+workflow follows the analytic regression of O. Barrera, A. Dersy, R. Husain, M. D.
+Schwartz and X. Zhang [BDHSZ]. The polynomial Q6 in `linear_landau.py` is eq. (3.26) of
+Brammer, Frellesvig, Morales and Wilhelm, arXiv:2505.10274; the `topbox.json` routing is
+that of T. Ahmed, E. Chaubey, M. Kaur and S. Maggio [ACKM]. Bracketed keys resolve
 in REFERENCES.md at the repository root.

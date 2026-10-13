@@ -1,14 +1,44 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# The file reader in this module (_source_files, _open_text and the read loop
+# of parse_terms) follows the parser of Kira (https://gitlab.com/kira-pyred/kira,
+# tag 3.1): src/pyred/interface.cpp (FileSystem::get_filenames and the file
+# overload of System::add_forward) and src/pyred/integrals.cpp
+# (split_intcoeff), Copyright (C) 2017-2025 The Kira Developers (Fabian Lange,
+# Johann Usovitsch, Zihao Wu; Jonas Klappert; Philipp Maierhoefer; Peter Uwer),
+# licensed under the GNU General Public License v3.0 or later. It is not a
+# translation of that code, but it reproduces rules that Kira's source states
+# and Kira's papers do not, and it carries one of Kira's error messages
+# ("ill-formed integral*coefficient: ") word for word. This Python module is
+# Copyright (c) 2026 Anthropic, PBC; created by Matthew D. Schwartz, code
+# written by Claude (Anthropic) under his supervision, and is distributed under
+# the same GNU General Public License v3.0 or later. The rest of this package
+# is MIT-licensed; see NOTICE and LICENSE-GPL-3.0 in the package root
+# (tools/winnow).
 """adapters/user_system.py — kira user_defined_system reader (Route B).
 
-Reads the DOCUMENTED, stable kira input format for user-defined systems of
-equations — the same files a `reduce_user_defined_system` job consumes,
-i.e. what a USER hands kira, not an internal dump. Because the format is
-documented and stable there is nothing empirical to pin: Route B carries
-NO version guard and NO weight decode (contrast Route A, adapters/kira.py,
+Reads the kira input format for user-defined systems of equations, as
+specified in the Kira 2.0 paper (arXiv:2008.06494) and, where the paper is
+silent, as Kira's parser reads it. These are the files a
+`reduce_user_defined_system` job consumes, i.e. what a USER hands kira, not
+an internal dump. Route B carries no version guard and no weight decode
+(contrast Route A, adapters/kira.py,
 which parses an undocumented internal artifact behind a version guard and
 can refuse with KiraVersionError / record ABSENT-UNGUARDED).
 
-Format (per the kira documentation and shipped examples):
+Source of the rules. The file format is specified in the Kira 2.0 paper
+(J. Klappert, F. Lange, P. Maierhöfer, J. Usovitsch, arXiv:2008.06494):
+several files, optional gzip compression, the .kira / .kira.gz extension
+filter and the sort by name for a directory, one term per line, empty lines
+between equations, weight or integral notation. The reader below also follows
+Kira's parser source (see the header of this file) for what the paper leaves
+open: files whose name starts with "." are skipped; compression is decided by
+the file content and not by the extension; a line of spaces ends an equation
+like an empty line; an equation never continues into the next file; every
+non-blank line must contain a `*`, so a `#` comment line, which the example in
+the Kira 2.0 paper contains, is refused here as it is by Kira's parser.
+
+Format:
   - `src` is one equation file or a directory; a directory contributes its
     non-hidden regular files with extension .kira or .kira.gz, sorted by
     name. Files may be gzip-compressed or plain text either way.
@@ -76,7 +106,7 @@ _ALLOWED = re.compile(r"^[0-9A-Za-z_+\-*/^() ]+$")
 
 
 class UserSystemFormatError(ValueError):
-    """A line/file does not follow the documented user-system format."""
+    """A line/file does not follow the user-system format."""
 
 
 class SliceEvaluator:
@@ -119,7 +149,9 @@ class SliceEvaluator:
 
 def _source_files(src):
     """One file, or a directory's non-hidden *.kira / *.kira.gz files
-    sorted by name (the documented directory convention)."""
+    sorted by name (extension filter and sort as documented in the Kira 2.0
+    paper; the hidden-file rule and the file / neither / directory order
+    follow Kira's FileSystem::get_filenames, src/pyred/interface.cpp)."""
     if os.path.isfile(src):
         return [src]
     if not os.path.isdir(src):
@@ -136,7 +168,11 @@ def _source_files(src):
 
 def _open_text(path):
     """gzip or plain text, decided by content (both are legal for either
-    extension — kira reads compressed and uncompressed alike)."""
+    extension; kira reads compressed and uncompressed alike).
+
+    That rule is taken from Kira's reader, src/pyred/interface.cpp, which
+    opens every file through its gzip stream; the magic-byte test here is
+    ours."""
     with open(path, "rb") as fh:
         magic = fh.read(2)
     if magic == b"\x1f\x8b":
@@ -152,6 +188,12 @@ def parse_terms(src):
     notation) or (family, indices tuple) (integral notation); notation is
     "weight" or "integral"; np is the index count (integral notation) or
     None; n_files counts the source files read.
+
+    The read loop (blank-line split, flush at the end of each file, split
+    of each line at the first `*`, weight tried before name[indices]) follows
+    Kira's System::add_forward (src/pyred/interface.cpp) and split_intcoeff
+    (src/pyred/integrals.cpp); the text of the first error message below is
+    Kira's. The index-count check and the mixed-notation refusal are ours.
     """
     eqs = []
     notation = None

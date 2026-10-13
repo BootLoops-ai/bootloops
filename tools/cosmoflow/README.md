@@ -71,6 +71,31 @@ outer integrals even at ε₀=−1/20 — boundary values need tail machinery no
 - ε-factorized/canonical basis and the ε→0 limit of the transport: not
   constructed (ε→0 is degenerate: O(ε) couplings vs O(1/ε) masters).
 
+## Name and credit
+
+This package is unrelated to the CosmoFlow package of Denis Werth, Lucas Pinol and
+Sébastien Renaux-Petel (arXiv:2402.03693, Class. Quantum Grav. 41, 175015 (2024);
+github.com/deniswerth/CosmoFlow, MIT), a Python package that computes cosmological
+correlators by integrating flow equations in time. The two share a name and a field,
+and no code or method.
+
+The physics implemented here is from published papers:
+
+- Benincasa, Brunello, Mandal, Mastrolia and Vazão, "On one-loop corrections to the
+  Bunch-Davies wavefunction of the universe", arXiv:2408.16386, Phys. Rev. D 111,
+  085016: the connected-subgraph denominators, the Cayley-Menger
+  form of the measure, the nine triangle master integrals and the operator L₂.
+- Arkani-Hamed, Baumann, Hillman, Joyce, Lee and Pimentel, "Differential Equations
+  for Cosmological Correlators", arXiv:2312.05303 (with arXiv:2312.05300): the two-site integral, its letters and its closed form.
+- Arkani-Hamed, Benincasa and Postnikov, "Cosmological Polytopes and the
+  Wavefunction of the Universe", arXiv:1709.02813: the vertex definition of the
+  cosmological polytope.
+
+The authors of arXiv:2312.05303 publish Mathematica notebooks for tree-level chains
+(github.com/haydenhylee/kinematic-flow, MIT). This package does not use or follow
+them. The quadrature devices of the worked example (the K(m) split, the disk
+carve-out, the pinch split) and the graph front door are BootLoops code.
+
 ## License
 
 MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

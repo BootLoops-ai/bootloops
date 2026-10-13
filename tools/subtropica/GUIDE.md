@@ -1,8 +1,10 @@
 # SubTropica — guide
 
-Unofficial Julia rewrite of SubTropica's front end (M. Giroux, S. Mizera, G. Salvatori,
-arXiv:2604.20954, MIT); not affiliated with or endorsed by the SubTropica/HyperFLINT
-authors — cite the original.
+SubTropica and its HyperFLINT engine are by M. Giroux, S. Mizera and G. Salvatori
+(arXiv:2604.20954, MIT; github.com/SubTropica/SubTropica). This package is an
+unofficial Julia port of SubTropica's front end, translated from the authors'
+`SubTropica.wl`; it is not affiliated with or endorsed by the SubTropica/HyperFLINT
+authors. Cite the original.
 
 SubTropica — `tools/subtropica` — https://bootloops.ai/tools/subtropica.html
 
@@ -177,9 +179,15 @@ not distributed here.
 ## CREDIT
 
 CREDIT: SubTropica and its HyperFLINT engine are by Mathieu Giroux, Sebastian Mizera and
-Giulio Salvatori [SubTropica] (MIT; github.com/SubTropica/SubTropica) — this package is
-an unofficial Julia rewrite of their front end and we are grateful to them for releasing
-the code; please cite their paper. HyperFLINT reimplements Erik Panzer's HyperInt
+Giulio Salvatori [SubTropica] (MIT; github.com/SubTropica/SubTropica). This package is
+an unofficial Julia port of their front end, in which the divergence analysis, the
+tropical subtraction and the continuation are translated routine by routine from the
+authors' `SubTropica.wl`, and we are grateful to them for releasing the code; please
+cite their paper. The builder of the graph polynomials U and F in `src/graph.jl` is
+not taken from `SubTropica.wl` (which builds them in momentum space): it uses the
+spanning-tree and spanning-2-forest sums that define U and F (Bogner and Weinzierl,
+arXiv:1002.3458), the same construction that ships in `tools/landau-alphabet`.
+HyperFLINT reimplements Erik Panzer's HyperInt
 [HyperInt], whose algorithms (fibration bases, compatibility-graph linear-reducibility
 analysis) this port follows, building on Francis Brown's theory of hyperlogarithm
 integration and linear reducibility [Br09a, Br09b]; `src/lr_refine.jl` is transliterated
@@ -191,6 +199,14 @@ routes follow the tropical/Newton-polytope analysis of Arkani-Hamed, Hillman and
 integrals [NP, BFP]; graph polynomials in Lee–Pomeransky form [LP]. Polytopes by OSCAR;
 exact arithmetic by Nemo/FLINT [Nemo, Arb]; GPL numerics by GiNaC [GiNaC, VW]. Bracketed
 keys resolve in REFERENCES.md at the repository root.
+
+CITATIONS IN THE SOURCE: `wl:NNNN` is a line of `reference/SubTropica.wl`.
+`paper:NNNN` is a line of the TeX source of arXiv:2604.20954, which is not included
+here. `SPEC_B1` and `pld_complete_c3.jl` name a specification and a script that are
+not part of this release, so those citations cannot be checked from this repository.
+The HyperInt line numbers in `src/lr_refine.jl` were taken from a copy of
+`HyperInt.mpl` whose commit was not recorded; they sit 0 to 8 lines from the
+repository head ce15b287.
 
 ## License
 

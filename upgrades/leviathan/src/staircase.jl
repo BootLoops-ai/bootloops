@@ -1,12 +1,12 @@
-# staircase.jl — standard-monomial count from DRL leading exponents.
+# staircase.jl: standard-monomial count from DRL leading exponents.
 # Returns: 0 if unit ideal; `nothing` if not zero-dimensional (some variable has no
 # pure-power leading monomial => Infinity/Indeterminate, the Type-1.1 detector);
 # else the number of lattice points under the staircase.
-# Counting is an exact interval-sliced recursion: slice along the last variable at the
-# distinct generator exponents; between consecutive thresholds the (n-1)-variable slice
-# ideal is constant, so each interval contributes (length) * (slice count). Cost scales
-# with the staircase's threshold structure, not the box volume, so arbitrarily large
-# staircase boxes count exactly. Counts wider than Int are returned as Int128.
+# This return contract, the two guards of staircase_count and the split into lead_exps /
+# staircase_count / chi_of_ideal follow DiscKosky Kernel/irreducible_monomials.m:5-6, 267-271, 303-304
+# and SPQR Kernel/various_functions.m:45-53 (no license file); see PATCHES.md. The counting itself is
+# an exact interval-sliced recursion written for this package (_minimalize, _staircase_sliced,
+# _drl_less): cost scales with the staircase's thresholds, not the box volume; wide counts are Int128.
 
 "Drop leading exponents that are divisible by another (keep minimal generators)."
 function _minimalize(les::Vector{Vector{Int}})

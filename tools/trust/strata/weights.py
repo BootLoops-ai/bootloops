@@ -1,5 +1,10 @@
 """Kira SYSTEM_*.gz weight decode (empirical, validated on production artifacts).
 
+The packing decoded here is Kira's own term-weight convention (Kira:
+P. Maierhöfer, J. Usovitsch, P. Uwer; J. Klappert, F. Lange; Z. Wu;
+gitlab.com/kira-pyred/kira, GPL-3.0-or-later).  The layout below was
+established from run artifacts; this file contains no Kira source code.
+
 Kira 3.1, integral_ordering 5, WEIGHTBITS (A,B,C,D)=(5,4,17,13) as recorded in
 results/kira.db of the validation run (a production 2-loop family).
 

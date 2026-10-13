@@ -89,9 +89,13 @@ SageMath code by Bouyer, Streng and Alexander (GPL-2.0-or-later; see ../LICENSE-
 and ../NOTICE): the `hyperelliptic_curves.mestre` module (Florian Bouyer and Marco Streng)
 and the `invariants` module (Nick Alexander), with their later Sage contributors (Sabrina
 Kunzweiler, Gareth Ma, Giacomo Pope). It keeps their conventions and normalizations, its
-exact self-checks are those modules' published doctest values, and only the transvectant
-routine is written independently. We thank the Sage authors.
+exact self-checks are those modules' published doctest values, and its transvectant
+routine builds the same formula (Mestre 1991, as printed in Sage's documentation) by a
+different construction. conic_fast.py takes Mestre's x, y, z and the conic matrix L from
+the same `mestre` module (six statements, with I2 set to 1, in a marked block) and is
+GPL-2.0-or-later as well; its exact quadratic-field arithmetic, diagonalization and point
+search were written for BootLoops. We thank the Sage authors.
 
 ## License
 
-MIT License, except `mestre_port.py`, which is GPL-2.0-or-later (a sympy translation of SageMath code by Bouyer, Streng and Alexander; see `../NOTICE` and `../LICENSE-GPL-2.0`). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License, except `mestre_port.py` and `conic_fast.py`, which are GPL-2.0-or-later (`mestre_port.py` is a sympy translation of SageMath code by Bouyer, Streng and Alexander, and `conic_fast.py` carries six statements translated from the same `mestre` module; see `../NOTICE` and `../LICENSE-GPL-2.0`). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

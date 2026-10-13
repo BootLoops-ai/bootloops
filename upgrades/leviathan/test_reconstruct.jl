@@ -23,9 +23,9 @@ end
 end
 
 # Provenance: the family below is the sunrise with equal internal masses (mm1) and external
-# invariant MM1; the expected factor set is its standard singular set — normal threshold
-# MM1 = 9*mm1, pseudo-threshold MM1 = mm1, and the vanishing loci mm1 = 0, MM1 = 0 —
-# independently reproduced here by both routes (exact and reconstruction); see PATCHES.md.
+# invariant MM1 (names as in the authors' data files and in SOFIA); the expected factor set is its
+# standard singular set (normal threshold MM1 = 9*mm1, pseudo-threshold MM1 = mm1, vanishing loci
+# mm1 = 0, MM1 = 0), which both routes here (exact and reconstruction) must return; see PATCHES.md.
 @testset "sunrise (masses mm1, invariant MM1): reconstruct == exact == thresholds" begin
     fam = family("(x1*x2+x1*x3+x2*x3) + (x1*x2+x1*x3+x2*x3)*mm1*(x1+x2+x3) - MM1*x1*x2*x3",
                  ["mm1","MM1"], ["x1","x2","x3"])

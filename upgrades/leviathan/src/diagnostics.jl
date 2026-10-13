@@ -1,8 +1,8 @@
-# diagnostics.jl — the four Appendix-A checks. Each returns (pass::Bool, evidence).
-# The Type-1.2 test (nodegeneracy) follows noDegeneracyQ / degenerateForKinAndVar in
-# landau_codes.m of Chestnov, Crisanti and Giroux (arXiv:2606.29612 names that routine as
-# the algorithm): kinematic/variable role swap, two random values of the demoted variable,
-# GCD of the two eliminants must be 1. Read as the reference; no code copied. See PATCHES.md.
+# diagnostics.jl: the four Appendix-A checks of arXiv:2606.29612. Each returns (pass::Bool, evidence).
+# nodegeneracy (Type 1.2, lines 60-99) is a translation into Julia/Oscar of degenerateForKinAndVar
+# (:33-63) and noDegeneracyQ (:66-116) in landau_codes.m @ 47028b7 by Chestnov, Crisanti and Giroux
+# (no license file); the MIT grant does not cover it (NOTICE). The retry over primes in diag_type22
+# (lines 41-47) follows countInSector in DiscKosky euler_characteristic.m:43-52. See PATCHES.md.
 
 "Type 1.1: every sector ideal J_S must be zero-dimensional (chi_S finite)."
 function diag_type11(fam::Family; p::Int=default_p31(), rng=Random.default_rng())
@@ -38,8 +38,8 @@ function diag_type22(fam::Family, candidates; p::Int=default_p31(), rng=Random.d
     verdicts = Dict{String,Any}()
     for lstr in candidates
         l = poly_from_string(lstr, tab, fam.R)
-        # cycle primes: algebraic loci (e.g. y^2-10y+5) have F_p points only when the
-        # discriminant is a QR mod p — about half the primes; fixed-p left these unverified
+        # retry over the prime list, as countInSector in DiscKosky euler_characteristic.m:43-52 does:
+        # an algebraic locus (e.g. y^2-10y+5) has F_p points only when its discriminant is a square mod p
         chis = Union{Int,Nothing}[]
         for q in P31
             push!(chis, chi_regulated_constrained(fam, l; p=q, rng=rng))
@@ -60,7 +60,7 @@ end
 """
 Type 1.2 noDegeneracyQ: for every (kinematic q, variable v in {x0,x_i}) pair, promote q to a
 ring variable, demote v to a parameter at TWO random values; eliminate all x-variables mod p
-(p < 2^29, Singular lane); GCD of the two univariate-in-q generators must be 1.
+(p < 2^29, Singular route); GCD of the two univariate-in-q generators must be 1.
 Nontrivial GCD = potential l_degen (genuine but missable singularity).
 """
 function nodegeneracy(fam::Family; p::Int=default_p29(), rng=Random.default_rng())
@@ -69,10 +69,10 @@ function nodegeneracy(fam::Family; p::Int=default_p29(), rng=Random.default_rng(
     for qn in fam.kinnames
         kv = random_kinvals(rng, fam.kinnames, p)
         Rm, qv, x0, xvs, Gm = spec_ring_midq(fam, qn, p, kv)
-        # nu=0 ideal <dG/dx_i, 1 - x0*G> (arXiv:2606.29612 Eq. 12); the recipe follows
-        # noDegeneracyQ in Chestnov, Crisanti and Giroux's landau_codes.m (file header, PATCHES.md);
-        # NOT the regulated ideal (would let the diagnostic false-PASS on loci where J_{nu=0}
-        # is degenerate but J_reg is not).
+        # nu=0 ideal <dG/dx_i, 1 - x0*G> (arXiv:2606.29612v1 Eq. 10), as the paper (Appendix A) and
+        # noDegeneracyQ in Chestnov, Crisanti and Giroux's landau_codes.m both specify; this function
+        # is a translation of that routine (file header, PATCHES.md). The regulated ideal is not used:
+        # the test would pass on loci where J_{nu=0} is degenerate but J_reg is not.
         gs0 = typeof(Gm)[Oscar.derivative(Gm, xvs[i]) for i in 1:nedges(fam)]
         push!(gs0, 1 - x0 * Gm)
         allx = vcat([x0], xvs)

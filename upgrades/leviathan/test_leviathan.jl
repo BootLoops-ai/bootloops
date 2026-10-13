@@ -39,7 +39,7 @@ end
     @test isempty(r.spurious)
     d = diagnose(fam; rng=rng, candidates=r.candidates)
     # type1.2 correctly FAILS on bubble: s=0 is a nu=0-degenerate (second-type) locus the
-    # nu=0 lane provably misses (previously false-PASSed when run on the regulated ideal).
+    # nu=0 route provably misses (previously false-PASSed when run on the regulated ideal).
     @test all(v[1] for (k, v) in d if k != "type1.2_nodegeneracy") && !d["type1.2_nodegeneracy"][1]
     # negative control: a fake locus must be flagged spurious (no chi drop)
     pass, ev = diag_type22(fam, ["s - 17*mm"]; rng=rng)

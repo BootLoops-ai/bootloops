@@ -24,9 +24,10 @@ groups; the N=4 result reproduces the closed form of arXiv:2401.06463 on the sli
 
 ## USE-WHEN
 
-- A parametric integral whose first eliminations are Brown-linear but whose LAST variable carries algebraic letters, so hyperlogarithm
-  engines of the HyperInt class (`tools/subtropica`/HyperFLINT, `tools/formglue`'s `form_hyper`) return nothing or silently drop the
-  algebraic branches, and you want the exact function on a one-parameter family of kinematics.
+- A parametric integral whose first eliminations are Brown-linear but whose LAST variable carries algebraic letters that hyperlogarithm
+  engines of the HyperInt class (`tools/subtropica`/HyperFLINT, `tools/formglue`'s `form_hyper`) do not cover, and you want the exact
+  function on a one-parameter family of kinematics. (HyperInt by E. Panzer and HyperFLINT by S. Mizera, M. Giroux and G. Salvatori have
+  options for square-root letters; by a reading of their sources neither covers the cube-root letters met here.)
 - You know the stage alphabets a priori (from a linear-reducibility run such as `tools/subtropica`'s `lr_refine`, or a Landau census)
   and want an integrator that never rediscovers letters: every denominator is factored and looked up, never expanded over a common
   denominator.
@@ -138,16 +139,26 @@ The fibration method (linear reducibility, integration in a fibration basis of h
 two-point function", Commun. Math. Phys. 287 (2009) 925, arXiv:0804.1660; its algorithmic form and the compatibility-graph reduction
 follow E. Panzer, "Algorithms for the symbolic integration of hyperlogarithms with applications to Feynman integrals" (HyperInt),
 Comput. Phys. Commun. 188 (2015) 148, arXiv:1403.3385. The projective (Cheng-Wu) freedom to set one Feynman parameter to 1 is the
-Cheng-Wu theorem (H. Cheng and T. T. Wu, Expanding Protons, MIT Press, 1987). The QCD integrands are the tree-level quadruple-collinear splitting functions of V. Del Duca, C. Duhr, R. Haindl,
-A. Lazopoulos and M. Michel, JHEP 02 (2020) 189 (arXiv:1912.06425) and JHEP 10 (2020) 093 (arXiv:2007.05345) [DDHLM1, DDHLM2], and the
-shipped cell data derived from them (gate/cells/) carry their CC BY 4.0 attribution (DATA.md); the N=4 reference function
+Cheng-Wu theorem (H. Cheng and T. T. Wu, Expanding Protons, MIT Press, 1987). The regularization convention of the words
+(ZeroInfPeriod) is that of HyperFLINT by S. Mizera, M. Giroux and G. Salvatori [SubTropica], so that Surd's words match that program's
+output; `gate/scripts/hf_piece.py` runs HyperFLINT as a separate program and `gate/scripts/onefold_arb.py` reads its output.
+Hyperlogarithms are evaluated numerically by the Hoelder-convolution method of Borwein, Bradley, Broadhurst and Lisonek as used by
+J. Vollinga and S. Weinzierl [VW]. The symbol and the total differential of iterated integrals used by the structure tools follow
+A. B. Goncharov [Gon], Goncharov, Spradlin, Vergu and Volovich [GSVV] and C. Duhr [Duhr12].
+
+The QCD integrands are the tree-level quadruple-collinear splitting functions of V. Del Duca, C. Duhr, R. Haindl, A. Lazopoulos and
+M. Michel, JHEP 02 (2020) 189 (arXiv:1912.06425) and JHEP 10 (2020) 093 (arXiv:2007.05345) [DDHLM1, DDHLM2]. The shipped cell data
+(gate/cells/) are derived from the file P_qbp_qp_g_q.m that the authors provide as supplementary material at
+https://people.phys.ethz.ch/~pheno/quadruple_collinear; the page states no license (details in DATA.md). The N=4 reference function
 and its alphabet are from D. Chicherin, I. Moult, E. Sokatchev, K. Yan and Y. Zhu, "The Collinear Limit of the Four-Point Energy
-Correlator in N = 4 Super Yang-Mills Theory", arXiv:2401.06463. Exact arithmetic by FLINT through python-flint (Arb ball arithmetic
-included); polynomial algebra by SymPy; multiprecision evaluation by mpmath. The ZIP-word conventions and the `zip_num` evaluator are
-those of the sibling package `tools/subtropica`.
+Correlator in N = 4 Super Yang-Mills Theory", arXiv:2401.06463 (ancillary files, CC BY 4.0). Exact arithmetic by FLINT through
+python-flint (Arb ball arithmetic included); polynomial algebra by SymPy; multiprecision evaluation by mpmath. The ZIP-word
+conventions and the `zip_num` evaluator are those of the sibling package `tools/subtropica`. Bracketed keys resolve in REFERENCES.md
+at the repository root.
 
 ## License
 
 MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his
 supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components
-keep their own licenses (THIRD_PARTY.md).
+keep their own licenses (THIRD_PARTY.md). These grants do not cover the cell data under `gate/cells/`, which are derived from a file
+by Del Duca, Duhr, Haindl, Lazopoulos and Michel whose source states no license (DATA.md).

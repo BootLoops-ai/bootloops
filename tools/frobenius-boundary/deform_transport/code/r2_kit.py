@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-"""r2_kit.py — guard-digit-tracked mod-p^S power-series engine (vendored
-single-series engine for the deform_transport member).
+"""r2_kit.py: guard-digit-tracked mod-p^S power-series engine (single-series
+engine for the deform_transport member, copied from this project's earlier
+rounds).  The unit root is read from the ratio of truncated
+series at a Teichmuller point, which is Dwork's unit-root formula.
 
 A mod-p^S engine for the log-free solutions of an order-6 operator (and
 control operators), pushed to N = p^2 + O(1) terms so the level-1 Dwork

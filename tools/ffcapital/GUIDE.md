@@ -107,15 +107,22 @@ numkin (builds the freeze-one-scale slice farms these salvage); ratfit (1-var
 exact-fit-plus-gates analogue); the AMFlow.cpp fork
 the sibling repository amflow-cpp (resume vs salvage).
 
-CREDIT: decodes the save-state format of FireFly by Jonas Klappert and Fabian Lange
-[FF1] and Klappert, Sven Yannick Klein and Lange [FF2] (the layout written by
-RatReconst.cpp:2537-2716 and Reconstructor.hpp:2157ff, read as the file-format
-specification; FireFly is GPL-3.0-or-later, obtained upstream, not bundled, and never
-linked, imported or executed here; no FireFly code is included — see THIRD_PARTY.md
-B2), as written by Kira [Kira2, Kira3]. We are grateful to the FireFly authors for a state
-format regular enough to salvage. Bracketed keys resolve in REFERENCES.md at the
-repository root.
+CREDIT: FFCapital is a new BootLoops program that reads the saved-state files written
+by FireFly, by Jonas Klappert and Fabian Lange [FF1] and Klappert, Sven Yannick Klein
+and Lange [FF2] (GPL-3.0-or-later), as run by Kira [Kira2, Kira3]. The file layout was
+taken from FireFly's source code (the writer `RatReconst::save_state`,
+RatReconst.cpp:2537-2716, and Reconstructor.hpp:2157ff, read as the file-format
+specification): the section names, the line formats, the `ZERO` marker and the
+`validation.gz` layout. No FireFly routine is included or run; FireFly is obtained
+upstream, not bundled, and never linked, imported or executed here. Two members,
+`harvest_ffsave_eta.py` and `harvest_ffsave_2var.py`, also carry the first 40 entries
+of FireFly's table of the largest 63-bit primes, copied from `ReconstHelper.cpp`; those
+two scripts are therefore distributed under GPL-3.0-or-later with the FireFly notice in
+their headers. `recon_symbolic_d.py` carries no such table: it reads the primes at run
+time from the user's own copy of `ReconstHelper.cpp` (`--ff-helper`), and `selftest.py`
+generates them. We are grateful to the FireFly authors for a state format regular
+enough to salvage. Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+Mixed licensing. `harvest_ffsave_eta.py` and `harvest_ffsave_2var.py` are GPL-3.0-or-later (they carry a block copied from FireFly's source and follow its file writer; the FireFly copyright notice is in their headers, the license text is LICENSE-GPL-3.0 beside this file, and NOTICE beside this file says what that means). `recon_symbolic_d.py` and `selftest.py` are under the MIT License, Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

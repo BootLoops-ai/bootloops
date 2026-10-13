@@ -123,6 +123,9 @@ REFERENCES
     aside).
   Efron & Tibshirani (1993), An Introduction to the Bootstrap, Chapman &
     Hall (delete-one jackknife; here over genomic blocks).
+  Fenton, Rice, Novembre & Desai (2025), Genetics 229:iyaf023 (the two-site
+    frequency spectrum of site pairs by distance, estimated from data, as
+    a test statistic; their code is twosfs, github.com/desai-lab/twosfs).
 
 USAGE
   from twosite_spectrum import estimate, write_json

@@ -9,6 +9,11 @@ IBP generation + engine-free top-sector emit), `parallel_kira_gen_uds.py` (targe
 low-r single-sector user-defined system emits), `build_restage.py` (per-sector
 seed-pin restager) and `kira_gpl_tools.py` (loader for the two GPL tools below).
 Flat `tools/parallel_kira_gen.py` / `tools/parallel_kira_gen_uds.py` are aliases of the same scripts.
+`parallel_kira_gen.py` and `parallel_kira_gen_uds.py` are GPL-3.0-or-later: the
+`top-emit` route, the SYSTEM-file reader and the uds route write and read Kira's
+internal equation files directly, following formats and conventions read from Kira's
+GPL source (see CREDIT, NOTICE and LICENSE-GPL-3.0 in this directory).
+`build_restage.py`, `kira_gpl_tools.py` and `selftest.py` are MIT.
 NOT here, GPL: `pyred_weight.py` (pyred integral-weight codec, integral_ordering
 1..8, used by top-emit and the census) and `ffsave_degree_census.py` (ff_save
 degree-census decoder, zero solver compute) were written by reading Kira's and
@@ -170,9 +175,22 @@ reconstruction after von Manteuffel–Schabinger [vMS] and Peraro [Per16].
 (pyred/integrals.cpp, kira/ReadYamlFiles.cpp) and FireFly's save-state format; they
 are therefore GPL-3.0-or-later, credited to the Kira Developers and the FireFly
 authors in their headers, and live in kira/bootloops-tools, not in this
-MIT tree. The recipes and the parallel-generation scripts are ours on top.
+tree. Kira, FireFly and Fermat are public programs by their authors, run here
+unmodified apart from the two-patch Kira fork; the BootLoops scripts around them
+split, restage and diagnose Kira jobs. Two of them (`top-emit` in
+`parallel_kira_gen.py`, with its SYSTEM-file reader, and `parallel_kira_gen_uds.py`)
+write and read Kira's internal equation files directly, following formats and
+conventions read from Kira's GPL source (`src/kira/kira.cpp`,
+`src/kira/reductionFF.cpp`, `src/pyred/relations.cpp`, `src/pyred/relations.h`,
+`src/pyred/integrals.cpp` at Kira 3.1; Copyright (C) 2017-2025 The Kira Developers):
+the SYSTEM block layout and its token order, the file scan of the loader, the
+preferred-master weight rule and the meaning of the operator templates are stated in
+that source and in no Kira paper. Those two scripts are therefore distributed under
+GPL-3.0-or-later with the Kira notice in their headers. The sharding by cover tops, the
+synthetic targets, the union and deduplication in merge, the restager and the recipes
+were written for BootLoops.
 Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+Mixed licensing. `parallel_kira_gen.py` and `parallel_kira_gen_uds.py` are GPL-3.0-or-later (they follow Kira's source; the Kira copyright notice is in their headers, the license text is LICENSE-GPL-3.0 beside this file, and NOTICE beside this file says what that means). `build_restage.py`, `kira_gpl_tools.py` and `selftest.py` are under the MIT License, Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

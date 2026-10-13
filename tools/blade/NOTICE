@@ -11,7 +11,10 @@ blade) applies to those portions. The translated
 modules are extension.py, ansatz.py, scheme.py, search.py, adaptive.py and
 semibl.py (each cites the upstream .wl source lines it follows); formats.py and
 pipeline.py implement the file layouts and stage contracts of Blade's C
-programs. The upstream notice is reproduced here:
+programs; and the exact back end of probe.py is a Python counterpart of the
+block solve of Blade's ssolve stage (src/ssolve/block.c), while its second
+back end runs the ssolve program itself. The upstream notice is reproduced
+here:
 
     MIT License
 

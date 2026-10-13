@@ -23,8 +23,10 @@ def _letters_match(got, expected_exprs):
 
 
 def test_box1l():
-    """1-loop massless on-shell box: PLD alphabet = {s, t} (leading sing 1/(st);
-       no u-letter — matches the PLD.jl reference output)."""
+    """1-loop massless on-shell box: alphabet = {s, t} after this package's pruning of
+       second-type letters (leading sing 1/(st); no u-letter).  PLD.jl by Fevola, Mizera
+       and Telen returns {s, s + t, t} for this diagram (PLD database, entry A4 with
+       zero masses), so {s, t} is not PLD.jl's output."""
     gs = load_spec(os.path.join(HERE, "graph_specs", "box1l.json"))
     log = run(gs, out_path=None, face_timeout=20, global_minutes=5)
     ok, miss = _letters_match(log["alphabet"], ["s", "t"])

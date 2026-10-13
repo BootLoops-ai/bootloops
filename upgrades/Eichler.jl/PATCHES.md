@@ -2,8 +2,10 @@
 
 ## What this is
 
-Eichler.jl is an **original package**, not a fork or port of an external engine — there
-is no upstream code base and hence no patch set against one. It is the
+Eichler.jl is a package written for BootLoops. It is not a fork of an external engine,
+so there is no patch set against an upstream tree. Public programs for parts of the same
+tasks existed before it (listed under "Prior public code" below), and one block of
+`src/siegel.jl` follows FLINT's source (listed under "Attribution"). It is the
 certified-arithmetic layer of the elliptic Feynman-integral bootstrap: Γ₁(6) modular
 forms and iterated Eichler integrals, the all-orders sunrise representation of
 Adams–Weinzierl, elliptic-curve period/quasi-period evaluation, a generic validated
@@ -23,7 +25,16 @@ audit record: `audits/AUDIT.md`.
   and F. J. Wagner, arXiv:2502.00118 (BCNTW, the diphoton amplitudes and their ancillary
   data). The full attribution list is the "Attribution" section of README.md. The library
   implements their published mathematics; the code, the rigor architecture, and the
-  certified bounds are original.
+  certified bounds were written for BootLoops, with the exception stated next.
+- **Code that follows FLINT**: in `src/siegel.jl`, the six transvectant calls of
+  `igusa_clebsch` follow `acb_theta_g2_transvectants` in FLINT,
+  `src/acb_theta/g2_covariants.c`, Copyright (C) 2023 Jean Kieffer, LGPL-3.0-or-later
+  (same argument tuples, same intermediate covariants C_24, C_32, C_32^3, same choice of
+  the degree-6 and degree-10 generators). Those lines are distributed under
+  LGPL-3.0-or-later (`LICENSE-LGPL-3.0`, `NOTICE`); the notice is repeated at the
+  function. The other FLINT contact in `siegel.jl` (`siegel_theta`, `siegel_theta_all`,
+  `igusa_invariants`, `thomae_sextic`, `rosenhain_from_tau`) consists of one-call
+  wrappers over FLINT's public functions through Arblib.jl.
 - **Dependencies**: Arblib.jl over FLINT/Arb (LGPL), Nemo.jl. Obtain via the standard
   Julia package manager (`Pkg.instantiate()`).
 - **Cross-check oracle**: `ginac-oracle/` is a small original C++ program that drives
@@ -40,10 +51,34 @@ audit record: `audits/AUDIT.md`.
   downloads them on demand, and the report there records exactly which entries are
   consumed and what was verified against them.
 
+## Prior public code
+
+Programs by other authors that cover parts of the same ground and predate this package:
+
+- **GiNaC** (version 1.8 and later; M. Walden and S. Weinzierl, arXiv:2010.05271;
+  GPL-2.0-or-later) evaluates the same iterated integrals of modular forms in floating
+  point. It is the cross-check used here (`ginac-oracle/`). What Eichler.jl adds is a
+  proved error bound on every value.
+- **hcperiods** (P. Molin and C. Neurohr, arXiv:1707.07249; github.com/pascalmolin/hcperiods;
+  MIT) computes period matrices of hyperelliptic curves in Arb with proved error bounds.
+  The device of building a smooth branch of the square root on a segment from per-factor
+  principal roots, used in the genus-2 period layer of `src/siegel.jl`, is the central
+  device of their paper.
+- **ore_algebra** (github.com/mkauers/ore_algebra; analytic continuation of D-finite
+  functions with rigorous bounds by M. Mezzarobba; GPL-2.0-or-later) covers the task of
+  `src/frobenius.jl` with sharper bounds and with regular singular points, which
+  `frobenius.jl` does not handle.
+- **BananaAmplitude.gp** (the PARI/GP script distributed by the Bonn group as
+  supplementary material to arXiv:2008.10574 [BFKNS]) computes the banana amplitude from
+  local Frobenius bases matched between neighboring singular points. The script carries no
+  license statement.
+
 ## Layout
 
 - **LICENSE**: MIT, Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz;
-  code written by Claude (Anthropic) under his supervision.
+  code written by Claude (Anthropic) under his supervision. **NOTICE**,
+  **LICENSE-LGPL-3.0** and **LICENSE-GPL-3.0**: the notice and license texts for the
+  block of `src/siegel.jl` that follows FLINT.
 - The audited independent sunrise anchor `anchor_sunrise_dps130_M240.json`
   (AMFlow-side, Cauchy order M=240, honest to ~128 digits) ships in `test/data/`;
   `test/runtests.jl` reads it from there (override with `EICHLER_AMFLOW_ANCHOR`).
@@ -52,7 +87,7 @@ audit record: `audits/AUDIT.md`.
 
 ## Candidate results to report upstream
 
-Not applicable as patches (original package). One numerical caveat, recorded in
+Not applicable as patches (this package is not a fork). One numerical caveat, recorded in
 `NUMERICS-RESULTS.md`: at Cauchy order M=120 the dps-130 anchor values are honest
 only to ~72 digits (the ε⁻² entry deviates from exactly 3/2 at digit 73); the
 M=240 run is good to its full ~128 digits.

@@ -317,6 +317,11 @@ def bivar_eval_var(P2, xQ):
 
 def thiele_ratd_var(xs, ys, mfit=_D_FIT_N, raise_on_dfail=True):
     """Bivariate (d, var) exact rational reconstruction.
+    (The name is historical: the body is a Pade fit by an integer nullspace,
+    not Thiele's continued-fraction recursion.  Reconstruction over numeric
+    values of a variable is the established workflow of FIRE's
+    Reconstruction.m, arXiv:2303.02511, and of FireFly; no code of theirs is
+    used here.)
       xs : list[fmpq]                     var-nodes, length K (numkin points)
       ys : list[(str, str)]               (numerator_src, denominator_src) --
                                            Fermat-style strings in `d` ONLY,

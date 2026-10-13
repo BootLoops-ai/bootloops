@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Compatibility shim for the flat path; engine: tools/kira-stack/parallel_kira_gen.py (host tool: kira-stack).
+# The script this alias runs is GPL-3.0-or-later (it follows Kira's source); see tools/kira-stack/NOTICE.
 import os, sys
 _p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "kira-stack", "parallel_kira_gen.py")
 sys.argv[0] = _p

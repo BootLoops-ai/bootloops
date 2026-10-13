@@ -1,11 +1,14 @@
 # Core G(a₁,…,aₙ; z) evaluator.
 #
-# Algorithm (Vollinga–Weinzierl hep-ph/0410259, plus a rigorous tail bound):
+# Algorithm: steps 1 and 5 (trailing zeros, Hölder convolution) are the formulas
+# of Vollinga–Weinzierl, hep-ph/0410259; the series with its rigorous tail bound,
+# the choice of the Hölder parameter, the path split of step 2 and the
+# quadrature fallback are ours.
 #   0. all aᵢ = 0                → logⁿz/n!.
 #   1. trailing zeros            → shuffle-regularise to words ending in aₙ≠0.
 #   2. ∃ aᵢ on the open segment  → analytic_continue: Chen path-concatenation
-#      (0,z)                       through a complex midpoint zₘ (VW §5 /
-#                                   Frellesvig–Tommasini–Wever 1601.02649 §4.2).
+#      (0,z)                       through a complex midpoint zₘ (Chen's
+#                                   path-composition formula; our treatment).
 #                                   The ±iπ monodromy pieces emerge automatically
 #                                   from the principal logs along the deformed
 #                                   path; the side is fixed by `prescription`.
@@ -168,7 +171,8 @@ function _gpl_series(a::_ACBVEC, z::Acb, prec::Int)
 end
 
 # ---------------------------------------------------------------------------
-# Hölder convolution (Vollinga–Weinzierl eq. 34)
+# Hölder convolution (Vollinga–Weinzierl hep-ph/0410259, after Borwein,
+# Bradley, Broadhurst and Lisonek)
 # ---------------------------------------------------------------------------
 # For zₙ ≠ 0 (no trailing zero) and z₁ ≠ 1 (convergent at upper endpoint):
 #   G(z₁,…,zₙ; 1) = Σ_{j=0}^{n} (−1)ʲ G(1−z_j,…,1−z₁; 1−1/p) · G(z_{j+1},…,zₙ; 1/p).
@@ -218,7 +222,7 @@ function _hoelder(b::_ACBVEC, prec::Int, cache, depth::Int)
 end
 
 # ---------------------------------------------------------------------------
-# Analytic continuation across on-path letters (VW §5; FTW 1601.02649 §4.2)
+# Analytic continuation across on-path letters (Chen path composition; ours)
 # ---------------------------------------------------------------------------
 # When some aₖ lies on the open straight-line segment (0,z), the defining
 # integral has a 1/(t−aₖ) pole on the contour. The value of G is fixed by an
@@ -301,9 +305,9 @@ end
 """
     analytic_continue(a, z, prec; prescription = :ginac, cache = nothing) -> Acb
 
-G(a₁,…,aₙ; z) when one or more aₖ lie on the open segment (0,z). Implements the
-Vollinga–Weinzierl §5 reduction via Chen path-concatenation through a complex
-midpoint: with b = a/z and zₘ = ½ − i·s·h (s = prescription sign),
+G(a₁,…,aₙ; z) when one or more aₖ lie on the open segment (0,z). Uses Chen
+path-concatenation through a complex midpoint (our own treatment; it is not the
+algorithm of Vollinga–Weinzierl §5): with b = a/z and zₘ = ½ − i·s·h (s = prescription sign),
 
     G(b; 1) = Σ_{k=0}^{n} G(b₁−zₘ,…,b_k−zₘ; 1−zₘ) · G(b_{k+1},…,b_n; zₘ),
 

@@ -32,12 +32,12 @@ ENGINE_SHA256 = {
     "twosfs_engine.py":        "26da059b0c71db87496236e49ff6c59743ddaed2248cbf1caf6ac53b04156296",
     "twosfs_hull.py":          "b26128b08fb8a49e0e021e9690f04818c6766795ee4b9ce2990e19263dc03c20",
     "twosfs_certificates.py":  "ec24cc1a9e1ba61e681473bd09e3ebe05438250041a869a6b72b154084f16144",
-    "foldgate_engine.py":      "a4b537617a7479237e53af96950a3c5a5a0844df47697b84fafe19e885ba217d",
+    "foldgate_engine.py":      "2da33d671c3bd64fe42eb2b4e19c79b5d62e94246e795939d6388387db4f6035",
     "twosite_projection.py":   "aa72890298fbbcf1a36598175baeb5a31d2d608788ce3d5fa59968a657b67c26",
-    "twosite_spectrum.py":     "6d16ef086f3f8a91ac3dd69b166f3236b6355f7717e83f2e5efd81ddbf7c0a3c",
+    "twosite_spectrum.py":     "cc38d504f9167a0cf4d6e22e2a1ed061a812e0cdcfb85450a06c574434e7380e",
     "transient_enclosure_engine.py":  "60a7c023ce57ef6c71638f3d9ce73c9b1b20f97033d7dd4db4fa7e3e8122b13c",
     "synth_truths.py":                "6a2e8bc301beec10e8ebdb55d44895b9a3a7101fb4f52841df32db7d2b4cd55e",
-    "twowindow_sim.py":               "a5f0efddc5ceef856a81584d9265094cb07445f0ae657fa1a6c6078cd57e4acf",
+    "twowindow_sim.py":               "fafbb0cd5791c508e5145c1a0cd98038cbef099d6cc4044344bb2b98b05db0b8",
 }
 
 # Certificate-instrument files.

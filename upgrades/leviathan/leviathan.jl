@@ -1,5 +1,5 @@
 #!/usr/bin/env julia
-# leviathan CLI — chi-drop Landau singularities (arXiv:2606.29612 reimplementation).
+# leviathan CLI: chi-drop Landau singularities (Julia port of the method of arXiv:2606.29612; PATCHES.md).
 # Run under:  julia +1.10 --project=<dir with Oscar+JSON, e.g. this one> leviathan.jl <cmd> <input>
 # Commands:
 #   chi <input>         per-sector chi (nu=0) + regulated chi + additivity

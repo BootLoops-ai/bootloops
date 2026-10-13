@@ -30,7 +30,9 @@ z2^j coefficient by the 61/61 gate).
 zeta_sv[campaign](c) := phi^-1( sv_camp( phi( mzv(c) ) ) ), exact Fraction
 linear solve over ALL weight-w ring canonical monomials. The ring is
 depth<=3-truncated, so for w >= 12 the monomial count is SMALLER than the
-Zagier dim d_w (deficit = depth>=4 generators, first zeta(6,4,1,1) at w=12):
+Zagier dim d_w (deficit = depth>=4 generators, first zeta(6,4,1,1) at w=12,
+as in the MZV Data Mine paper of Bluemlein, Broadhurst and Vermaseren,
+arXiv:0907.2557):
 the solve is RECTANGULAR with a full-column-rank assert (phi injective on
 the ring) + exact per-target consistency assert — a target needing depth>=4
 content HARD-FAILS (reported, never smoothed) — + a phi-roundtrip assert on
@@ -498,6 +500,10 @@ def formula_strings(camp, coeffs):
 
 # ------------------------------------------------------------------- gates
 
+# Note on the citations below: the form "rho(zeta(3,5)) = -5 f3f5" is that of
+# arXiv:2511.15883; Brown, arXiv:1102.1310, prints the same number as
+# phi^B(zeta(3,5)) = -5 f5f3 (opposite word order).  The pair -14, -6 for
+# zeta(3,7) was printed first by Brown, arXiv:1102.1310.
 LIT_LOCKS = [
     # (symbol, word, expected coefficient, citation)
     (('m2', 5, 3), (3, 5), Fr(-5),

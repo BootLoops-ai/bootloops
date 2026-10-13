@@ -1,5 +1,5 @@
 """ellipticus.qengine — Kronecker-Eisenstein / tau-word q-series engine
-(engine q: the GiNaC-class fast path) with certified tail bounds.
+(engine q: the q-series fast path) with certified tail bounds.
 
 COMPOSES (bundled engines, path-imported, NOT rewritten):
   * vendor/kronecker.py (Kronecker-Eisenstein engine) — g^(n)(z,tau) (three independent

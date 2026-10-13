@@ -265,8 +265,10 @@ def gate_family(banked, new, max_fit=140, probe=DEFAULT_PROBE, labels=None,
     banked, new: lists of (x, [y_0..y_{m-1}]) with exact Fractions; every
     banked row must be trusted (stage-1-verified).  Fits each component,
     validates in-sample held-out points beyond max_fit, gates all new rows.
-    Report keys mirror ACHECK_GATE.json: entries_ok / entries_fail / new_ok /
-    new_fail / cf_depths / fails.  workers>1 parallelizes over components.
+    Report keys (entries_ok / entries_fail / new_ok / new_fail / cf_depths /
+    fails) are those of ACHECK_GATE.json, the report of the earlier
+    check of this project from which this routine was generalized (not part of this release).
+    workers>1 parallelizes over components.
     """
     if not banked:
         raise ValueError('no banked rows')

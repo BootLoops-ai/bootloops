@@ -62,12 +62,18 @@ res = lap.eliminate(system, lap.Schedule(policy="B2FT"))
 
 ## Quickstart — user-defined system (Route B)
 
-Route B reads the DOCUMENTED, stable kira `user_defined_system` input
-format (the equation files a `reduce_user_defined_system` job consumes:
+Route B reads kira's `user_defined_system` input format, as specified in the
+Kira 2.0 paper (arXiv:2008.06494) and, where the paper is silent, as Kira's
+parser reads it (the equation files a `reduce_user_defined_system` job consumes:
 one `integral*coefficient` term per line, blank-line equation splits,
 integer-weight or `name[indices]` notation, plain or gzipped, file or
 directory of `.kira`/`.kira.gz`). No Kira installation is needed — these
-are files a user writes or any IBP generator emits:
+are files a user writes or any IBP generator emits. The format is specified
+in the Kira 2.0 paper (arXiv:2008.06494); the reader
+(`ibplapper/adapters/user_system.py`) follows the parser of Kira
+(P. Maierhöfer, J. Usovitsch, P. Uwer, J. Klappert, F. Lange, Z. Wu;
+`src/pyred/interface.cpp`, `src/pyred/integrals.cpp`; GPL-3.0-or-later) and
+is itself distributed under GPL-3.0-or-later (see License below):
 
 ```python
 from ibplapper.adapters import user_system
@@ -78,8 +84,7 @@ system, sysd = user_system.load(
 res = lap.eliminate(system, lap.Schedule(policy="B2FT"))
 ```
 
-Because the format is documented there is nothing empirical to pin:
-Route B has NO version guard and NO weight decode — the
+Route B has no version guard and no weight decode: the
 `KiraVersionError` / `ABSENT-UNGUARDED` risk class of Route A does not
 exist here. In integral notation the adapter assigns deterministic
 Laporta ranks (ascending `(t, r, s, sector, family, indices)`; higher
@@ -104,7 +109,7 @@ sector.
 - No path feeds results back into Kira (no import API); consumers take
   Winnow tables/receipts directly.
 - These caveats are Route A's alone. Route B (`adapters/user_system.py`,
-  the documented stable `user_defined_system` format — see its quickstart
+  kira's `user_defined_system` input format; see its quickstart
   above) has no version-pinned empirics at all. Route C (patching Kira to
   call Winnow) remains NOT REALISTIC: C++ with no eliminator plugin
   interface.
@@ -190,8 +195,10 @@ ibplapper/
                           version guard + provenance gate (all kira
                           empirics HERE)
   adapters/weights.py     the version-pinned empirical weight decode
-  adapters/user_system.py Route B — documented user_defined_system reader
-                          (no version guard: nothing empirical to pin)
+  adapters/user_system.py Route B: reader of kira's user_defined_system input
+                          format (specified in the Kira 2.0 paper; rules the
+                          paper leaves open follow Kira's parser);
+                          follows Kira's parser, GPL-3.0-or-later
 winnow/                   `import winnow` alias (re-exports ibplapper)
 tests/
   run_tests.sh            full battery (any FAIL = nonzero exit)
@@ -216,4 +223,4 @@ with this tree and SKIP cleanly unless `WINNOW_BANKED_ROOT` /
 
 ## License
 
-MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+Mixed licensing. Winnow's elimination engine and per-row certificates were written for BootLoops and are under the MIT License, Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. One module, `ibplapper/adapters/user_system.py`, follows the parser of Kira (Copyright (C) 2017-2025 The Kira Developers) and is distributed under GPL-3.0-or-later: the notice is in its header, the license text is LICENSE-GPL-3.0 beside this file, and NOTICE beside this file says what that means for the package as imported and how to make an MIT-only build. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

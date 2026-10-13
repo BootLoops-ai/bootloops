@@ -1,6 +1,10 @@
 # Environment for the Leviathan chi-drop engine (instantiate, then run the CLI with
 # --project pointed here). builder.jl additionally needs the external PLD package
 # (ENV["PLD_PATH"]), which brings its own environment.
+# Leviathan is a Julia port of the method of V. Chestnov, G. Crisanti and M. Giroux
+# (arXiv:2606.29612), in part translated from their Mathematica code and from DiscKosky by
+# G. Crisanti, L. Lippstreu, A. J. McLeod and M. Polackova; see NOTICE and PATCHES.md.
+# The authors field below names the maintainer of this port, not the authors of the method.
 name = "Leviathan"
 uuid = "457c6e3a-b22b-4fc9-8833-02c902b651dd"
 version = "1.0.0"

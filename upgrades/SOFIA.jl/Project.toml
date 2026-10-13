@@ -1,6 +1,13 @@
+# Julia translation of SOFIA, by Miguel Correia, Mathieu Giroux and Sebastian
+# Mizera (written in the Wolfram Language; MIT;
+# https://github.com/StrangeQuark007/SOFIA) and, for the odd-letter
+# construction, of Effortless.m by Antonela Matijašić and Julian Miczajka
+# (MIT). This package carries the name of their program and is not their
+# release; it is not affiliated with or endorsed by them. Please cite their
+# work. See LICENSE and PATCHES.md beside this file.
 name = "SOFIA"
 uuid = "63a4f10d-0110-474a-98e0-c53dfedb1676"
-authors = ["Matthew D. Schwartz"]
+authors = ["Miguel Correia (SOFIA, original program)", "Mathieu Giroux (SOFIA, original program)", "Sebastian Mizera (SOFIA, original program)", "Antonela Matijašić (Effortless)", "Julian Miczajka (Effortless)", "Matthew D. Schwartz (Julia translation)"]
 version = "1.0.0"
 
 [deps]

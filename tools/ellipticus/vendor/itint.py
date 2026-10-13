@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 r"""itint.py -- AGW tau-iterated-integral engine via the qbar-series (depth-3 + eta_2).
 
-NEW TOOL (built for the sunrise eps^1 / weight-3 J_4^(3) closure).  Computes the
+Written for BootLoops (built for the sunrise eps^1 / weight-3 J_4^(3) closure) from the
+paper of C. Bogner, S. Mueller-Stach and S. Weinzierl, arXiv:1907.01251.  The parser
+below (series_for_form, parse_mpl_poly) reads the supplementary Maple file of that paper
+(supplementary_material.mpl, inside its arXiv source) and uses that file's names for
+the forms and words; "eq." numbers in the comments refer to the paper and its TeX
+source.  The same integrals can be evaluated with GiNaC (Walden and Weinzierl,
+arXiv:2010.05271); no GiNaC code is used here.  Computes the
 Bogner-Mueller-Stach-Weinzierl (1907.01251) iterated integrals
 
     F(omega_1, ..., omega_k) = int_{i inf}^{tau} omega_1(t1) int_{i inf}^{t1} omega_2(t2) ...

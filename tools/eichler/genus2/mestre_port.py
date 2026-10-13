@@ -11,11 +11,13 @@
 # (J.-F. Mestre, "Construction de courbes de genre 2 a partir de leurs modules", 1991;
 # K. Lauter and T. Yang, J. Number Theory 131 (2011) 936; invariants after J. Igusa,
 # 1960) keeps SageMath's conventions and normalizations so that its published doctest
-# values serve as exact self-checks; the transvectant routine is written independently.
+# values serve as exact self-checks; the transvectant routine builds the same formula
+# (Mestre 1991, as printed in SageMath's documentation) by a different construction.
 # It is Copyright (c) 2026 Anthropic, PBC; created by Matthew D. Schwartz, code written
 # by Claude (Anthropic) under his supervision, and is distributed under the same GNU
-# General Public License v2.0 or later. The rest of this package is MIT-licensed; see
-# ../NOTICE (tools/eichler/NOTICE).
+# General Public License v2.0 or later. The rest of this package, except conic_fast.py
+# (GPL-2.0-or-later, see its header), is MIT-licensed; see ../NOTICE
+# (tools/eichler/NOTICE).
 #
 # mestre_port.py: Mestre/Igusa-Clebsch toolkit for eichler.genus2 (no Sage dependency).
 import sympy as sp

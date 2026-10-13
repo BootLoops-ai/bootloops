@@ -4,7 +4,9 @@ One directory per package. Every package carries a `GUIDE.md` — purpose, when 
 reach for it, its acceptance gates and known hazards, and a link to its page on
 [bootloops.ai](https://www.bootloops.ai). The thematic roster (what belongs to what) is `../toolkit/ours/README.md`; the
 working recipes are `../toolkit/ours/RECIPES.md`; external engines the packages drive are catalogued in
-`../toolkit/external/TOOLS.md`. Our own engines (Eichler.jl, SOFIA.jl, Leviathan) ship in full
+`../toolkit/external/TOOLS.md`. The engines Eichler.jl, SOFIA.jl (a Julia translation of SOFIA) and
+Leviathan (a Julia port, in part translated from the code of Chestnov, Crisanti and Giroux and of
+DiscKosky) ship in full
 under `../upgrades/`; the patched forks of Kira, Blade and AMFlow.cpp that several packages drive
 live in their own repositories, listed in [`../upgrades/ENGINES.md`](../upgrades/ENGINES.md)
 together with the environment variables through which the packages find the built binaries.
@@ -57,11 +59,11 @@ clone differs by package:
 | `annihilator/` | Picard–Fuchs / holonomic operator from an exact series alone (minimal P-finite recurrence + θ-form ODE) | selftest |
 | `ansatzer/` | Ansatzer — predicts residual symbol-ansatz dimension per weight after structural cuts, before oracle-farming | selftest |
 | `baller/` | arbitrary-precision ball arithmetic for science — the certified instruments under one front door; its hygiene wing owns the dps_lint mpmath import-time-dps AST linter (`python3 tools/baller/baller/dps_lint.py FILE_OR_DIR ...` / `python3 -m baller.hygiene lint ...`, battery leg L21) and the purity-scan literal scanner | partial |
-| `blade/` | Wolfram-free Blade block-triangular IBP pipeline (BT search, per-point probes, symbolic tables) | partial |
+| `blade/` | Python port of Blade (X. Guan, X. Liu, Y.-Q. Ma, W.-H. Wu; MIT): Wolfram-free block-triangular IBP pipeline (BT search, per-point probes, symbolic tables) | partial |
 | `clinch/` | certified local interval-Newton convergence certificates for fitted hierarchy optima | partial |
 | `coalescer/` | connection coefficients of a Fuchsian operator onto its fractional-power (finite-monodromy) Frobenius branches by spectral projection of the local monodromy; generic door --op FILE.json (your operator + exact seed; template examples/gauss_2f1.json), banana threshold = the worked example (--masses) | selftest |
-| `cosmoflow/` | FRW/dS wavefunction and correlator integrands and letter alphabets for an arbitrary site graph (chains, rings, stars, multi-loop polygons) via `alphabet_graph(nv, edges)` / CLI kind `graph`, plus the Cayley-Menger Baikov polynomial of any 1-loop n-gon; the 1-loop triangle numerics (oracle, maxcut periods, two-site chain) ship as the worked example under `examples/triangle/` | selftest |
-| `counterweight/` | Counterweight — no-Mathematica ε-factorization of Kira-built connections (with `canonical_form/` member) | selftest |
+| `cosmoflow/` | FRW/dS wavefunction and correlator integrands and letter alphabets for an arbitrary site graph (chains, rings, stars, multi-loop polygons) via `alphabet_graph(nv, edges)` / CLI kind `graph`, plus the Cayley-Menger Baikov polynomial of any 1-loop n-gon; the 1-loop triangle numerics (oracle, maxcut periods, two-site chain) ship as the worked example under `examples/triangle/`. Unrelated to the CosmoFlow package of Werth, Pinol and Renaux-Petel (arXiv:2402.03693). | selftest |
+| `counterweight/` | Counterweight: an implementation of R. N. Lee's algorithm (arXiv:1411.0911) for ε-factorization of Kira-built connections, without Mathematica (with `canonical_form/` member) | selftest |
 | `cutbasis/` | geometric master-basis selector on the maximal cut (arXiv:2511.15381 Algorithms 1–3) writing Kira preferred_masters, with the certified reducer comparison (`evaluate`) | partial (the reducer check needs Kira and Fermat; skipped with a named line otherwise) |
 | `dipstick/` | pre-compute triage: PF order / GKZ rank / count / cycle-type probes before committing a farm, plus the expansion-by-regions completeness certifier (`regions` member: Newton-polytope facet census, two independent checks; julia + Oscar, skips by name without them); carries `run_msolve_capped.sh`, the mandatory address-space-cap wrapper for every msolve exec | selftest |
 | `dogtag/` | Dogtag — integral-family identity checks before compute is spent on a family file: isomorphism to a catalog family up to loop-momentum relabeling, planar or crossed in the physical leg order, cut signature, family-versus-drawn-graph compare (catches family/topology mislabels; formerly `topology-audit`, script `topology_audit.py`); member loomcheck/: Yangian/loom/fishnet applicability screen for position-space conformal integrals | selftest |
@@ -85,7 +87,7 @@ clone differs by package:
 | `maxcut/` | maximal-cut kit: cut-geometry classification, canonical UT rotation, maxcut DE assembly | partial |
 | `membound/` | soft-region (ω→0) boundary constants as frequency-space Bessel-kernel integrals for worldline/post-Minkowskian-type expansions: ε-layer moments of user-supplied two- and three-frequency ω-cores from a JSON spec (`python3 -m membound --spec core.json`), assembled into ω^(−kε)-layer boundary vectors, with retarded/advanced i0⁺ per frequency factor and a phase-only 'fey' diagnostic flag; worked example and gate: the PM memory family (c_M = 1) | partial |
 | `mixalot/` | exact Bayesian evidence for mixture models, in a box (sha-pinned assembly package); members include the exact box-moment contiguity walker `mixalot/boxwalk/` (mod-p walk + CRT, `python3 -m mixalot.boxwalk`) | selftest |
-| `nestor/` | certified-quadrature front door: node-farmed nested tanh-sinh with per-level precision ladder, plus singularity-subtracted dispersion quadrature (nestor.dispersion) with a worked one-loop-box kernel example | selftest |
+| `nestor/` | high-precision quadrature front door (digits are measured agreement between refinements, not a proven bound): node-farmed nested tanh-sinh with per-level precision ladder, plus singularity-subtracted dispersion quadrature (nestor.dispersion) with a worked one-loop-box kernel example | selftest |
 | `numkin/` | freeze-one-scale rescue for stuck multi-var FireFly reductions (with basisland member) | smoke |
 | `pmflow/` | self-consistent auxiliary-mass-flow CLI for cut-eikonal (PM) integral families | smoke |
 | `popcorn/` | certified population-genetics likelihoods: exact/ball-certified selection-SFS vectors + gradients, certified DFE-mixing kernel, dominance; plus exact Lambda-coalescent expected SFS, float-validated two-locus moments and transient selected SFS under piecewise-constant N(t), an EPO ancestral-state join utility; exact linked two-site frequency spectra E[L_i L_j] under Lambda-coalescents with exact in/out certificates against every variable-size Kingman history, exact minor-allele folding of two-site spectra with class-membership deciders, and an exact two-site genotype projection + two-site spectrum estimator (VCF/TSV, cM or bp bins, block jackknife); certified (Arb-ball, model-conditional) enclosures of the transient selected SFS under piecewise-constant N(t) at small n, and msprime simulation harnesses — planted SFS/two-site truths with seeded synthetic genotype + polarization tables, and a two-window/two-locus Monte Carlo with jackknife errors | selftest |
@@ -94,7 +96,7 @@ clone differs by package:
 | `rankscreen/` | multi-prime parallel rank + inconsistency screen for exact-Q eliminations | selftest |
 | `ratfit/` | exact rational-function reconstruction and gating suite for sampled path-DE data (Thiele/Newton/mod-p core, thiele_gate, li2close, design_grid), now with degree_alias: failure-axis triage for reconstruction failures, grid alias vs CRT height | partial |
 | `seedling/` | pre-reduction front door for kira: certified predictive staging (pin/run/preflight/certify/census) + family preflight (`audit` symmetry group, `identity` transcription check) | partial |
-| `subtropica/` | SubTropica — no-Wolfram pipeline over the HyperFLINT hyperlogarithm engine (one GPL-3.0 file, see its NOTICE) | partial (build the engine first) |
+| `subtropica/` | Unofficial Julia port of the front end of SubTropica (M. Giroux, S. Mizera, G. Salvatori, arXiv:2604.20954, MIT), driving their HyperFLINT hyperlogarithm engine without Wolfram (one GPL-3.0 file, see its NOTICE) | partial (build the engine first) |
 | `surd/` | Surd — exact hyperlogarithm integration of three-fold Cheng-Wu integrals on a one-parameter kinematic slice with radical (square- and cube-root) last-variable letters carried exactly: a-priori-alphabet fibration in Q[x,t,j]/(j²+1), function-level third step in Q(i)(t)[ρ]/(L), weight ≤ 3 hyperlogs with exact coefficients, structure tools and certified Arb reference evaluators (LO QCD/N=4 collinear four-point energy correlator as the worked case) | partial |
 | `terrier/` | unified string-vacua/F-theory suite: certified CY period values, lattice wing, census wing | partial |
 | `tropical-sampler/` | Borinsky–Sattelberger–Sturmfels–Telen (BSST) tropical importance sampling (arXiv:2204.06414 Algorithm 1, exact-fraction reimplementation) + `cegm_gj/` certified-value leg (tropical-cone Gauss-Jacobi, 30-60d two-run gates) | selftest |
@@ -124,14 +126,16 @@ is outside this index and outside `run_selftests.py`, and its self-test is
   return in a later one.
 - **External engines** — Kira, FireFly, FORM, AMFlow, Blade, FLINT, msolve,
   Singular, OSCAR, and the rest are catalogued with versions, licenses, and
-  obtain-upstream notes in `../toolkit/external/TOOLS.md`. Our own engines
-  ship in full under `../upgrades/`; the patched forks of Kira, Blade and
+  obtain-upstream notes in `../toolkit/external/TOOLS.md`. The engines Eichler.jl,
+  SOFIA.jl and Leviathan ship in full under `../upgrades/`; the patched forks of Kira, Blade and
   AMFlow.cpp live in their own repositories, listed in
   [`../upgrades/ENGINES.md`](../upgrades/ENGINES.md).
 - **JaCK & Jill** — the exact and certified Bayesian-evidence package for
   phylogenetic models (Python package `phyloexact`) lives in its own
   repository, `jackandjill` (published beside this one),
-  with its own self-certification suite. The Mixalot `boxwalk` member's example that builds a
+  with its own self-certification suite. Its big-integer printer follows CPython's
+  int_to_decimal (Tim Peters, PSF License) and its sampling kernel uses Vigna's public-domain
+  generators. The Mixalot `boxwalk` member's example that builds a
   Jukes–Cantor quartet vendors the two small kit modules it needs under
   `mixalot/mixalot/boxwalk/examples/jc_kit/`.
 

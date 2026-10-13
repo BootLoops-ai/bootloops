@@ -109,6 +109,10 @@ def classify_series(series, series_aux=None, max_order=6, degz_max=8):
                 type=typ, leading_symbol=lead,
                 method='series-krylov', wall_s=round(time.time()-t0,2))
 
+# classify_lp runs tools/pf_rank.jl (Dipstick), which loads the Leviathan engine in
+# upgrades/leviathan for chi_regulated. Leviathan is a Julia port of the method of Chestnov,
+# Crisanti and Giroux (arXiv:2606.29612), in part translated from their Mathematica code and
+# from DiscKosky by Crisanti, Lippstreu, McLeod and Polackova. None of that code is in this file.
 def classify_lp(G, kin, x, svar, Lmax=6, timeout=300):
     """Track B via pf_rank.jl (mod-p Griffiths–Dwork + χ_regulated GB-staircase)."""
     t0=time.time()

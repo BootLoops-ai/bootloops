@@ -1,0 +1,34 @@
+winnow (tools/winnow, Python package ibplapper), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE), with the one exception stated next.
+
+Mixed licensing. Everything in this package is MIT-licensed EXCEPT
+ibplapper/adapters/user_system.py, the reader for Kira's user-defined-system
+equation files. Its file reader follows the parser of Kira
+(https://gitlab.com/kira-pyred/kira, tag 3.1, commit 5760f42):
+src/pyred/interface.cpp (FileSystem::get_filenames and the file overload of
+System::add_forward) and src/pyred/integrals.cpp (split_intcoeff),
+Copyright (C) 2017-2025 The Kira Developers (Fabian Lange, Johann Usovitsch,
+Zihao Wu; Jonas Klappert; Philipp Maierhoefer; Peter Uwer), licensed under the
+GNU General Public License v3.0 or later. The module is not a translation of
+that code. It reproduces rules that Kira's source states and Kira's papers do
+not (files whose name starts with "." are skipped; compression is decided by
+content, not by extension; an equation never continues into the next file; a
+line without "*" is refused, comment lines included), and it carries one of
+Kira's error messages ("ill-formed integral*coefficient: ") word for word. It
+is therefore distributed under the GNU General Public License v3.0 or later
+(LICENSE-GPL-3.0 beside this file), with the Kira notice in its header.
+
+The package ibplapper imports ibplapper.adapters, which imports
+user_system.py, so ibplapper as imported is a combined work offered under
+GPL-3.0-or-later terms; every other source file remains usable on its own
+under MIT. Remove ibplapper/adapters/user_system.py (and its name in the
+import line of ibplapper/adapters/__init__.py, and tests/test_user_system.py
+from tests/run_tests.sh) if you need an MIT-only build.
+
+Kira itself is not included. Please cite P. Maierhöfer, J. Usovitsch, P. Uwer,
+Comput. Phys. Commun. 230 (2018) 99, arXiv:1705.05610; J. Klappert, F. Lange,
+P. Maierhöfer, J. Usovitsch, Comput. Phys. Commun. 266 (2021) 108024,
+arXiv:2008.06494; F. Lange, J. Usovitsch, Z. Wu, Comput. Phys. Commun. 322
+(2026) 109999, arXiv:2505.20197.

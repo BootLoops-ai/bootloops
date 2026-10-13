@@ -2,8 +2,9 @@
 """lfact_kit.py — instrument kit for exact local factors of operator motives
 (single-series wing of the deform_transport member).
 
-Consumes the vendored r2_kit engine by sibling import (sha pinned in every
-receipt).  Instrument members, each carrying its own control:
+Consumes the r2_kit engine (copied from this project's earlier rounds) by
+sibling import (its sha256 is written into every run record).  Instrument members, each
+carrying its own control:
   - multi_level_lift: unit_root_lift extended to snapshots at
     m = s + p^k - 1 for k = 1..kmax (accumulators mod p^{kmax+1}, Teichmuller
     at matching depth, guard S = kmax + L + 8).  Engine letter otherwise the
@@ -42,7 +43,7 @@ def load_module(name, path):
     spec.loader.exec_module(mod)
     return mod
 
-# vendored engines, imported from beside this file (shas in every receipt)
+# sibling engines, imported from beside this file (their sha256 goes into every run record)
 r2 = load_module('r2_kit', os.path.join(_HERE, 'r2_kit.py'))
 f2 = load_module('f2_lib', os.path.join(_HERE, 'f2_lib.py'))
 R2_SHA = sha256_file(os.path.join(_HERE, 'r2_kit.py'))

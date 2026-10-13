@@ -83,7 +83,7 @@ OUTER index first, a1>=2; zeta(2k) -> rational*pi2^k.
 OUTPUTS: exact Fraction rows {col: q} (homogeneous, rhs 0) labeled
 `coact:b<off>:D<m>w<wt>:f<i>`; canonical vectors {monomial: Fraction}.
 
-ENV: pure python3 + sympy + mpmath (+ gmpy2 for eliminations); single-core; engine
+ENV: pure python3 + sympy + mpmath; single-core; engine
 RSS < 1G, ring RSS < 100 MB through wmax=23. Ring build walls (measured): w=21
 1056 s, w=22 1297 s, wmax=23 ~2 h fresh.
 
@@ -159,5 +159,19 @@ single-valued MZVs/HPLs and the sv map follow Brown [BrSV] §7.2; conventions fo
 Xuhang Jiang [Jiang]; the relation ring uses the regularized double-shuffle framework of
 Ihara, Kaneko and Zagier [IKZ], Hoffman's relations [Hoffman] and the Broadhurst–Kreimer
 depth-graded dimensions [BK]; literature checks against Brown [BrDec] and Schlotterer,
-Sohnle and Tao [SST25]; 200-digit spot checks by FORM [FORM4]. Bracketed keys resolve in
+Sohnle and Tao [SST25]; 200-digit spot checks by FORM [FORM4].
+Galois is Python code written for BootLoops from the papers above. Public programs that
+cover the same mathematics are SageMath's multiple_zeta module (F. Chapoton),
+HyperlogProcedures (O. Schnetz), the MZV Data Mine (Blümlein, Broadhurst and Vermaseren
+[BBV]) and PolyLogTools (Duhr and Dulat). HyperlogProcedures also produced the solved
+results that the `vspace` parser reads from the ancillary files of arXiv:2607.11645
+(X. Jiang), and the f[...] and I[z,...,0] notation that `core.ZTOK` and `vspace.FTOK`
+read is its notation. The method of the relation ring (all stuffle and shuffle relations
+per weight, exact elimination, survivors of minimal depth) is that of the Data Mine paper
+[BBV], whose basis conventions the relation tables follow; the statement that
+zeta(6,4,1,1) is the first depth-4 basis element, at weight 12, is from the same paper.
+The recursion in `svmap21.phi_sym` is Brown's (arXiv:1102.1310), with the normalization
+q_i = 0 of Schlotterer, Sohnle and Tao [SST25] (arXiv:2511.15883). None of the code of
+these programs is used here, and none of their files is shipped.
+Bracketed keys resolve in
 REFERENCES.md at the repository root.

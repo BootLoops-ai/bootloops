@@ -130,5 +130,20 @@ RELATED: tools/ansatzer in this repo (alphabet schema consumer). NOTE
 `maxcut` package — always import it by that full path. Eichler/elliptic evaluators (upgrades/ in this
 repo) for downstream closure.
 
-CREDIT: Target integrals and L₂ reference: arXiv:2408.16386 (FRW wavefunction
-correlators). Adapter, K(m)-split, disk carve-out, pinch split are in-house.
+CREDIT: the connected-subgraph denominators, the Cayley-Menger form of the measure,
+the nine triangle master integrals and the operator L₂ are from Benincasa, Brunello,
+Mandal, Mastrolia and Vazão, arXiv:2408.16386 (Phys. Rev. D 111, 085016). The
+two-site integral, its letters and its closed form are from Arkani-Hamed, Baumann,
+Hillman, Joyce, Lee and Pimentel, arXiv:2312.05303 (with arXiv:2312.05300). The
+vertex definition of the cosmological polytope is from Arkani-Hamed, Benincasa and
+Postnikov, arXiv:1709.02813.
+The code implements these from the published papers; it does not use or follow the
+Mathematica notebooks of the authors of arXiv:2312.05303
+(github.com/haydenhylee/kinematic-flow, MIT). The adapter, the K(m) split, the disk
+carve-out and the pinch split are BootLoops code.
+
+NAME: this package is unrelated to the CosmoFlow package of Werth, Pinol and
+Renaux-Petel (arXiv:2402.03693, Class. Quantum Grav. 41, 175015 (2024);
+github.com/deniswerth/CosmoFlow, MIT), which integrates flow equations for
+cosmological correlators in time. The two share a name and a field, and no code or
+method.

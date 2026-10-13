@@ -78,5 +78,19 @@ and Henn [DDH]; the first-entry condition of Gaiotto, Maldacena, Sever and Vieir
 and their extended form [CDDvHMP]; the coproduct cut in Duhr's formulation [Duhr12] of
 Goncharov's coproduct [Gon]; and the sequential-discontinuity constraints of Bourjaily,
 Hannesdottir, McLeod, Schwartz and Vergu [BHMSV] and Hannesdottir, McLeod, Schwartz and
-Vergu [LB2, LB3]. The residual-count bookkeeping and the mod-p engine are ours.
+Vergu [LB2, LB3]. The weight-by-weight construction of integrable symbols over finite
+fields that Ansatzer uses is standard and was available earlier in two public programs:
+SymBuild (V. Mitev and Y. Zhang, arXiv:1809.05101) and the Symbols package of
+FiniteFlow MathTools (T. Peraro, arXiv:1905.08019). Both impose integrability, entry
+conditions, forbidden adjacent sequences and even/odd selection, and return the count
+of surviving symbols. Ansatzer is a separate Python program written for BootLoops; a
+source comparison found no code or structure in common with either. What Ansatzer adds
+is the cut from the support of the connection matrix, the count of fit points with
+its safety factor, and the flags that report skipped or unconverged conditions.
+The fixture `alphabets/5pt_2mass_nonplanar.json` uses our own letter names and leg
+convention; 16 of its 19 letters coincide, after relabeling the legs, with letters of
+the published two-mass planar five-point alphabet of Abreu, Chicherin, Sotnikov and
+Zoia (arXiv:2408.05201; Zenodo 10.5281/zenodo.13254698, CC BY 4.0). The one-mass
+non-planar hexa-box alphabet is published by Abreu, Ita, Page and Tschernow
+(arXiv:2107.14180).
 Bracketed keys resolve in REFERENCES.md at the repository root.

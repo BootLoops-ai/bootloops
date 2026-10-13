@@ -30,7 +30,7 @@ USE-WHEN:
   masters missing an LS prefactor).
 - Balances stall early with a quadratic-letter alphabet, or exhaust with all
   ε⁰-residues nilpotent → R∞ residue (computed as R∞=−lim x·A, factorization-agnostic)
-  + `_nilpotent_eps_grading` (Lee §5: U=diag(ε^{−Lᵢ}), Lᵢ = longest-path depth in the
+  + `_nilpotent_eps_grading` (a step added here, not in Lee's paper: U=diag(ε^{−Lᵢ}), Lᵢ = longest-path depth in the
   A0′ support DAG; fires automatically after `_constant_epsdecouple` fails). Reference
   scale: 13×13 block, 4-balance stall → certified dlog ε-form, 18+3 letters, ~22 s.
 - Σa≠0 over rational poles (missing balance partners at an irreducible ε-free
@@ -150,20 +150,33 @@ per-attempt budget).
 RELATED: upstream Kira (derive_dgl → KiraDE); canonical_form/ (LS/UT rotation
 front-end, bridges here for fuchsify/factor_epsilon); MpolyFeed is the Julia sibling
 of `wayfinder.flintexport` (tools/wayfinder/flintexport.py); blocked classes route to vopclose (function-level closure).
-External tools in the same niche — CANONICA and Libra — are Mathematica-only with no
-Julia/Python port; the public fuchsia (Gituliar–Magerya, Python/Maxima) is the nearest
-open-source counterpart. None is a dependency here.
+External tools in the same niche: CANONICA and Libra are Mathematica packages; Fuchsia
+(Gituliar and Magerya, Python on SageMath), fuchsia.cpp (Magerya, C++) and epsilon
+(Prausa, C++) are public implementations of the same algorithm of Lee outside
+Mathematica. None is a dependency here.
 
-CREDIT: the canonical ε-form is Henn's [Henn]; the reduction algorithm (fuchsification,
-balances, ε-factorization; §5 nilpotent grading) is Roman N. Lee's [Lee], with Moser's
-and Barkatou's rank-reduction theory beneath it (classical); `src/Fuchsia.jl` is our
-independent Julia/Nemo implementation of Lee's algorithm. It shares its name — and its
-algorithm, though no code — with the public Fuchsia of Oleksandr Gituliar and Vitaly
-Magerya [Fuchsia], which we acknowledge as the first open implementation; related public
-implementations are epsilon (Mario Prausa [epsilon]), CANONICA (Christoph Meyer
-[CANONICA]), Libra (R. N. Lee [Libra]) and INITIAL (Christoph Dlapa, Johannes Henn, Kai
-Yan [INITIAL]). The LS/UT front end follows Arkani-Hamed–Bourjaily–Cachazo–Trnka [ABCT]
-and Henn–Mistlberger–Smirnov–Wasser [DlogBasis]; connections from Kira [Kira3].
+CREDIT: the canonical ε-form is Henn's [Henn]; the reduction algorithm (reduction to
+Fuchsian form, balances, normalization of the eigenvalues, factoring out ε) is Roman N.
+Lee's [Lee], with Moser's and Barkatou's rank-reduction theory beneath it (classical).
+Counterweight is an implementation of Lee's algorithm in Julia/Nemo. Public
+implementations of the same algorithm exist and came first: Fuchsia by Oleksandr
+Gituliar and Vitaly Magerya [Fuchsia], the first open implementation; fuchsia.cpp by
+Vitaly Magerya (github.com/magv/fuchsia.cpp); epsilon by Mario Prausa [epsilon]; and
+Libra by R. N. Lee [Libra]. Related programs for the canonical form are CANONICA
+(Christoph Meyer [CANONICA]) and INITIAL (Christoph Dlapa, Johannes Henn, Kai Yan
+[INITIAL]). A side-by-side reading found no code of Fuchsia, fuchsia.cpp, epsilon or
+Libra in Counterweight; CANONICA and INITIAL were not read. The module `src/Fuchsia.jl`
+shares its name with the Fuchsia program of Gituliar and Magerya, which implements the
+same algorithm of Lee; it is not that program. Several steps of the engine are not in
+Lee's paper and were added here: the eigenbasis gauge and the nilpotent ε-grading in
+the stage that factors out ε, the balances at irreducible quadratic and cubic letters,
+and the same-orbit shear. The LS/UT front end builds the standard Baikov representation
+[Baikov] and reads leading singularities off its maximal cut by an iterated-discriminant
+rule added here; for the leading-singularity method see Arkani-Hamed, Bourjaily, Cachazo
+and Trnka [ABCT] and Henn, Mistlberger, Smirnov and Wasser [DlogBasis], whose program
+DlogBasis it does not use. The elliptic period uses the Legendre reductions of Byrd and
+Friedman. Connections come from Kira [Kira3]. The test matrices of the massless double
+box are Henn's [Henn].
 Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License

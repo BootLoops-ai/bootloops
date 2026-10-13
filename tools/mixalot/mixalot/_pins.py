@@ -37,7 +37,7 @@ PINS = {
     "jeff/estimators.py": (
         "origin:estimators.py", "0335271c7ab410a363f2c7a53b2d55cf10399f827acd08524d3cd21c8ad3c318"),
     "tools/annihilator.py": (
-        "origin:annihilator.py", "bb0131f94d80367d374984490a2ae0d429005701c71f7120fa9c96c4901a3dd6"),
+        "origin:annihilator.py", "bfa6fb04246bd4b52139e899b5fceb963a5323336dcfb151e67db00be672b2d0"),
     "jeff/w1_brute.py": (
         "origin:w1_brute.py", "c8305f90e31da37ae2be58751a31faa8e834a381c2680d2d09e72f1b3bac6e53"),
     "jeff/bigk.py": (

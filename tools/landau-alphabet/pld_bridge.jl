@@ -4,6 +4,12 @@ pld_bridge.jl — thin bridge from the Landau Alphabet graph-spec JSON to PLD.jl
 (Fevola–Mizera–Telen, arXiv:2311.14669) so the bounded-sympy engine and PLD.jl
 can be CROSS-VALIDATED on the SAME input.
 
+CREDIT: PLD.jl is the program of Claudia Fevola, Sebastian Mizera and Simon Telen
+("Principal Landau determinants", arXiv:2311.16219; code at mathrepo.mis.mpg.de/PLD,
+MIT per the project page).  This bridge calls their getPLD at run time and bundles
+none of their files; it was written with the PLD.jl source open.  The numerical
+fallback further down applies their method (see the note at that block).
+
 Usage:
     julia +1.10 pld_bridge.jl SPEC.json OUT.json [--method sym|num]
   or
@@ -128,6 +134,16 @@ end
 # HomotopyContinuation-only numerical fallback (the route promised in the
 # VERSION NOTE above).  Everything below needs ONLY HomotopyContinuation +
 # JSON + stdlib — no PLD.jl, no Oscar.
+#
+# CREDIT: the method of this fallback is that of C. Fevola, S. Mizera and
+# S. Telen (arXiv:2311.16219, Algorithm 1: the incidence variety
+# {G = 0, dG/dx = 0} on the torus, sampled along a general line and solved with
+# HomotopyContinuation.jl) and of S. Mizera and S. Telen (arXiv:2109.08036,
+# Sec. 3), as implemented in their PLD.jl and Landau.jl.  The critical system
+# and the 1e-6 tolerance for merging solutions are the same as in those
+# programs (Landau.jl also offers the total-degree start system used in the
+# retry below); the face enumeration, the construction of U and F and the
+# matching of witnesses against candidate letters are this package's.
 #
 # Method: same graph-face lattice as the sympy backend (connected edge
 # subsets, >=2 vertices), same Symanzik build driven by the spec's own

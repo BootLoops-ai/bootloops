@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0 (repository-root
+# LICENSE and NOTICE).
+# Portions of this file are a Python port of AMFlow.cpp (src/qft/vacuum.cpp and
+# src/pipeline/amfsystem.cpp; github.com/chang18/amflow-cpp), Copyright (c) 2026
+# AMFlow.cpp contributors, MIT License: the single-mass vacuum table and its
+# lookup, the SingleMass Gamma prefactor and the ending-value rule. AMFlow.cpp
+# is the C++ port of AMFlow by Xiao Liu and Yan-Qing Ma
+# (gitlab.com/multiloop-pku/amflow), Copyright (C) 2022 Xiao Liu and Yan-Qing Ma,
+# Copyright (C) 2026 Rui-Jun Huang, Xiao Liu and Yan-Qing Ma, MIT License. Both
+# MIT notices are reproduced in the NOTICE file beside this file.
 """
 boundary.py — AMFlow-convention boundary values for eta-DE transport.
 
@@ -19,12 +30,18 @@ so tadpole(m2=1, nu=1, d) = -Gamma(1 - d/2).
 
 Provenance (how the convention was pinned)
 ------------------------------------------
-* The AMFlow port (the AMFlow.cpp fork, the sibling repository amflow-cpp):
-  src/qft/vacuum.cpp and
-  include/amflow/qft/vacuum.hpp ("Mirrors AMFlow.m lines 819-824"): the
+* AMFlow.cpp (github.com/chang18/amflow-cpp, by the AMFlow.cpp contributors,
+  MIT; our fork is the sibling repository amflow-cpp), the C++
+  port of AMFlow by X. Liu and Y.-Q. Ma (arXiv:2201.11669;
+  gitlab.com/multiloop-pku/amflow, MIT): src/qft/vacuum.cpp and
+  include/amflow/qft/vacuum.hpp: the
   (loops, props) = (1,1) builtin ending value is exactly -Gamma(eps - 1)
   = -Gamma(1 - d/2), i.e. tadpole(1, 1, d) above.  The full builtin
-  single-mass vacuum table is ported verbatim in `singlemass_vacuum`.
+  single-mass vacuum table is ported from that C++ source into Python in
+  `singlemass_vacuum`.  The same five closed forms are the `Vacuum[...]`
+  definitions of AMFlow.m (lines 825-829 in tag 1.2, lines 980-984 in
+  tag 2.0).  The C++ line numbers quoted in this file refer to AMFlow.cpp
+  commit 006a275.
 * A triple-tadpole reference (a 60-digit fixture not shipped here):
   "T_def": "-Gamma(1-d/2)^3 ... measure d^dk/(i pi^(d/2)) per loop, m=1,
   no exp(eps gammaE)" with vendored 60d Laurent coefficients (eps^-3 -> 1.0,
@@ -35,20 +52,20 @@ Provenance (how the convention was pinned)
   amf_options.ending_schemes = ["Tradition", "SingleMass"], d0 = 4,
   run_direction = "NegIm" (eta contour approaches infinity in the lower half
   plane).  The run artifacts confirm the scheme names and contour convention;
-  the ending VALUE rules themselves are pinned from the port source:
-  - AMFlow-port .../src/pipeline/amfsystem.cpp `try_builtin_ending_value`
-    (~line 651): ending-system master with all indices <= 0  -> 1 (AMFlow
-    bookkeeping convention, mirrored literally); all indices in {0,1} with
+  the ending VALUE rules themselves are ported from the AMFlow.cpp source:
+  - AMFlow.cpp src/pipeline/amfsystem.cpp `try_builtin_ending_value`
+    (line 628): ending-system master with all indices <= 0  -> 1 (AMFlow
+    bookkeeping convention, carried over as is); all indices in {0,1} with
     (n_loops, n_props) in the vacuum table -> `qft::vacuum` closed form;
     anything else -> ending IBP reduction (`solve_ending_master_value`),
     which is OUT OF SCOPE here (raises NotImplementedError).
-  - AMFlow-port .../src/pipeline/amfsystem.cpp `compute_single_mass_prefactor`
-    (~line 2118):  prefactor = (-1)^n * Gamma(2-eps-m) * Gamma(-2+eps+m+n)
+  - AMFlow.cpp src/pipeline/amfsystem.cpp `compute_single_mass_prefactor`
+    (line 1883):  prefactor = (-1)^n * Gamma(2-eps-m) * Gamma(-2+eps+m+n)
     / (Gamma(2-eps) * Gamma(n)),  m = m0 + m_eps_coef*eps,  and the GammaParams
-    derivation (~line 3067):  m0 = total - n - 2*(loop_num-1),
+    derivation (lines 2736-2737):  m0 = total - n - 2*(loop_num-1),
     m_eps_coef = loop_num - 1  (total = sum of the master's indices on the
     component, n = index on the dropped massive line, loop_num = component
-    loops).  Ported verbatim in `single_mass_prefactor`.
+    loops).  Ported from the C++ source in `single_mass_prefactor`.
 
 Which powers of eta are matched (Tradition ending, all-propagator eta mode)
 ---------------------------------------------------------------------------
@@ -104,8 +121,8 @@ def _pole_error(what, detail=""):
         what + " hit a Gamma pole" + ((" (%s)" % detail) if detail else "")
         + ".  This is the eps=0-exactly ill-posed case: the boundary "
         "constant carries an explicit 1/eps pole.  Use a small nonzero-eps "
-        "grid and extrapolate (mirrors AMFlow-port amfsystem.cpp "
-        "ending-master non-finite guard, ~line 1005).")
+        "grid and extrapolate (mirrors the ending-master non-finite guard "
+        "of AMFlow.cpp, src/pipeline/amfsystem.cpp).")
 
 
 def _require_finite(val, what):
@@ -127,8 +144,9 @@ def tadpole(m2, nu, d, dps):
       * measure d^d k / (i pi^(d/2)) per loop,
       * propagator 1/(k^2 - m^2 + i0)^nu (Minkowski),
       * d = 4 - 2*eps, NO exp(eps*gammaE) factor.
-    Matches AMFlow: tadpole(1, 1, d) = -Gamma(1 - d/2) = AMFlow-port
-    qft::vacuum(1, 1) (AMFlow.m lines 819-824), and tadpole(1,1,d)^3 =
+    Matches AMFlow: tadpole(1, 1, d) = -Gamma(1 - d/2) = AMFlow.cpp
+    qft::vacuum(1, 1) = AMFlow.m Vacuum[1, 1] (line 825 in tag 1.2, line 980
+    in tag 2.0), and tadpole(1,1,d)^3 =
     T_def of the triple-tadpole reference (module docstring).
 
     Args:
@@ -162,16 +180,21 @@ def tadpole(m2, nu, d, dps):
 
 
 # ---------------------------------------------------------------------------
-# single-mass vacuum table (AMFlow.m lines 819-824 via AMFlow-port vacuum.cpp)
+# single-mass vacuum table (Python port of AMFlow.cpp src/qft/vacuum.cpp)
 # ---------------------------------------------------------------------------
 # Entry: (loops, props) -> (sign, num_factors, den_factors) where each factor
-# is (a, b, power) meaning Gamma(a*eps + b)^power.  Ported VERBATIM from
-# src/qft/vacuum.cpp of the AMFlow.cpp fork (the sibling repository amflow-cpp).
-# Attribution: these closed forms (and the prefactor in single_mass_prefactor)
-# are AMFlow's — X. Liu, Y.-Q. Ma, arXiv:2201.11669; gitlab.com/multiloop-pku/amflow,
-# MIT, (C) 2022 Xiao Liu, Yan-Qing Ma — as carried by AMFlow.cpp
-# (github.com/chang18/amflow-cpp, MIT, (c) 2026 AMFlow.cpp contributors); the
-# numbers are carried over, no source text is copied. See THIRD_PARTY.md B2.
+# is (a, b, power) meaning Gamma(a*eps + b)^power.
+# Attribution: this table, vacuum_known and singlemass_vacuum are a Python port
+# of qft::vacuum and qft::vacuum_known in src/qft/vacuum.cpp of AMFlow.cpp
+# (github.com/chang18/amflow-cpp, MIT, Copyright (c) 2026 AMFlow.cpp
+# contributors): the Gamma-function arguments, their powers and their order are
+# those of the C++ code.  The closed forms (and the prefactor in
+# single_mass_prefactor) are AMFlow's: X. Liu, Y.-Q. Ma, arXiv:2201.11669;
+# gitlab.com/multiloop-pku/amflow, MIT, Copyright (C) 2022 Xiao Liu and
+# Yan-Qing Ma, Copyright (C) 2026 Rui-Jun Huang, Xiao Liu and Yan-Qing Ma;
+# AMFlow.m `Vacuum[...]`, lines 825-829 in tag 1.2 and 980-984 in tag 2.0.
+# Both MIT notices are in the NOTICE file beside this file; see also
+# THIRD_PARTY.md at the repository root.
 _VACUUM_TABLE = {
     (1, 1): (-1, ((1, -1, 1),), ()),
     (2, 3): (-1, ((-1, 1, 2), (1, 0, 1), (2, -1, 1)), ((-1, 2, 1),)),
@@ -184,22 +207,23 @@ _VACUUM_TABLE = {
 
 def vacuum_known(loops, props):
     """True iff (loops, props) is in the AMFlow builtin single-mass vacuum
-    table (mirrors AMFlow-port qft::vacuum_known)."""
+    table (port of AMFlow.cpp qft::vacuum_known)."""
     return (int(loops), int(props)) in _VACUUM_TABLE
 
 
 def singlemass_vacuum(loops, props, eps, dps):
-    """Builtin single-mass vacuum integral value (AMFlow.m lines 819-824).
+    """Builtin single-mass vacuum integral value (AMFlow.m `Vacuum[...]`:
+    lines 825-829 in tag 1.2, lines 980-984 in tag 2.0).
 
     The unit-mass vacuum integrals AMFlow uses as ending-system boundary
     values, for a master with all indices in {0,1} and `props` positive
     lines in an L=`loops` family.  Available (loops, props):
     (1,1) (2,3) (3,4) (3,5) (4,5).  d = 4 - 2*eps convention.
 
-    Ported verbatim from src/qft/vacuum.cpp of the AMFlow.cpp fork
-    (the sibling repository amflow-cpp; each factor is
-    Gamma(a*eps + b)).  Raises ValueError on an unknown (loops, props)
-    pair — mirrors qft::vacuum's invalid_argument.
+    Ported into Python from src/qft/vacuum.cpp of AMFlow.cpp, by the
+    AMFlow.cpp contributors (github.com/chang18/amflow-cpp, MIT; each
+    factor is Gamma(a*eps + b)).  Raises ValueError on an unknown
+    (loops, props) pair, as qft::vacuum raises invalid_argument.
     """
     key = (int(loops), int(props))
     if key not in _VACUUM_TABLE:
@@ -234,11 +258,13 @@ def single_mass_prefactor(n, m0, m_eps_coef, eps, dps):
                     / ( Gamma(2 - eps) * Gamma(n) ),
         m = m0 + m_eps_coef * eps          (note 2 - eps = d/2 at d = 4-2*eps)
 
-    Ported verbatim from src/pipeline/amfsystem.cpp of the AMFlow.cpp fork
-    (the sibling repository amflow-cpp), `compute_single_mass_prefactor`
-    (~line 2118), which mirrors AMFSystemSetupMaster[..., "SingleMass"]
-    (AMFlow.m lines 1039-1061).
-    Parameter semantics (amfsystem.cpp ~line 3067):
+    Ported into Python from src/pipeline/amfsystem.cpp of AMFlow.cpp, by
+    the AMFlow.cpp contributors (github.com/chang18/amflow-cpp, MIT),
+    `compute_single_mass_prefactor` (line 1883), which implements the
+    prefactor of AMFSystemSetupMaster[preferred_, "SingleMass"] in AMFlow.m
+    (that definition starts at line 1063 in tag 1.2 and at line 1323 in
+    tag 2.0).
+    Parameter semantics (amfsystem.cpp lines 2736-2737):
       n           = index on the dropped massive propagator,
       m0          = total - n - 2*(loop_num - 1),
       m_eps_coef  = loop_num - 1,
@@ -300,8 +326,8 @@ def vacuum_ending_seed(desys, scheme, params, dps):
                                values (one per master), solved upstream.
       'modes'        if present -> partial-eta insertion -> NotImplementedError.
 
-    Per-master value rule, mirroring AMFlow-port amfsystem.cpp
-    `try_builtin_ending_value` (~line 651) literally:
+    Per-master value rule, ported from AMFlow.cpp amfsystem.cpp
+    `try_builtin_ending_value` (line 628; the rule is lines 645-672):
       * all indices <= 0                          -> 1   (bookkeeping conv.)
       * all indices in {0,1}, P = #ones >= 1, and
         (L, P) in the vacuum table                -> singlemass_vacuum(L, P)
@@ -311,12 +337,13 @@ def vacuum_ending_seed(desys, scheme, params, dps):
         back-substituted to the table masters exactly as amfsystem.cpp does.
 
     SingleMass scheme: seed_i = single_mass_prefactor(*gamma_params[i]) *
-    sub_values[i]  (mirrors sm_cfg_ application, amfsystem.cpp ~line 2324).
+    sub_values[i]  (follows the sm_cfg_ application, amfsystem.cpp lines
+    2018-2038).
     If gamma_params/sub_values are missing -> NotImplementedError: deriving
     them needs FactorizeFamily + the promoted-leg sub-family solve, which is
     not pinnable from the run artifacts alone.  Not supported here: it would
     need a port of FactorizeFamily (amfsystem.cpp single_mass_setup_master,
-    ~line 2812) and a transport solve of the (loop_num-1)-loop sub-family,
+    line 2486) and a transport solve of the (loop_num-1)-loop sub-family,
     fed in as 'sub_values'.
     SingleMass endings carry no eta ('eta' in params -> ValueError).
     """
@@ -329,7 +356,7 @@ def vacuum_ending_seed(desys, scheme, params, dps):
             "large-eta regions with distinct powers; only the all-propagator "
             "single-hard-region case is pinned.  Not supported: the region/"
             "RegionPower machinery (amflow-cpp qft::find_all_region + "
-            "build_boundary, amfsystem.cpp ~line 1403) is not ported.")
+            "build_boundary, amfsystem.cpp) is not ported.")
     for req in ("eps", "loops", "masters"):
         if req not in params:
             raise ValueError("vacuum_ending_seed: params[%r] is required" % req)
@@ -383,7 +410,7 @@ def vacuum_ending_seed(desys, scheme, params, dps):
                 "vacuum_ending_seed(SingleMass): params['gamma_params'] and "
                 "params['sub_values'] are required.  Deriving them needs "
                 "FactorizeFamily + the promoted-leg sub-family solve "
-                "(amfsystem.cpp single_mass_setup_master ~line 2812), not "
+                "(amfsystem.cpp single_mass_setup_master), not "
                 "pinnable from run artifacts alone.  Not supported without them: "
                 "solve the (loop_num-1)-loop sub-family by "
                 "transport and pass its master values as 'sub_values'.")

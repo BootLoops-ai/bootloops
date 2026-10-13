@@ -1,0 +1,24 @@
+Eichler.jl (upgrades/Eichler.jl), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (LICENSE beside this
+file; see also the repository-root LICENSE and NOTICE), with the one exception
+stated next.
+
+Mixed licensing. Everything in this package is MIT-licensed EXCEPT one block of
+src/siegel.jl: the six transvectant calls in the function igusa_clebsch (marked
+there by a NOTICE comment). They follow acb_theta_g2_transvectants in FLINT
+(https://github.com/flintlib/flint), src/acb_theta/g2_covariants.c,
+Copyright (C) 2023 Jean Kieffer. FLINT is free software licensed under the GNU
+Lesser General Public License, version 3 or (at your option) any later
+version. The block is distributed under the same terms:
+LICENSE-LGPL-3.0 beside this file, which supplements the GNU General Public
+License version 3 (LICENSE-GPL-3.0 beside this file). The block calls FLINT's
+public function acb_theta_g2_transvectant through Arblib.jl and contains no
+part of that function's body.
+
+Libraries used at run time and not bundled: FLINT/Arb (LGPL-3.0-or-later)
+through Arblib.jl, and Nemo.jl. The optional program in ginac-oracle/ links
+GiNaC and CLN (GPL-2.0-or-later); only its source is included, and a compiled
+binary is a GPL-covered combined work. The Zenodo record 10.5281/zenodo.14733100
+(Becchetti, Coro, Nega, Tancredi, Wagner; CC BY 4.0) is fetched on demand and
+is not included.

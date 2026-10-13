@@ -391,7 +391,8 @@ function try_epsfactor(ctx::Ctx, A; max_balance_rounds::Int=400, verbose::Bool=f
                     continue
                 end
             end
-            # Lee §5 non-semisimple: nilpotent A0 with no eigenbasis / no rational coboundary.
+            # Non-semisimple case (a step added here, not in Lee's paper): nilpotent A0 with no
+            # eigenbasis / no rational coboundary.
             # Apply diagonal ε^{-L} grading (depth in the nilpotent flag of A0).  Bounded by n.
             if nilgrade_rounds < size(Acur,1)
                 Nok, U, Agra, L = _nilpotent_eps_grading(ctx, A0, Acur; verbose=verbose)
@@ -914,7 +915,9 @@ end
 """
     _factor_eps_eigenbasis(ctx, A) -> (ok, G, A')
 
-Lee "factor eps" (§5): when every residue eigenvalue is a pure multiple of eps (eps^0 part = 0
+The "factor eps" stage (Lee, arXiv:1411.0911, section 6).  The eigenbasis gauge below is not the
+paper's construction; its nearest counterpart there is the remark on the case of one residue.
+When every residue eigenvalue is a pure multiple of eps (eps^0 part = 0
 at every pole), a CONSTANT-in-x gauge G(eps) = S(eps)⁻¹ with S the Q(eps)-eigenbasis of one
 residue R(p₀) brings A to eps-form.  We try each pole in turn (the one with the most distinct
 eigvals first) and return the first G for which is_epsform(G A G⁻¹) holds.  G is generically
@@ -962,7 +965,8 @@ end
 """
     _nilpotent_eps_grading(ctx, A0, A) -> (ok, U, A', L)
 
-Lee §5 non-semisimple "factor ε": when every ε^0 residue is NILPOTENT (so balances do
+Non-semisimple "factor ε" (a step added here; it is not in Lee's paper, arXiv:1411.0911):
+when every ε^0 residue is NILPOTENT (so balances do
 nothing and `_factor_eps_eigenbasis` finds no full eigenbasis), apply the diagonal weight
 gauge U = diag(ε^{-L_i}), L_i = depth of row i in the nilpotent flag of A0.  Then
 (U A U⁻¹)[i,j] = ε^{L_j-L_i}·A[i,j], pushing every nonzero A0[i,j] (which has L_j > L_i by

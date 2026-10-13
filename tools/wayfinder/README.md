@@ -40,7 +40,7 @@ Module map:
 | `two_sector` | two-branch series at apparent higher poles | fixed-eps; k=1 autopin; NL truncation |
 | `epsfan` | Cauchy fan R=1e-3 + real-grid Vandermonde + anchor round-trip | full circle unless `schwarz_real` (opt-in) |
 | `ratfun` | fixed-eps RF layer; backs the fast path | num/den unreduced |
-| `boundary` | AMFlow-convention tadpole/vacuum seeds (verbatim ports) | ending IBP not implemented |
+| `boundary` | AMFlow-convention tadpole/vacuum seeds (vacuum table, prefactor and ending rule are a Python port of AMFlow.cpp routines) | ending IBP not implemented |
 | `gate` | two-precision digit gate + per-literal FEED table | feed it MEASURED numbers |
 | `manifest` | sha256 input manifests | bytes+sha256, never mtime |
 | `quad` | E3 refine-until-gate adaptive quadrature (`quad_refine`) | agreement is a two-depth estimate, not a proof — guard digits absorb the gap; GL nodes expensive, opt-in |
@@ -372,10 +372,14 @@ scripts; this module touches no row script itself.
 
 `tadpole(m2, nu, d, dps)`, `vacuum_known(loops, props)`,
 `singlemass_vacuum(loops, props, eps, dps)` (builtin table (1,1) (2,3)
-(3,4) (3,5) (4,5), ported VERBATIM from amflow-cpp
-(`src/qft/vacuum.cpp` in the sibling repository amflow-cpp), mirroring AMFlow.m lines 819-824),
-`single_mass_prefactor(n, m0, m_eps_coef, eps, dps)` (amfsystem.cpp ~line
-2118), `vacuum_ending_seed(desys, scheme, params, dps)` for
+(3,4) (3,5) (4,5), a Python port of `src/qft/vacuum.cpp` of AMFlow.cpp, by the
+AMFlow.cpp contributors (github.com/chang18/amflow-cpp, MIT; our fork is the
+sibling repository amflow-cpp); the closed forms are the `Vacuum[...]`
+definitions of AMFlow.m by X. Liu and Y.-Q. Ma, lines 825-829 in tag 1.2 and
+980-984 in tag 2.0),
+`single_mass_prefactor(n, m0, m_eps_coef, eps, dps)` (port of
+`compute_single_mass_prefactor`, amfsystem.cpp line 1883 at AMFlow.cpp commit
+006a275), `vacuum_ending_seed(desys, scheme, params, dps)` for
 Tradition/SingleMass endings (leading eta-power constants only; the DE owns
 all subleading orders). Normalization: measure `d^d k/(i pi^(d/2))` per
 loop, propagator `1/(k^2 - m^2 + i0)^nu`, d = 4-2eps, NO exp(eps*gammaE).
@@ -460,9 +464,12 @@ compares bytes+sha256 (never mtime). Verify manifests before reusing artifacts a
 
 ## Convention pins
 
-* Vacuum table, SingleMass prefactor and ending-value rules mirror AMFlow.m
-  (lines 819-824 / 1039-1061; the amflow-cpp fork lives in its own repository,
-  the sibling repository amflow-cpp).
+* Vacuum table, SingleMass prefactor and ending-value rules are ported from
+  AMFlow.cpp (`src/qft/vacuum.cpp`, `src/pipeline/amfsystem.cpp`; our fork lives
+  in its own repository, the sibling repository amflow-cpp). The formulas are
+  those of AMFlow.m: `Vacuum[...]` at lines 825-829 in tag 1.2 and 980-984 in
+  tag 2.0; `AMFSystemSetupMaster[preferred_, "SingleMass"]` starting at line
+  1063 in tag 1.2 and line 1323 in tag 2.0.
 * T_def convention: vendored 60d Laurent coefficients re-derived in
   tests/test_boundary.py.
 * Real-grid Vandermonde node design: geometric decade q-grid 1013..10037,
@@ -770,3 +777,5 @@ member nor sympy; skips by name without python-flint/sympy. Standalone:
 ## License
 
 MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+
+Portions of `boundary.py` (the single-mass vacuum table and its lookup, the SingleMass prefactor and the ending-value rule) are a Python port of AMFlow.cpp, Copyright (c) 2026 AMFlow.cpp contributors (github.com/chang18/amflow-cpp, MIT License), the C++ port of AMFlow, Copyright (C) 2022 Xiao Liu and Yan-Qing Ma, Copyright (C) 2026 Rui-Jun Huang, Xiao Liu and Yan-Qing Ma (gitlab.com/multiloop-pku/amflow, MIT License). The refinement loop of `quad.py` follows mpmath's `QuadratureRule.summation`, Copyright (c) 2005-2021 Fredrik Johansson and mpmath contributors (BSD 3-Clause License). Their notices are reproduced in the NOTICE file in this directory.

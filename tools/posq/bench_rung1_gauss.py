@@ -92,7 +92,15 @@ def recur_coeffs(n, alpha):
     """monic three-term recurrence for weight u^alpha on [0,1] (shifted Jacobi
     a=0, b=alpha; Gautschi r_jacobi mapped by u=(x+1)/2): pi_{k+1} =
     (x - A[k]) pi_k - B[k] pi_{k-1}; B[0] = mu0 = 1/(alpha+1).
-    All coefficients exact rationals -> arb balls at working prec."""
+    All coefficients exact rationals -> arb balls at working prec.
+
+    This routine follows r_jacobi.m and r_jacobi01.m of the OPQ suite of
+    W. Gautschi (r_jacobi.m: "Supplied by Dirk Laurie, 6-22-1998; edited by
+    Walter Gautschi, 4-4-2002"), re-expressed in Python for a = 0, b = alpha:
+    r_jacobi01(n, 0, alpha) builds the coefficients on [-1,1] with r_jacobi
+    and maps them to [0,1]. OPQ: doi:10.4231/R7959FHP (CC0 1.0 on that
+    record); W. Gautschi, Orthogonal Polynomials: Computation and
+    Approximation (Oxford, 2004)."""
     al = fr2arb(alpha)
     A = []; B = []
     for k in range(n):

@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
 # Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0 (repository-root
-# LICENSE and NOTICE). Reads the plain-text state files FireFly writes; contains
-# no FireFly code (THIRD_PARTY.md B2).
+# LICENSE and NOTICE). Reads the plain-text state files FireFly writes. Contains
+# no FireFly routine; the section names (STATE_SECTIONS) and the line layout of
+# the state files were taken from FireFly's writer RatReconst::save_state
+# (source/RatReconst.cpp; FireFly is by J. Klappert, S. Y. Klein and F. Lange,
+# Copyright (C) 2020 Jonas Klappert and Fabian Lange, GPL-3.0-or-later). The
+# prime table is not in this file: it is read at run time from the user's copy
+# of FireFly's source/ReconstHelper.cpp (--ff-helper). See NOTICE beside this
+# file.
 # ffcapital member — cross-slice symbolic-d salvage.
 # Siblings: harvest_ffsave_eta.py (1-var), harvest_ffsave_2var.py (2-var).
 # All roots via CLI/--config; fail-closed on unset CONFIG.

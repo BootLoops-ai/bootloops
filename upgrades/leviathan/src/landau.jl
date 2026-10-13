@@ -1,5 +1,5 @@
-# landau.jl — driver: chi accounting + candidates + Type-2.2 verification.
-
+# landau.jl: driver (chi accounting + candidates + Type-2.2 verification). The verify switch and the
+# genuine / spurious labels (lines 35-45) follow SPQRLandau in landau_codes.m:253-262. See PATCHES.md.
 struct LandauResult
     chi_generic::Union{Int,Nothing}        # regulated chi, full family
     chi_sectors::Dict{Vector{Int},Union{Int,Nothing}}

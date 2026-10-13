@@ -9,8 +9,9 @@ is the LO QCD / N=4 collinear four-point energy correlator on the dipole slice.
 
 The name: a surd is the old word for an irreducible root such as √2 or ∛5. The integrator carries such square- and cube-root letters
 exactly through the last integration, the step at which linear reducibility fails and rational-alphabet hyperlogarithm programs
-(HyperInt [HyperInt], HyperFLINT) hand over; for other treatments of square-root letters see RationalizeRoots by Besier, Wasser and
-Weinzierl [RR] and Heller, von Manteuffel and Schabinger [HvMS] (keys in REFERENCES.md at the repository root).
+(HyperInt by E. Panzer [HyperInt], HyperFLINT by S. Mizera, M. Giroux and G. Salvatori [SubTropica]) hand over; for other treatments
+of square-root letters see RationalizeRoots by Besier, Wasser and Weinzierl [RR] and Heller, von Manteuffel and Schabinger [HvMS]
+(keys in REFERENCES.md at the repository root).
 
 Requirements: python3 >= 3.10 with python-flint (>= 0.6), sympy, mpmath; the sibling package `tools/subtropica` for one pure-Python
 evaluator module (found automatically in the repository layout). Nothing to build.
@@ -31,4 +32,6 @@ Tool page: https://bootloops.ai/tools/surd.html
 
 MIT License. Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his
 supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components
-keep their own licenses (THIRD_PARTY.md).
+keep their own licenses (THIRD_PARTY.md). These grants do not cover the cell data under `gate/cells/`, which are derived from the
+file `P_qbp_qp_g_q.m` that V. Del Duca, C. Duhr, R. Haindl, A. Lazopoulos and M. Michel provide at
+https://people.phys.ethz.ch/~pheno/quadruple_collinear; the page states no license (`DATA.md`).

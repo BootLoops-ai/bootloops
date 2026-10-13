@@ -16,7 +16,8 @@ Full guide: `GUIDE.md`.
   against Sage's published doctest values), recognition-free candidate
   arbitration against a numeric oracle (`invariant_harness`, needs
   `G2KIT_TRUE_JSON`), exact quadratic-field
-  conic point search (`conic_fast`), and the PSLQ recognition law and
+  conic point search (`conic_fast`, whose conic set-up is taken from the same
+  SageMath module and which is GPL-2.0-or-later as well), and the PSLQ recognition law and
   exact-basepoint transport as read-and-adapt templates. `import eichler.genus2`
   with `tools/` on PYTHONPATH; member guide in `genus2/GUIDE.md`.
 
@@ -28,7 +29,11 @@ refuses by name without the sha-pinned `L6_exact.json` operator file (not
 included), and a named skip for theta9, which ships without a battery (its
 reference receipts are not part of this repository). About 2 s.
 
-CREDIT: theta9 rests on FLINT's certified `acb_theta` module by Jean Kieffer [Kief]
+CREDIT: the genus2 invariants and Mestre reconstruction (`mestre_port.py`, and the conic
+set-up at the top of `conic_fast.py`) are a translation of SageMath's `mestre.py` by
+Florian Bouyer and Marco Streng and `invariants.py` by Nick Alexander, with Sabrina
+Kunzweiler, Gareth Ma and Giacomo Pope, distributed under GPL-2.0-or-later with their
+notice. theta9 rests on FLINT's certified `acb_theta` module by Jean Kieffer [Kief]
 (algorithm: Elkies and Kieffer [EK]) through Eichler.jl; mirror6 computes the mirror map
 and instanton-type numbers in the sense of Candelas, de la Ossa, Green and Parkes [CdGP]
 for operators of the AESZ Calabi–Yau tables [AESZ, vS]. Bracketed keys resolve in
@@ -36,4 +41,4 @@ REFERENCES.md at the repository root.
 
 ## License
 
-MIT License, except `genus2/mestre_port.py`, which is GPL-2.0-or-later (derived from SageMath's `hyperelliptic_curves.mestre` and `invariants` modules, Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng, 2008 Nick Alexander, 2025 Sabrina Kunzweiler, Gareth Ma, Giacomo Pope; see `NOTICE` and `LICENSE-GPL-2.0` in this directory). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).
+MIT License, except `genus2/mestre_port.py` and `genus2/conic_fast.py`, which are GPL-2.0-or-later (`mestre_port.py` is a translation of SageMath's `hyperelliptic_curves.mestre` and `invariants` modules, and `conic_fast.py` carries six statements translated from the `mestre` module; Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng, 2008 Nick Alexander, 2025 Sabrina Kunzweiler, Gareth Ma, Giacomo Pope; see `NOTICE` and `LICENSE-GPL-2.0` in this directory). Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written by Claude (Anthropic) under his supervision. Documentation is licensed CC BY 4.0. See LICENSE, LICENSE-CONTENT and NOTICE at the repository root; third-party components keep their own licenses (THIRD_PARTY.md).

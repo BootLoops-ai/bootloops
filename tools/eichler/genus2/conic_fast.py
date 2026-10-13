@@ -1,3 +1,19 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+#
+# The block marked "from SageMath" below (Mestre's x, y, z and the conic matrix L) is
+# derived from SageMath (https://www.sagemath.org),
+# sage/schemes/hyperelliptic_curves/mestre.py (Florian Bouyer, Marco Streng;
+# Copyright (C) 2011, 2012, 2013 Florian Bouyer, Marco Streng; 2025 Sabrina
+# Kunzweiler, Gareth Ma, Giacomo Pope), licensed under the GNU General Public License
+# v2.0 or later: the six statements are SageMath's expressions (its Mestre_conic
+# routine, "Using Lauter and Yang's formulas") with I2 set to 1, as in the sibling
+# mestre_port.py. This file is therefore distributed under the GNU General Public
+# License v2.0 or later (../LICENSE-GPL-2.0). The remainder of the file (exact
+# arithmetic in Q(sqrt 409), congruence diagonalization, sign and square tests, point
+# search) is Copyright (c) 2026 Anthropic, PBC; created by Matthew D. Schwartz, code
+# written by Claude (Anthropic) under his supervision. See ../NOTICE
+# (tools/eichler/NOTICE).
+#
 # eichler.genus2 — conic pipeline in exact (p,q) pair arithmetic over K=Q(sqrt409). No sympy simplify.
 import json, itertools
 from fractions import Fraction as Fr
@@ -31,6 +47,7 @@ I2 = K(1)
 I4 = j2/j1
 I6 = j3/j1
 I10 = K(1)/j1
+# --- from SageMath mestre.py (Bouyer, Streng), GPL-2.0-or-later: Mestre x, y, z and the conic matrix L ---
 # Mestre x,y,z (I2=1 simplifies)
 x = (K(1) + I4*20)* Fr(8, 225)
 y = (K(1) + I4*80 - I6*600) * Fr(16, 3375)
@@ -39,6 +56,7 @@ print('x =', x); print('y =', y); print('z =', z)
 L = [[x + y*6,        x*x*6 + y*2,   z*2],
      [x*x*6 + y*2,    z*2,           x*x*x*9 + x*y*4 + y*y*6],
      [z*2,            x*x*x*9 + x*y*4 + y*y*6, x*x*y*6 + y*y*2 + x*z*3]]
+# --- end of the block from SageMath ---
 # congruence diagonalization
 P = [[K(1) if i==j else K(0) for j in range(3)] for i in range(3)]
 A = [row[:] for row in L]

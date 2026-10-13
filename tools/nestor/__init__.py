@@ -5,7 +5,7 @@ The pipeline's high-precision integration oracle, consolidated under one
 name: one entry point over the node-farmed
 tanh-sinh engine (oracle_par.py), the per-chain convergence prober
 (quad_probe), and the wp-scaled precision ladder of the originating
-certification evaluators.  It reports only the digits successive refinements agree on,
+high-precision quadrature evaluators.  It reports only the digits successive refinements agree on,
 and refuses -- named, fail-closed, receipted -- when they do not agree.
 
 FRONT DOOR
@@ -43,7 +43,7 @@ PROVENANCE
     nestor.farm ports the node-farm engine of an originating parallel
     oracle (not part of this repo) verbatim, generalizing only the plumbing;
     nestor.ladder extracts the precision-ladder pattern of the originating
-    certified-quadrature evaluators, with the source sha recorded in its
+    high-precision quadrature evaluators, with the source sha recorded in its
     header; nestor.probe delegates to the canonical
     tools/gatekeeper/probes/quad_probe.py at import time (computed sibling
     path).

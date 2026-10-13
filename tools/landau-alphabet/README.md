@@ -171,7 +171,7 @@ Lower-level pieces (all graph-agnostic, all importable):
 
 | file | graph | known alphabet |
 |---|---|---|
-| `box1l.json` | 1-loop massless box | `{s, t}` |
+| `box1l.json` | 1-loop massless box | `{s, t}` (after pruning of second-type letters; PLD.jl returns `{s, s + t, t}`) |
 | `sunrise2l.json` | 2-loop equal-mass sunrise | `{s, m2, s-m2, s-9m2}` |
 | `n8_dbox.json` | non-planar massless double box (Tausk) | `{t, s+t}` |
 | `ladder3.json` | 3-loop planar triple-box ladder | `{s, t}` |
@@ -259,6 +259,21 @@ The `amflow.jl` sampling path shells out to `amflow_cli` (build from
 the AMFlow.cpp fork, the sibling repository amflow-cpp; put it on PATH or
 set `AMFLOW_CLI`); everything else is
 self-contained.
+
+## Credit
+
+The face-by-face singularity computation follows the principal Landau determinant of
+Claudia Fevola, Sebastian Mizera and Simon Telen (arXiv:2311.16219) [PLD, FMT] and the Landau
+discriminant of Sebastian Mizera and Simon Telen (arXiv:2109.08036), with this package's own
+construction of the graph polynomials and its own elimination. `pld_bridge.jl` runs the
+authors' program PLD.jl (MIT, mathrepo.mis.mpg.de/PLD; not bundled) on the same input, and
+the numerical fallback in the same file applies their line-slicing method with
+HomotopyContinuation.jl by Paul Breiding and Sascha Timme [HCjl]; that file was written
+with the PLD.jl source open. The classification of letters serves the Landau bootstrap of
+H. S. Hannesdottir, A. J. McLeod, M. D. Schwartz and C. Vergu [LB1, LB2, LB3], and the
+fitting library `LandauAlphabet.jl` follows the analytic regression of O. Barrera, A. Dersy,
+R. Husain, M. D. Schwartz and X. Zhang (arXiv:2507.17815) [BDHSZ]. Full list: `GUIDE.md`,
+CREDIT. Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 

@@ -2,6 +2,16 @@
 """deform_kit.py — deformation-method matrix Frobenius transport: exact local
 factors of operator motives (matrix wing of the deform_transport member).
 
+Method: the deformation method of Dwork and Lauder, in the form given for
+Picard-Fuchs operators by Candelas, de la Ossa and van Straten
+(arXiv:2104.07816); see also Pancratz and Tuitman (arXiv:1307.1250).  Public
+programs by the method's authors: CY3Zeta (Candelas, de la Ossa, Kuusela,
+arXiv:2405.08067) and PFLFunction (Kuusela, Lathwood, Mosso Rojas, Stepniczka,
+arXiv:2604.01191), both GPL-3.0; none of their code is used here.  Clearing the
+poles with a power of the discriminant at x^p is part of the published method;
+where the comments below say "measured denominator law" they mean the exponent
+that we fixed by measurement.
+
 Instrument:
  (i)  log-aware Frobenius basis at x=0 over Q: solutions as J-vector series
       (component k = coefficient of log^k / k!), delta-normalized at the
@@ -21,7 +31,8 @@ Instrument:
 Scale algebra: stored = p^scale * true, residues mod p^modk; true values
 certified mod p^{modk - scale}.  Divisions assert exactness (undersized
 scale fails loudly, never silently).
-Vendored engines consumed by sibling IMPORT (shas in receipts).
+Sibling engines (r2_kit, f2_lib; copied from this project's earlier rounds)
+are consumed by sibling IMPORT (their sha256 is written into every run record).
 Failure-class vocabulary used in verdict strings: K1 = fixable bug (one
 debug cycle), K2 = compute-priced wall, K3 = structural design wall.
 Requires python-flint (series algebra) and gmpy2 (fast modular inverses);

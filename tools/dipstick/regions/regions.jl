@@ -17,9 +17,14 @@
 #   dominates the runtime AFTER volumes land. Consumers MUST treat skipped chi as
 #   unverified (flag -> value-gate before use).
 # Input JSON: {"G":str, "kin":[..], "x":[..], "kin_weight":{kin:int,..}, "regions":[[v..],..]?}
+# The region enumeration (lower_facets and the point table) implements the Newton-polytope
+# construction of A. Pak and A. Smirnov, arXiv:1011.4863, from the paper.
 # Leviathan (chi_regulated engine): resolved from a sibling tools/leviathan, then
 # upgrades/leviathan in this repo. Override with DIPSTICK_LEVIATHAN (the old name
-# EBR_LEVIATHAN is still accepted as a fallback alias for one release).
+# EBR_LEVIATHAN is still accepted as a fallback alias for one release). Leviathan is a Julia port
+# of the method of Chestnov, Crisanti and Giroux (arXiv:2606.29612), in part translated from their
+# Mathematica code and from DiscKosky by Crisanti, Lippstreu, McLeod and Polackova; this file calls
+# it and contains none of its lines (upgrades/leviathan/NOTICE).
 let _lev = get(ENV, "DIPSTICK_LEVIATHAN", get(ENV, "EBR_LEVIATHAN", ""))
     if isempty(_lev)
         for _c in (joinpath(@__DIR__, "leviathan", "src", "Leviathan.jl"),

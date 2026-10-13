@@ -4,12 +4,14 @@ Tool page: https://bootloops.ai/tools/nestor.html
 
 KIND: package
 
-PURPOSE: NESTOR (NESted Tanh-sinh ORacle) — one certified-quadrature front door over
+PURPOSE: NESTOR (NESted Tanh-sinh ORacle): one high-precision quadrature front door over
 the standing layer: node-farmed nested tanh-sinh + wp-scaled per-level precision ladder
-+ load-time singularity verification + fail-closed refuse-don't-guess.
++ load-time singularity verification + fail-closed refuse-don't-guess. The digits it
+reports are measured self-consistency (agreement between successive refinements), not a
+proven error bound.
 
 USE-WHEN:
-- Certified high-precision quadrature ORACLE behind a gate.
+- High-precision quadrature ORACLE behind an acceptance check (agreed digits or a named refusal).
 - Nested / farmed outer folds; a serial mp.quad leaves the machine idle — farm an explicit
   tanh-sinh grid over a Pool instead.
 
@@ -58,10 +60,13 @@ certification downstream); tools/lockpick (PSLQ closure downstream).
 
 CREDIT: tanh-sinh (double-exponential) quadrature is due to H. Takahasi & M. Mori (1974,
 Publ. RIMS Kyoto 9:721); its use as the workhorse of very-high-precision integration
-follows D. H. Bailey and collaborators (Bailey, Jeyabalan & Li 2005, Exp. Math. 14:317);
-the per-level rule nestor farms is mpmath's implementation (F. Johansson and the mpmath
-developers). The node-farm, wp-ladder and nesting-pattern consolidation are this
-program's.
+follows D. H. Bailey and collaborators (Bailey, Jeyabalan & Li 2005, Exp. Math. 14:317).
+Nestor is built on mpmath (F. Johansson and the mpmath contributors, BSD 3-Clause
+License): the serial route and the dispersion member run mpmath's tanh-sinh rule, and
+the depth loop of `cert_quad` in `ladder.py` is modeled on the loop of mpmath's
+`QuadratureRule.summation`, with a stricter stopping test that fails with an error
+instead of returning a value. The parallel grid (`farm.py`), the endpoint check and the
+dispersion member are written for BootLoops from the Takahasi–Mori rule.
 
 ## dispersion member (`nestor.dispersion`)
 
@@ -93,7 +98,7 @@ USE-WHEN:
 NOT-FOR: insertions that are not two-particle-reducible; kernels with singularities
 inside the dispersion range (K must be analytic on each sub-panel); singular models
 beyond power×log² (moment limits below). This member is plain quadrature, not the
-certified refuse-don't-guess oracle above: gate its output with a two-level or
+refuse-don't-guess oracle above: check its output with a two-level or
 two-precision agreement, or feed the panel integrands to `nestor.integrate`.
 
 INVOKE: `from nestor.dispersion import disp_subtracted, moment_powerlog,

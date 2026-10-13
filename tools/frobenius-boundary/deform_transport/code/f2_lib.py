@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""f2_lib.py — exact-arithmetic Legendre-curve helpers (vendored engine for
-the deform_transport member).
+"""f2_lib.py: exact-arithmetic Legendre-curve helpers (engine copied from this
+project's earlier rounds into the deform_transport member).
 
 Everything here is exact integer / F_p arithmetic; no floats in any
 verdict-bearing quantity.  Three helpers:

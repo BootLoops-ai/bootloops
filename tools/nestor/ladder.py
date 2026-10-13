@@ -1,20 +1,39 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT AND BSD-3-Clause
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0 (repository-root
+# LICENSE and NOTICE). The depth loop of cert_quad follows the loop of
+# QuadratureRule.summation in mpmath, Copyright (c) 2005-2021 Fredrik Johansson
+# and mpmath contributors, BSD 3-Clause License; the mpmath notice is
+# reproduced in the NOTICE file beside this file.
 r"""nestor.ladder -- per-level precision ladder: refine-until-agreement,
 fail-closed.
 
 THE LADDER (verbatim ported math; NOT rewritten)
 ================================================
-  -- cert_quad (refine-until-bound certified quadrature),
+  -- cert_quad (refine-until-agreement quadrature; the reported digits are
+          measured agreement between successive depths, not a proven error
+          bound),
           digits(), the working-precision policy (WP_EXTRA=12, DEPTH_EXTRA=5,
           INNER_DROP=2, prec = int(wp*3.3333)+10), the two-height escalation
           schedule [h0, ceil(1.3 h0), ceil(1.69 h0)] (word_eval / piece_eval),
           and the exit-code refusal contract EXIT_OK/PIN/GATE/MISSING=0/2/3/4.
-  src: the originating certified-quadrature evaluator,
+  src: the originating high-precision quadrature evaluator,
        sha256 4d85f01dd4b54419af02804acdd372bf15439e5c03a7cbae3dc0fb59de38860a
        -- the original cert_quad + CertFail design; a sibling production
           evaluator ports it intact and this module ports the same text.
   The shipped evaluators are NOT modified by this package; this module
   extracts their LADDER PATTERN as a reusable layer.
+
+THIRD-PARTY CODE (mpmath)
+=========================
+  cert_quad drives mpmath's TanhSinh rule (get_nodes, sum_next,
+  guess_degree) in the loop of mpmath's QuadratureRule.summation
+  (mpmath/calculus/quadrature.py; Copyright (c) 2005-2021 Fredrik Johansson
+  and mpmath contributors, BSD 3-Clause License; compared at mpmath 1.3.0),
+  with a different stopping test (plain successive difference against
+  10^-tol_exp), a deeper cap, a non-finite check, and a raise in place of
+  mpmath's silent fall-through.  The mpmath notice is in the NOTICE file
+  beside this file.
 
 THE PATTERN
 ===========
@@ -65,7 +84,7 @@ class MissingRefusal(NestorRefusal):
 
 
 class CertFail(GateRefusal):
-    """Fail-closed refusal: a loop could not certify its bound (ported)."""
+    """Fail-closed refusal: a loop could not reach its agreement bar (ported)."""
 
 
 class SpecRefusal(GateRefusal):
@@ -92,7 +111,7 @@ class EvalRefusal(GateRefusal):
 WP_EXTRA = 12       # working-precision headroom above dps+guard
 DEPTH_EXTRA = 5     # depth cap = guess_degree + DEPTH_EXTRA
 INNER_DROP = 2      # inner (nested) tolerance exponent runs TIGHTER by this
-DEFAULT_GUARD = 10  # default guard digits above the certified request
+DEFAULT_GUARD = 10  # default guard digits above the requested digits
 
 
 def digits(a, b):
@@ -103,7 +122,7 @@ def digits(a, b):
 
 
 def wp_for(D, guard=DEFAULT_GUARD):
-    """Working dps for a certified-D request (policy of the evaluators)."""
+    """Working dps for a D-digit request (policy of the evaluators)."""
     return D + guard + WP_EXTRA
 
 
@@ -115,7 +134,7 @@ def prec_for(wp):
 
 def inner_tol_exp(D, guard=DEFAULT_GUARD):
     """Tolerance exponent for a NESTED inner quadrature under an outer
-    certified-D request (ported: inner_exp = D + guard + INNER_DROP)."""
+    D-digit request (ported: inner_exp = D + guard + INNER_DROP)."""
     return D + guard + INNER_DROP
 
 
@@ -130,7 +149,12 @@ def _rule():
 
 
 def cert_quad(f, a, b, tol_exp, wp, tag=""):
-    """Certified quadrature: refine-until-bound, fail-closed.
+    """Quadrature by refine-until-agreement, fail-closed (measured
+    self-consistency between successive depths, not a proven error bound).
+
+    The depth loop is that of mpmath's QuadratureRule.summation, driven
+    through mpmath's TanhSinh rule (F. Johansson and the mpmath
+    contributors, BSD 3-Clause License), with a different stopping test.
 
     Integrate f over [a,b]; return (value, agreement, depth) with the
     double-refinement agreement |I_d - I_{d-1}| <= 10^-tol_exp.  Success is
@@ -160,7 +184,7 @@ def cert_quad(f, a, b, tol_exp, wp, tag=""):
                 agr = abs(results[-1] - results[-2])
                 if agr <= tol:
                     return results[-1], agr, depth
-        # needed-dps: what the measured agreement WOULD have certified
+        # needed-dps: what the measured agreement WOULD have supported
         ach = float(-mp.log10(agr)) if (agr is not None and agr > 0) \
             else float('-inf')
         deficit = max(1, int(mp.ceil(tol_exp - ach)))

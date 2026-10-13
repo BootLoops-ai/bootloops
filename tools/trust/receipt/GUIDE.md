@@ -85,6 +85,8 @@ Mod. Phys. A 15:5087) over finite fields (von Manteuffel & Schabinger 2015,
 arXiv:1406.4513; Peraro 2016, JHEP 12:030) as produced by Kira (Maierhöfer, Usovitsch &
 Uwer 2018; Klappert, Lange, Maierhöfer & Usovitsch 2021; Lange, Usovitsch & Wu,
 arXiv:2505.20197); the retrofit emitter uses Wiedemann's sparse solver (D. Wiedemann
-1986, IEEE Trans. Inf. Theory 32:54); the witness-per-row design is in the spirit of
+1986, IEEE Trans. Inf. Theory 32:54) with the Berlekamp-Massey algorithm (Berlekamp
+1968; Massey 1969) and the preconditioning of Kaltofen and Saunders (1991); the
+witness-per-row design is in the spirit of
 certifying algorithms (McConnell, Mehlhorn, Näher & Schweitzer 2011, Comput. Sci. Rev.
 5:119).

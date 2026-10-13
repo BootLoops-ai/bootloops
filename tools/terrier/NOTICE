@@ -1,0 +1,47 @@
+terrier (tools/terrier), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE).
+
+Portions of this package derive from Hecke.jl
+(https://github.com/thofma/Hecke.jl), by Claus Fieker, Tommy Hofmann and the
+Hecke contributors, released under the BSD 2-Clause "Simplified" License:
+
+  lattice/genus_enum.jl
+      The genus traversal in enumerate_aut_free (the closures _invariants and
+      callback, the spinor-genus seeding loop and the neighbor loop) is adapted
+      from _enumerate_definite_genus! in Hecke's
+      src/QuadForm/Quad/ZGenusRep.jl (compared at Hecke v0.39.22, commit
+      5e926df660cf62880efddbe8295576d58c8b8845), with the invariant function
+      and the isometry test replaced and the mass ledger removed. The file
+      also calls the Hecke functions _neighbours, _theta_series and
+      __is_isometric_with_isometry_definite at run time.
+
+  lattice/lp_kill_rank_agnostic.py
+      The search window and the output contract of short_vectors follow
+      Hecke's src/QuadForm/Enumeration.jl (see the header of that file).
+
+The Hecke.jl notice (LICENSE.md at v0.39.22) is reproduced here:
+
+    Copyright (c) 2015-2024: Hecke contributors, see <https://github.com/thofma/Hecke.jl/graphs/contributors>
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this
+       list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright notice,
+       this list of conditions and the following disclaimer in the documentation
+       and/or other materials provided with the distribution.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

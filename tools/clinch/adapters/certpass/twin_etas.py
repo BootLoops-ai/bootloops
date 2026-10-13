@@ -10,6 +10,12 @@ from the pinned etas.inversion (sha-receipted by the dump); its
 (lc, om, ltau) derivative columns are central-FD of the source sum
 (receipted at the FD register — the rigorous claim rides the arb oracle
 + the mp50 slice adjudication, never this twin).
+
+Third-party code: upper_gamma_ext is copied from, and G_sum follows
+expected_aftershocks of, etas/inversion.py in the etas package of
+L. Mizrahi, S. Nandan and S. Wiemer (github.com/lmizrahi/etas @ 097f08b6;
+Seismol. Res. Lett. 92 (2021) 2333), Copyright (c) 2024 ETH Zurich, Leila
+Mizrahi, MIT License; see PROVENANCE.md.
 """
 import numpy as np
 from scipy.special import gammaincc, gamma as gamma_func, exp1
@@ -18,6 +24,7 @@ LN10 = np.log(10.0)
 IDX = dict(lmu=0, lk0=1, a=2, lc=3, om=4, ltau=5, ld=6, gam=7, rho=8)
 
 
+# upper_gamma_ext is copied from etas/inversion.py (github.com/lmizrahi/etas @ 097f08b6, MIT, Copyright (c) 2024 ETH Zurich, Leila Mizrahi); see PROVENANCE.md.
 def upper_gamma_ext(a, x):
     """VERBATIM transliteration of the pinned etas.inversion form."""
     if a > 0:
@@ -69,6 +76,9 @@ class TwinEtas:
         S0 = np.bincount(self.pt, weights=g, minlength=self.n_t)
         return mu + S0, g, aux
 
+    # G_sum follows expected_aftershocks of etas/inversion.py (same package,
+    # same copyright line and license as upper_gamma_ext above): the same
+    # three factors (number, area, time) in the same order.
     def G_sum(self, th, sl=None):
         """Vector of G_j (source integrals)."""
         lmu, lk0, a, lc, om, ltau, ld, gam, rho = th

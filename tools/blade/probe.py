@@ -31,6 +31,14 @@ Backends
 Gate discipline: every load/solve failure raises BladeGateError naming the
 artifact; outputs are cross-gated (ssolve backend self-gates its element
 ordering against the exact backend on every batch).
+
+Provenance: the exact back end is a Python counterpart of the block solve of
+Blade's ssolve stage (src/ssolve/block.c in Blade, Copyright (c) 2022 Xin
+Guan, Xiao Liu, Yan-Qing Ma and Wen-Hao Wu, MIT License): the same
+block-by-block solve order and substitution, written here for the exported
+exact relations at any prime instead of the per-prime fit tables.  The ssolve
+back end runs their ssolve program and reads its output order.  See NOTICE
+beside this file.
 """
 from __future__ import annotations
 

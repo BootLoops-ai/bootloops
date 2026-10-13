@@ -1,5 +1,18 @@
-# genus_enum.jl — Aut-free Kneser genus enumeration + PARI POST certificates.
-# Avoids Hecke enumerate_definite_genus's default path, whose
+# SPDX-License-Identifier: MIT AND BSD-2-Clause
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0; see LICENSE and NOTICE beside this file.
+# Portions adapted from Hecke.jl (https://github.com/thofma/Hecke.jl),
+# Copyright (c) 2015-2024 Hecke contributors (Claus Fieker, Tommy Hofmann and
+# others), BSD 2-Clause License: the genus traversal in enumerate_aut_free
+# below (the closures _invariants and callback, the spinor-genus seeding loop
+# and the neighbor loop) is Hecke's _enumerate_definite_genus! from
+# src/QuadForm/Quad/ZGenusRep.jl (compared at Hecke v0.39.22, commit 5e926df6),
+# with the invariant function and the isometry test replaced and the mass
+# ledger removed. The Hecke copyright notice, license conditions and disclaimer
+# are reproduced in tools/terrier/NOTICE.
+#
+# genus_enum.jl: genus enumeration by Hecke's Kneser-neighbor traversal with
+# the invariant and the isometry test replaced, and PARI mass checks
+# afterwards. It does not take Hecke's default path, whose
 # default_invariant_function computes automorphism_group_order per CANDIDATE;
 # in Oscar that routes to GAP _stab_via_fin_field -> OutOfMemoryError at rank 19.
 # DESIGN (each rule checked against the Hecke source for ZZLat genus
@@ -83,8 +96,11 @@ cheap_inv(L) = Tuple(Hecke._theta_series(L, 6))
 natiso(X, Y) = Hecke.__is_isometric_with_isometry_definite(
     lattice(rational_span(X)), lattice(rational_span(Y)))[1]
 
-# Aut-free genus traversal: same structure as _enumerate_definite_genus!
-# (spinor seeds -> cycle classes -> Kneser p-neighbours) minus the mass ledger.
+# Aut-free genus traversal, adapted from Hecke.jl's _enumerate_definite_genus!
+# (src/QuadForm/Quad/ZGenusRep.jl; Hecke contributors, BSD 2-Clause License; see
+# the header of this file): same structure (spinor seeds -> cycle classes ->
+# Kneser p-neighbors) minus the mass ledger, with cheap_inv and natiso in place
+# of Hecke's default invariant function and isometry test.
 function enumerate_aut_free(L0, t0)
     @assert isone(scale(L0)) "scale != 1 unsupported"
     res = ZZLat[]

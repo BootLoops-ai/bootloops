@@ -5,7 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ibplapper"
 version = "1.0.0"
-license = { text = "MIT" }
+# MIT, except ibplapper/adapters/user_system.py, which follows Kira's parser
+# and is GPL-3.0-or-later (see NOTICE and LICENSE-GPL-3.0 beside this file).
+license = { text = "MIT AND GPL-3.0-or-later" }
 authors = [{ name = "Matthew D. Schwartz" }]
 description = "Winnow (package name: ibplapper): standalone upgraded-Laporta F_p eliminator library with native lambda-witness receipts (verify any reduction row against its generating system)."
 readme = "README.md"

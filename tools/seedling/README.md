@@ -25,9 +25,16 @@ Safety model (all measured exhibits, not hypotheticals):
 
 Family preflight, both run BEFORE the first Kira job on a family:
 - `seedling audit CFG` — full discrete autopermutation group (external-leg
-  crossings ∘ charge conjugation ∘ affine unimodular loop maps). Kira's own
-  finder never composes a loop map with a leg crossing; families with such a
-  symmetry silently carry redundant masters. Emits `magic_relations` drop-ins.
+  crossings ∘ charge conjugation ∘ affine unimodular loop maps). This is the
+  symmetry search described in the Kira paper (P. Maierhöfer, J. Usovitsch,
+  P. Uwer, arXiv:1705.05610, sec. 2: integer loop-momentum maps composed with
+  permutations and sign flips of external momenta that leave the invariants
+  unchanged), re-implemented here with an algorithm written for this tool and without Kira
+  source. Kira 2.x ran that search with the permutations; Kira 3.0 and 3.1 as
+  released do not compose a loop map with a permutation of the external legs
+  (a reading of their source, not confirmed by a run), so with those versions
+  families with such a symmetry silently carry redundant masters. Emits
+  `magic_relations` drop-ins.
 - `seedling identity --ours ... --theirs ...` — proves (or refutes, loudly,
   naming the inconsistent monomial) that a transcribed propagator list is the
   same family as a paper's, via the affine scalar-product dictionary on the

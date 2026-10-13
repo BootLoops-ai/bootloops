@@ -1,4 +1,4 @@
-# Gate 2 control: equal-mass sunrise (paper worked example).
+# Control test: equal-mass sunrise (worked example of arXiv:2606.29612).
 # Expect chi_top(nu=0) = 4; Landau factors {s, mm, s-mm, s-9mm};
 # nu=0 top-sector elimination: x0 cubic with c3 ~ 16*s, x1 quartic with
 # c4 ~ 9*mm*(mm-s)^2*(9mm-s)  (factors {mm, s-mm, s-9mm}).

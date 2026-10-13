@@ -1,6 +1,7 @@
 # Harmonic polylogarithms H(m⃗; z) (Remiddi–Vermaseren), via gpl.
 #
-# Convention matches the project's hand-rolled hpl_fast.py / hpl_basis.py:
+# Convention matches two earlier scripts of this project (hpl_fast.py /
+# hpl_basis.py, not distributed):
 #   df₀ = dz/z,  df₁ = dz/(1−z),  df₋₁ = dz/(1+z),
 # i.e.  H(a⃗; z) = (−1)ᵖ G(a⃗; z) with p = #(aᵢ = +1) and aᵢ ∈ {0,±1}.
 # Compressed m-vector: mᵢ > 0 ↦ 0^{mᵢ−1},1 ;  mᵢ < 0 ↦ 0^{|mᵢ|−1},−1 ;

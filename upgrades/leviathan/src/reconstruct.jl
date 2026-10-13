@@ -1,10 +1,10 @@
-# reconstruct.jl — finite-field reconstruction route (the v2 "leviathan-scale" path).
-# Computes the SAME monic minpoly μ_v as elimination.jl (provably the identical object; see
-# the method notes in PATCHES.md), but by sampling over (prime p, kin point k) and rationally
-# reconstructing each
-# coefficient instead of exact GB over ℚ(kin). Candidates = irreducible factors of N and D of
-# every reconstructed coefficient; certified by existing diag_type22.
-
+# reconstruct.jl: finite-field reconstruction route. Computes the same monic minimal polynomial as
+# elimination.jl, by sampling over (prime p, kinematic point k) and rationally reconstructing each
+# coefficient. Candidates = irreducible factors of N and D of every coefficient, checked by diag_type22.
+# From the authors' code (no license file): the cut-edge block of fp_ideal (lines 15-21) is a
+# translation of DiscKosky euler_characteristic.m:157-180 (the MIT grant does not cover it; NOTICE);
+# kin[end] = 1, rehomogenization, kin[end] re-added (lines 55, 107-113, 140) and the verify switch
+# (lines 142-152) follow SPQRLandau in landau_codes.m:143-147, 238-247, 253-262. See PATCHES.md.
 import JSON
 
 "J_S over GF(p)[x0,x_S] at (p,kinvals). Mirrors ff_ideal; regulated takes FIXED rational nu,d/2."

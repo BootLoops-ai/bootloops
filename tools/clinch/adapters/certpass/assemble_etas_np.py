@@ -19,6 +19,15 @@ n_hat (exact); the banked G column is the penultimate-theta register
 (etas_dump.py, still running), diff_pair_tables.py must report EXACT
 set equality — the final receipt.
 
+Third-party code: the pair table, the E-step check and the source integral
+in main() follow the code of etas/inversion.py (filter_catalog,
+calculate_distances, haversine, coppersmith, triggering_kernel,
+expectation_step, expected_aftershocks) in the etas package of L. Mizrahi,
+S. Nandan and S. Wiemer (github.com/lmizrahi/etas @ 097f08b6; Seismol.
+Res. Lett. 92 (2021) 2333), rewritten in vectorized numpy form;
+round_half_up is copied from etas/mc_b_est.py. Copyright (c) 2024 ETH
+Zurich, Leila Mizrahi, MIT License; see PROVENANCE.md.
+
 Usage: assemble_etas_np.py <e2_params.json> <catalog.csv>
        <banked_sources.csv> <banked_trigbg.csv> <out.npz>
 """

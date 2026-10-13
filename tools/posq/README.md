@@ -272,7 +272,11 @@ Ahlbäck and the FLINT developers; Arb: Johansson 2017, IEEE Trans. Comput. 66:1
 certified Gauss–Legendre/Gauss–Jacobi rules are obtained by interval Newton in ball
 arithmetic, in the manner of Johansson & Mezzarobba (2018, SIAM J. Sci. Comput. 40:C726)
 for the Gauss–Legendre case, seeded from SciPy's double-precision Gauss–Jacobi nodes
-(scipy.special.roots_jacobi); the likelihood integrated is Felsenstein's (1981, J. Mol.
+(scipy.special.roots_jacobi); the Jacobi recurrence coefficients (`recur_coeffs` in
+`bench_rung1_gauss.py`) follow the routines r_jacobi.m and r_jacobi01.m of W. Gautschi's
+OPQ suite (r_jacobi.m supplied by D. Laurie; doi:10.4231/R7959FHP, CC0 1.0; W. Gautschi,
+Orthogonal Polynomials: Computation and Approximation, Oxford 2004); the likelihood
+integrated is Felsenstein's (1981, J. Mol.
 Evol. 17:368) CTMC tree likelihood; the production counts derive from DravLex v1.0
 (Kolipakam, Jordan, Dunn, Greenhill, Bouckaert, Gray & Verkerk 2018, R. Soc. Open Sci.
 5:171504; CC BY 4.0; not shipped here).

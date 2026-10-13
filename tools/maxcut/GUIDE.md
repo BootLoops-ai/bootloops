@@ -112,17 +112,32 @@ FOOTGUNS:
   produces wrong leading singularities; do not build one.
 
 RELATED: `tools/pf_rank.jl` (Track B-jl mod-p Griffiths–Dwork backend, flat path,
-ships in this repo); `tools/counterweight/canonical_form/` (Counterweight bridge); `tools/ansatzer/` (residual-count sizing before farming).
+ships in this repo; it forwards to `tools/dipstick/pf_rank.jl`, which runs the Leviathan
+engine in `upgrades/leviathan`); `tools/counterweight/canonical_form/` (Counterweight bridge); `tools/ansatzer/` (residual-count sizing before farming).
 
-CREDIT: the Baikov representation is P. A. Baikov's [Baikov], in the loop-by-loop form
-of Frellesvig and Papadopoulos [FP]; maximal cuts in Baikov variables follow Harley,
+CREDIT: the Baikov representation is P. A. Baikov's [Baikov]; `gram_baikov` builds its
+standard (full Gram determinant) form on the cut, and the loop-by-loop form of Frellesvig
+and Papadopoulos [FP] appears as theory in `ut_rotation`; maximal cuts in Baikov variables follow Harley,
 Moriello and Schabinger [HMS] and Bosma, Sogaard and Zhang [BSZ], and their use to read
 off the geometry and the homogeneous differential equations follows Primo and Tancredi
 [PT1, PT2] (genus drops: Marzucca, McLeod, Page, Pögel, Weinzierl [MMPPW]). Picard–Fuchs
 operators by Griffiths–Dwork reduction (Griffiths [Griffiths]; Lairez [Lairez]);
 canonical/UT rotations after Arkani-Hamed, Bourjaily, Cachazo and Trnka [ABCT], Henn
 [Henn] and Henn, Mistlberger, Smirnov and Wasser [DlogBasis]; master counting after Lee
-and Pomeransky [LP]. Bracketed keys resolve in REFERENCES.md at the repository root.
+and Pomeransky [LP]. The `lp` route of `decisive` (`classify_lp`) calls `tools/pf_rank.jl`
+and through it runs the Leviathan engine (`upgrades/leviathan`) for the holonomic rank:
+Leviathan is a Julia port of the Euler-characteristic-drop method of Vsevolod Chestnov,
+Giulio Crisanti and Mathieu Giroux [Leviathans], in part translated from their
+Mathematica code and from DiscKosky by Giulio Crisanti, Luke Lippstreu, Andrew J. McLeod
+and Maria Polackova (github.com/Giu989/DiscKosky); see `upgrades/leviathan/NOTICE`.
+Maxcut calls that engine at run time and contains none of its code. Public programs exist
+for two of the tasks Maxcut covers and are credited here as prior work: SymBuild by
+Vladimir Mitev and Yang Zhang (arXiv:1809.05101) for integrable symbols, and
+BaikovPackage by H. Frellesvig (arXiv:2412.01804) for Baikov polynomials. In
+`sparse_cascade` the modular matrix product on floating-point BLAS is the
+delayed-reduction technique of FFLAS-FFPACK (Dumas, Giorgi, Pernet); `de_transport`
+integrates by the Bulirsch-Stoer method (Gragg's modified midpoint rule with
+extrapolation). Bracketed keys resolve in REFERENCES.md at the repository root.
 
 ## License
 

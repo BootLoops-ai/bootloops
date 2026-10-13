@@ -5,8 +5,15 @@
 Finds every external-leg crossing π (composed with charge-conjugation C: p→−p)
 that, together with an affine unimodular loop map  l_a = M_{ab} l'_b + A_{ac} p'_c,
 sends the DENOMINATOR set {D_1..D_n} onto itself as functions of momenta.  These
-are the family autopermutations kira's own symmetry finder MISSES (kira only tries
-loop shifts + `magic_relations` Pak matching, not external crossings ∘ C).
+are the family autopermutations that the symmetry finder of Kira 3.0 and 3.1 as
+released does not find: by a reading of its source (not confirmed by a run) it
+tries loop-momentum maps, sign flips of the external momenta and
+`magic_relations` Pak matching, but no permutation of the external legs.  Kira
+2.x tried the permutations too.  The search space is the one described in the
+Kira paper (P. Maierhöfer, J. Usovitsch, P. Uwer, arXiv:1705.05610, sec. 2:
+integer loop-momentum maps composed with permutations and sign flips of
+external momenta that leave the invariants unchanged); the algorithm below was
+written for this tool and contains no Kira source.
 
 The search and its controls were validated against independently proven
 symmetry orbits before being generalized into this tool.
@@ -1010,7 +1017,8 @@ def identity_check_wpair():
                 (1,-1,q(0,0,0),0),(1,-1,q(-1,-1,1),1),(0,1,q(0,-1,-1),1)]
     ours_fix = [(1,0,q(0,0,0),0),(1,0,q(1,0,0),0),(1,0,q(0,-1,0),0),(0,1,q(0,-1,0),0),
                 (1,-1,q(0,0,0),0),(1,-1,q(1,1,-1),1),(0,1,q(0,-1,-1),1)]
-    # PAPER T_4 (p4_in = -(p1+p2+p3) substituted in D8):
+    # PAPER T_4 (p4_in = -(p1+p2+p3) substituted in D8); propagators
+    # transcribed from He et al., arXiv:2409.08879:
     paper = [(1,0,q(0,0,0),0),(1,0,q(1,0,0),0),(1,0,q(0,-1,0),0),(0,1,q(0,-1,0),0),
              (1,-1,q(0,0,0),0),(1,-1,q(1,1,1),1),(0,1,q(0,-1,-1),1)]
 

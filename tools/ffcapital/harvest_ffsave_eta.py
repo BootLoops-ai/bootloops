@@ -1,8 +1,19 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: MIT
-# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0 (repository-root
-# LICENSE and NOTICE). Reads the plain-text state files FireFly writes; contains
-# no FireFly code (THIRD_PARTY.md B2).
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Parts of this script are taken from, or follow, the source code of FireFly
+# (https://gitlab.com/firefly-library/firefly; J. Klappert, S. Y. Klein and
+# F. Lange), Copyright (C) 2020 Jonas Klappert and Fabian Lange, licensed under
+# the GNU General Public License v3.0 or later: the PRIMES list below is the
+# first 40 entries of FireFly's table of the largest 63-bit primes, copied from
+# source/ReconstHelper.cpp (primes()); the section names in KEYWORDS and the
+# line layout read by the state parser are those of FireFly's writer
+# RatReconst::save_state (source/RatReconst.cpp); the validation.gz layout is
+# that of source/include/firefly/Reconstructor.hpp. No FireFly routine is
+# included or run. This Python script is Copyright (c) 2026 Anthropic, PBC;
+# created by Matthew D. Schwartz, code written by Claude (Anthropic) under his
+# supervision, and is distributed under the same GNU General Public License
+# v3.0 or later. See NOTICE and LICENSE-GPL-3.0 beside this file.
 # ffcapital member — 1-var salvage (numeric-d eta-slices).
 # Siblings: harvest_ffsave_2var.py (2-var), recon_symbolic_d.py (cross-slice
 # symbolic-d). All roots via CLI/--config; fail-closed on unset CONFIG.
@@ -40,7 +51,10 @@ import argparse, glob, gzip, json, os, sys
 from fractions import Fraction
 from multiprocessing import Pool
 
-# FireFly 63-bit prime table head (ReconstHelper.cpp:24ff), enough for 40 primes
+# First 40 entries of FireFly's table of the largest 63-bit primes, copied
+# from FireFly's source/ReconstHelper.cpp (primes(), line 24ff), in its
+# three-per-line layout (GPL-3.0-or-later, see the header). Enough for 40
+# primes.
 PRIMES = [
     9223372036854775783, 9223372036854775643, 9223372036854775549,
     9223372036854775507, 9223372036854775433, 9223372036854775421,
@@ -57,6 +71,8 @@ PRIMES = [
     9223372036854774341, 9223372036854774319, 9223372036854774307,
     9223372036854774277]
 
+# Section names of a FireFly state file, in the order in which FireFly's
+# writer RatReconst::save_state (source/RatReconst.cpp) emits them.
 KEYWORDS = {"combined_prime", "tag_name", "is_done", "max_deg_num", "max_deg_den",
             "individual_degrees_num", "individual_degrees_den", "need_prime_shift",
             "normalizer_deg", "normalize_to_den", "normalizer_den_num",

@@ -1,5 +1,8 @@
-"""BSST tropical importance sampling (arXiv 2204.06414, Algorithm 1 reimplementation,
-python, no Polymake) for the phylo evidence integral
+"""BSST tropical importance sampling: Algorithm 1 of M. Borinsky, A.-L. Sattelberger,
+B. Sturmfels and S. Telen, "Bayesian integrals on toric varieties", arXiv:2204.06414,
+implemented from the paper in python (no Polymake).  The authors' own Julia program
+is at https://mathrepo.mis.mpg.de/BayesianIntegrals; none of its code is here.
+Written for the phylo evidence integral
 
   Z(T;u,alpha=1) = 4^{-(E+1)N} * int_{R+^E} prod_k Q_k(t)^{u_k} prod_e (1+t_e)^{-(N+2)} dt
 

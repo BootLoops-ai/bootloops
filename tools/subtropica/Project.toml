@@ -1,7 +1,12 @@
+# Unofficial Julia port of the front end of SubTropica, by Mathieu Giroux,
+# Sebastian Mizera and Giulio Salvatori (arXiv:2604.20954; MIT;
+# https://github.com/SubTropica/SubTropica). This package carries the name of
+# their program and is not their release; it is not affiliated with or
+# endorsed by them. Please cite their paper. See NOTICE beside this file.
 name = "SubTropica"
 uuid = "b61084cf-1515-4522-8b61-f3c481a4944b"
 version = "1.0.0"
-authors = ["Matthew D. Schwartz"]
+authors = ["Mathieu Giroux (SubTropica, original program)", "Sebastian Mizera (SubTropica, original program)", "Giulio Salvatori (SubTropica, original program)", "Matthew D. Schwartz (Julia port)"]
 
 [deps]
 Hwloc_jll = "e33a78d0-f292-5ffc-b300-72abe9b543c8"

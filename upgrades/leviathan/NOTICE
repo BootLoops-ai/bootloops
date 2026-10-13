@@ -1,0 +1,82 @@
+Leviathan (upgrades/leviathan), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC, for the parts written for BootLoops. Created
+by Matthew D. Schwartz; code written by Claude (Anthropic) under his
+supervision. MIT License (LICENSE beside this file; see also the
+repository-root LICENSE and NOTICE), with the exception stated next. This is
+not an officially supported Anthropic product.
+
+What this package is. Leviathan is a Julia port of the
+Euler-characteristic-drop method for Landau singularities of Feynman integrals
+of Vsevolod Chestnov, Giulio Crisanti and Mathieu Giroux ("Landau's
+Leviathans", arXiv:2606.29612) and of the elimination object of SPQR by
+Vsevolod Chestnov and Giulio Crisanti (arXiv:2511.14875). It was written with
+the authors' public Mathematica code open. No file of the authors ships here.
+This is an unofficial port, not affiliated with or endorsed by the authors;
+please cite both papers.
+
+Portions translated from the authors' code. The following blocks of src/ are
+translations into Julia/Oscar of routines in the authors' Mathematica code:
+
+  src/diagnostics.jl:60-99 (nodegeneracy)
+      from codes_and_examples/landau_codes.m:33-63 (degenerateForKinAndVar)
+      and :66-116 (noDegeneracyQ),
+      https://github.com/Giu989/Landau-s-Leviathans @ 47028b7,
+      by Vsevolod Chestnov, Giulio Crisanti and Mathieu Giroux.
+  src/chi.jl:50-77 (point_on_locus)
+      from Kernel/euler_characteristic.m:96-131
+      (prepareKinematicSpecializationMS, "Diophantine" branch),
+      https://github.com/Giu989/DiscKosky @ 5dca910,
+      by Giulio Crisanti, Luke Lippstreu, Andrew J. McLeod and Maria Polackova.
+  src/chi.jl:33-46 (chi_regulated), src/elimination.jl:26-33 (ff_ideal),
+  src/reconstruct.jl:15-21 (fp_ideal): the cut-propagator form of the
+  regulated ideal
+      from Kernel/euler_characteristic.m:157-180 (prepareCountRegulatedMS),
+      https://github.com/Giu989/DiscKosky @ 5dca910,
+      by Giulio Crisanti, Luke Lippstreu, Andrew J. McLeod and Maria Polackova.
+
+The repositories github.com/Giu989/Landau-s-Leviathans and
+github.com/Giu989/DiscKosky carry no license file at the commits named above.
+The Anthropic copyright line and the MIT grant in LICENSE do not cover the
+translated portions listed above.
+
+Portions that follow the authors' code. The following blocks take a
+convention, an interface or a skeleton from the authors' code and are written
+in different statements. They are listed here for the record, with the same
+facts:
+
+  src/family.jl:62-74 (spec_ring_midq): landau_codes.m:39-40, 73 @ 47028b7.
+  src/family.jl:10 and leviathan.jl:13, 29-30 (the cut list as an input):
+      third argument of CountSectorsUnregulated and CountSectorsRegulated,
+      DiscKosky Kernel/euler_characteristic.m:204, 310 @ 5dca910.
+  src/elimination.jl:89-91, 116-124 and src/reconstruct.jl:107-113
+      (candidates from the least common multiple of denominators):
+      landau_codes.m:238 @ 47028b7.
+  src/reconstruct.jl:55, 109, 140 and src/ratrec.jl:111-117
+      (dehomogenization in the last kinematic variable):
+      landau_codes.m:143-147, 240-247 @ 47028b7.
+  src/staircase.jl:1-4, 21-29, 78-79, 89-93 (wrapper around the monomial
+      count): DiscKosky Kernel/irreducible_monomials.m:5-6, 267-271, 303-304
+      @ 5dca910; SPQR Kernel/various_functions.m:45-53,
+      https://github.com/Giu989/SPQR @ dec9b27, by Vsevolod Chestnov and
+      Giulio Crisanti.
+  src/diagnostics.jl:41-47 (retry over primes): DiscKosky
+      Kernel/euler_characteristic.m:43-52 @ 5dca910.
+  src/landau.jl:35-45 and src/reconstruct.jl:142-152 (verify switch and
+      labels): landau_codes.m:253-262 @ 47028b7.
+
+The repository github.com/Giu989/SPQR carries no license file at the commit
+named above.
+
+The rest of the package was written for BootLoops, in part as an
+implementation of the equations of the two papers: the parser, the counting
+algorithm of src/staircase.jl, the minimal-polynomial candidate routes, the
+rational reconstruction, the command-line program and the tests. PATCHES.md
+beside this file gives the full account, with line counts.
+
+The article text of arXiv:2606.29612 is under CC BY 4.0. Test expectations:
+the sunrise is the worked example of that paper; the equal-mass bubble is the
+Type-1.2 example of the authors' demo notebook (functions_demo.nb in
+Landau-s-Leviathans). No data file of the authors is redistributed here.
+
+OSCAR, which this package calls at run time, is GPL-3.0-or-later and is
+installed through the Julia package manager; it is not bundled.

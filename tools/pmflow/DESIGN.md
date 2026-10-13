@@ -1,7 +1,8 @@
 # gravityFlow — design document
 
 **Scope:** self-consistent auxiliary-mass-flow for cut-eikonal (post-Minkowskian) integral
-families, where the standard AMFlow recursion is a fixed point.
+families, where the auxiliary-mass-flow boundary recursion, as run by our AMFlow.cpp
+build, is a fixed point.
 
 ---
 
@@ -20,7 +21,15 @@ How the fixed point shows itself (the diagnostic evidence chain, reproducible wi
 - the Cutkosky EndingScheme declines: `−2k·u` cut components are not a phase volume;
 - all three scheme variants (Tradition-only, MMA order, Cutkosky-first) fire Tradition.
 
-**Consequence:** vanilla AMFlow cannot produce boundary data for these families.  The
+**Consequence:** our AMFlow.cpp build does not reach a boundary for these families.
+This was observed on our build of AMFlow.cpp only; upstream AMFlow.cpp lists
+`SolveIntegralsGaugeLink` (HQET / SCET / Wilson lines) as out of scope.  The
+auxiliary-mass-flow treatment of linear propagators is due to Z.-F. Liu and Y.-Q. Ma,
+"Automatic computation of Feynman integrals containing linear propagators via auxiliary
+mass flow", Phys. Rev. D 105 (2022) 074003, arXiv:2201.11636 (an auxiliary quadratic
+term for each linear propagator), and is available in the Mathematica package AMFlow of
+X. Liu and Y.-Q. Ma; gravityFlow has not been compared against it on a cut-eikonal
+family.  The
 standard PM literature handles this via y-flow from static (y→1) boundaries.  gravityFlow
 implements the self-consistent alternative: treat the fixed point AS the boundary condition
 by solving the linear-response eigenproblem, then injecting via `explicit_boundary`.

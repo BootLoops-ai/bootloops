@@ -128,7 +128,8 @@ print(baller.render(res, digits=17))       # -> 6.0000000160995649
   (582/~600 blocks + 51-border, ~90 s at 192 bits).
 - **contract** — halt-not-average discipline: `gate`/`manifest` (wayfinder,
   aliased), `mc` (batched MC + Clopper-Pearson certified quantiles,
-  vendored), `dual()`/`Tripwire` (minted dual-path tripwire: disagreement
+  vendored; it follows the Poisson L-test simulation code of pyCSEP, see
+  CREDIT), `dual()`/`Tripwire` (minted dual-path tripwire: disagreement
   HALTS with both values, never averages; sampled 1-in-N oracle mode),
   `run_mutation_gate` (minted mutation-tested-gate harness; scratch-copies-
   only law enforced).
@@ -161,9 +162,12 @@ the vendored bytes alone.
 - **certlane/** — certified arb-ball enclosure primitives for the matPTF
   alert computation (matPTF: the INGV probabilistic tsunami forecasting code,
   Selva et al., "Probabilistic tsunami forecasting for early warning", Nat.
-  Commun. 12, 5677 (2021); certlane re-implements the enclosed layers and
-  copies no matPTF code). certlane is a research re-implementation used to
-  study numerical certification of a published hazard computation; it is not
+  Commun. 12, 5677 (2021); certlane is a port, into ball arithmetic, of the
+  alert layer of that code, written with `PTF_AlertLevels.m` and `PTF_1_0.m`
+  open, and its two test oracles are translations of `PTF_AlertLevels.m`;
+  the matPTF portions stay under CC BY 4.0, see `NOTICE`). certlane is used
+  for research on the numerical certification of a published hazard
+  computation; it is not
   a tsunami-warning system, is not endorsed by INGV, and must not be used
   operationally. Layers covered: (lognormal survival, weighted survival sums, normalized
   sums, percentile brackets with convention-ambiguity unions, alert-level
@@ -189,6 +193,9 @@ the vendored bytes alone.
   vendored beside them (read root override: `WPG_BASE`); its pattern counts
   are derived from the DravLex v1.0 Dravidian lexical database (Kolipakam, Jordan,
   Dunn, Greenhill, Bouckaert, Gray & Verkerk 2018), which is distributed under CC BY 4.0 — see THIRD_PARTY.md.
+  The Vandermonde solver `pvand` in `double_unc` is the Björck-Pereyra solver
+  as coded by John Burkardt in his VANDERMONDE library (MIT); see CREDIT and
+  `NOTICE`.
 - **lgf_monodromy/** — `valmono.py`: validated ball-Taylor Fuchsian
   monodromy transport of an order-5 exact-integer-coefficient ODE (disc
   radius from a series lower bound on |b5|, Gronwall/Cauchy truncation
@@ -313,11 +320,34 @@ Johansson, O. Benjamin and contributors); every certified digit in this package 
 theirs first, and we are grateful to them. Certification: Krawczyk (1969, Computing
 4:187), Moore (1977, SIAM J. Numer. Anal. 14:611), Rump (2010, Acta Numerica 19:287).
 The front-door reference figure is J.-M. Muller's recurrence (Muller et al., Handbook of
-Floating-Point Arithmetic, Birkhäuser 2010). certlane re-derives, in ball arithmetic,
-layers of INGV's matPTF (Selva, Lorito, Volpe, Romano, Tonini, Perfetti, Bernardi et al.
-2021, Nat. Commun. 12:5677; code github.com/INGV/matPTF) — no matPTF code is copied and
-INGV does not endorse this re-implementation; ling_onesided's counts derive from DravLex
+Floating-Point Arithmetic, Birkhäuser 2010).
+
+Three vendored modules derive from other authors' code:
+
+- **certlane** (`vendor/certlane/`). The percentile and alert-level routines are a
+  port, into ball arithmetic, of the alert layer of INGV's matPTF Matlab code
+  (`PTF_AlertLevels.m` and the hazard-curve block of `PTF_1_0.m` at commit fe4dd95,
+  github.com/INGV/matPTF; J. Selva, S. Lorito, M. Volpe, F. Romano, R. Tonini,
+  P. Perfetti, F. Bernardi and co-authors; CC BY 4.0; paper: Selva et al. 2021, Nat.
+  Commun. 12:5677). They were written with that code open and reproduce its
+  conventions step for step, and the two test oracles are translations of
+  `PTF_AlertLevels.m`. The enclosures, the handling of undecidable comparisons and
+  the tests are BootLoops' additions, and INGV does not endorse them.
+- **mc** (`vendor/geo/mc.py`). `mc` follows the Poisson L-test simulation of pyCSEP
+  (`_simulate_catalog` and `_poisson_likelihood_test`; W. H. Savran, M. J. Werner,
+  D. Schorlemmer, P. J. Maechling and co-authors, J. Open Source Softw. 7(69) (2022)
+  3658; github.com/cseptesting/pycsep; BSD-3-Clause, (c) 2021 The University of
+  Southern California). It was written with that code open and keeps its sampling
+  statement. The batching, the multiplicity penalty and the Clopper-Pearson interval
+  are BootLoops' additions.
+- **pvand** (in `vendor/ling_onesided/double_unc.py`). `pvand` is the Björck-Pereyra
+  Vandermonde solver (A. Björck and V. Pereyra, Math. Comp. 24 (1970) 893) as coded in
+  John Burkardt's VANDERMONDE library (MIT), run here in ball arithmetic.
+
+The attributions, license notices and statements of changes for these three are in
+`NOTICE` in this directory. ling_onesided's counts derive from DravLex
 v1.0 (Kolipakam, Jordan, Dunn, Greenhill, Bouckaert, Gray & Verkerk 2018, R. Soc. Open
-Sci. 5:171504; CC BY 4.0). The vendored kklt/geo engines are in-house and ship
-sha-pinned; the minted checks encode the documented footgun catalog. POSQ/wayfinder
+Sci. 5:171504; CC BY 4.0). The vendored kklt engines were written in this project and ship
+sha-pinned. The package also uses mpmath, NumPy, SciPy, SymPy and pytest. The minted
+checks encode the documented footgun catalog. POSQ/wayfinder
 remain their own registered tools, fronted by identity.

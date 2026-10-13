@@ -29,7 +29,10 @@
 # Controls 6/6 PASS incl. Legendre(s²)→2 and deg_s=4 const-period→1 (regression
 # runner: regress_order.jl beside this file).
 # Leviathan (chi_regulated engine): resolved from sibling tools/leviathan, then
-# upgrades/leviathan in this repo. Override with DIPSTICK_LEVIATHAN.
+# upgrades/leviathan in this repo. Override with DIPSTICK_LEVIATHAN. Leviathan is a Julia port of
+# the method of Chestnov, Crisanti and Giroux (arXiv:2606.29612), in part translated from their
+# Mathematica code and from DiscKosky by Crisanti, Lippstreu, McLeod and Polackova; this file calls
+# it and contains none of its lines (upgrades/leviathan/NOTICE).
 let _lev = get(ENV, "DIPSTICK_LEVIATHAN", "")
     if isempty(_lev)
         for _c in (joinpath(@__DIR__, "..", "leviathan", "src", "Leviathan.jl"),

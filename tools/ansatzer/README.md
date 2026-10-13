@@ -146,6 +146,21 @@ physics-family tags.
 
 Further family alphabets in `alphabets/` follow the same schema.
 
+The 19-letter fixture uses our own letter names and leg convention. Sixteen of
+its letters coincide, after relabeling the legs, with letters of the published
+two-mass planar five-point alphabet of Abreu, Chicherin, Sotnikov and Zoia
+(arXiv:2408.05201; Zenodo 10.5281/zenodo.13254698, CC BY 4.0).
+
+## Earlier programs
+
+Building integrable symbols weight by weight over a finite field is a standard
+construction. Two public programs did it before Ansatzer: SymBuild (V. Mitev
+and Y. Zhang, arXiv:1809.05101) and the Symbols package of FiniteFlow MathTools
+(T. Peraro, arXiv:1905.08019). Ansatzer is a separate program and contains no
+code from either. It differs in what it is for: it takes the connection matrix
+into account and reports how many fit points the remaining ansatz needs. The
+method papers are credited in `GUIDE.md`.
+
 ## Tests
 
 ```bash

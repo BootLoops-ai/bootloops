@@ -1,4 +1,18 @@
+# SPDX-License-Identifier: MIT AND CC-BY-4.0
+# Copyright (c) 2026 Anthropic, PBC. Part of BootLoops 1.0; see LICENSE and NOTICE beside this file.
 # baller engine — containment tests for certlane/primitives.py.
+#
+# The oracles oracle_percentile and oracle_alert_level in this file are Python
+# translations of PTF_AlertLevels.m, lines 106-121 and 139, of matPTF by
+# J. Selva, S. Lorito, M. Volpe, F. Romano, R. Tonini, P. Perfetti, F. Bernardi
+# and co-authors (INGV; https://github.com/INGV/matPTF, commit
+# fe4dd958b18de0b5464e83246f8fa95588d96f43; CC BY 4.0,
+# https://creativecommons.org/licenses/by/4.0/). They keep the Matlab statement
+# order and the names xx and yy. Changes: translated from Matlab to Python and
+# evaluated with mpmath at 60 digits; the nonmonotone return and the
+# crash-geometry assertion are added. The two oracles stay under CC BY 4.0;
+# the rest of the file (the containment tests, the planted-error controls) is
+# by BootLoops, under the MIT License. Notices: tools/baller/NOTICE.
 """Containment tests for certlane.primitives against an mpmath dps=60 oracle.
 
 Run from the vendor directory (the parent of certlane/):
@@ -91,7 +105,8 @@ def oracle_weighted_sum(probs, mus, x, sigma=1.0):
 
 def oracle_percentile(hc_floats, thresholds, pr):
     """The shipped interp1 convention (matPTF percentile_value) at
-    dps=60 on exact float64 inputs.  Returns (value, flag) with flag in
+    dps=60 on exact float64 inputs; a translation of matPTF's
+    PTF_AlertLevels.m:106-121.  Returns (value, flag) with flag in
     {'', 'gt100m'}; returns (None, 'nonmonotone') when the deduped xx is not
     strictly decreasing (Matlab interp1 would error — skip such cases)."""
     n = len(hc_floats)
@@ -120,7 +135,8 @@ def oracle_percentile(hc_floats, thresholds, pr):
 
 
 def oracle_alert_level(v, bounds=(0.0, 0.10, 0.5)):
-    """find(val <= [bounds..., inf], 1) - 1 on float64 (shipped convention)."""
+    """find(val <= [bounds..., inf], 1) - 1 on float64 (shipped convention;
+    a translation of matPTF's PTF_AlertLevels.m:139)."""
     for i, b in enumerate(bounds):
         if v <= b:
             return i

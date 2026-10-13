@@ -1,20 +1,20 @@
-# Odd symbol letters: port of Effortless.m (Antonela Matijašić, Julian
-# Miczajka; MIT), bundled with SOFIA as EffortlessMarch2025/.
+# Odd symbol letters: port of Effortless.m by Antonela Matijašić and Julian Miczajka
+# (github.com/antonela-matijasic/Effortless, MIT; bundled with SOFIA as EffortlessMarch2025/ and
+# included under reference/). Algorithm: A. Matijašić, PhD thesis, LMU Munich (2024), section 3.4.
 #
 # An odd letter for a square root sqrt(Q) is W = (P - sqrt(Q))/(P + sqrt(Q))
 # where P^2 - Q factors as c * (product of even letters), i.e. P^2 = Q + Prod
 # is a perfect square for a candidate product Prod of even alphabet letters.
 #
-# Port decisions (documented divergences, both conservative):
-# - Upstream tests perfect-squareness at 4 random integer points
-#   (`AllowedProductQ`); we use exact `Nemo.is_square`.
-# - Upstream pre-filters even letters via numeric zero-locus tests
-#   (`AllowedEvenLetters`, degree < 5 only); we skip the pre-filter — it only
-#   prunes candidates that the exact square test rejects anyway, so the
-#   resulting letter set is identical or a superset.
-# - Independence (`FindIndependentLetters`) is decided by exact linear algebra
-#   on dlog-forms evaluated at deterministic rational points, replacing
-#   NSolve at 50 random real configurations.
+# Differences from Effortless.m (the letter set is not guaranteed to equal theirs):
+# - perfect squares are tested exactly (`Nemo.is_square`), not at 4 random integer points
+#   (`AllowedProductQ`); their numeric pre-filter of even letters (`AllowedEvenLetters`) is skipped;
+# - a product has at most `maxfactors` = 4 letters (theirs has no cap), so a letter that needs a
+#   longer product is not found;
+# - independence (`FindIndependentLetters`) is decided by exact linear algebra on dlog forms at
+#   deterministic rational points, with the dlogs of the even letters in the span (theirs tests
+#   odd letters against odd letters only, by NSolve at 50 random real configurations).
+# Tested on the one-loop bubble alphabet (test/runtests.jl); not compared with Effortless.m output.
 
 """
     OddLetter

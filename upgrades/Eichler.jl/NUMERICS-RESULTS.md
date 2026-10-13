@@ -90,7 +90,8 @@ correctly; the same caveat is recorded in the AMFlow.cpp fork's PATCHES.md
 ## Beyond the gauntlet: Stage 2–3 objects pinned to the Zenodo ancillaries
 
 Stage 2–3 validation runs against the Zenodo ancillaries of
-2502.00118 (10.5281/zenodo.14733100, vendored in `vendor/zenodo-2502.00118/`):
+2502.00118 (10.5281/zenodo.14733100, CC BY 4.0; not vendored, fetched on demand by
+`vendor/zenodo-2502.00118/fetch.sh`):
 
 - **Threshold period ring (s = 4m², the interior dictionary point):** our ϖ₀(4m²,m²)
   and −∂ₛϖ₀(4m²,m²) reproduce the ancillary constants a₀, a₁ to all 68 printed digits

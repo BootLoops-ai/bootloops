@@ -1,9 +1,9 @@
-# chi.jl — Euler-characteristic counts mod p (Eq. 12 sector ideals, regulated ideal, constraints).
-# The cut-edge form of the regulated ideal (chi_regulated: plain dG/dx_i for a cut edge,
-# cut edges excluded from the saturation product) and the "Diophantine" point search of
-# point_on_locus (lowest-degree kinematic variable, up to 400 tries) follow the behavior of
-# countInSector / prepareCountRegulatedMS in DiscKosky's euler_characteristic.m (Crisanti,
-# Lippstreu, McLeod, Polackova; no license file) — read as the reference, no code copied.
+# chi.jl: Euler-characteristic counts mod p (sector ideals, Eqs. 10-11 of arXiv:2606.29612v1;
+# regulated ideal, Eq. 3; constraints). Two blocks are translations into Julia/Oscar of routines in
+# DiscKosky Kernel/euler_characteristic.m @ 5dca910 (Crisanti, Lippstreu, McLeod, Polackova; no
+# license file): the cut-edge form of the regulated ideal in chi_regulated (lines 33-46), from
+# prepareCountRegulatedMS (:157-180), and point_on_locus (lines 50-77), from the "Diophantine" branch
+# of prepareKinematicSpecializationMS (:96-131). The MIT grant does not cover them; see NOTICE.
 
 """
 chi_S of sector S at nu=0:  J_S = < dG_S/dx_i (i in S), 1 - x0*G_S >.

@@ -1,0 +1,35 @@
+ffcapital (tools/ffcapital), part of BootLoops 1.0
+Copyright (c) 2026 Anthropic, PBC. Created by Matthew D. Schwartz; code written
+by Claude (Anthropic) under his supervision. MIT License (see the
+repository-root LICENSE and NOTICE), with the exception stated next.
+
+FFCapital is a new BootLoops program that reads the saved-state files written
+by FireFly (https://gitlab.com/firefly-library/firefly; J. Klappert, S. Y.
+Klein and F. Lange; Copyright (C) 2020 Jonas Klappert and Fabian Lange; GNU
+General Public License v3.0 or later). The file layout was taken from
+FireFly's source code. No FireFly routine is included or run, and FireFly
+itself is not included.
+
+Mixed licensing. harvest_ffsave_eta.py and harvest_ffsave_2var.py are
+distributed under the GNU General Public License v3.0 or later
+(LICENSE-GPL-3.0 beside this file), with the FireFly notice in their headers,
+because they contain the list PRIMES: the first 40 entries of FireFly's table
+of the largest 63-bit primes, copied from source/ReconstHelper.cpp (primes())
+in its three-per-line layout. All three scripts, including the MIT-licensed
+recon_symbolic_d.py, also hold the 24 section names of a state file in the
+order in which FireFly's writer RatReconst::save_state
+(source/RatReconst.cpp) emits them, and a reader of the state file written
+from that writer. The two harvest scripts also hold a reader of the
+validation.gz file written from source/include/firefly/Reconstructor.hpp.
+Each of the two scripts is a stand-alone command-line program; nothing else
+in this package imports them.
+
+recon_symbolic_d.py and selftest.py are MIT-licensed. recon_symbolic_d.py
+contains no prime table (it reads the primes at run time from the user's own
+copy of FireFly's ReconstHelper.cpp, option --ff-helper); its tuple
+STATE_SECTIONS holds the same 24 section names, taken from the same FireFly
+writer, and its header says so. selftest.py generates its primes.
+
+Please cite J. Klappert, F. Lange, Comput. Phys. Commun. 247 (2020) 106951,
+arXiv:1904.00009, and J. Klappert, S. Y. Klein, F. Lange, Comput. Phys.
+Commun. 264 (2021) 107968, arXiv:2004.01463.
