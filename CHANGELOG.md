@@ -4,7 +4,7 @@ All notable changes to BootLoops are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow
 [Semantic Versioning](https://semver.org/) (1.0.x = fixes and tool additions that change nothing existing, 1.x.0 = changes to existing tools).
 
-## Unreleased
+## 1.0.2 (2026-10-22)
 
 ### Changed
 - License of six files and one block. `tools/winnow/ibplapper/adapters/user_system.py`, `tools/kira-stack/parallel_kira_gen.py`, `tools/kira-stack/parallel_kira_gen_uds.py`, `tools/ffcapital/harvest_ffsave_eta.py` and `tools/ffcapital/harvest_ffsave_2var.py` move from MIT to GPL-3.0-or-later; `tools/eichler/genus2/conic_fast.py` moves to GPL-2.0-or-later; one block of `upgrades/Eichler.jl/src/siegel.jl` (the transvectant calls of `igusa_clebsch`) is LGPL-3.0-or-later. Because the package `ibplapper` imports `user_system.py`, `ibplapper` as imported is a combined work under GPL-3.0-or-later (see `tools/winnow/NOTICE`, which also says how to make an MIT-only build).
