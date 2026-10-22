@@ -77,8 +77,8 @@ mc.py follows the Poisson L-test simulation of pyCSEP.
             _simulate_catalog and _poisson_likelihood_test
             (csep/core/poisson_evaluations.py) and
             poisson_joint_log_likelihood_ndarray (csep/utils/stats.py)
-  Paper     W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling et
-            al., "pyCSEP: A Python Toolkit For Earthquake Forecast
+  Paper     W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling,
+            "pyCSEP: A Python Toolkit For Earthquake Forecast
             Developers", J. Open Source Softw. 7(69) (2022) 3658
 
 What was taken. mc.py was written with that code open. The sampling statement

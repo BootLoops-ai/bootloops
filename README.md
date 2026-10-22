@@ -280,7 +280,8 @@ which carry the first 40 entries of FireFly's prime table and follow its state-f
 writer (Jonas Klappert and Fabian Lange), GPL-3.0-or-later (see `tools/ffcapital/NOTICE`).
 One block of `upgrades/Eichler.jl/src/siegel.jl` follows FLINT and is LGPL-3.0-or-later
 (see `upgrades/Eichler.jl/NOTICE`). Other portions derived from third-party code keep the
-license of their source (BSD, MIT, CC BY 4.0, CC0) with the notice in the package's `NOTICE`.
+license of their source (BSD, MIT, CC BY 4.0, CC0) with the notice in the package's `NOTICE`,
+or in the file named in the root `NOTICE` table.
 Two sources state no license: the repositories whose code is in part translated in
 `upgrades/leviathan/` and the file behind the cell data in `tools/surd/gate/cells/`; the
 Anthropic copyright and the MIT and CC BY 4.0 grants do not cover those portions (see

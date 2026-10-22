@@ -335,7 +335,7 @@ Three vendored modules derive from other authors' code:
   the tests are BootLoops' additions, and INGV does not endorse them.
 - **mc** (`vendor/geo/mc.py`). `mc` follows the Poisson L-test simulation of pyCSEP
   (`_simulate_catalog` and `_poisson_likelihood_test`; W. H. Savran, M. J. Werner,
-  D. Schorlemmer, P. J. Maechling and co-authors, J. Open Source Softw. 7(69) (2022)
+  D. Schorlemmer, P. J. Maechling, J. Open Source Softw. 7(69) (2022)
   3658; github.com/cseptesting/pycsep; BSD-3-Clause, (c) 2021 The University of
   Southern California). It was written with that code open and keeps its sampling
   statement. The batching, the multiplicity penalty and the Clopper-Pearson interval

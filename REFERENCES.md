@@ -2,10 +2,9 @@
 
 Keys in square brackets in the CREDIT paragraphs of `tools/*/GUIDE.md`, `upgrades/*/README.md` and
 `toolkit/external/TOOLS.md` resolve here. Entries present on 2026-09-29 were checked against arXiv,
-CrossRef, INSPIRE or the upstream repository on that date; entries and clauses added on 2026-10-13, in any
-section, have not yet had that check; the last section says what has been checked for
-its entries. Please cite these authors, not only BootLoops, when a BootLoops instrument
-contributes to a result.
+CrossRef, INSPIRE or the upstream repository on that date; entries added in release 1.0.2 were checked the
+same way. Please cite these authors, not only BootLoops, when a
+BootLoops instrument contributes to a result.
 
 ## Engines and packages
 
@@ -71,20 +70,17 @@ contributes to a result.
 
 Classical items cited by author and year only: Dwork 1962; Moser 1960; Wasow 1965; Turrittin 1955; H. Cheng and T. T. Wu, Expanding Protons (MIT Press, 1987); Gelfand–Kapranov–Zelevinsky 1994; Saito–Sturmfels–Takayama 2000; Igusa 1962; Beukers–Peters 1984; Ore 1933; Singer 1996; Barkatou; Thiele 1909; Berlekamp 1968; Massey 1969; Kaltofen and Saunders 1991; Beukers 1985; Felsenstein 1981; Atkin and Swinnerton-Dyer; Honda; Wiedemann.
 
-Non-paper credits (verified): OSCAR: W. Decker, C. Eder, C. Fieker, M. Horn, M. Joswig (eds.), The Computer Algebra System OSCAR, Springer 2025, doi:10.1007/978-3-031-62127-7.  Singular: W. Decker, G.-M. Greuel, G. Pfister, H. Schönemann (singular.uni-kl.de).  networkx: A. Hagberg, D. Schult, P. Swart, SciPy 2008.  python-flint: F. Johansson, O. Benjamin and contributors.  feynson: V. Magerya (github.com/magv/feynson).  fplll: the FPLLL development team.  PLD: mathrepo.mis.mpg.de/PLD.  form-dev/form GPL-3.0; chang18/amflow-cpp MIT; lmizrahi/etas MIT; JuliaHomotopyContinuation/HomotopyContinuation.jl MIT; SubTropica/SubTropica MIT; antonela-matijasic/Effortless MIT; Giu989/{Landau-s-Leviathans, SPQR, DiscKosky} no license file.  CPython Lib/_pylong.py int_to_decimal: Tim Peters, Python Software Foundation (PSF License Version 2).  SplitMix64 and xorshift64* reference code: Sebastiano Vigna (public domain).
+Non-paper credits: OSCAR: W. Decker, C. Eder, C. Fieker, M. Horn, M. Joswig (eds.), The Computer Algebra System OSCAR, Springer 2025, doi:10.1007/978-3-031-62127-7.  Singular: W. Decker, G.-M. Greuel, G. Pfister, H. Schönemann (singular.uni-kl.de).  networkx: A. Hagberg, D. Schult, P. Swart, SciPy 2008.  python-flint: F. Johansson, O. Benjamin and contributors.  feynson: V. Magerya (github.com/magv/feynson).  fplll: the FPLLL development team.  PLD: mathrepo.mis.mpg.de/PLD.  form-dev/form GPL-3.0; chang18/amflow-cpp MIT; lmizrahi/etas MIT; JuliaHomotopyContinuation/HomotopyContinuation.jl MIT; SubTropica/SubTropica MIT; antonela-matijasic/Effortless MIT; Giu989/{Landau-s-Leviathans, SPQR, DiscKosky} no license file.  CPython Lib/_pylong.py int_to_decimal: Tim Peters, Python Software Foundation (PSF License Version 2).  SplitMix64 and xorshift64* reference code: Sebastiano Vigna (public domain).
 
-## Added with the provenance corrections of October 2026
+## Added in release 1.0.2
 
-The entries below name work that the packages credit by author, arXiv number or repository in their
-`GUIDE.md`, `NOTICE` and source headers. They carry the data recorded when the sources were read for the
-provenance comparison of 2026-10-13: repository addresses, commits and license statements were read from the
-repositories themselves; titles, initials and journal data are given only where they were recorded, and have
-not yet had the check against arXiv, CrossRef or INSPIRE that the sections above had.
+The entries below name work that the packages credit in their `GUIDE.md`, `NOTICE` and source headers.
+Repository addresses, commits and license statements were read from the repositories themselves.
 
 - [AMFlin] Z.-F. Liu, Y.-Q. Ma, "Automatic computation of Feynman integrals containing linear propagators via auxiliary mass flow", Phys. Rev. D 105 (2022) 074003, arXiv:2201.11636.  [AMFlow2] R.-J. Huang, X. Liu, Y.-Q. Ma, AMFlow 2.0, arXiv:2607.08477.
 - [LiteIBP] T. Peraro, LiteIBP.m, in FiniteFlow MathTools, github.com/peraro/finiteflow-mathtools (no license file; read at commit f77e2b5); the origin of the derivative routines in AMFlow's Kira interface and, through AMFlow.cpp, in the amflow-cpp fork. See [FFlow].
 - [matPTF] J. Selva, S. Lorito, M. Volpe, F. Romano, R. Tonini, P. Perfetti, F. Bernardi, M. Taroni, A. Scala, A. Babeyko, F. Løvholt, S. J. Gibbons, J. Macías, M. J. Castro, J. M. González-Vida, C. Sánchez-Linares, H. B. Bayraktar, R. Basili, F. E. Maesano, M. M. Tiberti, F. Mele, A. Piatanesi, A. Amato, "Probabilistic tsunami forecasting for early warning", Nat. Commun. 12, 5677 (2021), doi:10.1038/s41467-021-25815-w; code: github.com/INGV/matPTF (CC BY 4.0), doi:10.5281/zenodo.6390936.
-- [pyCSEP] W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling et al., "pyCSEP: A Python Toolkit For Earthquake Forecast Developers", J. Open Source Softw. 7(69) (2022) 3658; code: github.com/cseptesting/pycsep (BSD-3-Clause, (c) 2021 The University of Southern California).
+- [pyCSEP] W. H. Savran, M. J. Werner, D. Schorlemmer, P. J. Maechling, "pyCSEP: A Python Toolkit For Earthquake Forecast Developers", J. Open Source Softw. 7(69) (2022) 3658, doi:10.21105/joss.03658; code: github.com/cseptesting/pycsep (BSD-3-Clause, (c) 2021 The University of Southern California).
 - [BP] A. Björck, V. Pereyra, "Solution of Vandermonde Systems of Equations", Math. Comp. 24 (1970) 893-903; code: J. Burkardt, VANDERMONDE library, people.sc.fsu.edu/~jburkardt/m_src/vandermonde/ (MIT).
 - [Fenton] E. F. Fenton, D. P. Rice, J. Novembre, M. M. Desai, Genetics 229 (2025) iyaf023; code: github.com/desai-lab/twosfs (MIT, (c) 2020 Daniel P. Rice).
 - [OPQ] W. Gautschi, Orthogonal Polynomials: Computation and Approximation (Oxford, 2004); OPQ, doi:10.4231/R7959FHP (CC0 1.0).  [JM18] F. Johansson, M. Mezzarobba, SIAM J. Sci. Comput. 40 (2018) C726, arXiv:1802.03948.  [Etienne09] R. S. Etienne, J. Theor. Biol. 257 (2009) 510.

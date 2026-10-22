@@ -8,6 +8,7 @@ All notable changes to BootLoops are recorded here. The format follows
 
 ### Changed
 - License of six files and one block. `tools/winnow/ibplapper/adapters/user_system.py`, `tools/kira-stack/parallel_kira_gen.py`, `tools/kira-stack/parallel_kira_gen_uds.py`, `tools/ffcapital/harvest_ffsave_eta.py` and `tools/ffcapital/harvest_ffsave_2var.py` move from MIT to GPL-3.0-or-later; `tools/eichler/genus2/conic_fast.py` moves to GPL-2.0-or-later; one block of `upgrades/Eichler.jl/src/siegel.jl` (the transvectant calls of `igusa_clebsch`) is LGPL-3.0-or-later. Because the package `ibplapper` imports `user_system.py`, `ibplapper` as imported is a combined work under GPL-3.0-or-later (see `tools/winnow/NOTICE`, which also says how to make an MIT-only build).
+- Eight more files carry a compound license identifier, MIT and a second license for a derived portion (`upgrades/Eichler.jl/src/siegel.jl`, above, carries MIT AND LGPL-3.0-or-later): `__init__.py`, `attack_primitives.py`, `primitives.py` and `test_primitives.py` in `tools/baller/vendor/certlane/` (MIT AND CC-BY-4.0); `tools/baller/vendor/geo/mc.py`, `tools/nestor/ladder.py` and `tools/wayfinder/quad.py` (MIT AND BSD-3-Clause); `tools/terrier/lattice/genus_enum.jl` (MIT AND BSD-2-Clause); the license field of `tools/winnow/pyproject.toml` also changes, from MIT to MIT AND GPL-3.0-or-later.
 
 ### Fixed
 Credits, notices and license headers for code and data derived from other authors' work. The edits are
@@ -15,8 +16,9 @@ comments, headers, documentation and notice files, with the hash tables of the f
 regenerated. No computed result changes; the only changes to program output are printed messages and help
 texts: two messages in `counterweight`, one in `pmflow detect`, three error messages of
 `wayfinder/boundary.py`, the first line of the usage text of `leviathan.jl`, and the help texts of `pmflow`,
-of `seedling/audit.py` and of `emit_receipt.py` in `frobenius-boundary`. The license changes are listed under
-Changed above.
+of `seedling/audit.py` and of `emit_receipt.py` in `frobenius-boundary`. The description string in
+`tools/landau-alphabet/graph_specs/box1l.json` is also corrected; a program that reads that file can echo it.
+The license changes are listed under Changed above.
 
 - `leviathan`: the package is a Julia port of the Euler-characteristic-drop method of Chestnov, Crisanti and Giroux (arXiv:2606.29612), in part translated from their Mathematica code and from DiscKosky by Crisanti, Lippstreu, McLeod and Polackova; the statement that no code was copied or translated is withdrawn. README, `PATCHES.md` and source headers corrected, equation numbers corrected, a package `NOTICE` added.
 - `dipstick`, `maxcut`: both name the Leviathan engine they call and its authors; `dipstick` credits Pak and Smirnov for the region enumeration.
@@ -41,7 +43,7 @@ Changed above.
 - `subtropica`: names the SubTropica authors in `Project.toml` and completes its `NOTICE`.
 - `counterweight`: credits Lee and the public implementations of his algorithm, and states that its module `Fuchsia` is not the Fuchsia program of Gituliar and Magerya; two printed messages of `canonical_form.py` that named the wrong program and repository are corrected.
 - `cosmoflow`: states that it is unrelated to the CosmoFlow package of Werth, Pinol and Renaux-Petel and lists its references.
-- `annihilator`, `ansatzer`, `ellipticus`, `eras`, `frobenius-boundary`, `galois`, `gpl-eval`, `mixalot`, `numkin`, `tropical-sampler`, `trust`: credit paragraphs name the earlier programs and papers for each method, and claims of novelty are narrowed to what each package adds.
+- `annihilator`, `ansatzer`, `ellipticus`, `eras`, `frobenius-boundary`, `galois`, `gpl-eval`, `mixalot`, `nestor`, `numkin`, `tropical-sampler`, `trust`: credit paragraphs name the earlier programs and papers for each method, and claims of novelty are narrowed to what each package adds. The `nestor` guide now says high-precision quadrature, with digits measured by agreement between refinements, not a proven bound.
 - Repository files (`THIRD_PARTY.md`, `NOTICE`, `REFERENCES.md`, `README.md`, the rosters under `toolkit/`, `tools/README.md`, `upgrades/README.md`, `upgrades/ENGINES.md`): rows and notices added for the items above; the ports under `upgrades/` are no longer described as engines of our own; the fork repositories are described as snapshots on the branch `main`, without upstream's commit history.
 - Sibling repositories: `jackandjill` ships the PSF notice for its big-integer printer (after CPython's int_to_decimal by Tim Peters) and credits Sebastiano Vigna's generators; `amflow-cpp` names T. Peraro's LiteIBP as the origin of the derivative routines and lists the additions that `PATCHES.md` had left out; `blade` corrects two statements in `PATCHES.md` and adds a note on git authorship.
 
